@@ -1,0 +1,889 @@
+
+%Don't forget to delete
+%showkeys
+%overfullrule
+%\date \ber \er \cmt
+
+
+
+%\documentclass[12pt,leqno]{amsart}
+\documentclass[12pt,leqno]{article}
+
+
+\overfullrule=0pt
+%\usepackage{showkeys}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[all]{xy}
+%\usepackage{hhc}
+
+\usepackage{enumerate}
+\usepackage{mathrsfs}
+\usepackage{graphics}
+\usepackage[usenames,dvipsnames]{xcolor}
+%\usepackage{color}
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=blue,%
+citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{fancyheadings}
+\pagestyle{fancy}
+\rhead[\fancyplain{}{}]{\fancyplain{}{}}
+
+\renewcommand{\thefootnote}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{rouge}
+{\relax\color{red}}
+{\hspace*{.3ex}\relax}
+%\newcommand{\ber}{\begin{rouge}}
+%\newcommand{\er}{\end{rouge}}
+
+%newenvironment{bleu}
+%{\relax\color{PineGreen}}
+%{\hspace*{.3ex}\relax}
+%\newcommand{\beb}{\begin{bleu}}
+%\newcommand{\eb}{\end{bleu}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hyphenation{con-struc-ti-ble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newcommand{\cmt}[1]{\marginpar{\color{red}#1}}
+\newcommand{\typo}{\cmt{typo}}
+\newcommand{\nc}{\newcommand}
+\nc{\on}{\operatorname}
+%\newcommand{\red}[1]{{{\color{red}#1}}}
+
+%\newcommand{\cmt}[1]{{\ber{ #1}\er}}
+%\newcommand{\cmtm}[1]{{{\color{blue}\fbox{M}}\ber{#1}\er}}
+%\newcommand{\cmtp}[1]{{{\color{blue}\fbox{P\ber{ #1}\er}}}}
+
+
+\newcommand{\spa}{\vspace{0.3ex}\noindent}
+\newcommand{\spaa}{\vspace{0.2ex}\noindent}
+
+\newlength{\my}
+\setlength{\my}{\textwidth}
+\addtolength{\my}{-50pt}
+\nc{\noi}{\noindent}
+
+
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{convention}[theorem]{Convention}
+
+\theoremstyle{definition}
+
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{examples}[theorem]{Examples}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{assumption}[theorem]{Assumption}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\nc{\Rem}{\begin{remark}}
+\nc{\enrem}{\end{remark}}
+\nc{\Conj}{\begin{conjecture}}
+\nc{\enconj}{\end{conjecture}}
+\nc{\Th}{\begin{theorem}}
+\nc{\enth}{\end{theorem}}
+\nc{\Lemma}{\begin{lemma}}
+\nc{\enlemma}{\end{lemma}}
+\nc{\Cor}{\begin{corollary}}
+\nc{\encor}{\end{corollary}}
+\nc{\Def}{\begin{definition}}
+\nc{\edf}{\end{definition}}
+
+%%%%%% Characters
+
+%%%%%% Characters
+
+%mathrm
+\nc{\RR}{\mathrm{R}}
+\nc{\LL}{\mathrm{L}}
+\newcommand{\RC}{{\mathrm{C}}}
+\newcommand{\RK}{{\mathrm{K}}}
+\newcommand{\reg}{{\mathrm{reg}}}
+\newcommand{\inv}{{\mathrm{inv}}}
+%mathbb
+\newcommand{\BBA}{{\mathbb{A}}}
+\newcommand{\C}{{\mathbb{C}}}
+\newcommand{\N}{{\mathbb{N}}}
+\newcommand{\R}{{\mathbb{R}}}
+\newcommand{\Q}{{\mathbb{Q}}}
+\newcommand{\Z}{{\mathbb{Z}}}
+
+\newcommand{\BBS}{{\mathbb S}}
+\newcommand{\BBT}{{\mathbb T}}
+\newcommand{\BBP}{{\mathbb P}}
+\newcommand{\BBPd}{{\mathbb P}^*}
+\newcommand{\BBG}{\mathbb{G}}
+\newcommand{\BBL}{\mathbb{L}}
+\def\BBK{\mathbb{K}}
+\newcommand{\BBD}{{\mathbb D}}
+\newcommand{\BBW}{{\mathbb W}}
+\newcommand{\BBWd}{{\mathbb W}^*}
+\newcommand{\BBH}{{\mathbb H}}
+\newcommand{\BBHd}{{\mathbb H}^*}
+
+\newcommand{\PR}{{\BBP^1(\R)}}
+
+
+%mathbf
+\newcommand{\cor}{{\mathbf{k}}}
+%\newcommand{\cort}{{\bf k}^\tau}
+\newcommand{\cort}{\cor^\gamma}
+\newcommand{\corg}{{\cor}^\gamma}
+\newcommand{\corgl}{{cor}^{\gamma,l}}
+\newcommand{\corgr}{{\cor}^{\gamma,r}}
+\newcommand{\icor}{\mathrm{I}\mspace{1mu}\cor}
+\newcommand{\IA}{\mathrm{I}{\A}}
+\newcommand{\IB}{\amthrm{I}{\B}}
+\newcommand{\JA}{\mathrm{I}{\A}}
+\newcommand{\JAop}{{\mathrm{I}{\A^\op}}}
+\newcommand{\JD}{{\mathrm{I}}\mspace{1mu}{\D}}
+\newcommand{\JB}{\mathrm{I}{\B}}
+\newcommand{\JfB}{\mathrm{I}{\opb{f}\B}}
+\newcommand{\JgB}{\mathrm{I}{\opb{g}\B}}
+\newcommand{\JfD}{\mathrm{I}{\opb{f}\D}}
+
+
+\newcommand{\JR}{{\mathrm{I}}{\shr}}
+\newcommand{\JfR}{{\mathrm{I}}{\opb{f}\shr}}
+\newcommand{\JgR}{\mathrm{I}{\opb{g}\shr}}
+
+
+
+
+\newcommand{\iC}{\mathrm{I}\mspace{.5mu}{\C}}
+\newcommand{\iD}{\mathrm{I}{\D}}
+\newcommand{\iDop}{\mathrm{I}{\D^\rop}}
+%\newcommand{\isha}{\rm I{\sha}}
+\nc{\tA}{\mathcal{A}}
+\nc{\rA}{\mathscr{A}}
+\newcommand{\ishb}{\mathrm{I}{\shb}}
+\newcommand{\iDrm}{\mathrm{I}{\Drm}}
+\newcommand{\JDA}{\JD^\tA}
+
+\def\D{\mathscr{D}}
+\def\DA{\D^\tA}
+%\def\DA{\D}
+
+%mathscript
+\def\sha{\mathscr{A}}
+\def\shb{\mathscr{B}}
+\def\shc{\mathscr{C}}
+\def\shd{\mathscr{D}}
+\def\she{\mathscr{E}}
+\def\shf{\mathscr{F}}
+\def\shg{\mathscr{G}}
+\def\shh{\mathscr{H}}
+\def\shi{\mathscr{I}}
+\def\shj{\mathcal{J}}
+\def\shk{\mathscr{K}}
+\def\shl{\mathscr{L}}
+\def\shm{\mathscr{M}}
+\def\shn{\mathscr{N}}
+\def\sho{\mathscr{O}}
+\def\shp{\mathscr{P}}
+\def\shq{\mathscr{Q}}
+\def\shr{\mathscr{R}}
+\def\shs{\mathcal{S}}
+\def\sht{\mathscr{T}}
+\def\shu{\mathscr{U}}
+\def\shv{\mathscr{V}}
+\def\shw{\mathscr{W}}
+\def\shx{\mathscr{X}}
+\def\shy{\mathscr{Y}}
+\def\shz{\mathscr{Z}}
+
+%mathfrack
+\newcommand{\sts}{{\mathfrak{S}}}
+\newcommand{\stk}{{\mathfrak{K}}}
+\newcommand{\sta}{{\mathfrak{a}}}
+\newcommand{\stx}{{\mathfrak{X}}}
+\newcommand{\sty}{{\mathfrak{Y}}}
+\newcommand{\stz}{{\mathfrak{Z}}}
+\newcommand{\stka}{\mathfrak{A}}
+\newcommand{\stks}{\mathfrak{S}}
+\newcommand{\BB}{\mathfrak B}
+
+\newcommand{\symx}{{\mathfrak{X}}}
+
+%%%% Kernels
+
+\renewcommand{\ker}{\operatorname{Ker}}
+\DeclareMathOperator{\coker}{Coker}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\coim}{Coim}
+
+%%%%Arrows
+
+\newcommand{\rmpt}{\mathrm{pt}}
+\newcommand{\rmptt}{\{\roppt\}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\vvert}{\vert\vert}
+\def\monoto{{\rightarrowtail}}
+\def\epito{{\twoheadrightarrow}}
+\renewcommand{\to}[1][]{\xrightarrow[]{#1}}
+\newcommand{\from}[1][]{\xleftarrow[]{#1}}
+\newcommand{\isoto}[1][]{\xrightarrow[#1]%
+{{\raisebox{-.6ex}[0ex][-.6ex]{$\mspace{1mu}\sim\mspace{2mu}$}}}}
+\newcommand{\isofrom}[1][]{\xleftarrow[#1]%
+{{\raisebox{-.6ex}[0ex][-.6ex]{$\mspace{1mu}\sim\mspace{2mu}$}}}}
+\newcommand{\tto}{\rightrightarrows}
+\newcommand{\To}[1][\rule{1ex}{0pt}]{\xrightarrow{\hs{.6ex}#1\hs{.6ex}}}
+\newcommand{\Iso}{{\mathrm{Iso}}}
+\newcommand{\xto}[2][]{\xrightarrow[#1]{#2}}
+\newcommand{\xfrom}[2][]{\xleftarrow[#1]{#2}}
+
+%%%%Internal operations 
+
+\newcommand{\muhom}{\mu hom}
+\newcommand{\muHom}[1][]{\mathrm{Hom}^\mu_{\raise1.5ex\hbox to.1em{}#1}}
+\newcommand{\Hom}[1][]{\mathrm{Hom}_{\raise1.5ex\hbox to.1em{}#1}}
+\newcommand{\RHom}[1][]{\RR\mathrm{Hom}_{\raise1.5ex\hbox to.1em{}#1}}
+\newcommand{\Ext}[2][]{\mathrm{Ext}_{\raise1.5ex\hbox to.1em{}#1}^{#2}}
+\renewcommand{\hom}[1][]{{\mathscr{H}\mspace{-4mu}om}_{\raise1.5ex\hbox to.1em{}#1}}
+\newcommand{\rhom}[1][]{{\RR\mathscr{H}\mspace{-3mu}om}_{\raise1.5ex\hbox to.1em{}#1}}
+\newcommand{\rhomc}[1][]
+{{\mathscr{H}\mspace{-3mu}om}^*_{\raise1.5ex\hbox to.1em{}#1}}
+
+\newcommand{\cihom}[1][]
+{{\mathscr{I}\mspace{-3mu}}{hom}^+_{\raise1.5ex\hbox to.1em{}#1}}
+
+\nc{\ihom}[1][]{{\shi\mspace{-3mu}hom}_{\raise1.5ex\hbox to.1em{}#1}}
+\nc{\rihom}[1][]{{\mspace{2mu}\mathrm{R}\shi\mspace{-3mu}hom}_{\raise1.5ex\hbox to.1em{}#1}}
+\nc{\fihom}[1][]{{\shi\mspace{-3mu}hom}^{\mathrm{E}}_{\raise1.5ex\hbox to.1em{}#1}}
+\nc{\FHom}[1][]{{\mathrm{RHom}^{\mathrm{E}}_{\raise1.5ex\hbox to.1em{}#1}}}
+\nc{\fhom}[1][]{{\mathscr{H}%
+\mspace{-3mu}om}^{\mathrm{E}}_{\raise1.5ex\hbox to.1em{}#1}}
+\nc{\Endom}[1][]{{\she\mspace{-3mu}nd}_{\raise1.5ex\hbox to.1em{}#1}}
+
+
+\newcommand{\eeim}[1]{{#1}_{!!}}
+\newcommand{\ssubset}{\subset\mspace{-3mu}\subset}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+
+
+\nc{\Tam}{{\mathrm{E}}}
+
+\newcommand{\ext}[2][]{{\mathscr{E}xt}_{\raise1.5ex\hbox to.1em{}#1}^{#2}}
+\newcommand{\Tor}[2][]{\mathrm{Tor}^{\raise1.5ex\hbox to.1em{}#1}_{#2}}
+\newcommand{\tens}[1][]{\mathbin{\otimes_{\raise1.5ex\hbox to-.1em{}{#1}}}}
+\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
+\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+\newcommand{\detens}{\underline{\etens}}
+\newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
+\newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
+\newcommand{\tor}{\mathscr{T}\mspace{-3mu}or}
+\newcommand{\etens}{\mathbin{\boxtimes}}
+\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
+\newcommand{\aut}{{\sha\mspace{-1mu}\mit{ut}}\,}
+\newcommand{\End}{{\operatorname{End}}}
+\newcommand{\shend}{\operatorname{{\she\mspace{-2mu}\mathit{nd}}}}
+\newcommand{\Endo}[1][]{\mathrm{End}_{\raise1.5ex\hbox to.1em{}#1}}
+\newcommand{\Auto}{{\operatorname{Aut}}}
+\newcommand{\Aut}[1][]{\mathrm{Aut}_{\raise1.5ex\hbox to.1em{}#1}}
+\newcommand{\sect}{\Gamma}
+\newcommand{\rsect}{\mathrm{R}\Gamma}
+\newcommand{\rocirc}{\mathop{\circ}\limits^{\rop}}
+\newcommand{\conv}[1][]{\mathop{\circ}\limits_{#1}}
+\newcommand{\econv}[1][]{\mathop{\circ}\limits^{\mathrm{E}}\limits_{#1}}
+
+\newcommand{\ctens}[1][]{\mathbin{\overset{+}\tens}_{#1}}
+
+\newcommand{\cconv}[1][]{\mathop{\circ}\limits^{#1}}
+\newcommand{\Dconv}{\cconv[{\mathrm D}]}
+
+\newcommand{\tconv}[1][]{\mathop{\circ}\limits^{+}\limits_{#1}}
+\newcommand{\aconv}[1][]{\mathop{\circ}\limits^{a}\limits_{#1}}
+\newcommand{\mconv}[1][]{\mathop{\circ}\limits^{\mu}\limits_{#1}}
+\newcommand{\sconv}[1][]{\mathop{\ast}\limits_{#1}}
+\newcommand{\shnt}{\shn_{\mathrm{tor}}}
+\newcommand{\gconv}[1][]{\mathop{\circ}\limits^{\gamma}\limits_{#1}}
+\newcommand{\cstar}[1][]{\mathop{\star}\limits_{#1}}
+\newcommand{\atimes}[1][]{\mathop{\times}\limits^{a}\limits_{#1}}
+\newcommand{\cetens}[1][]{\mathop{\etens}\limits^{+}\limits_{#1}}
+
+\newcommand{\VV}{{\mathsf{V}}}
+\newcommand{\VVd}{{\mathsf{V}^*}}
+\newcommand{\VVp}{\mathsf{V'}}
+\newcommand{\VVdp}{\mathsf{V'}^*}
+
+\newcommand{\WW}{{\mathbb{V}}}
+\newcommand{\WWd}{{\mathbb{V}^*}}
+\newcommand{\WWp}{\mathbb{V'}}
+\newcommand{\WWdp}{\mathbb{V'}^*}
+
+
+\newcommand{\PP}{\mathsf{P}}
+%%%External operations
+\newcommand{\Drm}{\mathsf{D}}
+
+\newcommand{\oim}[1]{{#1}_*}
+\newcommand{\eim}[1]{{#1}_!}
+\newcommand{\roim}[1]{\RR{#1}_*}
+\newcommand{\reim}[1]{\RR{#1}_!}
+\newcommand{\reiim}[1]{\RR{#1}_{\mspace{1mu}!!}}
+\newcommand{\reeim}[1]{\RR{#1}_{\mspace{1mu}!!}}
+\newcommand{\opb}[1]{#1^{-1}}
+\newcommand{\popb}[1]{#1^{\text{``}-1\text{''}}}
+\newcommand{\epb}[1]{#1^{\,!}\,}
+\newcommand{\spb}[1]{#1^{*}}
+\newcommand{\eoim}[1]{{#1}_{!*}}
+\newcommand{\lspb}[1]{\LL{#1}^{*}}
+\newcommand{\Dtens}[1][]{\overset{\mathrm{D}}\otimes_{\raise1.5ex\hbox to-.1em{}#1}}
+\newcommand{\Detens}[1][]{\overset{\mathrm{D}}\etens_{\raise1.5ex\hbox to-.1em{}#1}}
+\newcommand{\Ddual}{{\BBD}}
+
+\newcommand{\Deim}[1]{{\mathrm{D}}{\mspace{-1mu}#1_{\mspace{1mu}!}}}
+\newcommand{\Dopb}[1]{{\mathrm{D}}{#1}^{*}}
+\newcommand{\Doim}[1]{{\mathrm{D}}{#1}_{*}}
+
+
+\newcommand{\good}{\mathrm{good}}
+\newcommand{\qgood}{\mathrm{q\text-good}}
+\newcommand{\ghol}{\mathrm{g\text-hol}}
+
+\nc{\rE}{\mathrm{E}}
+\nc{\enh}{\mathsf{E}}
+\newcommand{\dual}{\mathrm{D}}
+
+\newcommand{\Edual}{\dual^\rE}
+
+\newcommand{\Toim}[1]{\enh{#1}_*}
+\newcommand{\Teeim}[1]{\enh{#1}_{\mspace{1mu}!!}}
+\newcommand{\Topb}[1]{\enh\mspace{2mu}#1^{-1}}
+\newcommand{\Tepb}[1]{\enh\mspace{2mu}#1^{\,!}}
+
+\nc{\EF}[1][]{{}^{\enh}\mspace{-3mu}\shf_{#1}}
+\nc{\EFa}[1][]{{}^{\enh}{\mspace{-3mu}\shf^a_{#1}}}
+\nc{\FS}[1][]{{}^{\mathrm{S}}{\mspace{-3mu}\shf_{#1}}}
+\nc{\FSa}[1][]{{}^{\mathrm{S}}{\mspace{-3mu}\shf^a_{#1}}}
+\nc{\Leg}[1][]{{\mathrm{Conv}}{(#1)}}
+\nc{\dom}{\mathrm{dom}}
+\nc{\domo}{\dom^\circ}
+
+\nc{\hol}{\mathrm{hol}}
+
+\newcommand{\omDA}[1][M]{\omega_{\Delta_{#1}}}
+\newcommand{\omDAI}[1][M]{\omega_{\Delta_{#1}}^{{\otimes-1}}}
+\newcommand{\omA}[1][M]{\omega_{#1}}
+\newcommand{\omAI}[1][M]{\omega_{{#1}}^{{\otimes-1}}}
+\newcommand{\dA}[1][M]{\cor_{\Delta_{#1}}}
+\newcommand{\omhDA}[1][X]{\omega^{\hol}_{\Delta_{#1}}}
+\newcommand{\omhDAI}[1][X]{\omega_{\Delta_{#1}}^{{\hol},\otimes-1}}
+\newcommand{\omhA}[1][X]{\omega^{\hol}_{#1}}
+\newcommand{\omhAI}[1][X]{\omega_{{#1}}^{{\hol},\otimes-1}}
+\newcommand{\dhA}[1][X]{\sho_{\Delta_{#1}}}
+\newcommand{\shbD}{\shb_\Delta}
+\newcommand{\shcD}{\shc_\Delta}
+\newcommand{\shbDU}{\shb_\Delta^\vee}
+\newcommand{\shcDU}{\shc_\Delta^\vee}
+
+%%%%%Modules
+\newcommand{\Ic[1]}{{\mathrm{I}}\cor{}_{#1}}
+\nc{\Mod}{\mathrm{Mod}}
+\nc{\rh}{\mathrm{rh}}
+\newcommand{\md[1]}{\Mod({#1})}
+\newcommand{\Imd[1]}{\Mod({#1})}
+\newcommand{\mdf[1]}{\Mod^{f}({#1})}
+\newcommand{\mdfp[1]}{{\Mod^{\mathrm{fp}}({#1})}}
+\newcommand{\mdc[1]}{{\Mod_{\coh}}({#1})}
+\newcommand{\mdcoh[1]}{\modc}
+\newcommand{\mdgd[1]}{\Mod_{\mathrm{gd}}({#1})}
+\newcommand{\mdhol[1]}{\Mod_{\hol}({#1})}
+\newcommand{\mdrh[1]}{\Mod_{\rh}({#1})}
+\newcommand{\mdrc[1]}{\Mod_{\Rc}({#1})}
+\newcommand{\mdrcc[1]}{\Mod^{\mathrm{c}}_{\Rc}({#1})}
+\newcommand{\Perv}{{\mathrm{Perv}}}
+\newcommand{\tr}{{\mathrm{tr}}}
+
+
+
+\newcommand{\LC}[2][]{\mathbb{LC}_{#1}(T^*M_{#2})}
+\newcommand{\LCo}[2][]{\mathbb{LC}^0_{#1}(T^*M_{#2})}
+\newcommand{\SLC}[1][]{\mathscr{LC}_{#1}}
+
+\nc{\sHH}{\mathscr{H}\mspace{-4mu}\mathscr{H}}
+\newcommand{\HHO}[1][X]{\sHH({\sho}_{#1})}
+\newcommand{\RHHO}[2][]{\mathbb{HH}_{#1}(\sho_{#2})}
+\newcommand{\RHHOo}[2][]{\mathbb{HH}^0_{#1}(\sho_{#2})}
+
+\newcommand{\HHD}[2][]{\sHH_{#1}(\shd_{#2})}
+\newcommand{\RHHD}[2][]{\mathbb{HH}_{#1}(\shd_{#2})}
+\newcommand{\RHHDk}[2][]{\mathbb{HH}^k_{#1}(\shd_{#2})}
+\newcommand{\RHHDo}[2][]{\mathbb{HH}^0_{#1}(\shd_{#2})}
+
+\newcommand{\HHE}[2][]{\sHH_{#1}(\she_{#2})}
+\newcommand{\RHHE}[2][]{\sHH_{#1}(\she_{#2})}
+\newcommand{\RHHEo}[2][]{\mathbb{HH}^0_{#1}(\she_{#2})}
+\newcommand{\RHHEk}[2][]{\mathbb{HH}^k_{#1}(\she_{#2})}
+
+
+\newcommand{\HH}[2][]{\sHH_{#1}(\cor_{#2})}
+\newcommand{\RHH}[2][]{\mathbb{HH}_{#1}({\cor}_{#2})}
+\newcommand{\HHo}[2][]{\mathbb{HH}_{#1}^0({\cor}_{#2})}
+\newcommand{\HHk}[2][]{\mathbb{HH}_{#1}^k({\cor}_{#2})}
+\newcommand{\HHCo}[2][]{\mathbb{HH}_{#1}^0({\C}_{#2})}
+
+
+\nc{\sMH}{\mathscr{M}\mspace{-4mu}\mathscr{H}}
+\newcommand{\MH}[2][]{\sMH_{#1}(\cor_{#2})}
+\newcommand{\RMH}[2][]{\mathbb{MH}_{#1}({\cor}_{#2})}
+\newcommand{\MHo}[2][]{\mathbb{MH}_{#1}^0({\cor}_{#2})}
+\newcommand{\MHk}[2][]{\mathbb{MH}_{#1}^k({\cor}_{#2})}
+\newcommand{\MHCo}[2][]{\mathbb{MH}_{#1}^0({\C}_{#2})}
+\newcommand{\MHC}[2][]{\sMH_{#1}({\C}_{#2})}
+
+
+
+
+
+%%%%%%% Math symbols
+\newcommand{\hplus}[1][]{\mathop{+}\limits_{#1}}
+\newcommand{\eqdot}{\mathbin{:=}}
+\newcommand{\seteq}{\mathbin{:=}}
+\newcommand{\scdot}{\,\cdot\,}
+\newcommand{\cl}{\colon}
+\newcommand{\scbul}{{\,\raise.4ex\hbox{$\scriptscriptstyle\bullet$}\,}}
+\newcommand{\sset}{\mathbin{\subset\mspace{-1mu}\subset}}
+\newcommand{\hatp}{\operatorname{\widehat +}}
+\newcommand{\hatpR}{\operatorname{\underset{\R}{\widehat +}}}
+\newcommand{\hatpRp}{\operatorname{\underset{\R}{\widehat{+'}}}}
+\newcommand{\hatstar}{\operatorname{\widehat \star}}
+\newcommand{\npstar}{\operatorname{\star_{np}}}
+\newcommand{\tw}[1]{\widetilde{#1}}
+
+\newcommand{\twX}{{\widetilde{X}}}
+\newcommand{\twom}{{\widetilde{\omega}}}
+
+\newcommand{\rmH}{{\mathrm{H}}}
+\newcommand{\rmE}{{\mathrm{E}}}
+\newcommand{\rmd}{{\mathrm{d}}}
+
+\newcommand{\olom}{\varpi}
+\newcommand{\twh}[1]{\widehat{#1}}
+\newcommand{\ol}{\overline}
+\newcommand{\bl}{\bigl(}
+\newcommand{\br}{\bigr)}
+\newcommand{\ro}{{\rm(}}%roman ouvert
+\newcommand{\rf}{\,{\rm)}}%roman ferme
+\newcommand{\lp}{{\rm(}}
+\newcommand{\rp}{{\rm)}}
+\newcommand{\db}[1]{\raisebox{-.3ex}[1.5ex][1ex]{$#1$}}
+\newcommand{\ub}[1]{\raisebox{-.5ex}[1.5ex][1.5ex]{$#1$}}
+
+
+\newcommand{\Cc}{{\C\text{-c}}}
+\newcommand{\Rc}{{\R\text{-c}}}
+\newcommand{\Irc}{{\mathrm{I}\mspace{1mu}\R\text{-c}}}
+\newcommand{\cc}{{\text{cc}}}
+\def\cint#1{[#1]}
+\newcommand{\pib}{{\tw\pi}}
+\newcommand{\piw}{{\widehat \pi}}
+\newcommand{\Sol}{\mspace{1mu}{\shs\mspace{-2.5mu}\mathit{ol}}}
+\newcommand{\GSol}{{\mathrm{Sol}}}
+\newcommand{\DR}{\mathrm{DR}}
+%%%% Environnement
+
+\newcommand{\ba}{\begin{array}}
+\newcommand{\ea}{\end{array}}
+\newenvironment{nnum}{
+\begin{enumerate}
+\itemsep=0pt
+\renewcommand{\labelenumi}
+{\rm{(\roman{enumi})}}
+\renewcommand{\labelenumii}
+{\rm{(\roman{enumii})}}}
+{\end{enumerate}}
+
+\newenvironment{anum}{
+\begin{enumerate}
+\itemsep=0pt
+\renewcommand{\labelenumi}
+{\rm{(\alph{enumi})}}
+\renewcommand{\labelenumii}
+{\rm{(\alph{enumii})}}}
+{\end{enumerate}}
+
+\nc{\be}{\begin{enumerate}}
+\nc{\ee}{\end{enumerate}}
+\newcommand{\bnum}{\begin{enumerate}[{\rm(i)}]}
+\newcommand{\enum}{\end{enumerate}}
+\newcommand{\banum}{\begin{enumerate}[{\rm(a)}]}
+\newcommand{\eanum}{\end{enumerate}}
+
+\newcommand{\bna}{\be[{\rm(a)}]}
+
+
+\newcommand{\eq}{\begin{eqnarray}}
+\newcommand{\eneq}{\end{eqnarray}}
+\newcommand{\eqn}{\begin{eqnarray*}}
+\newcommand{\eneqn}{\end{eqnarray*}}
+
+
+\newcommand{\set}[2]{\left\{#1 \mathbin{;} #2 \right\}}
+
+\def\endproof{\hspace*{\fill} Q.E.D.\endtrivlist}
+
+\nc{\Proof}{\begin{proof}}
+\nc{\QED}{\end{proof}}
+\nc{\Prop}{\begin{proposition}}
+\nc{\enprop}{\end{proposition}}
+
+%%%%%Roman
+
+\nc{\rop}{{\mathrm{op}}}
+\nc{\op}{\rop}
+\nc{\tot}{\mathrm{tot}}
+\nc{\Op}{{\mathrm{Op}}}
+\nc{\dist}{{\mathrm{dist}}}
+\nc{\LocSyst}{{\mathrm{LocSyst}}}
+\nc{\eu}{\mathrm{eu}}
+\nc{\hh}{\mathrm{hh}}
+\nc{\mueu}{{\mu\eu}}
+
+\newcommand{\DQ}{\ensuremath{\mathrm{DQ}}}
+\newcommand{\dpi}{{\dot\pi}}
+\newcommand{\DP}{\ensuremath{\mathrm{DP}}}
+\newcommand{\HK}{\ensuremath{\mathrm{TK}}}
+
+
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\ori}{{or\mspace{2mu}}}
+\DeclareMathOperator{\chv}{char}
+
+\newcommand{\Supp}{\on{Supp}}
+\newcommand{\Der}[1][]{\mathsf{D}^{#1}}
+\newcommand{\Derb}{\Der[\mathrm{b}]}
+\newcommand{\Dermu}[1][]{\Der[\mathrm{b}]_{\mu#1}}
+\newcommand{\Derlb}{\Der[\mathrm{lb}]}
+\newcommand{\rmb}{{\mathrm{b}}}
+\newcommand{\SSi}{\mathrm{SS}}
+\newcommand{\SSid}{\mathrm{SS}_\Delta}
+\newcommand{\SSupp}{\on{SingSupp}}
+
+\newcommand{\RD}{\mathrm{D}}
+\newcommand{\Derp}{\Der[+]}
+\newcommand{\Derm}{\Der[-]}
+
+\newcommand{\RDE}{\RD_\she}
+\newcommand{\RDD}{\RD_\shd}
+
+\newcommand{\Sh}{\operatorname{Sh}}
+\newcommand{\Psh}{\operatorname{PSh}}
+\newcommand{\Fct}{\operatorname{Fct}}
+\newcommand{\forget}{\mathit{for}}
+\newcommand{\shcw}{\shc^\wedge}
+\newcommand{\Cat}{{\bf Cat}}
+\newcommand{\Ad}{\mathrm{Ad}}
+\newcommand{\ad}{\mathrm{ad}}
+\newcommand{\Int}{{\on{Int}}}
+\newcommand{\coh}{\mathrm{coh}}
+\newcommand{\grad}{{\mathrm{grad}}}
+\newcommand{\gr}{{\mathrm{gr}}}
+
+\newcommand{\dT}{{\dot{T}}}
+\newcommand{\dTM}{{\dT}^*M}
+\newcommand{\wt}{\widetilde}
+\newcommand{\DD}{\mathrm{D}}
+\newcommand{\oDD}{\ol\DD}
+\newcommand{\loc}{\mathrm{loc}}
+
+
+\newcommand{\II[1]}{\mathrm{I}({#1})}
+\newcommand{\IIf[1]}{\mathrm{I}^{f}({#1})}
+
+\newcommand{\SI[1]}{{\mathcal I}({#1})}
+
+\newcommand{\IIrc[1]}{\mathrm{I}_{\Rc}({#1})}
+\newcommand{\IRc}{\Irc}
+
+\newcommand{\indcc}{\mathrm{Ind}(\shc)}
+\newcommand{\indc}{\mathrm{IC}}
+
+\newcommand{\mdcp[1]}{\Mod^{\,\mathrm{c}}({#1})}
+\newcommand{\BDC}{\Derb}
+\newcommand{\TDC}{{\mathrm{E}}^{\mathrm{b}}}
+\newcommand{\TDCpm}{{\mathrm{E^b_\pm}}}
+\newcommand{\TDCmp}{{\mathrm{E^b_\mp}}}
+\newcommand{\TDCp}{{\mathrm{E^b_+}}}
+\newcommand{\TDCm}{{\mathrm{E^b_-}}}
+\newcommand{\TDCC}{\mathrm{E}}
+
+
+\newcommand{\mop}{\mathrm{r}}
+
+
+
+
+\newcommand{\Tmp}{\mathsf{T}}
+\newcommand{\OEn}{\sho^{\mspace{2mu}\enh}}
+\newcommand{\DbT}{\Db^\Tmp}
+\newcommand{\DbE}{\Db^\enh}
+\newcommand{\OvE}{\Omega^\enh}
+\newcommand{\drE}{\mathcal{DR}^\enh}
+\newcommand{\solE}{\mspace{1mu}\mathcal{S}ol^{\mspace{1mu}\enh}}
+
+\nc{\wc}[1]{\overset{\mbox{$\scriptscriptstyle\vee$}}{#1}}
+\nc{\field}{\cor}
+\nc{\bM}{\widehat M}
+\nc{\bN}{\widehat N}
+\nc{\bX}{{\widehat X}}
+\nc{\bS}{\widehat S}
+\nc{\bY}{\widehat Y}
+\nc{\bL}{\widehat L}
+\nc{\bR}{{\ol\R}}
+\nc{\bV}{{\ol \VV}}
+\nc{\bW}{{\ol \WW}}
+
+
+\newcommand{\BP}{{\bW}}
+\newcommand{\BPd}{{\bWd}}
+
+
+
+\nc{\bVd}{{\ol \VVd}}
+\nc{\bWd}{{{\ol \WW}^*}}
+
+
+\newcommand{\fL}{L_\infty}
+\newcommand{\fM}{{M_\infty}}
+\newcommand{\fN}{{N_\infty}}
+\newcommand{\fS}{{S_\infty}}
+\newcommand{\fX}{{X_\infty}}
+\newcommand{\fY}{{Y_\infty}}
+\newcommand{\fZ}{{Z_\infty}}
+\newcommand{\fR}{{\R_\infty}}
+\newcommand{\fV}{{\VV_\infty}}
+\newcommand{\fVd}{{\VV^*_\infty}}
+\newcommand{\fW}{{\WW_\infty}}
+\newcommand{\fWd}{{\WW^*_\infty}}
+
+
+
+
+\nc{\oM}{{\ol M}}
+\nc{\oN}{\ol N}
+\nc{\oX}{{\ol X}}
+\nc{\oS}{\ol S}
+\nc{\oY}{\ol Y}
+\nc{\oL}{\ol L}
+\nc{\oR}{{\ol\R}}
+\nc{\Tl}{\mathrm{L^E}}
+\nc{\Tr}{\mathrm{R^E}}
+
+\nc{\sa}{\mathrm{sa}}
+\newcommand{\Xsa}{{X_{\sa}}}
+\newcommand{\oXsa}{{{\oX}_{\sa}}}
+\newcommand{\Ysa}{{Y_{\sa}}}
+
+
+\newcommand{\Msa}{{M_{\sa}}}
+\newcommand{\Nsa}{{N_{\sa}}}
+\newcommand{\Dbv}{{\mathcal D} b^\vee}
+\newcommand{\Db}{{\mathcal D} b}
+\newcommand{\Dbt}{{\mathcal D} b^{\mspace{2mu}\mathrm t}}
+\newcommand{\Dbtv}{{\mathcal D} b^{\mathrm t\vee}}
+\newcommand{\Cinft}[1][M]{\mathcal{C}^{\infty,\mathrm t}_{#1}}
+\newcommand{\Cinfw}[1][M]{\mathcal{C}^{\infty,\mathrm w}_{#1}}
+\newcommand{\Cinf}[1][M]{\mathcal{C}^{\infty}_{#1}}
+\newcommand{\Cinfom}[1][M]{\mathcal{C}^{\mspace{1mu}\omega}_{#1}}
+
+
+\newcommand{\thom}{Thom}
+\newcommand{\wtens}{\mathbin{\overset{\mathrm{w}}\tens}}
+\newcommand{\Ot}[1][X]{\sho^{\mspace{2.5mu}{\mathrm t}}_{#1}}
+\newcommand{\OO}[1][X]{\sho_{#1}}
+\newcommand{\Ow}[1][X]{\sho^{\mspace{2mu}\mathrm w}_{#1}}
+\newcommand{\Oww}[1][X]{\sho^{\mspace{2mu}\omega}_{#1}}
+\newcommand{\rc[1]}{{\Brc}({#1})}
+\newcommand{\rcc[1]}{{\Brc}^{\,\mathrm{c}}({#1})}
+\nc{\BRC}{{\R}\hbox{-}{\mathrm{Cons}}}
+\nc{\Brc}{{\R}\hbox{-}{\mathrm{C}}}
+\newcommand{\Ovt}{\Omega^{\mspace{1.5mu}{\mathrm t}}}
+
+\newcommand{\dr}{\mathcal{DR}}
+\newcommand{\drt}{\mathcal{DR}^{\mathrm t}}
+\newcommand{\dre}{\mathcal{DR}^+}
+\newcommand{\sol}{\mathcal Sol}
+\newcommand{\sole}{\mathcal Sol^+}
+\newcommand{\solt}{\mathcal Sol^{\mspace{2.5mu}\mathrm t}}
+\newcommand{\reghol}{\rh}
+
+\newcommand{\Sp}{\mathrm{Sp}}
+
+
+%%%%%%% Limits-IndOb
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+\newcommand{\proolim}[1][]{\mathop{\text{\rm``{$\varprojlim$}''}}\limits_{#1}}
+\newcommand{\sproolim}[1][]{\smash{\mathop{\rm``{\varprojlim}''}\limits_{#1}}}
+\newcommand{\inddlim}[1][]{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}
+\newcommand{\sinddlim}[1][]{\smash{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}\,}
+\newcommand{\ooplus}{\mathop{\text{\rm``{$\oplus$}''}}\limits}
+\newcommand{\bbigsqcup}{\mathop{``\bigsqcup''}\limits}
+\newcommand{\bsqcup}{\mathop{``\sqcup''}\limits}
+\newcommand{\dsum}[1][]{\mathbin{\oplus_{#1}}}
+\nc{\eps}{\varepsilon}
+\nc{\hs}{\hspace*}
+\nc{\nn}{\nonumber}
+\nc{\tM}{\widetilde{M}}
+\nc{\h}{\mathbf{h}}
+\nc{\tf}{\tilde{f}}
+\nc{\trf}{{{}^{\mathrm{t}}\mspace{-3mu}f}}
+\nc{\codim}{\on{codim}}
+\nc{\lh}{\mathscr{H}}
+\nc{\bwr}{\scalebox{1.1}{$\wr$}}
+\nc{\dTi}{\dT^{*,\mathrm{in}}}
+\nc{\Cd}{\mathrm{C}}
+\nc{\tK}{\widetilde{K}}
+\nc{\aMM}{a_{M\times M}}
+\nc{\e}{\mspace{1mu}\mathrm{e}\mspace{1mu}}
+\nc{\lan}{\langle}
+\nc{\ran}{\rangle}
+\nc{\la}{\lambda}
+\newcommand{\cross}[1][]{\mathbin{\times_{#1}}}
+\newcommand{\Yes}{$\circ$}
+\newcommand{\No}{$\cross$}
+\newcommand{\Union}{\bigcup\limits}
+
+\nc{\vphi}{\varphi}
+\nc{\vep}{\varepsilon}
+
+\nc{\At}{\tA_\twX}
+\nc{\bu}{\boldsymbol{u}}
+\nc{\bA}{\boldsymbol{A}}
+\nc{\hbu}{\widehat{\boldsymbol{u}}}
+\nc{\ex}{\mathrm{e}}
+\nc{\vpi}{\varpi}
+\newcommand{\soplus}{\mathop{\mbox{\small $\bigoplus$}}\limits}
+\nc{\one}{\mathbf{1}}
+\nc{\setp}[1]{\{#1\}}
+\nc{\GL}{\mathrm{GL}}
+\nc{\cI}{\mathrm{I}}
+\newcommand{\TDCrc}{{\mathrm{E^b_{\Rc}}}}
+\nc{\vs}{\vspace*}
+
+\nc{\wb}[1]{\mbox{$\rule[-1.1ex]{0ex}{2ex}#1$}}
+\nc{\wwb}[1]{\mbox{$\rule[-1.8ex]{0ex}{3ex}#1$}}
+\nc{\bpi}{\ol{\pi}}
+\nc{\Tsupp}{\Supp^{\mathrm E}}
+
+\nc{\abu}{\Vec{\bu}}
+\nc{\av}{\Vec{v}}
+\nc{\au}{\Vec{u}}
+\newcommand{\OOO}{\mathsf{O}}
+
+\nc{\FN}{\mathrm{FN}}
+\nc{\DFN}{\mathrm{DFN}}
+
+\nc{\ake}{\hs{.25ex}}
+
+\nc{\va}{\Vec{a}}
+\nc{\bal}{\begin{align}}
+\nc{\aal}{\end{align}}
+\nc{\baln}{\begin{align*}}
+\nc{\ealn}{\end{align*}}
+
+\usepackage{graphics}
+
+\usepackage{makeidx}
+%\makeindex
+%\makeglossary
+
+
+\numberwithin{equation}{subsection}
+
+
+
+
+\begin{document}
+
+\title{解析学のためのシンプレクティック幾何学}
+\author{Toshi2019}
+
+\date{December 13, 2021}
+
+\maketitle
+\begin{abstract}
+シンプレクティック幾何についての勉強ノート. 
+幾何学本流というよりかは, 
+解析への応用のための知識をまとめることを目指した. 
+\end{abstract}
+
+\tableofcontents
+\section*{はじめに}
+
+代数解析や超局所解析の考え方は現代数学において
+大きな地位を占めています. 
+筆者の個人的な興味として柏原・シャピラによる層の超局所理論があり, 
+これもシンプレクティック幾何の本流の人たちによる興味を惹いたりと，
+大きな役割を担っていると言えます. 
+層の超局所理論の本を読んでいるとシンプレクティック幾何の言葉が
+ちょいちょい出てきます. 
+そういった本にも付録としてシンプレクティック幾何の節が
+ついていることも多いのですが, \begin{itemize}
+    \item 日本語で
+    \item 多様体論の知識をそれほど多く仮定せず
+    \item 幾何学を専門としていない人に向けて
+\end{itemize}
+述べたノートには需要があるのではないかと考えました. 
+そこでこのノートでは, シンプレクティック幾何について, 
+あまり内容をてんこ盛りにせず述べることを試みます. 
+
+大体の内容は\cite[Chap 3]{Dui96}に沿っています. 
+(というか, この本の勉強ノートのつもりで書きはじめています.)
+上でも述べたことですが, 筆者は柏原・シャピラによる層の超局所理論に
+興味があり, \cite{KS90}の内容を勉強しています. 
+その付録くらいのことを勉強するつもりで, 
+\cite[Chap 3]{Dui96}の内容をまとめるというノリです. 
+その他の参考文献は\cite{HTT08}です. 
+
+\section{ベクトル場}
+\section{微分形式}
+\section{$T^{\ast}X$上の正準1形式と正準2形式}
+\section{シンプレクティックベクトル空間}
+\section{シンプレクティック微分幾何}
+\section{ラグランジュ多様体}
+\section{錘状ラグランジュ多様体}
+\section{古典力学と変分計算}
+
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\begin{thebibliography}{15}
+
+\bibitem[{Dui\ake 96}]{Dui96} J.~J.~Duistermaat,
+{\em Fourier integral operators},
+Progress in Mathematics, {\bf 130} Birkh\"auser Boston (1973).
+
+\bibitem[{HTT\ake08}]{HTT08} R.~Hotta, K.~Takeuchi and T.~Tanisaki,
+\emph{D-modules, Perverse Sheaves, and Representation Theory},
+Progress in Math.  {\bf 236} Birkh\"auser (2008) x+ 407 pp.
+
+\bibitem[{KS\ake 90}]{KS90} M.~Kashiwara and P.~Schapira,
+{\em Sheaves on Manifolds,}
+\ake Grundlehren der Math. Wiss. {\bf 292} Springer-Verlag (1990).
+
+\end{thebibliography}
+
+\end{document}
+
+
