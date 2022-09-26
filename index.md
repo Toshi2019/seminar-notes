@@ -1,1 +1,1 @@
-シンプレクティック幾何[(pdf)](morse-th/morse-th.pdf)
+モース理論[(pdf)](morse-th/morse-th.pdf)
