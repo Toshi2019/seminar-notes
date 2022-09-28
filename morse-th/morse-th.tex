@@ -4,42 +4,53 @@
 %overfullrule
 %\date \ber \er \cmt
 
+%------------------------
+\documentclass[11pt, a4paper, dvipdfmx]{jsarticle}
 
 
-%\documentclass[12pt,leqno]{amsart}
-\documentclass[11pt, a4paper, dvipdfmx, draft]{jsarticle}
-
-
-% ------------------------
-% usepackage
-% ------------------------
-\usepackage{algorithm}
-\usepackage{algorithmic}
-\usepackage{amscd}
-\usepackage{amsfonts}
+%usepackage
+%------------------------
 \usepackage{amsmath}
-\usepackage[psamsfonts]{amssymb}
 \usepackage{amsthm}
-\usepackage{ascmac}
+%\usepackage[psamsfonts]{amssymb}
 \usepackage{color}
-\usepackage{enumerate}
-\usepackage{fancybox}
-\usepackage[stable]{footmisc}
-\usepackage{graphicx}
-\usepackage{listings}
+\usepackage{ascmac}
+\usepackage{amsfonts}
 \usepackage{mathrsfs}
 \usepackage{mathtools}
-\usepackage{otf}
-\usepackage{pifont}
-\usepackage{proof}
-\usepackage{subfigure}
-\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{enumerate}
 \usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{proof}
+\usepackage{listings}
+\usepackage{otf}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{tikz}
 \usepackage[all]{xy}
+\usepackage{amscd}
 
-\usetikzlibrary{cd}
+\usepackage{pb-diagram}
 
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
 
+\usepackage{enumitem}
+
+\usepackage{bbm}
 
 % ================================
 % パッケージを追加する場合のスペース 
@@ -261,9 +272,6 @@
 % =================================
 
 
-
-
-
 % ---------------------------
 % new definition macro
 % ---------------------------
@@ -294,14 +302,14 @@
 
 \begin{document}
 
-\title{モース理論}
+\title{Morse理論}
 \author{Toshi2019}
 
 %\date{December 13, 2021}
 
 \maketitle
 \begin{abstract}
-モース理論の勉強ノート．実質\cite{M01}の行間を埋めたノート．
+Morse理論の勉強ノート．実質\cite{M01}の読書ノート．
 \end{abstract}
 
 %\tableofcontents
@@ -311,8 +319,74 @@
 本格的に勉強する前に，Morse理論をかじっておこうというモチベ．
 なので低次元トポロジーにはそこまで興味があるわけではない．
 
-\section{曲面の場合}
+\section*{凡例}
+\begin{itemize}
+    \item 関数：断りがなければ関数は実数値の写像とする．
+\end{itemize}
 
+\section{曲面上のMorse理論}
+
+\subsection{1変数}
+
+以下，関数はすべて滑らか（$C^{\infty}$級）であるとする．
+$u<v$を実数とし，$y=f(x)$を開区間$(u,v)$で定義された$C^{\infty}$級関数
+とする．$(u,v)$の点$a$が$y=f(x)$の臨界点であるとは，
+\begin{align}
+    f'(a)=0 \label{eq:1}
+\end{align}
+であることをいう．
+
+\begin{Example}
+    1.
+    $f(x)=x^2$とおく．
+    $f'(x)=2x$なので，$f'(0)=0$である．
+    よって$x=0$は$x^2$の臨界点である．
+
+    2.
+    $f(x)=x^3$とおく．
+    $f'(x)=3x^2$なので，$f'(0)=0$である．
+    よって$x=0$は$x^3$の臨界点である．
+\end{Example}
+
+$u<v$を実数とし，
+$y=f(x)$を開区間$(u,v)$で定義された$C^{\infty}$級関数とし，
+$(u,v)$の点$a$を$y=f(x)$の臨界点とする．
+このとき，臨界点$x=a$が退化しているとは
+\begin{align}
+    f''(a)=0
+\end{align}
+であることをいう．
+$x=a$が退化していないとき，非退化な臨界点であるという．
+
+\subsection{2変数}
+
+2変数のときの臨界点は
+\begin{align}
+    \frac{\p f}{\p x}(a,b)=\frac{\p f}{\p y}(a,b)=0
+\end{align}
+で定義する．
+
+\begin{DFN}
+    $(x,y)=p_0=(a,b)$を$f$の臨界点とする．
+    $f$のヘッセ行列
+    \begin{align}
+        H_f(p_0)=
+        \begin{bmatrix*}
+            \dip \frac{\p^2 f}{\p x^2}(p_0)   &\dip\frac{\p^2 f}{\p y\p x}(p_0)\\\\
+            \dip \frac{\p^2 f}{\p x\p y}(p_0) &\dip \frac{\p^2 f}{\p y^2}(p_0)\\
+        \end{bmatrix*}
+    \end{align}
+    の行列式（ヘッシアン）$\det H_f(p_0)$が0のとき，$p_0$は退化している
+    という．
+\end{DFN}
+
+%\section{一般次元への拡張}
+
+%\section{ハンドル体}
+
+%\section{多様体のホモロジー}
+
+%\section{低次元多様体}
 
 %\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
 \begin{thebibliography}{15}
