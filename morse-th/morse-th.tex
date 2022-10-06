@@ -437,7 +437,7 @@ $x=a$が退化していないとき，\textbf{非退化な臨界点} (nondegener
     である．これらの行列式は0でないので，原点は非退化な臨界点である．
 \end{EG}
 
-\begin{EG}
+\begin{EG}\label{eg:n-deg}
     関数$z=xy$は原点を臨界点にもつ．
     Hesse行列は
     \begin{align*}
@@ -458,7 +458,7 @@ $x=a$が退化していないとき，\textbf{非退化な臨界点} (nondegener
     座標$(x,y)$におけるHesse行列を$H_f(p_0)$, 座標$(X,Y)$に
     おけるHesse行列を$\HH_f(p_0)$とする．このとき次が成り立つ．
     \begin{align}
-        \HH_f(p_0)={}^tJ(p_0)H_f(p_0)J(p_0).
+        \HH_f(p_0)={}^t\!J(p_0)H_f(p_0)J(p_0).
     \end{align}
     ただし$J(p_0)$はJacobi行列
     \begin{align}
@@ -493,8 +493,10 @@ $x=a$が退化していないとき，\textbf{非退化な臨界点} (nondegener
         +\left(
             \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p X}
             +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p X}
-        \right)\frac{\p y}{\p X},\\
+        \right)\frac{\p y}{\p X},
         %
+    \end{align*}
+    \begin{align*}
         %
         \frac{\p^2 f}{\p X\p Y} 
         =\frac{\p}{\p X}\frac{\p f}{\p Y}
@@ -561,61 +563,27 @@ $x=a$が退化していないとき，\textbf{非退化な臨界点} (nondegener
             +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p Y}
         \right)\frac{\p y}{\p Y}
     \end{align*}
-    のようなノリで計算すると
+    だから
     \begin{align*}
-        &\HH_f(p_0)\\
-        =&\begin{bmatrix*}
+        \HH_f(p_0)
+        &=\begin{bmatrix*}
             \dip \frac{\p^2 f}{\p X^2} &\dip \frac{\p^2 f}{\p X\p Y}\\\\
             \dip \frac{\p^2 f}{\p Y\p X} &\dip \frac{\p^2 f}{\p Y^2}
         \end{bmatrix*}\\
-        =&\begin{bmatrix*}
-            \left(
-                \frac{\p^2 f}{\p x^2}\frac{\p x}{\p X}
-                +\frac{\p^2 f}{\p y\p x}\frac{\p y}{\p X}
-            \right)\frac{\p x}{\p X}
-            +\left(
-                \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p X}
-                +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p X}
-            \right)\frac{\p y}{\p X} 
-            &\left(
-                \frac{\p^2 f}{\p x^2}\frac{\p x}{\p X}
-                +\frac{\p^2 f}{\p y\p x}\frac{\p y}{\p X}
-            \right)\frac{\p x}{\p Y}
-            +\left(
-                \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p X}
-                +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p X}
-            \right)\frac{\p y}{\p Y}\\\\
-            \left(
-            \frac{\p^2 f}{\p x^2}\frac{\p x}{\p Y}
-            +\frac{\p^2 f}{\p y\p x}\frac{\p y}{\p Y}
-        \right)\frac{\p x}{\p X}
-        +\left(
-            \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p Y}
-            +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p Y}
-        \right)\frac{\p y}{\p X} 
-            &\left(
-                \frac{\p^2 f}{\p x^2}\frac{\p x}{\p Y}
-                +\frac{\p^2 f}{\p y\p x}\frac{\p y}{\p Y}
-            \right)\frac{\p x}{\p Y}
-            +\left(
-                \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p Y}
-                +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p Y}
-            \right)\frac{\p y}{\p Y}
-        \end{bmatrix*}\\
-        =&\begin{bmatrix*}
-            \frac{\p^2 f}{\p x^2}\frac{\p x}{\p X}
+        &=\begin{bmatrix*}
+            \dip \frac{\p^2 f}{\p x^2}\frac{\p x}{\p X}
                 +\frac{\p^2 f}{\p y\p x}\frac{\p y}{\p X}&
-            \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p Y}
-                +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p Y}\\\\
-            \frac{\p^2 f}{\p x^2}\frac{\p x}{\p Y}
+            \dip \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p X}
+                +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p X}\\\\
+            \dip \frac{\p^2 f}{\p x^2}\frac{\p x}{\p Y}
                 +\frac{\p^2 f}{\p y\p x}\frac{\p y}{\p Y}&
-            \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p Y}
+            \dip \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p Y}
                 +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p Y}
         \end{bmatrix*}\begin{bmatrix*}
             \dip \frac{\p x}{\p X} &\dip \frac{\p x}{\p Y}\\\\
             \dip \frac{\p y}{\p X} &\dip \frac{\p y}{\p Y}
         \end{bmatrix*}\\
-        =&\begin{bmatrix*}
+        &=\begin{bmatrix*}
             \dip \frac{\p x}{\p X} &\dip \frac{\p y}{\p X}\\\\
             \dip \frac{\p x}{\p Y} &\dip \frac{\p y}{\p Y}
         \end{bmatrix*}\begin{bmatrix*}
@@ -624,10 +592,72 @@ $x=a$が退化していないとき，\textbf{非退化な臨界点} (nondegener
         \end{bmatrix*}\begin{bmatrix*}
             \dip \frac{\p x}{\p X} &\dip \frac{\p x}{\p Y}\\\\
             \dip \frac{\p y}{\p X} &\dip \frac{\p y}{\p Y}
-        \end{bmatrix*}
-%ここの計算は書き直しが必要
+        \end{bmatrix*}\\
+        &={}^t\!J(p_0)H_f(p_0)J(p_0)
     \end{align*}
+    が成り立つ．
 \end{proof}
+
+\begin{EG}
+    例\ref{eg:n-deg}の関数$z=xy$は座標変換
+    \begin{align}
+        \begin{cases}
+            x=X-Y\\
+            y=X+Y
+        \end{cases}\label{eq:cord-tr}
+    \end{align}
+    によって
+    \begin{align*}
+        xy=(X-Y)(X+Y)=X^2-Y^2
+    \end{align*}
+    と書き直される．
+    これは式\eqref{eq:quadFunc}の$g(x,y)$と同じ関数である．
+    $xy$と$X^2-Y^2$の原点0におけるHesse行列は
+    \begin{align*}
+        \begin{bmatrix*}
+            0&1\\1&0
+        \end{bmatrix*},
+        \begin{bmatrix*}
+            2&0\\0&-2
+        \end{bmatrix*}
+    \end{align*}
+    である．座標変換\eqref{eq:cord-tr}のJacobi行列は
+    \begin{align*}
+        \begin{bmatrix*}
+            1&-1\\1&1
+        \end{bmatrix*}
+    \end{align*}
+    なので
+    \begin{align*}
+        \prescript{t\!}{}{\begin{bmatrix*}
+            1&-1\\1&1
+        \end{bmatrix*}}\begin{bmatrix*}
+            0&1\\1&0
+        \end{bmatrix*}\begin{bmatrix*}
+            1&-1\\1&1
+        \end{bmatrix*}
+        =\begin{bmatrix*}
+            1&1\\1&-1
+        \end{bmatrix*}\begin{bmatrix*}
+            1&-1\\1&1
+        \end{bmatrix*}
+        =\begin{bmatrix*}
+            2&0\\0&-2
+        \end{bmatrix*}
+    \end{align*}
+    が成り立つ．
+\end{EG}
+
+\begin{CRL}
+    平面の点$p_0$が関数$f$の非退化な臨界点であることは
+    座標系の取り方によらない．
+\end{CRL}
+
+\subsection{Morseの補題}
+\subsection{曲面上のMorse関数}
+\subsection{ハンドル分解}
+
+
 %\section{一般次元への拡張}
 
 %\section{ハンドル体}
