@@ -21,7 +21,8 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{fancybox}
-\usepackage{enumerate}
+%\usepackage{enumerate}
+\usepackage{enumitem}
 \usepackage{verbatim}
 \usepackage{subfigure}
 \usepackage{proof}
@@ -654,7 +655,68 @@ $x=a$が退化していないとき，\textbf{非退化な臨界点} (nondegener
 \end{CRL}
 
 \subsection{Morseの補題}
+
+\begin{THM}[Morseの補題]
+    平面の点$p_0$が2変数関数$f$の非退化な臨界点であるとき，
+    $p_0$の周りの局所座標系$(X,Y)$をうまく選んで，
+    その局所座標系によって表した関数$f$の形が，
+    次の3つの標準形のどれかになるようにできる．
+    \begin{enumerate}[label=(\roman*)]
+        \item $f=X^2+Y^2+c$,
+        \item $f=X^2-Y^2+c$,
+        \item $f=-X^2-Y^2+c$.
+    \end{enumerate}
+    ここに，$c$は定数$(=f(p_0))$である．
+    また，$p_0$は$(X,Y)$の原点になっている$(p_0=(0,0))$.
+\end{THM}
+
+\begin{CRL}
+    2変数関数$f$の非退化な臨界点は孤立した臨界点である．
+    （つまり，
+    \begin{align*}
+        C_f\coloneqq\{f\text{の臨界点}\}
+    \end{align*}
+    は平面の離散集合である．）
+\end{CRL}
+
+\begin{DFN}[非退化な臨界点の指数]
+    点$p_0$を2変数$f$の非退化な臨界点とする．
+    点$p_0$の近傍で適当な局所座標系$(x,y)$により$f$を標準形で表したとき，
+    標準形に現れる符号の数を$p_0$の指数という．
+\end{DFN}
+
+%指数のwell-definedness：対角化と慣性律
+
 \subsection{曲面上のMorse関数}
+
+%閉曲面
+%種数
+%S^2, T^2
+%\Sigma_g
+
+$p_0$を曲面$M$の点とする．
+$p_0$が曲面$M$上の関数$f\colon M\to\rr$臨界点であるとは
+$p_0$の局所座標系で
+\begin{align}
+    \frac{\p f}{\p x}(p_0)=0,\quad 
+    \frac{\p f}{\p y}(p_0)=0
+\end{align}
+が成り立つことをいう．
+
+\begin{DFN}[Morse関数]
+    曲面$M$上の関数$f\colon M\to \rr$の臨界点がすべて非退化である
+    とき，$f$は\textbf{Morse関数} (Morse function) であるという．
+\end{DFN}
+
+\begin{EG}[球面の高さ関数]
+    直交座標$(x,y,z)$をもつ3次元空間$\rr^3$のなかの単位球面
+    \begin{align}
+        S^2=\{(x,y,z)\in\rr^3; x^2+y^2+z^2=1\}
+    \end{align}
+    を考える．
+    「高さ関数」$f\colon S^2\to\rr$を$f(x,y,z)=z$で
+    定めると，$f$は$S^2$上のMorse関数である．
+\end{EG}
 \subsection{ハンドル分解}
 
 
