@@ -176,7 +176,7 @@
 \newcommand{\F}{\mcal{F}}
 \newcommand{\X}{\mcal{X}}
 \newcommand{\Y}{\mcal{Y}}
-\newcommand{\Hil}{\mcal{H}}
+\newcommand{\HH}{\mcal{H}}
 \newcommand{\RKHS}{\Hil_{k}}
 \newcommand{\Loss}{\mcal{L}_{D}}
 \newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
@@ -309,26 +309,32 @@
 
 \maketitle
 \begin{abstract}
-Morse理論の勉強ノート．実質\cite{M01}の読書ノート．
+2022年度秋セメスターで行うMorse理論ゼミのための勉強ノート．
+実質\cite{M01}の読書ノート．
 \end{abstract}
 
 %\tableofcontents
 \section*{はじめに}
-個人的なモチベはシンプレクティック幾何．
-どうやらMorse理論はシンプレクティック幾何の原型になっているらしいので，
+個人的なモチベはシンプレクティック幾何と層の超局所理論に由来する．
+前者に関して，どうやらMorse理論は
+シンプレクティック幾何の原型になっているらしいので，
 本格的に勉強する前に，Morse理論をかじっておこうというモチベ．
+後者に関して，層の超局所理論は層理論における
+Morse理論という見方ができるらしい．
+そういった幾何的な見方がわかるようになりたいというのも一つのモチベ．
 なので低次元トポロジーにはそこまで興味があるわけではない．
 
 \section*{凡例}
 \begin{itemize}
     \item 関数：断りがなければ関数は実数値の写像とする．
+    \item 偏微分作用素：$\p/{\p x}$を$\p_x$で表すことがある．
 \end{itemize}
 
 \section{曲面上のMorse理論}
 
-\subsection{1変数}
+\subsection{関数の臨界点}
 
-以下，関数はすべて滑らか（$C^{\infty}$級）であるとする．
+%以下，関数はすべて滑らか（$C^{\infty}$級）であるとする．
 $u<v$を実数とし，$y=f(x)$を開区間$(u,v)$で定義された$C^{\infty}$級関数
 とする．$(u,v)$の点$a$が$y=f(x)$の臨界点であるとは，
 \begin{align}
@@ -336,50 +342,292 @@ $u<v$を実数とし，$y=f(x)$を開区間$(u,v)$で定義された$C^{\infty}$
 \end{align}
 であることをいう．
 
-\begin{Example}
-    1.
-    $f(x)=x^2$とおく．
-    $f'(x)=2x$なので，$f'(0)=0$である．
-    よって$x=0$は$x^2$の臨界点である．
-
-    2.
-    $f(x)=x^3$とおく．
-    $f'(x)=3x^2$なので，$f'(0)=0$である．
-    よって$x=0$は$x^3$の臨界点である．
-\end{Example}
-
 $u<v$を実数とし，
 $y=f(x)$を開区間$(u,v)$で定義された$C^{\infty}$級関数とし，
 $(u,v)$の点$a$を$y=f(x)$の臨界点とする．
-このとき，臨界点$x=a$が退化しているとは
+このとき，$x=a$が$y=f(x)$の\textbf{退化した臨界点} (degenerate critical point) とは
 \begin{align}
     f''(a)=0
 \end{align}
 であることをいう．
-$x=a$が退化していないとき，非退化な臨界点であるという．
+$x=a$が退化していないとき，\textbf{非退化な臨界点} (nondegenerate critical point) であるという．
 
-\subsection{2変数}
 
-2変数のときの臨界点は
-\begin{align}
-    \frac{\p f}{\p x}(a,b)=\frac{\p f}{\p y}(a,b)=0
-\end{align}
-で定義する．
+\begin{Example}
+    1.
+    $y=f(x)=x^2$とおく．
+    $f'(x)=2x$なので，$f'(0)=0$である．
+    $f''(x)=2$なので，$f''(0)\neq0$である．
+    よって$x=0$は$y=x^2$の非退化な臨界点である．
+
+    2.
+    自然数$n\geqq 3$に対し$y=f(x)=x^n$とおく．
+    $f'(x)=nx^{n-1}$なので，$f'(0)=0$である．
+    $f''(x)=n(n-1)x^{n-2}$なので，$f''(0)=0$である．
+    したがって$x=0$は$y=x^n$の退化した臨界点である．
+\end{Example}
+
+
+\subsection{Hesse行列}
 
 \begin{DFN}
-    $(x,y)=p_0=(a,b)$を$f$の臨界点とする．
+    $U$を平面$\rr^2$の開集合とする．
+    $z=f(x,y)$を$U$で定義された$C^{\infty}$級関数とする．
+    $U$の点$p_0=(x_0,y_0)$が$z=f(x,y)$の臨界点であるとは
+    \begin{align}
+        f'(p_0)=\left(\frac{\p f}{\p x}(p_0)\quad \frac{\p f}{\p y}(p_0)\right)=(0,0) \label{eq:crit2}
+    \end{align}
+    が成り立つことをいう．
+\end{DFN}
+
+\begin{EG}
+    平面の原点$0=(0,0)$は
+    \begin{align}
+        z=f(x,y)=x^2+y^2,&& z=g(x,y)=x^2-y^2,&& z=h(x,y)=-x^2-y^2 \label{eq:quadFunc}
+    \end{align}
+    の臨界点である．実際
+    \begin{align*}
+        f'(0,0) &= \Big(f'_x(0,0)\quad f'_y(0,0)\Big)=(2x,2y)|_{(x,y)=(0,0)}=(0,0),  \\
+        g'(0,0) &= \Big(g'_x(0,0)\quad g'_y(0,0)\Big)=(2x,-2y)|_{(x,y)=(0,0)}=(0,0),  \\
+        h'(0,0) &= \Big(h'_x(0,0)\quad h'_y(0,0)\Big)=(-2x,-2y)|_{(x,y)=(0,0)}=(0,0)
+%        &\p_xg(x,y)=2x, \quad \p_yg(x,y)=-2y, \\
+%        &\p_xh(x,y)=-2x,\quad \p_yh(x,y)=-2y 
+    \end{align*}
+    となるので原点はこれらの臨界点である．
+\end{EG}
+
+\begin{DFN}
+    $(x,y)=p_0$を$f$の臨界点とする．
     $f$のヘッセ行列
     \begin{align}
         H_f(p_0)=
         \begin{bmatrix*}
-            \dip \frac{\p^2 f}{\p x^2}(p_0)   &\dip\frac{\p^2 f}{\p y\p x}(p_0)\\\\
-            \dip \frac{\p^2 f}{\p x\p y}(p_0) &\dip \frac{\p^2 f}{\p y^2}(p_0)\\
+            \dip \frac{\p^2 f}{\p x^2}(p_0)   &\dip\frac{\p^2 f}{\p x\p y}(p_0)\\\\
+            \dip \frac{\p^2 f}{\p y\p x}(p_0) &\dip \frac{\p^2 f}{\p y^2}(p_0)\\
         \end{bmatrix*}
     \end{align}
-    の行列式（ヘッシアン）$\det H_f(p_0)$が0のとき，$p_0$は退化している
-    という．
+    の行列式（ヘッシアン）
+    \begin{align}
+        \det H_f(p_0) = \frac{\p^2 f}{\p x^2}(p_0)\dip \frac{\p^2 f}{\p y^2}(p_0)
+        -\left(\frac{\p^2 f}{\p x\p y}(p_0)\right)^2 \label{eq:hessian}
+    \end{align}
+    が0のとき，$p_0$は退化しているという．
+    そうでないとき，$p_0$は非退化な臨界点という．
 \end{DFN}
 
+\begin{EG}
+    式\eqref{eq:quadFunc}の関数たちのHesse行列は
+    \begin{align*}
+        H_f(0)&=
+        \begin{bmatrix*}
+            \dip 2&0\\
+            \dip 0&2
+        \end{bmatrix*},\\
+        H_g(0)&=
+        \begin{bmatrix*}
+            \dip 2 & 0\\
+            \dip 0 &-2
+        \end{bmatrix*},\\
+        H_h(0)&=
+        \begin{bmatrix*}
+            \dip -2& 0\\
+            \dip 0 &-2
+        \end{bmatrix*}
+    \end{align*}
+    である．これらの行列式は0でないので，原点は非退化な臨界点である．
+\end{EG}
+
+\begin{EG}
+    関数$z=xy$は原点を臨界点にもつ．
+    Hesse行列は
+    \begin{align*}
+        H(0)=\begin{bmatrix*}
+            0&1\\
+            1&0
+        \end{bmatrix*}
+    \end{align*}
+    で$\det H(0)=-1\neq0$なので0は非退化な臨界点である．
+\end{EG}
+
+\begin{EG}
+    関数$z=x^2+y^3$は原点を退化した臨界点としてもつ．
+\end{EG}
+
+\begin{LMM}
+    平面の点$p_0$を関数$z=f(x,y)$の臨界点とする．
+    座標$(x,y)$におけるHesse行列を$H_f(p_0)$, 座標$(X,Y)$に
+    おけるHesse行列を$\HH_f(p_0)$とする．このとき次が成り立つ．
+    \begin{align}
+        \HH_f(p_0)={}^tJ(p_0)H_f(p_0)J(p_0).
+    \end{align}
+    ただし$J(p_0)$はJacobi行列
+    \begin{align}
+        J(p_0)=
+        \begin{bmatrix*}
+            \dip \frac{\p x}{\p X}(p_0)   &\dip\frac{\p x}{\p Y}(p_0)\\\\
+            \dip \frac{\p y}{\p X}(p_0) &\dip \frac{\p y}{\p Y}(p_0)\\
+        \end{bmatrix*}
+        \label{eq:jacbiMet}
+    \end{align}
+    である．
+\end{LMM}
+
+\begin{proof}[\textbf{証明}]
+    \begin{align*}
+        \frac{\p^2 f}{\p X^2} 
+        =\frac{\p}{\p X}\frac{\p f}{\p X}
+        &=\frac{\p}{\p X}\left(
+            \frac{\p f}{\p x}\frac{\p x}{\p X} 
+            +\frac{\p f}{\p y}\frac{\p y}{\p X}
+        \right)\\
+        &=\left(
+            \frac{\p}{\p X}\frac{\p f}{\p x}
+        \right)\frac{\p x}{\p X}
+        +\left(
+            \frac{\p}{\p X}\frac{\p f}{\p y}
+        \right)\frac{\p y}{\p X}\\
+        &=\left(
+            \frac{\p^2 f}{\p x^2}\frac{\p x}{\p X}
+            +\frac{\p^2 f}{\p y\p x}\frac{\p y}{\p X}
+        \right)\frac{\p x}{\p X}
+        +\left(
+            \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p X}
+            +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p X}
+        \right)\frac{\p y}{\p X},\\
+        %
+        %
+        \frac{\p^2 f}{\p X\p Y} 
+        =\frac{\p}{\p X}\frac{\p f}{\p Y}
+        &=\frac{\p}{\p X}\left(
+            \frac{\p f}{\p x}\frac{\p x}{\p Y} 
+            +\frac{\p f}{\p y}\frac{\p y}{\p Y}
+        \right)\\
+        &=\left(
+            \frac{\p}{\p X}\frac{\p f}{\p x}
+        \right)\frac{\p x}{\p Y}
+        +\left(
+            \frac{\p}{\p X}\frac{\p f}{\p y}
+        \right)\frac{\p y}{\p Y}\\
+        &=\left(
+            \frac{\p^2 f}{\p x^2}\frac{\p x}{\p X}
+            +\frac{\p^2 f}{\p y\p x}\frac{\p y}{\p X}
+        \right)\frac{\p x}{\p Y}
+        +\left(
+            \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p X}
+            +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p X}
+        \right)\frac{\p y}{\p Y},\\
+        %
+        %
+        \frac{\p^2 f}{\p Y\p X} 
+        =\frac{\p}{\p Y}\frac{\p f}{\p X}
+        &=\frac{\p}{\p Y}\left(
+            \frac{\p f}{\p x}\frac{\p x}{\p X} 
+            +\frac{\p f}{\p y}\frac{\p y}{\p X}
+        \right)\\
+        &=\left(
+            \frac{\p}{\p Y}\frac{\p f}{\p x}
+        \right)\frac{\p x}{\p X}
+        +\left(
+            \frac{\p}{\p Y}\frac{\p f}{\p y}
+        \right)\frac{\p y}{\p X}\\
+        &=\left(
+            \frac{\p^2 f}{\p x^2}\frac{\p x}{\p Y}
+            +\frac{\p^2 f}{\p y\p x}\frac{\p y}{\p Y}
+        \right)\frac{\p x}{\p X}
+        +\left(
+            \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p Y}
+            +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p Y}
+        \right)\frac{\p y}{\p X},\\
+        %
+        %
+        \frac{\p^2 f}{\p Y^2} 
+        =\frac{\p}{\p Y}\frac{\p f}{\p Y}
+        &=\frac{\p}{\p Y}\left(
+            \frac{\p f}{\p x}\frac{\p x}{\p Y} 
+            +\frac{\p f}{\p y}\frac{\p y}{\p Y}
+        \right)\\
+        &=\left(
+            \frac{\p}{\p Y}\frac{\p f}{\p x}
+        \right)\frac{\p x}{\p Y}
+        +\left(
+            \frac{\p}{\p Y}\frac{\p f}{\p y}
+        \right)\frac{\p y}{\p Y}\\
+        &=\left(
+            \frac{\p^2 f}{\p x^2}\frac{\p x}{\p Y}
+            +\frac{\p^2 f}{\p y\p x}\frac{\p y}{\p Y}
+        \right)\frac{\p x}{\p Y}
+        +\left(
+            \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p Y}
+            +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p Y}
+        \right)\frac{\p y}{\p Y}
+    \end{align*}
+    のようなノリで計算すると
+    \begin{align*}
+        &\HH_f(p_0)\\
+        =&\begin{bmatrix*}
+            \dip \frac{\p^2 f}{\p X^2} &\dip \frac{\p^2 f}{\p X\p Y}\\\\
+            \dip \frac{\p^2 f}{\p Y\p X} &\dip \frac{\p^2 f}{\p Y^2}
+        \end{bmatrix*}\\
+        =&\begin{bmatrix*}
+            \left(
+                \frac{\p^2 f}{\p x^2}\frac{\p x}{\p X}
+                +\frac{\p^2 f}{\p y\p x}\frac{\p y}{\p X}
+            \right)\frac{\p x}{\p X}
+            +\left(
+                \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p X}
+                +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p X}
+            \right)\frac{\p y}{\p X} 
+            &\left(
+                \frac{\p^2 f}{\p x^2}\frac{\p x}{\p X}
+                +\frac{\p^2 f}{\p y\p x}\frac{\p y}{\p X}
+            \right)\frac{\p x}{\p Y}
+            +\left(
+                \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p X}
+                +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p X}
+            \right)\frac{\p y}{\p Y}\\\\
+            \left(
+            \frac{\p^2 f}{\p x^2}\frac{\p x}{\p Y}
+            +\frac{\p^2 f}{\p y\p x}\frac{\p y}{\p Y}
+        \right)\frac{\p x}{\p X}
+        +\left(
+            \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p Y}
+            +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p Y}
+        \right)\frac{\p y}{\p X} 
+            &\left(
+                \frac{\p^2 f}{\p x^2}\frac{\p x}{\p Y}
+                +\frac{\p^2 f}{\p y\p x}\frac{\p y}{\p Y}
+            \right)\frac{\p x}{\p Y}
+            +\left(
+                \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p Y}
+                +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p Y}
+            \right)\frac{\p y}{\p Y}
+        \end{bmatrix*}\\
+        =&\begin{bmatrix*}
+            \frac{\p^2 f}{\p x^2}\frac{\p x}{\p X}
+                +\frac{\p^2 f}{\p y\p x}\frac{\p y}{\p X}&
+            \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p Y}
+                +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p Y}\\\\
+            \frac{\p^2 f}{\p x^2}\frac{\p x}{\p Y}
+                +\frac{\p^2 f}{\p y\p x}\frac{\p y}{\p Y}&
+            \frac{\p^2 f}{\p x\p y}\frac{\p x}{\p Y}
+                +\frac{\p^2 f}{\p y^2}\frac{\p y}{\p Y}
+        \end{bmatrix*}\begin{bmatrix*}
+            \dip \frac{\p x}{\p X} &\dip \frac{\p x}{\p Y}\\\\
+            \dip \frac{\p y}{\p X} &\dip \frac{\p y}{\p Y}
+        \end{bmatrix*}\\
+        =&\begin{bmatrix*}
+            \dip \frac{\p x}{\p X} &\dip \frac{\p y}{\p X}\\\\
+            \dip \frac{\p x}{\p Y} &\dip \frac{\p y}{\p Y}
+        \end{bmatrix*}\begin{bmatrix*}
+            \dip \frac{\p^2 f}{\p x^2} &\dip \frac{\p^2 f}{\p x\p y}\\\\
+            \dip \frac{\p^2 f}{\p y\p x} &\dip \frac{\p^2 f}{\p y^2}
+        \end{bmatrix*}\begin{bmatrix*}
+            \dip \frac{\p x}{\p X} &\dip \frac{\p x}{\p Y}\\\\
+            \dip \frac{\p y}{\p X} &\dip \frac{\p y}{\p Y}
+        \end{bmatrix*}
+%ここの計算は書き直しが必要
+    \end{align*}
+\end{proof}
 %\section{一般次元への拡張}
 
 %\section{ハンドル体}
