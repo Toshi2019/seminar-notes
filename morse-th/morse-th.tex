@@ -716,7 +716,70 @@ $p_0$の局所座標系で
     を考える．
     「高さ関数」$f\colon S^2\to\rr$を$f(x,y,z)=z$で
     定めると，$f$は$S^2$上のMorse関数である．
+
+    実際，$p_0\in S^2$が$f$の臨界点
+    となるのは$z=\pm \sqrt{1-x^2-y^2}$の微分
+    \begin{align*}
+        f'(p_0)=\left(\frac{x}{\sqrt{1-x^2-y^2}}\quad \frac{y}{\sqrt{1-x^2-y^2}}\right)
+    \end{align*}
+    が0となるときである．よって$p_0$が臨界点となるためには$(x,y)=(0,0)$となることが必要十分である．
+    よって，$f$の臨界点は$p_0=(0,0,1)$, $q_0=(0,0,-1)$の2点である．
+    
+    あとはHessianの計算．
+    %\begin{align*}
+    %    H_f(p_0)=
+    %    \begin{bmatrix*}
+    %        \dip \frac{1\cdot\sqrt{1-x^2-y^2}-x\frac{-2x}{2\sqrt{1-x^2-y^2}}}{1-x^2-y^2}
+    %    \end{bmatrix*}
+    %\end{align*}
 \end{EG}
+
+\begin{THM}
+    閉曲面$M$の上に，
+    非退化な臨界点が2つだけのMorse関数$f\colon M\to \rr$が存在すれば，
+    $M$は球面$S^2$に同相である．
+\end{THM}
+
+2つの図形$X$と$Y$が\textbf{同相} (homeomorphic) であるとは，
+\textbf{同相写像} (homeomorphism)，すなわち
+可逆な連続写像$h\colon X\to Y$で
+その逆写像$h^{-1}\colon Y\to X$が連続なものが
+存在することをいう．
+
+\begin{DFN}
+    曲面$M$から曲面$N$への
+    同相写像$h\colon M\to N$\textbf{微分同相写像} (diffeomorphism) であるとは，
+    $h$と逆写像$h^{-1}$がともに$C^{\infty}$級であることをいう．
+\end{DFN}
+
+\begin{THM}[最大値の定理]
+    $f\colon X\to \rr$をコンパクト空間$X$の上の連続関数値すると，
+    $X$の点$p_0$と$q_0$で$f(p_0)$が最大値となり，$f(q_0)$が最小値
+    となるものが存在する．
+\end{THM}
+
+\begin{LMM}
+    $M_0$上に$C^{\infty}$級関数$f\colon M_0\to\rr$で$M_0$の
+    2つの境界$C(p_0)$と$C(q_0)$の上で一定値をとるとする．
+    また，$M_0$上に$f$の臨界点はないとする．
+    このとき，$M_0$は1つの境界$C(q_0)$と単位閉区間$[0,1]$の
+    直積$C(q_0)\times[0,1]$に微分同相である．
+\end{LMM}
+
+\begin{LMM}2つの円盤$D_0$と$D_1$の境界の間に微分同相写像
+    \begin{align}
+        k\colon\p D_0\to\p D_1
+    \end{align}
+    が与えられると，$k$は円盤の間の微分同相写像
+    \begin{align}
+        K\colon D_0\to D_1
+    \end{align}
+    に拡張できる．
+\end{LMM}
+
+\begin{LMM}
+    閉曲面$M$上のMorse関数$f\colon M\to\rr$の臨界点は有限個しかない．
+\end{LMM}
 \subsection{ハンドル分解}
 
 
