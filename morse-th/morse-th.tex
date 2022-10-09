@@ -260,6 +260,7 @@
 \newtheorem{AXM}{公理}[section]
 \newtheorem{DFN}[Axiom]{定義}
 \newtheorem{THM}[Axiom]{定理}
+\newtheorem*{THM*}{定理}
 \newtheorem{PRP}[Axiom]{命題}
 \newtheorem{LMM}[Axiom]{補題}
 \newtheorem{CRL}[Axiom]{系}
@@ -318,10 +319,15 @@
 \section*{はじめに}
 個人的なモチベはシンプレクティック幾何と層の超局所理論に由来する．
 前者に関して，どうやらMorse理論は
-シンプレクティック幾何の原型になっているらしいので，
+シンプレクティック幾何の原型になっている\footnote{
+    シンプレクティック幾何の中でも，
+    とくにFloer理論というものの原型らしく，
+    無限次元のMorse理論をやることに
+    対応しているとかいないとか．(\cite{Ono06}参照)
+}らしいので，
 本格的に勉強する前に，Morse理論をかじっておこうというモチベ．
 後者に関して，層の超局所理論は層理論における
-Morse理論という見方ができるらしい．
+Morse理論という見方ができるらしい\cite{Ike21}.
 そういった幾何的な見方がわかるようになりたいというのも一つのモチベ．
 なので低次元トポロジーにはそこまで興味があるわけではない．
 
@@ -720,18 +726,42 @@ $p_0$の局所座標系で
     実際，$p_0\in S^2$が$f$の臨界点
     となるのは$z=\pm \sqrt{1-x^2-y^2}$の微分
     \begin{align*}
-        f'(p_0)=\left(\frac{x}{\sqrt{1-x^2-y^2}}\quad \frac{y}{\sqrt{1-x^2-y^2}}\right)
+        f'(p_0)=\left(\frac{\mp x}{\sqrt{1-x^2-y^2}}\quad \frac{\mp y}{\sqrt{1-x^2-y^2}}\right)
     \end{align*}
-    が0となるときである．よって$p_0$が臨界点となるためには$(x,y)=(0,0)$となることが必要十分である．
+    が0となるときである．
+    よって$p_0$が臨界点となるためには$(x,y)=(0,0)$となることが
+    必要十分である．
     よって，$f$の臨界点は$p_0=(0,0,1)$, $q_0=(0,0,-1)$の2点である．
     
     あとはHessianの計算．
-    %\begin{align*}
-    %    H_f(p_0)=
-    %    \begin{bmatrix*}
-    %        \dip \frac{1\cdot\sqrt{1-x^2-y^2}-x\frac{-2x}{2\sqrt{1-x^2-y^2}}}{1-x^2-y^2}
-    %    \end{bmatrix*}
-    %\end{align*}
+    \begin{align*}
+        H_f(p_0)=
+        \frac{1}{(1-x^2-y^2)^{3/2}}
+        \left.\begin{bmatrix*}
+            -1+y^2 & -xy\\
+            -xy & -1+x^2
+        \end{bmatrix*}
+        \right|_{(x,y)=(0,0)}
+        =\begin{bmatrix*}
+            -1&0\\0&-1
+        \end{bmatrix*}
+    \end{align*}
+    なので$\det H_f(p_0)=1\neq 0$である．
+    同様に
+    \begin{align*}
+        H_f(q_0)=
+        \frac{1}{(1-x^2-y^2)^{3/2}}
+        \left.\begin{bmatrix*}
+            1-y^2 & xy\\
+            xy & 1-x^2
+        \end{bmatrix*}
+        \right|_{(x,y)=(0,0)}
+        =\begin{bmatrix*}
+            1&0\\0&1
+        \end{bmatrix*}
+    \end{align*}
+    なので$\det H_f(q_0)=1\neq 0$である．
+    したがって，$f$は$S^2$上のMorse関数である．
 \end{EG}
 
 \begin{THM}
@@ -777,13 +807,139 @@ $p_0$の局所座標系で
     に拡張できる．
 \end{LMM}
 
-\begin{LMM}
+\begin{LMM}\label{lmm:crit-fin}
     閉曲面$M$上のMorse関数$f\colon M\to\rr$の臨界点は有限個しかない．
 \end{LMM}
 \subsection{ハンドル分解}
 
+$M$: 閉曲面，$f\colon M\to\rr$: Morse関数とし，$M$: 連結と仮定する．
 
-%\section{一般次元への拡張}
+$M$の「部分曲面」$M_t$を
+\begin{align}
+    M_t=\{p\in M; f(p)\leqq t\}
+\end{align}
+で定める．（「劣位集合」とか言ったりするらしい．）$f(p)=t$である点$p$の
+集合$L_t$を等高線という．$L_t=\p M_t$である．
+
+$M$: コンパクトなので
+\begin{align*}
+    A=\max_{p\in M}f(p),\quad a=\min_{p\in M}f(p)
+\end{align*}
+とおける．$t<a$に対し$M_t=\emp$, $t>A$に対し$M_t=M$である．
+
+\begin{DFN}
+    実数$c_0$が$f$の\textbf{臨界値}(critical value) であるとは，
+    $c_0$が$f$のある臨界点$p_0$での関数値になっていることをいう．
+\end{DFN}
+
+\begin{LMM}
+    $b<c$を実数とする．閉区間$[b,c]$に$f$の臨界値が含まれないとする．
+    このとき$M_b\cong M_c$（微分同相）である．
+\end{LMM}
+
+\begin{proof}[証明]
+    $a$, $A$は$f$の臨界点なので，$a<b<c<A$としてよい．
+    \begin{align}
+        M_{[b,c]}\coloneqq\{p\in M; b\leqq f(p)\leqq c\}
+    \end{align}
+    とおく．
+    \begin{align}
+        M_{[b,c]}\cup M_{b}=M_c
+    \end{align}
+    である．仮定より$M_{[b,c]}$は臨界点をもたない．
+    補題\ref{lmm:crit-fin}より$f$の臨界点は有限個なので，
+    実数$\e>0$で$M_{[b-\e,c]}$が$f$の臨界点を含まないもの
+    が存在する．定理\ref{thm:crit-diff}を用いると，
+    \begin{align*}
+        M_{[b-\e,c]}\cong f^{-1}(b-\e)\times[0,1]=L_{b-\e}\times[0,1]
+    \end{align*}
+    が成り立つ．
+    $M_{[b-\e,b]}\subset M_{[b-\e,c]}$なので$M_{[b-\e,b]}$にも
+    臨界点はない．再び定理\ref{thm:crit-diff}より，
+    \begin{align*}
+        M_{[b-\e,b]}\cong f^{-1}(b-\e)\times[0,1]=L_{b-\e}\times[0,1]
+    \end{align*}
+    が成り立つ．
+    したがって微分同相$h\colon M_{[b-\e,b]}\overset{\sim}{\longrightarrow} M_{[b-\e,b]}$が存在する．
+    $\mapres{h}{L_{b-\e}}\colon L_{b-\e}\to L_{b-\e}$は恒等写像である．
+    $\id_{M_{b-\e}}$と$L_{b-\e}$で貼り合わせると
+    \begin{align*}
+        H=\id\cup h\colon M_{b-\e}\cup M_{[b-\e,b]}
+        \overset{\sim}{\longrightarrow}
+        \colon M_{b-\e}\cup M_{[b-\e,c]}
+    \end{align*}
+    が得られる．
+\end{proof}
+
+以下，$c_0$を$f$の臨界値とし$p_0$を$f$の
+臨界点で$f(p_0)=c_0$となるただ一つのものとする．
+このとき，実数$\e>0$で$M_{[c_0-\e,c_0+\e]}$に
+属する臨界値が$c_0$のみであるものが存在する．
+$p_0$の指数で場合分けする．
+
+\subsubsection{$p_0$の指数が0の場合}
+$p_0$のまわりの局所座標$(x,y)$で
+\begin{align*}
+    f(x,y)=x^2+y^2+c_0
+\end{align*}
+とかける．
+$c_0$が$f$の最小値のとき$M_{c_0-\e}=\emp$であり
+\begin{align}
+    \begin{aligned}
+        M_{c_0+\e}&=\{p\in M; f(p)\leqq c_0+\e\}\\
+        &=\{(x,y); x^2+y^2\leqq\e\}    
+    \end{aligned}
+\end{align}
+なので$M_{c_0+\e}\cong D^2$. 
+
+$c_0$が空集合でないときは
+\begin{align}
+    M_{c_0+\e}\cong M_{c_0-\e}\sqcup D^2.
+\end{align}
+
+\subsubsection{$p_0$の指数が1の場合}
+
+$p_0$のまわりの局所座標$(x,y)$で
+\begin{align*}
+    f(x,y)=-x^2+y^2+c_0
+\end{align*}
+とかける．
+$D^1=[-1,1]$とおく．$\p D^1=\{-1,1\}$である．
+\begin{align}
+    M_{c_0+\e}\cong M_{c_0-\e}\cup D^1\times D^1.
+\end{align}
+
+\subsubsection{$p_0$の指数が2の場合}
+
+$p_0$のまわりの局所座標$(x,y)$で
+\begin{align*}
+    f(x,y)=-x^2-y^2+c_0
+\end{align*}
+とかける．
+\begin{align}
+    \begin{aligned}
+        M_{c_0-\e}&=
+        \{p\in M; f(p)\leqq c-\e\}\\
+        &=\{(x,y); -x^2-y^2\leqq -\e\}\\
+        &=\{(x,y); x^2+y^2\geqq \e\}
+    \end{aligned}
+\end{align}
+である．
+\begin{align}
+    M_{c_0+\e}\cong M_{c_0-\e}\cup D^2.
+\end{align}
+
+\subsubsection{ハンドル分解}
+
+\begin{THM}
+    Morse関数$f\colon M\to\rr$が存在するとき，
+    閉曲面$M$は有限個の0,1,2ハンドルの和として表される．
+\end{THM}
+\section{一般次元への拡張}
+
+\begin{THM}\label{thm:crit-diff}
+    $[a,b]$に$f$の臨界値がなければ$M_{[a,b]}\cong f^{-1}(a)\times[0,1]$
+\end{THM}
 
 %\section{ハンドル体}
 
@@ -794,7 +950,11 @@ $p_0$の局所座標系で
 %\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
 \begin{thebibliography}{15}
 
-\bibitem[M01]{M01} 松本幸夫, Morse理論の基礎, 岩波講座 現代数学の基礎 {\bf 27}, 岩波書店 (2001).
+\bibitem[M01]{M01} 松本幸夫, Morse理論の基礎, 岩波講座 現代数学の基礎 {\bf 27}, 岩波書店 (2001). 
+
+\bibitem[Ike21]{Ike21} 池祐一, 超局所層理論入門, \url{https://sites.google.com/view/microlocaldustbox/}. 
+
+\bibitem[Ono06]{Ono06} 小野薫, シンプレクティック幾何学におけるFloer理論, 数学 \textbf{58} (2006), pp.113--132.
 
 \end{thebibliography}
 
