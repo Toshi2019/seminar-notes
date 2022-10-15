@@ -306,6 +306,7 @@
 
 \title{Morse理論}
 \author{Toshi2019}
+\date{}
 
 %\date{December 13, 2021}
 
@@ -335,6 +336,7 @@ Morse理論という見方ができるらしい\cite{Ike21}.
 \begin{itemize}
     \item 関数：断りがなければ関数は実数値の写像とする．
     \item 偏微分作用素：$\p/{\p x}$を$\p_x$で表すことがある．
+    \item $\square$は証明の終わりか証明略を表す．
 \end{itemize}
 
 \section{曲面上のMorse理論}
@@ -692,10 +694,29 @@ $x=a$が退化していないとき，\textbf{非退化な臨界点} (nondegener
 \end{DFN}
 
 %指数のwell-definedness：対角化と慣性律
+\begin{center}
+    {\Large{\centering{2022/10/09 ここまで}}}    
+\end{center}
+\subsection{曲面上のMorse関数（10/16ここから）}
 
-\subsection{曲面上のMorse関数}
+$\rr^3$内の部分集合$X$が曲面であるとは，
+$X$の各点$p$に対して，
+$p$を通る平面$X_p$と$X_p$における点$p$の近傍$V$上で
+定義された関数$f$で次の条件を満たすものが存在することをいう．
+\begin{enumerate}[label=(\roman*)]
+    \item $p$を原点とし，$X_p$を$xy$平面とする$xyz$直交座標に関して，
+    関数$f$を$x=f(x,y)$と表したとき
+    \begin{align*}
+        f(0,0)=0,\quad f'_x(0,0)=f'_y(0,0)=0
+    \end{align*}
+    が成り立つ．
+    \item $\rr^3$における点$p$の近傍$U$で
+    \begin{align*}
+        X\cap U=\{(x,y,f(x,y)); (x,y)\in V\}
+    \end{align*}
+\end{enumerate}
 
-%閉曲面
+閉曲面は境界のない曲面で有界閉（コンパクト）集合であるもののこと．
 %種数
 %S^2, T^2
 %\Sigma_g
@@ -764,10 +785,10 @@ $p_0$の局所座標系で
     したがって，$f$は$S^2$上のMorse関数である．
 \end{EG}
 
-\begin{THM}
+\begin{THM}\label{thm:s2}
     閉曲面$M$の上に，
     非退化な臨界点が2つだけのMorse関数$f\colon M\to \rr$が存在すれば，
-    $M$は球面$S^2$に同相である．
+    $M$は球面$S^2$に微分同相である．
 \end{THM}
 
 2つの図形$X$と$Y$が\textbf{同相} (homeomorphic) であるとは，
@@ -781,13 +802,16 @@ $p_0$の局所座標系で
     同相写像$h\colon M\to N$\textbf{微分同相写像} (diffeomorphism) であるとは，
     $h$と逆写像$h^{-1}$がともに$C^{\infty}$級であることをいう．
 \end{DFN}
+\begin{proof}[\upshape\textbf{定理\ref{thm:s2}の証明}]
 
 \begin{THM}[最大値の定理]
-    $f\colon X\to \rr$をコンパクト空間$X$の上の連続関数値すると，
+    $f\colon X\to \rr$をコンパクト空間$X$の上の連続関数とすると，
     $X$の点$p_0$と$q_0$で$f(p_0)$が最大値となり，$f(q_0)$が最小値
     となるものが存在する．
 \end{THM}
-
+\begin{proof}[\textbf{証明}]
+    \cite[命題6,3,3]{Sai09}, \cite[定理23.3]{Mo81}等参照．
+\end{proof}
 \begin{LMM}
     $M_0$上に$C^{\infty}$級関数$f\colon M_0\to\rr$で$M_0$の
     2つの境界$C(p_0)$と$C(q_0)$の上で一定値をとるとする．
@@ -810,6 +834,9 @@ $p_0$の局所座標系で
 \begin{LMM}\label{lmm:crit-fin}
     閉曲面$M$上のMorse関数$f\colon M\to\rr$の臨界点は有限個しかない．
 \end{LMM}
+
+\end{proof}
+
 \subsection{ハンドル分解}
 
 $M$: 閉曲面，$f\colon M\to\rr$: Morse関数とし，$M$: 連結と仮定する．
@@ -955,6 +982,10 @@ $p_0$のまわりの局所座標$(x,y)$で
 \bibitem[Ike21]{Ike21} 池祐一, 超局所層理論入門, \url{https://sites.google.com/view/microlocaldustbox/}. 
 
 \bibitem[Ono06]{Ono06} 小野薫, シンプレクティック幾何学におけるFloer理論, 数学 \textbf{58} (2006), pp.113--132.
+
+\bibitem[Sai09]{Sai09} 斎藤毅, 集合と位相, 東京大学出版会, 2009. 
+
+\bibitem[Mo81]{Mo81} 森田紀一, 位相空間論, 岩波書店, 1981. 
 
 \end{thebibliography}
 
