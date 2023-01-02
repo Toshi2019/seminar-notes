@@ -1,6 +1,8 @@
 %このファイルは日本語文字を含みます.
-\BOOKMARK [1][-]{section.1}{複素関数論}{}% 1
+\BOOKMARK [1][-]{section.1}{リーマン面}{}% 1
 \BOOKMARK [2][-]{subsection.1.1}{リーマン球面}{section.1}% 2
 \BOOKMARK [2][-]{subsection.1.2}{貼りあわせ関数}{section.1}% 3
 \BOOKMARK [2][-]{subsection.1.3}{複素多様体とリーマン面}{section.1}% 4
-\BOOKMARK [1][-]{section.2}{Weierstrassの関数}{}% 5
+\BOOKMARK [1][-]{section.2}{楕円曲線}{}% 5
+\BOOKMARK [2][-]{subsection.2.1}{楕円関数}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.2}{Weierstrassの関数}{section.2}% 7

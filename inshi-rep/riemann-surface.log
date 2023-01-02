@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  15 DEC 2022 07:52
+This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  31 DEC 2022 23:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -917,137 +917,112 @@ LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
 (Font)              scaled to size 8.32214pt on input line 315.
  [1
 
-]
+] (./surface.tex
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 323.
+(Font)              scaled to size 13.31541pt on input line 1.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 323.
+(Font)              scaled to size 13.31541pt on input line 1.
 LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 323.
+(Font)              scaled to size 13.31541pt on input line 1.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 323.
-LaTeX Font Info:    Font shape `JT1/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 327.
+(Font)              scaled to size 13.31541pt on input line 1.
 LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 327.
-LaTeX Font Info:    Font shape `JY1/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 327.
+(Font)              scaled to size 11.09619pt on input line 2.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 327.
-LaTeX Font Info:    Font shape `JT1/hmc/bx/n' in size <5> not available
-(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 370.
-LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 370.
-LaTeX Font Info:    Font shape `JY1/hmc/bx/n' in size <5> not available
-(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 370.
+(Font)              scaled to size 11.09619pt on input line 2.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 370.
-LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 373.
+(Font)              scaled to size 9.24683pt on input line 4.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 373.
+(Font)              scaled to size 6.47278pt on input line 4.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 375.
+(Font)              scaled to size 4.62341pt on input line 4.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 382.
+(Font)              scaled to size 6.47278pt on input line 11.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 382.
+(Font)              scaled to size 4.62341pt on input line 11.
 
 
 LaTeX Font Warning: Font shape `JT1/hmc/m/it' undefined
-(Font)              using `JT1/hmc/m/n' instead on input line 386.
+(Font)              using `JT1/hmc/m/n' instead on input line 15.
 
 
 LaTeX Font Warning: Font shape `JY1/hmc/m/it' undefined
-(Font)              using `JY1/hmc/m/n' instead on input line 386.
+(Font)              using `JY1/hmc/m/n' instead on input line 15.
 
 
 LaTeX Font Warning: Font shape `JT1/hmc/bx/it' undefined
-(Font)              using `JT1/hmc/bx/n' instead on input line 386.
+(Font)              using `JT1/hmc/bx/n' instead on input line 15.
 
+LaTeX Font Info:    Font shape `JT1/hmc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 15.
+LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 15.
 
 LaTeX Font Warning: Font shape `JY1/hmc/bx/it' undefined
-(Font)              using `JY1/hmc/bx/n' instead on input line 386.
+(Font)              using `JY1/hmc/bx/n' instead on input line 15.
 
-[1] [2]
-LaTeX Font Info:    Font shape `JT1/hmc/m/it' will be
-(Font)              scaled to size 9.24683pt on input line 514.
-LaTeX Font Info:    Font shape `JY1/hmc/m/it' will be
-(Font)              scaled to size 9.24683pt on input line 514.
-LaTeX Font Info:    Font shape `JT1/hmc/bx/it' in size <10> not available
-(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 514.
-LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 514.
-LaTeX Font Info:    Font shape `JY1/hmc/bx/it' in size <10> not available
-(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 514.
+LaTeX Font Info:    Font shape `JY1/hmc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 514.
- <xymatrix 2x2
+(Font)              scaled to size 9.24683pt on input line 15.
+[1]
+LaTeX Font Info:    Font shape `JT1/hmc/m/it' will be
+(Font)              scaled to size 9.24683pt on input line 142.
+LaTeX Font Info:    Font shape `JY1/hmc/m/it' will be
+(Font)              scaled to size 9.24683pt on input line 142.
+LaTeX Font Info:    Font shape `JT1/hmc/bx/it' in size <10> not available
+(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 142.
+LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 142.
+LaTeX Font Info:    Font shape `JY1/hmc/bx/it' in size <10> not available
+(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 142.
+LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 142.
+ [2] <xymatrix 2x2
 
 Package xypdf Warning: The produced DVI file is NOT PORTABLE. Convert it with
 dvipdfm(x) to the PDF format but do not expect the DVI file itself to be
 displayed correctly.
 
-174> [3] <xymatrix 2x2 219> [4] [5] <xymatrix 2x2 185> [6]
-
-LaTeX Warning: Citation `ogs' on page 7 undefined on input line 804.
-
-LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 813.
+174> <xymatrix 2x2 219> [3] [4] <xymatrix 2x2 185> [5] [6]) (./elliptic.tex [7]
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 813.
+(Font)              scaled to size 7.39746pt on input line 47.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 813.
-LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 813.
-LaTeX Font Info:    Font shape `JT1/hmc/bx/n' in size <8> not available
-(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 813.
-LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 813.
-LaTeX Font Info:    Font shape `JY1/hmc/bx/n' in size <8> not available
-(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 813.
-LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 813.
-
-LaTeX Warning: Citation `kobayashi1' on page 7 undefined on input line 813.
-
-[7]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 909.
+(Font)              scaled to size 5.5481pt on input line 47.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\wp' on input line 909.
+(hyperref)                removing `math shift' on input line 47.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 909.
+(hyperref)                removing `\wp' on input line 47.
 
-[8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 923.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 923.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 47.
+
+[8]) [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 333.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 333.
  (./riemann-surface.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 923.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 923.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 333.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 333.
 Package rerunfilecheck Info: File `riemann-surface.out' has not changed.
-(rerunfilecheck)             Checksum: E73298F53A46CD4F2ABFCAA7CE57EBB6;378.
+(rerunfilecheck)             Checksum: 5A90C695BF0DBB7CFAB0E7568D67CB31;500.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 923.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 333.
  ) 
 Here is how much of TeX's memory you used:
- 25129 strings out of 493273
- 436501 string characters out of 6144919
- 570793 words of memory out of 5000000
- 28592 multiletter control sequences out of 15000+600000
- 27719 words of font info for 140 fonts, out of 8000000 for 9000
+ 25124 strings out of 493273
+ 436380 string characters out of 6144919
+ 569848 words of memory out of 5000000
+ 28581 multiletter control sequences out of 15000+600000
+ 25898 words of font info for 130 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 55i,18n,82p,3278b,1006s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,18n,82p,3278b,1004s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on riemann-surface.dvi (9 pages, 58752 bytes).
+Output written on riemann-surface.dvi (10 pages, 61880 bytes).

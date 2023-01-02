@@ -1,0 +1,111 @@
+
+\section{楕円曲線}
+\subsection{楕円関数}
+$\omega_1$, $\omega_2$を$\rr$上一次独立な複素数とする．
+$\omega_1$, $\omega_2$に対し，
+ガウス平面$\cc$の加法部分群$\Omega$を
+\begin{align*}
+    \Omega\coloneqq\{n_1\omega_1+n_2\omega_2; n_1, n_2\in\zz\}
+\end{align*}
+で定める．
+$E\coloneqq \cc/\Omega$とおく．商写像を$p\colon\cc\to E$とかく．
+また，$S\coloneqq\{a\omega_1+b\omega_2; 0\leqq a,b<1\}$とおく．
+このとき，$E$と$S$の間には1対1対応が存在する．
+$E$の点$\alpha$に対し，$\Omega$の点$n_1\omega_1+n_2\omega_2$で
+$\alpha+n_1\omega_1+n_2\omega_2\in S$となるものが存在する．
+
+\begin{Lemma}
+    1. 
+    $p$は全射かつ連続な開写像である．
+
+    2. 
+    $E$は第2可算公理をみたす連結なコンパクトハウスドルフ空間である．
+\end{Lemma}
+
+\begin{proof}[\pfb]
+    1. 
+    $p$は全射かつ連続であること：
+    $\alpha$を$E$の点とする．$\alpha$に対し，$\alpha+0\omega_1+0\omega_2$は
+    $\alpha=p(\alpha+0\omega_1+0\omega_2)$をみたす．
+    $p$の連続性は商位相の定義より従う．
+
+    $p$が開写像であること：
+    $U$を$\cc$の空でない開集合とする．
+    \begin{align*}
+        p^{-1}(p(U))=\bigcup_{\omega\in\Omega}(U+\omega)
+    \end{align*}
+    であり，$U+\omega$は$\cc$の開集合なので，
+    その合併である$p^{-1}(p(U))$も$\cc$の開集合である．
+    したがって，$p(U)$は$E$の開集合である．
+
+    2. 
+    $P\neq Q$を$E$の点とする．$P$, $Q$に対し，
+    $S$の点$x$, $y$で
+    $p(x)=P$, $p(y)=Q$となるものが存在する．
+\end{proof}
+
+\subsection{Weierstrassの$\wp$関数}
+\begin{Theorem}
+    \begin{align}
+        \wp(u)\coloneqq 
+        \sum_{\substack{\omega\in\Omega,\\\omega\ne 0}}
+        \left(\frac{1}{(u-\omega)^2}-\frac{1}{\omega}\right)
+    \end{align}
+    は$\Omega$にのみ2位の極を持つ楕円関数である．
+\end{Theorem}$\wp(u)$をWeierstrassの$\wp$関数という．
+\begin{proof}[\pfb]
+    $\wp(u)$が$\cc-\Omega$で正則であり，
+    $\Omega$では2位の極をもつこと：
+    $M\geqq0$を実数とする．
+    $D(0;2M)$は$\cc$のコンパクト集合であり，
+    $\Omega$は離散閉集合なので，
+    $\Omega\cap D(0;2M)$は有限集合である．
+    \begin{align*}
+        \wp(z)
+        =\left(
+            \frac{1}{z^2}
+            +\sum_{
+                \substack{\omega\in\Omega-\{0\},\\|\omega|\leqq2M}
+            }
+            \left(
+                \frac{1}{(z-\omega)^2}-\frac{1}{\omega^2}
+            \right)
+        \right)
+        +\sum_{
+            \substack{\omega\in\Omega-\{0\},\\|\omega|>2M}
+        }\left(
+            \frac{1}{(z-\omega)^2}-\frac{1}{\omega^2}
+        \right)
+    \end{align*}
+    と2つの和に分解する．
+    第1項は有限和なので$\overline{D(0;M)}-\Omega$
+    で正則かつ$\overline{D(0;M)}\cap\Omega$で
+    2位の極をもつ有理形関数である．
+
+    第2項が$\overline{D(0;M)}$で一様収束することを示す．
+    $z$を$|z|\leqq M$をみたす複素数とする．
+    $|\omega|>2M\geqq2|z|$である．したがって
+    \begin{align*}
+        \left|\frac{1}{(z-\omega)^2}-\frac{1}{\omega^2}\right|
+        =\frac{|z|}{|\omega|^2}\frac{|z-2\omega|}{|z-\omega|^2}
+        =\frac{|z|}{|\omega|^3}\frac{|z/\omega-2|}{|z/\omega-1|^2}
+        \leqq\frac{M|-1/2-2|}{|\omega|^3|1/2-1|^2}
+        %=\frac{M\cdot 5/2}{|\omega|^3\cdot 1/4}
+        =\frac{10M}{|\omega|^3}    
+    \end{align*}
+    が成り立つ．ここで次の補題\ref{lem:conv}を用いると
+    $\dip \sum_{\substack{\omega\in\Omega,\\|\omega|>2M}}
+    \frac{10M}{|\omega|^{3}}$が収束することがわかる．
+    したがって，第2項も収束する．
+    \begin{Lemma}\label{lem:conv}
+        実数$s>1$に対し
+        $\dip \sum_{\omega\in\Omega-\{0\}}\frac{1}{|\omega|^{2s}}$は
+        収束する．
+    \end{Lemma}
+    %\begin{proof}[\pfb]
+        
+    %\end{proof}
+
+
+    $\wp(u)$が2重周期関数であること：
+\end{proof}
