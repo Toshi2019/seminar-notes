@@ -243,6 +243,8 @@
 \newcommand{\isom}{\overset{\sim}{\longrightarrow}}
 \newcommand{\tTop}{\textsf{Top}}
 \newcommand{\pfb}{\textbf{証明}}
+\newcommand{\Int}{\mathop{\mathrm{Int}}\nolimits} % 内部
+
 
 % 自前の定理環境
 %   https://mathlandscape.com/latex-amsthm/
@@ -303,6 +305,7 @@
 
 
 
+
 \begin{document}
 
 \title{リーマン面}
@@ -314,15 +317,17 @@
 \maketitle
 \begin{abstract}
     北大の院試用レポート．
-    楕円曲線（複素トーラス）から複素射影直線への正則射が
+    複素トーラス（楕円曲線）からリーマン球面（複素射影直線）への正則射が
     4点で分岐する2重被覆であることを示すことが目的である．
 \end{abstract}
 \thispagestyle{empty}
 \end{titlepage}
 %\setcounter{page}{1}
-%\input{proj-line}
+\input{notation}
 \input{surface}
+\input{proj-line}
 \input{elliptic}
+\input{double-covering}
 %\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
 \begin{thebibliography}{15}
 

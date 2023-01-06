@@ -1,6 +1,6 @@
 
-\section{楕円曲線}
-\subsection{楕円関数}
+\section{複素トーラス}
+\subsection{複素トーラスの定義}\label{ssec:torus}
 $\omega_1$, $\omega_2$を$\rr$上一次独立な複素数とする．
 $\omega_1$, $\omega_2$に対し，
 ガウス平面$\cc$の加法部分群$\Omega$を
@@ -10,11 +10,17 @@ $\omega_1$, $\omega_2$に対し，
 で定める．
 $E\coloneqq \cc/\Omega$とおく．商写像を$p\colon\cc\to E$とかく．
 また，$S\coloneqq\{a\omega_1+b\omega_2; 0\leqq a,b<1\}$とおく．
-このとき，$E$と$S$の間には1対1対応が存在する．
-$E$の点$\alpha$に対し，$\Omega$の点$n_1\omega_1+n_2\omega_2$で
-$\alpha+n_1\omega_1+n_2\omega_2\in S$となるものが存在する．
+このとき，$p$は$E$と$S$の間の1対1対応を定める．
+実際，$x=x_1\omega_1+x_2\omega_2$, 
+$y=y_1\omega_1+y_2\omega_2\in S$とし，$p(x)=p(y)$とする．このとき，
+$p(x-y)=[0]$, つまり，$x-y=n_1\omega_1+n_2\omega_2$となる
+整数$n_1$, $n_2$が存在する．
+$0\leqq x_1, x_2, y_1,y_2<1$なので$n_1=n_2=0$となることが
+必要である．
+したがって，$x=y$となる．つまり$p$は単射である．
+$p$が全射であることは，次の補題\ref{lem:elliptic-is-mnf}.1 から従う．
 
-\begin{Lemma}
+\begin{Lemma}\label{lem:elliptic-is-mnf}
     1. 
     $p$は全射かつ連続な開写像である．
 
@@ -39,12 +45,119 @@ $\alpha+n_1\omega_1+n_2\omega_2\in S$となるものが存在する．
     したがって，$p(U)$は$E$の開集合である．
 
     2. 
+    第2可算であること：
+    $p$が全射かつ連続な開写像なので，$\cc$の位相空間としての
+    基底の$p$による像は$E$の基底になる．
+    実際，$x\in E$とし，$U$を$E$における$x$の開近傍とする．
+    このとき，$p$は全射なので$p^{-1}(x)$は空でなく，
+    $p^{-1}(U)\subset \cc$は$p$の連続性から
+    $p^{-1}(x)$の元たちの開近傍である．
+    $\cc$の基底の元$V$で$p^{-1}(U)$に含まれ，
+    $p^{-1}(x)$を含むものが存在する．
+    この$V$に対し，$p$が連続な開写像であることから，$p(V)$は$E$の開集合であり，
+    $x\in p(V)\subset U$が成り立つ．
+    よって，$\cc$が第2可算であることから$E$も第2可算である．
+    
+    連結かつコンパクトであること：
+    $S$の閉包$\overline{S}$は連結かつコンパクトである．
+    また，$p(\overline{S})=E$でもある．
+    $p$の連続性によって，$E$は連結かつコンパクトである．
+
+    ハウスドルフであること：
     $P\neq Q$を$E$の点とする．$P$, $Q$に対し，
     $S$の点$x$, $y$で
     $p(x)=P$, $p(y)=Q$となるものが存在する．
+    $x,y\in \partial S$のとき，複素数$\e$を適当にとって，
+    $x,y\in\Int(S+\e)$となるようにできるので，
+    $x$, $y$は$S$の内点としてよい．
+    このとき，$S\subset\cc$がハウスドルフであることから，
+    実数$r>0$で，
+    $D(x;r), D(y;r)\subset S$かつ$D(x;r)\cap D(y;r)=\varnothing$を
+    みたすものが存在する．この$r$に対し，
+    $P\in p(D(x;r))$かつ$Q\in p(D(y;r))$であり，
+    $p(D(x;r))\cap p(D(y;r))=\varnothing$が成り立つ．
 \end{proof}
 
-\subsection{Weierstrassの$\wp$関数}
+$E$の複素構造を定める．$P$を$E$の点とする．
+複素数$\e$と$P=p(x)$となる点$x\in \cc$と$x$の開近傍$\UU_x$で
+$\UU_x\subset S+\e$となるものが存在する．
+$U_P\coloneqq p(\UU_x)$とおくと，
+$U_P$は$P$の$E$における開近傍である．
+$p^{-1}(U_P)=\bigsqcup_{\omega\in\Omega}\UU_x+\omega$であり，
+任意の$\omega\in\Omega$に対し，
+$\mapres{p}{\UU_x+\omega}\colon \UU_x+\omega\to U_P$は
+同相写像である．
+$\mapres{p}{\UU_x}$の逆写像を$\pphi_{P,x}\colon U_P\to\UU_x$とおく．
+このとき，$\left(\pphi_{P,x}\right)_{P\in E, x\in p^{-1}(P)}$は
+$E$の座標近傍系である．
+実際，$P$, $Q$を$E$の点とし，$\cc$の点$x$, $y$を$P=p(x)$, $Q=p(y)$を
+みたすものとする．このとき，
+$\pphi_{Q,y}\circ \pphi_{P,x}^{-1}\colon \pphi_{P,x}(U_P\cap U_Q)\to\pphi_{Q,y}(U_P\cap U_Q)$
+は$x$に何らかの$\omega\in\Omega$を足して$y$に並行移動させる
+写像$y=x+\omega$なので正則である．
+
+したがって，次が成り立つ．
+
+\begin{Proposition}
+    $\left(E, 
+    \left(\pphi_{P,x}\right)_{P\in E, x\in p^{-1}(P)}
+    \right)$はコンパクトリーマン面である．
+\end{Proposition}
+\begin{proof}[\pfb]
+    (1) 
+    補題\ref{lem:elliptic-is-mnf}.2 で示した．
+
+    (2)
+    $E=\bigcup_{P\in E}U_P$と
+    補題\ref{lem:elliptic-is-mnf}.1 から従う．
+
+    (3), (4)
+    上で示した．
+\end{proof}
+コンパクトリーマン面$E$を複素トーラスという．
+
+\subsection{楕円関数}
+\ref{ssec:torus}節の記号を用いる．
+\begin{Definition}
+    $f$を$\cc$上定義された有理形関数とする．
+    $f$が$\omega_1$と$\omega_2$を周期とするとき，
+    $f$は2重周期$\omega_1$と$\omega_2$をもつ楕円関数であるとか，
+    $\Omega$を周期とする楕円関数という．
+\end{Definition}
+\begin{Lemma}
+    商写像$p\colon\cc\to E$の
+    引き戻し$p^{\ast}\colon f\mapsto f\circ p$は
+    $\{E\text{上の有理形関数}\}$から
+    $\{\Omega\text{を周期とする}\cc\text{上の楕円関数}\}$への
+    1対1対応を定める．
+\end{Lemma}
+
+\begin{proof}[\pfb]
+    $f$を$E$上の有理形関数とする．
+    $p^{\ast}f$は$\cc$上の有理形関数である．
+    $p^{\ast}f$の2重周期性を示す．$z\in\cc$, $\omega\in\Omega$とする．
+    \begin{align*}
+        p^{\ast}f(z+\omega)=f(p(z+\omega))=f(p(z))=p^{\ast}f(z)
+    \end{align*}
+    である．
+
+    $p^{\ast}$が1対1対応となることを示す．
+    $f$,$g$を$E$上の有理形関数で$p^{\ast}f=p^{\ast}g$を
+    みたすものとする．
+    $p$は全射なので，
+    $f(p(z))=g(p(z))$から$f=g$である．よって，$p^{\ast}$は単射である．
+
+    $g$を$\Omega$を周期とする楕円関数とする．$P$を$E$の点とする．
+    $\pphi_{P,x}\colon U_P\to\UU_x$に対し，
+    $f^P$を$\mapres{g}{\UU_x}$を局所座標表示とする$U_P\subset E$上の
+    有理形関数とする．$g$の2重周期性から，$f^P$は$x$の取り方によらない．
+    $Q\in E$を$U_P\cap U_Q\neq\varnothing$となる点とすると，
+    $\mapres{f^P}{U_P\cap U_Q}=\mapres{f^Q}{U_P\cap U_Q}$が
+    成り立つ．$(f^P)_{P\in E}$を貼り合わせることで，
+    $E$上の有理形関数$f$が定まる．($\mapres{f}{U_P}\coloneqq f^P$)
+    この$f$に対し，$p^{\ast}f=g$が成り立つ．
+\end{proof}
+
 \begin{Theorem}
     \begin{align}
         \wp(u)\coloneqq 
@@ -102,9 +215,32 @@ $\alpha+n_1\omega_1+n_2\omega_2\in S$となるものが存在する．
         $\dip \sum_{\omega\in\Omega-\{0\}}\frac{1}{|\omega|^{2s}}$は
         収束する．
     \end{Lemma}
-    %\begin{proof}[\pfb]
-        
-    %\end{proof}
+    \begin{proof}[\textbf{補題の証明}]
+        $\pphi(x,y)\coloneqq |x\omega_1+y\omega_2|^2$とおく．
+        このとき，
+        \begin{align*}
+            \pphi(x,y)
+            &=(x\omega_1+y\omega_2)\overline{(x\omega_1+y\omega_2)}\\
+            &=x^2|\omega_1|^2+xy\left(
+                \omega_2\overline{\omega_1}+\omega_1\overline{\omega_2}
+                \right)+y^2|\omega_2|^2\\
+            &=|\omega_1|^2x^2+\left(
+                \overline{\omega_1\overline{\omega_2}}
+                \right)\left(\omega_1\overline{\omega_2}
+                \right)xy+|\omega_2|^2y^2\\
+            &=|\omega_1|^2x^2+|\omega_1\overline{\omega_2}|^2xy+|\omega_2|^2y^2
+        \end{align*}
+        となり，実数$a$, $b$, $c$を用いて，$ax^2+2bxy+cy^2$とかける．
+        すなわち，$\pphi(x,y)$ は実係数2次形式であり，
+        $\omega_1$と$\omega_2$が独立であることから正定値である．
+        2次形式に対応する実対称行列は，実数の固有値を持つ．
+        いま，$\pphi$は正定値なので固有値を$0< m_1\leqq m_2$とおいてよい．
+        実対称行列は直行行列を用いて対角化でき，任意の$x,y\in\rr$に対し，
+        \begin{align*}
+            m_1(x^2+y^2)\leqq\pphi(x,y)\leqq m_2(x^2+y^2)
+        \end{align*}
+        が成り立つ．
+    \end{proof}
 
 
     $\wp(u)$が2重周期関数であること：
