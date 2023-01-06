@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  6 JAN 2023 18:10
+This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  6 JAN 2023 18:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -956,19 +956,19 @@ LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
  [1]) (./proj-line.tex [2]
 
 LaTeX Font Warning: Font shape `JT1/hmc/m/it' undefined
-(Font)              using `JT1/hmc/m/n' instead on input line 88.
+(Font)              using `JT1/hmc/m/n' instead on input line 87.
 
 
 LaTeX Font Warning: Font shape `JY1/hmc/m/it' undefined
-(Font)              using `JY1/hmc/m/n' instead on input line 88.
+(Font)              using `JY1/hmc/m/n' instead on input line 87.
 
 
 LaTeX Font Warning: Font shape `JT1/hmc/bx/it' undefined
-(Font)              using `JT1/hmc/bx/n' instead on input line 88.
+(Font)              using `JT1/hmc/bx/n' instead on input line 87.
 
 
 LaTeX Font Warning: Font shape `JY1/hmc/bx/it' undefined
-(Font)              using `JY1/hmc/bx/n' instead on input line 88.
+(Font)              using `JY1/hmc/bx/n' instead on input line 87.
 
 [3] <xymatrix 2x2
 
@@ -978,9 +978,9 @@ displayed correctly.
 
 219> [4] <xymatrix 2x2 185>
 LaTeX Font Info:    Font shape `JT1/hmc/m/it' will be
-(Font)              scaled to size 9.24683pt on input line 271.
+(Font)              scaled to size 9.24683pt on input line 270.
 LaTeX Font Info:    Font shape `JY1/hmc/m/it' will be
-(Font)              scaled to size 9.24683pt on input line 271.
+(Font)              scaled to size 9.24683pt on input line 270.
  [5]) (./elliptic.tex
 LaTeX Font Info:    Font shape `JT1/hmc/bx/it' in size <10> not available
 (Font)              Font shape `JT1/hgt/m/n' tried instead on input line 31.
@@ -1011,6 +1011,6 @@ Here is how much of TeX's memory you used:
  28499 multiletter control sequences out of 15000+600000
  26285 words of font info for 132 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 55i,18n,82p,3278b,1006s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,18n,82p,3278b,1008s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on riemann-surface.dvi (11 pages, 68284 bytes).
+Output written on riemann-surface.dvi (11 pages, 68380 bytes).
