@@ -119,7 +119,7 @@ $\pphi_{Q,y}\circ \pphi_{P,x}^{-1}\colon \pphi_{P,x}(U_P\cap U_Q)\to\pphi_{Q,y}(
 \subsection{楕円関数}
 \ref{ssec:torus}節の記号を用いる．
 \begin{Definition}
-    $f$を$\cc$上定義された有理形関数とする．
+    $f$を$\cc$上定義された有理型関数とする．
     $f$が$\omega_1$と$\omega_2$を周期とするとき，
     $f$は2重周期$\omega_1$と$\omega_2$をもつ楕円関数であるとか，
     $\Omega$を周期とする楕円関数という．
@@ -127,14 +127,14 @@ $\pphi_{Q,y}\circ \pphi_{P,x}^{-1}\colon \pphi_{P,x}(U_P\cap U_Q)\to\pphi_{Q,y}(
 \begin{Lemma}\label{lem:corr}
     商写像$p\colon\cc\to E$の
     引き戻し$p^{\ast}\colon f\mapsto f\circ p$は
-    $\{E\text{上の有理形関数}\}$から
+    $\{E\text{上の有理型関数}\}$から
     $\{\Omega\text{を周期とする}\cc\text{上の楕円関数}\}$への
     1対1対応を定める．
 \end{Lemma}
 
 \begin{proof}[\pfb]
-    $f$を$E$上の有理形関数とする．
-    $p^{\ast}f$は$\cc$上の有理形関数である．
+    $f$を$E$上の有理型関数とする．
+    $p^{\ast}f$は$\cc$上の有理型関数である．
     $p^{\ast}f$の2重周期性を示す．$z\in\cc$, $\omega\in\Omega$とする．
     \begin{align*}
         p^{\ast}f(z+\omega)=f(p(z+\omega))=f(p(z))=p^{\ast}f(z)
@@ -142,7 +142,7 @@ $\pphi_{Q,y}\circ \pphi_{P,x}^{-1}\colon \pphi_{P,x}(U_P\cap U_Q)\to\pphi_{Q,y}(
     である．
 
     $p^{\ast}$が1対1対応となることを示す．
-    $f$,$g$を$E$上の有理形関数で$p^{\ast}f=p^{\ast}g$を
+    $f$,$g$を$E$上の有理型関数で$p^{\ast}f=p^{\ast}g$を
     みたすものとする．
     $p$は全射なので，
     $f(p(z))=g(p(z))$から$f=g$である．よって，$p^{\ast}$は単射である．
@@ -150,11 +150,11 @@ $\pphi_{Q,y}\circ \pphi_{P,x}^{-1}\colon \pphi_{P,x}(U_P\cap U_Q)\to\pphi_{Q,y}(
     $g$を$\Omega$を周期とする楕円関数とする．$P$を$E$の点とする．
     $\pphi_{P,x}\colon U_P\to\UU_x$に対し，
     $f^P$を$\mapres{g}{\UU_x}$を局所座標表示とする$U_P\subset E$上の
-    有理形関数とする．$g$の2重周期性から，$f^P$は$x$の取り方によらない．
+    有理型関数とする．$g$の2重周期性から，$f^P$は$x$の取り方によらない．
     $Q\in E$を$U_P\cap U_Q\neq\varnothing$となる点とすると，
     $\mapres{f^P}{U_P\cap U_Q}=\mapres{f^Q}{U_P\cap U_Q}$が
     成り立つ．$(f^P)_{P\in E}$を貼り合わせることで，
-    $E$上の有理形関数$f$が定まる．($\mapres{f}{U_P}\coloneqq f^P$)
+    $E$上の有理型関数$f$が定まる．($\mapres{f}{U_P}\coloneqq f^P$)
     この$f$に対し，$p^{\ast}f=g$が成り立つ．
 \end{proof}
 
@@ -193,7 +193,7 @@ $\pphi_{Q,y}\circ \pphi_{P,x}^{-1}\colon \pphi_{P,x}(U_P\cap U_Q)\to\pphi_{Q,y}(
     と2つの和に分解する．
     第1項は有限和なので$\overline{D(0;M)}-\Omega$
     で正則かつ$\overline{D(0;M)}\cap\Omega$で
-    2位の極をもつ有理形関数である．
+    2位の極をもつ有理型関数である．
 
     第2項が$\overline{D(0;M)}$で一様収束することを示す．
     $z$を$|z|\leqq M$をみたす複素数とする．
@@ -235,7 +235,7 @@ $\pphi_{Q,y}\circ \pphi_{P,x}^{-1}\colon \pphi_{P,x}(U_P\cap U_Q)\to\pphi_{Q,y}(
         $\omega_1$と$\omega_2$が独立であることから正定値である．
         2次形式に対応する実対称行列は，実数の固有値を持つ．
         いま，$\pphi$は正定値なので固有値を$0< m_1\leqq m_2$とおいてよい．
-        実対称行列は直行行列を用いて対角化でき，任意の$x,y\in\rr$に対し，
+        実対称行列は直交行列を用いて対角化でき，任意の$x,y\in\rr$に対し，
         \begin{align*}
             m_1(x^2+y^2)\leqq\pphi(x,y)\leqq m_2(x^2+y^2)
         \end{align*}
@@ -275,5 +275,5 @@ $\pphi_{Q,y}\circ \pphi_{P,x}^{-1}\colon \pphi_{P,x}(U_P\cap U_Q)\to\pphi_{Q,y}(
     $\omega/2\notin\Omega$であり，$\wp(z)=\wp(-z)$なので，
     $\wp(\omega/2)=\wp(-\omega/2)$である．$\omega/2=-\omega/2+\omega$なので，
     $c_\omega=\wp(-\omega/2+\omega)-\wp(\omega/2)=\wp(\omega/2)-\wp(\omega/2)=0$. 
-    したがって，$\cc-\Omega$上$\wp(z+\omega)-\wp(z)=0$が成り立つ．有理形関数の剛性から$\cc$上$\wp(z)=\wp(z+\omega)$が成り立つ．
+    したがって，$\cc-\Omega$上$\wp(z+\omega)-\wp(z)=0$が成り立つ．有理型関数の剛性から$\cc$上$\wp(z)=\wp(z+\omega)$が成り立つ．
 \end{proof}
