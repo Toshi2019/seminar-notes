@@ -124,7 +124,7 @@ $\pphi_{Q,y}\circ \pphi_{P,x}^{-1}\colon \pphi_{P,x}(U_P\cap U_Q)\to\pphi_{Q,y}(
     $f$は2重周期$\omega_1$と$\omega_2$をもつ楕円関数であるとか，
     $\Omega$を周期とする楕円関数という．
 \end{Definition}
-\begin{Lemma}
+\begin{Lemma}\label{lem:corr}
     商写像$p\colon\cc\to E$の
     引き戻し$p^{\ast}\colon f\mapsto f\circ p$は
     $\{E\text{上の有理形関数}\}$から
@@ -239,9 +239,41 @@ $\pphi_{Q,y}\circ \pphi_{P,x}^{-1}\colon \pphi_{P,x}(U_P\cap U_Q)\to\pphi_{Q,y}(
         \begin{align*}
             m_1(x^2+y^2)\leqq\pphi(x,y)\leqq m_2(x^2+y^2)
         \end{align*}
-        が成り立つ．
+        が成り立つ．よって，2つの級数
+        \begin{align*}
+            \sum_{\omega\in\Omega-\{0\}}\frac{1}{|\omega|^{2s}}
+            =\sum_{(n_1,n_2)\in\zz^2-\{(0,0)\}}\frac{1}{\pphi(n_1,n_2)^s},\quad
+            \sum_{(n_1,n_2)\in\zz^2-\{(0,0)\}}\frac{1}{(n_1+n_2)^s}
+        \end{align*}
+        の一方が収束するとき，他方も収束し，発散も共にする．
+        十分小さい実数$\e>0$に対し，2つ目の級数と積分
+        \begin{align*}
+            \lim_{R\to\infty}\iint_{\e\leqq\sqrt{x^2+y^2}\leqq R}\,\frac{1}{(x^2+y^2)^s}\,dxdy
+        \end{align*}
+        を比較すればよい．
+        $r\cos\theta=x$, $r\sin\theta=y$とすると，
+        $x^2+y^2=r^2$, $dxdy=rdrd\theta$から，
+        \begin{align*}
+            \lim_{R\to\infty}\iint_{\e\leqq\sqrt{x^2+y^2}\leqq R}\,\frac{1}{(x^2+y^2)^s}\,dxdy
+            &=
+            \lim_{R\to\infty}
+            \iint_{\e\leqq r\leqq R}\frac{1}{r^{2s}}rdrd\theta\\
+            &=
+            \lim_{R\to\infty} 2\pi\int_{\e}^{R}\frac{1}{r^{2s-1}}dr\\
+            &=
+            \lim_{R\to\infty}\frac{\pi}{1-s}\left(\frac{1}{R^{2(s-1)}}-\frac{1}{\e^{2(s-1)}}\right)
+        \end{align*}
+        となる．したがって，$s>1$のとき収束し，そうでないときは発散する．
     \end{proof}
 
 
     $\wp(u)$が2重周期関数であること：
+    $\omega\in\{\omega_1,\omega_2\}$とする．$\wp'(z)=-2\sum_{\omega\in\Omega}\frac{1}{(z-\omega)^3}$は
+    楕円関数なので，$\wp'(z+\omega)=\wp'(z)$をみたす．
+    よって，$(\wp(z+\omega)-\wp(z))'=0$なので，
+    $\wp(z+\omega)-\wp(z)\eqqcolon c_{\omega}$は$\cc-\Omega$上の定数関数である．
+    $\omega/2\notin\Omega$であり，$\wp(z)=\wp(-z)$なので，
+    $\wp(\omega/2)=\wp(-\omega/2)$である．$\omega/2=-\omega/2+\omega$なので，
+    $c_\omega=\wp(-\omega/2+\omega)-\wp(\omega/2)=\wp(\omega/2)-\wp(\omega/2)=0$. 
+    したがって，$\cc-\Omega$上$\wp(z+\omega)-\wp(z)=0$が成り立つ．有理形関数の剛性から$\cc$上$\wp(z)=\wp(z+\omega)$が成り立つ．
 \end{proof}
