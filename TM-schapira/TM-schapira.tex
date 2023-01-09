@@ -1,0 +1,589 @@
+
+%Don't forget to delete
+%showkeys
+%overfullrule
+%\date \ber \er \cmt
+
+%------------------------
+\documentclass[11pt, a4paper, dvipdfmx]{jlreq}
+
+
+%usepackage
+%------------------------
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage[psamsfonts]{amssymb}
+\usepackage{color}
+\usepackage{ascmac}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancybox}
+%\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{proof}
+\usepackage{listings}
+\usepackage{otf}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usepackage[all]{xy}
+\usepackage{amscd}
+
+\usepackage{pb-diagram}
+
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+
+\usepackage{enumitem}
+
+\usepackage{bbm}
+
+% ================================
+% パッケージを追加する場合のスペース 
+\usepackage{latexsym}
+\usepackage{wrapfig}
+\usepackage{layout}
+\usepackage{url}
+
+\usepackage{okumacro}
+%\usepackage{endnotes}
+\usepackage[french]{babel}
+
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem{Fact*}{事実}
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\HH}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+\newcommand{\Ring}{{\bf Ring}}
+\newcommand{\Ab}{{\bf Ab}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits}
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits}
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits}
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits}
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+\newcommand{\UU}{\mcal{U}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\emp}{\varnothing}
+\newcommand{\ceq}{\coloneqq}
+\newcommand{\sbs}{\subset}
+\newcommand{\mapres}[2]{\left. #1 \right|_{#2}}
+\newcommand{\ded}{\hfill $\blacksquare$}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\isom}{\overset{\sim}{\longrightarrow}}
+\newcommand{\tTop}{\textsf{Top}}
+\newcommand{\pfb}{\textbf{証明}}
+\newcommand{\Int}{\mathop{\mathrm{Int}}\nolimits} % 内部
+
+
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2 }\thmnote{{\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}[section]
+\newtheorem{DFN}[Axiom]{定義}
+\newtheorem{THM}[Axiom]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[Axiom]{命題}
+\newtheorem{LMM}[Axiom]{補題}
+\newtheorem{CRL}[Axiom]{系}
+\newtheorem{EG}[Axiom]{例}
+
+%\newtheorem{}{Axiom}[]
+\numberwithin{equation}{section} % 式番号を「(3.5)」のように印刷
+
+\newcommand{\MM}{\mcal{M}}
+
+% =================================
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+
+
+
+\begin{document}
+
+\title{収録されなかった原稿}
+\author{Pierre Schapira}
+\date{}
+\maketitle
+\begin{abstract}
+    Inference Vol.\,7, No.\,3
+    に掲載された
+    Pierre Schapira による書評 ``A Truncated Manuscript'' の翻訳．
+\end{abstract}
+
+
+\section*{2023/01/09}
+厳密に言うと，この小文は，Alexander Grothendieck による
+R\'ecolts et Semailles（収穫と蒔いた種と）の
+書評のためだけのものではない\footnote[1]{
+    Leila Schnepsの批判的かつ建設的な忠告に感謝する．
+}．
+全体として，本については，Grothendieckの仕事と人生とともに，
+ここで論じられはするけれど，本稿（小文）の大部分は，Grothendieckが
+原文全体を通して重ねた主張を論駁するのに充てられている．
+この点については重要な支持者がいる．著者本人である．
+今度の新版には収録されていない重要な追記のなかで，
+Grothendieckは自身の言いがかりのうちのいくつかを撤回している．
+
+Grothendieckという人物は，20世紀後半の間，数学の多くの部分を支配した．
+彼の仕事が本質的には代数幾何学に関連するのだとしても，
+その視野と手法は代数幾何学を超えて大きく広まった．
+それは，代数的位相幾何学，表現論，複素幾何学，シンプレクティック幾何学，
+代数解析学，そして近年においては，計算幾何学にさえも及ぶ．
+端的にいって，力学系や確率論，そしてリーマン幾何学やハミルトン幾何学のような
+純粋に幾何学的な幾何学を除く，あらゆる線形的な数学である．
+
+導来圏や層理論がこれらの分野において建設されたのは，
+彼の影響下においてである．
+直観に優れ，導来圏の理論の根幹を形作ったのもGrothendieckである．
+彼は自身の学生である Jean-Louis Verdier に，学位論文として，
+理論の詳細を全て書き出させた．
+その学位論文において，Verdierは三角圏の鍵となる概念を明確化した
+\footnote[2]{
+    Alexander Grothendieck,
+    \textit{R\'ecoltes\ et\ Semailles:\ I,\ II.\ R\'eflexions\ et\ t\'emoignage\ sur\ un\ pass\'e\ de\ math\'ematicien} 
+    (Paris: Gallimard, 2022), 439.
+}．
+しかし，後述するように，
+導来圏の理論の枠組みで層理論と六則演算を作ったのはGrothendieckである．
+
+1950年から1970年まで，
+関数あるいは一般化関数は，フーリエ変換を用いて，
+実または複素多様体の，とりわけユークリッド空間の上で研究されていた．
+ところが，複素多様体の上では，
+我々が関数というとき実際には正則関数を意味するが，
+この関数が重大な困難をもたらす．
+どういうことかというと，存在しないのである．
+射影直線のようなコンパクト多様体上の正則関数は，
+少なくとも大域的には，もちろん定数関数は除いて，存在しない．
+したがって，実可微分多様体とは異なり，
+大域的な知識は何の情報ももたらさず，局所的に調べるしかない．
+この目的のための非凡な道具がある．層理論である．
+これはJean Lerayが1941年から1945年までの間
+ドイツで戦争捕虜になっていた時に発明された
+\footnote[3]{
+    Christian Houzelによる歴史に関する次の記事を参照せよ．
+    ``Les d\'ebut de la th\'eorie des faisceaux,'' in Masaki Kashiwara and Pierre Schapira, \textit{Sheaves on Manifolds, Grundlehren der Mathematischen Wissenschaften, vol.\,292} (Berlin: Springer-Verlag, 1990), doi:10.1007/978-3-662-02661-8.
+}．
+Lerayの原論文はどこか読みづらいところがあったが，
+のちにHenri CartanとJean-Pierre Serreによって整理され，
+Th\'eorie des Faisceaux（層の理論）\footnote[4]{
+    Roger Godement, \textit{Th\'eorie des faisceaux} (Pairs: Hermann, 1958).
+}というRoger Godementの
+有名な本にまとめられた．
+CartanとSerreはこの道具を次元$\geqq1$における正則関数を調べるという，
+岡潔による金字塔以来の研究にそれぞれ用いて，
+Cartanの定理A, BとSerreによる
+重要な論文``Faisceaux alg\'ebrique coh\'erents''（代数的連接層）
+\footnote[5]{
+    Jean-Pierre Serre, ``Faisceaux alg\'ebrique coh\'erents,''\textit{Annals of Mathematics, 2nd Series} 61, no.\,2. (1955): 197--278, doi:10.2307/1969915.
+}が生まれた．
+
+1955年頃にGrothendieckが代数幾何学に着手し，
+東北数学雑誌から出版された基礎的な論文\footnote[6]{
+    Alexander Grothendieck, 
+    ``Sur quelques points d'alg\'ebre homologique,'' 
+    \textit{T\=ohoku Mathematical journal} 9, no.\,3 (1957): 
+    119--21, doi:10.2748/tmj/1178244774. 
+    この記事はRick Jardineが詳細に分析している．
+    ``T\=ohoku,'' \textit{Inference} 1, no.\,3 (2015), 
+    doi:10.37282/991819.15.13.
+}において
+層コホモロジーの基礎づけを与えたのは，この文脈においてである．
+この論文において，圏論の重大な困難，
+すなわち宇宙の問題というGrothendieckによりSGA4で解決される問題
+が暗に現れている．
+
+\renewcommand{\thefootnote}{[訳注]}
+その解決は快刀乱麻を断つ方法でなされた\footnote{
+    原文では「もう一人のアレクサンダー（大王）が
+    ゴルディアスの結び目を断つ方法でなされた」という，
+    Grothendieckのファーストネームを
+    もじった表現になっている
+}
+\renewcommand{\thefootnote}{\arabic{footnote})}
+\footnote[7]{
+    Mike Artin, Alexandre Grothendieck, and Jean-Louis Verdier, 
+    \textit{The\'eorie des topos et 
+    cohomologie \'etale des sch\'emas, 
+    Lecture Notes in Mathematics}, 
+    vols.\,269, 270, 305 (Berlin: Springer-Verlag, 1972--73).
+}．Grothendieckは，
+どの集合もある宇宙に含まれるという公理を付け加えたのである．
+宇宙は到達不能基数という，
+圏論を運用することができる範囲を超えたものとしても知られる．
+この問題が原因で，
+ブルバキは圏論を扱うことを諦め，
+Grothendieckはブルバキを離れたのだと思われる．
+この問題についてはRalf Kr\"omerが素晴らしい記事\footnote[8]{
+    Ralf Kr\"omer, 
+    ``La {\og{machine de Grothendieck}\fg} 
+    se fonde-t-elle seulement sur des vocables 
+    m\'etamath\'ematiques? 
+    Bourbaki et les cat\'egories au 
+    cours des ann\'ees cinquante,'' 
+    \textit{Revue d'histoire des math\'ematiques} 12 (2006):119--62.
+}を書いている．
+
+\section*{2023/01/10}
+
+1940年代から1950年代の間に起きたものの，
+その重要性がすぐには理解されなかった2つの概念の革命がある．
+上で述べた層理論と圏論である．
+後者の革命を起こしたのはSamuel EilenbergとSaunders Mac Laneである\footnote[9]{
+    Samuel Eilenberg and Saunders Mac Lane, 
+    ``Natural Isomorphisms in Group Theory,'' 
+    \textit{Proceedings of the National Academy of Sciences} 
+    28 (1942): 537--43, doi:10.1073/pnas.28.12.537;
+    Samuel Eilenberg and Saunders Mac Lane, ``General Theory of Natural Equivalences,'' 
+    \textit{Transactions of the American Mathematical Society} 
+    58 (1945): 231--94, doi:10.1090/S0002-9947-1945-0013131-6.
+}．もっというと，圏論的な視点は，
+Claude L\'evi-Straussの構造主義思想やNoam Chomskyの言語学に代表される
+大きな思想運動の一部である．
+圏論は，何らかの構造を備えた集合を考えるのではなく，
+対象間に存在しうる関係に焦点を当てる．
+どういうことかというと，
+圏$C$は，集合が元の族であるのと同じように対象の族であるのだが，
+2つの対象$X$と$Y$が与えられると，
+そこには$\Hom_C(X,Y)$と呼ばれる，
+$X$から$Y$への射を表す集合が最初から存在する．
+これらのデータは，もちろん射の合成や恒等射などいくつかの公理に従う．
+新しい一歩は，関手と呼ばれる，圏の間の射に注目することにある．
+そして，随伴関手や終対象と始対象，極限と余極限といった，
+重要な諸概念が生まれ，
+数学の根底にある多くのアイデアに対し，
+正確で統一的な意味づけを与えるのである．
+
+圏の族のうち，中心的な役割を担うものがある
+それは，加法圏，そしてその中のアーベル圏という
+環上の加群の圏をモデルとする圏である．
+ところが，体上のベクトル空間を環上の加群に取り替えると，
+テンソル積をとる関手や内部$\Hom$をとる関手が存在しなくなってしまう．
+つまり，それらの操作によって，完全列は完全列にうつらない．
+部分空間が補空間をもつとは限らない．
+そこで，線形代数の自然な一般化であるホモロジー代数の領域に入る．
+ここで，Grothendieckの東北論文にとって代わられる前の初期の参考文献は
+CartanとEilenbergによるものであった\footnote[10]{
+    Henri Cartan and Samuel Eilenberg, 
+    \textit{Homological Algebra} 
+    (Princeton, NJ: Princeton University Press, 1956).
+}．
+しかし，2つの関手の合成に対する導来関手を求めるためには，
+Lerayのスペクトル系列という，
+しばしば煩雑な計算を要するものを用いなければならなかった．
+ここで導来圏がその力を発揮する．
+この言葉の元では，あらゆることが驚くほど単純になる．
+
+六則演算とは何か．通常の関数ついては，和の他に3つの自然な演算がある．
+積と，実多様体の間の対応$f\colon X\to Y$によって，
+技術的な細部を省いていうと，$X$上の関数を$Y$上の関数にうつす積分，
+そして，$Y$上の関数を$X$上の関数にうつす，$f$の合成である．
+層理論においては，テンソル積$\overset{\mathrm{L}}{\otimes}$は積の類似，
+固有順像$Rf_!$が積分の類似，そして，逆像$f^{-1}$は$f$の合成の類似である．
+ところが，テンソル積には$\mathrm{Rhom}$という右随伴が，
+関手$f^{-1}$には順像$Rf_{\ast}$という右随伴が，
+そして，関手$Rf_{!}$には右随伴$f^!$が存在する．
+
+関手$f^!$は他の5つとは異なり，導来圏の枠組みの中でしか存在しない．
+これはエタールコホモロジーの文脈でGrothendieckが発見し，
+その後局所コンパクト空間の場合にVerdierが定式化した．
+Grothendieckが見通したように，
+$f^!$はPoincar\'e双対の広い一般化になっており，
+いまや中心的な役割を担っている．
+しかし，エタール位相よりも局所コンパクト空間の方が頻出するため，
+双対性に残っているのは，Verdier一人の名前ではないものの，
+Poincar\'e-Verdierという名前である．
+この名前の帰属のさせ方は大いに不公平であり，Grothendieck
+はいくらか苦い思いをしたであろうが無理もないことである\footnote[11]{
+    Grothendieck,
+    \textit{R\'ecoltes\ et\ Semailles}, 158.
+}．
+
+このような抽象的な枠組みによって，
+具体的な計算が必要なくなると考える向きもあるかもしれないが，
+それは誤解である．
+簡単にいうと，計算の仕方がまるっきり異なるのである．
+順像関手を用いても積文を明示的に求められはしないとしても，
+六則演算の定式化によって得られるのは，
+やはりホモロジー空間の次元の計算のような洗練された数値結果である．
+Riemann-Roch-Hilzebruch-Grothendieckの定理は美しい例である．
+
+同じくGrothendieckの基本的な発見の1つに，層理論を圏の上に，
+したがって特に，
+点を一切もたない空間の上に構築するというものがある．
+層が存在するためには何が必要であろうか．
+それは，開集合とその包含関係のデータと，被覆の概念である．
+圏の対象に開集合の役割を担わせてはならない理由など何処にもなく，
+このとき，この圏は前景（準景）と呼ばれる．
+あとは被覆が何かを公理的に定めれば，景，
+すなわち，Grothendieck位相の入った圏が得られる．
+このように普通の位相空間を自然に一般化しておくことは，
+非常に役立つことが示される．
+そして，解析学者もそこから発想を得ることができるであろう．
+実多様体上には，開集合の淵で何が起こるかを調べようとすると，
+あまりにも多くの病的な開集合とあまりにも多くの被覆が現れる．
+
+そしてトポス理論というに至る．---トポイというのを知っているかもしれない．
+その根底にあるのは，
+空間，今の場合の景だが，
+これは景上の層の圏から復元できるというアイデアである．
+これは特別な場合についてIsrael Gelfandまで遡る．
+このときトポスは層のなす圏と同値な圏である．
+例えば，集合の圏は，1点をトポスとみなしたものに他ならない．
+しかし，連続体仮説の独立性に関するPaul Cohen による
+新しい証明にトポス理論が用いられたとしても，
+数学における応用は不確かなままである．
+ここで紹介したGrothendieckの代表的な仕事の選び方は完全とはほど遠く，
+評者の興味しか反映していない．
+R\&SにおいてGrothendieckは，自身の仕事において鍵となる，
+自分の思う12の考え方を列挙し，自分の一覧も載せている\footnote[12]{
+    Grothendieck,
+    \textit{R\'ecoltes\ et\ Semailles}, 42, 377.
+}．
+
+1955年ごろからの関数解析についての彼の初仕事や，
+代数幾何学に革命をもたらした（一新した）概形（スキーム）理論，
+部分的に予想し，
+のちにPierre DeligneやVladimir Voevodsky, Joseph Ayoub, 
+他にも多くの人々の手によって発展した理論である，
+モチーフについての直観についてももちろん言及しなければならない．
+Grothendieckが$\infty$圏とホモトピー代数についての基礎を敷いた
+重要な論文 ``\textit{A la poursuit des champs}'' についても
+述べるべきである\footnote[13]{
+    Alexander Grothendieck, ``A la poursuit des champs,'' (1987).
+}．
+実は，三角圏は驚くほど単純で効果的な道具であるとしても，
+例えば，貼り合わせの問題など適用範囲が限られるという欠点がある．
+この欠点に関係しているのは次の事実である．
+ある射は同型なものを除いてただ一つしか存在しないのだが，
+その同型は一意的ではないのである！この$\infty$圏という新理論には，
+Jacob Lurie, Graeme Segel, Bertrand T\"oen, 
+他にも多くの人が名を連ねるが，それは，導来圏の古典的な理論に
+完全に取って代わられる最中にある．
+それでも，当面は，それは控えめに言ってとっつきづらいものである．
+
+
+%\date{December 13, 2021}
+
+\maketitle
+%\setcounter{page}{1}
+%\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+%\begin{thebibliography}{15}
+%\end{thebibliography}
+%\bibliographystyle{junsrt}
+%\bibliography{ref}
+
+\end{document}
+
+

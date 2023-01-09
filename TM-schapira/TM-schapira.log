@@ -1,0 +1,1254 @@
+This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  10 JAN 2023 04:47
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**/Users/giuseppe/seminar-notes/TM-schapira/TM-schapira
+(/Users/giuseppe/seminar-notes/TM-schapira/TM-schapira.tex
+pLaTeX2e <2018-05-20> (based on LaTeX2e <2018-04-01> patch level 5)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/jlreq/jlreq.cls
+Document Class: jlreq 2018/06/17 jlreq
+(/usr/local/texlive/2018/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks15
+\XKV@tempa@toks=\toks16
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count83
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/everyhook/everyhook.sty (/usr/local/texlive/2018/texmf-dist/tex/latex/svn-prov/svn-prov.sty
+Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
+)
+Package: everyhook 2014/11/26 v1.2 (SVN Rev: 12)\ Hooks for low level TeX everyX primitives.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count84
+)
+\everypar=\toks17
+\frozen@everymath=\toks18
+\frozen@everydisplay=\toks19
+\everyhbox=\toks20
+\everyvbox=\toks21
+\everycr=\toks22
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/filehook/filehook.sty
+Package: filehook 2011/10/12 v0.5d Hooks for input files
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/jlreq/jlreq-helpers.sty
+Package: jlreq-helpers 2018/04/12 jlreq-helpers
+\jlreq@tempcnta=\count85
+\jlreq@tempcntb=\count86
+\jlreq@tempcntc=\count87
+\jlreq@tempdima=\dimen118
+\jlreq@tempdimb=\dimen119
+\jlreq@tempdimc=\dimen120
+\jlreq@tempskipa=\skip41
+\jlreq@tempskipb=\skip42
+\jlreq@tempskipc=\skip43
+\jlreq@tempboxa=\box42
+\jlreq@tempboxb=\box43
+\jlreq@tempboxc=\box44
+\jlreq@resultdimen=\dimen121
+\jlreq@resultskip=\skip44
+\jlreq@resultbox=\box45
+\jlreq@resultcnt=\count88
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/zref.sty
+Package: zref 2016/05/21 v2.26 A new reference scheme for LaTeX (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/zref-base.sty
+Package: zref-base 2016/05/21 v2.26 Module base for zref (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 759.
+Package zref Info: New property: default on input line 760.
+Package zref Info: New property: page on input line 761.
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/zref-savepos.sty
+Package: zref-savepos 2016/05/21 v2.26 Module savepos for zref (HO)
+Package zref Info: New property list: savepos on input line 80.
+Package zref Info: New property: posx on input line 81.
+Package zref Info: New property: posy on input line 82.
+)
+\jlreq@zref@reference@count=\count89
+Package zref Info: New property: jlreq@page on input line 318.
+\jlreq@currentpage=\count90
+)
+\jlreq@current@linewidth=\dimen122
+\jlreq@rest@linewidth=\dimen123
+\jlreq@lastnodechar=\count91
+\jlreq@fontsize=\dimen124
+\jlreq@jafontsize=\dimen125
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+LaTeX Info: Redefining \rmfamily on input line 920.
+LaTeX Info: Redefining \sffamily on input line 923.
+LaTeX Info: Redefining \ttfamily on input line 926.
+\symmincho=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 934.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.0pt on input line 999.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.0pt on input line 999.
+\jlreq@baselineskip=\dimen126
+\jlreq@omotekeiwidth=\dimen127
+\jlreq@chuubusokeiwidth=\dimen128
+\jlreq@urakeiwidth=\dimen129
+\jlreq@footnoteindent=\dimen130
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 8.80003pt on input line 1193.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.80003pt on input line 1193.
+\jlreq@BlockHeading@spaces@current@count=\count92
+\c@part=\count93
+\c@section=\count94
+\c@subsection=\count95
+\c@subsubsection=\count96
+\c@paragraph=\count97
+\c@subparagraph=\count98
+\jlreq@endnote@prepostspace=\dimen131
+\jlreq@endnote@indent=\dimen132
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.89993pt on input line 3985.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.89993pt on input line 3985.
+\abovecaptionskip=\skip45
+\belowcaptionskip=\skip46
+\c@figure=\count99
+\c@table=\count100
+\jlreq@abstractbox=\box46
+\toclineskip=\skip47
+\@lnumwidth=\dimen133
+\jlreq@top@contents=\count101
+\bibindent=\dimen134
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip48
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks23
+\ex@=\dimen135
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen136
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count102
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count103
+\leftroot@=\count104
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count105
+\DOTSCASE@=\count106
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen137
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count107
+\c@MaxMatrixCols=\count108
+\dotsspace@=\muskip10
+\c@parentequation=\count109
+\dspbrk@lvl=\count110
+\tag@help=\toks24
+\row@=\count111
+\column@=\count112
+\maxfields@=\count113
+\andhelp@=\toks25
+\eqnshift@=\dimen138
+\alignsep@=\dimen139
+\tagshift@=\dimen140
+\tagwidth@=\dimen141
+\totwidth@=\dimen142
+\lineht@=\dimen143
+\@envbody=\toks26
+\multlinegap=\skip49
+\multlinetaggap=\skip50
+\mathdisplay@stack=\toks27
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks28
+\thm@bodyfont=\toks29
+\thm@headfont=\toks30
+\thm@notefont=\toks31
+\thm@headpunct=\toks32
+\thm@preskip=\skip51
+\thm@postskip=\skip52
+\thm@headsep=\skip53
+\dth@everypar=\toks33
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: dvipdfmx.def on input line 147.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
+File: dvipdfmx.def 2017/06/24 v5.0g Graphics/color driver for dvipdfmx
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/ascmac/ascmac.sty
+Package: ascmac 2018/03/09 v2.0h ascmac wrapper (community edition) 
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/ascmac/tascmac.sty
+Package: tascmac 2018/03/09 v2.0h ascmac package (community edition) 
+\@savetbaselineshift=\dimen144
+\@saveybaselineshift=\dimen145
+\scb@x=\box49
+\scscb@x=\box50
+\@bw=\dimen146
+\@nbox=\box51
+\@nbody=\box52
+\@scw=\dimen147
+\ascmac@hoboxa=\box53
+\ascmac@hoboxb=\box54
+\@itemh=\dimen148
+\@iboxpos=\toks34
+\@iboxstr=\box55
+\@bwsp=\box56
+\@@bwsp=\box57
+\@bcal=\count114
+\shaderule=\dimen149
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup7
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count115
+\calc@Bcount=\count116
+\calc@Adimen=\dimen150
+\calc@Bdimen=\dimen151
+\calc@Askip=\skip54
+\calc@Bskip=\skip55
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count117
+\calc@Cskip=\skip56
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count118
+\l_MT_multwidth_dim=\dimen152
+\origjot=\skip57
+\l_MT_shortvdotswithinadjustabove_dim=\dimen153
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen154
+\l_MT_above_intertext_sep=\dimen155
+\l_MT_below_intertext_sep=\dimen156
+\l_MT_above_shortintertext_sep=\dimen157
+\l_MT_below_shortintertext_sep=\dimen158
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: dvipdfmx.def on input line 99.
+)
+\Gin@req@height=\dimen159
+\Gin@req@width=\dimen160
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/fancybox/fancybox.sty
+Package: fancybox 2010/05/15 1.4
+
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+\@fancybox=\box58
+\shadowsize=\dimen161
+\@Sbox=\box59
+\do@VerbBox=\toks35
+\the@fancyput=\toks36
+\this@fancyput=\toks37
+\EndVerbatimTokens=\toks38
+\Verbatim@Outfile=\write3
+\Verbatim@Infile=\read1
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\enitkv@toks@=\toks39
+\labelindent=\skip58
+\enit@outerparindent=\dimen162
+\enit@toks=\toks40
+\enit@inbox=\box60
+\enitdp@description=\count119
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks41
+\verbatim@line=\toks42
+\verbatim@in@stream=\read2
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip59
+\subfigcapskip=\skip60
+\subfigcaptopadj=\dimen163
+\subfigbottomskip=\skip61
+\subfigcapmargin=\dimen164
+\subfiglabelskip=\skip62
+\c@subfigure=\count120
+\c@lofdepth=\count121
+\c@subtable=\count122
+\c@lotdepth=\count123
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2018/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip63
+\subfig@bottom=\skip64
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/lkproof/proof.sty
+\inferLineSkip=\dimen165
+\inferLabelSkip=\dimen166
+\@LeftOffset=\dimen167
+\@RightOffset=\dimen168
+\@SavedLeftOffset=\dimen169
+\UpperWidth=\dimen170
+\LowerWidth=\dimen171
+\LowerHeight=\dimen172
+\UpperLeftOffset=\dimen173
+\UpperRightOffset=\dimen174
+\UpperCenter=\dimen175
+\LowerCenter=\dimen176
+\UpperAdjust=\dimen177
+\RuleAdjust=\dimen178
+\LowerAdjust=\dimen179
+\RuleWidth=\dimen180
+\HLabelAdjust=\dimen181
+\VLabelAdjust=\dimen182
+\WidthAdjust=\dimen183
+\@UpperPart=\box61
+\@LowerPart=\box62
+\@LabelPart=\box63
+\ResultBox=\box64
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count124
+\lst@gtempboxa=\box65
+\lst@token=\toks43
+\lst@length=\count125
+\lst@currlwidth=\dimen184
+\lst@column=\count126
+\lst@pos=\count127
+\lst@lostspace=\dimen185
+\lst@width=\dimen186
+\lst@newlines=\count128
+\lst@lineno=\count129
+\lst@maxwidth=\dimen187
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count130
+\lst@skipnumbers=\count131
+\lst@framebox=\box66
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+ (/usr/local/texlive/2018/texmf-dist/tex/platex/japanese-otf-uptex/otf.sty
+Package: otf 2018/02/01 v1.7b7 psitau, u0.21 ttk
+ (/usr/local/texlive/2018/texmf-dist/tex/platex/japanese-otf/ajmacros.sty
+Package: ajmacros 2005/12/25 13:52 iNOUE Koich! <inoue@ma.ns.musashi-tech.ac.jp>
+\@tempcntc=\count132
+\@tempcntd=\count133
+\@tempcnte=\count134
+\@tempcntf=\count135
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count136
+\float@exts=\toks44
+\float@box=\box67
+\@float@everytoks=\toks45
+\@floatcapt=\box68
+)
+\@float@every@algorithm=\toks46
+\c@algorithm=\count137
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count138
+\c@ALC@line=\count139
+\c@ALC@rem=\count140
+\c@ALC@depth=\count141
+\ALC@tlm=\skip65
+\algorithmicindent=\skip66
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks47
+\pgfutil@tempdima=\dimen188
+\pgfutil@tempdimb=\dimen189
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box69
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks48
+\pgfkeys@temptoks=\toks49
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks50
+))
+\pgf@x=\dimen190
+\pgf@y=\dimen191
+\pgf@xa=\dimen192
+\pgf@ya=\dimen193
+\pgf@xb=\dimen194
+\pgf@yb=\dimen195
+\pgf@xc=\dimen196
+\pgf@yc=\dimen197
+\w@pgf@writea=\write4
+\r@pgf@reada=\read3
+\c@pgf@counta=\count142
+\c@pgf@countb=\count143
+\c@pgf@countc=\count144
+\c@pgf@countd=\count145
+\t@pgf@toka=\toks51
+\t@pgf@tokb=\toks52
+\t@pgf@tokc=\toks53
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-dvipdfmx.def
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2014/07/09  (rcs-revision 1.14)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)
+\pgfsys@objnum=\count146
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count147
+\pgfsyssoftpath@bigbuffer@items=\count148
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: dvipdfmx.def on input line 225.
+LaTeX Info: Redefining \color on input line 709.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen198
+\pgfmath@count=\count149
+\pgfmath@box=\box70
+\pgfmath@toks=\toks54
+\pgfmath@stack@operand=\toks55
+\pgfmath@stack@operation=\toks56
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count150
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen199
+\pgf@picmaxx=\dimen256
+\pgf@picminy=\dimen257
+\pgf@picmaxy=\dimen258
+\pgf@pathminx=\dimen259
+\pgf@pathmaxx=\dimen260
+\pgf@pathminy=\dimen261
+\pgf@pathmaxy=\dimen262
+\pgf@xx=\dimen263
+\pgf@xy=\dimen264
+\pgf@yx=\dimen265
+\pgf@yy=\dimen266
+\pgf@zx=\dimen267
+\pgf@zy=\dimen268
+LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
+(Font)              scaled to size 9.6222pt on input line 926.
+LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
+(Font)              scaled to size 9.6222pt on input line 926.
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen269
+\pgf@path@lasty=\dimen270
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen271
+\pgf@shorten@start@additional=\dimen272
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box71
+\pgf@hbox=\box72
+\pgf@layerbox@main=\box73
+\pgf@picture@serial@count=\count151
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen273
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen274
+\pgf@pt@y=\dimen275
+\pgf@pt@temp=\dimen276
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen277
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen278
+\pgf@sys@shading@range@num=\count152
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box74
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+))) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box75
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen279
+\pgf@nodesepend=\dimen280
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen281
+\pgffor@skip=\dimen282
+\pgffor@stack=\toks57
+\pgffor@toks=\toks58
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count153
+\pgfplotmarksize=\dimen283
+)
+\tikz@lastx=\dimen284
+\tikz@lasty=\dimen285
+\tikz@lastxsaved=\dimen286
+\tikz@lastysaved=\dimen287
+\tikzleveldistance=\dimen288
+\tikzsiblingdistance=\dimen289
+\tikz@figbox=\box76
+\tikz@figbox@bg=\box77
+\tikz@tempbox=\box78
+\tikz@tempbox@bg=\box79
+\tikztreelevel=\count154
+\tikznumberofchildren=\count155
+\tikznumberofcurrentchild=\count156
+\tikz@fig@count=\count157
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count158
+\pgfmatrixcurrentcolumn=\count159
+\pgf@matrix@numberofcolumns=\count160
+)
+\tikz@expandcount=\count161
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+))) (/usr/local/texlive/2018/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.4)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2014/03/21 v3.0.1a (rcs-revision 1.4)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1a (rcs-revision 1.13)
+\pgfarrowinset=\dimen290
+\pgfarrowlength=\dimen291
+\pgfarrowwidth=\dimen292
+\pgfarrowlinewidth=\dimen293
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xy.sty (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xy.tex Bootstrap'ing: catcodes, docmode, (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xyrecat.tex) (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xyidioms.tex)
+
+ Xy-pic version 3.8.9 <2013/10/06>
+ Copyright (c) 1991-2013 by Kristoffer H. Rose <krisrose@tug.org> and others
+ Xy-pic is free software: see the User's Guide for details.
+
+Loading kernel: messages; fonts; allocations: state,
+\X@c=\dimen294
+\Y@c=\dimen295
+\U@c=\dimen296
+\D@c=\dimen297
+\L@c=\dimen298
+\R@c=\dimen299
+\Edge@c=\toks59
+\X@p=\dimen300
+\Y@p=\dimen301
+\U@p=\dimen302
+\D@p=\dimen303
+\L@p=\dimen304
+\R@p=\dimen305
+\Edge@p=\toks60
+\X@origin=\dimen306
+\Y@origin=\dimen307
+\X@xbase=\dimen308
+\Y@xbase=\dimen309
+\X@ybase=\dimen310
+\Y@ybase=\dimen311
+\X@min=\dimen312
+\Y@min=\dimen313
+\X@max=\dimen314
+\Y@max=\dimen315
+\lastobjectbox@=\box80
+\zerodotbox@=\box81
+\almostz@=\dimen316
+ direction,
+\d@X=\dimen317
+\d@Y=\dimen318
+\K@=\count162
+\KK@=\count163
+\Direction=\count164
+\K@dXdY=\dimen319
+\K@dYdX=\dimen320
+\xyread@=\read4
+\xywrite@=\write5
+\csp@=\count165
+\quotPTK@=\dimen321
+ utility macros; pictures: \xy, positions,
+\swaptoks@@=\toks61
+\connectobjectbox@@=\box82
+ objects,
+\styletoks@=\toks62
+ decorations; kernel objects: directionals, circles, text; options; algorithms: directions, edges, connections;  Xy-pic loaded)
+Package: xy 2013/10/06 Xy-pic version 3.8.9
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xypdf.tex  Xy-pic option: PDF driver v.1.7 loaded) (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xyall.tex  Xy-pic option: All features v.3.8 (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xycurve.tex  Xy-pic option: Curve and Spline extension v.3.12 curve,
+\crv@cnt@=\count166
+\crvpts@=\toks63
+\splinebox@=\box83
+\splineval@=\dimen322
+\splinedepth@=\dimen323
+\splinetol@=\dimen324
+\splinelength@=\dimen325
+ circles,
+\L@=\dimen326
+ loaded) Xy-pic pdf driver: `curve' extension support (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xypdf-cu.tex loaded) (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xyframe.tex  Xy-pic option: Frame and Bracket extension v.3.14 loaded) Xy-pic pdf driver: `frame' extension support (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xypdf-fr.tex loaded) (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xycmtip.tex  Xy-pic option: Computer Modern tip extension v.3.7 (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xytips.tex  Xy-pic option: More Tips extension v.3.11 loaded) loaded) (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xyline.tex  Xy-pic option: Line styles extension v.3.10
+\xylinethick@=\dimen327
+ loaded) Xy-pic pdf driver: `line' extension support (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xypdf-li.tex loaded) (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xyrotate.tex  Xy-pic option: Rotate and Scale extension v.3.8 loaded) Xy-pic pdf driver: `rotate' extension support (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xypdf-ro.tex loaded) (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xycolor.tex  Xy-pic option: Colour extension v.3.11 loaded) Xy-pic pdf driver: `color' extension support (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xypdf-co.tex loaded) (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xymatrix.tex  Xy-pic option: Matrix feature v.3.14
+\Row=\count167
+\Col=\count168
+\queue@=\toks64
+\queue@@=\toks65
+\qcount@=\count169
+\qcount@@=\count170
+\matrixsize@=\count171
+ loaded) (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xyarrow.tex  Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded) (/usr/local/texlive/2018/texmf-dist/tex/generic/xypic/xygraph.tex  Xy-pic option: Graph feature v.3.11 loaded) loaded)) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amscd.sty
+Package: amscd 2017/04/14 v2.1 AMS Commutative Diagrams
+\athelp@=\toks66
+\minaw@=\dimen328
+\bigaw@=\dimen329
+\minCDarrowwidth=\dimen330
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/pb-diagram/pb-diagram.sty
+\dgARROWLENGTH=\skip67
+\dgTEXTARROWLENGTH=\skip68
+\dgHORIZPAD=\skip69
+\dgVERTPAD=\skip70
+\dgLABELOFFSET=\skip71
+\dgARROWPARTS=\count172
+\dgDOTSPACING=\skip72
+\dgDOTSIZE=\skip73
+\dgMAXSQUARE=\count173
+\dgMINDBLSQ=\count174
+\dgCOLUMNWIDTH=\skip74
+\dg@HORIZ=\count175
+\dg@VERT=\count176
+\dg@XLPAD=\count177
+\dg@YBPAD=\count178
+\dg@XRPAD=\count179
+\dg@YTPAD=\count180
+\dg@X=\count181
+\dg@Y=\count182
+\dg@XGRID=\count183
+\dg@YGRID=\count184
+\dg@SIZE=\count185
+\dg@USERSIZE=\count186
+\dg@DX=\count187
+\dg@DY=\count188
+\dg@XLBL=\count189
+\dg@YLBL=\count190
+\dg@XOFFSET=\count191
+\dg@YOFFSET=\count192
+\dg@LBLOFF=\count193
+\dg@XLBLOFF=\count194
+\dg@YLBLOFF=\count195
+\dg@LBLPOS=\count196
+\dg@XTEMP=\count197
+\dg@YTEMP=\count198
+\dg@ZTEMP=\count199
+\dg@XNODE=\count266
+\dg@YNODE=\count267
+\dg@XEND=\count268
+\dg@YEND=\count269
+\dg@WEND=\count270
+\dg@HEND=\count271
+\dg@COUNT=\count272
+\dg@NODEBOX=\box84
+\dg@LABONEBOX=\box85
+\dg@LABTWOBOX=\box86
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
+Package hobsub Info: Skipping package `kvdefinekeys' (already loaded).
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen331
+\Hy@linkcounter=\count273
+\Hy@pagecounter=\count274
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count275
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4509.
+Package hyperref Info: Link nesting OFF on input line 4514.
+Package hyperref Info: Hyper index ON on input line 4517.
+Package hyperref Info: Plain pages OFF on input line 4524.
+Package hyperref Info: Backreferencing OFF on input line 4529.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4762.
+\c@Hy@tempcnt=\count276
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5115.
+\XeTeXLinkMargin=\dimen332
+\Fld@menulength=\count277
+\Field@Width=\dimen333
+\Fld@charsize=\dimen334
+Package hyperref Info: Hyper figures OFF on input line 6369.
+Package hyperref Info: Link nesting OFF on input line 6374.
+Package hyperref Info: Hyper index ON on input line 6377.
+Package hyperref Info: backreferencing OFF on input line 6384.
+Package hyperref Info: Link coloring OFF on input line 6389.
+Package hyperref Info: Link coloring with OCG OFF on input line 6394.
+Package hyperref Info: PDF/A mode OFF on input line 6399.
+LaTeX Info: Redefining \ref on input line 6439.
+LaTeX Info: Redefining \pageref on input line 6443.
+\Hy@abspage=\count278
+\c@Item=\count279
+\c@Hfootnote=\count280
+)
+Package hyperref Info: Driver: hdvipdfm.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hdvipdfm.def
+File: hdvipdfm.def 2018/02/06 v6.86b Hyperref driver for dvipdfm
+\pdfm@box=\box87
+\c@Hy@AnnotLevel=\count281
+\HyField@AnnotCount=\count282
+\Fld@listcount=\count283
+\c@bookmark@seq@number=\count284
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
+)
+\Hy@SectionHShift=\skip75
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 50.
+ (/usr/local/texlive/2018/texmf-dist/tex/platex/pxjahyper/pxjahyper.sty
+Package: pxjahyper 2018/01/25 v0.3c
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/bbm-macros/bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen335
+\WF@size=\dimen336
+\c@WF@wrappedlines=\count285
+\WF@box=\box88
+\WF@everypar=\toks67
+Package: wrapfig 2003/01/31  v 3.6
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/layout.sty
+Package: layout 2014/10/28 v1.2c Show layout parameters
+\oneinch=\count286
+\cnt@paperwidth=\count287
+\cnt@paperheight=\count288
+\cnt@hoffset=\count289
+\cnt@voffset=\count290
+\cnt@textheight=\count291
+\cnt@textwidth=\count292
+\cnt@topmargin=\count293
+\cnt@oddsidemargin=\count294
+\cnt@evensidemargin=\count295
+\cnt@headheight=\count296
+\cnt@headsep=\count297
+\cnt@marginparsep=\count298
+\cnt@marginparwidth=\count299
+\cnt@marginparpush=\count300
+\cnt@footskip=\count301
+\fheight=\count302
+\ref@top=\count303
+\ref@hoffset=\count304
+\ref@voffset=\count305
+\ref@head=\count306
+\ref@body=\count307
+\ref@foot=\count308
+\ref@margin=\count309
+\ref@marginwidth=\count310
+\ref@marginpar=\count311
+\Interval=\count312
+\ExtraYPos=\count313
+\PositionX=\count314
+\PositionY=\count315
+\ArrowLength=\count316
+) (/usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/okumacro.sty
+Package: okumacro 2018/06/11 okumura, texjporg
+LaTeX Info: Redefining \yen on input line 132.
+\EXAMPLEWIDTH=\dimen337
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2018/06/05 3.22 The Babel package
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2018/06/05 3.22 Babel switching mechanism
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/babel-french/french.ldf
+Language: french 2018/07/06 v3.5a French support from the babel system
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2018/06/05 3.22 Babel common definitions
+\babel@savecnt=\count317
+\U@D=\dimen338
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count318
+)
+\l@acadian = a dialect from \language\l@french 
+\FB@nonchar=\count319
+Package babel Info: Making : an active character on input line 416.
+Package babel Info: Making ; an active character on input line 417.
+Package babel Info: Making ! an active character on input line 418.
+Package babel Info: Making ? an active character on input line 419.
+\FBguill@level=\count320
+\FB@everypar=\toks68
+\FB@Mht=\dimen339
+\mc@charclass=\count321
+\mc@charfam=\count322
+\mc@charslot=\count323
+\std@mcc=\count324
+\dec@mcc=\count325
+\c@FBcaption@count=\count326
+\listindentFB=\dimen340
+\descindentFB=\dimen341
+\labelindentFB=\dimen342
+\labelwidthFB=\dimen343
+\leftmarginFB=\dimen344
+\parindentFFN=\dimen345
+\FBfnindent=\dimen346
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+\c@Axiom=\count327
+\c@Fact*=\count328
+\c@Axiom+=\count329
+\c@Alert+=\count330
+\c@AXM=\count331
+ (./TM-schapira.aux)
+\openout1 = `TM-schapira.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 312.
+LaTeX Font Info:    ... okay on input line 312.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 312.
+LaTeX Font Info:    ... okay on input line 312.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 312.
+LaTeX Font Info:    ... okay on input line 312.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 312.
+LaTeX Font Info:    ... okay on input line 312.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 312.
+LaTeX Font Info:    ... okay on input line 312.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 312.
+LaTeX Font Info:    ... okay on input line 312.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 312.
+LaTeX Font Info:    ... okay on input line 312.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 312.
+LaTeX Font Info:    ... okay on input line 312.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 312.
+LaTeX Font Info:    ... okay on input line 312.
+ (I search kanjifont definition file: . . ) (I search font definition file: . . . . . . . . )
+LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
+(Font)              scaled to size 10.58441pt on input line 312.
+LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
+(Font)              scaled to size 10.58441pt on input line 312.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 312.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+\c@lstlisting=\count332
+ ABD: EveryShipout initializing macros
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 312.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 312.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 312.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 312.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <11> on input line 312.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.69997> on input line 312.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.5> on input line 312.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.69997pt on input line 312.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.5pt on input line 312.
+LaTeX Font Info:    Try loading font information for U+msa on input line 312.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 312.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 312.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 312.
+
+LaTeX Font Info:    Try loading font information for U+lasy on input line 312.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+
+LaTeX Font Warning: Font shape `U/lasy/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 312.
+
+Package xypdf Info: Line width: 0.39998pt on input line 312.
+\AtBeginShipoutBox=\box89
+Package hyperref Info: Link coloring ON on input line 312.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count333
+)
+LaTeX Info: Redefining \ref on input line 312.
+LaTeX Info: Redefining \pageref on input line 312.
+LaTeX Info: Redefining \nameref on input line 312.
+ (./TM-schapira.out) (./TM-schapira.out)
+\@outlinefile=\write6
+\openout6 = `TM-schapira.out'.
+
+LaTeX Info: Redefining \degres on input line 312.
+
+
+Package french.ldf Warning: Figures' and tables' captions might look like
+(french.ldf)                `Figure 1:' in French instead of `Figure 1 :'.
+(french.ldf)                If it happens, see your class documentation to
+(french.ldf)                fix this issue or add AFTER babel/french
+(french.ldf)                \usepackage[labelsep=period]{caption} or
+(french.ldf)                \usepackage[labelsep=endash]{caption} or
+(french.ldf)                or ... live with it; reported on input line 312.
+
+LaTeX Info: Redefining \dots on input line 312.
+
+Package french.ldf Warning: Please load the "listings" package
+(french.ldf)                AFTER babel/french; reported on input line 312.
+
+Package french.ldf Info: Setting StandardItemizeEnv=true for
+(french.ldf)             compatibility with enumitem package,
+(french.ldf)             reported on input line 312.
+Package french.ldf Info: Setting StandardEnumerateEnv=true for
+(french.ldf)             compatibility with enumitem package,
+(french.ldf)             reported on input line 312.
+LaTeX Info: Redefining \up on input line 312.
+
+Package french.ldf Warning: OT1 encoding should not be used for French.
+(french.ldf)                Add \usepackage[T1]{fontenc} to the preamble
+(french.ldf)                of your document; reported on input line 312.
+
+LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
+(Font)              scaled to size 17.99348pt on input line 318.
+LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
+(Font)              scaled to size 17.99348pt on input line 318.
+LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
+(Font)              scaled to size 12.70128pt on input line 318.
+LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
+(Font)              scaled to size 12.70128pt on input line 318.
+LaTeX Font Info:    Calculating math sizes for size <13.2> on input line 318.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <13.2> on input line 318.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9.23994> on input line 318.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.59999> on input line 318.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.2pt on input line 318.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.23994pt on input line 318.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.59999pt on input line 318.
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <13.2> not available
+(Font)              size <12> substituted on input line 318.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <6.59999> not available
+(Font)              size <7> substituted on input line 318.
+
+
+LaTeX Font Warning: Font shape `U/lasy/m/n' in size <13.2> not available
+(Font)              size <12> substituted on input line 318.
+
+
+LaTeX Font Warning: Font shape `U/lasy/m/n' in size <6.59999> not available
+(Font)              size <7> substituted on input line 318.
+
+LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
+(Font)              scaled to size 9.5259pt on input line 318.
+LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
+(Font)              scaled to size 9.5259pt on input line 318.
+LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
+(Font)              scaled to size 9.5259pt on input line 318.
+LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
+(Font)              scaled to size 9.5259pt on input line 318.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 318.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `JT1/hgt/bx/n' in size <9.89993> not available
+(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 318.
+LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
+(Font)              scaled to size 9.5259pt on input line 318.
+LaTeX Font Info:    Font shape `JY1/hgt/bx/n' in size <9.89993> not available
+(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 318.
+LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
+(Font)              scaled to size 9.5259pt on input line 318.
+LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
+(Font)              scaled to size 14.81816pt on input line 325.
+LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
+(Font)              scaled to size 14.81816pt on input line 325.
+LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
+(Font)              scaled to size 14.81816pt on input line 325.
+LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
+(Font)              scaled to size 14.81816pt on input line 325.
+LaTeX Font Info:    Font shape `JT1/hgt/bx/n' in size <15.4> not available
+(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 325.
+LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
+(Font)              scaled to size 14.81816pt on input line 325.
+LaTeX Font Info:    Font shape `JY1/hgt/bx/n' in size <15.4> not available
+(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 325.
+LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
+(Font)              scaled to size 14.81816pt on input line 325.
+LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
+(Font)              scaled to size 7.40904pt on input line 330.
+LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
+(Font)              scaled to size 7.40904pt on input line 330.
+LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
+(Font)              scaled to size 8.46756pt on input line 330.
+LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
+(Font)              scaled to size 8.46756pt on input line 330.
+
+
+LaTeX Font Warning: Font shape `JT1/hmc/m/it' undefined
+(Font)              using `JT1/hmc/m/n' instead on input line 356.
+
+
+LaTeX Font Warning: Font shape `JY1/hmc/m/it' undefined
+(Font)              using `JY1/hmc/m/n' instead on input line 356.
+
+LaTeX Font Info:    Font shape `JT1/hmc/m/it' will be
+(Font)              scaled to size 8.46756pt on input line 377.
+LaTeX Font Info:    Font shape `JY1/hmc/m/it' will be
+(Font)              scaled to size 8.46756pt on input line 377.
+[1
+
+]
+LaTeX Font Info:    Calculating math sizes for size <8.80003> on input line 436.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8.80003> on input line 436.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6.15999> on input line 436.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <4.40001> on input line 436.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.15999pt on input line 436.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.40001pt on input line 436.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <4.40001> not available
+(Font)              size <5> substituted on input line 436.
+
+
+LaTeX Font Warning: Font shape `U/lasy/m/n' in size <4.40001> not available
+(Font)              size <5> substituted on input line 436.
+
+
+Underfull \hbox (badness 2790) in paragraph at lines 436--436
+[][][]\OT1/lmr/m/n/8.80003 .[][] Ralf Kr^^?omer, ``La [] ma-chine de Gro-then-dieck [] se fonde-t-elle seule-ment sur des vo-cables
+ []
+
+
+Underfull \hbox (badness 1033) in paragraph at lines 436--436
+\OT1/lmr/m/n/8.80003 m^^Setamath^^Sematiques ? Bour-baki et les cat^^Segories au cours des ann^^Sees cin-quante,'' \OT1/lmr/m/it/8.80003 Re-vue d'his-toire des
+ []
+
+[2] [3]
+LaTeX Font Info:    Font shape `JT1/hmc/m/it' will be
+(Font)              scaled to size 10.58441pt on input line 562.
+LaTeX Font Info:    Font shape `JY1/hmc/m/it' will be
+(Font)              scaled to size 10.58441pt on input line 562.
+ [4] [5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 587.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 587.
+ (./TM-schapira.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 587.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 587.
+Package rerunfilecheck Info: File `TM-schapira.out' has not changed.
+(rerunfilecheck)             Checksum: 05B9FF7757FE6A446D8F294B02146D28;54.
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.2pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 28025 strings out of 493273
+ 490113 string characters out of 6144919
+ 646126 words of memory out of 5000000
+ 31381 multiletter control sequences out of 15000+600000
+ 83964 words of font info for 145 fonts, out of 8000000 for 9000
+ 929 hyphenation exceptions out of 8191
+ 66i,6n,82p,3276b,991s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on TM-schapira.dvi (5 pages, 27772 bytes).
