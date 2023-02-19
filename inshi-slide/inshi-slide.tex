@@ -155,22 +155,24 @@
 
 \usetheme{Singapore}
 \usecolortheme{rose}
-\setbeamertemplate{navigaton symbols}{}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{navigaton symbols}{\false}
+\setbeamertemplate{footline}[frame number]
 %\usepackage{graphicx,xcolor}
+
+\def\fracinline#1/#2{\mbox{\raise0.5ex\hbox{\footnotesize$#1$}{\hskip-.1em$/$\hskip-.1em}\raise-0.5ex\hbox{\footnotesize$#2$}}}
 
 \begin{document}
     
 \title{複素トーラスと複素射影直線}
 \date{February 9, 2023}
-\author{\ruby{大柴 寿浩}{おおしば としひろ}\\受験番号：241002}
+\author{\ruby{大柴 寿浩}{おおしば としひろ}\\受験番号：341002}
+
+
 
 
 \begin{frame}
     \titlepage
-\end{frame}
-
-\begin{frame}\frametitle{発表内容}
-    \tableofcontents
 \end{frame}
 \begin{comment}
     \begin{frame}\frametitle{書くこと}
@@ -222,48 +224,35 @@ $\UU$を$\cc^n$の空でない開集合とする．このとき，$\UU$で定義
 \subsection{リーマン面}
 
 \begin{frame}
-    \frametitle{複素多様体}
+    \frametitle{複素多様体，リーマン面}
 
-    \begin{Definition}[複素多様体]
+    \begin{Definition}[複素多様体，リーマン面]
         $X$：位相空間，
         $(\pphi_i\colon U_i\to\UU_i)_{i\in I}$：写像の族．
 
         対$\left(X, (\pphi_i\colon U_i\to\UU_i)_{i\in I}\right)$
         が次の条件(1)--(4)をみたすとき，
         $n$\textbf{次元複素多様体}という．
+        1次元複素多様体をリーマン面という．
         \begin{enumerate}
             %\renewcommand{\theenumi}{\arabic{enumi}}
             %\renewcommand{\labelenumi}{(\theenumi)}
             \item $X\neq\varnothing$，
-            第2可算，連結，ハウスドルフ．
+            ハウスドルフ，（第2可算，連結）．
             \item $U_i \underset{\text{open}}{\subset} X$,\quad 
-            $U_i\neq\varnothing$ for all $i\in I$,\quad 
-            $X=\bigcup_{i\in I} U_i$．
-            \item For all $i\in I$,\quad
+            $U_i\neq\varnothing$ ($i\in I$),\quad 
+            $X=\underset{i\in I}{\bigcup} U_i$．
+            \item $\forall i\in I$\quad
             $\UU_i \underset{\text{open}}{\subset} \cc^n_z$,\quad 
             $\UU_i\neq\varnothing$, \quad
             $\pphi_{i}\colon U_i\to\UU_i$: homeo.
-            \item 任意の$i\neq j \in I$ ($U_i\cap U_j \neq \emp$) 
-            に対して$\UU_{ij}\ceq \pphi_j(U_i\cap U_j)\sbs \UU_j$
-            とおくとき，$\pphi_{ij}\ceq 
+            \item $\forall i\neq j \in I$ ($U_i\cap U_j \neq \emp$)\quad
+            $\pphi_{ij}\ceq 
             \mapres{\pphi_{i}\circ\pphi_{j}^{-1}}{\UU_{ij}}
             \colon 
-            \UU_{ij}\to\UU_{ji}$: holomorphic．
+            \UU_{ij}\to\UU_{ji}$: holomorphic．($\UU_{ij}\ceq \pphi_j(U_i\cap U_j)\sbs \UU_j$)
         \end{enumerate}
     \end{Definition}
-
-\end{frame}
-
-\begin{frame}
-    \frametitle{リーマン面}
-
-    \begin{Definition}[リーマン面]
-        1次元複素多様体をリーマン面という．
-    \end{Definition}
-
-    \begin{example}
-        $\cc$の開集合$U$に対し，$(U,(\id_{U}))$はリーマン面．
-    \end{example}
 \end{frame}
 
 \subsection{複素射影直線}
@@ -280,12 +269,12 @@ $\UU$を$\cc^n$の空でない開集合とする．このとき，$\UU$で定義
 \begin{equation*}
     \pp^1\coloneqq \left(\cc^{2}-\{(0,0)\}\right)/{\sim}
 \end{equation*}
-の複素構造を次で定めたものはリーマン面である．
+の複素多様体構造を次で定めたものはリーマン面である．
 $\pp^1$を複素射影直線という．
 \end{frame}
 
 \begin{frame}
-    \frametitle{複素射影直線の複素構造}
+    \frametitle{複素射影直線の複素多様体構造}
     \begin{columns}
         \begin{column}{0.45\hsize}
             $\pp^1$の開集合$U_0$, $U_1$を次で定める．
@@ -347,10 +336,10 @@ $\pp^1$を複素射影直線という．
 \end{frame}
 
 \begin{frame}
-    \frametitle{複素トーラスの複素構造}
+    \frametitle{複素トーラスの複素多様体構造}
         各点$P\in E$の十分小さい開近傍$U_P\subset E$に対し，
         $U_P=p(\UU_x)$となる開集合$\UU_x\subset S$をとる．
-        $\dip p^{-1}(U_P)=\bigcup_{\omega\in\Omega}\UU_x+\omega$である．
+        $\dip p^{-1}(U_P)=\underset{\omega\in\Omega}{\bigcup}\UU_x+\omega$である．
 
         $\omega\in\Omega$を一つ取って
         同相$\pphi_{P,x+\omega}\coloneqq
@@ -375,16 +364,13 @@ $\pp^1$を複素射影直線という．
         \begin{equation*}
             f(z+\omega_0)=f(z),\quad f(z+\omega_1)=f(z)
         \end{equation*}
-        を満たすものを，$\omega_0$, $\omega_1$を周期とする
+        を満たすものを，$\omega_0$, $\omega_1$を周期とする，
+        或は$\Omega$を周期とする
         楕円関数という．
     \end{Definition}
 
-    $\Omega$を周期とする楕円関数ともいう．
-\end{frame}
-
-\begin{frame}
-    \frametitle{楕円関数はトーラス上の関数と見做せる}
-
+    次の補題がある．
+    
     \begin{Lemma}\label{lem:corr}
         商写像$p\colon\cc\to E$の
         引き戻し$p^{\ast}\colon f\mapsto f\circ p$は
@@ -393,6 +379,7 @@ $\pp^1$を複素射影直線という．
         1対1対応を定める．
     \end{Lemma}
 \end{frame}
+
 
 \subsection{楕円関数の例}
 
@@ -411,52 +398,57 @@ $\pp^1$を複素射影直線という．
 
 \end{frame}
 
-\section{分岐指数と被覆次数}
+\section{分岐指数と写像度}
 
 \begin{frame}
     \frametitle{分岐指数}
+    \setlength{\baselineskip}{18pt}
+
     \begin{fact}\label{fact:branch}
+        \setlength{\baselineskip}{18pt}
         $X$と$Y$をリーマン面とする．
-        $f\colon X\to Y$を定値でないリーマン面の射とする．
+        $f\colon X\to Y$を定値でない正則写像とする．
+
         $P\in X$, $Q=f(P)\in Y$とおく．
+        
         このとき，$P$のまわりの局所座標$t$と$Q$のまわりの局所座標$s$と
         正の整数$n\geqq 1$で，$f$の
         局所座標表示が$s=t^n$となるものが存在する．
-        また，この$n$は座標の取り方によらない．    
+        この$n$は座標の取り方によらない．    
     \end{fact}
 
-    \begin{definition}
-        上の事実における$n$を$P$における$f$の分岐指数といい，
-        $e_P$とかく．
-        
-        $e_P>1$のとき，$P$を$f$の分岐点という．
-    \end{definition}
 \end{frame}
 
 \begin{frame}
     \frametitle{写像度}
     \begin{fact}\label{fact:deg}
-        $X$と$Y$をコンパクトリーマン面とする．
-        $f\colon X\to Y$を定値でない射とする．
+        $X$と$Y$をコンパクトリーマン面とし，
+        $f\colon X\to Y$を定値でない正則写像とする． 
         このとき，次が成り立つ．
         
-        1.
-        任意の$Q\in Y$に対し$f^{-1}(Q)\neq\varnothing$かつ$\#f^{-1}(Q)<\infty$である．
+        \begin{enumerate}
+            \item $\forall Q\in Y$\quad $f^{-1}(Q)\neq\varnothing$, $\#f^{-1}(Q)<\infty$. 
+            \item $\#\{f\text{の分岐点}\}<\infty$.
+            \item $Q\in Y$, 
+            $d(Q)\coloneqq \underset{P\in f^{-1}(Q)}{\sum}e_P$: constant. $\deg f \coloneqq d(Q)$.
+            \item $Q\in Y-\{f\text{の分岐点}\}$, $\# f^{-1}(Q)=\deg f$. 
+            \item $Q\in \{f\text{の分岐点}\}$, $\# f^{-1}(Q)<\deg f$. 
+        \end{enumerate}
         
-        2. 
-        $f$の分岐点は高々有限個である．
-        
-        3. 
-        $Q$を$Y$の点とする．
-        このとき，$d(Q)\coloneqq \sum_{P\in f^{-1}(Q)}e_P$は一定である．
-        これを$\deg f$とかく．
-        
-        4. 
-        分岐点でない点$Q\in Y$に対し$\# f^{-1}(Q)=\deg f$である．
-        分岐点$Q\in Y$に対し，$\# f^{-1}(Q)<\deg f$である．
     \end{fact}
 
-    \begin{definition}
+\end{frame}
+
+\begin{frame}
+    \frametitle{分岐指数と写像度}
+
+    \begin{definition}[分岐指数]
+        上の事実における$n$を$P$における$f$の分岐指数といい，
+        $e_P$とかく．
+        
+        $e_P>1$のとき，$P$を$f$の分岐点という．
+    \end{definition}
+    \begin{definition}[写像度]
         $d=\deg f$を$f$の写像度といい，$f$を$d$重被覆写像という．
     \end{definition}
 \end{frame}
@@ -486,7 +478,7 @@ $\pp^1$を複素射影直線という．
             1\quad ([0],\left[\frac{\omega_0}{2}\right], 
             \left[\frac{\omega_1}{2}\right], 
             \left[\frac{\omega_0+\omega_1}{2}\right]\mapsto P\text{のとき}), \\    
-            2\quad (\text{それ以外})
+            2\quad (\text{otherwise})
         \end{cases}
     \end{align*}
     ということ．
@@ -494,7 +486,7 @@ $\pp^1$を複素射影直線という．
 
 \begin{frame}
     \frametitle{証明 (1/2)}
-
+    \setlength{\baselineskip}{18pt}
     $\wp$は$\Omega$にのみ2位の極をもつ楕円関数であったから，
     $[0]$のみに2位の極をもつ$E$上の有理型関数というのと同じである．
     したがって，$\wp^{-1}(\infty)=\{[0]\}$であり，
@@ -508,21 +500,22 @@ $\pp^1$を複素射影直線という．
 
 \begin{frame}
     \frametitle{証明 (2/2)}
-
-    $[\omega_1/2]$の近傍で$\wp$を局所座標表示する．
-    $\wp$は$\omega_1$を周期にもつ偶関数なので
-    $\wp(-z)=\wp(z)=\wp(z+\omega_1)$をみたす．
+    \setlength{\baselineskip}{18pt}
+%    $\fracinline{\omega_0}/{2}$
+    $[\omega_0/2]$の近傍で$\wp$を局所座標表示する．
+    $\wp$は$\omega_0$を周期にもつ偶関数なので
+    $\wp(-z)=\wp(z)=\wp(z+\omega_0)$をみたす．
     両辺を微分して，
-    $-\wp'(-z)=\wp'(z+\omega_1)$となるが，$z=-\omega_1/2$のとき，
-    $-\wp'(\omega_1/2)=\wp'(\omega_1/2)$となる．
-    したがって，$\wp'(\omega_1/2)=0$となる．
-    よって，$\wp(z)$の$\omega_1/2$のまわりでの
+    $-\wp'(-z)=\wp'(z+\omega_0)$となるが，$z=-\omega_0/2$のとき，
+    $-\wp'(\omega_0/2)=\wp'(\omega_0/2)$となる．
+    したがって，$\wp'(\omega_0/2)=0$となる．
+    よって，$\wp(z)$の$\omega_0/2$のまわりでの
     展開における1次の項の係数は0である．
-    したがって，$e_{[\omega_1/2]}>1$であり，
-    $[\omega_1/2]$は$\wp$の分岐点である．
-    
-    $[\omega_2/2]$と$[(\omega_1+\omega_2)/2]$についても同様に，
-    $e_{[\omega_2/2]}>1$, $e_{[(\omega_1+\omega_2)/2]}>1$となるので，
+    したがって，$e_{[\omega_0/2]}>1$であり，
+    $[\omega_0/2]$は$\wp$の分岐点である．
+
+    $[\omega_1/2]$と$[(\omega_0+\omega_1)/2]$についても同様に，
+    $e_{[\omega_1/2]}>1$, $e_{[(\omega_0+\omega_1)/2]}>1$となるので，
     $\wp$は$E$の2分点で分岐する2重被覆であることが示せた．
 
 \end{frame}
@@ -574,5 +567,11 @@ $\pp^1$を複素射影直線という．
         『代数曲線論』, 朝倉書店, 2002.
     \end{thebibliography}
 \end{frame}
+
+\begin{comment}
+\begin{frame}[noframenumbering]
+aaa
+\end{frame}
+\end{comment}
 
 \end{document}
