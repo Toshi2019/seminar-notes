@@ -1,0 +1,394 @@
+%================================================
+%    この tex ファイルは2022年度立命館大学数学研究会機関紙
+%    『方程』の記事作成テンプレートです. 
+%================================================
+
+% -----------------------
+% preamble
+% -----------------------
+% ここから本文 (\begin{document}) までの
+% ソースコードに変更を加えた場合は
+% 編集者まで連絡してください. 
+% Don't change preamble code yourself. 
+% If you add something
+% (usepackage, newtheorem, newcommand, renewcommand),
+% please tell it 
+% to the editor of institutional paper of RUMS.
+
+% ------------------------
+% documentclass
+% ------------------------
+\documentclass[11pt, a4paper, dvipdfmx]{jsarticle}
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+\usepackage{url}
+\usetikzlibrary{cd}
+
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem{Fact*}{事実}
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits}
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits}
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits}
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits}
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+\numberwithin{equation}{section}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+% =================================
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+\title{超関数の理論}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\section{はじめに}
+
+\section{層}
+
+層については，\cite{Sh16,KS90}にまとまった解説がある．
+
+$X$を位相空間とし，$\Op(X)$で$X$の開集合全体のなす集合を表す．
+$\Op(X)$は開集合を対象とし包含写像を射とする圏になる．
+
+層を考える雛形として，ガウス平面上の関数環を考える．
+$\cc$をガウス平面とする．$\cc$の開集合$U$に対し，
+\begin{equation}
+    \OO_{\cc}(U)\coloneqq\{U\text{上の正則関数}\}
+\end{equation}
+とおく．$\OO_{\cc}(U)$の加法と乗法を$(f+g)(z)=f(z)+g(z)$, 
+$(fg)(z)=f(z)g(z)$
+で定めることで，$\OO_{\cc}(U)$は環になる．
+
+$U$と$V$を$V\subset U$をみたす$\cc$の開集合とする．
+$f\in\OO_{\cc}(U)$に対し$f|_V\in\OO_{\cc}(V)$を対応させることで
+環の射
+\begin{equation}
+    \res_{VU}\colon\OO_{\cc}(U)\to\OO_{\cc}(V);\quad \res_{VU}(f)=f|_V
+\end{equation}
+が定まる．
+この射を包含写像の
+ひきおこす\textbf{制限射} (restriction morphism) とよぶ．
+
+今度は
+$U$と$V$を$U\cap V\neq\varnothing$をみたす$\cc$の開集合とする．
+複素関数論では，次の事実を学ぶ．
+$f\in\OO_{\cc}(U)$, $g\in\OO_{\cc}(V)$に対し，
+$U\cap V$で$f=g$となるとき，
+$U\cup V$で定義された正則関数$h\in\OO_{\cc}(U\cup V)$で
+\begin{align*}
+    h|_U=f,\quad h|_V=g
+\end{align*}
+となるものがただ一つ（！）存在する．
+
+以上の現象を完全列の言葉を用いて眺める．
+$U$と$V$を$V\subset U$をみたす$\cc$の開集合とする．
+次の列を考える．
+\begin{equation}
+    \begin{tikzcd}%[column sep=2.3cm]
+        0 
+        \arrow[r] 
+        &[-0.03\linewidth]
+        \OO_{\cc}(U\cup V)
+        \arrow[r,"\res_{U(U\cup V)}\oplus\res_{V(U\cup V)}"]
+        &[0.12\linewidth]
+        \OO_{\cc}(U)\oplus\OO_{\cc}(V)
+        \arrow[r, "\res_{(U\cap V)U}-\res_{(U\cap V)V}"] 
+        &[0.12\linewidth]
+        \OO_{\cc}(U\cap V).
+    \end{tikzcd}
+\end{equation}
+ここで，
+$\res_{U(U\cup V)}\oplus\res_{V(U\cup V)}\colon\OO_{\cc}(U\cup V)\to\OO_{\cc}(U)\oplus\OO_{\cc}(V)$
+は$U\cup V$上の関数$f$に対し$f|_U$と$f|_V$の組$(f|_U,f|_V)$を
+対応させる射である．
+ただし環$A$と$B$に対し，
+$A\oplus B$は単位元を持つ環と単位元を保つ射の圏$\Ring$における
+有限積である．
+\subparagraph{環の圏についてのコメント}
+環の圏における積は一般には直積$A\times B$であり，
+有限の積が直和$A\oplus B$である．
+積の添字圏として有限圏を取れば$A\oplus B$と$A\times B$は一致する．
+（直和は$\Ring$の余積ではない！）
+$\Ring$における余積はテンソル積$A\otimes_{\zz} B$である．
+一般に$A\times B$と$A\otimes B$は同形ではないため，
+$\Ring$はアーベル圏ではないことにも注意．
+（始対象は$\zz$で終対象は$0$．
+したがって$\Ring$には零対象が存在しないので
+アーベル圏ではないという議論もできる．）
+\begin{Definition}\label{def-psh}
+    $X$ を位相空間とする. 
+    $X$上の \textbf{(アーベル群の) 前層} (presheaf) 
+    $\F$は次のデータからなる. 
+    \begin{itemize}
+        \item $X$ の各開部分集合 $U$ に対するアーベル群 $\F(U)$
+        \item 部分開集合の各組 $V \subset U$ に対する
+        群準同型$\rho_{UV} \colon \F(U)\to \F(V)$
+        で, 次の条件(\ref{def:psh1})--(\ref{def:psh3})を満たすもの．
+        \begin{enumerate}
+            \renewcommand{\labelenumi}{({\arabic{enumi}})}
+            \item $\F(\varnothing) = 0,$\label{def:psh1} 
+            \item $\rho_{UU} = \id$, \label{def:psh2}
+            \item $W \subset V \subset U$ ならば, \label{def:psh3}
+            $\rho_{UW} = \rho_{VW} \circ \rho_{UV}$.
+        \end{enumerate}
+    \end{itemize}
+    元$s\in \F(U)$を$\F$の$U$上の\textbf{切断} (section) という. 
+    $s|_V$ で $\rho_{UV}(s)\in\F(V)$ を表し, 
+    $s$ の $V$ への\textbf{制限} (restriction) とよぶ. 
+\end{Definition}
+つまり，$\Op(X)$から$\cAb$への反変関手で
+始対象$\varnothing$を終対象$0$にうつすものが前層である．
+
+\section{超関数}
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    \bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
+    \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+        \textit{Sheaves on Manifolds}, 
+        Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+
+\end{thebibliography}
+
+%===============================================
+
+
+\end{document}
