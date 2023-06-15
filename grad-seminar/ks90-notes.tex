@@ -1,0 +1,1119 @@
+%================================================
+%    この tex ファイルは2022年度立命館大学数学研究会機関紙
+%    『方程』の記事作成テンプレートです. 
+%================================================
+
+% -----------------------
+% preamble
+% -----------------------
+% ここから本文 (\begin{document}) までの
+% ソースコードに変更を加えた場合は
+% 編集者まで連絡してください. 
+% Don't change preamble code yourself. 
+% If you add something
+% (usepackage, newtheorem, newcommand, renewcommand),
+% please tell it 
+% to the editor of institutional paper of RUMS.
+
+% ------------------------
+% documentclass
+% ------------------------
+\documentclass[11pt, a4paper, dvipdfmx, leqno]{jsarticle}
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+\usepackage{url}
+\usetikzlibrary{cd}
+
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+%\usepackage{calligra}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+\newtheorem{com}[Axiom]{コメント}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem*{Fact*}{事実}
+\newtheorem*{com*}{コメント}
+
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits}
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits}
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits}
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits}
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{subsection}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+
+\newcommand{\cat}{\mathscr{C}}
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+
+% =================================
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+\title{Notes on Sheaves on Manifolds}
+\author{大柴寿浩}
+\date{}
+\begin{document}
+\maketitle
+
+\section*{はじめに}
+2023年度から始めた\cite{KS90}のセミナーのノート．
+
+\section*{記号}
+次の記号は断りなく使う．
+\begin{itemize}
+    \item 添字：
+    なんらかの族$(a_i)_{i\in I}$を$(a_i)_i$とか$(a_i)$と
+    略記することがある．
+\end{itemize}
+\section{ホモロジー代数}
+\setcounter{subsection}{2}
+
+\subsection{複体の圏}
+
+$\cat$を加法圏とする．
+\begin{Attention*}
+    加法圏とは次の3つの条件(\ref{additive:bilin})--(\ref{additive:biproduct})をみたす圏のことである．
+    \begin{enumerate}
+        \renewcommand{\labelenumi}{({\arabic{enumi}})}
+        \item どの対象$X, Y\in\cat$に対しても$\Hom_{\cat}(X,Y)$が
+        加法群になり，どの対象$X, Y, Z\in\cat$に対しても
+        合成$\circ\colon\Hom_{\cat}(Y,Z)\times\Hom_{\cat}(X,Y)
+        \to\Hom_{\cat}(X,Z)$が双線型である．\label{additive:bilin}
+        \item 零対象$0\in\cat$が存在する．
+        さらに$\Hom_{\cat}(0,0)=0$が成り立つ．\label{additive:zero}
+        \item 任意の対象$X, Y\in\cat$に対して積と余積が存在し，
+        さらにそれらは同型になる．（それらを複積といい$X\oplus Y$とかく．）\label{additive:biproduct}
+    \end{enumerate}
+\end{Attention*}
+圏$\cat$から，
+$\cat$の対象の複体の圏$\Comp{C}(\cat)$を作ることができる．
+まず複体の定義をする．
+圏$\cat$の対象のと射の列
+\begin{equation}\label{eq:complex}
+    \begin{tikzcd}[column sep=0.6cm]
+        \cdots
+        \arrow[r]
+        &
+        X^{n-1}
+        \arrow[r,"d_X^{n-1}"] 
+        &[+0.3cm]%[-0.03\linewidth]
+        X^n
+        \arrow[r,"d_X^{n}"]
+        &%[0.12\linewidth]
+        X^{n+1}
+        \arrow[r, ""] 
+        &%[0.12\linewidth]
+        \cdots
+    \end{tikzcd}
+\end{equation}
+を考える．
+この列$X=\left((X^n)_{n\in\zz},(d_X^{n})_{n\in\zz}\right)$が
+\textbf{複体} (complex) であるとは，任意の$n\in\zz$に対し
+\begin{equation}
+    d_X^{n+1}\circ d_X^{n}=0
+\end{equation}
+が成り立つことをいう．
+
+圏$\cat$の
+対象の複体$X=((X^n),(d_X^{n}))$, $Y=((Y^n),(d_Y^{n}))$の間の射を，
+$\cat$の射の族$(f^n\colon X^n\to Y^n)_{n\in\zz}$で，
+図式
+\begin{equation*}
+    \vcenter{\xymatrix@C=26pt@R=26pt{
+    \cdots \ar[r]
+    & 
+    X^{n}
+    \ar[r]^-{d_X^n}
+    \ar[d]^-{f^n}
+    &
+    X^{n+1}
+    \ar[r]
+    \ar[d]^-{f^{n+1}} 
+    &\cdots
+    \\
+    \cdots \ar[r]
+    & 
+    Y^{n}
+    \ar[r]^-{d_Y^n}
+    &
+    Y^{n+1}
+    \ar[r]
+    &\cdots
+    }}
+\end{equation*}
+を可換にする，すなわちどの番号$n\in\zz$に対しても
+\begin{equation}
+    d_Y^n\circ f^n=f^{n+1}\circ d_X^n 
+\end{equation}
+が成り立つものとして定める．
+
+以上の準備のもとで，$\cat$の複体の圏$\Comp(\cat)$を次のように定める．
+\begin{itemize}
+    \item 対象：$\Ob(\Comp(\cat))=\{\text{$\cat$の複体}\}$
+    \item 射：$\Hom_{\Comp(\cat)}(X,Y)=\{\text{$\cat$の複体の射}\}$
+\end{itemize}
+このとき，$\CCat$は加法圏になる．
+\begin{proof}[\textbf{圏になることの証明}]
+    $f\colon X\to Y$と$g\colon Y\to Z$を$\CCat$の射とする．
+    $f$と$g$の合成$g\circ f$は$(g^n\circ f^n)_n$で与えられる．
+    これがうまくいくことは
+    \begin{equation*}
+        \vcenter{\xymatrix@C=26pt@R=26pt{
+        \cdots \ar[r]
+        & 
+        X^{n}
+        \ar[r]^-{d_X^n}
+        \ar[d]^-{f^n}
+        &
+        X^{n+1}
+        \ar[r]
+        \ar[d]^-{f^{n+1}} 
+        &\cdots
+        \\
+        \cdots \ar[r]
+        & 
+        Y^{n}
+        \ar[r]^-{d_Y^n}
+        \ar[d]^-{g^n}
+        &
+        Y^{n+1}
+        \ar[r]
+        \ar[d]^-{g^{n+1}} 
+        &\cdots
+        \\
+        \cdots \ar[r]
+        & 
+        Z^{n}
+        \ar[r]^-{d_Z^n}
+        &
+        Z^{n+1}
+        \ar[r]
+        &\cdots
+        }}
+    \end{equation*}
+    が可換になることからわかる．
+
+    $X$の恒等射は$(\id_{X^n})_n$で与えられる．
+\end{proof}
+\begin{proof}[\textbf{加法圏になることの証明}]
+    $X$と$Y$を$\cat$の複体とする．
+    \subparagraph*{(\ref{additive:bilin})射の集合のアーベル群構造}
+    $f,g\in\Hom_{\CCat}(X,Y)$に対し，$f+g$が$(f^n+g^n)_n$で定まる．
+    \subparagraph*{(\ref{additive:zero})零対象の存在}
+    $\CCat$の零対象0は
+    \begin{equation*}%\label{eq:complex}
+        \begin{tikzcd}[column sep=0.4cm]
+            \cdots
+            \arrow[r]
+            &
+            0
+            \arrow[r,"0"] 
+            &%[+0.3cm]
+            0
+            \arrow[r,"0"]
+            &%[0.12\linewidth]
+            0
+            \arrow[r, ""] 
+            &%[0.12\linewidth]
+            \cdots
+        \end{tikzcd}
+    \end{equation*}
+    で与えられる．
+    \subparagraph*{(\ref{additive:biproduct})複積の存在}    
+    $X$と$Y$の複積$X\oplus Y$は
+    \begin{equation*}%\label{eq:complex}
+        \begin{tikzcd}[column sep=1.2cm]
+            \cdots
+            \arrow[r]
+            &[-0.6cm]
+            X^{n-1}\oplus Y^{n-1}
+            \arrow[r,"d_X^{n-1}\oplus d_Y^{n-1}"] 
+            &[+0.3cm]%[-0.03\linewidth]
+            X^n\oplus Y^{n}
+            \arrow[r,"d_X^{n}\oplus d_Y^{n}"]
+            &%[0.12\linewidth]
+            X^{n+1}\oplus Y^{n+1}
+            \arrow[r, ""] 
+            &[-0.6cm]%[0.12\linewidth]
+            \cdots
+        \end{tikzcd}
+    \end{equation*}
+    で与えられる．
+\end{proof}
+
+さらに$\cat$がアーベル圏ならば，$\CCat$もアーベル圏になる．
+\begin{Attention*}
+    加法圏$\cat$がアーベル圏であるとは
+    次の条件(\ref{abel:ker}), (\ref{abel:homTh})をみたすことをいう．
+    \begin{enumerate}
+        \renewcommand{\labelenumi}{({\arabic{enumi}})}
+        \setcounter{enumi}{3}
+        \item 任意の$\cat$の射$f\colon X\to Y$に対し，
+        $f$の核$\Ker{f}$と余核$\Coker f$が存在する．\label{abel:ker}
+        \item 任意の$\cat$の射$f\colon X\to Y$に対し，
+        自然に定まる射$\Coim f\to\im f$は同型である．\label{abel:homTh}
+    \end{enumerate}
+\end{Attention*}
+
+\begin{proof}$X$と$Y$を$\cat$の複体とする．
+    \subparagraph*{(\ref{abel:ker})核と余核の存在}
+    複体の射$f\colon X\to Y$に対し，
+    核$\Ker{f}$は$(\Ker{f^n})_n$で，
+    余核$\Coker{f}$は$(\Coker{f^n})_n$で与えられる．
+    \begin{com*}[4/24]
+        「$\Ker{f}$のdifferentialの構成はどうなっていますか？」
+
+        次の図式を考える．
+        \begin{equation*}
+            \vcenter{\xymatrix@C=26pt@R=18pt{
+            \cdots \ar[r]
+            & 
+            \Ker{f^{n}}
+            \ar[r]^-{\overline{d}_X^n}
+            \ar[d]^-{\iota^n}
+            &
+            \Ker{f^{n+1}}
+            \ar[r]
+            \ar[d]^-{\iota^{n+1}} 
+            &\cdots
+            \\    
+            \cdots \ar[r]
+            & 
+            X^{n}
+            \ar[r]^-{d_X^n}
+            \ar[d]^-{f^n}
+            &
+            X^{n+1}
+            \ar[r]
+            \ar[d]^-{f^{n+1}} 
+            &\cdots
+            \\
+            \cdots \ar[r]
+            & 
+            Y^{n}
+            \ar[r]^-{d_Y^n}
+            &
+            Y^{n+1}
+            \ar[r]
+            &\cdots
+            }}
+        \end{equation*}
+        ここで，$\iota^n$は$\Ker{f^n}$の普遍性から自然に定まる射である．
+        $\overline{d}_X^n\colon\Ker{f^n}\to\Ker{f^{n+1}}$が
+        $d_X^n\circ\iota^n$によって定められることを示せば良い．
+        \begin{align*}
+            f^{n+1}\circ d_X^n\circ\iota^n
+            =d_Y^n\circ f^{n+1}\circ\iota^n
+            =d_Y^n\circ0=0
+        \end{align*}
+        より，$d_X^n\circ\iota^n$は$\Ker{f^{n+1}}$に
+        値を取る．したがって，
+        $\overline{d}_X^n\colon\Ker{f^n}\to\Ker{f^{n+1}}$が定まる．
+    \end{com*}
+
+    \subparagraph*{(\ref{abel:homTh})余像と像が同型になること}
+    各次数$n$ごとに$\Coim f^n\cong \im f^n$が成り立つことから従う．
+\end{proof}
+圏$\CCat$の充満部分圏$\Comp^+(\cat)$, 
+$\Comp^-(\cat)$, $\Comp^\mathrm{b}(\cat)$を
+\begin{align*}
+    \Ob(\Comp^+(\cat))
+    &=\left\{
+        0\rightarrow
+        X^{n}\overset{d_X^{n}}{\longrightarrow}
+        X^{n+1}\rightarrow\cdots
+        \quad (n\ll 0)
+    \right\}, \\
+    \Ob(\Comp^-(\cat))
+    &=\left\{
+        \cdots\rightarrow 
+        X^{n-1}\overset{d_X^{n-1}}{\longrightarrow}
+        X^{n}\rightarrow
+        0
+        \quad (n\gg 0)
+    \right\}, \\
+    \Ob(\Comp^\mathrm{b}(\cat))
+    &=\left\{ 
+        0\rightarrow
+        X^{n}\rightarrow
+        \cdots\rightarrow 
+        X^{m}\rightarrow
+        0
+        \quad (n\ll 0, m\gg0)
+    \right\}
+\end{align*}
+で定める．
+
+$\cat$の対象$X$に対し$\CCat$の対象
+\begin{equation*}
+    \cdots\to
+    0\rightarrow
+    X\rightarrow
+    0\to\cdots
+\end{equation*}
+を対応させることによって，
+忠実充満な関手$\cat\hookrightarrow\CCat$が定まる．
+
+$k$を整数とする．$\cat$の複体
+\begin{equation*}
+    \begin{tikzcd}[column sep=0.6cm]
+        X\colon\cdots
+        \arrow[r]
+        &
+        X^{n-1}
+        \arrow[r,"d_X^{n-1}"] 
+        &[+0.3cm]%[-0.03\linewidth]
+        X^n
+        \arrow[r,"d_X^{n}"]
+        &%[0.12\linewidth]
+        X^{n+1}
+        \arrow[r, ""] 
+        &%[0.12\linewidth]
+        \cdots
+    \end{tikzcd}
+\end{equation*}
+に対し，$X[k]$を
+$X[k]^n=X^{n+k}$, $d_{X[k]}^n=(-1)^{k}d_X^{n+k}$
+で定める．図式でかくと
+\begin{equation*}
+    \begin{tikzcd}[column sep=1.4cm]
+        X[k]\colon\cdots
+        \arrow[r]
+        &[-1cm]
+        X^{n+k-1}
+        \arrow[r,"(-1)^kd_X^{n+k-1}"] 
+        &[+0.5cm]%[-0.03\linewidth]
+        X^{n+k}
+        \arrow[r,"(-1)^kd_X^{n+k}"]
+        &%[0.12\linewidth]
+        X^{n+k+1}
+        \arrow[r, ""] 
+        &[-1cm]%[0.12\linewidth]
+        \cdots
+    \end{tikzcd}
+\end{equation*}
+のようになる．
+$X$から$Y$への射$f\colon X\to Y$に対し，
+$f[k]\colon X[k]\to Y[k]$を$f[k]^n=f^{n+k}$で定める．
+$X$を$X[k]$に対応させることで
+関手$[k]\colon\CCat\to\CCat$が定まる．
+この関手を次数$k$のシフト関手と呼ぶ．
+
+\begin{proof}[\textbf{$[k]$が関手になることの証明}]
+    $X[k]$が複体になること：
+    \begin{align*}
+        (-1)^kd_X^{n+k}\circ (-1)^kd_X^{n+k-1}
+        =(-1)^{2k}d_X^{n+k}\circ d_X^{n+k-1}=0.
+    \end{align*} 
+
+    $f[k]$が複体の射になること：
+    \begin{equation*}
+        \vcenter{\xymatrix
+        @C=20pt@R=26pt
+        {
+        \cdots \ar[r]
+        & 
+        X^{n+k}
+        \ar[rr]^-{(-1)^kd_X^{n+k}}
+        \ar[d]^-{f^{n+k}}
+        &&
+        X^{n+k+1}
+        \ar[r]
+        \ar[d]^-{f^{n+k+1}} 
+        &\cdots
+        \\
+        \cdots \ar[r]
+        & 
+        Y^{n+k}
+        \ar[rr]^-{(-1)^kd_Y^{n+k}}
+        &&
+        Y^{n+k+1}
+        \ar[r]
+        &\cdots
+        }}
+    \end{equation*}
+    が可換になることを示せばよい．
+    \begin{align*}
+        f^{n+k+1}\circ (-1)^{k}d_X^{n+k+1}
+        =(-1)^{k}f^{n+k+1}\circ d_X^{n+k+1}
+        =(-1)^{k}d_Y^{n+k+1}\circ f^{n+k}. 
+    \end{align*}
+
+    $[k]$が合成を保つこと：
+    $f\colon X\to Y$, $g\colon Y\to Z$を複体の射とする．
+    このとき
+    \begin{align*}
+        (g[k]\circ f[k])^n
+        =g[k]^n\circ f[k]^n
+        =g^{n+k}\circ f^{n+k}
+        =(g\circ f)^{n+k}
+        =(g\circ f)[k]^n        
+    \end{align*}
+    が成り立つ．
+
+    $[k]$が恒等射を保つこと：
+    $\id_X[k]^n=\id_X^{n+k}=\id_{X[k]}^{n}$.
+\end{proof}
+
+\paragraph{ホモトピー}
+$\cat$の複体の圏$\CCat$から，ホモトピックな射を同一視することによって，
+新たな圏$\KCat$が得られる．まず準備．
+
+$\CCat$を圏$\cat$の複体の圏とする．
+$X,Y\in\CCat$とする．
+$f\colon X\to Y$が0にホモトピックであるとは，
+$\cat$の射の族$(s^n\colon X^n\to Y^{n-1})$で，
+\begin{equation}
+    f^n=d_Y^{n-1}\circ s^n+s^{n+1}\circ d_X^{n}\quad(n\in\zz)
+\end{equation}
+となるものが存在することをいう．
+
+$f,g\colon X\to Y$に対し，
+$f-g$が0にホモトピックであるとき，
+$f$と$g$はホモトピックであるといい，$f\simeq g$とかく．
+$f$が0とホモトピックであることを$f\simeq0$で表す．
+このとき$s=(s^n)$を$f$と$g$の間のホモトピーという．
+$\simeq$は同値関係である．
+\begin{proof}$f,g,h$を$X$から$Y$への$\cat$の複体の射とする．
+    \subparagraph*{反射律}$(s^n=0)$が$f$と$f$の間の
+    ホモトピーを与える．
+
+    \subparagraph*{対称律}
+    $f$と$g$の間のホモトピーを$s$とするとき，
+    $-s$が$g$と$f$の間のホモトピーを与える．
+
+    \subparagraph*{推移律}$f$と$g$の間のホモトピーを$s$, 
+    $g$と$h$の間のホモトピーを$t$とする．
+    このとき，$s+t$が$f$と$h$の間のホモトピーを与える．
+\end{proof}
+
+\begin{Proposition}\label{prop:ht}
+    $X,Y\in\CCat$に対し，
+    $\Hom_{\CCat}(X,Y)$の加法部分群$\Ht(X,Y)$を
+    \begin{equation}
+        \Ht(X,Y)\coloneqq\{f\in\Hom_{\CCat}(X,Y)\mid f\simeq 0\}
+    \end{equation}
+    で定める．複体の射$f\colon X\to Y$と$g\colon Y\to Z$のどちらかが
+    0にホモトピックならば，合成$g\circ f$は$0$にホモトピックになる．
+    したがって，射の合成は次の写像をひきおこす．
+    \begin{align*}
+        \Hom_{\CCat}(Y,Z)\times\Ht(X,Y)\to\Ht(X,Z),\\
+        \Ht(Y,Z)\times\Hom_{\CCat}(X,Y)\to\Ht(X,Z).
+    \end{align*}        
+\end{Proposition}
+\begin{proof}$f\in\Hom_{\CCat}(X,Y)$, 
+    $g\in\Hom_{\CCat}(Y,Z)$とする．
+    
+    $f\simeq 0$のとき，$s$を0とのホモトピーとすると，
+    $g\circ f$と0との間のホモトピーは
+    \begin{align*}
+        (g^{n-1}\circ s^{n}\colon X^n\to Y^{n-1}\to Z^{n-1})_n
+    \end{align*}
+    で与えられる．
+
+    $g\simeq 0$のとき，$t$を0とのホモトピーとすると，
+    $g\circ f$と0との間のホモトピーは
+    \begin{align*}
+        (t^{n}\circ f^{n}\colon X^n\to Y^{n}\to Z^{n-1})_n
+    \end{align*}
+    で与えられる．
+\end{proof}
+
+以上の準備のもとで，圏$\cat$のホモトピー圏$\KCat$を次のように定める．
+\begin{itemize}
+    \item 対象：$\Ob(\KCat)=\Ob(\CCat)$
+    \item 射：$\Hom_{\KCat}(X,Y)=\Hom_{\CCat}(X,Y)/\Ht(X,Y)$
+\end{itemize}
+$\KCat$は加法圏になる．
+\begin{proof}[\textbf{$\KCat$が加法圏になることの証明}]
+    命題\ref{prop:ht}より，射の合成がきちんと定まる．
+
+    各$X,Y\in\KCat$に対する$\Hom_{\KCat}(X,Y)$のアーベル群構造は
+    $\Ht(X,Y)$による剰余群の構造として得られ，
+    さらに命題\ref{prop:ht}より，合成の双線型性が得られる．
+
+    零対象と複積は$\CCat$と同様である．
+\end{proof}
+
+圏$\KCat$の充満部分圏$\Komp^+(\cat)$, 
+$\Komp^-(\cat)$, $\Komp^\mathrm{b}(\cat)$を，
+それぞれ$\Comp^+(\cat)$, 
+$\Comp^-(\cat)$, $\Comp^\mathrm{b}(\cat)$と同じ対象をとって定める．
+
+\paragraph*{コホモロジー}
+$\cat$をアーベル圏とする．
+$X\in\CCat$に対し，
+\begin{align*}
+    Z^k(X)&\coloneqq \Ker d_X^k,\\
+    B^k(X)&\coloneqq \im d_X^{k-1},\\
+    H^k(X)&\coloneqq \Ker d_X^k/\im d_X^{k-1}
+\end{align*}
+とおく．$H^k(X)$を複体$X$の$k$次のコホモロジーという．
+
+\begin{Attention*}
+    完全列$0\to X\rightarrow Y\rightarrow Z\to0$に対し，
+    $Z$を$Y$の商対象といい，$Y/X$とかく．
+    一般に単射$i\colon X\hookrightarrow Y$の
+    余核$\Coker{i}$を$Y/X$とかける．
+\end{Attention*}
+
+任意の$k$に対し$H^k$は$\CCat$から$\cat$への加法関手を定める．
+\begin{equation}
+    H^k(X)=H^0(X[k])
+\end{equation}
+$f\colon X\to Y$が0とホモトピックならば，
+$H^k(f)\colon H^k(X)\to H^k(Y)$は0. 
+よって$H^k$は$\KCat$から$\cat$への関手を定める．
+
+完全列たち
+\begin{align*}
+    &X^{k-1}\to Z^{k}(X)\to H^{k}(X)\to 0,\\
+    &0\to H^{k}(X)\to \Coker{d_X^{k-1}}\to X^{k+1},\\
+    &0\to Z^{k-1}(X)\to X^{k-1}\to B^{k}(X)\to 0,\\
+    &0\to B^{k}(X)\to X^{k}\to \Coker{d_X^{k-1}}\to 0,\\
+    &0\to H^{k}(X)\to \Coker{d_X^{k-1}}\overset{d_X^{k}}{\longrightarrow}Z^{k+1}(X)\to H^{k+1}(X)\to 0.
+\end{align*}
+
+\begin{Proposition}
+    $0\to X\to Y\to Z\to 0$を$\CCat$の完全列とする．
+    このとき，$\cat$における次の長完全列が存在する．
+    \begin{equation*}
+        \cdots\to 
+        H^{n}(X)\to H^{n}(Y)\to H^{n}(Z)
+        \overset{\delta}{\longrightarrow} 
+        H^{n+1}(X)\to \cdots.
+    \end{equation*}
+\end{Proposition}
+
+\paragraph*{切り落とし}
+$X\in\CCat$と整数$n$に対し，
+$\tau^{\leqq n}(X),\tau^{\geqq n}(X)\in\CCat$を
+\begin{align}
+    \tau^{\leqq n}(X)\colon 
+    \cdots\to X^{n-2}\to X^{n-1}\to \Ker{d^n}\to0\to\cdots,\\
+    \tau^{\geqq n}(X)\colon 
+    \cdots 0\to \Coker{d^{n-1}}\to X^{n+1}\to X^{n+2}\to\cdots
+\end{align}
+で定める．
+このとき，$\CCat$における次の射が得られる．
+\begin{align*}
+    \tau^{\leqq n}(X)\to X,\quad X\to\tau^{\geqq n}(X),
+\end{align*}
+また，$n'\leqq n$ならば
+\begin{align*}
+    \tau^{\leqq n'}(X)\to \tau^{\leqq n}(X),
+    \quad 
+    \tau^{\geqq n'}(X)\to\tau^{\geqq n}(X).
+\end{align*}
+
+\begin{Proposition}
+    \begin{enumerate}
+        \item 自然な射$H^k(\tau^{\leqq n}(X))\to H^k(X)$は$k\leqq n$ならば同型であり，$k>n$では$H^k(X)=0$である．
+        \item 自然な射$H^k(X)\to H^k(\tau^{\geqq n}(X))$は$k\geqq n$ならば同型であり，$k<n$では$H^k(X)=0$である．
+    \end{enumerate}
+\end{Proposition}
+
+\begin{Attention}
+    ホモトピー同値    
+\end{Attention}
+
+\subsection{写像錐}
+$\cat$を加法圏とし$f\colon X\to Y$を$\CCat$の射とする．
+\begin{Definition}
+    $f$の写像錐$M(f)$とは次で定まる$\CCat$の対象である．
+    \begin{align*}
+        \begin{cases}
+            M(f)^n=X^{n+1}\oplus Y^{n},\\
+            d^{n}_{M(f)}=\begin{bmatrix*}
+                d_{X[1]}^n & 0\\
+                f^{n+1} & d_Y^n\\
+            \end{bmatrix*}
+        \end{cases}
+    \end{align*}
+\end{Definition}
+
+射$\alpha(f)\colon Y\to M(f)$と$\beta(f)\colon M(f)\to X[1]$を
+次で定める．
+\begin{align}
+    \alpha(f)^{n}=\begin{bmatrix*}
+        0\\\id_{Y^n}
+    \end{bmatrix*},\\
+    \beta(f)^{n}=\begin{bmatrix*}
+        \id_{X^{n+1}}&0
+    \end{bmatrix*}.
+\end{align}
+
+\begin{com*}[4/24]
+    「どうして逆に$X\to M(f)$や$M(f)\to Y$じゃないんですか？」
+    
+    例えば，逆に$\gamma^n \colon M(f)^n\to Y^n$を$\begin{bmatrix*}
+        0&\id_{Y^n}
+    \end{bmatrix*}$で定めようとしても，
+    \begin{align*}
+        \gamma^{n+1}\circ d_{M(f)}^{n}
+        &=\begin{bmatrix*}
+            0&\id_{Y^n}
+        \end{bmatrix*}\begin{bmatrix*}
+            d_{X[1]}^n & 0\\
+            f^{n+1} & d_Y^n\\
+        \end{bmatrix*}
+        =\begin{bmatrix*}
+            f^{n+1}&d_Y^n
+        \end{bmatrix*},\\
+        d_{Y}^n\circ \gamma^{n}
+        &=d_Y^n\circ
+        \begin{bmatrix*}
+            0&\id_{Y^n}
+        \end{bmatrix*}
+        =
+        \begin{bmatrix*}
+            0&d_Y^n
+        \end{bmatrix*}
+    \end{align*}
+    となり，両者は一致しない．
+    したがって，$\gamma$は複体の射にならない．
+    $X\to M(f)$も同様である．
+    したがって，$M(f)$に対して定まる自然な射は
+    $\alpha, \beta$のようにせざるを得ない．
+\end{com*}
+
+\begin{Lemma}
+    任意の$\CCat$の射$f\colon N\to Y$に対し，
+    $\phi\colon X[1]\to M(\alpha(f))$で次の条件をみたすものが存在する．
+    \begin{enumerate}
+        \item $\phi$は$\KCat$で同型である，
+        \item 次の図式は$\KCat$で可換になる：    
+        \begin{equation*}
+            \vcenter{\xymatrix@C=30pt@R=30pt{
+            Y \ar[r]^-{\alpha(f)}
+            \ar[d]^-{\id_Y}
+            & 
+            M(f)
+            \ar[r]^-{\beta(f)}
+            \ar[d]^-{\id_{M(f)}}
+            &
+            X[1]
+            \ar[r]^-{-f[1]}
+            \ar[d]^-{\phi} 
+            &
+            Y[1]
+            \ar[d]^-{\id_{Y[1]}}
+            \\
+            Y 
+            \ar[r]^-{\alpha(f)}
+            & 
+            M(f)
+            \ar[r]^-{\alpha(\alpha(f))}
+            &
+            M(\alpha(f))
+            \ar[r]^-{\beta(\alpha(f))}
+            &
+            Y[1].
+            }}
+        \end{equation*}
+    \end{enumerate}
+\end{Lemma}
+
+%\begin{proof}
+%    $\phi$と逆$\psi$を次で定める．
+%\end{proof}
+
+\newpage
+%\thispagestyle{myheadings}
+{\Large{2023/05/01}}
+\subsection{三角圏}\label{ssec:tricat}
+$\cat$を加法圏とし，$T\colon\cat\to\cat$を自己関手とする．
+$\cat$の三角とは射の列
+\begin{equation*}
+    X\to Y\to Z\to T(X)
+\end{equation*}
+のことである．
+
+\begin{Definition}
+    三角圏$\cat$は次のデータ\eqref{eq:tricat}, \eqref{eq:family-dt}と
+    規則(TR\ref{TR0})--(TR\ref{TR5})からなる．\ref{des:data}
+    \begin{description}
+        \item[データ] \begin{align}
+            %\renewcommand{\labelenumi}{(\ref{ssec:tricat}.{\arabic{enumi}})}
+            \text{加法圏}\cat\text{と自己関手}T\colon\cat\to\cat\text{の組},\label{eq:tricat}\\
+            \text{特三角 (distinguished triangle) の族．}\label{eq:family-dt}
+        \end{align}    
+        \item[規則] \label{des:data}
+        \begin{quote}
+            \begin{enumerate}
+                %\setlength{\leftskip}{11pt}
+                \setcounter{enumi}{-1}
+                \renewcommand{\labelenumi}{(TR{\arabic{enumi}})}
+                \item 特三角に同形な三角は特三角である．\label{TR0}
+                \item 任意の対象$X\in\cat$に対し，
+                    $X\overset{\id_X}{\longrightarrow}X\longrightarrow
+                    0\longrightarrow T(X)$は特三角である．\label{TR1}
+                \item $\cat$の任意の射$f\colon X\to Y$は
+                    特三角$X\overset{f}{\to}Y\to Z\to T(X)$に埋め込める．
+                    つまり$Z\in\cat$で$X\overset{f}{\to}Y\to Z\to T(X)$が
+                    特三角となるものが存在する．\label{TR2}
+                \item $X\overset{f}{\to}
+                    Y\overset{g}{\to} 
+                    Z\overset{h}{\to} T(X)$が
+                    特三角であることと$Y\overset{g}{\longrightarrow}
+                    Z\overset{h}{\longrightarrow} T(X)\overset{-T(f)}{\longrightarrow} T(Y)$が
+                    特三角であることは同値である．\label{TR3}
+                \item ２つの特三角$X\overset{f}{\to}
+                Y\to Z\to T(X)$, $X'\overset{f'}{\to}
+                Y'\to Z'\to T(X')$に対し，可換図式
+                \begin{equation*}
+                    \vcenter{\xymatrix
+                    @C=26pt@R=26pt
+                    {
+                    X\ar[r]^-{f}\ar[d]^-{u}
+                    &
+                    Y\ar[d]^-{v} 
+                    \\
+                    X'\ar[r]^-{f'}
+                    &
+                    Y'
+                    }}
+                \end{equation*}
+                は特三角の射に埋め込める．\label{TR4}
+                \item（八面体公理）．３つの特三角
+                \begin{align*}
+                    X\overset{f}{\to}Y\to Z'\to T(X), \\
+                    Y\overset{g}{\to}Z\to X'\to T(Y),\\
+                    X\overset{g\circ f}{\longrightarrow}
+                    Z\to Y'\to T(X)
+                \end{align*}
+                に対し， \label{TR5}
+            \end{enumerate}    
+        \end{quote}
+    \end{description}
+\end{Definition}
+
+\subsection{圏の局所化}
+
+%\begin{equation}\label{eq:complex}
+%    \cdots\rightarrow 
+%    X^{n-1}\overset{d_X^{n-1}}{\longrightarrow}
+%    X^{n}\overset{d_X^{n}}{\longrightarrow}
+%    X^{n+1}\rightarrow\cdots
+%\end{equation}
+
+%$\Ob(\Comp(\cat))=\left\{\right\}$
+
+
+
+
+
+
+
+
+
+
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+        \textit{Sheaves on Manifolds}, 
+        Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+        \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
+        \textit{Categories and Sheaves}, 
+        Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
+        \bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
+    %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+\end{thebibliography}
+
+%===============================================
+
+
+\end{document}

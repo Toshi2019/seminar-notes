@@ -53,7 +53,7 @@
 
 % ================================
 % パッケージを追加する場合のスペース 
-
+%\usepackage{calligra}
 %=================================
 
 
@@ -227,6 +227,7 @@
 \newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
 \newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
 \newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
 \newcommand{\res}{\mathop{\rho}\nolimits}
 \newcommand{\A}{\mcal{A}}
 \newcommand{\B}{\mcal{B}}
@@ -240,6 +241,77 @@
 \newcommand{\OO}{\mcal{O}}
 \newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
 \newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+
+\newcommand{\cat}{\textsf{C}}
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+
+
+%\newcommand{\cala}{\mathop{\text{\textcalligra{a}}}\nolimits}
+%\newcommand{\calb}{\mathop{\text{\textcalligra{b}}}\nolimits}
+%\newcommand{\calc}{\mathop{\text{\textcalligra{c}}}\nolimits}
+%\newcommand{\cald}{\mathop{\text{\textcalligra{d}}}\nolimits}
+%\newcommand{\cale}{\mathop{\text{\textcalligra{e}}}\nolimits}
+%\newcommand{\calf}{\mathop{\text{\textcalligra{f}}}\nolimits}
+%\newcommand{\calg}{\mathop{\text{\textcalligra{g}}}\nolimits}
+%\newcommand{\calh}{\mathop{\text{\textcalligra{h}}}\nolimits}
+%\newcommand{\cali}{\mathop{\text{\textcalligra{i}}}\nolimits}
+%\newcommand{\calj}{\mathop{\text{\textcalligra{j}}}\nolimits}
+%\newcommand{\calk}{\mathop{\text{\textcalligra{k}}}\nolimits}
+%\newcommand{\call}{\mathop{\text{\textcalligra{l}}}\nolimits}
+%\newcommand{\calm}{\mathop{\text{\textcalligra{m}}}\nolimits}
+%\newcommand{\caln}{\mathop{\text{\textcalligra{n}}}\nolimits}
+%\newcommand{\calo}{\mathop{\text{\textcalligra{o}}}\nolimits}
+%\newcommand{\calp}{\mathop{\text{\textcalligra{p}}}\nolimits}
+%\newcommand{\calq}{\mathop{\text{\textcalligra{q}}}\nolimits}
+%\newcommand{\calr}{\mathop{\text{\Large{\textcalligra{r}}}}\nolimits}
+%\newcommand{\cals}{\mathop{\text{\textcalligra{s}}}\nolimits}
+%\newcommand{\calt}{\mathop{\text{\textcalligra{t}}}\nolimits}
+%\newcommand{\calu}{\mathop{\text{\textcalligra{u}}}\nolimits}
+%\newcommand{\calv}{\mathop{\text{\textcalligra{v}}}\nolimits}
+%\newcommand{\calw}{\mathop{\text{\textcalligra{w}}}\nolimits}
+%\newcommand{\calx}{\mathop{\text{\textcalligra{x}}}\nolimits}
+%\newcommand{\caly}{\mathop{\text{\textcalligra{y}}}\nolimits}
+%\newcommand{\calz}{\mathop{\text{\textcalligra{z}}}\nolimits}
+
 % =================================
 
 
@@ -272,21 +344,27 @@
 % begin document and end document.
 % ---------------------------
 
-\title{超関数の理論}
-\author{}
+\title{層コホモロジー}
+\author{大柴寿浩}
 \date{}
 \begin{document}
 \maketitle
 
+
 \section{はじめに}
 
+\subsection*{凡例}
+次の記号と用語について断りなく用いることがある．
+\begin{itemize}
+    \item 始対象と終対象：圏$\cat$に始対象が存在するとき
+    $\varnothing_{\cat}$とかき，
+    終対象が存在するとき$\pt_{\cat}$とかく．
+    零対象は$0_{\cat}$，または単に$0$とかく．
+\end{itemize}
 \section{層}
 
 層については，\cite{Sh16,KS90}にまとまった解説がある．
-
-$X$を位相空間とし，$\Op(X)$で$X$の開集合全体のなす集合を表す．
-$\Op(X)$は開集合を対象とし包含写像を射とする圏になる．
-
+\subsection{簡単な例から}
 層を考える雛形として，ガウス平面上の関数環を考える．
 $\cc$をガウス平面とする．$\cc$の開集合$U$に対し，
 \begin{equation}
@@ -295,6 +373,7 @@ $\cc$をガウス平面とする．$\cc$の開集合$U$に対し，
 とおく．$\OO_{\cc}(U)$の加法と乗法を$(f+g)(z)=f(z)+g(z)$, 
 $(fg)(z)=f(z)g(z)$
 で定めることで，$\OO_{\cc}(U)$は環になる．
+複素数倍$(cf)(z)=cf(z)$も考えれば線型空間，もっというと$\cc$代数にもなっている．
 
 $U$と$V$を$V\subset U$をみたす$\cc$の開集合とする．
 $f\in\OO_{\cc}(U)$に対し$f|_V\in\OO_{\cc}(V)$を対応させることで
@@ -317,10 +396,11 @@ $U\cup V$で定義された正則関数$h\in\OO_{\cc}(U\cup V)$で
 \end{align*}
 となるものがただ一つ（！）存在する．
 
-以上の現象を完全列の言葉を用いて眺める．
-$U$と$V$を$V\subset U$をみたす$\cc$の開集合とする．
+以上の現象を眺めるために，ここで線形代数の眼鏡をかける．
+$U$と$V$を$U\cap V\neq\varnothing$をみたす$\cc$の
+開集合とする．
 次の列を考える．
-\begin{equation}
+\begin{equation}\label{eq:hol-seq}
     \begin{tikzcd}%[column sep=2.3cm]
         0 
         \arrow[r] 
@@ -341,7 +421,7 @@ $\res_{U(U\cup V)}\oplus\res_{V(U\cup V)}\colon\OO_{\cc}(U\cup V)\to\OO_{\cc}(U)
 ただし環$A$と$B$に対し，
 $A\oplus B$は単位元を持つ環と単位元を保つ射の圏$\Ring$における
 有限積である．
-\subparagraph{環の圏についてのコメント}
+\footnote{環の圏についてのコメント．
 環の圏における積は一般には直積$A\times B$であり，
 有限の積が直和$A\oplus B$である．
 積の添字圏として有限圏を取れば$A\oplus B$と$A\times B$は一致する．
@@ -352,14 +432,62 @@ $\Ring$はアーベル圏ではないことにも注意．
 （始対象は$\zz$で終対象は$0$．
 したがって$\Ring$には零対象が存在しないので
 アーベル圏ではないという議論もできる．）
+}
+
+上の列の$\OO_{\cc}(U\cup V)$の部分空間（部分環）
+$\Ker \left(\rho_{U(U\cup V)}\oplus\rho_{V(U\cup V)}\right)$は
+$U\cup V$上の関数$h$で$h|_U$と$h|_V$がどちらも$0$となるもの全体である．
+そのような$h$は$0$しかないので$\Ker\left(\rho_{U(U\cup V)}\oplus\rho_{V(U\cup V)}\right)=0$となる．
+つまり$0\to\OO_{\cc}(U\cup V)\to\OO_{\cc}(U)\oplus\OO_{\cc}(V)$は完全である．
+
+今度は$\OO_{\cc}(U)\oplus\OO_{\cc}(V)$の部分に注目する．
+$\Ker\left(\res_{(U\cap V)U}-\res_{(U\cap V)V}\right)$は$U$上の
+関数$f$と$V$上の関数$g$の組$(f,g)$のうち$U\cap V$上での値が
+一致するもの全体である．
+他方，$\im\left(\rho_{U(U\cup V)}\oplus\rho_{V(U\cup V)}\right)$は$U$上の
+関数$f$と$V$上の関数$g$の組$(f,g)$のうち，
+$U\cup V$上の関数$h$を用いて$f=h|_U$, $g=h|_V$とかけるもの全体である．
+$(f,g)$を
+$\im\left(\rho_{U(U\cup V)}\oplus\rho_{V(U\cup V)}\right)$
+の元とする．
+このとき$U\cup V$上の関数$h$を用いて
+$(f,g)=(h|_U,h|_V)$とかける．
+この$h$に対し$f|_{U\cap V}=h|_{U\cap V}=g_{U\cap V}$が成り立つので
+$(f,g)$は$\Ker\left(\res_{(U\cap V)U}-\res_{(U\cap V)V}\right)$に属する．
+したがって，
+$\im\left(\rho_{U(U\cup V)}\oplus\rho_{V(U\cup V)}\right)\subset\Ker\left(\res_{(U\cap V)U}-\res_{(U\cap V)V}\right)$が成り立つ．
+
+$(f,g)$を
+$\Ker\left(\res_{(U\cap V)U}-\res_{(U\cap V)V}\right)$
+の元とする．このとき，$f|_{U\cap V}-g|_{U\cap V}=0$すなわち$f|_{U\cap V}=g|_{U\cap V}$が成り立つ．
+上で説明した通り，
+このとき$U\cup V$上の関数$h$を用いて$(f,g)=(h|_U,h|_V)$とかける．
+したがって，$(f,g)$は$\im\left(\rho_{U(U\cup V)}\oplus\rho_{V(U\cup V)}\right)$に属する．
+よって，
+$\Ker\left(\res_{(U\cap V)U}-\res_{(U\cap V)V}\right)\subset\im\left(\rho_{U(U\cup V)}\oplus\rho_{V(U\cup V)}\right)$
+も成り立つ．
+以上より，
+$\Ker\left(\res_{(U\cap V)U}-\res_{(U\cap V)V}\right)=\im\left(\rho_{U(U\cup V)}\oplus\rho_{V(U\cup V)}\right)$，
+すなわち，
+$\OO_{\cc}(U\cup V)\to\OO_{\cc}(U)\oplus\OO_{\cc}(V)\to\OO_{\cc}(U\cap V)$
+も完全である．
+つまり，正則関数の制限と解析接続に関する以上の現象は，
+\eqref{eq:hol-seq}が完全列であると言い換えることができる．
+
+\subsection{層}
+$X$を位相空間とし，$\Op(X)$で$X$の開集合全体のなす集合を表す．
+$\Op(X)$は開集合を対象とし包含写像を射とする圏になる．
+
 \begin{Definition}\label{def-psh}
     $X$ を位相空間とする. 
-    $X$上の \textbf{(アーベル群の) 前層} (presheaf) 
-    $\F$は次のデータからなる. 
+    $X$から圏$\cat$への\textbf{前層} (presheaf)とは， 
+    $\Op(X)$から$\cat$への反変関手で
+    始対象$\varnothing$を終対象$\pt_{\cat}$にうつすものである．
+    すなわち，$X$から圏$\cat$への前層$\F$は次のデータからなる. 
     \begin{itemize}
-        \item $X$ の各開部分集合 $U$ に対するアーベル群 $\F(U)$
-        \item 部分開集合の各組 $V \subset U$ に対する
-        群準同型$\rho_{UV} \colon \F(U)\to \F(V)$
+        \item[--] $X$ の各開部分集合$U$に対する圏$\cat$の対象$\F(U)$,
+        \item[--] 部分開集合の各組 $V \subset U$ に対する
+        $\cat$の射$\rho_{UV} \colon \F(U)\to \F(V)$
         で, 次の条件(\ref{def:psh1})--(\ref{def:psh3})を満たすもの．
         \begin{enumerate}
             \renewcommand{\labelenumi}{({\arabic{enumi}})}
@@ -373,10 +501,28 @@ $\Ring$はアーベル圏ではないことにも注意．
     $s|_V$ で $\rho_{UV}(s)\in\F(V)$ を表し, 
     $s$ の $V$ への\textbf{制限} (restriction) とよぶ. 
 \end{Definition}
-つまり，$\Op(X)$から$\cAb$への反変関手で
-始対象$\varnothing$を終対象$0$にうつすものが前層である．
 
 \section{超関数}
+
+実解析多様体$M$上の超関数の層$\scB_M$は
+自然に分布の層${\scD b}_M$を含む．
+また，$\scB_M$は脆弱層（すなわち，制限射が全射）であるという
+著しい性質がある．
+
+はじめに$M$が実数直線$\rr$の開区間である場合を考える．
+$X$を複素直線$\cc$における$M$の開近傍で$X \cap \rr = M$を
+みたすものとする．
+$\OO(U)$で開集合$U\subset X$上の正則関数の空間を表す．
+$M$上の超関数の空間$\scB_M$は次で与えられる．
+\begin{equation}
+    \scB_M\coloneqq \OO(U-M)/\OO(U).
+\end{equation}
+$\scB_M$はここで取った近傍$U$に依らない．したがって，
+次のように余極限を用いて定義するのがよい．
+\begin{equation}
+    \scB_M\coloneqq\colim_{U\supset M}\OO(U-M)/\OO(U).
+\end{equation}
+ここでの余極限を$\ibF$
 %===============================================
 % 参考文献スペース
 %===============================================
@@ -385,7 +531,7 @@ $\Ring$はアーベル圏ではないことにも注意．
     \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
         \textit{Sheaves on Manifolds}, 
         Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
-
+    \bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
 \end{thebibliography}
 
 %===============================================

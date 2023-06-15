@@ -1,0 +1,551 @@
+
+%Don't forget to delete
+%showkeys
+%overfullrule
+%\date \ber \er \cmt
+
+%------------------------
+\documentclass[12pt, a4paper, dvipdfmx]{jsarticle}
+
+
+%usepackage
+%------------------------
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage[psamsfonts]{amssymb}
+\usepackage{color}
+\usepackage{ascmac}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancybox}
+%\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{proof}
+\usepackage{listings}
+\usepackage{otf}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\usepackage[svgnames]{xcolor}% tikzより前に読み込む必要あり
+\usepackage{tikz}
+\usetikzlibrary{intersections}
+
+\usepackage[all]{xy}
+\usepackage{amscd}
+
+%\usepackage{pb-diagram}
+
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+
+\usepackage{enumitem}
+
+\usepackage{bbm}
+
+% ================================
+% パッケージを追加する場合のスペース 
+\usepackage{latexsym}
+\usepackage{wrapfig}
+\usepackage{layout}
+\usepackage{url}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+
+\usepackage{okumacro}
+%\pdfmapfile{+cmathbb.map}
+%\usepackage{cmathbb}
+%\usepackage[options]{mathfr}
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem{Fact*}{事実}
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\HH}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+
+
+% 圏の記号など
+\newcommand{\Set}{\textsf{Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+\newcommand{\Ring}{\textsf{Ring}}
+\newcommand{\Group}{\textsf{Group}}
+\newcommand{\Ab}{\textsf{Ab}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+\newcommand{\tTop}{\textsf{Top}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits}
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits}
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits}
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits}
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+\newcommand{\UU}{\mcal{U}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\emp}{\varnothing}
+\newcommand{\ceq}{\coloneqq}
+\newcommand{\sbs}{\subset}
+\newcommand{\mapres}[2]{\left. #1 \right|_{#2}}
+\newcommand{\ded}{\hfill $\blacksquare$}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\isom}{\overset{\sim}{\longrightarrow}}
+
+
+\newcommand{\ibi}{\textbf{\textit{i}}}
+\newcommand{\ibj}{\textbf{\textit{j}}}
+\newcommand{\ibk}{\textbf{\textit{k}}}
+\newcommand{\EE}{\textbf{\textit{E}}}
+
+\newcommand{\RE}{\mathop{\mathrm{Re}}\nolimits}
+\newcommand{\Pic}{\mathop{\mathrm{Pic}}\nolimits}
+\newcommand{\Gal}{\mathop{\mathrm{Gal}}\nolimits}
+
+%\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+%\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+%\newcommand{\OO}{\mcal{O}}
+%\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+
+\newcommand{\cat}{\textsf{C}}
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand{\nm}[1]{\lVert #1 \rVert}
+
+
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {6pt}%                     % 見出し後のスペース
+    {\thmname{#1}\,\thmnumber{#2}\thmnote{{\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\swapnumbers
+\newtheorem{AXM}{公理}
+\newtheorem{DFN}[Axiom]{定義}
+\newtheorem{THM}[Axiom]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[Axiom]{命題}
+\newtheorem{LMM}[Axiom]{補題}
+\newtheorem{CRL}[Axiom]{系}
+\newtheorem{EG}[Axiom]{例}
+\newtheorem{PBLM}[Axiom]{問題}
+\newtheorem{EX}[Axiom]{演習問題}
+\newtheorem{ANS}[Axiom]{解答}
+\newtheorem*{ANS*}{解答}
+\newtheorem*{EX*}{Exercise}
+
+% proof環境
+\renewcommand{\proofname}{\textbf{証明}}
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item\relax
+  {\bfseries%\itshape
+  #1\@addpunct{.}}\hspace\labelsep\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
+
+%\newtheorem{}{Axiom}[]
+
+\numberwithin{equation}{section} % 式番号を「(3.5)」のように印刷
+
+\newcommand{\MM}{\mcal{M}}
+\newcommand{\Vol}{\mathop{\mathrm{Vol}}}
+\newcommand{\scln}{\mathrel{;}}
+
+
+% =================================
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+
+
+\begin{document}
+
+\title{コンパクトリーマン面の種数の有限性}
+\author{}
+\date{}
+%\date{December 13, 2021}
+
+\maketitle
+
+\section{\cite[\S 14]{Fo81}の和訳}
+\setcounter{section}{14}
+
+本節では任意のコンパクトリーマン面$X$に対し
+コホモロジー群$H^1(X,\OO)$が有限次元複素ベクトル空間になる
+ことを示す．
+この次元を$X$の種数と呼ぶ．
+この有限性定理の結果のひとつに
+各コンパクトリーマン面上の定数でない有理型関数の存在がある．
+3章での更なる応用を鑑みて
+コンパクトリーマン面に対してのみならず
+任意のリーマン面の相対コンパクト部分集合に対しても議論する．
+
+\subsection{正則関数の$L^2$ノルム}
+$D\subset \cc$を開集合とする．
+正則関数$f\in\OO(D)$に対し$L^2$ノルムを
+\begin{equation*}
+  \nm{f}_{L^2(D)}
+  \coloneqq\left(\iint_{D}\abs{f(x+iy)}^2dxdy\right)^{1/2}
+\end{equation*}
+で定める．
+このとき$\nm{f}_{L^{2}}\in\rr_+\cup\{\infty\}$である．
+$\nm{f}_{L^{2}}<\infty$であるとき，$f$は二乗可積分であるという．
+$D$上の二乗可積分正則関数全体のなすベクトル空間を$L^2(D,\OO)$で表す．
+
+\begin{equation*}
+  \Vol(D)\coloneqq\iint_Ddxdy<\infty  
+\end{equation*}
+であるとき，各有界関数$f\in\OO(D)$に対し
+\begin{equation*}
+  \nm{f}_{L^{2}}\leqq\sqrt{\Vol(D)}\nm{f}_{D}
+\end{equation*}
+が成り立つ．ここで，
+$\nm{f}_{D}\coloneqq\sup\left\{\abs{f(z)}:z\in D\right\}$は
+上限ノルムを表す．
+
+$f,g\in L^2(D,\OO)$に対し，内積$\inner<f,g>\in\cc$を
+\begin{equation*}
+  \inner<f,g>\coloneqq\iint_D f\bar{g}~dxdy
+\end{equation*}
+で定められる．
+この積分の存在は各$z\in D$に対し
+\begin{equation*}
+  \abs{f(x)\overline{g(z)}}
+  \leqq\frac{1}{2}\left(\abs{f(z)}^2+\abs{g(z)}^2\right)
+\end{equation*}
+が成り立つことから従う．
+この内積により$L^2(D,\OO)$は
+ユニタリベクトル空間\footnote{
+  [訳注]複素内積空間（エルミート空間）のこと．
+}となり
+特に直交性の概念が定まる．
+いま$B=B(a,r)\coloneqq\{z\in\cc: \abs{z-a}<r\}$を$a$を
+中心とする半径$r>0$の円盤とする．
+このとき単項式$(\psi_n)_{n\in\nn}$を
+\begin{equation*}
+  \psi_n(z)\coloneqq(z-a)^n
+\end{equation*}
+で定めると$(\psi_n)_{n\in\nn}$は$L^2(B,\OO)$の直交系を成し，
+全ての$n\in\nn$に対し
+\begin{equation*}
+  \nm{\psi_n}_{L^2(B)}=\frac{\sqrt{\pi}r^{n+1}}{\sqrt{n+1}}
+\end{equation*}
+となることが，極座標を用いることで容易に確かめられる．
+$f\in L^2(B,\OO)$であり
+\begin{equation*}
+  f(z)=\sum_{n=0}^{\infty}c_n(z-a)^n
+\end{equation*}
+を$f$の$a$のまわりでのテイラー展開とするとき，
+ピタゴラスの定理から
+\begin{equation*}
+  \nm{f}^2_{L^2(B)}
+  =\sum_{n=0}^{\infty}
+  \frac{\pi r^{2n+2}}{n+1}\abs{c_n}^2\tag{$\ast$}\label{eq:norm-in-B}
+\end{equation*}
+となることが従う．
+
+\subsection{定理}\label{thm:norm}
+$D\subset\cc$を開集合，$r>0$を実数とし
+\begin{equation*}
+  D_r\coloneqq\left\{z\in\cc:B(z,r)\subset D\right\}
+\end{equation*}
+を$D$の点で境界からの距離が$r$以上であるものの集合とする．
+このとき任意の$f\in L^2(D,\OO)$に対し
+\begin{equation*}
+  \nm{f}_{D_r}\leqq \frac{1}{\sqrt{\pi}r}\nm{f}_{L^2(D)}
+\end{equation*}
+が成り立つ．
+
+\begin{proof}
+  $a\in D_{r}$とし$f(z)=\sum c_n(z-a)^n$を$a$の
+  まわりでの$f$のテイラー展開とする．
+  \eqref{eq:norm-in-B}を用いて
+  \begin{equation*}
+    \abs{f(a)}=\abs{c_0}\leqq\frac{1}{\sqrt{\pi}r}\nm{f}_{L^2(B(a,r))}\leqq\nm{f}_{L^2(D)}
+  \end{equation*}
+  を得る．
+  $\nm{f}_{D_r}=\sup\left\{\abs{f(a)}\colon a\in D_r\right\}$
+  より結論が従う．
+\end{proof}
+
+特に，定理\ref{thm:norm}より，
+$(f_n)_{n\in\nn}$が$L^2(D,\OO)$内のコーシー列ならば，
+$D$の任意のコンパクト部分集合で一様収束することが従う．
+したがって，その極限の関数は正則である．
+よって$L^2(D,\OO)$は完備であり，したがってヒルベルト空間となる．
+
+次の補題はシュワルツの補題のある種の一般化と考えられる．
+
+\subsection{補題}
+$D'\Subset D$を$\cc$の開集合とする．
+
+
+\begin{thebibliography}{20} 
+  %\bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
+  %\bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+   %   \textit{Sheaves on Manifolds}, 
+    %  Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+  \bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+  \bibitem[Fo81]{Fo81} Otto Forster, \emph{Lectures on Riemann Surfaces}, Springer, 1981.
+\end{thebibliography}
+
+
+\end{document}
+
+
