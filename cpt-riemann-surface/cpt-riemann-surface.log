@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  9 JUN 2023 09:52
+This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  15 JUN 2023 20:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -964,9 +964,6 @@ LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
 (Font)              scaled to size 6.47278pt on input line 440.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
 (Font)              scaled to size 4.62341pt on input line 440.
-[1
-
-]
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
 (Font)              scaled to size 6.47278pt on input line 474.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
@@ -977,6 +974,9 @@ LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
 (Font)              scaled to size 5.5481pt on input line 476.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
 (Font)              scaled to size 5.5481pt on input line 476.
+[1
+
+]
 LaTeX Font Info:    Font shape `JT1/hmc/bx/n' in size <10> not available
 (Font)              Font shape `JT1/hgt/m/n' tried instead on input line 516.
 LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
@@ -987,34 +987,38 @@ LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
 (Font)              scaled to size 9.24683pt on input line 516.
  [2]
 
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@ifnextchar' on input line 539.
+
+
 LaTeX Font Warning: Font shape `JT1/hgt/m/it' undefined
-(Font)              using `JT1/hgt/m/n' instead on input line 545.
+(Font)              using `JT1/hgt/m/n' instead on input line 566.
 
 
 LaTeX Font Warning: Font shape `JY1/hgt/m/it' undefined
-(Font)              using `JY1/hgt/m/n' instead on input line 545.
+(Font)              using `JY1/hgt/m/n' instead on input line 566.
 
 [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 549.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 549.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 570.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 570.
  (./cpt-riemann-surface.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 549.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 549.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 570.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 570.
 Package rerunfilecheck Info: File `cpt-riemann-surface.out' has not changed.
-(rerunfilecheck)             Checksum: A7A84BD342180522F7CAA9CE1220A81C;296.
+(rerunfilecheck)             Checksum: D418F783288A597ACD03E58985A6CF7E;384.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 549.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 570.
  ) 
 Here is how much of TeX's memory you used:
  24866 strings out of 493273
  420682 string characters out of 6144919
- 552740 words of memory out of 5000000
+ 553741 words of memory out of 5000000
  28290 multiletter control sequences out of 15000+600000
  87625 words of font info for 131 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 55i,8n,68p,3292b,991s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,10n,68p,3292b,991s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on cpt-riemann-surface.dvi (3 pages, 11116 bytes).
+Output written on cpt-riemann-surface.dvi (3 pages, 13220 bytes).

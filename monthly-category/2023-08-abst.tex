@@ -1,0 +1,1321 @@
+%================================================
+%    この tex ファイルは2022年度立命館大学数学研究会機関紙
+%    『方程』の記事作成テンプレートです. 
+%================================================
+
+% -----------------------
+% preamble
+% -----------------------
+% ここから本文 (\begin{document}) までの
+% ソースコードに変更を加えた場合は
+% 編集者まで連絡してください. 
+% Don't change preamble code yourself. 
+% If you add something
+% (usepackage, newtheorem, newcommand, renewcommand),
+% please tell it 
+% to the editor of institutional paper of RUMS.
+
+% ------------------------
+% documentclass
+% ------------------------
+\documentclass[11pt, a4paper, dvipdfmx, leqno]{jsarticle}
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+\usepackage{url}
+\usetikzlibrary{cd}
+
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+%\usepackage{calligra}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+\newtheorem{com}[Axiom]{コメント}
+\newtheorem{Notation}[Axiom]{記号}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem*{Fact*}{事実}
+\newtheorem*{com*}{コメント}
+
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{\mathop{\textsf{Set}}\nolimits}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+\newcommand{\Mod}{\mathop{\textsf{Mod}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits}
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits}
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits}
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits}
+\newcommand{\Fct}{\mathop{\mathrm{Fct}}\nolimits}
+\newcommand{\f}{\mathop{\mathit{for}}\nolimits}
+
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{subsection}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+\newcommand{\U}{\mcal{U}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+
+\newcommand{\limf}{\mathop{\text{``}\hspace{-0.7pt}\varinjlim\hspace{-1.5pt}\text{''}}}
+\newcommand{\sumf}{\mathop{\text{``}\hspace{-0.7pt}\bigoplus\hspace{-1.5pt}\text{''}}}
+
+\newcommand{\hh}{\mathop{\mathrm{h}}\nolimits}
+\newcommand{\Ind}{\mathop{\mathrm{Ind}}}
+
+
+
+
+\newcommand{\cat}{\mathcal{C}}
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+
+% =================================
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+\def\ind<#1>{\mathop{\text{``}\hspace{-0.7pt}#1\limits\hspace{-1.5pt}\text{''}}}
+
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+\title{帰納圏について}
+\author{うるち米(@RisE\_HU23)}
+\date{}
+\begin{document}
+\maketitle
+%\thispagestyle{empty}
+
+\section*{はじめに}
+2023/08/20に行う月一圏論ゼミでの発表資料．
+走り書きなので，不備だらけ．
+ほとんどの出典は\cite{KS01,KS06}．
+モチベーションは\textbf{帰納層}(ind-sheaf)にあって，
+圏論の細かいところはダルいので，
+あまり厳密にやるつもりは無い．
+
+はじめに，\cite{KS99,KS01}に沿って，
+解析からのモチベーションについて説明する．
+
+その後，\cite{KS01,KS06}に沿って，
+帰納対象，帰納化，アーベル圏への応用について説明する．
+
+ホントは導来圏を取る操作と帰納化の操作の関係までやりたかったけれど，
+諸々の事情（大体は発表者の不勉強のせい）で断念．
+気になる人は\cite{KS06}を見てください．
+
+\section{モチベーション}
+
+アーベル圏$\cat$に対して，帰納圏$\Ind(\cat)$を定めると，
+「ある意味で」$\Ind(\cat)$は$\cat$の双対になっている\footnote{
+    そういう意味で，
+    発表者的には$\cat^\op$を$\cat$の双対圏と呼ぶのは反対で，
+    $\Ind(\cat)$や$\cat^\wedge$の方を$\cat$の双対圏と
+    よぶべきではという気持ちが微粒子レベルである．
+}．
+局所コンパクト空間$X$上の（単位元を持つ$X$上の
+環$k_X$の加群の）層\footnote{
+    層の理論については\cite{KS90}とかを見てください．
+    発表者も院生ゼミで読んでいます．
+}でコンパクト台を持つもの
+のなす圏$\Mod^c(k_X)$の帰納対象を帰納層という．
+$\Mod^c(k_X)$の帰納層のなす
+圏$\mathrm{I}(k_X)\coloneqq\Ind(\Mod^c(k_X))$を取る操作は，
+Schwartz分布 (distribution) の空間を
+コンパクト台を持つ$X$上の微分可能関数の空間に対して考えること
+の類似になっている（らしい）．
+
+\cite{KS99}で述べられている帰納層の利点は次の2つ．
+\begin{itemize}
+    \item 増大度（大域的な条件）に関する制約を持つ関数は
+    古典的な層の理論では扱えない．これが帰納層を用いれば扱えるようになる．
+    特に佐藤超関数に増大度の条件をつけたものは，Scwartz分布と対応しているので，
+    両者がパラレルに扱える．
+    \begin{align*}
+        \mcal{O}_X&\longrightarrow \mathscr{B}_X\\
+        \mcal{O}^\mathrm{t}_X&\longrightarrow \mathscr{D}b_X
+    \end{align*}
+    \item $X$上の層に対して$T^\ast X$上の帰納層を
+    対応させる関手$\mu_X$が構成でき，佐藤の超局所化がより自然な枠組みで扱える．
+\end{itemize}
+
+まとめると，
+\begin{quote}
+    古典解析における様々な対象が統一的な方法で扱える
+\end{quote}
+のが帰納層の強み．
+
+
+
+
+
+
+
+
+
+
+
+\section{極限}
+
+\subsection{共終関手}
+\begin{Definition}
+    関手$\varphi\colon J\to I$が共終とは，
+    任意の$i\in I$に対し余スライス圏$J^i$が連結となることをいう．
+\end{Definition}
+
+\begin{Definition}
+    圏$I$が共終的に小さいとは，
+    小さい圏$J$と共終関手$\varphi\colon J\to I$が存在することをいう．
+\end{Definition}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{形式帰納極限と形式射影極限}
+\begin{Notation}
+    (i) 
+    $\limf$と$\ind<\coprod>$で，
+    それぞれ$\cat^\wedge$における帰納極限と余積とを表す．
+
+    (ii) 
+    $\ind<\coprod>$の代わりに$\ind<\bigsqcup>$とかくことがある．
+
+    (iii) 
+    $I$が小さいとし，$\alpha\colon I\to\cat^\wedge$を関手とする．
+    このとき，$\limf\alpha$を$\ind<\varinjlim_{i\in I}>\alpha(i)$とか
+    $\ind<\varinjlim_{i}>\alpha(i)$とかくことがある．
+    任意の$X\in\cat$に対し，$(\ind<\varinjlim_{i}>\alpha(i))(X)
+    \cong\varinjlim\limits_i((\alpha(i))(X))$が成り立つのだった．
+
+    (iv) 
+    $I$が小さいとし，$\alpha\colon I\to\cat$を関手とする．
+    $\limf\alpha=\limf({\hh}_\cat\circ\alpha)$とおく．
+
+    (v) 
+    $\limf\alpha$を$\alpha$の形式帰納極限 (ind-lim) とよぶ．
+\end{Notation}
+
+この記法のもとで，$I$が小さい圏，$\alpha\colon I\to\cat^\wedge$を
+関手とするとき，$X\in\cat$に対し，
+\begin{equation}
+    \Hom_{\cat^\wedge}(X,\limf\alpha)=\varinjlim\Hom_{\cat^\wedge}(X,\alpha)
+\end{equation}
+が成り立つ．
+この等式は$X\in\cat^\wedge$のときには，
+$\alpha$が$\cat$に値を取る場合でも一般には成り立たない．
+
+$A\in\cat^\wedge$に対し，
+\begin{equation*}
+    \Hom_{\cat^\wedge}(\limf\alpha,A)\cong\varinjlim\Hom_{\cat^\wedge}(\alpha,A)
+\end{equation*}
+が成り立つ．
+
+$\cat$が小さい帰納極限を持つとする．
+このとき，関手$\alpha\colon I\to\cat$に対し，
+自然な写像$\varinjlim\Hom_{\cat}(X,\alpha)
+\to\Hom_\cat(X,\varinjlim\alpha)$は$\cat^\wedge$の射
+\begin{equation*}
+    \limf\alpha\to\hh_\cat(\limf\alpha)
+\end{equation*}
+を定める．
+
+$\alpha\colon I\to\cat$, $\beta\colon J\to\cat$を
+小さい圏で定義された関手とすると，次の同形を得る．
+\begin{equation}
+    \begin{aligned}\label{eq:ind-in-U}
+        \Hom_{\cat^\wedge}(
+            \ind<\varinjlim_{i\in I}>\alpha(i),\ind<\varinjlim_{j\in J}>\beta(j)
+            )
+        &\cong\varprojlim_i\Hom_{\cat^\wedge}(\alpha(i),\ind<\varinjlim_{j\in J}>\beta(j))\\
+        &\cong\varprojlim_i\varinjlim_j\Hom_{\cat}(\alpha(i),\beta(j)).
+    \end{aligned}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{圏の帰納化}
+
+\subsection{圏と関手の帰納化}
+宇宙$\U$を固定して考える．
+圏と言えば$\U$圏\footnote{
+    任意の対象$X,Y\in\cat$に対し，$\Hom_\cat(X,Y)$が$\U$に関して
+    小さい集合となる，
+    すなわち$\U$内の集合$u\in\U$で$\Hom_\cat(X,Y)\cong u$と
+    なるものが存在するとき，$\cat$を$\U$圏とよぶ．
+}
+を意味し，$\Set$は$\U\text{-}\Set$を意味する．
+
+圏$\cat$に対し，$\cat^\wedge\coloneqq\Fct(\cat^\op,\Set)$に
+おける帰納極限を$\limf$とかくのだった．
+
+\begin{Definition}
+    (i) 
+    $\cat$を$\U$圏とする．
+    $A\in\cat^\wedge$が$\cat$の\textbf{帰納対象} (ind-object) であるとは，
+    $\U$に関して小さい\footnote{
+        $\U$圏$\cat$であって，
+        $\Ob(\cat)$が$\U$に関して小さい集合であるものを
+        $\U$に関して小さい圏とよぶ．
+    }フィルター圏$I$と関手$\alpha\colon I\to\cat$で，
+    $A\cong\limf\alpha$となるものが存在することをいう．
+
+    (ii) 
+    $\cat$の帰納対象からなる$\cat^\wedge$の大きい部分圏
+    を$\Ind^\U(\cat)$（混同の恐れがないときはたんに$\Ind(\cat)$）と
+    かき，$\cat$の\textbf{帰納化} (indization) と
+    よぶ．（$\hh_\cat$のひきおこす）自然な
+    関手を$\iota_\cat\colon\cat\to\Ind(\cat)$で表す．
+\end{Definition}
+
+\begin{Lemma}
+    $\Ind(\cat)$は$\U$圏である．
+\end{Lemma}
+\begin{proof}
+    $A,B\in\Ind(\cat)$とする．
+    $I$, $J$を小さいフィルター圏, 
+    $\alpha\colon I\to\cat$, $\beta\colon J\to\cat$を関手で
+    $A\cong\ind<\varinjlim_{i\in I}>\alpha(i)$, 
+    $B\cong\ind<\varinjlim_{j\in J}>\beta(j)$をみたすものとする．
+    このとき\eqref{eq:ind-in-U}より$\Hom_\cat(A,B)\cong\varprojlim_i\varinjlim_j\Hom_{\cat}(\alpha(i),\beta(j))\in\U$となる．
+\end{proof}
+
+\begin{Example}
+    $\Mod(k)$
+\end{Example}
+
+\begin{Notation}
+    $A,B,C\in\cat^\wedge$, $X,Y,Z\in\cat$のようにかく．
+\end{Notation}
+
+\begin{Proposition}
+    $A\in\cat^\wedge$とする．
+    $A\in\Ind(\cat)$であることと
+    $\cat_A$がフィルターづけられており，共終的に小さい
+    ことは同値．
+\end{Proposition}
+
+\begin{Corollary}
+    関手$\iota_\cat\colon\cat\to\Ind(\cat)$は右完全かつ右に小さい．
+\end{Corollary}
+
+\begin{Proposition}\label{prop:ind-full}
+    $\cat$が有限フィルター極限を持つとする．
+    このとき，$\Ind(\cat)$は
+    左完全関手$A\colon\cat^\op\to\Set$で$\cat_A$が
+    共終的に小さいものからなる$\cat^\wedge$の充満部分圏となる．
+\end{Proposition}
+
+
+
+
+
+
+
+
+%6.1.16
+\begin{Proposition}\label{prop:ind-lim}
+    (i) 
+    $\cat$の任意の並行射に対し，
+    $\cat^\wedge$における核が$\Ind(\cat)$に属すとする．
+    このとき，$\Ind(\cat)$の任意の並行射に対し，
+    $\cat^\wedge$での核も$\Ind(\cat)$に属する．
+
+    (ii) 
+    $J$を小さい集合とし，
+    $J$で添字づけられた任意の$\cat$の対象の族の，
+    $\cat^\wedge$における積が$\Ind(\cat)$に属すとする．
+    このとき，
+    $J$で添字づけられた任意の$\Ind(\cat)$の対象の族の，
+    $\cat^\wedge$における積も$\Ind(\cat)$に属す．
+\end{Proposition}
+
+%6.1.17
+\begin{Corollary}\label{cor:ind-comm-proj}
+    (i) 
+    $\cat$が有限射影極限を持つとする．
+    このとき，$\Ind(\cat)$も有限射影極限を持つ．
+    さらに，自然な関手$\cat\to\Ind(\cat)$と
+    $\Ind(\cat)\to\cat^\wedge$は左完全である．
+
+    (ii) 
+    $\cat$が小さい射影極限を持つとする．
+    このとき，$\Ind(\cat)$も小さい射影極限を持つ．
+    さらに，自然な関手$\cat\to\Ind(\cat)$と
+    $\Ind(\cat)\to\cat^\wedge$は小さい射影極限と交換する．
+\end{Corollary}
+
+
+
+
+
+
+
+
+%6.1.18
+\begin{Proposition}\label{prop:ind-fin-colim}
+    (i) 
+    $\cat$に余核があるとする．このとき，$\Ind(\cat)$も余核を持つ．
+
+    (ii) 
+    $\cat$が有限余積を持てば，$\Ind(\cat)$も有限余積を持つ．
+
+    (iii) 
+    $\cat$が有限余極限を持てば，$\Ind(\cat)$も有限余極限を持つ．
+\end{Proposition}
+
+%6.1.19
+\begin{Proposition}\label{prop:ind-filtrant}
+    $\cat$が有限帰納極限と有限射影極限を持てば，
+    小さいフィルター帰納極限は$\Ind(\cat)$において完全である．
+\end{Proposition}
+
+
+
+
+
+
+
+
+
+
+
+
+\section{加法圏とアーベル圏}
+
+\subsection{加法圏\cite[\S8.2]{KS06}}\label{sec:add}
+\begin{Proposition}\label{prop:hom-zs}
+    $\cat$を加法圏とし，$F,F'\colon\cat\to\Mod(\zz)$を
+    有限積と交換する関手とする．このとき次が成り立つ．
+    \begin{equation*}
+        \Hom_{\Fct(\cat,\Mod(\zz))}(F,F')
+        \overset{\sim}{\rightarrow}
+        \Hom_{\Fct(\cat,\Set)}(\f\circ F,\f\circ F')
+    \end{equation*}
+\end{Proposition}
+\begin{proof}
+    単射性
+
+    全射性
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{アーベル圏の帰納化\cite[\S8.6]{KS06}}\label{sec:ind-abel}
+$\cat$をアーベル$\U$圏とする．
+このとき，$\cat^\op$から$\Mod(\zz)$への加法関手のなす
+大きい圏$\cat^{\wedge,add}$はアーベル圏になる．
+命題\ref{prop:hom-zs}から，
+$\cat^{\wedge,add}$を$\cat^\wedge$の充満部分圏とみなせる．
+仮定より，$\cat$と$\Mod(\zz)$は$\U$圏であるが，$\cat^{\wedge,add}$は
+$\U$圏になるとは限らない．
+
+\begin{Notation}
+    $\cat$が圏であるとき，
+    $\limf$によって$\cat^\wedge$における帰納極限を表す．
+    $(X_i)_{i\in I}$が$I$で添字づけられた加法圏$\cat$の対象の
+    小さい族であるとき，$\ind<\bigoplus_{i\in I}>X_i$で
+    $\ind<\varinjlim_J>(\bigoplus\limits_{i\in J}X_i)$を表す．
+    ここで，$J$は$I$の有限部分集合を走る．
+    したがって，$Z\in\cat$に対し
+    \begin{equation*}
+        \Hom_{\cat^\wedge}(Z,\ind<\bigoplus_{i\in I}>X_i)
+        \cong
+        \bigoplus_{i\in I}\Hom_{\cat^\wedge}(Z,X_i)
+    \end{equation*}
+    が成り立つ．
+\end{Notation}
+
+関手
+\begin{equation*}
+    \hh_\cat\colon\cat\to\cat^{\wedge,add},\quad X\mapsto\Hom_{\cat}(\cdot,X)
+\end{equation*}
+によって，$\cat$を$\cat^{\wedge,add}$の充満部分圏とみなせる．
+しかもこの関手は左完全である．ただし，一般に完全ではない．
+
+$\cat$内の帰納対象とは$A\in\cat^\wedge$の対象であって，
+小さいフィルター圏$I$上のある関手$\alpha\colon I\to\cat$に対して
+$\limf\alpha$と同型なもののことであった．
+したがって，$\Ind(\cat)$は$\cat^\wedge$の充満な前加法部分圏となる．
+$\Ind(\cat)$は$\U$圏であった．
+
+\begin{Proposition}
+    $A\in\cat^{\wedge,add}$とする．
+    次の条件(i)と(ii)は同値である．
+    \begin{enumerate}
+        \item [(i)]関手$A$は$\Ind(\cat)$に属する．
+        \item [(ii)]関手$A$は左完全であり$\cat_A$は共終で小さい圏である．
+    \end{enumerate}
+\end{Proposition}
+\begin{proof}
+    命題\ref{prop:ind-full}から従う．
+\end{proof}
+
+\begin{Corollary}
+    $\cat$を小さいアーベル圏とする．
+    このとき，$\Ind(\cat)$は左完全関手のなす$\cat^{\wedge,add}$の
+    充満加法部分圏$\cat^{\wedge,add,l}$と圏同値である．
+\end{Corollary}
+
+\begin{Lemma}\label{lem:ind-property}
+    (i) 
+    圏$\Ind(\cat)$は加法的であり，核と余核を持つ．
+
+    (ii) 
+    $I$を小さいフィルター圏とし，
+    $\alpha, \beta\colon I\to\cat$を関手，$\varphi\colon\alpha\to\beta$を関手の射とする．
+    $f\coloneqq\limf\varphi$とすると，
+    $\Ker f\cong\limf(\Ker\varphi)$，
+    $\Coker f\cong\limf(\Coker\varphi)$が成り立つ．
+
+    (iii) 
+    $\varphi\colon A\to B$を$\Ind(\cat)$の射とする．
+    このとき，$\cat^{\wedge,add}$における$\varphi$の核は$\Ind(\cat)$における核である．
+\end{Lemma}
+
+これは命題\ref{prop:ind-lim}と命題\ref{prop:ind-fin-colim}の特殊な場合である．
+
+\begin{Theorem}
+    (i) 
+    $\cat$はアーベル圏である．
+
+    (ii) 
+    自然な関手$\cat\to\Ind(\cat)$は充満忠実かつ完全であり，
+    自然な関手$\Ind(\cat)\to\cat^{\wedge,add}$は
+    充満忠実かつ左完全である．
+
+    (iii) 
+    $\Ind(\cat)$は小さい帰納極限を持つ．
+    さらに，小さいフィルター圏上の帰納極限は完全である．
+
+    (iv) 
+    $\cat$が小さい射影極限を持つならば，
+    $\Ind(\cat)$も小さい射影極限を持つ．
+
+    (v) 
+    $\ind<\bigoplus>$は$\Ind(\cat)$における余積である．
+%    (vi)
+%    $\cat$が本質的に小さいとする．
+\end{Theorem}
+
+\begin{proof}
+    (i) 
+    補題\ref{lem:ind-property}から，$\Ind(\cat)$は核と余核を持つ．
+    $f$を$\Ind(\cat)$の射とする．
+    補題\ref{lem:ind-property}(ii)より，
+    $f=\limf\varphi$とかける．
+    このとき，
+    再び補題\ref{lem:ind-property}(ii)から，
+    $\Coim f\cong\limf\Coim\varphi$と$\im f\cong\limf\im\varphi$が
+    成り立つ．したがって，$\cat$がアーベル圏であることから，$\Coim f\cong\im f$が成り立つ．
+
+    (ii) 
+    補題\ref{lem:ind-property}から従う．
+
+    (iii) 
+    命題\ref{prop:ind-filtrant}から従う．
+
+    (iv) 
+    系\ref{cor:ind-comm-proj}(ii) から従う．
+
+    (v) 
+    明らか．
+\end{proof}
+
+
+\begin{Proposition}\label{prop:ind-exact}
+    $0\to A'\overset{f}{\to}A\overset{g}{\to}A''\to 0$
+    を$\Ind(\cat)$の完全列とし，$\mcal{J}$を$\cat$の充満部分加法圏とする．
+    このとき，小さいフィルター圏$I$と$I$から$\cat$への関手の
+    完全列$0\to \alpha'
+    \overset{\varphi}{\to}\alpha
+    \overset{\psi}{\to}\alpha''\to 0$で$f\cong\limf\varphi$と$g\cong\limf\psi$をみたすものが存在する．
+\end{Proposition}
+
+\begin{comment}
+\begin{Lemma}
+    $I$を小さいフィルター圏，
+    $\alpha\colon T\to \cat$を関手，
+    $A=\limf\alpha$とし，
+    $f\colon A\hookrightarrow B$を$\Ind(\cat)$における単射とする．
+    このとき，小さいフィルター圏$K$と共終関手$p$
+\end{Lemma}
+\end{comment}
+
+\begin{Corollary}
+    $F\colon \cat\to\cat'$をアーベル圏の間の加法関手とし，
+    $IF\colon\Ind(\cat)\to\Ind(\cat')$を対応する関手とする．
+    $F$が左完全（右完全）なら$IF$も左完全（右完全）である．
+\end{Corollary}
+
+\begin{proof}
+    命題\ref{prop:ind-exact}から従う．
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
+\setcounter{section}{0}
+\appendix
+\section{\cite{KS01}に沿った説明}
+\setcounter{subsection}{0}
+\setcounter{Axiom}{0}
+
+\subsection{帰納対象}
+
+$\U$を宇宙とする．
+集合$x$が$\U$に関して小さいとは，
+$\U$内の集合$u\in\U$で$x\cong u$と
+なるものが存在することをいう．
+$\U$圏$\cat$とは，
+任意の対象$X,Y\in\cat$に対し，$\Hom_\cat(X,Y)$が$\U$に関して
+小さい集合となることをいう．
+$\U$圏$\cat$であって，
+$\Ob(\cat)$が$\U$に関して小さい集合であるものを
+$\U$に関して小さい圏とよぶ．
+圏が$\U$に関して本質的に小さいとは，
+小さい圏と同値であることをいう．
+
+宇宙$\U$を固定して考える．
+圏は$\U$圏のことを意味するとする．
+小さくない圏を大きい圏という．
+$\Set$は$\U$集合のなす圏を意味する．
+
+\begin{Definition}
+    $\cat$を圏とする．
+    \begin{equation*}
+        \cat^\wedge\coloneqq\Fct(\cat^\op,\Set)
+    \end{equation*}
+    とおく．
+\end{Definition}
+
+米田埋め込みを$\hh_\cat\colon\cat\to\cat^\wedge$で表す．
+このとき，$G\in\cat^\wedge$と$X\in\cat$に対し，
+\begin{equation}
+    \Hom_{\cat^\wedge}(\hh_\cat(X),G)\cong G(X)
+\end{equation}
+が成り立つ．
+特に，
+\begin{equation*}
+    \Hom_{\cat^\wedge}(\hh_\cat(X),\hh_\cat(Y))
+    \cong 
+    \Hom_\cat(X,Y)
+\end{equation*}
+であり，$\hh_\cat$は充満忠実である．
+$\hh_\cat$によって$\cat$を$\cat^\wedge$の充満部分圏とみなす．
+
+$\cat^\wedge$は小さい帰納極限を持つが，
+$\hh_\cat$と$\varinjlim$は一般に交換しない．
+混同を防ぐために$\cat^\wedge$における帰納極限を$\limf$とかく．
+$I$が小さいとし，$\alpha\colon I\to\cat$を関手とする．
+$\limf\alpha=\limf({\hh}_\cat\circ\alpha)$とおく．
+すなわち，$\limf\alpha$は
+\begin{equation*}
+    \limf\alpha\colon\cat\ni X\mapsto\varinjlim_i\Hom_\cat(X,\alpha(i))
+\end{equation*}
+で定まる$\cat^\wedge$の対象である．
+この約束のもとで，
+\begin{equation*}
+    \varinjlim_i\Hom_\cat(X,\alpha(i))
+    =\Hom_{\cat^\wedge}(X,\limf\alpha)
+\end{equation*}
+
+\begin{Definition}
+    (i) 
+    $\cat$を$\U$圏とする．
+    $A\in\cat^\wedge$が$\cat$の\textbf{帰納対象} (ind-object) であるとは，
+    $\U$に関して小さい\footnote{
+        $\U$圏$\cat$であって，
+        $\Ob(\cat)$が$\U$に関して小さい集合であるものを
+        $\U$に関して小さい圏とよぶ．
+    }フィルター圏$I$と関手$\alpha\colon I\to\cat$で，
+    $A\cong\limf\alpha$となるものが存在することをいう．
+
+    (ii) 
+    $\cat$の帰納対象からなる$\cat^\wedge$の大きい部分圏
+    を$\Ind^\U(\cat)$（混同の恐れがないときはたんに$\Ind(\cat)$）と
+    かき，$\cat$の\textbf{帰納化} (indization) と
+    よぶ．（$\hh_\cat$のひきおこす）自然な
+    関手を$\iota_\cat\colon\cat\to\Ind(\cat)$で表す．
+\end{Definition}
+
+$\alpha\colon I\to\cat$, $\beta\colon J\to\cat$を
+小さい圏で定義された関手とすると，次の同形を得る．
+\begin{equation}
+    \begin{aligned}\label{eq:ind-in-U}
+        \Hom_{\cat^\wedge}(
+            \ind<\varinjlim_{i\in I}>\alpha(i),\ind<\varinjlim_{j\in J}>\beta(j)
+            )
+        &\cong\varprojlim_i\Hom_{\cat^\wedge}(\alpha(i),\ind<\varinjlim_{j\in J}>\beta(j))\\
+        &\cong\varprojlim_i\varinjlim_j\Hom_{\cat}(\alpha(i),\beta(j)).
+    \end{aligned}
+\end{equation}
+
+
+\begin{Lemma}
+    $\Ind(\cat)$は$\U$圏である．
+\end{Lemma}
+\begin{proof}
+    $A,B\in\Ind(\cat)$とする．
+    $I$, $J$を小さいフィルター圏, 
+    $\alpha\colon I\to\cat$, $\beta\colon J\to\cat$を関手で
+    $A\cong\ind<\varinjlim_{i\in I}>\alpha(i)$, 
+    $B\cong\ind<\varinjlim_{j\in J}>\beta(j)$をみたすものとする．
+    このとき\eqref{eq:ind-in-U}より$\Hom_\cat(A,B)\cong\varprojlim_i\varinjlim_j\Hom_{\cat}(\alpha(i),\beta(j))\in\U$となる．
+\end{proof}
+
+$A\in\cat^\wedge$に対し，圏$\cat_A$と関手$\alpha_A\colon\cat_A\to\cat$を
+\begin{align*}
+    \Ob(\cat_A)&\coloneqq
+    \{(X,a);X\in\cat,a\in A(X)\},\\
+    \Hom_{\cat_A}((X,a),(Y,b))&\coloneqq
+    \{f\colon X\to Y; a=b\circ f\},\\
+    \alpha_A&\colon (X,a)\mapsto X
+\end{align*}
+で定める．
+
+
+\begin{Proposition}
+    $A\in\cat^\wedge$とする．
+    $A\in\Ind(\cat)$となるのは，
+    $\cat_A$がフィルターづけられており，共終的に小さいときである．
+\end{Proposition}
+このとき，$A\cong\limf\alpha_A$となる．
+
+関手$F\colon\cat\to\cat'$を$IF\colon\Ind(\cat)\to\Ind(\cat')$
+に拡張することができる．
+$A\in\Ind(\cat)$に対し，$IF(A)\in\Ind(\cat')$を
+\begin{equation*}
+    IF(A)\coloneqq\ind<\varinjlim_{X\in\cat_A}>F(X)
+\end{equation*}
+で定める．
+$B\in\Ind(\cat)$と$\Ind(\cat)$における射$f\colon A\to B$に対し，
+関手$\cat_A\to\cat_B$が$A(X)\ni a\mapsto f\circ a\in B(X)$で定まる．
+したがって，射$IF(f)$が
+\begin{equation*}
+    IF(f)\colon
+    \ind<\varinjlim_{X\in\cat_A}>F(X)
+    \to
+    \ind<\varinjlim_{Y\in\cat_B}>F(Y)
+\end{equation*}
+で得られる．
+
+$A\cong\ind<\varinjlim_{i\in I}>\alpha(i)$, 
+$B\cong\ind<\varinjlim_{j\in J}>\beta(j)$のとき，
+\begin{equation*}
+    \Hom_{\Ind(\cat)}(A,B)
+    \cong
+    \varprojlim_i\varinjlim_j\Hom_{\cat}(\alpha(i),\beta(j))
+\end{equation*}
+が成り立ち，写像$IF\colon\Hom(A,B)\to\Hom(IF(A),IF(B))$は
+\begin{equation*}
+    \varprojlim_i\varinjlim_j\Hom_{\cat}(\alpha(i),\beta(j))
+    \to
+    \varprojlim_i\varinjlim_j\Hom_{\cat'}(F(\alpha(i)),F(\beta(j)))
+\end{equation*}
+で与えられる．
+
+
+\begin{Proposition}
+    $F\colon\cat\to\cat'$とする．
+
+    (i) 
+    図式
+    \begin{equation}
+        \vcenter{\xymatrix@C=40pt@R=32pt{
+        \cat
+        \ar[r]^-{F}
+        \ar[rd]^-{\hh_{\cat'}\circ F}
+        \ar[d]_-{\hh_{\cat}}
+        &\cat'
+        \ar[d]^-{\hh_{\cat'}}
+        \\
+        \Ind(\cat)
+        \ar@{.>}[r]_-{IF}
+        &
+        \Ind(\cat')
+        }}
+    \end{equation}
+    は可換．
+
+    (ii) 
+    $IF\colon\Ind(\cat)\to\Ind(\cat')$はフィルター帰納極限と交換する．
+
+    (iii) 
+    $F$が（充満）忠実なら$IF$も（充満）忠実になる．
+\end{Proposition}
+(i)はつまり，
+\begin{equation*}
+    IF=\hh_\cat^\dag(\hh_{\cat'}\circ F).
+\end{equation*}
+
+\setcounter{subsection}{2}
+\subsection[アーベル圏の帰納化]{アーベル圏の帰納化}
+
+$\cat$をアーベル$\U$圏とする．
+このとき，$\cat^\op$から$\Mod(\zz)$への加法関手のなす
+大きい圏$\cat^{\wedge,add}$はアーベル圏になる．
+$\cat^{\wedge,add,l}$で左完全関手
+のなす$\cat^{\wedge,add}$の大きい充満部分圏を表す．
+$\hh_\cat\colon\cat\to\cat^\wedge$により，
+$\cat$を$\cat^{\wedge,add}$の充満部分アーベル圏ととみなせて，
+$\hh_\cat$は左完全となる．
+
+\begin{Notation}
+    $\cat$が圏であるとき，
+    $\limf$によって$\cat^\wedge$における帰納極限を表す．
+    $(X_i)_{i\in I}$が$I$で添字づけられた加法圏$\cat$の対象の
+    小さい族であるとき，$\ind<\bigoplus_{i\in I}>X_i$で
+    $\ind<\varinjlim_J>(\bigoplus\limits_{i\in J}X_i)$を表す．
+    ここで，$J$は$I$の有限部分集合を走る．
+    したがって，$Z\in\cat$に対し
+    \begin{equation*}
+        \Hom_{\cat^\wedge}(Z,\ind<\bigoplus_{i\in I}>X_i)
+        \cong
+        \bigoplus_{i\in I}\Hom_{\cat^\wedge}(Z,X_i)
+    \end{equation*}
+    が成り立つ．
+\end{Notation}
+
+関手
+\begin{equation*}
+    \hh_\cat\colon\cat\to\cat^{\wedge,add},\quad X\mapsto\Hom_{\cat}(\cdot,X)
+\end{equation*}
+によって，$\cat$を$\cat^{\wedge,add}$の充満部分圏とみなせる．
+しかもこの関手は左完全である．ただし，一般に完全ではない．
+
+$\cat$内の帰納対象とは$A\in\cat^\wedge$の対象であって，
+小さいフィルター圏$I$上のある関手$\alpha\colon I\to\cat$に対して
+$\limf\alpha$と同型なもののことであった．
+したがって，$\Ind(\cat)$は$\cat^\wedge$の充満な前加法部分圏となる．
+$\Ind(\cat)$は$\U$圏であった．
+
+\begin{Proposition}
+    $A\in\cat^{\wedge,add}$とする．
+    次の条件(i)と(ii)は同値である．
+    \begin{enumerate}
+        \item [(i)]関手$A$は$\Ind(\cat)$に属する．
+        \item [(ii)]関手$A$は左完全であり$\cat_A$は共終で小さい圏である．
+    \end{enumerate}
+\end{Proposition}
+\begin{proof}
+    命題\ref{prop:ind-full}から従う．
+\end{proof}
+
+\begin{Corollary}
+    $\cat$を小さいアーベル圏とする．
+    このとき，$\Ind(\cat)$は左完全関手のなす$\cat^{\wedge,add}$の
+    充満加法部分圏$\cat^{\wedge,add,l}$と圏同値である．
+\end{Corollary}
+
+\begin{Lemma}\label{lem:ind-property}
+    (i) 
+    圏$\Ind(\cat)$は加法的であり，核と余核を持つ．
+
+    (ii) 
+    $I$を小さいフィルター圏とし，
+    $\alpha, \beta\colon I\to\cat$を関手，$\varphi\colon\alpha\to\beta$を関手の射とする．
+    $f\coloneqq\limf\varphi$とすると，
+    $\Ker f\cong\limf(\Ker\varphi)$，
+    $\Coker f\cong\limf(\Coker\varphi)$が成り立つ．
+
+    (iii) 
+    $\varphi\colon A\to B$を$\Ind(\cat)$の射とする．
+    このとき，$\cat^{\wedge,add}$における$\varphi$の核は$\Ind(\cat)$における核である．
+\end{Lemma}
+
+これは命題\ref{prop:ind-lim}と命題\ref{prop:ind-fin-colim}の特殊な場合である．
+
+\begin{Theorem}
+    (i) 
+    $\cat$はアーベル圏である．
+
+    (ii) 
+    自然な関手$\cat\to\Ind(\cat)$は充満忠実かつ完全であり，
+    自然な関手$\Ind(\cat)\to\cat^{\wedge,add}$は
+    充満忠実かつ左完全である．
+
+    (iii) 
+    $\Ind(\cat)$は小さい帰納極限を持つ．
+    さらに，小さいフィルター圏上の帰納極限は完全である．
+
+    (iv) 
+    $\cat$が小さい射影極限を持つならば，
+    $\Ind(\cat)$も小さい射影極限を持つ．
+
+    (v) 
+    $\ind<\bigoplus>$は$\Ind(\cat)$における余積である．
+%    (vi)
+%    $\cat$が本質的に小さいとする．
+\end{Theorem}
+
+\begin{proof}
+    (i) 
+    補題\ref{lem:ind-property}から，$\Ind(\cat)$は核と余核を持つ．
+    $f$を$\Ind(\cat)$の射とする．
+    補題\ref{lem:ind-property}(ii)より，
+    $f=\limf\varphi$とかける．
+    このとき，
+    再び補題\ref{lem:ind-property}(ii)から，
+    $\Coim f\cong\limf\Coim\varphi$と$\im f\cong\limf\im\varphi$が
+    成り立つ．したがって，$\cat$がアーベル圏であることから，$\Coim f\cong\im f$が成り立つ．
+
+    (ii) 
+    補題\ref{lem:ind-property}から従う．
+
+    (iii) 
+    命題\ref{prop:ind-filtrant}から従う．
+
+    (iv) 
+    系\ref{cor:ind-comm-proj}(ii) から従う．
+
+    (v) 
+    明らか．
+\end{proof}
+
+
+\begin{Proposition}\label{prop:ind-exact}
+    $0\to A'\overset{f}{\to}A\overset{g}{\to}A''\to 0$
+    を$\Ind(\cat)$の完全列とし，$\mcal{J}$を$\cat$の充満部分加法圏とする．
+    このとき，小さいフィルター圏$I$と$I$から$\cat$への関手の
+    完全列$0\to \alpha'
+    \overset{\varphi}{\to}\alpha
+    \overset{\psi}{\to}\alpha''\to 0$で$f\cong\limf\varphi$と$g\cong\limf\psi$をみたすものが存在する．
+\end{Proposition}
+
+\begin{comment}
+\begin{Lemma}
+    $I$を小さいフィルター圏，
+    $\alpha\colon T\to \cat$を関手，
+    $A=\limf\alpha$とし，
+    $f\colon A\hookrightarrow B$を$\Ind(\cat)$における単射とする．
+    このとき，小さいフィルター圏$K$と共終関手$p$
+\end{Lemma}
+\end{comment}
+
+\begin{Corollary}
+    $F\colon \cat\to\cat'$をアーベル圏の間の加法関手とし，
+    $IF\colon\Ind(\cat)\to\Ind(\cat')$を対応する関手とする．
+    $F$が左完全（右完全）なら$IF$も左完全（右完全）である．
+\end{Corollary}
+
+\begin{proof}
+    命題\ref{prop:ind-exact}から従う．
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Sheaves on Manifolds}, 
+    Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+    \bibitem[KS99]{KS99} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Ind-Sheaves,distributions, and microlocalization}, 
+    Sem Ec. Polytechnique, May 18, 1999.
+    
+    \bibitem[KS01]{KS01} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Ind-sheaves}, 
+    Ast\`erisque, 271, Soci\`et\`e Math. de France, 2001.
+    \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Categories and Sheaves}, 
+    Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
+    %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+\end{thebibliography}
+
+%===============================================
+
+
+\end{document}

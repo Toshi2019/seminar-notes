@@ -1,0 +1,399 @@
+
+%Don't forget to delete
+%showkeys
+%overfullrule
+%\date \ber \er \cmt
+
+%------------------------
+\documentclass[11pt, letterpaper, dvipdfmx, draft]{book}
+
+
+%usepackage
+%------------------------
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage[psamsfonts]{amssymb}
+\usepackage{color}
+\usepackage{ascmac}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancybox}
+%\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{proof}
+\usepackage{listings}
+\usepackage{otf}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usepackage[all]{xy}
+\usepackage{amscd}
+
+\usepackage{pb-diagram}
+
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+
+\usepackage{enumitem}
+
+\usepackage{bbm}
+
+% ================================
+% パッケージを追加する場合のスペース 
+\usepackage{latexsym}
+\usepackage{wrapfig}
+\usepackage{layout}
+\usepackage{url}
+
+\usepackage{okumacro}
+%\usepackage{endnotes}
+%\usepackage[french]{babel}
+
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem{Fact*}{事実}
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\HH}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+\newcommand{\Ring}{{\bf Ring}}
+\newcommand{\Ab}{{\bf Ab}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits}
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits}
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits}
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits}
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+\newcommand{\UU}{\mcal{U}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\emp}{\varnothing}
+\newcommand{\ceq}{\coloneqq}
+\newcommand{\sbs}{\subset}
+\newcommand{\mapres}[2]{\left. #1 \right|_{#2}}
+\newcommand{\ded}{\hfill $\blacksquare$}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\isom}{\overset{\sim}{\longrightarrow}}
+\newcommand{\tTop}{\textsf{Top}}
+\newcommand{\pfb}{\textbf{証明}}
+\newcommand{\Int}{\mathop{\mathrm{Int}}\nolimits} % 内部
+
+
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2 }\thmnote{{\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}[section]
+\newtheorem{DFN}[Axiom]{定義}
+\newtheorem{THM}[Axiom]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[Axiom]{命題}
+\newtheorem{LMM}[Axiom]{補題}
+\newtheorem{CRL}[Axiom]{系}
+\newtheorem{EG}[Axiom]{例}
+
+%\newtheorem{}{Axiom}[]
+\numberwithin{equation}{section} % 式番号を「(3.5)」のように印刷
+
+\newcommand{\MM}{\mcal{M}}
+\newcommand{\bk}{\mathbf{k}}
+
+% =================================
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+
+
+
+\begin{document}
+
+\title{Systems of Microdifferential Equations}
+%\author{Pierre Schapira}
+\date{}
+\maketitle
+\frontmatter
+\tableofcontents
+\layout
+
+\include{KS83-intro}
+\mainmatter
+\chapter{Microfunctions}
+\chapter{Microdifferential Systems}
+\chapter{Structure of Coherent $\mcal{E}_X$-modules}
+\chapter{Holomorphic Solutions of Systems of Partial Differential Equations}
+\chapter{Solutions of Holonomic Systems}
+\chapter{Index Theorems}
+\appendix
+\chapter{Derived Categories and Functors}
+\chapter{Whitney Stratification and Constructible Sheaves}
+
+
+\backmatter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{thebibliography}{15}
+    \bibitem[Arn67]{Arn67} Vladimir I. Arnold, 
+    \textit{On a characteristic class entering into conditions of quantization}, 
+    Funkcional. Anal. i Prilozen (1967), 1–14. in Russian.
+    \bibitem[Gab81]{Gab81}
+    Ofer Gabber, \textit{The integrability of the characteristic variety}, 
+    Amer. Journ. Math. 103 (1981), 445-–468.
+    \bibitem[GKS12]{GKS12} 
+    Stéphane Guillermou, Masaki Kashiwara and Pierre Schapira, 
+    \textit{Sheaf quantization of Hamiltonian isotopies and applications to nondisplaceability problems}, 
+    Duke Math. J. 161(2): 201--245 (2012).
+    \bibitem[KS90]{KS90} Masaki Kashiwara and Pierre Schapira, 
+    \textit{Sheaves on manifolds}, Grundlehren der Mathematischen Wissenschaften, 
+    vol. 292, Springer-Verlag, Berlin, 1990.
+    \bibitem[Ler76]{Ler76} 
+    Jean Leray, \textit{Analyse Lagrangienne et m\'ecanique quantique}, 
+    Coll\`ege de France, 1976.
+    \bibitem[Mas65]{Mas65} Viktor P. Maslov, 
+    \textit{Theory of perturbations and asymptotic methods}, 
+    Moskow Gos. Univ., 1965.
+    [邦訳] マスロフ, 摂動論と漸近的方法, 岩波書店, 1976年.
+    \bibitem[Sch21]{Sch21} 
+    Pierre Schapira, 
+    \textit{Microlocal analysis and beyond}, 
+    New spaces in Mathematics, edited by Mathieu Anel 
+    and Gabriel Catren, 
+    Cambridge University Press, 2021, pp. 117--152.
+    \bibitem[SKK73]{SKK73}
+    Mikio Sato, Takahiro Kawai, and Masaki Kashiwara, 
+    \textit{Microfunctions and pseudo-differential equations}, 
+    Hyperfunctions and pseudo-differential equations 
+    (Proc. Conf., Katata, 1971; dedicated to the memory of 
+    Andr\'e Martineau), 
+    Springer, Berlin, 1973, pp. 265–-529. 
+    Lecture Notes in Math., Vol. 287.
+
+\end{thebibliography}
+%\bibliographystyle{junsrt}
+%\bibliography{ref}
+
+\end{document}
+
+

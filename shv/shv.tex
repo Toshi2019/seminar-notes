@@ -1,0 +1,861 @@
+%================================================
+%    層理論まとめノート
+%================================================
+
+% -----------------------
+% preamble
+% -----------------------
+% ここから本文 (\begin{document}) までの
+% ソースコードに変更を加えた場合は
+% 編集者まで連絡してください. 
+% Don't change preamble code yourself. 
+% If you add something
+% (usepackage, newtheorem, newcommand, renewcommand),
+% please tell it 
+% to the editor of institutional paper of RUMS.
+
+% ------------------------
+% documentclass
+% ------------------------
+\documentclass[10pt, b5paper, dvipdfmx, leqno, draft]{jsbook}
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+\usepackage{url}
+\usetikzlibrary{cd}
+
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+%\usepackage{calligra}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+\usepackage{layout}
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+\newtheorem{com}[Axiom]{コメント}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem*{Fact*}{事実}
+\newtheorem*{com*}{コメント}
+
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits}
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits}
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits}
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits}
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{subsection}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+\newcommand{\Sh}{\mathop{\textsf{Sh}}\nolimits}
+\newcommand{\PSh}{\mathop{\textsf{PSh}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\ori}{\mathop{\textsf{or}}\nolimits}
+
+
+\newcommand{\cat}{\mathcal{C}}%一般の圏の記号
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}%複体の圏
+\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}%複体のホモトピー圏
+\newcommand{\CCat}{\Comp(\cat)}%圏Cの複体の圏
+\newcommand{\KCat}{\Komp(\cat)}%圏Cの複体のホモトピー圏
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+
+\newcommand{\limf}{\mathop{\text{``}\hspace{-0.7pt}\varinjlim\hspace{-1.5pt}\text{''}}}
+\newcommand{\sumf}{\mathop{\text{``}\hspace{-0.7pt}\bigoplus\hspace{-1.5pt}\text{''}}}
+
+\newcommand{\hh}{\mathop{\mathrm{h}}\nolimits}
+\newcommand{\Ind}{\mathop{\mathrm{Ind}}}
+
+
+%筆記体
+\newcommand{\cA}{\mcal{A}}
+\newcommand{\cB}{\mcal{B}}
+\newcommand{\cC}{\mcal{C}}
+\newcommand{\cD}{\mcal{D}}
+\newcommand{\cE}{\mcal{E}}
+\newcommand{\cF}{\mcal{F}}
+\newcommand{\cG}{\mcal{G}}
+\newcommand{\cH}{\mcal{H}}
+\newcommand{\cI}{\mcal{I}}
+\newcommand{\cJ}{\mcal{J}}
+\newcommand{\cK}{\mcal{K}}
+\newcommand{\cL}{\mcal{L}}
+\newcommand{\cM}{\mcal{M}}
+\newcommand{\cN}{\mcal{N}}
+\newcommand{\cO}{\mcal{O}}
+\newcommand{\cP}{\mcal{P}}
+\newcommand{\cQ}{\mcal{Q}}
+\newcommand{\cR}{\mcal{R}}
+\newcommand{\cS}{\mcal{S}}
+\newcommand{\cT}{\mcal{T}}
+\newcommand{\cU}{\mcal{U}}
+\newcommand{\cV}{\mcal{V}}
+\newcommand{\cW}{\mcal{W}}
+\newcommand{\cX}{\mcal{X}}
+\newcommand{\cY}{\mcal{Y}}
+\newcommand{\cZ}{\mcal{Z}}
+
+%スクリプト体
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+\newcommand{\scG}{\mathscr{G}}
+\newcommand{\scH}{\mathscr{H}}
+\newcommand{\scI}{\mathscr{I}}
+\newcommand{\scJ}{\mathscr{J}}
+\newcommand{\scK}{\mathscr{K}}
+\newcommand{\scL}{\mathscr{L}}
+\newcommand{\scM}{\mathscr{M}}
+\newcommand{\scN}{\mathscr{N}}
+\newcommand{\scO}{\mathscr{O}}
+\newcommand{\scP}{\mathscr{P}}
+\newcommand{\scQ}{\mathscr{Q}}
+\newcommand{\scR}{\mathscr{R}}
+\newcommand{\scS}{\mathscr{S}}
+\newcommand{\scT}{\mathscr{T}}
+\newcommand{\scU}{\mathscr{U}}
+\newcommand{\scV}{\mathscr{V}}
+\newcommand{\scW}{\mathscr{W}}
+\newcommand{\scX}{\mathscr{X}}
+\newcommand{\scY}{\mathscr{Y}}
+\newcommand{\scZ}{\mathscr{Z}}
+
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+
+% =================================
+
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}[section]
+\newtheorem{DFN}[Axiom]{定義}
+\newtheorem{THM}[Axiom]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[Axiom]{命題}
+\newtheorem{LMM}[Axiom]{補題}
+\newtheorem{CRL}[Axiom]{系}
+\newtheorem{EG}[Axiom]{例}
+\newtheorem{CNV}[Axiom]{規約}
+
+
+% 定理環境ここまで
+%====================================================
+
+%レイアウト
+%\setlength{\oddsidemargin}{-10pt}
+%\setlength{\evensidemargin}{10pt}
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+\def\ind<#1>{\mathop{\text{``}\hspace{-0.7pt}#1\limits\hspace{-1.5pt}\text{''}}}
+
+%=================================
+
+
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+\title{層理論まとめノート}
+\author{大柴寿浩}
+%\date{}
+\begin{document}
+\maketitle
+\frontmatter
+\tableofcontents
+\layout
+\mainmatter
+\chapter{層}
+
+
+
+\begin{CNV}次のことは断りなく用いる．
+    \begin{itemize}
+        \item 環といえば，結合則をみたす積をもち単位元をもつ環とする．
+        \item 位相空間$X$に対し，
+        $X$上の環や加群の層をたんに$X$上の環とか$X$上の加群という．
+        \item 層の記号は$\cF,\scF$のようにはせず，
+        $F,G,H,\ldots$のようにローマン体とする
+    \end{itemize}
+\end{CNV}
+
+\section{アーベル圏の層}
+層の圏における完全列等の概念を明確化しておく．
+アーベル圏$\cat$に値を取る位相空間$X$上の層を
+\textbf{アーベル層}(abelian sheaf) ということがある．
+アーベル層の圏$\Sh(X,\cat)$はアーベル圏になる．
+すなわち，アーベル層の圏における核と余核が定まる．実際
+アーベル層$F,G\in\Sh(X,\cat)$の間の射$\varphi\colon F\to G$に対し，
+\begin{alignat*}{2}
+    \Ker\varphi(U)&\coloneqq\Ker(\varphi_U), 
+    &\quad 
+    \Coker\varphi(U)&\coloneqq a_X\left(\Coker(\varphi_U)\right)
+\end{alignat*}
+として定めると，これらは$\Sh(X,\cat)$における核と余核になる．
+
+これらを用いて，$\Sh(X,\cat)$における短完全列を次のように定める．
+\begin{DFN}
+    \begin{equation*}
+        0\to F\overset{\varphi}{\to} 
+        G\overset{\psi}{\to}H\to 0
+        \quad\text{in $\Sh(X,\cat)$}
+    \end{equation*}
+    が完全であるとは，次の条件(i)--(iii)が成り立つことをいう．
+    \begin{enumerate}
+        \item [(i)]     $\Ker\phi\cong0$.
+        \item [(ii)]    $\Ker\psi\cong\im\varphi$.
+        \item [(iii)]   $\im\psi\cong H$.
+    \end{enumerate}
+\end{DFN}
+
+$\cat=\cAb$のとき，$\Sh(X)=\Sh(X,\cAb)$とかく．
+
+\begin{PRP}[層の同形は茎ごとの同形]\label{prp:stalk-iso}
+    $\Sh(X)$の射$\phi\colon F\to G$が同形となるのは，
+    各点$x\in X$に対し$\phi_x$が同形となるときである．
+\end{PRP}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{完全性}
+諸々の操作の完全性についてまとめる．
+$X$を位相空間とし，$R$を$X$上の環とする．
+\subsection{茎}
+
+\begin{PRP}[茎は完全]
+    各点$x\in X$に対し，
+    \begin{equation*}
+        \begin{array}{rccc}
+            {\cdot}_x\colon&\Mod(R)&\longrightarrow&\Mod(R_x)\\
+            &\rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+            &F&\longmapsto&F_x        
+        \end{array}
+    \end{equation*}
+    は完全関手である．    
+\end{PRP}
+\begin{proof}
+    \begin{equation*}
+        0\to F\overset{\varphi}{\to} 
+        G\overset{\psi}{\to}H\to 0
+        \quad\text{in $\Sh(X,\cat)$}
+    \end{equation*}
+    を完全列とする．
+    命題\ref{prp:stalk-iso}から，各点$x\in X$に対し次の条件(i)--(iii)が成り立つ．
+    \begin{enumerate}
+        \item [(i)]     $(\Ker\phi)_x\cong0$.
+        \item [(ii)]    $(\Ker\psi)_x\cong(\im\varphi)_x$.
+        \item [(iii)]   $(\im\psi)_x\cong H_x$.
+    \end{enumerate}
+    これは次の条件($\mathrm{i}'$)--($\mathrm{iii}'$)と同値である．
+    \begin{enumerate}
+        \item [($\mathrm{i}'$)]     $\Ker\phi_x\cong0$.
+        \item [($\mathrm{ii}'$)]    $\Ker\psi_x\cong\im\varphi_x$.
+        \item [($\mathrm{iii}'$)]   $\im\psi_x\cong H_x$.
+    \end{enumerate}
+    これは
+    \begin{equation*}
+        0\to F_x\overset{\varphi_x}{\longrightarrow} 
+        G_x\overset{\psi_x}{\longrightarrow}H_x\to 0
+        \quad\text{in $\cat$}
+    \end{equation*}
+    が完全であることと同値である．    
+\end{proof}
+とくに，茎ごとの完全性から層の完全性も出てくるので，
+層の完全列の概念が各点$x\in X$における完全列
+\begin{equation*}
+    0\to F_x\overset{\varphi_x}{\longrightarrow} 
+    G_x\overset{\psi_x}{\longrightarrow}H_x\to 0
+    \quad\text{exact in $\cat$}
+\end{equation*}
+にすり替わる．
+
+\subsection{切断}
+\begin{PRP}[切断は左完全]
+    開集合$U\in\Op(X)$に対し，
+    \begin{equation*}
+        \begin{array}{rccc}
+            \Gamma(U;{\cdot})\colon&\Mod(R)&\longrightarrow&\Mod(R(U))\\
+            &\rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+            &F&\longmapsto&\Gamma(U;F)\coloneqq F(U)
+        \end{array}
+    \end{equation*}
+    は左完全関手である．
+    よってとくに$\Gamma(X;{\cdot})$も左完全である．
+\end{PRP}
+
+\begin{EG}[右完全にならない例]
+    $E$を1次元複素トーラスとする．
+    $E$上の層の完全列
+    \begin{equation*}
+        0\to \cO_E\overset{\iota}{\to} 
+        \cO_E(P)\overset{\rho_P}{\to}\cc_P\to 0
+        \quad\text{exact in $\Mod(\cc_E)$}
+    \end{equation*}
+    を考える．
+    ただし，$\cO_E(P)$は一点$P\in E$における1位の因子から定まる層
+    である．つまり，
+    \begin{align*}
+        \cO_E(P)(U)=\left\{\text{$P$でのみ高々1位の極を持つ$U$上の有理形関数}\right\}
+    \end{align*}
+    によって定まる層である．
+    また$\cc_P$は一点$P$にのみ台をもつ摩天楼層である．
+    このとき
+    \begin{equation*}
+        0\to \cO_E(E)\overset{\iota_E}{\longrightarrow} 
+        \cO_E(P)(E)\overset{(r_P)_E}{\longrightarrow}\cc\to 0
+        \quad\text{in $\Mod(\cc)$}
+    \end{equation*}
+    は完全ではない．実際この系列は
+    \begin{equation*}
+        0\to \cc\overset{\id_\cc}{\longrightarrow} 
+        \cc\overset{0}{\longrightarrow}\cc\to 0
+        \quad\text{in $\Mod(\cc)$}
+    \end{equation*}
+    となり，右側の0は全射にならない．
+\end{EG}
+
+
+
+
+
+%\begin{equation*}
+%    \begin{array}{rc}
+%        \verb|\mathbf{C}|&\mathbf{C}\\
+%        \verb|\mathrm{C}|&\mathrm{C}\\
+%        \verb|\bm{C}|&\bm{C}\\
+%        \verb|\boldsymbol{C}|&\boldsymbol{C}\\
+%        \verb|C|&C
+%    \end{array}
+%\end{equation*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{内部Hom}
+\begin{PRP}[Homは左完全]
+    $F,G$を$R$加群とする．
+    \begin{equation*}
+        \begin{array}{rccc}
+            \Hom_R({\cdot},{\cdot})\colon
+            &\Mod(R)^{\op}\times\Mod(R)
+            &\longrightarrow&\Mod(\zz)\\
+            &\rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+            & (F,G)&\longmapsto&\Hom_R(F,G)
+        \end{array}
+    \end{equation*}
+    は左完全な両側関手である．
+\end{PRP}
+
+
+\subsection{内部Hom}
+\begin{PRP}[Homは左完全]
+    $F,G$を$R$加群とする．
+    \begin{equation*}
+        \begin{array}{rccc}
+            \HOM_R({\cdot},{\cdot})\colon
+            &\Mod(R)^{\op}\times\Mod(R)
+            &\longrightarrow&\Mod(\zz_X)\\
+            &\rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+            & (F,G)&\longmapsto&\HOM_R(F,G)
+        \end{array}
+    \end{equation*}
+    は左完全な両側関手である．
+\end{PRP}
+
+\subsection{内部テンソル積}
+層化が要る．
+
+\begin{PRP}
+    $F$を右$R$加群，$G$を左$R$加群とする．
+    \begin{equation*}
+        \begin{array}{rccc}
+            {\cdot}\otimes_R{\cdot}\colon
+            &\Mod(R^{\op})\times\Mod(R)
+            &\longrightarrow&\Mod(\zz_X)\\
+            &\rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+            & (F,G)&\longmapsto&F\otimes_R G
+        \end{array}
+    \end{equation*}
+    は右完全な両側関手である．
+\end{PRP}
+
+\subsection{帰納極限}
+層化が要る．
+
+帰納系$\alpha\colon I\to \Mod(R)$を考える．
+極限を取る操作$\varinjlim\colon\Mod(R)^I\to\Mod(R)$を
+\begin{equation*}
+    \begin{array}{rccc}
+        \varinjlim\colon&\Mod(R)^I&\longrightarrow&\Mod(R)\\
+            &\rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+            &\alpha=(F_i)_i &\longmapsto&\varinjlim\limits_{i\in I}F_i
+    \end{array}
+\end{equation*}
+のようにかく．
+
+\begin{PRP}
+    \begin{equation*}
+        \begin{array}{rccc}
+            \varinjlim\colon&\Mod(R)^I&\longrightarrow&\Mod(R)\\
+                &\rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+                &\alpha=(F_i)_i &\longmapsto&\varinjlim\limits_{i\in I}F_i
+        \end{array}
+    \end{equation*}
+    は右完全関手である．        
+\end{PRP}
+
+\subsection{射影極限}
+射影系$\beta\colon I^\op\to \Mod(R)$を考える．
+極限を取る操作$\varprojlim\colon\Mod(R)^{I^\op}\to\Mod(R)$を
+\begin{equation*}
+    \begin{array}{rccc}
+        \varprojlim\colon&\Mod(R)^{I^\op}&\longrightarrow&\Mod(R)\\
+            &\rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+            &\beta=(F_i)_i &\longmapsto&\varprojlim\limits_{i\in I}F_i
+    \end{array}
+\end{equation*}
+のようにかく．
+
+\begin{PRP}
+    \begin{equation*}
+        \begin{array}{rccc}
+            \varprojlim\colon&\Mod(R)^{I^\op}&\longrightarrow&\Mod(R)\\
+                &\rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+                &\beta=(F_i)_i &\longmapsto&\varprojlim\limits_{i\in I}F_i
+        \end{array}
+    \end{equation*}
+    は左完全関手である．        
+\end{PRP}
+
+\subsection{順像}
+\(f\colon X\to Y\)を連続写像とする．
+
+
+\begin{PRP}
+    \[
+        \begin{array}{rccc}
+            f_\ast\colon&   \Sh(X)& \longrightarrow& \Sh(Y) \\
+            &   \rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+            &   F&  \longmapsto&    f_\ast F   
+        \end{array}
+    \]
+    は左完全関手である．
+\end{PRP}
+
+
+\(R\)を\(X\)上の環とする．
+%\(G\in\Mod(S)\)に対し，
+\begin{PRP}
+    \[
+        \begin{array}{rccc}
+            f_\ast\colon&   \Mod(R)& \longrightarrow& \Mod(f_\ast R)\\
+            &   \rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+            &   F&  \longmapsto&    f_\ast F   
+        \end{array}
+    \]
+    は左完全関手である．
+\end{PRP}
+
+
+\subsection{逆像}
+層化が要る．
+
+\(f\colon X\to Y\)を連続写像とする．
+
+\begin{PRP}
+    \[
+        \begin{array}{rccc}
+            f^{-1}\colon&   \Sh(Y) & \longrightarrow& \Sh(X) \\
+            &   \rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+            &   G&  \longmapsto&    f^{-1} G   
+        \end{array}
+    \]
+    は完全関手である．
+\end{PRP}
+
+
+\(S\)を\(Y\)上の環とする．
+
+\begin{PRP}
+    \[
+        \begin{array}{rccc}
+            f^{-1}\colon&   \Mod(S)& \longrightarrow& \Mod(f^{-1}S)\\
+            &   \rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+            &   G&  \longmapsto&    f^{-1} G   
+        \end{array}
+    \]
+    は完全関手である．
+\end{PRP}
+
+
+
+
+\section{各操作の関係}
+
+諸々の操作の間の関係についてまとめる．
+
+\subsection{茎と極限}
+茎と帰納極限は可換
+
+茎と有限射影極限は可換
+\subsection{切断と極限}
+切断と帰納極限は可換とは限らない．
+有限は？
+
+切断と射影極限は可換
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+        \textit{Sheaves on Manifolds}, 
+        Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+        \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
+        \textit{Categories and Sheaves}, 
+        Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
+        \bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
+    %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+\end{thebibliography}
+
+%===============================================
+
+
+\end{document}

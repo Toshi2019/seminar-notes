@@ -5,7 +5,7 @@
 %\date \ber \er \cmt
 
 %------------------------
-\documentclass[12pt, a4paper, dvipdfmx]{jsarticle}
+\documentclass[11pt, a4paper, dvipdfmx]{jsarticle}
 
 
 %usepackage
@@ -535,7 +535,28 @@ $D$の任意のコンパクト部分集合で一様収束することが従う�
 \subsection{補題}
 $D'\Subset D$を$\cc$の開集合とする．
 
-
+\setcounter{section}{1}
+\section{\cite[例題6.8(4)]{Og02}の解についてのコメント}
+149ページの最後
+\begin{align*}
+  \iint_{U}\abs{f-f_n}^2dxdy
+  &=\sup_{K}\iint_{K}\abs{f-f_n}^2dxdy\\
+  &=\sup_K\limsup_{m\to\infty}\iint_{K}\abs{f_n-f_m}^2dxdy\\
+  &\le\sup_K\limsup_{m\to\infty}\iint_{U}\abs{f_n-f_m}^2dxdy\\
+  &=\limsup_{m\to\infty}\nm{f_n-f_m}^2_{L^2(U)}dxdy
+  \overset{n\to\infty}{\rightarrow}0
+\end{align*}
+となっているが
+院生室の先輩と話したところ
+\begin{align*}
+  \iint_{U}\abs{f-f_n}^2dxdy
+  &=\sup_K\iint_{K}\abs{f-f_n}^2dxdy\\
+  &=\sup_K\lim_{m\to\infty}\iint_{K}\abs{f_n-f_m}^2dxdy\\
+  &\le\sup_K\lim_{m\to\infty}\iint_{U}\abs{f_n-f_m}^2dxdy\\
+  &=\lim_{m\to\infty}\nm{f_n-f_m}^2_{L^2(U)}dxdy
+  \overset{n\to\infty}{\rightarrow}0
+\end{align*}
+で良いという結論になった．
 \begin{thebibliography}{20} 
   %\bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
   %\bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
