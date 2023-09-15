@@ -1,42 +1,59 @@
+%================================================
+%    準アーベル圏まとめノート
+%================================================
 
-%Don't forget to delete
-%showkeys
-%overfullrule
-%\date \ber \er \cmt
+% -----------------------
+% preamble
+% -----------------------
+% ここから本文 (\begin{document}) までの
+% ソースコードに変更を加えた場合は
+% 編集者まで連絡してください. 
+% Don't change preamble code yourself. 
+% If you add something
+% (usepackage, newtheorem, newcommand, renewcommand),
+% please tell it 
+% to the editor of institutional paper of RUMS.
 
-%------------------------
-\documentclass[11pt, leqno, a4paper, draft, dvipdfmx]{book}
+% ------------------------
+% documentclass
+% ------------------------
+\documentclass[10pt, b5paper, dvipdfmx, leqno, draft]{jsbook}
 
-
-%usepackage
-%------------------------
-\usepackage{amsmath}
-\usepackage{amsthm}
-%\usepackage[psamsfonts]{amssymb}
-\usepackage{color}
-\usepackage{ascmac}
-\usepackage{amsfonts}
-\usepackage{mathrsfs}
-\usepackage{mathtools}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage{fancybox}
-%\usepackage{enumerate}
-\usepackage{enumitem}
-\usepackage{verbatim}
-\usepackage{subfigure}
-\usepackage{proof}
-\usepackage{listings}
-\usepackage{otf}
+% ------------------------
+% usepackage
+% ------------------------
 \usepackage{algorithm}
 \usepackage{algorithmic}
-\usepackage{tikz}
-\usetikzlibrary{cd}
-\usepackage[all]{xy}
 \usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+\usepackage{url}
+\usetikzlibrary{cd}
 
-\usepackage{pb-diagram}
 
+
+% ================================
+% パッケージを追加する場合のスペース 
+%\usepackage{calligra}
 \usepackage[dvipdfmx]{hyperref}
 \usepackage{xcolor}
 \definecolor{darkgreen}{rgb}{0,0.45,0} 
@@ -49,22 +66,7 @@
     urlcolor=darkblue,
 }
 \usepackage{pxjahyper}
-
-\usepackage{enumitem}
-
-\usepackage{bbm}
-
-% ================================
-% パッケージを追加する場合のスペース 
-\usepackage{latexsym}
-\usepackage{wrapfig}
 \usepackage{layout}
-\usepackage{url}
-
-\usepackage{okumacro}
-%\usepackage{endnotes}
-%\usepackage[french]{babel}
-
 %=================================
 
 
@@ -72,7 +74,6 @@
 % theoremstyle
 % --------------------------
 \theoremstyle{definition}
-
 
 % --------------------------
 % newtheoem
@@ -99,6 +100,7 @@
 \newtheorem{Consideration}[Axiom]{考察}
 \newtheorem{Alert}[Axiom]{警告}
 \newtheorem{Fact}[Axiom]{事実}
+\newtheorem{com}[Axiom]{コメント}
 
 
 % 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
@@ -117,7 +119,9 @@
 \newtheorem*{Problem*}{問題}
 \newtheorem*{Consideration*}{考察}
 \newtheorem*{Alert*}{警告}
-\newtheorem{Fact*}{事実}
+\newtheorem*{Fact*}{事実}
+\newtheorem*{com*}{コメント}
+
 
 
 % 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
@@ -238,7 +242,7 @@
 \newcommand{\cTop}{\textsf{Top}}
 %\newcommand{\cOpen}{\textsf{Open}}
 \newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
-\newcommand{\Ob}{\mathop{\textsf{Ob}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
 \newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
 \newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
 \newcommand{\res}{\mathop{\rho}\nolimits}
@@ -256,12 +260,10 @@
 
 
 \newcommand{\cat}{\mathcal{C}}%一般の圏の記号
-\newcommand{\Comp}{\mathop{\mathsf{C}}\nolimits}%複体の圏
-\newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}%複体のホモトピー圏
-\newcommand{\Drv}{\mathop{\mathsf{D}}\nolimits}%導来圏
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}%複体の圏
+\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}%複体のホモトピー圏
 \newcommand{\CCat}{\Comp(\cat)}%圏Cの複体の圏
 \newcommand{\KCat}{\Komp(\cat)}%圏Cの複体のホモトピー圏
-\newcommand{\DCat}{\Drv(\cat)}%圏Cの複体のホモトピー圏
 \newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
 \newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
 \newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
@@ -363,28 +365,8 @@
 
 % =================================
 
-% ================================
-% コマンドを追加する場合のスペース 
-\newcommand{\UU}{\mcal{U}}
-\newcommand{\OO}{\mcal{O}}
-\newcommand{\emp}{\varnothing}
-\newcommand{\ceq}{\coloneqq}
-\newcommand{\sbs}{\subset}
-\newcommand{\mapres}[2]{\left. #1 \right|_{#2}}
-\newcommand{\ded}{\hfill $\blacksquare$}
-%\newcommand{\id}{\mathrm{id}}
-\newcommand{\isom}{\overset{\sim}{\longrightarrow}}
-\newcommand{\tTop}{\textsf{Top}}
-\newcommand{\pfb}{\textbf{証明}}
-\newcommand{\Int}{\mathop{\mathrm{Int}}\nolimits} % 内部
-\newcommand{\Ch}{\mathop{\mathrm{char}}\nolimits}
-%\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}
-%\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
-%\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
-%\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
-%\newcommand{\Ob}{\mathop{\mathrm{Ob}}\nolimits}
 
-
+%================================================
 % 自前の定理環境
 %   https://mathlandscape.com/latex-amsthm/
 % を参考にした
@@ -396,26 +378,26 @@
     {\bfseries}%                      % 見出しフォント
     {.}%                     % 見出し後の句読点
     {12pt}%                     % 見出し後のスペース
-    {\thmname{#1}\thmnumber{ #2 }\thmnote{{\normalfont (#3)}}}% % 見出しの書式
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
 
 \theoremstyle{mystyle}
 \newtheorem{AXM}{公理}[section]
-\newtheorem{DFN}[Axiom]{Definition}
+\newtheorem{DFN}[Axiom]{定義}
 \newtheorem{THM}[Axiom]{定理}
 \newtheorem*{THM*}{定理}
 \newtheorem{PRP}[Axiom]{命題}
 \newtheorem{LMM}[Axiom]{補題}
 \newtheorem{CRL}[Axiom]{系}
 \newtheorem{EG}[Axiom]{例}
+\newtheorem{CNV}[Axiom]{規約}
 
-%\newtheorem{}{Axiom}[]
-\numberwithin{equation}{section} % 式番号を「(3.5)」のように印刷
 
-\newcommand{\MM}{\mcal{M}}
-\newcommand{\bk}{\mathbf{k}}
+% 定理環境ここまで
+%====================================================
 
-% =================================
-
+%レイアウト
+%\setlength{\oddsidemargin}{-10pt}
+%\setlength{\evensidemargin}{10pt}
 
 % ---------------------------
 % new definition macro
@@ -428,6 +410,7 @@
 
 % ================================
 % マクロを追加する場合のスペース 
+\def\ind<#1>{\mathop{\text{``}\hspace{-0.7pt}#1\limits\hspace{-1.5pt}\text{''}}}
 
 %=================================
 
@@ -443,18 +426,89 @@
 % begin document and end document.
 % ---------------------------
 
-
-
-
+\title{準アーベル圏まとめノート}
+\author{Toshi2019}
+%\date{}
 \begin{document}
-
-\title{Microlocal Study of Sheaves}
-%\author{Pierre Schapira}
-\date{}
 \maketitle
+\frontmatter
 \tableofcontents
-\include{KS85-intro}
-\include{KS85-preliminaries}
+\layout
+\mainmatter
+\chapter*{導入}
+
+\paragraph{2023/09/15}
+
+\cite{Sch99}を読む．
+まずモチベーションについて．
+解析ではフィルター加群や局所凸空間を考えることが多い．
+それに対するホモロジー論を作っておくと便利だが，
+これらの圏はアーベル圏にならない．
+そこで，アーベル圏よりも少し条件を緩めた
+「準アーベル圏」を考えようというのがモチベ．
+
+もう一つは上記のような対象の圏に値を取る層に対しての
+コホモロジー論としていいものを見つけたいというもの．
+
+Quillenの意味での完全圏のうち特別なものとして準アーベル圏を定義する．
+
+\chapter{準アーベル圏}
+
+\section{準アーベル圏と関手}
+
+\(\cE\)を核と余核を持つ加法圏とする．
+
+\subsection{像，余像，strict morphism\footnote{
+    完全射・嵌合射・十全射・万全射のような訳語が考えられる．
+}}
+
+「余核の核」が像で，「核の余核」が余像．つまり\(\cE\)において
+\begin{align*}
+    \im(f\colon E\to F)
+    &=\Ker\left(F\overset{p}{\longrightarrow}\Coker f\right),\\
+    \Coim(f\colon E\to F)
+    &=\Coker\left(\Ker\overset{i}{\longrightarrow}E\right).
+\end{align*}
+このとき，自然な射
+\[\Coim f\to\im f\]
+が存在する．
+この射が同形であるとき，\(f\)はstrictであるという．
+
+\subsection{準アーベル圏の定義}
+\begin{DFN}
+    圏\(\cE\)が準アーベル圏であるとは，
+    次の互いに双対的な条件を満たすことをいう．
+    \begin{description}
+        \item[(QA)] デカルト図式\[
+            \vcenter{\xymatrix@C=40pt@R=32pt{
+            E
+            \ar[r]^-{f}
+            &F
+            \\
+            E'
+            \ar[r]_-{f'}
+            \ar[u]^-{}
+            &
+            F'
+            \ar[u]^-{}
+            }}\]において\(f\)がstrictな全射ならば，\(f'\)も
+            strictな全射になる．
+        \item[(QA$^\ast$)] 余デカルト図式\[
+            \vcenter{\xymatrix@C=40pt@R=32pt{
+            E'
+            \ar[r]^-{f'}
+            &F'
+            \\
+            E
+            \ar[r]_-{f}
+            \ar[u]^-{}
+            &
+            F
+            \ar[u]^-{}
+            }}\]において\(f\)がstrictな単射ならば，\(f'\)も
+            strictな単射になる．
+    \end{description}
+\end{DFN}
 
 
 
@@ -466,58 +520,21 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{thebibliography}{15}
-    \bibitem[Arn67]{Arn67} Vladimir I. Arnold, 
-    \textit{On a characteristic class entering into conditions of quantization}, 
-    Funkcional. Anal. i Prilozen (1967), 1–14. in Russian.
-    \bibitem[Gab81]{Gab81}
-    Ofer Gabber, \textit{The integrability of the characteristic variety}, 
-    Amer. Journ. Math. 103 (1981), 445-–468.
-    \bibitem[GKS12]{GKS12} 
-    Stéphane Guillermou, Masaki Kashiwara and Pierre Schapira, 
-    \textit{Sheaf quantization of Hamiltonian isotopies and applications to nondisplaceability problems}, 
-    Duke Math. J. 161(2): 201--245 (2012).
-    \bibitem[KS90]{KS90} Masaki Kashiwara and Pierre Schapira, 
-    \textit{Sheaves on manifolds}, Grundlehren der Mathematischen Wissenschaften, 
-    vol. 292, Springer-Verlag, Berlin, 1990.
-    \bibitem[Ler76]{Ler76} 
-    Jean Leray, \textit{Analyse Lagrangienne et m\'ecanique quantique}, 
-    Coll\`ege de France, 1976.
-    \bibitem[Mas65]{Mas65} Viktor P. Maslov, 
-    \textit{Theory of perturbations and asymptotic methods}, 
-    Moskow Gos. Univ., 1965.
-    [邦訳] マスロフ, 摂動論と漸近的方法, 岩波書店, 1976年.
-    \bibitem[Sch21]{Sch21} 
-    Pierre Schapira, 
-    \textit{Microlocal analysis and beyond}, 
-    New spaces in Mathematics, edited by Mathieu Anel 
-    and Gabriel Catren, 
-    Cambridge University Press, 2021, pp. 117--152.
-    \bibitem[SKK73]{SKK73}
-    Mikio Sato, Takahiro Kawai, and Masaki Kashiwara, 
-    \textit{Microfunctions and pseudo-differential equations}, 
-    Hyperfunctions and pseudo-differential equations 
-    (Proc. Conf., Katata, 1971; dedicated to the memory of 
-    Andr\'e Martineau), 
-    Springer, Berlin, 1973, pp. 265–-529. 
-    Lecture Notes in Math., Vol. 287.
-
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+        \textit{Sheaves on Manifolds}, 
+        Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+        \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
+        \textit{Categories and Sheaves}, 
+        Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
+        \bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
+        \bibitem[Sch99]{Sch99} Schneiders, \textit{Quasi-abelian categories}, , 1999.
 \end{thebibliography}
-%\bibliographystyle{junsrt}
-%\bibliography{ref}
+
+%===============================================
+
 
 \end{document}
-
-

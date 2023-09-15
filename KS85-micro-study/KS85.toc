@@ -1,0 +1,6 @@
+\contentsline {chapter}{\numberline {1}Preliminaries}{9}{chapter.1}
+\contentsline {section}{\numberline {1.1}Notations and conventions}{9}{section.1.1}
+\contentsline {section}{\numberline {1.2}Normal cones}{9}{section.1.2}
+\contentsline {section}{\numberline {1.3}Sheaves}{9}{section.1.3}
+\contentsline {section}{\numberline {1.4}An extension theorem for sheaves}{9}{section.1.4}
+\contentsline {section}{\numberline {1.5}$G$-toplogy}{9}{section.1.5}

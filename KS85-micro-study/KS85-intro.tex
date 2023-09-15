@@ -1,0 +1,151 @@
+\chapter*{Introduction}
+Let $X$ be a real manifold, 
+$F$ a sheaf on $X$, or better an objet of $\Drv^+(X)$, 
+the derived category of the category of complexes 
+bounded from below of sheaves on $X$. 
+Let $TX$ be the cotangent bundle to $X$. 
+We associate to $F$ a closed conic subset of $TX$, 
+denoted $SS (F)$, the ``micro-support of $F$'', as follows:
+
+\begin{DFN}
+    Let $p=(x_0,\xi_0)\in T^\ast X$. 
+    Then $p\notin SS(F)$ if and only if 
+    there exists an open neighborhood $U$ of $p$ in $TX$ 
+    such that for any $(x_1,\xi_1) \in U$, 
+    any real $C^1$-function $\phi$ on $X$, 
+    with $\phi(x_1)=0$, $d\phi(x_1)=\xi_1$, 
+    we have: $(\rr \Gamma_{x;\phi(x)\geqq 0} (F))_{x_1} =0$.
+\end{DFN}
+
+In other words 
+the micro-support of $F$ describes 
+the set of codirections of $X$ where $F$, and its cohomology, 
+``do not propagate''. 
+This definition is motivated by the following situation. 
+
+Assume $X$ is a complex manifold, 
+and let $\mcal{M}$ be a coherent module over 
+the Ring $\mcal{D}_X$ of (holomorphic, finire order) 
+differential operators. 
+Let $\Ch(\mcal{M})$ be the characteristic variety 
+of $\mcal{M}$ in $T^\ast X$. 
+Then we can interpret a well-known result of Zerner [1], 
+Bony-Schapira [1], Kashiwara [5], through the formula:
+\begin{equation}
+    \muS(\RHOM_{\mcal{D}_X}(\mcal{M},\mcal{O}_X))\subset\Ch(\mcal{M}).
+\end{equation}
+A natural problem then arising 
+in the theory of (micro-)differential equations, 
+is to evaluate the set of codirections of propagation for
+the sheaf of hyperfunction or microfunction solutions 
+of $\mcal{M}$ (or more generally 
+of a system of micro-differential equations). 
+To be more precise, 
+let $M$ be a real analytic manifold of dimension $n$, 
+$X$ a complexification of $M$. 
+Recall that the sheaf $\mcal{B}_M$ (resp. $\mcal{C}_M$) 
+of Sato's hyperfunctions on $M$ (resp. 
+Sato's microfunctions on $T^{\ast}_{M}X$, 
+the conormal bundle to $M$ in $X$) is defined by:
+\begin{align*}
+    \mcal{B}_M &= \RG_M(\mcal{O}_X)\otimes\omega_M[n]\\
+    (\text{resp. }
+    \mcal{C}_M &= \mu_M(\mcal{O}_X)\otimes\omega_M[n])
+\end{align*}
+where $\omega_M$ is the orientation sheaf on $M$, 
+$[n]$ means the $n$-shift in $\Drv^+(X)$, 
+and $\mu(\boldsymbol{\cdot})$ is the functor of 
+Sato's microlocalization along $M$ (cf. Chapter 2).
+
+Then the problem is: 
+evaluate $\muS(\RHOM_{\mcal{D}_X}(\mcal{M},\mcal{B}_M))$ or
+\linebreak[4]
+$\muS(\RHOM_{\mcal{D}_X}(\mcal{M},\mcal{C}_M))$. 
+Taking $F = \RHOM_{\mcal{D}_X}(\mcal{M},\mcal{B}_M)$ 
+this is a particular case of the following problem: 
+given $F \in \Ob(\Drv^+(X))$, and $M$ a real submanifold of $X$, 
+calculate $\muS (\RG_M(F))$ or $\muS(\mu_M(F))$.
+
+As we see, in this new formulation, we may forget that $X$ is a
+complexmanifold, and we do not study separately 
+the $\mcal{D}_X$-module $\mcal{M}$ from one side 
+and the sheaf $\mcal{O}_X$ on the other side. 
+On the contrary 
+we work with the whole complex of solutions of $\mcal{M}$ in $\mcal{O}_X$. 
+The only information that we keep is 
+the geometrical data of the characteristic variety, 
+which is interpreted in terms of micro-support (in fact
+we shall prove in Chapter 10 that the inclusion in (0.1) is an
+equality). 
+
+Now let us come back to the subject of this paper.
+
+We study in Chapter 4 and 5 
+the functorial properties of the micro-support: 
+behavior under direct or inverse images, functors
+$\RHOM(\boldsymbol{\cdot},\boldsymbol{\cdot})$, $\boldsymbol{\cdot}\otimes^{L}\boldsymbol{\cdot}$, 
+specialization, Fourier-Sato transformation, 
+microlocalization (the construction of 
+these functors are recalled in Chapter 1 and 2). 
+But in order to manipulate micro-supports, 
+the definition (0.1) given above is too much 
+of a local one and one has to replace it 
+by a more global criterium. 
+This is achieved in Chapter 3, 
+using a Mittag-Leffler procedure for sheaves (Theorem 1.4.3).
+
+The calculations of Chapters 4 and 5 are 
+all essentially based on
+the computation of the micro-support of the direct image 
+of a sheaf by an open immersion. 
+In this case the procedure, and the result,
+are very similar to those encountered in the theory 
+of micro-hyperbolic systems (cf. our work [2] ), 
+and the set we obtain is defined as a ``normal cone'', 
+(Theorem 4.3.1.). 
+The preliminaries concerning such normal cones 
+are presented in Chapter 1, \S2.
+
+The notion of micro-support allows us to work with 
+sheaves ``micro-locally'', that is, locally in \(T^\ast X\). 
+In fact for a subset \(\Omega\) of \(T^\ast X\), 
+we introduce the triangulated category \(\Drv^+(X;\Omega)\) 
+obtained from \(\Drv^+(X)\) by localization on $\Omega$, 
+that is, by regarding as the zero object 
+the sheaves whose micro-support do not meet $\Omega$. 
+A useful tool in the microlocal study of sheaves, 
+is the ``$G$-topology''. 
+The idea of the $G$-topology is the following: 
+in order to work microlocally, let us say on $X\times U$ 
+where $X$ is open in a real vector space $E$ 
+and $U$ is an open cone in the dual space $E^\ast$, 
+the usual topology on $X$ is too strong, 
+and may be weakened by introducing a closed convex proper 
+cone $G$ in $E$ whose polar set $G^\circ$ is contained 
+in $(-U)\cup\{0\}$, and by considering only those open 
+sets $\Omega$ of $X$ such that:
+\[
+    \Omega = (\Omega+G)\cap X.  \tag*{(0.2)}\label{eq:Gtop}
+\]
+Let $X_G$ be the space $X$ endowed with 
+the $G$-topology (i.e.: the open subsets of $X_G$ satisfy \ref{eq:Gtop}) 
+and let be the continuous map $X \to X_G$. 
+Let $\Omega_0$ and $\Omega_1$ be two $G$-open subsets 
+of $E$ such that \(\Omega_0\subset\Omega_1\), \(\Omega_1\setminus\Omega_0\Subset X\). 
+Then one proves (cf.\ Theorem 3.2.2.) 
+that for $F \in \Ob(\Drv^{+}(X))$ one has the isomorphism:
+\[
+    \Phi_{G}^{-1}\rr\Phi_{G^\ast}
+    \rr\Gamma_{\Omega_1\setminus\Omega_0}(F)
+    \overset{\sim}{\longrightarrow}
+    F
+    \quad\text{in}\quad
+    \Drv^{+}(X:\Int(\Omega_1\setminus\Omega_0)\times \Int(-G^{\circ}))
+\]
+and moreover:
+\[
+    \muS(\Phi_{G}^{-1}\rr\Phi_{G^\ast}
+    \rr\Gamma_{\Omega_1\setminus\Omega_0}(F))
+    \subset
+    X\times \Int(-G^{\circ})
+\]

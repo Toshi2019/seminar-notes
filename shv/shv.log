@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  5 SEP 2023 23:52
+This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  13 SEP 2023 01:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -116,7 +116,7 @@ LaTeX Info: Redefining \overline on input line 375.
 \DOTSCASE@=\count103
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
-LaTeX Info: Redefining \cdots on input line 596.
+LaTeX Info: Redefining \boldsymbol{\cdot}s on input line 596.
 \Mathstrutbox@=\box44
 \strutbox@=\box45
 \big@size=\dimen129
@@ -964,32 +964,41 @@ LaTeX Font Warning: Font shape `JT1/hmc/m/it' undefined
 LaTeX Font Warning: Font shape `JY1/hmc/m/it' undefined
 (Font)              using `JY1/hmc/m/n' instead on input line 520.
 
-[2] [3] [4] [5] [6]
+[2] [3] [4] [5]
 LaTeX Font Info:    Font shape `JT1/hmc/m/it' will be
-(Font)              scaled to size 9.24683pt on input line 849.
+(Font)              scaled to size 9.24683pt on input line 831.
 LaTeX Font Info:    Font shape `JY1/hmc/m/it' will be
-(Font)              scaled to size 9.24683pt on input line 849.
- [7
+(Font)              scaled to size 9.24683pt on input line 831.
+
+
+LaTeX Font Warning: Font shape `JT1/hmc/bx/it' undefined
+(Font)              using `JT1/hmc/bx/n' instead on input line 831.
+
+
+LaTeX Font Warning: Font shape `JY1/hmc/bx/it' undefined
+(Font)              using `JY1/hmc/bx/n' instead on input line 831.
+
+[6] [7
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 861.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 861.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 925.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 925.
  (./shv.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 861.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 861.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 925.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 925.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 861.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 925.
  ) 
 Here is how much of TeX's memory you used:
- 24658 strings out of 493273
- 426824 string characters out of 6144919
- 560205 words of memory out of 5000000
- 28100 multiletter control sequences out of 15000+600000
- 31094 words of font info for 151 fonts, out of 8000000 for 9000
+ 24664 strings out of 493273
+ 426906 string characters out of 6144919
+ 560209 words of memory out of 5000000
+ 28105 multiletter control sequences out of 15000+600000
+ 31453 words of font info for 152 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  55i,19n,82p,3258b,991s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on shv.dvi (13 pages, 30500 bytes).
+Output written on shv.dvi (13 pages, 32612 bytes).

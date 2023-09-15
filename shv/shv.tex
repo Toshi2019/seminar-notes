@@ -427,7 +427,7 @@
 % ---------------------------
 
 \title{層理論まとめノート}
-\author{大柴寿浩}
+\author{Toshi2019}
 %\date{}
 \begin{document}
 \maketitle
@@ -509,7 +509,7 @@ $X$を位相空間とし，$R$を$X$上の環とする．
     各点$x\in X$に対し，
     \begin{equation*}
         \begin{array}{rccc}
-            {\cdot}_x\colon&\Mod(R)&\longrightarrow&\Mod(R_x)\\
+            {\boldsymbol{\cdot}}_x\colon&\Mod(R)&\longrightarrow&\Mod(R_x)\\
             &\rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
             &F&\longmapsto&F_x        
         \end{array}
@@ -557,13 +557,13 @@ $X$を位相空間とし，$R$を$X$上の環とする．
     開集合$U\in\Op(X)$に対し，
     \begin{equation*}
         \begin{array}{rccc}
-            \Gamma(U;{\cdot})\colon&\Mod(R)&\longrightarrow&\Mod(R(U))\\
+            \Gamma(U;{\boldsymbol{\cdot}})\colon&\Mod(R)&\longrightarrow&\Mod(R(U))\\
             &\rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
             &F&\longmapsto&\Gamma(U;F)\coloneqq F(U)
         \end{array}
     \end{equation*}
     は左完全関手である．
-    よってとくに$\Gamma(X;{\cdot})$も左完全である．
+    よってとくに$\Gamma(X;{\boldsymbol{\cdot}})$も左完全である．
 \end{PRP}
 
 \begin{EG}[右完全にならない例]
@@ -646,7 +646,7 @@ $X$を位相空間とし，$R$を$X$上の環とする．
     $F,G$を$R$加群とする．
     \begin{equation*}
         \begin{array}{rccc}
-            \Hom_R({\cdot},{\cdot})\colon
+            \Hom_R({\boldsymbol{\cdot}},{\boldsymbol{\cdot}})\colon
             &\Mod(R)^{\op}\times\Mod(R)
             &\longrightarrow&\Mod(\zz)\\
             &\rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
@@ -662,7 +662,7 @@ $X$を位相空間とし，$R$を$X$上の環とする．
     $F,G$を$R$加群とする．
     \begin{equation*}
         \begin{array}{rccc}
-            \HOM_R({\cdot},{\cdot})\colon
+            \HOM_R({\boldsymbol{\cdot}},{\boldsymbol{\cdot}})\colon
             &\Mod(R)^{\op}\times\Mod(R)
             &\longrightarrow&\Mod(\zz_X)\\
             &\rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
@@ -679,7 +679,7 @@ $X$を位相空間とし，$R$を$X$上の環とする．
     $F$を右$R$加群，$G$を左$R$加群とする．
     \begin{equation*}
         \begin{array}{rccc}
-            {\cdot}\otimes_R{\cdot}\colon
+            {\boldsymbol{\cdot}}\otimes_R{\boldsymbol{\cdot}}\colon
             &\Mod(R^{\op})\times\Mod(R)
             &\longrightarrow&\Mod(\zz_X)\\
             &\rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
@@ -796,6 +796,70 @@ $X$を位相空間とし，$R$を$X$上の環とする．
     \]
     は完全関手である．
 \end{PRP}
+
+
+
+\subsection{部分集合から定まる層}
+
+\(Z\subset X\)を部分集合とし，
+包含写像\(j\colon Z\hookrightarrow X\)の引き戻しで\(Z\)に\(X\)の
+誘導位相を入れる．
+
+\subsubsection{制限と切断の一般化}
+逆像関手を用いると\(F\in\Sh(X)\)の\(Z\)への制限が
+開集合以外にも一般化できる．
+\[
+    \begin{array}{rccc}
+        j^{-1}\colon&   \Sh(X)& \longrightarrow& \Sh(Z)\\
+        &   \rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+        &   F&  \longmapsto&    F|_Z=j^{-1} F   
+    \end{array}
+\]
+また，切断関手の一般化も
+\[
+    \begin{array}{rccc}
+        \Gamma(Z;{\boldsymbol{\cdot}})\colon&\Mod(R)&\longrightarrow&\Mod(R(Z))\\
+        &\rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+        &F&\longmapsto&\Gamma(Z;F)\coloneqq \Gamma(Z;F|_Z)
+    \end{array}
+\]
+によって行える．
+
+
+\paragraph{2023/09/13分の行間埋め}
+
+\begin{proof}[\textbf{自然な射\(\Gamma(X;F)\to\Gamma(Z;F)\)の存在}]
+    \(j^{-1}\)と\(\Gamma(Z;\boldsymbol{\cdot})\)を合成すればよい．
+    \[
+        F\mapsto F|_Z\mapsto \Gamma(Z;F).
+    \]
+\end{proof}
+
+\subsubsection{制限の引き戻し}
+
+\(X\)上の層\(F\)に対して\(Z\)から定まる\(X\)上の新しい層\(F_Z\)を
+\[
+    \begin{array}{rccc}
+        {\boldsymbol{\cdot}}_Z\colon&   \Sh(X)& \longrightarrow& \Sh(X)\\
+        &   \rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+        &   F&  \longmapsto&    F_Z=j_\ast j^{-1} F   
+    \end{array}
+\]
+で定める．
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
