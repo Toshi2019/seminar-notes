@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  14 SEP 2023 21:40
+This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  21 SEP 2023 13:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -921,8 +921,8 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 57.
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--68
-[]\OT1/cmr/m/n/10.95 Then the prob-lem is: eval-u-ate $[]([][](\OMS/cmsy/m/n/10.95 M\OML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 B[]\OT1/cmr/m/n/10.95 ))$ or
+Overfull \hbox (42.27449pt too wide) in paragraph at lines 60--68
+[]\OT1/cmr/m/n/10.95 Then the prob-lem is: eval-u-ate $[]([][](\OMS/cmsy/m/n/10.95 M\OML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 B[]\OT1/cmr/m/n/10.95 ))$ or $[]([][](\OMS/cmsy/m/n/10.95 M\OML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 C[]\OT1/cmr/m/n/10.95 ))$.|
  []
 
 [5]
@@ -1016,4 +1016,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  55i,10n,82p,3274b,991s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on KS85.dvi (11 pages, 16572 bytes).
+Output written on KS85.dvi (11 pages, 16580 bytes).
