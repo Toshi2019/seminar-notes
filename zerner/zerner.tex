@@ -1,0 +1,754 @@
+%================================================
+%    sheaves on manifolds ノート
+%================================================
+
+% -----------------------
+% preamble
+% -----------------------
+% ここから本文 (\begin{document}) までの
+% ソースコードに変更を加えた場合は
+% 編集者まで連絡してください. 
+% Don't change preamble code yourself. 
+% If you add something
+% (usepackage, newtheorem, newcommand, renewcommand),
+% please tell it 
+% to the editor of institutional paper of RUMS.
+
+% ------------------------
+% documentclass
+% ------------------------
+\documentclass[10pt, a4paper, dvipdfmx, draft, leqno]{jsarticle}
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+\usepackage{url}
+\usetikzlibrary{cd}
+
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+%\usepackage{calligra}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+\newtheorem{com}[Axiom]{コメント}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem*{Fact*}{事実}
+\newtheorem*{com*}{コメント}
+
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+\newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits} % 射影
+
+
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits}
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits}
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits}
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits}
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{subsection}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
+
+\newcommand{\cat}{\mathscr{C}}
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+
+% =================================
+
+
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}[section]
+\newtheorem{DFN}[Axiom]{定義}
+\newtheorem{THM}[Axiom]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[Axiom]{命題}
+\newtheorem{LMM}[Axiom]{補題}
+\newtheorem{CRL}[Axiom]{系}
+\newtheorem{EG}[Axiom]{例}
+\newtheorem{CNV}[Axiom]{規約}
+\newtheorem{NTN}[Axiom]{記号}
+\newtheorem{CMT}[Axiom]{コメント}
+\newtheorem{RMK}[Axiom]{注意}
+
+
+
+
+% 定理環境ここまで
+%====================================================
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+\title{非特性変形について}
+\author{大柴寿浩}
+\date{}
+\begin{document}
+\maketitle
+
+\section*{はじめに}
+Zernerの方法について調べたノート．
+\section*{記号}
+次の記号は断りなく使う．
+\begin{itemize}
+    \item 添字：
+    なんらかの族$(a_i)_{i\in I}$を$(a_i)_i$とか$(a_i)$と
+    略記することがある．
+\end{itemize}
+\section{\cite[1--2章]{Sch00}の和訳}
+\subsection{導入}
+ジャン・ルレーによる『科学著作集』が最近出版された．
+それは次の3巻に分かれている．
+\begin{enumerate}[(a)]
+    \item Topologie et th\'eo\`eme du point fixe (代数的トポロジー),
+    \item \'Equations aux d\'riv\'ees partielles r\'elles et m\'ecanique des fluides (非線形解析),
+    \item Fonctions de plusieurs variables complexes et 
+    \'equations aux d\'eriv\'ees partielles holomorphes (線形偏微分方程式, 以下，LPDE).
+\end{enumerate}
+
+(a)と(c)は密接に関係しており，
+ホモロジー代数のを用いた層の言葉に翻訳すると相補的ともいえる．
+層の理論は，スペクトル系列という単語で知られる
+ホモロジー代数における重要な道具とともに
+40年代にルレーによって導入されたのであった．
+この分野へのルレーによる重要な貢献に関する詳細なサーベイをするつもりはない．
+ただ，彼のアイデアが，グロタンディークや佐藤のものと結びついて，
+線形解析の代数的・幾何的な描像，すなわち佐藤の言う代数解析学に結実した
+という事実を．いくつかの例によって述べたい．
+\subsection{コーシー・コワレフスキーの定理再考}
+
+LPDEの核心はコーシー・コワレフスキーの定理 (以下，C-K定理) である．
+古典的な定式化とシャウダー，ペトロフスキー，
+そしてルレーによるその改良を見てみる．
+後述するように，C-K定理はルレーによるそのままの形は，
+LPDEを扱うための唯一の解析的な道具である．
+他はすべて，位相あるいは代数の領分，層理論やホモロジー代数に属する．
+
+古典的なC-K定理は次のように述べられる．
+\(\cc^n\)の開集合\(X\)を考え，その正則座標を\((z_1,\dots,z_n)\)とする．
+\(Y\)を\(\{z_1=0\}\)で表される複素超曲面とする．
+\(P\)を\(m\)階の正則微分作用素，すなわち，
+\[
+    P=\sum_{\lvert \alpha\rvert\leqq m}
+    a_\alpha(z)\partial_z^\alpha
+\]
+とする．
+ここで\(\alpha=(\alpha_1,\dots,\alpha_n)\in\nn^n\)は多重指数，
+\(\lvert \alpha\rvert=\alpha_1+\dots+\alpha_n\)で，
+\(a_\alpha(z)\)は\(X\)上の正則関数，
+\(\partial_z^\alpha\)は微分\(\frac{\partial}{\partial z_i}\)を
+表す単項式である．
+
+\(Y\)が非特性的であるとは，
+\(\partial_{z_1}^m\)の係数\(a_{(m,0,\dots,0)}\)が
+常に0にならないことをいう．
+
+コーシー問題は次のように定式化される．
+\(X\)上の正則関数\(g\)と\(Y\)上の\(m\)個の
+正則関数\(h=(h_0,\dots,h_{m-1})\)に対して，
+\(X\)における\(Y\)の近傍の関数\(f\)で
+\begin{equation}
+    \begin{cases}
+        Pf=g,\\
+        \gamma_Y(f)=(h),
+    \end{cases}
+\end{equation}
+を満たすものを求めよ．
+ここで\(\gamma_Y(f)
+=(f\rvert_Y,\partial_1f\rvert_Y,\dots
+,\partial_1^{m-1}f\rvert_Y)\)は\(f\)と\(z_1\)に関する
+その\((m-1)\)階微分を\(Y\)に制限したものである．
+
+$Y$が$P$に関して非特性的ならばコーシー問題は$Y$の近傍で一意な解を持つ
+というのがC-K定理の主張である．
+シャウダーとペトロフスキーは
+\(f\)の存在する領域が$X$と\(P\)の主要表象にしか依存しないことを
+発見し，
+ルレーがこの定理の正確な定式化を与えた．
+\begin{THM}[C-K定理のルレーによる定式化]
+    \(X\)を\(\cc^n\)の相対コンパクト集合とし，
+    係数\(a_\alpha\)は\(\overline{X}\)の近傍で正則であるとする．
+    さらに，\(a_{m,0,\dots,0}\equiv1\)とする．
+    このとき，実数\(\delta>0\)で，
+    \(a\in Y\)を中心とし\(R\)を半径とする
+    球体\(B(a,R)\)で\(B(a,R)\subset X\)を満たすもの
+    において\(g\)が正則であり\(B(a,R)\cap Y\)で\((h)\)が正則ならば
+    半径\(\delta R\)の球体\(B(a,\delta R)\)において\(f\)が正則となるものが存在する．
+\end{THM}
+この結果は純技術的に見え，その面白みは明らかではない．
+しかし，後述のゼルネールの結果で示すように，
+これは伝播の研究において重要な役割を担う．
+
+これを述べるためには座標によらない議論をしなければならない．
+$P$の主要表象を\(\sigma(P)\)と書くがこれは
+\[
+    \sigma(P)(z;\zeta)
+    =\sum_{\lvert \alpha\rvert=m}a_alpha(z)\zeta^\alpha
+\]
+で定義される．
+これは実は$X$の余接束$T^\ast X$上の関数になっている．
+$X$を下部の実多様体$X_\rr$と同一視すると，
+$(T^\ast X)_\rr$と$T^\ast(X_\rr)$の間を自然に同一視できる．
+$Y$が$P$に関して非特性的であることは，
+$\sigma(P)$が0切断を取り除いた$Y$の余法束で0にならないと言い換えられ，
+同様に実超曲面に対しても非特性的であるという概念を定義できる．
+
+\begin{PRP}[\cite{Zer71}]
+    \(\Omega\)を\(X\)の開集合で滑らかな境界\(S\)を持つものとする
+    （つまり\(S\)は\(C^1\)級の実超曲面で，
+    \(\Omega\)は局所的には\(S\)の片側である）．
+    \(S\)は\(P\)について非特性的とする．
+    \(f\)は\(\Omega\)で正則であるとし，
+    \(Pf\)は境界\(S\)を通って解析接続できるとする．
+    このとき\(f\)自体も境界\(S\)を通って解析接続できる．
+\end{PRP}
+
+証明は非常にシンプルである（\cite[Thm9.4.7]{Hor83}も参照）．
+\section{\cite[9.4]{Hor83}の和訳}
+\subsection*{要約}
+9.4節は解析的微分方程式の解析解の存在に当てられる．
+古典的なコーシー・コワレフスキーの定理に加え，
+境界と存在域に関する正確な情報が与えられる．
+これらは9.5節で解析的微分方程式の超関数解に関する
+基本的な性質を示すのに用いられる．
+
+\subsection{解析的コーシー問題}
+すでに補題9.1.4でラプラシアンに対する解析的コーシー問題を解いた．
+9.5節で行う定理8.6.1の超関数への拡張には，
+解析的コーシー問題に対する，
+存在域についての正確な情報も含んだ形での存在定理が必要になる．
+この節ではそのような結果を示す．
+
+$\cc^n$の点を\(z=(z_1,\dots,z_n)\)で表し，
+\[
+    \Omega_R=\{z;\lvert z_j\rvert<R,j=1,\dots,n\}
+\]を
+半径\(R\)中心0の多重円盤を表すとする．
+この節だけでの記法として，解析関数に作用する作用素\(
+    (\partial/\partial z_1)^{\alpha_1}
+    \cdots(\partial/\partial z_n)^{\alpha_n}
+\)を\(D^\alpha\)と表す．
+まず，単独の微分方程式
+\begin{equation}
+    D^\beta u=f\label{eq:single}
+\end{equation}
+で境界条件
+\begin{equation}\label{cond:single}
+    z_j=0, 0\leqq k<\beta\text{のとき，}D_j^ku=0;\quad j=1,\dots,n
+\end{equation}
+をみたすものを解くことから始める．
+
+\begin{LMM}
+    \(\Omega_R\)で解析的な任意の\(f\)に対して，
+    \eqref{eq:single}の一意な解であって\(\Omega_R\)で解析的であり，
+    なおかつ\eqref{cond:single}をみたすものが存在する．
+    \begin{equation}\label{eval1}
+        \sup_{\Omega_R}\lvert u\rvert
+        \leqq R^{\lvert\beta\rvert}\sup_{\Omega_R}\lvert f\rvert/\beta!
+    \end{equation}
+    が成り立つ．
+\end{LMM}
+
+\eqref{eq:single}を少し摂動したものに対して若干弱い存在定理が成り立つ．
+簡単のため\(R=1\)とする．
+
+\begin{THM}\label{thm:hor942}
+    \(\beta\)を固定した多重指数とし，\(\lvert\beta\rvert=m\)とする．
+    \(a^\alpha, \lvert\alpha\rvert\leqq m\)と\(f\)を
+    \(\Omega_1\)上の有界な解析関数で
+    \[
+        A=(2^ne)^m\sup_{\Omega_1}\sum\lvert a^\alpha\rvert<1
+    \]
+    をみたすものとする．
+    このとき方程式
+    \begin{equation}
+        D^\beta u=\sum_{\lvert\alpha\rvert\leqq m}^{}a^\alpha D^\alpha u+f\tag{\ref{eq:single}$'$}\label{eq:single-1}
+    \end{equation}
+    は一意な解であって，
+    \(\Omega_{\frac{1}{2}}\)上で\eqref{cond:single}をみたし
+    \begin{equation}\tag{\ref{eval1}$'$}\label{eval2}
+        \sup_{\Omega_\frac{1}{2}}\lvert u\rvert
+        \leqq (1-A)^{-1}
+        \sup_{\Omega_1}\lvert f\rvert/\beta!
+    \end{equation}
+    が成り立つものが存在する．
+\end{THM}
+
+定理\ref{thm:hor942}はいろいろな問題を解くのに使えるが，
+ここで必要なのはコーシー問題だけなので今はそこに集中しよう．
+変数\(z_n\)は重要な役割を果たすので半径が異なる多重円盤
+\[
+    \Omega_{R,\delta}=\{z\in\cc^n;
+    \lvert z_j\rvert<R\ (j<n),\ 
+    \lvert z_n\rvert<\delta R\}
+\]
+を導入する．
+\section{\cite{Zer71}の和訳}
+
+コーシー・コワレフスキーの定理から簡単に従う幾何学的な結果を明示する．
+我々の用いる主張はルレーによる
+この定理\footnote{
+    コーシーデータをもつ多様体の近くでの
+    解析的な線形コーシー問題の解の一意性
+}の正確な形からすぐに従う結果である．
+
+\begin{NTN}
+    \(a(x,\partial/\partial x)\)は
+    開集合\(\Omega\subset\cc^n\)上の解析関数を係数とする
+    微分作用素とする．
+    \(m\)をその階数とし\(g\)をその主要部とする．
+    \(\cc^n\)にエルミートノルムを入れる．次のようにおく：
+    \[
+        \theta(x,\xi)=g(x,\xi)\lVert\xi\rVert^{-m}.
+    \]
+\end{NTN}
+
+\begin{THM}
+    任意のコンパクト集合\(K\subset\Omega\)に対し，
+    \(C>0\)で次の性質を満たすものが存在する：
+    
+    任意の\(x_0\in K,\xi\in\cc^n\)で
+    \(\theta(x_0,\xi)\ne0, r>0\)
+    をみたすものに対し，
+    方程式
+    \[
+        \langle x-x_0,\xi\rangle=0
+    \]で定義される超曲面の上で初期データをみたす
+    任意のコーシー問題のただ一つの解であって，
+    この超平面内の半径\(r\)の球において正則なものは，
+    \(x_0\)を中心とし，
+    \[
+        C\cdot\theta(x_0,\xi)\min\left(\theta(x_0,\xi),r\right)
+    \]
+    を半径とする球において正則である．
+\end{THM}
+
+\begin{DFN}
+    （ノルム空間の）開集合\(\Omega\)が
+    点\(x\in\partial\Omega\)において
+    \textbf{良い台} (bon appui) をもつとは，
+    \(x\)を通る超平面\(H\)と\(x\)に収束する
+    点列\(x_\nu\)で，\(x_\nu\)を通り\(H\)に平行な超平面\(H_\nu\)と
+    \(H_\nu\)における\(x_\nu\)を中心とする\(H_\nu\cap\Omega\)に
+    含まれる球のうち最大のものの半径\(\rho_\nu\)に対して
+    \(\lim\lVert x-x_\nu\rVert/\rho_\nu=0\)が成り立つ
+    ことをいう．
+
+    もちろん\(H\)を\textbf{良い超平面台} 
+    (hyperplan de bon appui) という．
+\end{DFN}
+\begin{CMT}
+    \(\Omega\)が凸ならば，良い台をもつ点において，
+    古典的な意味での台の超平面は一意であり，
+    一意な良い超平面台でもある
+    （凸性が無いと，良い超平面台は一意ではなくなる．
+    例：2つの開集合の合併は同じ点でそれぞれ良い台を持つ）．
+\end{CMT}
+\begin{DFN}
+    （距離空間の）開集合\(\Omega\)が
+    点\(x\in\partial\Omega\)において
+    \textbf{有限の内部曲率} (courbure interne finie) を
+    もつ（内部曲率が有限である）とは，
+    \(\Omega\)に含まれる球で\(x\)を境界にもつもの
+    が存在することをいう．
+    この性質を持つ球の半径の上界を
+    \(x\)における\textbf{内部曲率半径} 
+    (rayon de courbure interne) と呼ぶ.
+\end{DFN}
+\begin{CMT}
+    ユークリッド空間において，開集合は
+    内部曲率が有限である全ての点において良い台をもつ．
+    この開集合に含まれる球の境界に
+    その境界上の点で接する超平面は良い超平面台である．
+\end{CMT}
+\begin{DFN}
+    \(\cc^n\)における実の意味での超平面が
+    点\(x\in\Omega\)において\textbf{特性的} 
+    (caract\'eristique) であるとは，
+    それを含む複素の意味での超平面が一意なことをいう．
+\end{DFN}
+\begin{PRP}
+    \(U\subset\Omega\)を開集合とし
+    \(x\)を\(\Omega\)における\(U\)の境界の元で，
+    \(x\)において\(U\)が特性的でない良い超平面台をもつものとする．    
+    このとき\(x\)の近傍\(V\)で，
+    \begin{equation}\label{eq:Zer1}
+        a\left(x,\frac{\partial}{\partial x}u(x)\right)=0
+    \end{equation}
+    をみたす全ての\(U\)上の解析関数\(u\)と\(a\)を\(U\cup V\)の被覆の上の解析関数に延長できる
+    ものが存在する．
+\end{PRP}
+\begin{CMT}
+    被覆
+\end{CMT}
+\begin{CRL}
+    開集合\(U\subset\Omega\)が\eqref{eq:Zer1}の解の正則領域であり
+    その境界が\(U\)の実\(2n-1\)次元正則部分多様体\(S\)であるとすると，
+    \(S\)に接する超平面は特性的である．
+\end{CRL}
+\begin{CMT}
+    \(S\)のレヴィ形式が0ならば，
+    \(S\)は特性的な解析的超曲面の合併である．
+\end{CMT}
+\begin{CRL}
+    \(U_1,U_2\)が一般の位置にある実\(2n-1\)次元
+    正則部分多様体\(S_1,S_2\)を境界にもち
+    \(U_1\cup U_2\)が\eqref{eq:Zer1}をみたす関数の正則領域であるとき，
+    \(S_1\cap S_2\)は特性的な解析多様体となる．
+\end{CRL}
+\begin{PRP}
+    \eqref{eq:Zer1}をみたす関数の正則領域である凸開集合に対し，
+    境界の各点において，良い超平面台の少なくとも一つは特性的である．
+\end{PRP}
+\begin{CRL}
+    有界な凸開集合で境界の各点における良い超平面台が一意であるものは
+    定数係数偏微分方程式で第2項を持たないもの解の正則領域にはなり得ない．
+\end{CRL}
+
+複素超平面
+\[
+    \langle x-x_0,\xi\rangle=0
+\]が\(x_0\)で\textbf{単純特性的}(caract\'eristique simple) であるとは
+\[
+    g(x_0,\xi)=0 \quad\text{だが}\quad
+    \grad_\xi g(x_0,\xi)\ne 0
+\]となることであった．
+
+実超平面が（複素）超平面で\(x_0\)において単純特性的であるものを含むとき，
+実超平面は\(x_0\)において単純特性的であるという．
+
+\begin{PRP}
+    \(a\)を定数係数の作用素とする．
+    \(\Omega\)を凸開集合で\(\partial\Omega\)の
+    稠密な集合の各点において，単純特性的な超平面台が存在するものとする．
+    このとき，\(\Omega\)は\eqref{eq:Zer1}をみたす関数の正則領域である．
+\end{PRP}
+\begin{RMK}
+    同様の、しかし異なる結果が
+    キーセルマン\footnote{
+        Bull. Soc. math Fr., 97, 1969, p.329--356.
+    }とシャピラ（私信）によって得られている．
+\end{RMK}
+\section{\cite{BS72}の和訳}
+
+
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    \bibitem[BS72]{BS72} Jean-Michel Bony, Pierre Schapira, 
+    \textit{Existence et prolongement des solutions holomorphes 
+    des \'equations aux d\'eriv\'ees partielles}, Inventiones math. 17, 95--105, 1972.
+    \bibitem[Hor83]{Hor83} L. H\"ormander 
+    \textit{The analysis of linear partial differential operators}, 
+    Grundlehren der Math. Wiss., 256, Springer-Verlag, 1983.
+    \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+        \textit{Sheaves on Manifolds}, 
+        Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+    \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
+        \textit{Categories and Sheaves}, 
+        Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
+    \bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
+    \bibitem[Sch00]{Sch00} Pierre Schapira, \textit{Sheaves: from Leray to Grothendieck and Sato}, 2000.
+    \bibitem[Zer71]{Zer71}M. Zerner, \textit{Domaine d'holomorphie des \'equations v\'erifiant une \'equation aux d\'eriv\'ees partielles}, 
+    C. R. Acad. Sci. Paris 272 (1971), p. 1646--1648.
+\end{thebibliography}
+
+%===============================================
+
+\end{document}

@@ -1,6 +1,5 @@
 %================================================
-%    この tex ファイルは2022年度立命館大学数学研究会機関紙
-%    『方程』の記事作成テンプレートです. 
+%    sheaves on manifolds ノート
 %================================================
 
 % -----------------------
@@ -264,6 +263,7 @@
 \newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
 \newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
 \newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
 
 \newcommand{\cat}{\mathscr{C}}
 
@@ -312,7 +312,34 @@
 
 
 
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
 
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}[section]
+\newtheorem{DFN}[Axiom]{定義}
+\newtheorem{THM}[Axiom]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[Axiom]{命題}
+\newtheorem{LMM}[Axiom]{補題}
+\newtheorem{CRL}[Axiom]{系}
+\newtheorem{EG}[Axiom]{例}
+\newtheorem{CNV}[Axiom]{規約}
+
+
+% 定理環境ここまで
+%====================================================
 
 % ---------------------------
 % new definition macro
@@ -1090,11 +1117,82 @@ $\cat$の三角とは射の列
 
 %$\Ob(\Comp(\cat))=\left\{\right\}$
 
+\clearpage
+\section{層コホモロジー}
+アーベル層の圏はアーベル圏になる．
+したがって層の導来圏が考えられる．
 
+\(\cdot\otimes\cdot\)の導来関手を考えたいが，
+テンソルに関する複体が有界になるとは限らないので，
+平坦分解の長さが有限になるという仮定をおく．
 
-
-
-
+\subsection{弱大域次元}
+\begin{PRP}
+    \(A\)を環とする．
+    \begin{enumerate}
+        \item 自由加群は射影加群である．
+        
+        \item 射影加群は自由加群の自由加群の直和因子である．
+        
+        \item 射影加群は平坦加群である．
+        
+        \item \(n\geqq0\)を整数とする．
+            次の条件(a)--\((\text{b})^{\op}\)は同値である．
+            \begin{enumerate}[(a)]
+                \item 任意の\(j>n\), \(N\in\Mod(A^\op)\), 
+                \(M\in\Mod(A)\)に対し，\(\Tor_j^A(N,M)=0\)
+                \item 任意の\(M\in\Mod(A)\)に対し，分解\[
+                    0\to P^n\to\dots\to P^0\to M\to0\quad\text{(\(P^j\)は平坦)}
+                    \]が存在する．
+                \item[\((\text{b})^{\op}\)]\setlength{\leftskip}{10pt}
+                任意の\(M\in\Mod(A^\op)\)に対し，分解\[
+                    0\to P^n\to\dots\to P^0\to M\to0\quad\text{(\(P^j\)は平坦)}
+                \]が存在する．
+            \end{enumerate}
+    \end{enumerate}
+\end{PRP}
+\begin{proof}
+    \begin{enumerate}
+        \item \(M\)を自由加群とする．左\(A\)加群の全射
+        \(g\colon N\twoheadrightarrow N'\)に対し，\[
+            g_\ast\colon\Hom_A(M,N)\to\Hom_A(M,N') 
+            \quad\text{in \(\Mod(\zz)\)}
+        \]が全射であることを示す．
+        \(\psi\colon M\to N'\)を\(A\)加群の射とする．
+        \(I\)を\(M\cong A^{\oplus I}\)となる添字集合とすると
+        任意の\(m\in M\)は，
+        \(M\)の生成系\((m_i)\)と\((a_i)_i\in A^{\oplus I}\)を
+        用いて，\(m=\sum_{i\in I}a_im_i\)とかける．
+        このとき，\[
+            \psi(m)=\sum_{i}a_i\psi(m_i)\in N'
+        \]であり，\(g\)が全射なので，\(n\in N\)で\[
+            g(n)=\psi(m)=\sum_{i}a_i\psi(m_i),
+            \quad
+            \psi(m_i)=g(n_i)
+        \]となるものがある．
+        この\((n_i)_i\)に対して，\(\phi\colon M\to N\)を
+        \[
+            \phi(m_i)=n_i
+        \]で定めると，
+        \[
+            \left(g_\ast(\phi)\right)(m_i)=g\circ\phi(m_i)=g(n_i)=\psi(m_i)
+        \]となる．
+        \item \(P\)を射影加群とする．
+        自由加群\(A^{\oplus I}\)と
+        全射\(p\colon A^{\oplus I}\twoheadrightarrow P\)が存在する．
+        実際，\(I= P\)として，
+        \(p\)を\(p((a_x)_{x\in P})=\sum_{x\in P}a_xx\)と
+        定めればよい．\(Q=\Ker p\)とすると，\[
+            0\to Q\hookrightarrow A^{\oplus I}\twoheadrightarrow P\to0
+        \]は完全列である．
+        このとき，\(P\)が射影加群であることから，
+        \(\id_P\)に対して，\(u\colon P\to A^{\oplus I}\)で
+        \[p_\ast(u)=p\circ u=\id_P\]となる者が存在する．
+        したがって，上の完全列は分裂し，
+        \(A^{\oplus I}\cong P\oplus Q\)となる．
+        \item 
+    \end{enumerate}
+\end{proof}
 
 
 
