@@ -380,21 +380,23 @@
 
 \title{数学解析 --- 偏微分方程式をみたす関数の正則領域\footnote{
     Zerner, M.: \textit{Domaine d'holomorphie des fonctions v\'erifiant une \'equation aux d\'eriv\'ees partielles}
-    C. R. Acad. Sc. Paris, t. \textbf{272}, 1646 (1971). の和訳．
+    C. R. Acad. Sc. Paris, t. \textbf{272}, 1646 (1971). の和訳 (2023/10/11)．
 }}
 \author{マルティン・ツェルナー}
 \date{1971年6月7日}
 \begin{document}
 \maketitle
 
-%\section{\cite{Zer71}の和訳}
-
 コーシー・コワレフスキーの定理から簡単に従う幾何学的な結果を明示する．
-我々の用いる主張はルレーによる
-この定理\footnote{
+我々の用いる主張はこの定理のルレーによる
+定式化からすぐに従う結果である\footnote{
     コーシーデータをもつ多様体の近くでの
-    解析的な線形コーシー問題の解の一意性
-}の正確な形からすぐに従う結果である．
+    解析的な線形コーシー問題の解の一意性 
+    [Probl\`eme de Cauchy, I 
+    (Bull. Soc. math. Fr., 85, 1957, p. 389--429)]. 
+    他の結果の簡単な証明は
+    筆者が1968年にニースで行ったセミナーの抄録に書いてある．
+}．
 
 \begin{NTN*}
     \(a(x,\partial/\partial x)\)は
@@ -422,7 +424,7 @@
     この超平面内の半径\(r\)の球において正則なものは，
     \(x_0\)を中心とし，
     \[
-        C\cdot\theta(x_0,\xi)\min\left(\theta(x_0,\xi),r\right)
+        C\theta(x_0,\xi)\min\left(\theta(x_0,\xi),r\right)
     \]
     を半径とする球において正則である．
 \end{THM*}
@@ -443,8 +445,8 @@
 \end{DFN}
 \begin{CMT}
     \(\Omega\)が凸ならば，良い台をもつ点において，
-    古典的な意味での台の超平面は一意であり，
-    一意な良い超平面台でもある
+    古典的な意味で台である超平面は一意であり，
+    良い超平面台としても一意である
     （凸性が無いと，良い超平面台は一意ではなくなる．
     例：2つの開集合の合併は同じ点でそれぞれ良い台を持つ）．
 \end{CMT}
@@ -477,13 +479,14 @@
     \(x\)において\(U\)が特性的でない良い超平面台をもつものとする．    
     このとき\(x\)の近傍\(V\)で，
     \begin{equation}\label{eq:Zer1}
-        a\left(x,\frac{\partial}{\partial x}u(x)\right)=0
+        a\left(x,\frac{\partial}{\partial x}\right)u(x)=0
     \end{equation}
-    をみたす全ての\(U\)上の解析関数\(u\)と\(a\)を\(U\cup V\)の被覆の上の解析関数に延長できる
+    をみたす全ての\(U\)上の解析関数\(u\)と\(y\)を\(U\cup V\)の被覆の上の解析関数に延長できる
     ものが存在する．
 \end{PRP}
 \begin{CMT}
-    被覆
+    この被覆は以下では考えないが，\(U\cup\{x\}\)が
+    単連結でなくとも\(U\)が単連結になりうるという事実による．
 \end{CMT}
 \begin{CRL}
     開集合\(U\subset\Omega\)が\eqref{eq:Zer1}の解の正則領域であり
@@ -502,17 +505,18 @@
 \end{CRL}
 \begin{PRP}
     \eqref{eq:Zer1}をみたす関数の正則領域である凸開集合に対し，
-    境界の各点において，良い超平面台の少なくとも一つは特性的である．
+    境界の各点における超平面台のうち少なくとも一つは特性的である．
 \end{PRP}
 \begin{CRL*}
-    有界な凸開集合で境界の各点における良い超平面台が一意であるものは
-    定数係数偏微分方程式で第2項を持たないもの解の正則領域にはなり得ない．
+    有界な凸開集合で境界の各点における超平面台が一意であるものは
+    第2項を持たない定数係数偏微分方程式の解の正則領域にはなり得ない（非自明）．
 \end{CRL*}
 
-複素超平面
+方程式
 \[
     \langle x-x_0,\xi\rangle=0
-\]が\(x_0\)で\textbf{単純特性的}(caract\'eristique simple) であるとは
+\]で定義される複素超平面が
+\(x_0\)で\textbf{単純特性的}(caract\'eristique simple) であるとは
 \[
     g(x_0,\xi)=0 \quad\text{だが}\quad
     \grad_\xi g(x_0,\xi)\ne 0
