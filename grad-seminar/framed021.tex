@@ -1,0 +1,96 @@
+\documentclass[a5paper]{jarticle}
+\usepackage{amsmath}
+\usepackage{framed}
+\usepackage{color}
+
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+
+\newtheorem{theo}{定理}[section]
+\newtheorem{defi}{定義}[section]
+\newtheorem{lemm}{補題}[section]
+
+\makeatletter
+\renewenvironment{leftbar}{%
+%  \def\FrameCommand{\vrule width 3pt \hspace{10pt}}%  デフォルトの線の太さは3pt
+  \def\FrameCommand{\vrule width 1pt \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+\makeatother
+
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{red}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+\newenvironment{lightgrayleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1zw} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+
+\begin{document}
+
+\section{A}
+
+\begin{leftbar}
+\begin{defi}
+平面幾何学において円周の長さを、その直径で割って得られる値は円の大きさに関わらず一定の値を取る。この値を円周率といい$\pi$と書く。
+\end{defi}
+\end{leftbar}
+
+\begin{leftbar}
+\begin{theo}
+直角三角形の斜辺の長さを$c$とし、その他の辺の長さを$ a$, $b$ とした時$ a^2+ b^2= c^2$なる関係が成立する。
+\end{theo}
+\end{leftbar}
+
+\begin{leftbar}
+\begin{lemm}
+三角形PABの頂角Pおよびその外角の二等分線と辺 AB およびその延長との交点
+を,CD とし，CDの中点をOとすれば，OPは三角形PAB の外接円に接する。
+\end{lemm}
+\end{leftbar}
+
+\begin{redleftbar}
+\begin{lemm}
+{\textcolor{blue}{三角形PABの頂角Pおよびその外角の二等分線と辺 AB およびその延長との交点
+を,CD とし，CDの中点をOとすれば，OPは三角形PAB の外接円に接する。}}
+\end{lemm}
+\end{redleftbar}
+
+\begin{redleftbar}
+\begin{theo}
+{\textcolor{blue}{直角三角形の斜辺の長さを$c$とし、その他の辺の長さを$ a$, $b$ とした時$ a^2+ b^2= c^2$なる関係が成立する。}}
+\end{theo}
+\end{redleftbar}
+
+\begin{redleftbar}
+\begin{lemm}
+三角形PABの頂角Pおよびその外角の二等分線と辺 AB およびその延長との交点
+を,CD とし，CDの中点をOとすれば，OPは三角形PAB の外接円に接する。
+\end{lemm}
+\end{redleftbar}
+
+\begin{lightgrayleftbar}
+\begin{lemm}
+三角形PABの頂角Pおよびその外角の二等分線と辺 AB およびその延長との交点
+を,CD とし，CDの中点をOとすれば，OPは三角形PAB の外接円に接する。
+\end{lemm}
+\end{lightgrayleftbar}
+
+\begin{lightgrayleftbar}
+\begin{theo}
+直角三角形の斜辺の長さを$c$とし、その他の辺の長さを$ a$, $b$ とした時$ a^2+ b^2= c^2$なる関係が成立する。
+\end{theo}
+\end{lightgrayleftbar}
+
+\begin{lightgrayleftbar}
+\begin{lemm}
+三角形PABの頂角Pおよびその外角の二等分線と辺 AB およびその延長との交点
+を,CD とし，CDの中点をOとすれば，OPは三角形PAB の外接円に接する。
+\end{lemm}
+\end{lightgrayleftbar}
+
+三角形PABの頂角Pおよびその外角の二等分線と辺 AB およびその延長との交点
+を,CD とし，CDの中点をOとすれば，OPは三角形PAB の外接円に接する。
+
+\end{document}

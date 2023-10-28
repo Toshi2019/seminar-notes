@@ -1,8 +1,10 @@
 %このファイルは日本語文字を含みます.
-\BOOKMARK [1][-]{section.1}{ホモロジー代数}{}% 1
-\BOOKMARK [2][-]{subsection.1.3}{複体の圏}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.4}{写像錐}{section.1}% 3
-\BOOKMARK [2][-]{subsection.1.5}{三角圏}{section.1}% 4
-\BOOKMARK [2][-]{subsection.1.6}{圏の局所化}{section.1}% 5
-\BOOKMARK [1][-]{section.2}{層コホモロジー}{}% 6
-\BOOKMARK [2][-]{subsection.2.1}{弱大域次元}{section.2}% 7
+\BOOKMARK [0][-]{chapter.1}{ホモロジー代数}{}% 1
+\BOOKMARK [1][-]{section.1.3}{複体の圏}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.4}{写像錐}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.5}{三角圏}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.6}{圏の局所化}{chapter.1}% 5
+\BOOKMARK [0][-]{chapter.2}{層}{}% 6
+\BOOKMARK [1][-]{section.2.1}{弱大域次元}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.2}{非特性変形補題}{chapter.2}% 8
+\BOOKMARK [0][-]{chapter*.15}{参考文献}{}% 9

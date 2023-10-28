@@ -1,0 +1,73 @@
+\documentclass[a5paper]{jarticle}
+\usepackage{framed}
+\usepackage{color}
+
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+
+\newenvironment{lightgrayleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1zw} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+
+\newenvironment{myleftbar}{%
+   \def\FrameCommand{\vrule width 1pt \hspace{10pt}}%
+   \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+
+\def\iroh{色は匂へど散りぬるを我が世誰ぞつねならむ
+有為の奥山今日越えて浅き夢見じ酔ひもせず零一二三abcABC
+The quick brown fox jumps over the lazy dog.}
+
+\begin{document}
+
+\iroh
+
+\begin{framed}
+\iroh
+\end{framed}
+
+\begin{framed}
+\begin{verbatim}
+\iroh
+my leftbar\iroh
+\end{verbatim}
+\end{framed}
+
+
+\iroh
+
+\begin{center}
+\begin{minipage}{.5\textwidth}
+\begin{lightgrayleftbar}
+\iroh
+\end{lightgrayleftbar}
+\end{minipage}
+\end{center}
+
+\iroh
+
+\begin{myleftbar}
+my leftbar\iroh
+\end{myleftbar}
+
+\iroh
+
+\begin{center}
+\begin{minipage}{.5\textwidth}
+\begin{myleftbar}
+\iroh
+\end{myleftbar}
+\end{minipage}
+\end{center}
+
+\iroh
+
+
+\begin{myleftbar}
+\iroh
+\end{myleftbar}
+
+
+\iroh
+
+\end{document}

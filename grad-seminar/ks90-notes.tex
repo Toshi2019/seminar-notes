@@ -17,7 +17,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[11pt, a4paper, dvipdfmx, leqno]{jsarticle}
+\documentclass[11pt, a4paper, dvipdfmx, leqno]{jsbook}
 
 % ------------------------
 % usepackage
@@ -65,6 +65,18 @@
     urlcolor=darkblue,
 }
 \usepackage{pxjahyper}
+\usepackage[mathscr]{euscript}
+\usepackage{layout}
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 0.7zw} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{red}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
 
 %=================================
 
@@ -237,7 +249,7 @@
 % ================================
 % コマンドを追加する場合のスペース 
 \renewcommand\proofname{\bf 証明} % 証明
-\numberwithin{equation}{subsection}
+\numberwithin{equation}{section}
 \newcommand{\cTop}{\textsf{Top}}
 %\newcommand{\cOpen}{\textsf{Open}}
 \newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
@@ -262,6 +274,7 @@
 \newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
 \newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
 \newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
 \newcommand{\colim}{\mathop{\mathrm{colim}}}
 \newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
 
@@ -305,8 +318,27 @@
 
 \newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
 \newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+\newcommand{\Domp}{\mathop{\mathrm{D}}\nolimits}%複体のホモトピー圏
+
 \newcommand{\CCat}{\Comp(\cat)}
 \newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
+\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\longrightarrow}}}%内部Hom
+\newcommand{\simra}{\mathrel{\overset{\sim}{\longleftarrow}}}%内部Hom
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
 
 % =================================
 
@@ -372,8 +404,9 @@
 \date{}
 \begin{document}
 \maketitle
-
-\section*{はじめに}
+\frontmatter
+\layout
+\chapter*{はじめに}
 2023年度から始めた\cite{KS90}のセミナーのノート．
 
 \section*{記号}
@@ -382,11 +415,15 @@
     \item 添字：
     なんらかの族$(a_i)_{i\in I}$を$(a_i)_i$とか$(a_i)$と
     略記することがある．
+    \item 近傍：位相空間\(X\)の点\(x\)や部分集合\(Z\)に対し，
+    その開近傍系をそれぞれ\(I_x\)や\(I_Z\)で表す．
+    これらは，包含関係の逆で有向順序集合をなす．
 \end{itemize}
-\section{ホモロジー代数}
-\setcounter{subsection}{2}
+\mainmatter
+\chapter{ホモロジー代数}
+\setcounter{section}{2}
 
-\subsection{複体の圏}
+\section{複体の圏}
 
 $\cat$を加法圏とする．
 \begin{Attention*}
@@ -404,12 +441,12 @@ $\cat$を加法圏とする．
     \end{enumerate}
 \end{Attention*}
 圏$\cat$から，
-$\cat$の対象の複体の圏$\Comp{C}(\cat)$を作ることができる．
+$\cat$の対象の複体の圏$\Comp(\cat)$を作ることができる．
 まず複体の定義をする．
 圏$\cat$の対象のと射の列
 \begin{equation}\label{eq:complex}
     \begin{tikzcd}[column sep=0.6cm]
-        \boldsymbol{\cdot}s
+        \cdots
         \arrow[r]
         &
         X^{n-1}
@@ -421,7 +458,7 @@ $\cat$の対象の複体の圏$\Comp{C}(\cat)$を作ることができる．
         X^{n+1}
         \arrow[r, ""] 
         &%[0.12\linewidth]
-        \boldsymbol{\cdot}s
+        \cdots
     \end{tikzcd}
 \end{equation}
 を考える．
@@ -438,7 +475,7 @@ $\cat$の射の族$(f^n\colon X^n\to Y^n)_{n\in\zz}$で，
 図式
 \begin{equation*}
     \vcenter{\xymatrix@C=26pt@R=26pt{
-    \boldsymbol{\cdot}s \ar[r]
+    \cdots \ar[r]
     & 
     X^{n}
     \ar[r]^-{d_X^n}
@@ -447,16 +484,16 @@ $\cat$の射の族$(f^n\colon X^n\to Y^n)_{n\in\zz}$で，
     X^{n+1}
     \ar[r]
     \ar[d]^-{f^{n+1}} 
-    &\boldsymbol{\cdot}s
+    &\cdots
     \\
-    \boldsymbol{\cdot}s \ar[r]
+    \cdots \ar[r]
     & 
     Y^{n}
     \ar[r]^-{d_Y^n}
     &
     Y^{n+1}
     \ar[r]
-    &\boldsymbol{\cdot}s
+    &\cdots
     }}
 \end{equation*}
 を可換にする，すなわちどの番号$n\in\zz$に対しても
@@ -477,7 +514,7 @@ $\cat$の射の族$(f^n\colon X^n\to Y^n)_{n\in\zz}$で，
     これがうまくいくことは
     \begin{equation*}
         \vcenter{\xymatrix@C=26pt@R=26pt{
-        \boldsymbol{\cdot}s \ar[r]
+        \cdots \ar[r]
         & 
         X^{n}
         \ar[r]^-{d_X^n}
@@ -486,9 +523,9 @@ $\cat$の射の族$(f^n\colon X^n\to Y^n)_{n\in\zz}$で，
         X^{n+1}
         \ar[r]
         \ar[d]^-{f^{n+1}} 
-        &\boldsymbol{\cdot}s
+        &\cdots
         \\
-        \boldsymbol{\cdot}s \ar[r]
+        \cdots \ar[r]
         & 
         Y^{n}
         \ar[r]^-{d_Y^n}
@@ -497,16 +534,16 @@ $\cat$の射の族$(f^n\colon X^n\to Y^n)_{n\in\zz}$で，
         Y^{n+1}
         \ar[r]
         \ar[d]^-{g^{n+1}} 
-        &\boldsymbol{\cdot}s
+        &\cdots
         \\
-        \boldsymbol{\cdot}s \ar[r]
+        \cdots \ar[r]
         & 
         Z^{n}
         \ar[r]^-{d_Z^n}
         &
         Z^{n+1}
         \ar[r]
-        &\boldsymbol{\cdot}s
+        &\cdots
         }}
     \end{equation*}
     が可換になることからわかる．
@@ -521,7 +558,7 @@ $\cat$の射の族$(f^n\colon X^n\to Y^n)_{n\in\zz}$で，
     $\CCat$の零対象0は
     \begin{equation*}%\label{eq:complex}
         \begin{tikzcd}[column sep=0.4cm]
-            \boldsymbol{\cdot}s
+            \cdots
             \arrow[r]
             &
             0
@@ -533,7 +570,7 @@ $\cat$の射の族$(f^n\colon X^n\to Y^n)_{n\in\zz}$で，
             0
             \arrow[r, ""] 
             &%[0.12\linewidth]
-            \boldsymbol{\cdot}s
+            \cdots
         \end{tikzcd}
     \end{equation*}
     で与えられる．
@@ -541,7 +578,7 @@ $\cat$の射の族$(f^n\colon X^n\to Y^n)_{n\in\zz}$で，
     $X$と$Y$の複積$X\oplus Y$は
     \begin{equation*}%\label{eq:complex}
         \begin{tikzcd}[column sep=1.2cm]
-            \boldsymbol{\cdot}s
+            \cdots
             \arrow[r]
             &[-0.6cm]
             X^{n-1}\oplus Y^{n-1}
@@ -553,7 +590,7 @@ $\cat$の射の族$(f^n\colon X^n\to Y^n)_{n\in\zz}$で，
             X^{n+1}\oplus Y^{n+1}
             \arrow[r, ""] 
             &[-0.6cm]%[0.12\linewidth]
-            \boldsymbol{\cdot}s
+            \cdots
         \end{tikzcd}
     \end{equation*}
     で与えられる．
@@ -584,7 +621,7 @@ $\cat$の射の族$(f^n\colon X^n\to Y^n)_{n\in\zz}$で，
         次の図式を考える．
         \begin{equation*}
             \vcenter{\xymatrix@C=26pt@R=18pt{
-            \boldsymbol{\cdot}s \ar[r]
+            \cdots \ar[r]
             & 
             \Ker{f^{n}}
             \ar[r]^-{\overline{d}_X^n}
@@ -593,9 +630,9 @@ $\cat$の射の族$(f^n\colon X^n\to Y^n)_{n\in\zz}$で，
             \Ker{f^{n+1}}
             \ar[r]
             \ar[d]^-{\iota^{n+1}} 
-            &\boldsymbol{\cdot}s
+            &\cdots
             \\    
-            \boldsymbol{\cdot}s \ar[r]
+            \cdots \ar[r]
             & 
             X^{n}
             \ar[r]^-{d_X^n}
@@ -604,16 +641,16 @@ $\cat$の射の族$(f^n\colon X^n\to Y^n)_{n\in\zz}$で，
             X^{n+1}
             \ar[r]
             \ar[d]^-{f^{n+1}} 
-            &\boldsymbol{\cdot}s
+            &\cdots
             \\
-            \boldsymbol{\cdot}s \ar[r]
+            \cdots \ar[r]
             & 
             Y^{n}
             \ar[r]^-{d_Y^n}
             &
             Y^{n+1}
             \ar[r]
-            &\boldsymbol{\cdot}s
+            &\cdots
             }}
         \end{equation*}
         ここで，$\iota^n$は$\Ker{f^n}$の普遍性から自然に定まる射である．
@@ -639,12 +676,12 @@ $\Comp^-(\cat)$, $\Comp^\mathrm{b}(\cat)$を
     &=\left\{
         0\rightarrow
         X^{n}\overset{d_X^{n}}{\longrightarrow}
-        X^{n+1}\rightarrow\boldsymbol{\cdot}s
+        X^{n+1}\rightarrow\cdots
         \quad (n\ll 0)
     \right\}, \\
     \Ob(\Comp^-(\cat))
     &=\left\{
-        \boldsymbol{\cdot}s\rightarrow 
+        \cdots\rightarrow 
         X^{n-1}\overset{d_X^{n-1}}{\longrightarrow}
         X^{n}\rightarrow
         0
@@ -654,7 +691,7 @@ $\Comp^-(\cat)$, $\Comp^\mathrm{b}(\cat)$を
     &=\left\{ 
         0\rightarrow
         X^{n}\rightarrow
-        \boldsymbol{\cdot}s\rightarrow 
+        \cdots\rightarrow 
         X^{m}\rightarrow
         0
         \quad (n\ll 0, m\gg0)
@@ -664,10 +701,10 @@ $\Comp^-(\cat)$, $\Comp^\mathrm{b}(\cat)$を
 
 $\cat$の対象$X$に対し$\CCat$の対象
 \begin{equation*}
-    \boldsymbol{\cdot}s\to
+    \cdots\to
     0\rightarrow
     X\rightarrow
-    0\to\boldsymbol{\cdot}s
+    0\to\cdots
 \end{equation*}
 を対応させることによって，
 忠実充満な関手$\cat\hookrightarrow\CCat$が定まる．
@@ -675,7 +712,7 @@ $\cat$の対象$X$に対し$\CCat$の対象
 $k$を整数とする．$\cat$の複体
 \begin{equation*}
     \begin{tikzcd}[column sep=0.6cm]
-        X\colon\boldsymbol{\cdot}s
+        X\colon\cdots
         \arrow[r]
         &
         X^{n-1}
@@ -687,7 +724,7 @@ $k$を整数とする．$\cat$の複体
         X^{n+1}
         \arrow[r, ""] 
         &%[0.12\linewidth]
-        \boldsymbol{\cdot}s
+        \cdots
     \end{tikzcd}
 \end{equation*}
 に対し，$X[k]$を
@@ -695,7 +732,7 @@ $X[k]^n=X^{n+k}$, $d_{X[k]}^n=(-1)^{k}d_X^{n+k}$
 で定める．図式でかくと
 \begin{equation*}
     \begin{tikzcd}[column sep=1.4cm]
-        X[k]\colon\boldsymbol{\cdot}s
+        X[k]\colon\cdots
         \arrow[r]
         &[-1cm]
         X^{n+k-1}
@@ -707,7 +744,7 @@ $X[k]^n=X^{n+k}$, $d_{X[k]}^n=(-1)^{k}d_X^{n+k}$
         X^{n+k+1}
         \arrow[r, ""] 
         &[-1cm]%[0.12\linewidth]
-        \boldsymbol{\cdot}s
+        \cdots
     \end{tikzcd}
 \end{equation*}
 のようになる．
@@ -729,7 +766,7 @@ $X$を$X[k]$に対応させることで
         \vcenter{\xymatrix
         @C=20pt@R=26pt
         {
-        \boldsymbol{\cdot}s \ar[r]
+        \cdots \ar[r]
         & 
         X^{n+k}
         \ar[rr]^-{(-1)^kd_X^{n+k}}
@@ -738,16 +775,16 @@ $X$を$X[k]$に対応させることで
         X^{n+k+1}
         \ar[r]
         \ar[d]^-{f^{n+k+1}} 
-        &\boldsymbol{\cdot}s
+        &\cdots
         \\
-        \boldsymbol{\cdot}s \ar[r]
+        \cdots \ar[r]
         & 
         Y^{n+k}
         \ar[rr]^-{(-1)^kd_Y^{n+k}}
         &&
         Y^{n+k+1}
         \ar[r]
-        &\boldsymbol{\cdot}s
+        &\cdots
         }}
     \end{equation*}
     が可換になることを示せばよい．
@@ -896,10 +933,10 @@ $H^k(f)\colon H^k(X)\to H^k(Y)$は0.
     $0\to X\to Y\to Z\to 0$を$\CCat$の完全列とする．
     このとき，$\cat$における次の長完全列が存在する．
     \begin{equation*}
-        \boldsymbol{\cdot}s\to 
+        \cdots\to 
         H^{n}(X)\to H^{n}(Y)\to H^{n}(Z)
         \overset{\delta}{\longrightarrow} 
-        H^{n+1}(X)\to \boldsymbol{\cdot}s.
+        H^{n+1}(X)\to \cdots.
     \end{equation*}
 \end{Proposition}
 
@@ -908,9 +945,9 @@ $X\in\CCat$と整数$n$に対し，
 $\tau^{\leqq n}(X),\tau^{\geqq n}(X)\in\CCat$を
 \begin{align}
     \tau^{\leqq n}(X)\colon 
-    \boldsymbol{\cdot}s\to X^{n-2}\to X^{n-1}\to \Ker{d^n}\to0\to\boldsymbol{\cdot}s,\\
+    \cdots\to X^{n-2}\to X^{n-1}\to \Ker{d^n}\to0\to\cdots,\\
     \tau^{\geqq n}(X)\colon 
-    \boldsymbol{\cdot}s 0\to \Coker{d^{n-1}}\to X^{n+1}\to X^{n+2}\to\boldsymbol{\cdot}s
+    \cdots 0\to \Coker{d^{n-1}}\to X^{n+1}\to X^{n+2}\to\cdots
 \end{align}
 で定める．
 このとき，$\CCat$における次の射が得られる．
@@ -935,7 +972,7 @@ $\tau^{\leqq n}(X),\tau^{\geqq n}(X)\in\CCat$を
     ホモトピー同値    
 \end{Attention}
 
-\subsection{写像錐}
+\section{写像錐}
 $\cat$を加法圏とし$f\colon X\to Y$を$\CCat$の射とする．
 \begin{Definition}
     $f$の写像錐$M(f)$とは次で定まる$\CCat$の対象である．
@@ -1039,7 +1076,7 @@ $\cat$を加法圏とし$f\colon X\to Y$を$\CCat$の射とする．
 \newpage
 %\thispagestyle{myheadings}
 {\Large{2023/05/01}}
-\subsection{三角圏}\label{ssec:tricat}
+\section{三角圏}\label{ssec:tricat}
 $\cat$を加法圏とし，$T\colon\cat\to\cat$を自己関手とする．
 $\cat$の三角とは射の列
 \begin{equation*}
@@ -1106,19 +1143,19 @@ $\cat$の三角とは射の列
     \end{description}
 \end{Definition}
 
-\subsection{圏の局所化}
+\section{圏の局所化}
 
 %\begin{equation}\label{eq:complex}
-%    \boldsymbol{\cdot}s\rightarrow 
+%    \cdots\rightarrow 
 %    X^{n-1}\overset{d_X^{n-1}}{\longrightarrow}
 %    X^{n}\overset{d_X^{n}}{\longrightarrow}
-%    X^{n+1}\rightarrow\boldsymbol{\cdot}s
+%    X^{n+1}\rightarrow\cdots
 %\end{equation}
 
 %$\Ob(\Comp(\cat))=\left\{\right\}$
 
 \clearpage
-\section{層コホモロジー}
+\chapter{層}
 アーベル層の圏はアーベル圏になる．
 したがって層の導来圏が考えられる．
 
@@ -1126,7 +1163,7 @@ $\cat$の三角とは射の列
 テンソルに関する複体が有界になるとは限らないので，
 平坦分解の長さが有限になるという仮定をおく．
 
-\subsection{弱大域次元}
+\section{弱大域次元}
 \begin{PRP}
     \(A\)を環とする．
     \begin{enumerate}
@@ -1194,9 +1231,167 @@ $\cat$の三角とは射の列
     \end{enumerate}
 \end{proof}
 
+\clearpage
+\section{非特性変形補題}
+\begin{leftbar}
+\begin{PRP}[{\cite[Prop. 2.5.1]{KS90}}]\label{PRP2.5.1}
+    \(X\)を位相空間とし，\(Z\)を部分空間とする．
+    \(F\)を\(X\)上の層とし，自然な射
+    \[
+        \psi\colon\indlim[U\in I_Z]\Gamma(U;F)\to\Gamma(Z;F)
+    \]を考える．
 
+    (i) 
+    \(\psi\)は単射である．
 
+    (ii)
+    \(X\)がハウスドルフで\(Z\)がコンパクトならば，\(\psi\)は同型である．
+\end{PRP}
+\end{leftbar}
+\begin{leftbar}
+    \begin{PRP}[{\cite[Prop. 1.12.4]{KS90}}]\label{PRP1.12.4}
+        \[
+            \phi_k\colon H^k(\indlim X)\to\prolim H^k(X_n)
+        \]
+        について，\(H^{i-1}(X_n)\)がML条件を満たすならば，\(\phi_k\)は一対一対応である．
+    \end{PRP}
+\end{leftbar}
+    
+\begin{leftbar}
+\begin{PRP}[{\cite[Prop. 1.12.6]{KS90}}]\label{PRP1.12.6}
+    \((X_s,\rho_{s,t})\)を実数を添字とする射影系とする．
+    \[
+        \lambda_s\colon X_s\to\prolim[r<s]X_r,
+        \quad
+        \mu_s\colon\indlim[t>s]X_t\to X_s
+    \]
+    がどちらも単射（全射）ならば，すべての実数\(s_0\leqq s_1\)に対し，
+    \(\rho_{s_0,s_1}\colon X_{s_1}\to X_{s_0}\)は単射（全射）となる．
+\end{PRP}
+\end{leftbar}
 
+\begin{leftbar}    
+\begin{PRP}[{\cite[Prop. 2.7.2, 非特性変形補題]{KS90}}]
+    \(X\)をハウスドルフ空間とし，\(F\in\Domp^+(\zz_X)\)とする．
+    また，\((U_t)_{t\in\rr}\)を\(X\)の開集合の族で次の条件(i)--(iii)をみたすものとする．
+    \begin{enumerate}[(i)]
+        \item 任意の実数\(t\)に対し，\(\bigcup_{s<t}U_s=U_t\)が成り立つ．
+        \item 任意の実数\(s\leqq t\)に対し，\(\overline{U_t-U_s}\cap\supp F\)はコンパクト集合である．
+        \item 実数\(s\)に対して\(Z_s=\bigcap_{t>s}\overline{U_t-U_s}\)とおくとき，
+        任意の実数\(s\leqq t\)と任意の点\(x\in Z_s-U_t\)に対して\(\left(\RG_{X-U_t}(F)\right)_x=0\)が成り立つ．
+    \end{enumerate}
+    このとき，任意の実数\(t\)に対して，次の同型が成り立つ．
+    \[
+        \RG\left(\bigcup_{s\in\rr}U_s;F\right)\overset{\sim}{\longrightarrow}\RG(U_t;F)
+    \]
+\end{PRP}
+\end{leftbar}
+\begin{proof}
+    次の条件を考える．
+    \begin{align*}
+        (a)_k^s\colon\quad \indlim[t>s]H^k(U_t;F)\simar H^k(U_s;F)\\
+        (b)_k^t\colon\quad \prolim[s<t]H^k(U_s;F)\simra H^k(U_t;F)        
+    \end{align*}
+    任意の実数\(s\)と任意の整数\(k\)に対して\((a)_k^s\)が，
+    任意の実数\(t\)と任意の整数\(k<k_0\)に対して\((b)_k^t\)が成り立つとする．
+    このとき，\(k_0\)に対し，\((b)_{k_0}^t\)が成り立つことを示す．
+    命題\ref{PRP1.12.6}より，
+    （\((a)_k^s\)の方が\(\mu_s\)，\((b)_k^t\)の方が\(\lambda_t\)として）
+    各次数\(k<k_0\)と各実数\(s\leqq t\)に対し，
+    \begin{equation}
+        H^k(U_t;F)\simar H^k(U_s;F)
+    \end{equation}
+    が成り立つ．
+    このとき，
+    \(t\)を固定して，
+    射影系\(\left(
+        H^{k_0-1}\left(U_{t-\frac{1}{n}};F\right)
+    \right)_{n\in\nn}\)を考えると，これはML条件をみたす．
+    \begin{center}
+        \begin{minipage}{.9\textwidth}
+            \begin{redleftbar}
+                \(\because)\) 
+                任意の\(n\in\nn\)に対し，
+                \[
+                    \rho_{n,p}
+                    \left(
+                        H^{k_0-1}\left(U_{t-\frac{1}{p}};F\right)
+                        \to 
+                        H^{k_0-1}\left(U_{t-\frac{1}{n}};F\right)
+                    \right)
+                \]
+                はすべて同形なので，当然安定．
+            \end{redleftbar}
+        \end{minipage}
+     \end{center}        
+    よって，命題\ref{PRP1.12.4}より\((b)_{k_0}^t\)が従う．
+    \(k\)に関する帰納法により，
+    どの\(t\in\rr\)と\(k\in\zz\)に対しても\((b)_{k}^t\)が成り立つ．
+    \begin{center}
+        命題2.7.1を
+        \(\left(H^{k}\left(U_{n};F\right)\right)_{n\in\nn}\)に
+        用いると←わかってない
+    \end{center}
+    \(k\)に関する帰納法で，定理の結論
+    \[
+        \RG\left(\bigcup_{s\in\rr}U_s;F\right)\overset{\sim}{\longrightarrow}\RG(U_t;F)
+    \]
+    が従う．
+
+    \subparagraph*{\((a)_k^s\)の証明}
+    \(X\)を\(\supp{F}\)におきかえて，どの実数\(s\leqq t\)に対しても
+    \(\overline{U_t-U_s}\)はコンパクトとしてよい．
+    次のd.t.を考える\footnote{
+        \cite[(2.6.32)]{KS90}のd.t.
+        \[
+            \RG_{Z'}(F)\to\RG_{Z}(F)\to\RG_{Z-Z'}(F)\underset{+1}{\longrightarrow}
+        \]
+        を用いる．但し，\(Z\)は\(X\)の局所閉集合，\(Z'\)は\(Z\)の閉集合である．
+    }．
+    \[
+        \RG_{(X-U_t)}(F)\rvert_{Z_s}\to
+        \RG_{(X-U_s)}(F)\rvert_{Z_s}\to
+        \RG_{(U_t-U_s)}(F)\rvert_{Z_s}
+        \overset{+1}{\longrightarrow}.
+    \]
+    仮定(iii)より，左と真ん中の2つは0なので，
+    d.t.の性質から，\(\RG_{(U_t-U_s)}(F)\rvert_{Z_s}=0\)となる．
+    したがって，任意の\(k\in\zz\)と\(t\geqq s\)に対し，
+    \begin{align*}
+        0&=H^k(Z_s;\RG_{(U_t-U_s)}(F))\\
+        &=\indlim[U\supset Z_s]H^k(U\cap U_t;\RG_{X-U_s}(F))
+    \end{align*}
+    となる．
+    \begin{center}
+        \begin{minipage}{.9\textwidth}
+        \begin{redleftbar}
+            \(\RG_{U_t-U_s}(F)\)は\(X\)上の層で，
+            それを\(Z_s\)に制限した\(\RG_{U_t-U_s}(F)\rvert_{Z_s}\)は\(Z_s\)上の層である．
+            \(Z_s\)での大域切断\(\RG(Z_s;\RG_{U_t-U_s}(F)\rvert_{Z_s})\)のコホモロジーをとっているので，
+            \cite[Notations 2.6.8]{KS90}の２番目の記号を用いることになる．
+
+            \(Z_s\)はハウスドルフ空間\(X\)の
+            コンパクト集合\(\overline{U_t-U_s}\)の
+            共通部分として表されているので，コンパクトである（\(X\)の置き換えがここに効いている）．
+            したがって，\cite[Remark 2.6.9 (ii)]{KS90}の場合に当てはまり，
+            そこでの記号を用いて書くと
+            \[H^j(Z;F)\simeq\indlim[U\in I_Z]H^j(U;F)\]が成り立つ．
+            これが上の式の2つ目の変形．
+            詳しく書くと，
+            \begin{align*}
+                H^k(Z_s;\RG_{U_t-U_s}(F))
+                &=\indlim[U\in I_Z]H^k(U;\RG_{U_t-U_s}(F))\\
+                &=\indlim[U\in I_Z]H^k(U\cap U_t;\RG_{X-U_s}(F))
+            \end{align*}
+            ここで，2つ目の変形は次のように考える．
+            \(U_t-U_s\)に台を持つ層の\(U\)上の切断は\(U\cap U_t\)上で切断を考えても同じ．
+            台の方も，\(U\)が\(Z_s\)に十分近ければ\(X-U_s\)で考えても同じ．
+        \end{redleftbar}
+    \end{minipage}
+        
+    \end{center}
+\end{proof}
+\backmatter
 %===============================================
 % 参考文献スペース
 %===============================================

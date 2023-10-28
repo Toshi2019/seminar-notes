@@ -1,0 +1,731 @@
+%================================================
+%    sheaves on manifolds ノート
+%================================================
+
+% -----------------------
+% preamble
+% -----------------------
+% ここから本文 (\begin{document}) までの
+% ソースコードに変更を加えた場合は
+% 編集者まで連絡してください. 
+% Don't change preamble code yourself. 
+% If you add something
+% (usepackage, newtheorem, newcommand, renewcommand),
+% please tell it 
+% to the editor of institutional paper of RUMS.
+
+% ------------------------
+% documentclass
+% ------------------------
+\documentclass[11pt, a4paper, dvipdfmx, leqno]{jsarticle}
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+\usepackage{url}
+\usetikzlibrary{cd}
+
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+%\usepackage{calligra}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+\usepackage{okumacro}
+
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 0.4zw} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{red}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+\newtheorem{com}[Axiom]{コメント}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem*{Fact*}{事実}
+\newtheorem*{com*}{コメント}
+
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+\newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits} % 射影
+
+
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits}
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits}
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits}
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits}
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+\renewcommand\proofname{\bf 証明} % 証明
+%\numberwithin{equation}{subsection}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mathscr{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
+
+\newcommand{\cat}{\mathscr{C}}
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+\newcommand{\scM}{\mathscr{M}}
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+\newcommand{\Domp}{\mathop{\mathrm{D}}\nolimits}%複体のホモトピー圏
+
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+\newcommand{\TOR}{\mathop{\mathscr{T}\hspace{-2pt}or}\nolimits}%ねじれ
+
+
+\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\LT}{\mathop{\otimes}\limits^\mathrm{L}}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\longrightarrow}}}%内部Hom
+\newcommand{\simra}{\mathrel{\overset{\sim}{\longleftarrow}}}%内部Hom
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
+\newcommand{\car}{\mathop{\mathrm{car}}\nolimits}
+
+% =================================
+
+
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.\quad ---}%                     % 見出し後の句読点
+    {10pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}
+\newtheorem{DFN}{定義}
+\newtheorem{THM}{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}{命題}
+\newtheorem{LMM}[Axiom]{補題}
+\newtheorem{CRL}[PRP]{系}
+\newtheorem*{CRL*}{系}
+\newtheorem{EG}{例}
+\newtheorem{CNV}[Axiom]{規約}
+\newtheorem{NTN}[Axiom]{記号}
+\newtheorem*{NTN*}{記号}
+\newtheorem{CMT}{コメント}
+\newtheorem{RMK}{注意}
+\newtheorem*{RMK*}{注意}
+
+
+
+
+% 定理環境ここまで
+%====================================================
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+\title{偏微分方程式 --- 層の超局所台：微分加群への応用\footnote{
+    M. Kashiwara, P. Schapira, 
+    \emph{Micro-support des faisceaux: 
+    application aux modules diff\'erentiels}, 
+    C. R. Acad. Sc. Paris, 295 (8 novembre 1982) 
+    の和訳 (2023/10/28).
+}}
+\author{柏原正樹\and ピエール・シャピラ}
+\date{1982年9月27日 提出}
+\begin{document}
+\maketitle
+\begin{abstract}
+    \(C^1\)級多様体において，層の超局所台を，
+    余接束内の包合的な錐的閉集合として導入し，
+    その関手的な性質を調べる．
+    その後，確定特異点を持つホロノミー加群から誘導される方程式系の
+    特性多様体の増大度を導出する．
+\end{abstract}
+\section{法錐}
+\(M\)を\(C^1\)級多様体とし，\(T^\ast M\)をその余法束，
+\(\pi\)を\(T^\ast M\)から\(M\)への射影とする．
+\(\dot{T}^\ast M\)を\(T^\ast M\)における
+零切断\(T_M^\ast M\)の補集合とする．\(a\)を\(T^\ast M\)の
+\emph{\ruby{対蹠}{たいせき}写像} (application anti-podale) とし，
+\(S^a\)を\(T^\ast M\)の部分集合\(S\)の像とする．
+\(M\)の2つの集合\(S\)と\(Z\)に対し，
+点\(x\in M\)における\(Z\)に沿った\(S\)の法錐\(C_x(S,Z)\)とは，
+接空間\(T_xM\)の閉錐体で，局所座標系を用いて次のように定義されるものである．
+\[
+    \begin{cases}
+        v\in C_x(S,Z)\Leftrightarrow S\times Z\times \rr^+
+        \text{内の列} (s_n,z_n,c_n)_n \text{で}\\
+        s_n\underset{n}{\rightarrow}x, 
+        z_n\underset{n}{\rightarrow}x, 
+        c_n(x_n-z_n)\underset{n}{\rightarrow}v \text{をみたすものが存在する．}
+    \end{cases}
+\]
+\(C(S,Z)=\bigcup_xC_x(S,Z)\)とおく．
+\(Z\)が\(M\)の部分多様体のとき，\(C_x(S,Z)\)は\(T_xZ\)で安定であり，
+\(C_Z(S)\)で\(C(S,Z)\)の法束\(T_ZM\)での像を表す．
+\(M\)の閉部分集合\(S\)に対し，
+錐体\(TM\setminus C(M\setminus S,S)\)を
+\emph{強い意味での法錐} (c\^one normal strict) といい
+\(N(S)\)とかく．
+また\(N(S)\cap T_xM\)の双対閉錐体を\(N_x^\ast S\)とかき，
+\(x\)における\(S\)の余法錐という (cf.\cite{KS79})．
+
+\section{超局所台}
+\(\Domp^+(M)\) (\(\Domp^b(M)\)) を\(M\)上の\(A\)加群の層の
+下に有界な（有界な）複体のなす圏の導来圏とする．ここで\(A\)は環である．
+
+\begin{PRP}\label{PRP:SS}
+    \(F^\bullet\in\Ob(\Domp^+(M))\)とし
+    \(\xi\)を\(T^\ast M\)の点とする．
+    次の条件は同値である．
+    \begin{enumerate}[(i)]
+        \item \(\xi\)の錐近傍\(U\)と\(\pi(\xi)\)の近傍\(V\)で，
+        \(V\)の任意の閉部分集合\(Z\)と
+        任意の点\(x\in\partial Z\cap V\)で
+        \(N^\ast_x(Z)\subset U^a\cup\{0\}\)を満たすものに対し
+        \(\left(\RG_Z(F^\bullet)\right)_x=0\)となるもの
+        が存在する；
+        \item （\(M\)を\(C^r\)級とする．
+        ここで\(1\leqq r\leqq\infty\)または\(r=\omega\)とする．）
+        境界が\(C^r\)級超曲面であるような任意の\(Z\)に対し，
+        条件 (i) が成り立つ；
+        \item （\(M\)が\(\rr^n\)の開集合であるとし，
+        \(\xi=(x_0,\xi_0)\)とする）
+        実数\(\delta>0,\e>0\)で，\(\lvert a-x_0\rvert<\e\)を
+        みたす全ての点\(a\in M\)に対し次が成り立つものが存在する．
+        \begin{align*}
+            \RG(\{
+                    x;-\delta
+                    \leqq\langle x-x_0,\xi_0\rangle, 
+                    \langle x-a,\xi_0\rangle
+                    &\leqq-\e\lvert x-a\rvert
+            \}, F^\bullet)\\
+            \simeq
+            \RG(\{
+                x;-\delta&=\langle x-x_0,\xi_0\rangle, 
+                \langle x-a,\xi_0\rangle
+                \leqq-\e\lvert x-a\rvert
+            \}, F^\bullet).
+        \end{align*}
+    \end{enumerate}
+\end{PRP}
+この命題は\cite[\S4]{KS79}で暗に示されている．
+
+\begin{DFN}
+    \(F^\bullet\in\Ob(\Domp^+(M))\)とする．
+    \(F^\bullet\)の\emph{超局所台} (micro-support) 
+    \(\muS(F^\bullet)\)とは，
+    次で定義される\(T^\ast M\)の閉錐体である．：
+    \begin{enumerate}[(a)]
+        \item \(\muS(F^\bullet)\cap T^\ast_MM=\overline{\bigcup_j\supp(\mathscr{H}^j(F^\bullet))}\);
+        \item \(\xi\in\dot{T}^\ast M, \xi\in\muS(F^\bullet)\Leftrightarrow\text{命題\ref{PRP:SS}の同値な条件をみたす．}\)
+    \end{enumerate}
+\end{DFN}
+
+\begin{EG}
+    \(M=\rr^n\), \(Z=\{x\in M, x_1\geqq0\}\), \(F=\underline{\cc}_Z\). 
+    
+    このとき\(\muS(F)=\{(x,\xi);x_1\geqq0,\xi=0\}\cup\{(x,\xi);\xi_1\geqq0,x_1=\xi_2=\dots=\xi_n=0\}\).
+\end{EG}
+
+\begin{EG}
+    \(M=\rr^n\), \(\mathscr{U}=\{x\in M, x_1>0\}\), \(F=\underline{\cc}_\mathscr{U}\). 
+    
+    このとき\(\muS(F)=\{(x,\xi);x_1\geqq0,\xi=0\}\cup\{(x,\xi);\xi_1\leqq0,x_1=\xi_2=\dots=\xi_n=0\}\).
+\end{EG}
+
+\begin{EG}
+    \(M=\rr^2\), \(Z=\{x\in M, x_1^3\geqq x_2^2\}\), \(F=\underline{\cc}_Z\). 
+    
+    このとき\(\pi^{-1}(0)\cup\muS(F)=\{\xi;\xi_1\geqq0\}\).
+\end{EG}
+
+\section{関手的な性質}
+
+\begin{PRP}
+    \(\omega\)を\(M\)上の双対化複体とする．
+
+    このとき，任意の\(F^\bullet\in\Ob(\Domp^b(M))\)に対し，
+    \(\muS(\RHOM(F^\bullet,\omega))\subset\muS(F^\bullet)^a\)が
+    成り立つ．
+\end{PRP}
+
+\(M\)と\(N\)を\(C^1\)級多様体，
+\(f\)を\(M\)から\(N\)への\(C^1\)級写像とし，
+\(\bar{\omega}\colon T^\ast N\mathop{\times}\limits_N M\to T^\ast N\)と
+\(\rho\colon T^\ast N\mathop{\times}\limits_N M\to T^\ast M\)を
+\(f\)から定まる写像とする．
+
+\begin{PRP}
+    \(F^\bullet\in\Ob(\Domp^+(M))\)を\(f\)の\(\overline{\bigcup_j\supp(\mathscr{H}^j(F^\bullet))}\)が固有となるものとする．
+    このとき\(\muS(\mathrm{R}f_\ast(F^\bullet))\subset\rho(T^\ast N\mathop{\times}\limits_NM)\)が成り立つ．
+\end{PRP}
+
+\begin{PRP}
+    \(f\)が滑らかであるとする．
+    \begin{enumerate}[(i)]
+        \item \(G^\bullet\in\Ob(\Domp^+(N))\)とする．
+        このとき，\(\muS(f^{-1}(G^\bullet))=\rho\bar{\omega}^{-1}(\muS(G^\bullet))\)が成り立つ．
+        \item \(F^\bullet\in\Ob(\Domp^b(M))\)とする．
+        このとき，任意の\(\mathscr{H}^j(F^\bullet)\)が\(f\)のファイバー上で
+        局所定数層となるのは，
+        \(\muS((F^\bullet))\subset\rho(T^\ast N\mathop{\times}\limits_N M)\)が成り立つとなるときである．
+    \end{enumerate}
+\end{PRP}
+
+\begin{PRP}
+    \(M\)と\(N\)を\(C^1\)級多様体とし，
+    \(p_1\)と\(p_2\)を\(M\times N\)から\(M\)と\(N\)への射影とする．
+    \begin{enumerate}[(i)]
+        \item \(F^\bullet\in\Ob(\Domp^b(M))\)と\(G^\bullet\in\Ob(\Domp^+(N))\)に対し，\[
+            \muS(\RHOM_A(p_1^{-1}F^\bullet,p_2^{-1}G^\bullet))\subset\muS(F^\bullet)^a\times\muS(G^\bullet)
+        \]が成り立つ．
+        \item \(A\)のコホモロジー次元が有限であるとする．
+        このとき，\(F^\bullet\in\Ob(\Domp^b(M))\)と\(G^\bullet\in\Ob(\Domp^+(N))\)に対し，\[
+            \muS(p_1^{-1}F^\bullet\LT_A p_2^{-1}G^\bullet))\subset\muS(F^\bullet)\times\muS(G^\bullet)
+        \]が成り立つ．  
+    \end{enumerate}
+\end{PRP}
+
+\section{超局所化}
+
+以降，\(N\)は\(M\)の部分多様体であるとし，
+\(M\)と\(N\)は\(C^2\)級であるとする．
+\(M\setminus N \cup T_NM\) (\(M\setminus N \cup T^\ast_NM\)) 
+には\emph{実モノイダル変換} (\'eclat\'e) の（\emph{余実モノイダル変換} 
+(co-\'eclat\'e) の）自然な位相を与える (cf. \cite{SKK})．
+\(j\)を\(M\)から\(M\setminus N \cup T_NM\)への包含とし\(\pi\)を
+\(M\setminus N \cup T^\ast_NM\)から\(M\)への射影とする．
+\(F^\bullet\in\Ob(\Domp^+(M))\)に対し，
+\(\lambda(F^\bullet)\)で（\cite{Mal}と同様に）\(\Domp^+(T_NM)\)の対象
+\(\mathrm{R}j_\ast(F^\bullet)\rvert_{T_NM}\)を表し，
+\(\mu_N(F^\bullet)\)で\(F^\bullet\)に対する\(N\)での佐藤の超局所化，
+すなわち，\(\Domp^+(T^\ast_NM)\)の対象\(\RG_{T^\ast_NM}(\pi^{-1}(F^\bullet))^a\)を表す．
+\(\Lambda\)で\(M\)の\(N\)に対する余法束\(T_N^\ast M\)を表す．
+ハミルトン同相写像\(T^\ast(T^\ast M)\simeq T(T^\ast M)\)によって，
+束\(T^\ast\Lambda\)と\(T_\Lambda T^\ast M\)を同一視することができ，
+それによって\(T^\ast(T_N M)\)と\(T_\Lambda T^\ast M\)も
+同一視することができる．
+他方，滑らかな写像\(T_N M\to N\)から
+埋め込み\(T^\ast N\mathop{\times}\limits_{N}T_N M
+\to T^\ast(T_N M)\simeq T_\Lambda T^\ast M\)が定まる．
+したがって，\(T^\ast{N}\)を（\(T_{N}M\)の
+零切断を通して）\(T_{\Lambda}T^{\ast}M\)の
+部分多様体と同一視することができる．
+とくに（\(M\)を\(T^\ast M\)に，
+\(N\)を\(M\)に取り替えることで）
+\(T^\ast M\)が\(TT^\ast M\)の部分多様体と同一視されることがわかる．
+
+\begin{THM}
+    \(F^\bullet\in\Ob(\Domp^+(M))\)とする，次の包含関係が成り立つ．
+    \begin{enumerate}[(i)]
+        \item \(\muS(\mu_N(F^\ast))\subset C_\Lambda(\muS(F^\bullet))\),
+        \item \(\muS(\lambda_N(F^\ast))\subset C_\Lambda(\muS(F^\bullet))\),
+        \item \(\muS(\RG_N(F^\ast))\subset T^\ast N\cap C_\Lambda(\muS(F^\bullet))\),
+        \item \(\muS(F^\ast\lvert_N)\subset T^\ast N\cap C_\Lambda(\muS(F^\bullet))\).
+    \end{enumerate}
+\end{THM}
+証明は\cite{KS79}の主張の繰り返しである（\cite{BS73}も参照）．
+(iii) と (iv) は一般に真の包含である．
+
+\begin{CRL}
+    \(\muS(F^\ast)\cap T^\ast_N M\subset T^\ast_M M\)とする．
+    このとき，
+    \[
+        \RG_N(F^\bullet)\simeq F^\bullet\otimes\RG_N(\zz_M)
+        \quad\text{かつ}\quad
+        \muS(F^\ast\lvert_N)\subset\bar{\omega}\rho^{-1}(\muS(F^\ast))
+    \]
+    が成り立つ．
+\end{CRL}
+（\cite[1章]{SKK}の 命題 1.2.5 を用いる．）
+\begin{CRL}
+    \begin{enumerate}[(i)]
+        \item \(F^\bullet\in\Ob(\Domp^b(M)), 
+        G^\bullet\in\Ob(\Domp^+(M))\)とする．このとき
+        \[
+            \muS(\RHOM_A(F^\bullet, G^\bullet))
+            \subset 
+            T^\ast M\cap C(\muS(G^\bullet),\muS(F^\bullet))
+        \]
+        が成り立つ．
+        \item \(A\)のコホモロジー次元が有限であるとする．
+        このとき\(F^\bullet,G^\bullet\in\Ob(\Domp^+(M))\)に対し，
+        \[
+            \muS(F^\bullet\LT_A G^\bullet)\subset T^\ast M\cap C(\muS(F^\bullet),\muS(G^\bullet)^a)
+        \]
+        が成り立つ．        
+    \end{enumerate}
+\end{CRL}
+
+\section{包合性}
+
+\begin{THM}
+    \(F^\bullet\in\Ob(\Domp^b(M))\)とする．
+    このとき\(\muS(F^\bullet)\)は包合的である
+    （関数\(f\)が\(\muS(F^\bullet)\)で0になるとき，
+    \(\muS(F^\bullet)\)はハミルトンベクトル場\(H_f\)で不変である）．
+\end{THM}
+（\(M\)は\(C^2\)級であるとし，
+\(C^1\)級関数\(f\)は\(T^\ast M\)の開集合でしか定義されないと仮定する．）
+
+\section{応用}
+
+以下では\((X,\OO_X)\)を複素解析多様体とし，
+\(\mathscr{D}_X\)で有限階の（\(\mathscr{D}^\infty_X\)で無限階の）
+正則関数係数の微分作用素のなす\(X\)上の層を表す．
+連接\(\D\)加群\(\scM\)に対し，
+\(\car(\scM)\)で\(T^\ast X\)における\(\scM\)の特性多様体を表す．
+\(Z\)を別の複素解析多様体とするとき，
+\(\pi_Z\)で射影\(T^\ast(X\times Z)\to T^\ast X\)を表す．
+
+\begin{PRP}
+    \begin{enumerate}[(i)]
+        \item \[\car(\scM)=\bigcup_Z\pi_Z(\muS(\RHOM_{\scD}(\scM,\OO_{X\times Z})))\]である（\(Z\)は複素解析多様体である）．
+        \item \(\scM\)がホロノミー加群であるとき，\[
+            \car(\scM)=\muS(\RHOM_{\scD}(\scM,\OO_{X}))
+        \]である．
+    \end{enumerate}
+\end{PRP}
+
+包含の片側は古典的な結果\cite{Kas77}であり，
+反対の包含は層\(\scE_X^\rr\) (cf.\cite{SKK,Kas77}) の
+コホモロジーを用いた定義と，
+\(\scE_X^\rr\)が超局所微分作用素の環\(\scE_X\)の上で
+忠実平坦であることから従う．
+
+\begin{CRL}\label{CRL:RH}
+    \(Y\)を\(X\)の部分多様体とし，
+    \begin{enumerate}[(a)]
+        \item \(\scD_X^\infty\otimes\RG_{[Y]}(\scM)=\RG_Y(\scD_X^\infty\otimes\scM)\),
+        \item \(\scD_Y\)加群\({\TOR}_j^{\OO_X}(\OO_Y,\scM)\)は連接的である
+    \end{enumerate}
+    と仮定する．このとき，任意の\(j\)に対し次の包含関係が成り立つ．
+    \[
+        \car(\TOR_j^{\OO_X}(\OO_Y,\scM))\subset
+        T^\ast Y\cap C_{T_Y X}(\car(\scM)).
+    \]
+\end{CRL}
+仮定 (a), (b) は確定特異点型ホロノミー加群ならば
+任意の部分多様体\(Y\)に対して成り立つ\cite{KK81}．
+系\ref{CRL:RH}は\cite{KK81}の結果を補完し，
+例えば，\(\prod_j f_j^{\lambda_j}\)型の分布の
+解析的波面集合の上からの評価を得ることができる．
+
+本稿の主要結果は著者の一人が\cite{Sch82}において発表している．
+\begin{thebibliography}{20}
+    \bibitem[1]{BS73} J. M. Bony, P. Schapira, 
+        \emph{Solutions Hyperfonction du Problem de Cauchy}, 
+        Springer Lecare Noles in Math., 287, 1973, p. 82--98.
+    \bibitem[2]{Kas77}\footnote{[訳注] M. Kashiwara, \emph{Systems of Microdifferential Equations}, Birkh\"auser, 1983. として単行本化されている．} M. Kashiwara, 
+        Cours Universit\'e Paris-Nord redige 
+        par T. Monteiro-Fernandes, 1977.
+    \bibitem[3]{KK81} M. Kashiwara, T. Kawai, 
+        \emph{On Holonomic Systems of Microdifferential equations III}, 
+        Publ. Rims. Kyoto Univ., 17, 1981, p. 813--979.
+    \bibitem[4]{KS79} M. Kashiwara, P. Schapira, \emph{Micro-hyperbolic Systems}, 
+        Acta Math., 142, 1979, p. 1-55.
+    \bibitem[5]{KS81} M. Kashiwara, P. Schapira, 
+        \emph{Micro-support des faisceaux: application aux modules diff\'erentiels}, 
+        Journees E.D.P. Saint-Jean-de-Monts, 1981, publ. Ecole Polytechnique, Palaiseau.
+    \bibitem[6]{SKK} Sato, T. Kawai, M. Kashiwara, 
+        \emph{Microfunctions and Pseudo-differential Equations}, 
+        Springer Lecture Notes in Math., 287, 1973, p. 265-529.
+    \bibitem[7]{Mal} B. Malgrange, Transformation de Fourier cohomologique, Expose a Nancy, mai 1982.
+    \bibitem[8]{Sch82} Schapira, \emph{Micro-supporl des faisceaux}, 
+        Expose a Nancy, mai 1982.
+\end{thebibliography}
+\end{document}
