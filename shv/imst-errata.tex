@@ -1,0 +1,661 @@
+%================================================
+%    池ノートの誤植表
+%================================================
+
+% -----------------------
+% preamble
+% -----------------------
+% ここから本文 (\begin{document}) までの
+% ソースコードに変更を加えた場合は
+% 編集者まで連絡してください. 
+% Don't change preamble code yourself. 
+% If you add something
+% (usepackage, newtheorem, newcommand, renewcommand),
+% please tell it 
+% to the editor of institutional paper of RUMS.
+
+% ------------------------
+% documentclass
+% ------------------------
+\documentclass[9pt, a4paper, dvipdfmx, leqno]{jsarticle}
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+\usepackage{url}
+\usetikzlibrary{cd}
+
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+%\usepackage{calligra}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+%\usepackage[mathscr]{euscript}
+\usepackage{layout}
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 0.7zw} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{red}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+ \usepackage{colortbl}
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+\newtheorem{com}[Axiom]{コメント}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem*{Fact*}{事実}
+\newtheorem*{com*}{コメント}
+
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits}
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits}
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits}
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits}
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{section}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
+
+\newcommand{\cat}{\mathscr{C}}
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+\newcommand{\Domp}{\mathop{\mathrm{D}}\nolimits}%複体のホモトピー圏
+
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
+\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\longrightarrow}}}%内部Hom
+\newcommand{\simra}{\mathrel{\overset{\sim}{\longleftarrow}}}%内部Hom
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\PSh}{\mathrm{PSh}}
+
+
+% =================================
+
+
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}[section]
+\newtheorem{DFN}[Axiom]{定義}
+\newtheorem{THM}[Axiom]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[Axiom]{命題}
+\newtheorem{LMM}[Axiom]{補題}
+\newtheorem{CRL}[Axiom]{系}
+\newtheorem{EG}[Axiom]{例}
+\newtheorem{CNV}[Axiom]{規約}
+\newtheorem{CMT}[Axiom]{コメント}
+
+
+% 定理環境ここまで
+%====================================================
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文
+% ---------------------------
+
+\title{『超局所層理論概説』(2021年9月1日版)の誤植表}
+\author{大柴寿浩}
+%\date{2023年6月26日--30日}
+\begin{document}
+\maketitle
+\paragraph{凡例}
+\begin{itemize}
+    \item l.\(-4\)は下から4行目の意味．
+    \item ページ数の横に?がついているものは間違いかどうか曖昧なもの．（意図を汲むとこう書きたかったのかも？というものも含む）
+\end{itemize}
+\begin{table}[h]
+%    \caption{色付きの表}
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \rowcolor{lightgray}p&位置 & 誤 & 正 \\
+    \hline
+        14&例1.1.28 (i) の完全列&\(0\to F\to G\to G/\textcolor{red}{H}\to0\)&\(0\to F\to G\to G/\textcolor{red}{F}\to0\)\\    
+    \hline
+        23&l.\(-8\)&\(H^n(X\textcolor{red}{:}\ZZ_X)\)&\(H^n(X\textcolor{red}{;}\ZZ_X)\)\\
+    \hline
+        24&例1.2.17(i) 4行目&
+        \(0\to \Coker\varepsilon\to C^{\textcolor{red}{0}}(F)\to\Coker{d^0}\to0\)
+        &\(0\to \Coker\e\to C^{\textcolor{red}{1}}(F)\to\Coker{d^0}\to0\)\\
+    \hline
+        24&例1.2.17(i) 11行目&
+        \(C^{\textcolor{red}{0}}(F)(X)\)&\(C^{\textcolor{red}{1}}(F)(X)\)\\
+    \hline
+        27&定義1.2.21 (2) 1行目&\(\mathcal{B}\)における&\(\mathcal{A}\)における\\
+    \hline
+        29&l.\(-7\)&分解\textcolor{red}{する}して&分解して\\
+    \hline
+        30&(iii)&入射分解たち間&入射分解たち\textcolor{red}{の}間\\
+        \hline
+\end{tabular}
+\end{table}
+
+\subparagraph{p. 31 命題1.2.31. (iii) の2つ目の図式：}
+    \[\begin{CD}
+        &&0&&0&&0\\
+        &&@VVV@VVV@VVV\\
+    0@>>>A_1@>{f_1}>>A_2@>{f_2}>>A_3@>>>0\\
+    &&@VVV@VVV@VVV\\
+    0@>>>I^\bullet_1@>{f^\bullet_1}>>I^\bullet_{\textcolor{red}{1}}@>{f^\bullet_2}>>I^\bullet_{\textcolor{red}{1}}@>>>0
+    \end{CD}
+    \]
+は
+  \[
+    \begin{CD}
+        &&0&&0&&0\\
+        &&@VVV@VVV@VVV\\
+    0@>>>A_1@>{f_1}>>A_2@>{f_2}>>A_3@>>>0\\
+    &&@VVV@VVV@VVV\\
+    0@>>>I^\bullet_1@>{f^\bullet_1}>>I^\bullet_{\textcolor{red}{2}}@>{f^\bullet_2}>>I^\bullet_{\textcolor{red}{3}}@>>>0
+    \end{CD}
+    \]
+が正しい．
+
+\subparagraph{p. 31 命題1.2.31. (iii) の3つ目の図式}：
+    \[\begin{CD}
+        &&0&&0&&0\\
+        &&@VVV@VVV@VVV\\
+    0@>>>B_1@>{g_1}>>B_2@>{g_2}>>B_3@>>>0\\
+    &&@VVV@VVV@VVV\\
+    0@>>>J^\bullet_1@>{g^\bullet_1}>>J^\bullet_{\textcolor{red}{1}}@>{g^\bullet_2}>>I^\bullet_{\textcolor{red}{1}}@>>>0
+    \end{CD}\]
+は  \[
+    \begin{CD}
+        &&0&&0&&0\\
+        &&@VVV@VVV@VVV\\
+    0@>>>B_1@>{g_1}>>B_2@>{g_2}>>B_3@>>>0\\
+    &&@VVV@VVV@VVV\\
+    0@>>>J^\bullet_1@>{g^\bullet_1}>>J^\bullet_{\textcolor{red}{2}}@>{g^\bullet_2}>>I^\bullet_{\textcolor{red}{3}}@>>>0
+    \end{CD}
+    \]
+が正しい．
+
+
+\begin{table}[h]\centering
+\begin{tabular}{|c|c|c|c|}
+    \hline
+    \rowcolor{lightgray}p&位置 & 誤 & 正 \\
+    \hline
+    32&l.5
+    &\(n\in\ZZ_{\textcolor{red}{\ge}}\)
+    &\(n\in\ZZ_{\textcolor{red}{\ge0}}\)\\
+    \hline
+    32&定義1.2.32の2行上
+    &\(H^n(T(I_1^\bullet))\simeq H^n(T(I_{\textcolor{red}{1}}^\bullet))\)
+    &\(H^n(T(I_1^\bullet))\simeq H^n(T(I_{\textcolor{red}{2}}^\bullet))\)\\    
+    \hline
+    33&補題1.2.37の証明l.\(-5\)
+    &\(\varphi\coloneqq\psi\circ\textcolor{red}{\varphi}\)
+    &\(\varphi\coloneqq\psi\circ\textcolor{red}{\varepsilon}\)
+    \\\hline
+    35&l.1
+    &右導来函手同じ
+    &右導来函手\textcolor{red}{と}同じ
+    \\\hline
+    37&l.2
+    &(inner Hom functor) \textcolor{red}{または}と呼ぶ.
+    &(inner Hom functor)と呼ぶ.
+    \\\hline
+    ?38&1.3.2のl.2
+    &\(X\)上の層を\textcolor{red}{押して}
+    &\(X\)上の層を\textcolor{red}{押し出して}\footnotemark[1]
+    \\\hline
+    ?39&定義1.3.10のl.3
+    &\textcolor{red}{押し出し}
+    &\textcolor{red}{\textbf{押し出し} (pushforward)}\footnotemark[2]
+    \\\hline
+    45&1.3.3のl.2
+    &押し出す方法\textcolor{red}{を定義}です．
+    &押し出す方法です．
+    \\\hline
+\end{tabular}
+\end{table}
+\footnotetext[1]{
+    すぐ後に「\(Y\)上の層を引き戻して」とあるので，
+    押し出し・引き戻しの対応的にこう書くつもりだったのかもしれない
+    と忖度したので．
+}
+\footnotetext[2]{ボールド体+英訳にする．
+これも引き戻しの方にはついているので忖度．
+ただ，押し出しの方の英訳はpushforward以外にもpushout等が見つかったので，
+あえてつけなかったかも？その場合はごめんなさい．}    
+
+\subparagraph{p.60 定義2.1.4. (iii) の図式}：
+    \[\begin{CD}
+    L@>{f}>>M@>{g}>>N@>{h}>>L[1]\\
+    @V{{\text{\rotatebox{-90}{\(\sim\)}}}}V{u}V@V{{\text{\rotatebox{-90}{\(\sim\)}}}}V{v}V@V{{\text{\rotatebox{-90}{\(\sim\)}}}}V{w}V@V{{\text{\rotatebox{-90}{\(\sim\)}}}}V{u[1]}V\\
+    L@>>{f'}>M@>>{\alpha(f')}>\mathrm{Mc}(f)@>>{\beta(f')}>\textcolor{red}{L[1]}
+    \end{CD}\]
+は 
+\[\begin{CD}
+    L@>{f}>>M@>{g}>>N@>{h}>>L[1]\\
+    @V{{\text{\rotatebox{-90}{\(\sim\)}}}}V{u}V@V{{\text{\rotatebox{-90}{\(\sim\)}}}}V{v}V@V{{\text{\rotatebox{-90}{\(\sim\)}}}}V{w}V@V{{\text{\rotatebox{-90}{\(\sim\)}}}}V{u[1]}V\\
+    L@>>{f'}>M@>>{\alpha(f')}>\mathrm{Mc}(f)@>>{\beta(f')}>\textcolor{red}{L'[1]}
+    \end{CD}\]
+が正しい．
+\clearpage
+\subparagraph{p.62 命題2.1.8. 証明 (ii) の1つ目の図式}：
+\[\begin{tikzcd}
+    L
+    \arrow[r,"{\id_L}"]
+    \arrow[d,"{\id_L}"]
+    &
+    L
+    \arrow[d,"f"]
+    \arrow[r] 
+    & 
+    0
+    \arrow[r] 
+    \arrow[d,dashed]
+    &
+    \textcolor{red}{K}[1]
+    \arrow[d,"{\id_L[1]}"]
+    \\ 
+    L\arrow[r,"f"']
+    &
+    M\arrow[r,"g"'] 
+    & 
+    N\arrow[r] 
+    &
+    {L}[1]. 
+\end{tikzcd}\]
+は 
+\[\begin{tikzcd}
+    L
+    \arrow[r,"{\id_L}"]
+    \arrow[d,"{\id_L}"]
+    &
+    L
+    \arrow[d,"f"]
+    \arrow[r] 
+    & 
+    0
+    \arrow[r] 
+    \arrow[d,dashed]
+    &
+    \textcolor{red}{L}[1]
+    \arrow[d,"{\id_L[1]}"]
+    \\ 
+    L\arrow[r,"f"']
+    &
+    M\arrow[r,"g"'] 
+    & 
+    N\arrow[r] 
+    &
+    {L}[1]. 
+\end{tikzcd}\]
+が正しい．
+
+\begin{table}[h]\centering
+\begin{tabular}{|c|c|c|c|}
+    \hline
+    \rowcolor{lightgray}p&位置 & 誤 & 正 \\
+    \hline
+    62&1つ目の図式の次の行
+    &\(\phi\Hom(K,M)\)
+    &\(\phi\textcolor{red}{\in}\Hom(K,M)\)
+    \\\hline
+    63&定義2.1.11(M4) l.1
+    &\(f,g\colon\textcolor{red}{X}\to\textcolor{red}{Y}\)
+    &\(f,g\colon\textcolor{red}{A}\to\textcolor{red}{B}\)
+    \\\hline
+    68&定義2.1.24(普遍性)
+    &\(U\colon\textcolor{red}{\mathsf{K}}^+(\mathcal{A})\to\textcolor{red}{\mathsf{K}}^+(\mathcal{B})\)
+    &\(U\colon\textcolor{red}{\mathsf{D}}^+(\mathcal{A})\to\textcolor{red}{\mathsf{D}}^+(\mathcal{B})\)
+    \\\hline
+    70&注意2.1.29 l.2
+    &\(\textcolor{red}{L}\in\mathsf{K}^{\textcolor{red}{+}}(\mathcal{J})\)
+    &\(\textcolor{red}{J}\in\mathsf{K}^{\textcolor{red}{\mathrm{b}}}(\mathcal{J})\)\footnotemark[1]
+    \\\hline
+    70&例2.1.30 l.2
+    &\(\RG(X,\ast)\colon\mathsf{D}^+(\Sh(X))\to \textcolor{red}{Ab}\)
+    &\(\RG(X,\ast)\colon\mathsf{D}^+(\Sh(X))\to \textcolor{red}{\mathsf{D}^+(Ab)}\)
+    \\\hline
+    71&例2.1.32 (i) l.3
+    &\(\mathrm{R}(\Gamma(Y;)\circ{f_\ast})\)
+    &\(\mathrm{R}(\Gamma(Y;\textcolor{red}{\ast})\circ{f_\ast})\)
+    \\\hline
+    75&l.\(-8\)
+    &\(F\otimes^\bullet G\mathsf{C}(\mathbf{k}_X)\)
+    &\(F\otimes^\bullet G\textcolor{red}{\in}\mathsf{C}(\mathbf{k}_X)\)
+    \\\hline
+    77&命題2.2.6 l.\(1\)
+    &\(\textcolor{red}{G}\in\mathsf{D}^+(\mathbf{k}_X)\)
+    &\(\textcolor{red}{H}\in\mathsf{D}^+(\mathbf{k}_X)\)
+    \\\hline
+    81&命題2.2.19 証明 l.\(2\)
+    &\(\Gamma_c(X;\textcolor{red}{F}\otimes M_X)\)
+    &\(\Gamma_c(X;\textcolor{red}{S}\otimes M_X)\)
+    \\\hline
+    82&命題2.2.20から3行下
+    &\(\textcolor{red}{RG}_Z(F)\)
+    &\(\textcolor{red}{\RG}_Z(F)\)
+    \\\hline
+    87&l.1
+    &\(\omega_X\coloneqq a_X^!\)
+    &\(\omega_X\coloneqq a_X^!\textcolor{red}{\textbf{k}}\)
+    \\\hline    
+    115&l.7
+    &\(\dip \indlim[x_0\in{B}]H^n(\{\varphi<\textcolor{red}{0}\}\cap{B};F)\)
+    &\(\dip \indlim[x_0\in{B}]H^n(\{\varphi<\textcolor{red}{\varphi(x_0)}\}\cap{B};F)\)
+    \\\hline
+\end{tabular}
+\end{table}
+\footnotetext[1]{
+    元の複体\(L\)は上下に有界であるが，
+    取り替える複体\(J\)も上下に有界とは限らないという文脈だと思うので．
+}    
+
+
+
+\end{document}

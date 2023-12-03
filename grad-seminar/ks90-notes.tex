@@ -30,6 +30,7 @@
 \usepackage[psamsfonts]{amssymb}
 \usepackage{amsthm}
 \usepackage{ascmac}
+\usepackage{bm}
 \usepackage{color}
 \usepackage{enumerate}
 \usepackage{fancybox}
@@ -328,6 +329,7 @@
 
 \newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
 \newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\Rder}{\mathop{\mathrm{R}}\nolimits}
 
 \newcommand{\simar}{\mathrel{\overset{\sim}{\longrightarrow}}}%内部Hom
 \newcommand{\simra}{\mathrel{\overset{\sim}{\longleftarrow}}}%内部Hom
@@ -339,6 +341,10 @@
 \newcommand{\Ind}{\mathrm{Ind}}
 \newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
 \newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\PSh}{\mathrm{PSh}}
+
 
 % =================================
 
@@ -368,6 +374,7 @@
 \newtheorem{CRL}[Axiom]{系}
 \newtheorem{EG}[Axiom]{例}
 \newtheorem{CNV}[Axiom]{規約}
+\newtheorem{CMT}[Axiom]{コメント}
 
 
 % 定理環境ここまで
@@ -1001,11 +1008,11 @@ $\cat$を加法圏とし$f\colon X\to Y$を$\CCat$の射とする．
 \begin{com*}[4/24]
     「どうして逆に$X\to M(f)$や$M(f)\to Y$じゃないんですか？」
     
-    例えば，逆に$\gamma^n \colon M(f)^n\to Y^n$を$\begin{bmatrix*}
+    例えば，逆に$\Gamma^n \colon M(f)^n\to Y^n$を$\begin{bmatrix*}
         0&\id_{Y^n}
     \end{bmatrix*}$で定めようとしても，
     \begin{align*}
-        \gamma^{n+1}\circ d_{M(f)}^{n}
+        \Gamma^{n+1}\circ d_{M(f)}^{n}
         &=\begin{bmatrix*}
             0&\id_{Y^n}
         \end{bmatrix*}\begin{bmatrix*}
@@ -1015,7 +1022,7 @@ $\cat$を加法圏とし$f\colon X\to Y$を$\CCat$の射とする．
         =\begin{bmatrix*}
             f^{n+1}&d_Y^n
         \end{bmatrix*},\\
-        d_{Y}^n\circ \gamma^{n}
+        d_{Y}^n\circ \Gamma^{n}
         &=d_Y^n\circ
         \begin{bmatrix*}
             0&\id_{Y^n}
@@ -1026,7 +1033,7 @@ $\cat$を加法圏とし$f\colon X\to Y$を$\CCat$の射とする．
         \end{bmatrix*}
     \end{align*}
     となり，両者は一致しない．
-    したがって，$\gamma$は複体の射にならない．
+    したがって，$\Gamma$は複体の射にならない．
     $X\to M(f)$も同様である．
     したがって，$M(f)$に対して定まる自然な射は
     $\alpha, \beta$のようにせざるを得ない．
@@ -1156,6 +1163,51 @@ $\cat$の三角とは射の列
 
 \clearpage
 \chapter{層}
+
+
+\section{層の演算}
+\subsection{部分集合から定まる関手}
+\(X\)を位相空間とする．
+\(Z\)を\(X\)の部分集合とし，\(j\colon Z\hookrightarrow X\)を
+包含写像とする．
+\paragraph{制限の一般的な定義}
+\(F\in\Sh(X)\)に対し，
+\begin{align}
+    F\rvert_Z&\coloneqq j^{-1}F,\\
+    \Gamma(Z;F)&\coloneqq\Gamma\left(Z;j^{-1}F\right)    
+\end{align}
+とおく．\(Z\)が開集合のとき，元の定義に一致する．
+\begin{proof}[\textbf{元の定義に一致することのチェック}]
+    \(U\subset Z\)を開集合とすると，
+    \begin{align*}
+        \Gamma\left(U;j^{-1}F\right)
+        &=\indlim[j(U)\subset V]F(V)\\
+        &=F(j(U))=F(U)=F\rvert_Z(U)
+    \end{align*}
+    となる．
+\end{proof}
+\paragraph{順像を用いた閉集合での定義}
+\(Z\)が閉集合であるときを考える．
+このとき，\(F\in\Sh(X)\)に対し，
+\[
+    F_Z\coloneqq j_{\ast}j^{-1}F
+\]
+とおく．
+\begin{CMT}\label{CMT:supp-cut}
+    池ノート\cite{Ike21}や竹内\cite{Tak17}だと，
+    固有順像 (\ref{ssec:pdimg}項) を
+    定義してから，\(j_{!}j^{-1}F\)で切り落としを定義している．
+    閉集合からの包含写像に対しては\(j_!=j_\ast\)であり，
+    これらの定義は一致する．
+\end{CMT}
+
+\subsection{固有順像}\label{ssec:pdimg}
+
+\(f_!\colon\Sh(X)\to\Sh(Y)\)
+について，\(f\)がプロパーなら\(f_!\cong f_\ast\)である．
+つまり，コメント\ref*{CMT:supp-cut}の主張は
+もっと一般に\(f\)がプロパーなら成り立つ．
+\section{弱大域次元}
 アーベル層の圏はアーベル圏になる．
 したがって層の導来圏が考えられる．
 
@@ -1163,7 +1215,6 @@ $\cat$の三角とは射の列
 テンソルに関する複体が有界になるとは限らないので，
 平坦分解の長さが有限になるという仮定をおく．
 
-\section{弱大域次元}
 \begin{PRP}
     \(A\)を環とする．
     \begin{enumerate}
@@ -1227,7 +1278,16 @@ $\cat$の三角とは射の列
         \[p_\ast(u)=p\circ u=\id_P\]となる者が存在する．
         したがって，上の完全列は分裂し，
         \(A^{\oplus I}\cong P\oplus Q\)となる．
-        \item 
+        \item まず「自由\(\Rightarrow\)平坦」を示す．\(F=A^{\bigoplus I}\)を自由加群とし，\[
+            0\to N_1\to N_2\to N_3\to0
+        \]を右\(A\)加群の完全系列とする．\[
+            0\to N_1\otimes A^{\bigoplus I}\to N_2\otimes A^{\bigoplus I}\to N_3\otimes A^{\bigoplus I}\to0
+        \]において，\[
+            N_1\otimes A^{\bigoplus I}\cong N_1^{\bigoplus I},\quad
+            N_2\otimes A^{\bigoplus I}\cong N_2^{\bigoplus I}
+        \]であり，\(j\colon N_1\to N_2\)は単射なので，\[
+            \bigoplus_{i\in I}j_i\colon N_1^{\bigoplus I}\to N_2^{\bigoplus I}
+        \]で
     \end{enumerate}
 \end{proof}
 
@@ -1391,18 +1451,199 @@ $\cat$の三角とは射の列
         
     \end{center}
 \end{proof}
+
+\chapter{Poincar\'e-Verdier 双対性}
+
+\section{上付きびっくり}
+\subparagraph{\cite[V, 6.1]{B+84}}
+\(A\)に対し，全射\(P\to{A}\)で，\(P\)が零で延長した層\(R_U\)の直和であるものが存在する．
+\begin{LMM}\cite[{V. Proposition 6.5}]{B+84}
+    \(S,A\in\Sh(X)\)とする．
+    \(S\)がc柔軟であり，\(S,A\)のどちらかは平坦であるとする．
+    このとき，\(A\otimes S\)はc柔軟である．
+\end{LMM}
+\begin{proof}
+    完全列\begin{equation}\label{eq:flat-soft}
+        0\to{P_{n}}\to{P_{n-1}}\to\dots\to{P_{0}}\to{A}\to0
+    \end{equation}
+    で\(0\leqq{j}\leqq{n-1}\)に対し，
+    \({P_{j}}\)が層\(R_U\)の直和となり，
+    したがって平坦となるものがある．
+    系列
+    \begin{equation}
+        0\to{P_{n}}\otimes{S}\to{P_{n-1}}\otimes{S}
+        \to\dots\to{P_{0}}\otimes{S}\to{A}\otimes{S}\to0
+    \end{equation}
+    についても，\(S\)が平坦であることから，
+    あるいは，\(A\)が平坦であれば
+    系列\eqref{eq:flat-soft}の各項が平坦となることから完全になる．
+
+\end{proof}
+
+\begin{LMM}\cite[{VI. Th\'eor\`eme 3.5}]{B+84}
+    \(G\)が\(\Komp^+(Y)\)の対象ならば，
+    \(f^!_K(G)\)は\(\Komp^+(X)\)の対象である．
+\end{LMM}
+\begin{proof}
+    \((U_\alpha)_{\alpha\in{\Lambda}}\)を\(X\)の開集合族とする．
+    \(U=\bigcup_{\alpha\in\Lambda}U_\alpha\)，
+    \(U_{\alpha\beta}=U_\alpha\cap U_\beta\)とおき，系列
+    \[
+        0\to f^!_K(G)(U)
+        \overset{\varphi}{\longrightarrow}
+        \prod_{\alpha\in\Lambda}^{}f^!_K(G)(U_\alpha)
+        \overset{\psi}{\longrightarrow}
+        \prod_{(\alpha,\beta)\in\Lambda\times\Lambda}f^!_K(G)(U_{\alpha\beta})
+    \]
+    を考える．
+    ここに，\begin{align*}
+        \varphi(s)&=\left(\rho_{U_\alpha,U}(s)\right)_{\alpha\in\Lambda},\\
+        \psi\left(\left(s_\alpha\right)_{\alpha\in\Lambda}\right)
+        &=\left(
+            \rho_{U_{\alpha\beta},U_{\alpha}}\left(s_\alpha\right)
+            -
+            \rho_{U_{\alpha\beta},U_{\beta}}\left(s_\beta\right)
+        \right)_{(\alpha,\beta)\in\Lambda\times\Lambda}
+    \end{align*}である．
+    この系列が完全であることを示す．
+
+\end{proof}
+
+
+\subsection{構成}
+
+\(X\), \(Y\)を局所コンパクト空間とし，
+\(f\colon{Y}\to{X}\)を連続写像とする．
+\(A\)を大域次元が有限な可換環とする．
+\(F\in\Domp^+(A_X)\), \(G\in\Domp^+(A_Y)\)とする．
+
+\(\Rder{f_!}\colon\Domp^+(A_Y)\to\Domp^+(A_X)\)の右随伴関手
+\(f^!\colon\Domp^+(A_X)\to\Domp^+(A_Y)\)を構成する．
+まず，開集合\(V\subset Y\)に対し，\(f^!{F}\)の\(V\)上の切断
+に関する条件を見てみる．
+\[
+    \RG(V;f^!{F})
+    =\Rder\Hom_{A_Y}(A_V,f^!F)
+    =\Rder\Hom_{A_X}(\Rder{f_!}A_V,F)
+\]
+となることから，\(f^!F\)は
+\(V\mapsto\Rder\Hom_{A_X}(\Rder{f_!}A_V,F)\)
+という対応でなければならない．
+\(\Rder{f_!}\)を計算するにはc柔軟分解
+\(A_V\sim K\)を
+取ればよく，さらに\(F\)が入射的であれば，
+\[
+    \Rder\Hom_{A_X}(\Rder{f_!}A_V,F)
+    =\Hom_{A_X}({f_!}K_V,F)
+\]
+となって，結局
+\[
+    \RG(V;f^!{F})
+    =\Hom_{A_X}({f_!}K_V,F)
+\]
+とできる．
+
+\paragraph{\(f\)に関する仮定}
+\begin{DFN}
+    \(Y\)上の層\(G\)が\(f\)柔軟であるとは，各点\(x\in{X}\)に対し，
+    \(G\rvert_{f^{-1}(x)}\)がc柔軟であることをいう．
+\end{DFN}
+\(G\)が\(f\)柔軟であることと，
+任意の開部分集合\(V\subset{Y}\)と\(j\ne0\)に対し，
+\(\Rder^jf_!G_V=0\)となることと同値である．
+
+次を仮定する．
+\begin{equation}\label{eq:fdim}
+    f_!\colon\Mod(\zz_Y)\to\Mod(\zz_X)\text{のコホモロジー次元は有限である．}
+\end{equation}
+つまり，整数\(r\geqq0\)で，全ての\(j>r\)に対し\(\Rder^jf_!=0\)となるものが存在する．
+\eqref{eq:fdim}は次の条件と同値である．
+\begin{equation}\label{eq:fdim1}
+\begin{cases}
+    \text{任意の}G\in\Sh(Y)\text{に対し，完全列}\\
+    0\to{G}\to{G^0}\to\dots\to{G^r}\to0\\
+    \text{で，どの}G^j\text{も\(f\)柔軟であるものが存在する．}
+\end{cases}    
+\end{equation}
+\begin{equation}\label{eq:fdim2}\tag{3.1.4\('\)}
+\begin{cases}
+    \text{完全列}
+    {G^0}\to\dots\to{G^r}\to0\\
+    \text{において，\(j<r\)に対し\(G^j\)が\(f\)柔軟ならば，}\\
+    \text{\(G^r\)が\(f\)柔軟となる．}
+\end{cases}
+\end{equation}
+\(f_!\)のコホモロジー次元が\(\leqq{r}\)となるのは，
+任意の\(x\in{X}\)に対し，
+\(\Gamma_c(f^{-1}(x);\cdot)\)の
+コホモロジー次元が\(\leqq{r}\)となるときである．
+実際，\(f_!\rvert_{f^{-1}(x)}F=\Gamma_c(f^{-1}(x);F)=0\)となるので．
+
+\paragraph{構成}
+以上の仮定は，
+\[
+    \RG(V;f^!{F})
+    =\Hom_{A_X}({f_!}K_V,F)
+\]
+の構成をするためだった．
+\(f_!K_V\)の分解をしたくて，
+その長さが有限になるという仮定である．
+
+さて，\(K\)を\(\zz_Y\)加群，\(F\)を\(A_X\)加群とする．
+このとき，\(A\)加群の前層\(f^!_KF\)を次で定める．
+\(V\in\Op(Y)\)に対し，
+\[
+    (f^!_KF)(V)
+    \coloneqq
+    \Hom_{A_X}\left(f_!\left(
+        A_Y\mathop{\otimes}\limits_{\zz_Y}K_V
+    \right),F\right)
+\]
+とする．
+制限射は\(K_{V'}\to{K_V}\)から引き起こされるもの．
+
+\begin{LMM}
+    \(K\)を平坦かつ\(f\)柔軟な\(\zz_Y\)加群とする．
+    \begin{enumerate}[(i)]
+        \item \(Y\)上の任意の層\(G\)に対し\(G\otimes_{\zz_Y}K\)は\(f\)柔軟である．
+        \item \(G\mapsto f_!(G\otimes_{\zz_Y}K)\)は
+        \(\Mod(\zz_Y)\)から\(\Mod(\zz_X)\)への完全関手である．
+    \end{enumerate}
+\end{LMM}
+\begin{proof}
+    (i) 
+    \(Y\)上の任意の層\(G\)は分解
+    \[
+        \to{G^{-r}}\to\dots\to{G^{0}}\to{G}\to0
+    \]
+    で，各\(G^{j}\)が\(\zz_V\)の直和となるものが存在する．
+\end{proof}
+
+
+
+
+
+
+
+
+
 \backmatter
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
+    \bibitem[B+84]{B+84} Borel, 
+        \textit{Intersection Cohomology}, 
+        Progress in Mathematics, 50, Birkh\"auser, 1984.
     \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
         \textit{Sheaves on Manifolds}, 
         Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
-        \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
+    \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
         \textit{Categories and Sheaves}, 
         Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
-        \bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
+    \bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
+    \bibitem[Ike21]{Ike21} 池祐一, 超局所層理論概説, 2021.
+    \bibitem[Tak17]{Tak17} 竹内潔, \(\D\)加群, 共立出版, 2017.
     %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
 \end{thebibliography}
 
