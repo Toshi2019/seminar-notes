@@ -10,6 +10,6 @@
 [](位相空間まとめノート[(pdf)](topo/topo.pdf))
 ツェルナーの和訳[(pdf)](zerner/zerner1971.pdf)
 
-KS82の超局所台のやつの和訳[(pdf)](KS82-82ja/KS82-ja.pdf)
+KS82の超局所台のやつの和訳[(pdf)](KS82-ja/KS82-ja.pdf)
 
 Poincaré-Verdier双対性[(pdf)](grad-seminar/PV-duality.pdf)
