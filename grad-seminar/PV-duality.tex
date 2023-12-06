@@ -1,0 +1,859 @@
+%=====================================
+%   guest-oshiba.tex
+%   2023年度方程 大柴寿浩
+%   2023/11/23 執筆開始
+%=====================================
+
+% -----------------------
+% preamble
+% -----------------------
+% ここから本文 (\begin{document}) までの
+% ソースコードに変更を加えた場合は
+% 編集者まで連絡してください. 
+% Don't change preamble code yourself. 
+% If you add something
+% (usepackage, newtheorem, newcommand, renewcommand),
+% please tell it 
+% to the editor of institutional paper of RUMS.
+
+% ------------------------
+% documentclass
+% ------------------------
+\documentclass[11pt, a4paper, dvipdfmx]{jsarticle}
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+
+\usetikzlibrary{cd}
+
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem{Fact*}{事実}
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+%\newcommand{\Ring}{{\bf Ring}}
+\newcommand{\Ab}{{\bf Ab}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits} % 写像の集合
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits} % 射集合
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits} % 自己準同型の集合
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits} % 自己同型の集合
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits} % 射集合
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits} % 核
+\newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
+\newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
+\newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+%\newcommand{\OO}{\mcal{O}}
+
+
+
+\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{section}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+%\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
+
+\newcommand{\cat}{\mathscr{C}}
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+\newcommand{\Domp}{\mathop{\mathrm{D}}\nolimits}%複体のホモトピー圏
+
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
+\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+\newcommand{\Rder}{\mathop{\mathrm{R}}\nolimits}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\longrightarrow}}}%内部Hom
+\newcommand{\simra}{\mathrel{\overset{\sim}{\longleftarrow}}}%内部Hom
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\PSh}{\mathrm{PSh}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}[section]
+\newtheorem{DFN}[Axiom]{定義}
+\newtheorem{THM}[Axiom]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[Axiom]{命題}
+\newtheorem{LMM}[Axiom]{補題}
+\newtheorem{CRL}[Axiom]{系}
+\newtheorem{EG}[Axiom]{例}
+\newtheorem{CNV}[Axiom]{規約}
+\newtheorem{CMT}[Axiom]{コメント}
+
+
+% 定理環境ここまで
+%====================================================
+
+% =================================
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+\title{Poincar\'e-Verdier双対性}
+\author{大柴寿浩
+%\thanks{北海道大学大学院理学院数学専攻修士1年}
+}
+\date{}
+\begin{document}
+\maketitle
+\section*{はじめに}
+%本稿では，筆者の専門である代数解析学について述べる．
+\(X\), \(Y\)を局所コンパクト空間とし，
+\(f\colon{Y}\to{X}\)を連続写像とする．
+\(A\)を大域次元が有限な可換環とする．
+\(F\in\Domp^+(A_X)\), \(G\in\Domp^+(A_Y)\)とする．
+
+\(\Rder{f_!}\colon\Domp^+(A_Y)\to\Domp^+(A_X)\)の右随伴関手
+\(f^!\colon\Domp^+(A_X)\to\Domp^+(A_Y)\)を構成するのが目標．
+
+\section{例}
+随伴を仮定した場合，層を具体的に設定するとどのような結果が従うか見てみる．
+\(X=\{\pt\}\), \(F=A_{\{\pt\}}\), \(G=A_Y\)のとき，
+\begin{align*}
+    \RHom_{A_X}(\mathrm{R}{a_Y}_!A_Y,A)
+    &=\RHom_{A_Y}(A_Y,a_Y^!A)\\
+    &=\RG\left(Y;\RHOM_{A_Y}(A_Y,a_Y^!A)\right)\\
+    &=\RG\left(Y;a_Y^!A\right)
+\end{align*}
+である．\(\omega_Y\colon a_Y^!A\)とおく．
+開集合\(U\subset{Y}\)に対し，
+\begin{align*}
+    \RG(U;\omega_Y)
+    &\cong\RG\left(U;\RHOM_{A}(A_U,a_Y^!A)\right)\\
+    &\cong\RHom_{A_U}({A_U},A)
+\end{align*}
+なので，
+\begin{align*}
+    \RHom_{A_U}({A_U},a_Y^!A)
+    \cong\RHom_A(\RG_c(Y;A_U),A)\\
+    \cong\RHom_A(\RG_c(U;A_U),A).
+\end{align*}
+ここで，\(U\)が\(\rr^n\)と同相であるとすると，
+\[\RG_c(U;A_U)\cong A[-n]\]
+したがって，\[
+    \cong\RHom_A(\RG_c(U;A_U),A)\cong A[n]
+\]
+である．
+つまり，\(\omega_Y=a_Y^!A\)は
+\[
+    H^k(\omega_Y)=\begin{cases}
+        0 & (k\neq -n)\\
+        \rank =1\text{の局所定数層} & (k=-n)
+    \end{cases}
+\]
+\section{構成}
+\subsection{構成}
+
+\(X\), \(Y\)を局所コンパクト空間とし，
+\(f\colon{Y}\to{X}\)を連続写像とする．
+\(A\)を大域次元が有限な可換環とする．
+\(F\in\Domp^+(A_X)\), \(G\in\Domp^+(A_Y)\)とする．
+
+\(\Rder{f_!}\colon\Domp^+(A_Y)\to\Domp^+(A_X)\)の右随伴関手
+\(f^!\colon\Domp^+(A_X)\to\Domp^+(A_Y)\)を構成する．
+まず，開集合\(V\subset Y\)に対し，\(f^!{F}\)の\(V\)上の切断
+に関する条件を見てみる．
+\[
+    \RG(V;f^!{F})
+    =\RHom_{A_Y}(A_V,f^!F)
+    =\RHom_{A_X}(\Rder{f_!}A_V,F)
+\]
+となることから，\(f^!F\)は
+\(V\mapsto\RHom_{A_X}(\Rder{f_!}A_V,F)\)
+という対応でなければならない．
+\(\Rder{f_!}\)を計算するにはc柔軟分解
+\(A_V\sim K\)を
+取ればよく，さらに\(F\)が入射的であれば，
+\[
+    \RHom_{A_X}(\Rder{f_!}A_V,F)
+    =\Hom_{A_X}({f_!}K_V,F)
+\]
+となって，結局
+\[
+    \RG(V;f^!{F})
+    =\Hom_{A_X}({f_!}K_V,F)
+\]
+とできる．
+
+\paragraph{\(f\)に関する仮定}
+\begin{DFN}
+    \(Y\)上の層\(G\)が\(f\)柔軟であるとは，各点\(x\in{X}\)に対し，
+    \(G\rvert_{f^{-1}(x)}\)がc柔軟であることをいう．
+\end{DFN}
+\(G\)が\(f\)柔軟であることと，
+任意の開部分集合\(V\subset{Y}\)と\(j\ne0\)に対し，
+\(\Rder^jf_!G_V=0\)となることと同値である．
+
+次を仮定する．
+\begin{equation}\label{eq:fdim}
+    f_!\colon\Mod(\zz_Y)\to\Mod(\zz_X)\text{のコホモロジー次元は有限である．}
+\end{equation}
+つまり，整数\(r\geqq0\)で，全ての\(j>r\)に対し\(\Rder^jf_!=0\)となるものが存在する．
+\eqref{eq:fdim}は次の条件と同値である．
+\begin{equation}\label{eq:fdim1}
+\begin{cases}
+    \text{任意の}G\in\Sh(Y)\text{に対し，完全列}\\
+    0\to{G}\to{G^0}\to\dots\to{G^r}\to0\\
+    \text{で，どの}G^j\text{も\(f\)柔軟であるものが存在する．}
+\end{cases}    
+\end{equation}
+\begin{equation}\label{eq:fdim2}%\tag{3.1.4\('\)}
+\begin{cases}
+    \text{完全列}
+    {G^0}\to\dots\to{G^r}\to0\\
+    \text{において，\(j<r\)に対し\(G^j\)が\(f\)柔軟ならば，}\\
+    \text{\(G^r\)が\(f\)柔軟となる．}
+\end{cases}
+\end{equation}
+\(f_!\)のコホモロジー次元が\(\leqq{r}\)となるのは，
+任意の\(x\in{X}\)に対し，
+\(\Gamma_c(f^{-1}(x);\cdot)\)の
+コホモロジー次元が\(\leqq{r}\)となるときである．
+実際，\(f_!\rvert_{f^{-1}(x)}F=\Gamma_c(f^{-1}(x);F)=0\)となるので．
+
+\paragraph{構成}
+以上の仮定は，
+\[
+    \RG(V;f^!{F})
+    =\Hom_{A_X}({f_!}K_V,F)
+\]
+の構成をするためだった．
+\(f_!K_V\)の分解をしたくて，
+その長さが有限になるという仮定である．
+
+さて，\(K\)を\(\zz_Y\)加群，\(F\)を\(A_X\)加群とする．
+このとき，\(A\)加群の前層\(f^!_KF\)を次で定める．
+\(V\in\Op(Y)\)に対し，
+\[
+    (f^!_KF)(V)
+    \coloneqq
+    \Hom_{A_X}\left(f_!\left(
+        A_Y\mathop{\otimes}\limits_{\zz_Y}K_V
+    \right),F\right)
+\]
+とする．
+制限射は\(K_{V'}\to{K_V}\)から引き起こされるもの．
+
+\begin{LMM}\label{LMM:PV-flat}
+    \(K\)を平坦かつ\(f\)柔軟な\(\zz_Y\)加群とする．
+    \begin{enumerate}[(i)]
+        \item \(Y\)上の任意の層\(G\)に対し\(G\otimes_{\zz_Y}K\)は\(f\)柔軟である．
+        \item \(G\mapsto f_!(G\otimes_{\zz_Y}K)\)は
+        \(\Mod(\zz_Y)\)から\(\Mod(\zz_X)\)への完全関手である．
+    \end{enumerate}
+\end{LMM}
+\begin{proof}
+    (i) 
+    \(Y\)上の任意の層\(G\)に対し，
+    \cite[Prop.2.4.12]{KS90}の証明から，
+    分解
+    \[
+        \to{G^{-r}}\to\dots\to{G^{0}}\to{G}\to0
+    \]
+    で，各\(G^{j}\)が\(\zz_V\)の直和となるものが存在する．
+
+    \subparagraph*{復習：}
+    \(G\in\Mod(\zz_Y)\)に対し，
+    \[
+        \mathfrak{S}\coloneqq\{(V,s);V\in\Op(Y),s\in\Gamma(V;G)\}
+    \]とし，
+    各\((V,s)\in\mathfrak{S}\)に対し，
+    \(\zz_Y(V,s)\coloneqq\zz_V\in\Mod(\zz_Y)\)とおき，
+    \(P\coloneqq\bigoplus_{(V,s)\in\mathfrak{S}}\zz_Y(V,s)\)とおく．
+    \(\Hom_{\zz_Y}(\zz_V,G)\cong\Gamma(V;G)\)より，
+    各\(\varphi\colon\zz_V\to{G}\)に対し，\(s\in G(V)\)がただ一つある．
+    これにより全射\(P\twoheadrightarrow G\)が得られる．
+    各\(y\in Y\)に対し，
+    \(P_y=\bigoplus_{(V,s),\\y\in V}\zz\)である．
+    \rightline{(復習終わり)}
+
+    \(\Ker(P\to G)\)に対し，同様に\(\zz_Y\)の直和からの全射が構成できる．
+    これを繰り返して，分解
+    \[
+        \to{G^{-r}}\to\dots\to{G^{0}}\to{G}\to0
+    \]
+    で，\(\zz_V\)の直和となるものが得られる．
+    よって，どの\(j\)についても，
+    \(G^j\otimes_{\zz_Y}K\)は\(f\)柔軟である．
+    実際，\(
+        (\bigoplus\zz_V)\otimes_{\zz_Y}K\cong 
+        \bigoplus(\zz_V\otimes_{\zz_Y}K)\cong\bigoplus{K_V}
+    \)であり，茎ごとにc柔軟なので．
+    この分解に\(-\otimes_{\zz_Y}K\)をあてた
+    \[
+        \to{G^{-r}}\otimes_{\zz_Y}K\to\dots
+        \to{G^{0}}\otimes_{\zz_Y}K\to{G}\otimes_{\zz_Y}K\to0
+    \]
+    は\(K\)が平坦なので完全である．
+    したがって，\(r\)を十分大きくとれば，
+    \(f_!\)のコホモロジー次元が有限であるという仮定から，
+    \eqref{eq:fdim2}を用いて，
+    \({G}\otimes_{\zz_Y}K\)も\(f\)柔軟であることが従う．
+
+    (ii) 
+    \(\Sh(Y)\)の完全列\[
+        0\to G_1\to G_2\to G_3\to0
+    \]に対し，
+    \[
+        0\to G_1\otimes_{\zz_Y}K\to G_2\otimes_{\zz_Y}K\to G_3\otimes_{\zz_Y}K\to0
+    \]
+    は\(f\)柔軟である．いま，
+    \[
+        0\to f_!(G_1\otimes_{\zz_Y}K)
+        \to f_!(G_2\otimes_{\zz_Y}K)
+        \to f_!(G_3\otimes_{\zz_Y}K)\to0
+    \]
+    のストーク
+    \[\tag{\(\natural\)}\label{eq:stalk-nat}
+        0\to (f_!(G_1\otimes_{\zz_Y}K))_x
+        \to (f_!(G_2\otimes_{\zz_Y}K))_x
+        \to (f_!(G_3\otimes_{\zz_Y}K))_x\to0
+    \]
+    を考えると，これらは，\(W=f^{-1}(x)\)とおくとき
+    \[
+        0\to \Gamma_c(W;(G_1\mathop{\otimes}\limits_{\zz_Y}K)\rvert_{W})
+        \to \Gamma_c(W;(G_2\mathop{\otimes}\limits_{\zz_Y}K)\rvert_{W})
+        \to \Gamma_c(W;(G_3\mathop{\otimes}\limits_{\zz_Y}K)\rvert_{W})
+        \to0
+    \]
+    である．\(G_j\mathop{\otimes}\limits_{\zz_Y}K\)たちは
+    \(f\)柔軟なので，これらは\(W\)でc柔軟であり，
+    \(f_!\)が完全であることから，\eqref{eq:stalk-nat}は完全である．
+    よって，もとの層の系列も完全である．
+\end{proof}
+
+\begin{LMM}
+    \(K\)を平坦かつ\(f\)柔軟な\(\zz_Y\)加群とし，
+    \(F\)を\(A_X\)入射加群とする．
+    \begin{enumerate}[(i)]
+        \item 前層\(f^!_KF\)は層である．
+        \item \(G\in\Mod(A_Y)\)に関して関手的な自然同型\[
+            \Hom_{A_X}(f_!(G\otimes_{\zz_Y}K),F)\overset{\sim}{\rightarrow}\Hom_{A_Y}(G,f^!_KF)
+        \]が存在する．また，\(f^!_KF\)は\(A_Y\)入射加群である．
+    \end{enumerate}
+\end{LMM}
+\begin{proof}
+    (i) 
+    \(-\otimes_{\zz_Y}K\)をたんに\(-\otimes K\)で表す．
+    \(V\)を\(Y\)の開集合とし，\((V_j)_j\)を\(V\)の開被覆とする．
+    \[
+        \bigoplus_{j,k}A_{V_{j}\cap V_{k}}\to\bigoplus_{j}A_{V_j}\to A_V\to0
+    \]は完全である．\footnote{
+        開集合は小さい方から大きい方へ随伴射が生える．
+        \(A_{jk}\to{A_{j},A_{k}}\)は
+        それぞれ\(s_{jk}\mapsto s_{jk}\)と
+        \(s_{jk}\mapsto -s_{jk}\)で定める．
+        \(A_{V_j}\)の台は\(V\)に含まれるので，
+        各切断の和の台も被覆の条件から\(V\)に含まれるので
+        全射の方も成り立つ．
+    }これに完全関手\(f_!(-\otimes{K})\)をあてて完全列
+    \[
+        \bigoplus_{j,k}f_!(A_{V_{j}\cap V_{k}}\otimes{K})
+        \to\bigoplus_{j}f_!(A_{V_j}\otimes{K})
+        \to f_!(A_V\otimes{K})\to0
+    \]
+    を得る．
+    さらに左完全な反変関手\(\Hom_{A_X}(-,F)\)をあてて，完全列
+    \[
+        0
+        \to 
+        \Hom_{A_X}(f_!(A_V\otimes{K}),F)\to
+        \Hom_{A_X}(\bigoplus_{j}f_!(A_{V_j}\otimes{K}),F)\to
+        \Hom_{A_X}(\bigoplus_{j,k}f_!(A_{V_{j}\cap V_{k}}\otimes{K}),F)
+    \]を得る．これは極限を交換すれば
+    \[
+        0\to
+        f_K^!F(V)\to
+        \prod_{j}f_K^!F(V_j)\to
+        \prod_{j,k}f_K^!F(V_j\cap V_k)
+    \]であり，\(f_K^!F\)が層であることが示された．
+
+    (ii) 
+    アーベル群の射\[
+        \alpha(G)\colon\Hom_{A_X}(f_!(G\otimes{K}),F)
+        \to\Hom_{A_Y}(G,f^!_KF)
+    \]を定める．
+    \(\phi\in\Hom_{A_X}(f_!(G\otimes{K}),F)\)とする．
+    \(V\in\Op(Y)\)に対し，次\(A_X\)加群の射がある．
+    \begin{align*}
+        G(V)\otimes f_!(A_Y\otimes{K_V})
+        &\underset{?}{\textcolor{red}{\longrightarrow}}
+        f_!(G\otimes{K_V})\\
+        &\underset{\text{adj.}}{\longrightarrow}f_!(G\otimes{K})\\
+        &\underset{\phi}{\longrightarrow}F.
+    \end{align*}
+    よって，Hom・テンソル随伴から，
+    \(G(V)\)から\(f^!_KF(V)=\Hom(f_!(A_Y\otimes{K_V}),F)\)への
+    射を得る．
+    この射は\(V\in\Op(Y)\)について関手的．
+    よって，\(\alpha(G)(\phi)\in\Hom_{A_Y}(G,f^!_KF).\)
+
+    \(\alpha(G)\)が同型であることを
+    \begin{enumerate}[(a)]\setlength{\leftskip}{22pt}
+        \item \(G=A_V\)の場合，
+        \item \(G=\bigoplus_jA_{V_j}\)の場合，
+        \item 一般の場合
+    \end{enumerate}
+    の3段階で示す．
+
+    (a) 
+    \(G=A_V\)のとき，
+    \begin{align*}
+        \Hom_{A_X}(f_!(G\otimes{K}),F)
+        &\cong
+        \Hom_{A_X}(f_!(A_V\otimes{K}),F)\\
+        &\cong
+        (f^!_KF)(V)\\
+        &\cong
+        \Hom_{A_Y}(A_V,f^!_KF)\\
+        &=\Hom_{A_Y}(G,f^!_KF)
+    \end{align*}
+    なので同型．
+
+    (b) 
+    \(G=\bigoplus_jA_{V_j}\)のとき，
+    \(\alpha(G)=\prod_j\alpha(A_{V_j})\)
+    なので，(a) の結果からこれも同型．
+
+    (c) 
+    \(G\)が一般のとき，\cite[Prop.2.4.12]{KS90}より，完全列
+    \[
+        0\to G''\to G'\to G\to0
+    \]で，\(G'\cong\bigoplus_jA_{V_j}\)となるものがある．
+    （\(G''\)は全射\(G'\twoheadrightarrow G\)の核として得られる．）
+    よって，(b)より\(\alpha(G')\)は同型．
+    次の可換図式を考える．
+    \begin{equation*}
+        \vcenter{\xymatrix
+        @C=26pt@R=26pt
+        {
+        0\ar[r]
+        &
+        \Hom(f_!(G\otimes{K}),F)
+        \ar[r]
+        \ar[d]^-{\alpha(G)}
+        &
+        \Hom(f_!(G'\otimes{K}),F)
+        \ar[r]
+        \ar[d]^-{\alpha(G')}
+        &
+        \Hom(f_!(G''\otimes{K}),F)
+        \ar[d]^-{\alpha(G'')} 
+        \\
+        0\ar[r]
+        &
+        \Hom(G,f_K^!F)
+        \ar[r]
+        &
+        \Hom(G',f_K^!F)
+        \ar[r]
+        &
+        \Hom(G'',f_K^!F).
+        }}
+    \end{equation*}
+    補題\ref{LMM:PV-flat}より，2つの行はどちらも完全．
+    \(\alpha(G')\)は同型なので，左の可換性から\(\alpha(G)\)は単射．
+    同じことを\(\alpha(G'')\)にやれば\(\alpha(G'')\)は単射．
+    よって，五項補題から\(\alpha(G)\)は同型．（左に0の同型を追加する．）
+
+    \(\Hom_{A_Y}(-,f_K^!F)\)が完全関手であることから，
+    \(f_K^!F\)が入射加群であることもわかる．
+\end{proof}
+
+\(f_!\)のコホモロジー次元を\(\leqq r\)とする．
+
+\begin{LMM}
+    \(\zz_Y\)に対し，分解
+    \(0\to \zz_Y\to K^0\to\dots\to K^r\to0\)
+    で，各\(K^j\)が平坦かつ\(f\)柔軟な\(\zz_Y\)加群となるものが存在する．
+\end{LMM}
+\begin{proof}
+    入射分解と同じように分解を構成する．
+
+    \subparagraph*{入射分解の復習}
+    \(\hat{Y}\coloneqq\left(Y,P(Y)\right)\)を\(Y\)に
+    離散位相を入れた空間とし，
+    \(p\colon \hat{Y}\to Y\)を自然な連続写像とする．
+    \(F\)を\(\zz_Y\)加群とする．
+    \(p^{-1}F \in\Mod(\zz_{\hat{Y}})\)に対し，
+    入射加群\(I\in\Mod(\zz_{\hat{Y}})\)への
+    単射\[0\to p^{-1}F\to I\]があったとする．
+    この\(I\)と単射に対し，左完全関手\(p_\ast\)を適用すると，
+    \(0\to F\to p_\ast{I}\)は\(\Mod(\zz_Y)\)における完全列である．
+    （ここに\(p_\ast p^{-1}F=(\id_Y)_\ast(\id_Y)^{-1}=F\)である．）
+    \(p_{\ast}\)は入射的対象を保つので，\(p_\ast{I}\)は入射加群である．
+
+    最初の完全列を構成する．
+    \(F'\in\Mod(\zz_{\hat{Y}})\)とすると，各点\(y\in Y\)に対し，
+    \(\Mod(\zz_{\hat{Y},y})=\Mod(\zz)\)における完全列
+    \[
+        0\to F'_y\to I_y
+    \]が存在する．（\(\Mod(\zz)\)は充分入射的対象を持つのだった．）
+    単射の積は単射なので，\(Y\)全体で積を取った
+    \[
+        0\to \prod_{y\in Y}F'_y\to \prod_{y\in Y}I_y
+    \]
+    も完全である．
+    したがって，\(\Mod(\zz_{\hat{Y}})\)での
+    入射加群\(I=\prod_{y\in Y}I_y\)への単射\(F\to I\)が得られた．
+
+    この操作を余核に対して繰り返し行えば，
+    \(F\in\Mod(\zz_Y)\)の入射分解が得られる．
+    
+    {\rightline{(復習終わり)}}
+
+    \(\zz_Y\)の入射分解を
+    \[
+        0\to \zz_Y\to K^0\to\cdots\to K^r\to0
+    \]
+    とする．入射加群は\(c\)柔軟であり，したがって\(f\)柔軟である．
+    したがって，この分解は\(c\)柔軟分解である．
+    %茎を見れば平坦．
+
+    各項の平坦性を見る．
+\end{proof}
+
+
+\begin{comment}
+\section{層}
+層の一番身近な例は連続関数や微分可能関数，正則関数の層であろう．
+\begin{Example}
+    \begin{enumerate}
+        \item 連続関数
+        \item 微分可能関数
+        \item 正則関数の層：\(X\)を複素多様体とする．
+        \(X\)の開集合\(U\)に対し，\[
+            \OO_X(U)\coloneqq\{U\text{上の正則関数}\}
+        \]とおく．
+    \end{enumerate}
+\end{Example}
+\end{comment}
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Sheaves on Manifolds}, 
+    Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+\end{thebibliography}
+
+%===============================================
+
+
+\end{document}
