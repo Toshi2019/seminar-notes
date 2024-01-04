@@ -1,0 +1,537 @@
+%================================================
+%    帰納圏について
+%================================================
+
+% -----------------------
+% preamble
+% -----------------------
+% ここから本文 (\begin{document}) までの
+% ソースコードに変更を加えた場合は
+% 編集者まで連絡してください. 
+% Don't change preamble code yourself. 
+% If you add something
+% (usepackage, newtheorem, newcommand, renewcommand),
+% please tell it 
+% to the editor of institutional paper of RUMS.
+
+% ------------------------
+% documentclass
+% ------------------------
+\documentclass[11pt, a4paper, dvipdfmx, leqno]{jsarticle}
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+\usepackage{url}
+\usetikzlibrary{cd}
+
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+%\usepackage{calligra}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+\newtheorem{com}[Axiom]{コメント}
+\newtheorem{Notation}[Axiom]{記号}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem*{Fact*}{事実}
+\newtheorem*{com*}{コメント}
+
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{\mathop{\textsf{Set}}\nolimits}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+\newcommand{\Mod}{\mathop{\textsf{Mod}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits}
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits}
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits}
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits}
+\newcommand{\Fct}{\mathop{\mathrm{Fct}}\nolimits}
+\newcommand{\f}{\mathop{\mathit{for}}\nolimits}
+
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{section}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+\newcommand{\U}{\mcal{U}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\calS}{\mcal{S}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+
+\newcommand{\limf}{\mathop{\text{``}\hspace{-0.7pt}\varinjlim\hspace{-1.5pt}\text{''}}}
+\newcommand{\sumf}{\mathop{\text{``}\hspace{-0.7pt}\bigoplus\hspace{-1.5pt}\text{''}}}
+
+\newcommand{\hh}{\mathop{\mathrm{h}}\nolimits}
+\newcommand{\Ind}{\mathop{\mathrm{Ind}}}
+
+
+
+
+\newcommand{\cat}{\mathcal{C}}
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+\newcommand{\Comp}{\mathop{\mathsf{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
+\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}%複体のホモトピー圏
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+
+% =================================
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+\def\ind<#1>{\mathop{\text{``}\hspace{-0.7pt}#1\limits\hspace{-1.5pt}\text{''}}}
+
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+\title{density について}
+\author{大柴 寿浩\thanks{北海道大学大学院理学院数学専攻修士1年
+%\\\url{oshiba.toshihiro.l9@elms.hokudai.ac.jp}
+}}
+\date{2024/01/04}
+\begin{document}
+\maketitle
+%\thispagestyle{empty}
+
+\section*{はじめに}
+密度 (density) について調べたことをまとめたノート．
+
+\paragraph{\cite{F77}の場合}
+最初に見つかった和書は藤原\cite{F77}である．
+第7章 (p.179--196) のタイトルが「超関数と密度の平方根」となっており，
+とくに
+\begin{quotation}
+    \(X\)は\(\sigma\)コンパクト\(C^\infty\)多様体で，
+    必ずしも向きづけられていないとする．
+    \(X\)上の関数空間に自然なHermite内積を定義するのは困難であった．
+    H\"ormanderは，密度の平方根の概念を導入して，
+    この困難を取り除いた．\footnote{\cite[p.183]{F77}}
+\end{quotation}
+とある．
+
+\paragraph{\cite{Hor63,Hor89}の場合}
+
+そこで，\cite{Hor63}を見ると，次のRemarkが見つかった．
+\begin{quotation}
+    \(\mathscr{D}'(\varOmega)\) may also be defined 
+    as the space of all continuous linear forms 
+    on the space of infinitely differentiable densities 
+    with compact support. 
+    Here a density means a linear form \(L\) 
+    on the space \(C_0^\infty(\varOmega)\) of functions 
+    in \(C^\infty(\varOmega)\) with compact support, 
+    such that to every coordinate system \(\kappa\) 
+    there exists a function \(L^\kappa\in C^\infty(\tilde{\varOmega}_\kappa)\) for which
+    \[
+        L(\varphi)= \int L^\kappa(\varphi\circ\kappa^{-1})dx
+        \quad \text{if} \quad \varphi\in C_0^\infty(\varOmega).
+    \]
+    For details we refer to DE RHAM [1]\footnote{de Rham, ``Vari\'et\'es diff\'erentiables'' のこと．} 
+    where a density is called odd form of degree \(n\) 
+    and a distribution is an even current of degree 0.
+    \footnote{\cite[p.28]{Hor63}}
+\end{quotation}
+\cite[p.145]{Hor89}でも密度の定義が登場する．
+
+\paragraph{\cite{Hor85}の場合}
+この2つには密度の平方根は現れていない．
+4巻本の第3巻\cite[18章]{Hor85}に説明が出てくる．
+\begin{quotation}
+    In Section 6.4 we defined the density bundle \(\varOmega\) 
+    on \(X\): a section of \(\varOmega\) expressed 
+    in local coordinates \(x_1,\dots,x_n\) is a function \(u\) 
+    such that the measure \(u|dx|\) is independent of 
+    how they are chosen, \(|dx|\) denoting the Lebesgue measure 
+    in the local coordinates. 
+    For the representation \(u'\) in the local coordinates \(x'\) 
+    we therefore have
+    \[u' |dx'|=u|dx|.\]
+    We can define the powers \(\varOmega^a\) 
+    of \(\varOmega\) for any \(a\in\cc\) by just changing the
+    transformation law to
+    \[u' |dx'|^a=u|dx|^a.\]
+    or, more formally, we take the transition functions
+    \[
+        g_{\kappa\kappa'}=\lvert
+            \det(\kappa\circ\kappa'^{-1})'
+        \rvert^a\circ\kappa'
+        \quad
+        \text{in}
+        X_{\kappa}\cap X_{\kappa'}
+    \]
+    if \(\kappa\) and \(\kappa'\) are 
+    arbitrary local coordinates 
+    with coordinate patches \(X_{\kappa}\) and \(X_{\kappa}\). 
+    We shall now work out the transformation law 
+    for the second term in the symbol 
+    of a polyhomogeneous operator acting on half densities, 
+    that is, sections of \(\varOmega^{\frac{1}{2}}\). \footnote{\cite[p.92]{Hor85}}
+\end{quotation}
+
+\paragraph{初出\cite{Hor71}}
+では，密度の平方根の初出は何か．
+これはおそらくフーリエ積分作用素の論文\cite{Hor71}と思われる．
+この論文の117--118ページの部分に次の記述がある．
+\begin{quotation}
+    Densities of order \(\alpha\) can of course be regarded 
+    as sections of a line bundle \(\varOmega\) on \(Y\), 
+    defined by the transition functions (中略). 
+    The notions of real or positive densities are 
+    therefore well defined, 
+    and every positive density has 
+    a unique positive square root in \(\varOmega_{\frac{1}{2}}\). 
+    (中略)
+    Concerning the terminology 
+    we note that Atiyah and Bott [3]\footnote{
+        ATIYAH, M. F., BOTT, R., 
+        ``A Lefschetz fixed point formula 
+        for elliptic complexes I.'' Ann. of Math., 86 (1967), 374--407. のこと．
+    } have called \(\varOmega_1\) 
+    the volume bundle of \(Y\).
+    \footnote{\cite[p.117-118]{Hor71}}
+\end{quotation}
+
+
+
+\section*{その他の文献}
+積分に関連して，体積要素について，
+金子超関数\cite[参考4.2 (p.161), 参考4.3 (p.165)]{K96}に記述がある．
+
+
+密度束のことが載っている文献で見つかったのは
+和書では吉田朋好\cite[2.3.3項 (p.46--48)]{Y98}，
+洋書では\cite[p.29]{BGV92}, \cite[p.427--434]{L13}が見つかった．
+
+カレントについては，ド・ラームの多様体の本とか，
+シュワルツの超関数の本とかがいいんでしょう，きっと．
+秋月調和積分にもカレントは載っている．
+
+他に，幾何学的量子化と関連して，\cite{BW97}が面白そう．
+
+
+
+
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+
+    \bibitem[BGV92]{BGV92} Nicole Berline, Ezra Getzler, Mich\'ele Vergne, 
+    \textit{Heat Kernels and Dirac Operators}, 
+    Grundlehren der Mathematischen Wissenschaften, 298, Springer, 1992.
+    \bibitem[BW97]{BW97} Sean Bates, Alan Weinstein, 
+    \textit{Lectures on the Geometry of Quantization}, 
+    Berkeley Mathematics Lecture Notes, \textbf{8}, 1997.
+    \bibitem[F77]{F77} 藤原大輔, 
+    線型偏微分方程式論における漸近的方法 I, II, 
+    岩波講座基礎数学 解析学 (II) \textbf{viii}, 岩波書店, 1977.
+    \bibitem[Hor63]{Hor63} Lars H\"ormander, 
+    \textit{Linear Pertial Differential Operators}, Fourth Printing, 
+    Grundlehren der Mathematischen Wissenschaften, 116, Springer, 1963.
+    \bibitem[Hor71]{Hor71} Lars H\"ormander, 
+    \textit{Fourier Integral Operators I}, 
+    Acta Math. 127, 79--183, (1971).
+    \bibitem[Hor89]{Hor89} Lars H\"ormander, 
+    \textit{The Analysis of Linear Pertial Differential Operators I}, Second Edition,
+    Grundlehren der Mathematischen Wissenschaften, 256, Springer, 1989.
+    \bibitem[Hor85]{Hor85} Lars H\"ormander, 
+    \textit{The Analysis of Linear Pertial Differential Operators III}, 
+    Grundlehren der Mathematischen Wissenschaften, 274, Springer, 1985.
+    \bibitem[K96]{K96} 金子晃, 新版 超関数入門, 東京大学出版会, 1996.
+    \bibitem[L13]{L13} John M. Lee, 
+    \textit{Introduction to Smooth Manifolds}, Second Edition,
+    Graduate Texts in Mathematics, \textbf{218}, Springer, 2013.
+    %\bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+    %\textit{Sheaves on Manifolds}, 
+    %Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+    %\bibitem[KS99]{KS99} Masaki Kashiwara, Pierre Schapira, 
+    %\textit{Ind-Sheaves,distributions, and microlocalization}, 
+    %Sem Ec. Polytechnique, May 18, 1999.
+    
+    %\bibitem[KS01]{KS01} Masaki Kashiwara, Pierre Schapira, 
+    %\textit{Ind-sheaves}, 
+    %Ast\`erisque, 271, Soci\`et\`e Math. de France, 2001.
+    %\bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
+    %\textit{Categories and Sheaves}, 
+    %Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
+    %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+    \bibitem[Y98]{Y98} 吉田朋好, ディラック作用素の指数定理, 共立講座 21世紀の数学 \textbf{22}, 共立出版, 1998.
+\end{thebibliography}
+
+%===============================================
+
+
+\end{document}
