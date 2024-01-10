@@ -257,6 +257,7 @@
 \newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
 \newcommand{\colim}{\mathop{\mathrm{colim}}}
 \newcommand{\ori}{\mathop{\textsf{or}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
 
 
 \newcommand{\cat}{\mathcal{C}}%一般の圏の記号
@@ -568,7 +569,37 @@ $X$を位相空間とし，$R$を$X$上の環とする．
     よってとくに$\Gamma(X;{\boldsymbol{\cdot}})$も左完全である．
 \end{PRP}
 
-\begin{EG}[右完全にならない例]
+\begin{EG}[右完全にならない例1]
+    \(X=\cc\)とする．
+    \(X\)上の層の射\(\partial_z\colon\cO_X\to\cO_X\)を，
+    正則関数\(u(z)\)に対し導関数\(\dip\frac{du}{dz}(z)\)を
+    対応させることで定める．このとき次は完全である．
+    \[
+        0\to  
+        \cc_X\to
+        \cO_X\overset{\partial_z}{\longrightarrow}
+        \cO_X\to 0
+        \quad
+        \text{exact in \(\Mod(\cc_X)\)}
+    \]
+    しかし，開集合\(U=\cc-\{0\}\)上の切断を取った
+    \[
+        0\to  
+        \cc_X(U)\to
+        \cO_X(U)\overset{\partial_z(U)}{\longrightarrow}
+        \cO_X(U)\to 0
+        \quad
+        \text{in \(\Mod(\cc)\)}
+    \]
+    は右完全ではない．
+    実際，
+    \(
+        \dip\frac{1}{z}\in\cO_X(U)
+    \)
+    に対し，原始関数\(\log(z)\)は\(U\)上では正則ではない．
+    よって，\(\partial(U)\)は全射ではない．
+\end{EG}
+\begin{EG}[右完全にならない例2]
     $E$を1次元複素トーラスとする．
     $E$上の層の完全列
     \begin{equation*}
@@ -602,20 +633,21 @@ $X$を位相空間とし，$R$を$X$上の環とする．
 
 
 
+\subsection{台を持つ切断}
 
-%\begin{equation*}
-%    \begin{array}{rc}
-%        \verb|\mathbf{C}|&\mathbf{C}\\
-%        \verb|\mathrm{C}|&\mathrm{C}\\
-%        \verb|\bm{C}|&\bm{C}\\
-%        \verb|\boldsymbol{C}|&\boldsymbol{C}\\
-%        \verb|C|&C
-%    \end{array}
-%\end{equation*}
-
-
-
-
+\begin{PRP}[台を持つ切断は左完全]
+    \(Z\)を\(X\)の局所閉集合とする．
+    開集合$U\in\Op(X)$に対し，
+    \[
+        \begin{array}{rccc}
+            \Gamma_{Z\cap U}(U;{\boldsymbol{\cdot}})\colon&\Mod(R)&\longrightarrow&\Mod(R(U))\\
+            &\rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+            &F&\longmapsto&\Gamma_{Z\cap U}(U;F)\coloneqq\left\{s\in F(U); \supp{s}\subset Z\cap U\right\}
+        \end{array}
+    \]
+    を対応させる関手は左完全関手である．
+    %よってとくに$\Gamma(X;{\boldsymbol{\cdot}})$も左完全である．
+\end{PRP}
 
 
 
