@@ -363,6 +363,10 @@
 \newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
 
 
+\newcommand{\sm}{\raisebox{2.33pt}{~\rule{6.4pt}{1.3pt}~}}
+\newcommand{\smi}{\mathrel{\raisebox{2.33pt}{\rule{6.4pt}{1.3pt}}}}
+
+
 % =================================
 
 
@@ -434,6 +438,13 @@
 
 位相空間論で調べたことをまとめるノート．
 
+\section*{記号など}
+\begin{itemize}
+    \item \(X\)を集合とする．
+    \(\dip \complement_X A\)で\(X\)の部分集合\(A\)の補集合を表す．
+    \(X\)が明らかなときは\(\complement{A}\)ともかく．
+    \(X-A\)とか\(X\smi A\)とか\(X\setminus A\)ともかく．
+\end{itemize}
 \section{局所コンパクト}
 
 
@@ -503,7 +514,7 @@
 
 \begin{PRP}
     位相多様体に対して次の条件(1)--(3)は同値である．
-    \begin{enumerate}
+    \begin{enumerate}[(1)]
         \item 第2可算である．
         \item リンデレーフである．
         \item \(\sigma\)コンパクトである．

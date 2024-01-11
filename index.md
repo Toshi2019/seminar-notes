@@ -8,8 +8,10 @@
 
 [](準アーベル圏について[(pdf)](quasi-abel/quasi-abel.pdf))
 [](位相空間まとめノート[(pdf)](topo/topo.pdf))
-ツェルナーの和訳[(pdf)](zerner/zerner1971.pdf)
+[]ツェルナー和訳[(pdf)](zerner/zerner1971.pdf)
 
-KS82の超局所台のやつの和訳[(pdf)](KS82-ja/KS82-ja.pdf)
+[]KS82和訳[(pdf)](KS82-ja/KS82-ja.pdf)
 
 Poincaré-Verdier双対性[(pdf)](grad-seminar/PV-duality.pdf)
+
+2024/01/11発表分[(pdf)](grad-seminar/2024-01-11.pdf)
