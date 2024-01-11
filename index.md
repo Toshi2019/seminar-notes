@@ -8,9 +8,9 @@
 
 [](準アーベル圏について[(pdf)](quasi-abel/quasi-abel.pdf))
 [](位相空間まとめノート[(pdf)](topo/topo.pdf))
-[]ツェルナー和訳[(pdf)](zerner/zerner1971.pdf)
+[](ツェルナー和訳[(pdf)](zerner/zerner1971.pdf))
 
-[]KS82和訳[(pdf)](KS82-ja/KS82-ja.pdf)
+[](KS82和訳[(pdf)](KS82-ja/KS82-ja.pdf))
 
 Poincaré-Verdier双対性[(pdf)](grad-seminar/PV-duality.pdf)
 
