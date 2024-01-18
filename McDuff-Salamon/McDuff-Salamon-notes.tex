@@ -18,7 +18,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[11pt, a4paper, dvipdfmx, leqno]{jsarticle}
+\documentclass[11pt, a4paper, dvipdfmx]{jsbook}
 
 % ------------------------
 % usepackage
@@ -66,6 +66,7 @@
     urlcolor=darkblue,
 }
 \usepackage{pxjahyper}
+\usepackage{bbm}
 
 %=================================
 
@@ -143,6 +144,37 @@
 \newtheorem{Alert+}{Alert}
 \newtheorem{Fact+}[Axiom+]{Fact}
 \newtheorem{Remark+}[Axiom+]{Remark}
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}[section]
+\newtheorem{DFN}[AXM]{定義}
+\newtheorem{THM}[AXM]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[AXM]{命題}
+\newtheorem{LMM}[AXM]{補題}
+\newtheorem{CRL}[AXM]{系}
+\newtheorem{EG}[AXM]{例}
+\newtheorem*{EG*}{例}
+\newtheorem{CNV}[AXM]{規約}
+\newtheorem{CMT}[AXM]{コメント}
+
+% 定理環境ここまで
+%====================================================
+
 
 % ----------------------------
 % commmand
@@ -304,9 +336,22 @@
 \newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
 
 \newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
-\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
+\newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
+\newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
+\newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
 \newcommand{\CCat}{\Comp(\cat)}
 \newcommand{\KCat}{\Komp(\cat)}
+
+\newcommand{\um}{\mathord{\mathbbm{1}}}
+\newcommand{\cstr}{\mathop{\mathcal{J}}}
+\newcommand{\cstrp}{\mathop{\mathcal{J}^+}}
+\newcommand{\GL}{\mathop{\mathrm{GL}}}
+\newcommand{\SL}{\mathop{\mathrm{SL}}}
+\newcommand{\SO}{\mathop{\mathrm{SO}}}
+\newcommand{\SU}{\mathop{\mathrm{SU}}}
+\newcommand{\U}{\mathop{\mathrm{U}}}
+\newcommand{\Jstd}{\mathord{J_0}}
 
 % =================================
 
@@ -325,7 +370,6 @@
 
 % ================================
 % マクロを追加する場合のスペース 
-
 %=================================
 
 
@@ -346,19 +390,19 @@
 \begin{document}
 \maketitle
 
-\section*{はじめに}
+\chapter*{はじめに}
 2023年度1学期の数学独立探求1で行う
 \cite{MS17}のセミナーのノート．
 
-\section*{記号}
+%\chapter*{記号}
 次の記号は断りなく使う．
 \begin{itemize}
     \item 添字：
     なんらかの族$(a_i)_{i\in I}$を$(a_i)_i$とか$(a_i)$と
     略記することがある．
 \end{itemize}
-
-\section*{第3版の前書き}
+\begin{comment}
+\chapter*{第3版の前書き}
 
 本書の第3版における目標は2点ある．
 一つは，誤りを直したり色々な箇所の説明を改良したことで，
@@ -373,10 +417,10 @@
 
 
 
-\section*{序論}
-シンプレクティックトポロジーには長い歴史がある．
+\chapter*{序論}
+シンプレクティックトポロジーの歴史は長い．
 古典力学と幾何光学にルーツがあり，
-現代の装いでは，数学と理論物理における他の分野と多くの関わりをもつ．
+現代に於いては，数学と理論物理における他の分野と多くの関わりをもつ．
 それは力学系，低次元トポロジー，代数幾何，複素幾何，表現論，
 ホモロジー代数といったものから，
 古典力学，量子力学，弦理論，ミラー対称性まで多岐にわたる．
@@ -387,17 +431,99 @@
 運動方程式のハミルトン形式を保つ\emph{正準変換}の概念が出てくる．
 
 
-
-\begin{align*}
-    \left\{\frac{a}{b}\mid aa\right\},\\ 
-    \langle a\mid b\rangle\\
-    \langle a|b\rangle
-\end{align*}
-
-
+\end{comment}
 
 %\setcounter{subsection}{2}
 
+
+
+
+
+
+
+
+
+\clearpage
+\setcounter{chapter}{1}
+
+\chapter{線形シンプレクティック幾何}
+\setcounter{section}{4}
+\section{線形複素構造}
+実ベクトル空間\(V\)上の
+\textbf{（線形）複素構造}((linear) complex structure) とは
+自己同形\[
+    J\colon V\to V
+\]で\[
+    J^2=-\um
+\]をみたすものをいう．\footnote{\(\um\)は単位行列．}
+複素構造を一つ固定することにより，
+\(J\)に対応する\(i=\sqrt{-1}\)の作用で
+\(V\)は複素ベクトル空間になる．
+すなわち，スカラー倍は
+\[
+    \mathbb{C}\times V\to V
+    \colon 
+    (s+it,v)\mapsto sv+tJv
+\]
+で与えられる．
+とくに\(V\)は実次元が偶数でなければならない．
+\(V\)上の線形複素構造の空間\footnote{
+    のちに見るように，\(\cstr(V)\)は等質空間になる．
+    ベクトル空間ではない．(\(0\notin\cstr(V)\).)
+}を\(\mathcal{J}(V)\)で表す．
+複素構造の基本的な例としては，行列
+\[
+    \Jstd\coloneqq
+    \begin{pmatrix*}[r]
+        0&-\um\\
+        \um&0
+    \end{pmatrix*}.
+\]
+から定まる\(\mathbb{R}^{2n}\)の自己同形が挙げられる．
+\(\RR^{2n}\)と\(\CC^n\)の間には\(x,y\in\RR^n\)としたとき
+\((x,y)\mapsto x+iy\)という同形が定まる．
+これを通じて\(\RR^{2n}\)と\(\CC^n\)を同一視すれば，
+行列\(\Jstd\)は\(i\)を掛けることに対応する．
+
+\paragraph{この節の内容}
+\begin{itemize}
+    \item 複素構造の空間の性質
+    \item シンプレクティック構造と整合的な複素構造
+    \item シンプレクティック形式で統制された複素構造の集合
+\end{itemize}
+
+\paragraph{複素構造の空間の性質}
+次の命題は，任意の線形複素構造が標準複素構造\(\Jstd\)と同形である
+という主張である．
+\begin{PRP}
+    \(V\)を\(2n\)次元実ベクトル空間とし
+    \(J\)を\(V\)上の線形複素構造とする．
+    このとき，ベクトル空間の同形\(\Phi\colon\RR^{2n}\to V\)で
+    \(J\Phi=\Phi\Jstd\)をみたすものが存在する．
+\end{PRP}
+
+\begin{PRP}
+    \begin{enumerate}[(i)]
+        \item 空間\(\cstr(\RR^{2n})\)は等質空間
+        \(\GL(2n,\RR)/\GL(n,\CC)\)と微分同相であり，
+        したがって連結成分の数は2つである．
+        \item \(\Jstd\)を含む連結成分\(\cstrp(\RR^{2n})\)は，
+        標準的な向きと整合的な\(\RR^{2n}\)上の複素構造全体
+        のなす空間である．
+    \end{enumerate}
+\end{PRP}
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
 %===============================================
 % 参考文献スペース
 %===============================================

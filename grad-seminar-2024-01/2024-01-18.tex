@@ -1,7 +1,6 @@
 %=====================================
-%   guest-oshiba.tex
-%   2023年度方程 大柴寿浩
-%   2023/11/23 執筆開始
+%   2024-01-18.tex
+%   院生セミナー資料 大柴寿浩
 %=====================================
 
 % -----------------------
@@ -316,9 +315,22 @@
 %\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
 %\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
 %\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}%複体のホモトピー圏
-\newcommand{\Comp}{\mathrm{C}}
-\newcommand{\Komp}{\mathrm{K}}
-\newcommand{\Domp}{\mathsf{D}}%複体のホモトピー圏
+%\newcommand{\Comp}{\mathrm{C}}
+%\newcommand{\Komp}{\mathrm{K}}
+%\newcommand{\Domp}{\mathsf{D}}%複体のホモトピー圏
+
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
+\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}
+\newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
+\newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
+\newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
+\newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
+\newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
+\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+
+
+
 
 \newcommand{\CCat}{\Comp(\cat)}
 \newcommand{\KCat}{\Komp(\cat)}
@@ -331,8 +343,10 @@
 \newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
 \newcommand{\Rder}{\mathrm{R}}
 
-\newcommand{\simar}{\mathrel{\overset{\sim}{\longrightarrow}}}%内部Hom
-\newcommand{\simra}{\mathrel{\overset{\sim}{\longleftarrow}}}%内部Hom
+\newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
+\newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
+\newcommand{\simra}{\mathrel{\overset{\sim}{\leftarrow}}}%同型左矢印
+\newcommand{\simrra}{\mathrel{\overset{\sim}{\longleftarrow}}}%同型左矢印
 
 \newcommand{\hocolim}{{\mathrm{hocolim}}}
 \newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
@@ -347,6 +361,7 @@
 
 \newcommand{\rmD}{\mathrm{D}}
 
+\newcommand{\ori}{\mathord{\mathrm{or}}}
 
 
 
@@ -433,119 +448,22 @@
 % begin document and end document.
 % ---------------------------
 
-\title{2024/01/11 セミナー資料}
+\title{2024/01/18 セミナー資料}
 \author{大柴寿浩}
-\date{2024/01/11}
+\date{2024/01/18}
 \begin{document}
 \maketitle
-\section{{\cite[3.1]{KS90}}の続き}
-\(X\)と\(Y\)を局所コンパクト空間とし，
-\(X\times Y\)から\(X\)と\(Y\)への射影を
-それぞれ\(q_1\), \(q_2\)で表す．
-\begin{PRP}[{\cite[Proposition 3.1.15]{KS90}}]
-    \(Y\)の\(c\)柔軟次元は有限であるとする．
-    \(F\in\Domp^+(A_X)\), 
-    \(G\in\Domp^{\mathrm{b}}(A_X)\)とする．このとき，
-    次の自然な同型が成り立つ．
-    \[
-        \RG(X\times Y; \RHOM(q_2^{-1}G,q_1^!F))
-        \cong
-        \RHOM\left(
-            \RG_c\left(Y;G\right),\RG\left(X;F\right)
-        \right).    
-    \]
-\end{PRP}
-\begin{proof}
-    次の図式を考える．
-    \[\begin{tikzcd}
-        X\times Y
-        \arrow[rr,"q_{2}"]
-        \arrow[dd,"q_{1}"']
-        &&
-        Y
-        \arrow[dd,"\mathrm{a}_Y"]
-        \\
-        {}&\square&{} 
-        \\
-        X\arrow[rr,"\mathrm{a}_X"']
-        &&
-        \{\pt\}.
-    \end{tikzcd}\]
-    このとき，
-    \begin{align*}
-        &\RG(X\times Y; \RHOM(q_2^{-1}G,q_1^!F))\\
-        &\cong\Rder {\mathrm{a}_{X\times Y}}_\ast 
-        \RHOM(q_2^{-1}G,q_1^!F)\quad 
-        &\text{（切断を1点への射影で表す．）}\\
-        &\cong \Rder {\mathrm{a}_{X}}_\ast\Rder{q_{1}}_\ast
-        \RHOM(q_2^{-1}G,q_1^!F)\quad 
-        &\text{（\(\mathrm{a}_{X\times Y}=\mathrm{a}_X\circ q_1.\)）}\\
-        &\cong \Rder {\mathrm{a}_{X}}_\ast
-        \RHOM(\Rder{q_{1}}_! q_2^{-1}G,F)\quad 
-        &\text{（ポアンカレ・ヴェルディエ双対．）}\\
-        &\cong \Rder {\mathrm{a}_{X}}_\ast
-        \RHOM(\mathrm{a}_{X}^{-1}\Rder {\mathrm{a}_{Y}}_!G,F)\quad 
-        &\text{（固有基底変換．）}\\
-        &\cong 
-        \RHOM(\Rder {\mathrm{a}_{Y}}_!G,{\Rder\mathrm{a}_{X}}_{\ast}F)\quad 
-        &\text{（順像と逆像の随伴．）}\\
-        &\cong 
-        \RHOM(\RG_c\left(Y;G\right),\RG\left(X;F\right)).\quad 
-        &\text{（順像を切断で表す．）}
-    \end{align*}
-\end{proof}
-\begin{comment}
-\begin{CMT}
-    最後から2行目の変形（順像と逆像の随伴の行）で
-    \({\Rder\mathrm{a}_Y}_!G\)を考えている．
-    これが\(\Domp^+(A_{\{\pt\}})\)に属すために，
-    \(Y\)の次元に関する条件が要る．
-\end{CMT}
-\end{comment}
-\begin{DFN}[{\cite[Definition 3.1.16]{KS90}}]
-    \begin{enumerate}[(i)]
-        \item \(f\colon Y\to X\)を連続写像とし，
-        \(f_!\)のコホモロジー次元は有限であるとする．
-        \[
-            \omega_{Y/X}\coloneqq f^!A_X \in \Domp^+(A_Y)
-        \]
-        とおき，
-        \textbf{相対双対化複体} (relative dualizing complex) という．
-        \(\omega_f\)ともかく．
-        \(X=\{\pt\}\)のとき，
-        \(\omega_Y=\omega_{Y/\{\pt\}}\)とおき，双対化複体とよぶ．
-        \item \(X\)のc柔軟次元が有限であるとする．
-        \(F\in\Domp^{\mathrm{b}}(X)\)とする．このとき，
-        \begin{align*}
-            \rmD_XF=\RHOM(F,\omega_X), \\
-            \rmD'_XF=\RHOM(F,A_X)
-        \end{align*}
-        とおく．
-        \(\rmD_XF\)を\(F\)の
-        \textbf{ヴェルディエ双対} (Verdier dual) という．
-    \end{enumerate}
-\end{DFN}
 
+
+\section{向きづけと双対性{\cite[3.3]{KS90}}}
+
+\subsection{前回示したもの}
 次がある．
 \begin{equation}
     f^{-1}(\cdot)\otimes\omega_{Y/X}\to f^!(\cdot).\label{eq:VerdierDual}
 \end{equation}
-\begin{proof}
-    \cite[Proposition 3.1.11]{KS90}の式
-    \[
-        f^!(\cdot)\otimes^\mathrm{L}_{A_Y}f^{-1}(\cdot)
-        \to
-        f^!\left(\cdot\otimes^\mathrm{L}_{A_X}\cdot\right)
-    \]の第1引数に\(A_X\)を入れると次の射が得られる．
-    \[
-        f^!A_X\otimes^\mathrm{L}_{A_Y}f^{-1}(\cdot)
-        \to
-        f^!\left(A_X\otimes^\mathrm{L}_{A_X}\cdot\right)
-        \cong f^!(\cdot).
-    \]        
-\end{proof}
 
-ポアンカレ・ヴェルディエ双対定理から，
+
 \(F\in\Domp^\mathrm{b}(A_X)\)に対して次が成り立つ．
 \begin{align}
     \Hom_{\Domp^\mathrm{b}(A_X)}(F,\omega_X)
@@ -555,188 +473,7 @@
     &\cong
     \RHom(\RG_c(X;F),A).\label{eq:RPV-dual}
 \end{align}
-実際，\(\omega_X=\mathrm{a}_X^!A\)に対応する
-\({\Rder\mathrm{a}_X}_!F\)を切断で表せばよい．
 
-とくに，局所閉集合\(Z\)に対し\(F=A_Z\)を考えると
-\begin{align*}
-    \RG_Z(X;\omega_X)
-    &\cong\RHom(A_Z,\omega_X)\\
-    &\cong\RHom(\RG_c(Z;A_Z),A)
-\end{align*}
-となる．
-\begin{comment}
-\begin{CMT}
-    \begin{align*}
-        \RG_Z(X;\omega_X)
-        &\cong \RG(X;\RG_Z(\omega_X))\\
-        &\cong\RG(X;\RHOM(A_Z,\omega_X))\\
-        &\cong\RG(X;{\Rder\mathrm{a}_X}_\ast\RHOM(A_Z,A))\\
-        &\cong\RHom(\RG_c(Z;A_Z),A)
-    \end{align*}
-\end{CMT}
-\end{comment}
-
-\section{多様体における消滅定理{\cite[3.2]{KS90}}}
-
-\(V\)を\(n\)次元実ベクトル空間とする．\footnote{ユークリッド空間の意味で言っている？}
-\begin{LMM}
-    \(F\in\Sh(V)\)とすると，
-    \[H^j_c(V;F)=0.\quad(j>n)\]
-\end{LMM}
-\begin{proof}
-    まず\(n=1\)の場合に示す．
-    \(i\colon V\to [0,1]\)を\(V\)から\({]0,1[}\subset [0,1]\)
-    への同相写像とする．\(\widetilde{F}\coloneqq i_!F\)とおくと，
-    \[
-        H^j_c(V;F)
-        \overset{\sim}{\longrightarrow}
-        H^j([0,1];\widetilde{F})
-    \]
-    が成り立つ．
-    \begin{center}
-        \begin{minipage}{.9\textwidth}
-        \begin{redleftbar}
-            \subparagraph*{同型のチェック}
-            \begin{align*}
-                H^j_c(V;F)
-                &\cong H^j\RG_c(V;F)\\        
-                &\cong H^j{\Rder\mathrm{a}_V}_!F        
-            \end{align*}
-            と
-            \begin{align*}
-                H^j([0,1];\widetilde{F})
-                &\cong H^j\RG([0,1];\Rder{i}_!F)\\        
-                &\cong H^j{\Rder\mathrm{a}_{[0,1]}}_\ast\Rder{i}_!F        
-            \end{align*}
-            より，
-            \(
-                {\Rder\mathrm{a}_V}_!
-                \cong
-                {\Rder\mathrm{a}_{[0,1]}}_\ast\Rder{i}_!
-            \)
-            であればよいが，
-            これは\(\mathrm{a}_{[0,1]}\)が固有ならば成り立つ．
-            \(\mathrm{a}_{[0,1]}\)は固有なので，同型．
-        \end{redleftbar}
-        \end{minipage}
-    \end{center}
-    よって，\cite[Proposition 2.7.3 (i)]{KS90}\footnote{
-        \(I=[0,1]\subset\rr\)とする．\(F\in\Sh(I)\)に対し，
-        \(H^j(I;F)=0.\quad(j>1)\)
-    }より，
-    \[
-        0=H^j([0,1];\widetilde{F})
-        \cong H^j_c(V;F)
-    \]
-    である．
-
-    次に，一般の場合に示す．
-    \(V'\)を\((n-1)\)次元ベクトル空間とし，
-    \(f\colon V\to V'\)を全射線形写像とする．
-    \textcolor{red}{先の結果から\(\Rder^jf_!F=0.\quad (j\ne0,1)\)}
-    
-    いま，
-    \begin{align*}
-        \Rder^0 f_!F&\cong\tau^{\leqq0}\Rder f_!F,\\
-        \tau^{\geqq1}\Rder f_!F&\cong\Rder^1 f_!F[-1]
-    \end{align*}
-    である．
-    \begin{center}
-        \begin{minipage}{.9\textwidth}
-        \begin{redleftbar}
-            \subparagraph*{前半のチェック}
-            \[
-                \cdots\to0\to\left(\Rder f_!F\right)^0
-                \to\left(\Rder f_!F\right)^1
-                \to0\to\cdots
-                \quad\text{in \(\Domp^+(V')\)}
-            \]
-            の切り落とし\(\tau^{\leqq0}\Rder f_!F\)は，
-            \[
-                \cdots\to0\to\Ker d^0
-                \to0
-                \to0\to\cdots
-                \quad\text{in \(\Domp^+(V')\)}
-            \]
-            である．他方，\(\Rder^0 f_!F\)は
-            \[
-                \Rder^0 f_!F
-                \cong H^0(\Rder f_!F)
-                \cong \Ker d^0/0=\Ker d^0
-            \]
-            である．
-            これを0次に集中した複体と見れば
-            \(\tau^{\leqq0}\Rder f_!F\)
-            と一致する．
-        \end{redleftbar}
-        \end{minipage}
-    \end{center}
-    \begin{center}
-        \begin{minipage}{.9\textwidth}
-        \begin{redleftbar}
-            \subparagraph*{後半のチェック}
-            \[
-                \cdots\to0\to\left(\Rder f_!F\right)^0
-                \to\left(\Rder f_!F\right)^1
-                \to0\to\cdots
-                \quad\text{in \(\Domp^+(V')\)}
-            \]
-            の切り落とし\(\tau^{\geqq1}\Rder f_!F\)は
-            \[
-                \cdots\to0\to0
-                \to\Coker d^0
-                \to0\to\cdots
-                \quad\text{in \(\Domp^+(V')\)}
-            \]
-            である．
-            他方，\(\Rder^1 f_!F\)は
-            \[
-                \Rder^1 f_!F
-                \cong H^1(\Rder f_!F)
-                \cong \Ker d^1/\Img d^0
-                \cong(\Rder f_!F)^1/\Img d^0
-                \cong\Coker d^0
-            \]
-            である．
-            これを0次に集中した複体と見ると
-            \[
-                \cdots\to0^{(-1)}\to\Coker d^0
-                \to0^{(1)}
-                \to0^{(2)}\to\cdots
-                \quad\text{in \(\Domp^+(V')\)}
-            \]
-            となる．この複体に\([-1]\)を適用すると
-            \(\tau^{\geqq1}\Rder f_!F\)に一致する．
-        \end{redleftbar}
-        \end{minipage}
-    \end{center}
-    よって，特三角
-    \[
-        \Rder^0 f_!F
-        \to\Rder f_!F
-        \to\Rder^1 f_!F[-1]
-        \overset{+1}{\to}
-    \]
-    を得る．(cf. \cite[(1.7.2)]{KS90})
-    この特三角に\(\RG_c(V';\cdot)\)を適用すると，
-    長完全列
-    \[
-        \cdots\to H^j(V';\Rder^0 f_!F)
-        \to H^j(V;F)
-        \to H^{j-1}(V';\Rder^1 f_!F)
-        \to\cdots
-    \]
-    が得られる．
-    よって，\(n\)に関する帰納法から，
-    \(H_c^j(V;F)=0\)が\(j>n\)に対して成り立つ．
-\end{proof}
-
-
-
-
-\section{向きづけと双対性{\cite[3.3]{KS90}}}
-\eqref{eq:VerdierDual}が同型になるための十分条件を調べる．
 \begin{DFN}
     \(f\colon Y\to X\)を局所コンパクト空間の間の連続写像とする．
     \(f\)がファイバー次元\(l\)の
@@ -758,7 +495,9 @@
     \(X,Y\)が\(C^1\)級多様体で\(f\)を\(C^1\)沈めこみとすると，
     \(f\)は位相的沈めこみである．
 \end{EG*}
-\begin{PRP}
+\subsection{今回}
+
+\begin{PRP}\label{PRP:subm}
     \(f\colon Y\to X\)をファイバー次元\(l\)の位相的沈めこみとする．
     \begin{enumerate}[(i)]
         \item \(k\ne -l\)に対し\(H^k(f^!A_X)=0\)であり，局所的に\(H^{-l}(f^!A_X)\cong A_Y\)である．
@@ -793,22 +532,27 @@
         \arrow[rr,"f"]
         \arrow[dd,"p"']
         &&
-        Y
+        X
         \arrow[dd,"\mathrm{a}_X"]
         \\
         {}&\square&{} 
         \\
-        X\arrow[rr,"\mathrm{a}_{\rr^l}"']
+        \rr^l\arrow[rr,"\mathrm{a}_{\rr^l}"']
         &&
         \{\pt\}.
     \end{tikzcd}\]
-    固有基底変換から
-    \(p^{-1}\mathrm{a}_{\rr^l}^!=p^{-1}\omega_{\rr^l}
-    \to f^!A_X=f^!\mathrm{a}^{-1}_XA\)がある．
-    任意の\(F\in\Domp^+(A_X)\)に対し次の射がある．
+    固有基底変換から射
+    \(p^{-1}\omega_{\rr^l}
+    =p^{-1}\mathrm{a}_{\rr^l}^! A
+    \to 
+    f^!\mathrm{a}^{-1}_XA
+    =f^!A_X\)が定まる．
+    任意の\(F\in\Domp^+(A_X)\)に対し，
+    この射と\eqref{eq:VerdierDual}から
+    次の射が定まる．
     \begin{equation}
-        p^{-1}\omega_{\rr^l}A\otimes f^{-1}F
-        \to f^!A_X\otimes f^{-1}F\to f^{-1}F.
+        p^{-1}\omega_{\rr^l}\otimes f^{-1}F
+        \to f^!A_X\otimes f^{-1}F\to f^{-1}F.\label{eq:subm-mor}
     \end{equation}
     これが同型になることを示す．
     \(U\subset\rr^l\), \(V\subset X\)とする．
@@ -823,25 +567,368 @@
         \\
         {}&V 
     \end{tikzcd}\]
-    となっている．
+    となる．
     \begin{align*}
         &\RG(U\times V;f^!F)\\
         &\cong \RHom_{Y}(A_{U\times V},f^!F)&\text{\(\Gamma\)の定義}\\
         &\cong \RHom_X(\Rder f_!A_{U\times V},F)&\text{ポアンカレ・ヴェルディエ双対}\\
-        &\cong \RHom_X(\RG_c(U;A_U)\otimes^\mathrm{L}A_V,F)\\
-        &\cong \RHom(\RG_c(U;A_U),A)\otimes^\mathrm{L}\RHOM(A_V,F)\\
-        &\cong \RG(U;\omega_{\rr^l})\otimes^\mathrm{L}\RG(V;F)&\text{上で示した}
+        &\cong \RHom_X(\RG_c(U;A_U)\otimes^\mathrm{L}A_V,F)\tag{\(\natural\)}\label{eq:natural}\\
+        &\simra \RHom(\RG_c(U;A_U),A)\otimes^\mathrm{L}\RHom(A_V,F)\tag{\(\flat\)}\label{eq:flat}\\
+        &\simra \RG(U;\omega_{\rr^l})\otimes^\mathrm{L}\RG(V;F)&\text{上で示した}
     \end{align*}
-    となる．
-    よって同型．(ii)から(i)が従う．
+    となる．ただし\eqref{eq:natural}の部分は
+    \begin{align*}
+        \Rder f_!A_{U\times V}
+        &\cong \Rder f_!\left(
+            A_{U\times V}
+            \otimes 
+            A_{U\times V}
+        \right)\\
+        &\cong \Rder f_!\left(
+            \mathrm{a}^{-1}_{{U\times V}}A
+            \otimes
+            \mathrm{a}^{-1}_{{U\times V}}A
+        \right)\\
+        &\cong \Rder f_!\left(
+            p^{-1}\mathrm{a}^{-1}_{U}A
+            \otimes
+            f^{-1}\mathrm{a}^{-1}_{V}A
+        \right)\\
+        &\cong \Rder f_!\left(
+            p^{-1}A_{U}
+            \otimes
+            f^{-1}A_{V}
+        \right)
+    \end{align*}
+    であり，射影公式から，
+    \begin{align*}
+        \Rder f_!\left(
+            p^{-1}A_{U}
+            \otimes
+            f^{-1}A_{V}
+        \right)
+        &\cong \Rder f_!p^{-1}A_{U}\otimes A_{V}
+    \end{align*}
+    であり，固有基底変換から，
+    \begin{align*}
+        \Rder f_!p^{-1}A_{U}\otimes f^{-1}A_{V}
+        &\cong
+        \mathrm{a}^{-1}_{V} \Rder{\mathrm{a}_{U}}_! A_U\otimes A_V\\
+        &\cong
+        \mathrm{a}^{-1}_{V}\RG_c(U;A_U)\otimes A_V
+    \end{align*}
+    となることから従う．\eqref{eq:flat}の部分は分かってない．
+    
+    以上より\eqref{eq:subm-mor}は同型である．(ii)から(i)が従う．
 \end{proof}
+
+\begin{DFN}
+    \(f\colon Y\to X\)をファイバー次元が\(l\)の位相的しずめ込みとする．
+    \[
+        \ori_{Y/X}\coloneqq H^{-l}(\omega_{Y/X})\in\Mod(A_Y)
+    \]
+    とおき，\textbf{相対向きづけ層} (relative orientation sheaf) 
+    と呼ぶ．
+    \(X=\{\pt\}\)のとき，\(\ori_Y\)とかき，向きづけ層という．
+\end{DFN}
+
+命題\ref{PRP:subm}より，
+\begin{equation}
+    \omega_{Y/X}\cong \ori_{Y/X}[l]
+\end{equation}
+である．
+
+\begin{proof}[\textbf{チェック}]
+    \(\ori_{Y/X}\)を0時に集中した複体とみなす．
+    このとき，\(
+        \left(\ori_{Y/X}[l]\right)^n=H^{-l}(\omega_{Y_X})
+    \)となるのは\(n=-l\)のときである．
+    したがって，\[
+        H^{-l}(\ori_{Y/X}[l])=H^{-l}(\omega_{Y/X})
+    \]
+    である．
+\end{proof}
+
+\begin{PRP}
+    \(f\colon Y\to X\)をファイバー次元が\(l\)の位相的しずめ込みとする．
+    \begin{enumerate}[(i)]
+        \item \(\omega_{Y/X}^\zz\in\Dompl(\zz_Y)\)と
+        \(\ori_{Y/X}^\zz\in\Mod(\zz_Y)\)を\(\zz\)上の
+        双対化複体と向きづけ層とするとき，次の同型が成り立つ．\[
+            \omega_{Y/X}\cong A_Y
+            \mathop{\otimes}\limits_{\zz_Y}
+            \omega_{Y/X}^\zz, 
+            \quad
+            \ori_{Y/X}\cong A_Y
+            \mathop{\otimes}\limits_{\zz_Y}
+            \ori_{Y/X}^\zz. 
+        \]
+        \item 次の自然な同型が成り立つ．
+        \begin{align*}
+                \ori_{Y/X}\otimes \ori_{Y/X}\cong A_Y,\\
+                \HOM(\ori_{Y/X},A_Y)\cong A_Y.
+        \end{align*}
+        \item \(g\colon Z\to Y\)を連続写像で
+        \(f\circ g\)がファイバー次元\(m\)の位相的しずめ込み
+        になるものとする．\(F\in\Dompl(A_X)\)に対して，
+        \[
+            g^{!}\circ f^{-1}F
+            \cong
+            \left(f\circ g\right)^{-1}F
+            \otimes \ori_{Z/X}
+            \otimes g^{-1}\ori_{Y/X}[m-l]
+        \]が成り立つ．
+    \end{enumerate}
+\end{PRP}
+\begin{proof}
+    (i) 
+    命題\ref{PRP:subm} (ii) より，
+    \begin{align*}
+        A_Y\otimes_{\zz_Y}\omega_{Y/X}^\zz 
+        \cong
+        f^{-1}A_X\otimes_{\zz_Y}f^!\zz_X
+        \cong
+        f^!(A_X)=\omega_{Y/X}
+    \end{align*}
+    と
+    \begin{align*}
+        A_Y\otimes_{\zz_Y}\ori_{Y/X}^\zz 
+        \cong
+        f^{-1}A_X\otimes_{\zz_Y}f^!\zz_X[-l]
+        \cong
+        f^!(A_X[-l])
+        \cong
+        \omega_{Y/X}[-l]
+        =\ori_{Y/X}
+    \end{align*}
+
+    (ii) 
+    \cite[Exercise III.3]{KS90}\begin{quote}
+        \(X\in\cTop\)とし，\(F\in\Sh(X)\)を\(\zz_X\)に
+        局所的に同型な層とする．
+        このとき，\[
+            F\otimes F\cong \zz_Z,\quad \rmD'F\cong F
+        \]が成り立つことを示せ．
+    \end{quote}
+    の結果を用いると，\[
+        \ori_{Y/X}^\zz\otimes \ori_{Y/X}^\zz\cong Z_Y
+    \]であり，これの両辺に\(A_Y\)をかければ，
+    \[
+        \ori_{Y/X}\otimes \ori_{Y/X}
+        \cong
+        \left(\ori_{Y/X}^\zz\otimes \ori_{Y/X}^\zz\right)\otimes A_Y
+        \cong Z_Y\otimes A_Y
+        \cong A_Y
+    \]
+    である．
+
+    (iii) 
+    命題\ref{PRP:subm}と前の結果から
+    \begin{align*}
+        \left(g^!f^!F=\right) 
+        \left(f\circ g\right)^!F
+        &\cong
+        \left(f\circ g\right)^!A_X
+        \otimes
+        \left(f\circ g\right)^{-1}F\\
+        &\cong
+        \omega_{Z/X}
+        \otimes
+        \left(f\circ g\right)^{-1}F\\
+        &\cong
+        \ori_{Z/X}[m]\otimes
+        \left(f\circ g\right)^{-1}F
+    \end{align*}
+    と
+    \begin{align*}
+        f^!F
+        \cong f^{-1}F\otimes \omega_{Y/X}
+        \cong f^{-1}F\otimes \ori_{Y/X}[l]
+    \end{align*}
+    が成り立つ．いま
+    \begin{align*}
+        g^!\left(f^{-1}F\otimes\ori_{Y/X}[l]\right)
+        &\cong
+        g^!\left(f^!F\right)\\
+        &\cong
+        (f\circ g)^!F\\
+        &\cong
+        \ori_{Z/X}[m]\otimes
+        \left(f\circ g\right)^{-1}F
+    \end{align*}
+    に\(g^{-1}\ori_{Y/X}[-l]\)をかけると
+    \[
+        g^!\left(f^{-1}F\otimes\ori_{Y/X}[l]\right)
+        \otimes g^{-1}\ori_{Y/X}[-l]
+        \cong
+        \ori_{Z/X}[m]\otimes\left(f\circ g\right)^{-1}F
+        \otimes g^{-1}\ori_{Y/X}[-l]
+    \]
+    が成り立つ．左辺は
+    \begin{align*}
+        g^!\left(f^{-1}F\otimes\ori_{Y/X}[l]\right)
+        \otimes g^{-1}\ori_{Y/X}[-l]
+        &\cong
+        g^!\left(
+            f^{-1}F\otimes\ori_{Y/X}[l]\otimes\ori_{Y/X}[-l]
+        \right)\\
+        &\cong
+        g^!\circ f^{-1}F
+    \end{align*}
+    であり，右辺は\begin{align*}
+        &\ori_{Z/X}[m]\otimes\left(f\circ g\right)^{-1}F
+        \otimes g^{-1}\ori_{Y/X}[-l]\\
+        \cong&
+        \ori_{Z/X}\otimes\left(f\circ g\right)^{-1}F
+        \otimes g^{-1}\ori_{Y/X}[m-l]
+    \end{align*}
+    となることから主張が従う．
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
+\appendix
+
+\section{前回の補足}
+\subsection{はめ込み・うめ込み・しずめ込み}
+参考文献は\cite{GP74}．
+\(X\), \(Y\)を多様体とする．
+\(d_X\coloneqq\dim X\), \(d_Y\coloneqq \dim Y\)とかく．
+
+\paragraph{局所微分同相}
+\(d_X=d_Y\)とする．
+\(f\colon X\to Y\)が\(x\in X\)において
+\textbf{局所微分同相写像} (local diffeomorphism) 
+であるとは，
+\(x\)の近傍\(U\)と\(y=f(x)\)の近傍\(V\)で
+\(U\)と\(V\)が微分同相となるものが存在することをいう．
+逆写像定理から，\(f\)が\(x\)において局所微分同相であるためには，
+接写像\(df_x\colon T_xX\to T_{f(y)}Y\)が同形である
+ことが必要十分である．
+\begin{EG}
+    1次元多様体\(\rr\)から\(S^1\)への写像\(f\colon\rr\to S^1\)を
+    \[
+        f(t)\coloneqq (\cos{t},\sin{t})
+    \]で定める．\(\rank df_t=\rank(-\sin{t},\cos{t})\equiv 1\)である．
+    \(f\)は局所微分同相写像であるが，
+    微分同相写像ではない．
+\end{EG}
+
+\paragraph{はめ込み}
+\(d_X<d_Y\)のとき，
+\(\rank{df_x}\leqq d_X\)であり，\(df_x\)は全射にはなりえない．
+\(df_x\)が単射となるのは\(\rank{df_x}=d_X\)のときである．
+\begin{DFN}
+    \(X\), \(Y\)を\(C^1\)級多様体とする．
+    \(f\colon X\to Y\)が\(x\)において
+    \textbf{はめ込み} (immersion) 
+    であるとは，
+    \(df_x\colon T_xX\to T_{f(y)}Y\)
+    が単射であることをいう．
+    各点\(x\in X\)で\(df_x\colon T_xX\to T_{f(y)}Y\)
+    が単射であるとき，\(f\)をはめ込みという．
+\end{DFN}
+
+\paragraph{うめ込み}
+はめ込みは局所的な条件である．
+大域的な性質を得るには位相的な条件が必要である．
+\begin{DFN}
+    \(X\), \(Y\)を\(C^1\)級多様体とする．
+    \(f\colon X\to Y\)が
+    \textbf{うめ込み} (embedding, imbedding) 
+    であるとは，
+    各点\(x\in X\)で\(df_x\colon T_xX\to T_{f(y)}Y\)
+    が単射であり，\(f\)が\(X\)から\(f(X)\)の上への
+    微分同相であることをいう．
+\end{DFN}
+
+\(f\)がうめ込みであることは，
+\(f\)が単射かつ固有なはめ込みであることと同値である．
+
+\paragraph{しずめ込み}
+
+\(d_X> d_Y\)のとき，
+\(df_x\)は単射になりえない．
+\begin{DFN}
+    \(X\), \(Y\)を\(C^1\)級多様体とする．
+    \(f\colon X\to Y\)が\(x\)において
+    \textbf{しずめ込み} (submersion) 
+    であるとは，
+    \(df_x\colon T_xX\to T_{f(y)}Y\)
+    が全射であることをいう．
+    各点\(x\in X\)で\(df_x\colon T_xX\to T_{f(y)}Y\)
+    が全射であるとき，\(f\)をたんにしずめ込みという．
+\end{DFN}
+\(f\)が全射であることを課すこともある．
+\(X\)がコンパクト，\(Y\)が連結であるとき，
+しずめ込み\(f\colon X\to Y\)は全射である．
+
+\begin{EG}
+    接束\(TX\)から\(X\)への射影\(\pi\colon TX\to X\)はしずめ込みである．
+\end{EG}
+
+\subsection{位相的はめ込み・うめ込み・しずめ込み}
+\cite{Le13}に滑らかでない場合のうめ込みとしずめ込み
+に関する記述があったのでまとめておく．
+
+\(X\), \(Y\)が位相空間であるとき，
+\textbf{位相的うめ込み} (topological embedding, -- imbedding) 
+を\(f\colon X\to Y\)が中への同相であることとして定義する\footnote{
+    他の文脈だとこちらを immersion と呼ぶ本もあるらしい．
+    例えば代数幾何関係だと，
+    Hartshorne, Liu, 飯高, 上野の本は全て immersion と呼んでいる．
+    訳語について，飯高は埋入，上野は移入と訳している．
+}．
+
+\begin{DFN}
+    \(X\), \(Y\)を位相空間とする．
+    \(f\colon X\to Y\)が，
+    \textbf{位相的はめ込み} (topological immersion) 
+    であるとは，各点\(x\in X\)に対し，
+    その近傍\(U\)で\(f\rvert_U\)が位相的うめ込みであることをいう．
+\end{DFN}
+\begin{DFN}
+    \(X\), \(Y\)を位相空間とする．
+    \(f\colon X\to Y\)が，
+    \textbf{位相的しずめ込み} (topological submersion) 
+    であるとは，各点\(x\in X\)が，
+    局所切断\(\pi\colon Y\to X\)の像に含まれることをいう．
+\end{DFN}
+これと\cite[Definition 3.3.1]{KS90}の関係については
+まだ調べている途中．
+
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
+    \bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
+    \textit{Differential Topology}, 
+    Prentice-Hall, 1974.
     \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
     \textit{Sheaves on Manifolds}, 
     Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+    \bibitem[Le13]{Le13} John M. Lee, 
+    \textit{Introduction to Smooth Manifolds}, Second Edition,
+    Graduate Texts in Mathematics, \textbf{218}, Springer, 2013.
+    \bibitem[Sp65]{Sp65} Michael Spivak, 
+    \textit{Calculus on Manifolds}, 
+    Benjamin, 1965.
 \end{thebibliography}
 
 %===============================================
