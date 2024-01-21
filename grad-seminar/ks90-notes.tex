@@ -17,7 +17,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[11pt, a4paper, dvipdfmx, leqno]{jsbook}
+\documentclass[12pt, a4paper, dvipdfmx, leqno]{jsbook}
 
 % ------------------------
 % usepackage
@@ -66,7 +66,7 @@
     urlcolor=darkblue,
 }
 \usepackage{pxjahyper}
-\usepackage[mathscr]{euscript}
+\usepackage[mathcal]{euscript}
 \usepackage{layout}
 \usepackage{framed}
 \definecolor{lightgray}{rgb}{0.75,0.75,0.75}
@@ -257,6 +257,7 @@
 \newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
 \newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
 \newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\Int}{\mathop{\mathrm{Int}}\nolimits}
 \newcommand{\res}{\mathop{\rho}\nolimits}
 \newcommand{\A}{\mcal{A}}
 \newcommand{\B}{\mcal{B}}
@@ -287,6 +288,9 @@
 \newcommand{\scD}{\mathscr{D}}
 \newcommand{\scE}{\mathscr{E}}
 \newcommand{\scF}{\mathscr{F}}
+\newcommand{\scN}{\mathscr{N}}
+\newcommand{\scO}{\mathscr{O}}
+\newcommand{\scV}{\mathscr{V}}
 
 \newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
 \newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
@@ -344,6 +348,10 @@
 
 \newcommand{\Sh}{\mathrm{Sh}}
 \newcommand{\PSh}{\mathrm{PSh}}
+
+\newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
+\newcommand{\ori}{\mathord{\mathrm{or}}}
+\newcommand{\Db}{\mathord{\mathscr{D}b}}
 
 
 % =================================
@@ -1452,6 +1460,209 @@ $\cat$の三角とは射の列
     \end{center}
 \end{proof}
 
+\setcounter{section}{8}
+\section{実・複素多様体上の層の例}
+ここで層の例をいくつか挙げる．
+そのうちの大部分については11章で詳しい説明を与えることにする．
+
+\subsection{層\(C_X^0\)}
+位相空間\(X\)において，
+\(X\)の開集合\(U\)に対し複素数値連続関数の空間\(C^0(U)\)を
+対応させ，制限射を通常の関数の制限で定めた
+前層は明らかに層になる．
+この層を\(C_X^0\)で表す．
+定数層\(\zz_X\)は\(\zz\)値関数のなす\(C_X^0\)の部分層とみなせる．
+
+\subsection{層\(\Lloc[dx]\)}
+\(U\)をユークリッド空間\(\rr^n\)の開集合とし，
+\(L^1(U;dx)\)を\(\rr^n\)上のルベーグ測度\(dx\)に関する\(U\)上の
+可積分関数の空間とする．
+前層\(U\mapsto L^1(U;dx)\)は層ではない．
+この前層から誘導された\(\rr^n\)上の層を
+\(\Lloc[dx]\)
+で表す．
+
+\subsection{環付き空間}
+環付き空間\((X,\scA_X)\)とは
+位相空間\(X\)に環の層\(\scA_X\)をあわせたものをいう．
+環付き空間の射
+\(f\colon(Y,\scA_Y)\to(X_,\scA_X)\)
+は連続写像\(f\colon X\to Y\)に
+環の層の射\(f^{-1}\scA_X\to\scA_Y\)をあわせたものをいう．
+\(A\)が環で\(\scA_X\)が\(A\)代数の層である（すなわち
+層の射\(A_X\to\scA_X\)が存在する）とき，
+\((X,\scA_X)\)を\(A\)環付き空間と呼ぶ．
+
+\subsection{\(C^\alpha\)多様体}
+\(\alpha\)を整数\(0\leqq\alpha<\infty\)
+または\(\alpha=\omega\)とする．
+\(\rr^n\)上の複素数値\(C^\alpha\)級関数（\(C^\omega\)のとき
+実解析的関数）の層を\(C^\alpha_{\rr^n}\)で表す．
+\(n\)次元実\(C^\alpha\)多様体\(M\)とは，
+無限遠点で可算な局所コンパクト空間\(M\)と環の層\(C^\alpha_M\)の組で，
+\(\cc\)環付き空間として\((\rr^n,C^\alpha_{\rr^n})\)と
+局所的に同型であるものをいう．
+
+\(\dim X\)（または\(\dim_\rr X\)）で実多様体\(X\)の次元を表す．
+文献によっては層\(C^\omega_M\)を\(\scA_M\)で表すことも多い．
+
+微分幾何学の基礎的な課程としてGuillemin-Pollack\cite{GP74}を挙げる．
+
+\subsection{向きづけ，微分形式，密度}
+\(C^0\)多様体\(M\)上の層として，向きづけ層\(\ori _M\)を
+考えることも必要になってくる．
+\(\ori_M\)は\(\zz_M\)と局所的に同型な層であり，
+\(M\)の向きが存在する場合，
+その向きを選ぶことと同型\(\ori_M\cong\zz_M\)を選ぶことが
+同義となるようなものである．
+\(\ori_M\)については次章で詳しくしらべる．
+
+いま，\(\alpha=\infty\)または\(\alpha=\omega\)とし，
+\(p\)を整数とする．\(C^\alpha_M\)を係数にもつ\(p\)次微分形式
+の層を\(C_M^{\alpha,(p)}\)とおく．
+また外微分を\(
+    d\colon C_M^{\alpha,(p)}\to C_M^{\alpha,(p+1)}
+\)で表す．
+
+\((x_1,\dots,x_n)\)が\(M\)上の局所座標系であるとする．
+このとき，\(p\)形式\(f\)は次の形にただ一通りに表されるのであった．
+\[
+    f=\sum_{\lvert I\rvert=p}^{}f_Idx_I,
+\]ここに，\(
+    I=\left\{i_1,\dots,i_p\right\}\subset\{1,\dots,n\}
+\), \((i_1<i_2<\dots<i_p)\), 
+\(dx_I=dx_{i_1}\wedge\dots\wedge dx_{i_p}\)で，
+\(f_I\)は\(C^\alpha_M\)の切断である．
+このとき，\[
+    df=\sum_{i=1}^{n}\sum_{\lvert I\rvert=p}^{}\frac{\partial f_I}{\partial x_i}dx_i\wedge dx_I
+\]となるのであった．
+もうひとつ層を導入する．
+\[
+    \scV_M^\alpha
+    \coloneqq
+    C^{\alpha,(n)}_M\otimes\ori_M
+%    \quad
+ %   \text{}
+\]（\(\alpha=\infty\)または\(\alpha=\omega\)）とおき，
+\(M\)上の\(C^\alpha\)密度の層とよぶ．
+
+コンパクト台をもつ\(C^\infty\)密度は積分することができる．
+\(\int_M\cdot\)で積分写像
+\begin{equation}
+    \int_M\cdot\colon\Gamma_c(M;\scV_M^\infty)\to\cc \label{eq:int}
+\end{equation}を表す．
+\(C^{\alpha,(p)}_M\)と\(\scV_M^\alpha\)は
+\(C^\alpha_M\)加群の層である．
+
+「1の分割」の存在から，
+層\(C^\alpha_M\)，\(C^{\alpha,(p)}\)，\(\scV_M^\alpha\)は
+\(\alpha\neq\omega\)に対してはc柔軟であることが従う．
+層\(C^\omega_M\)，\(C^{\omega,(p)}\)，\(\scV_M^\omega\)は
+関手\(\Gamma(M;\cdot)\)に対し非輪状，
+すなわち\(j>0\)に対し\(H^j(M;C^\omega_M)=0\)である．
+Grauert\cite{G58}を参照．
+
+\subsection{分布と超関数}
+\(C^\infty\)多様体\(M\)上には
+シュワルツ分布の層\(\Db_M\)が自然に定まる
+（Schwartz\cite{S66}，de Rham\cite{R55}を参照）．
+\(\Db_M\)はc柔軟層であり，
+\(\Gamma_c(M;\Db_M)\)は\(\Gamma(M;\scV_M^\infty)\)の
+双対位相線形空間である．
+ただし，\(\Gamma(M;\scV_M^\infty)\)には
+フレシェ空間としての自然な位相を入れている．
+
+\(C^\omega\)多様体\(M\)上にも同様に
+佐藤超関数の層\(\scB_M\)が自然に定まる（佐藤\cite{Sa59}を参照）．
+\(\scB_M\)は脆弱層であり，\(\Gamma_c(M;\scB_M)\)は
+\(\Gamma(M;\scV_M^\omega)\)の
+双対位相線形空間である．
+ただし，\(\Gamma(M;\scV_M^\omega)\)には
+DFS空間としての自然な位相を入れている
+（MartineauとSchapiraに詳細な解説がある）．
+しかし，佐藤による構成は純粋にコホモロジーによるものである．
+後ほど\ref{ssec:sato}項で復習する．
+
+積分写像\eqref{eq:int}はペアリング
+\begin{equation}
+    \begin{array}{ccc}
+        {\Gamma(M;C_M^\infty)\times\Gamma_c(M;\scV_M^\infty)}&\longrightarrow&\cc\\
+        \rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+        (f,g)&\longmapsto&\dip\int_Mfg
+    \end{array}
+\end{equation}
+を定める．
+このペアリングから\(C^\infty_M\)から\(\Db_M\)への層の射がひきおこされ，
+この射が単射であることも示せる．
+さらに，実解析多様体\(M\)の上では，
+単射\(\Gamma(M;\scV_M^\omega)\to\Gamma(M;\scV_M^\infty)\)から
+射\(\Db_M\to\scB_M\)が引き起こされ，こちらも単射であることがわかる．
+
+分布係数の\(p\)形式の層\(
+    \Db_M^{(p)}
+    \coloneqq 
+    C^{\infty,(p)}_M\otimes_{C^\infty_M}\Db_M
+\)や超関数係数の\(p\)形式の層\(
+    \scB_M^{(p)}
+    \coloneqq 
+    C^{\omega,(p)}_M\otimes_{C^\omega_M}\scB_M
+\)も定義することができる．
+\(\Db_M^{(p)}\)はc柔軟層，\(\scB_M^{(p)}\)は脆弱層である．
+
+
+\subsection{ド・ラーム複体}
+\subsection{複素多様体}
+\subsection{ドルボー複体}
+\subsection{\(\scO_X\)上の演算}
+\subsection{\(\scO_X\)のコホモロジー}
+H\"ormanderが\(\scO_X\)のコホモロジーについて詳しく調べている．
+\(\varOmega\)が\(\cc^n\)の開集合であるとする．
+任意の\(j>0\)に対し\(H^j(\varOmega;\scO_X)=0\)であるとき，
+\(\varOmega\)は擬凸であるという．
+たとえば，凸領域は擬凸であり，\(n=1\)なら，任意の領域が擬凸となる．
+最後の主張は次のように一般化できる．
+\begin{equation}
+    \begin{cases}
+        \text{\(\varOmega\)が\(\cc^n\)の開集合ならば，任意の\(j\geqq n\)に対し，}\\
+        \quad H^j(\varOmega;\scO_{\cc^n})=0\\
+        \text{が成り立つ．}
+    \end{cases}\label{eq:psudo-convex}
+\end{equation}
+ドルボー分解と，方程式\(
+    \dip \sum_{j=1}^{n}
+    \frac{\partial}{\partial z_j}
+    \frac{\partial}{\partial \bar{z}_j}f=g
+\)が\(\Gamma(\varOmega;C^\infty_{\rr^{2n}})\)で
+いつでも解けるという事実とを用いた\eqref{eq:psudo-convex}の証明
+がMalgrange[1]で述べられている．
+
+\(X\)を\(n\)次元複素多様体とし，\(Z\)を\(X\)の局所閉部分集合とする．
+\(x\in Z -\Int{Z}\)ならば，\(j\notin[1,n]\)に対し
+\begin{equation}
+    H_Z^j(\scO_X)_x=0
+\end{equation}
+となる．
+実際，\(j=0\)の場合，これは「解析接続の原理」そのものであり，
+\(j>n\)の場合は，\eqref{eq:psudo-convex}から，
+或いは(2.9.9)から従う
+（すなわち\(\scO_X\)の脆弱次元は\(n\)である）．
+
+Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準がある(SKKも参照)．
+\(X=\cc^n\)とし\(Z\)を\(X\)の部分閉凸集合とする．\(x\in Z\)のとき，
+\begin{equation}
+    \begin{cases}
+        \text{\(x\)を通る\(d\)次元アフィン空間\(L\)で，\(L\cap Z\)が}\\
+        \text{\(L\)における\(x\)の近傍となるものが存在しないとき}\\
+        \quad H^j_Z(\scO_X)_x\quad\text{for \(j\leqq n-d\).}
+    \end{cases}
+\end{equation}
+
+\subsection{正則関数の境界値}
+\subsection{佐藤超関数}\label{ssec:sato}
+\subsection{局所定数層の例}
+
+
+
 \chapter{Poincar\'e-Verdier 双対性}
 
 \section{上付きびっくり}
@@ -1628,6 +1839,8 @@ $\cat$の三角とは射の列
 
 
 \backmatter
+\appendix
+\chapter{aa}
 %===============================================
 % 参考文献スペース
 %===============================================
@@ -1635,12 +1848,27 @@ $\cat$の三角とは射の列
     \bibitem[B+84]{B+84} Borel, 
         \textit{Intersection Cohomology}, 
         Progress in Mathematics, 50, Birkh\"auser, 1984.
+    \bibitem[G58]{G58} Grauert, 
+        \textit{On Levi's problem and the embedding of real analytic manifolds}, 
+        Ann. Math. 68, 460--472 (1958).
+    \bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
+        \textit{Differential Topology}, 
+        Prentice-Hall, 1974.
     \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
         \textit{Sheaves on Manifolds}, 
         Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
     \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
         \textit{Categories and Sheaves}, 
         Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
+    \bibitem[R55]{R55} de Rham, 
+        \textit{Vari'et'es diff\'erentiables}, 
+        Hermann, Paris, 1955.
+    \bibitem[Sa59]{Sa59} Mikio Sato, 
+        \textit{Theory of Hyperfunctions}, 
+        1959--60.
+    \bibitem[S66]{S66} Schwartz, 
+        \textit{Th\'eorie de distributions}, 
+        Hermann, Paris, 1966.
     \bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
     \bibitem[Ike21]{Ike21} 池祐一, 超局所層理論概説, 2021.
     \bibitem[Tak17]{Tak17} 竹内潔, \(\D\)加群, 共立出版, 2017.
