@@ -1,0 +1,712 @@
+%=====================================
+%   2024-01-25.tex
+%   院生セミナー資料 大柴寿浩
+%=====================================
+
+% -----------------------
+% preamble
+% -----------------------
+% ここから本文 (\begin{document}) までの
+% ソースコードに変更を加えた場合は
+% 編集者まで連絡してください. 
+% Don't change preamble code yourself. 
+% If you add something
+% (usepackage, newtheorem, newcommand, renewcommand),
+% please tell it 
+% to the editor of institutional paper of RUMS.
+
+% ------------------------
+% documentclass
+% ------------------------
+\documentclass[11pt, a4paper, dvipdfmx]{jsarticle}
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+
+\usetikzlibrary{cd}
+
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem{Fact*}{事実}
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+%\newcommand{\Ring}{{\bf Ring}}
+\newcommand{\Ab}{{\bf Ab}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits} % 写像の集合
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits} % 射集合
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits} % 自己準同型の集合
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits} % 自己同型の集合
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits} % 射集合
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits} % 核
+\newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
+\newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
+\newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+%\newcommand{\OO}{\mcal{O}}
+
+
+
+\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{section}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+%\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
+
+\newcommand{\cat}{\mathscr{C}}
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+\newcommand{\scN}{\mathscr{N}}
+\newcommand{\scO}{\mathscr{O}}
+\newcommand{\scV}{\mathscr{V}}
+
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+%\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+%\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+%\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}%複体のホモトピー圏
+%\newcommand{\Comp}{\mathrm{C}}
+%\newcommand{\Komp}{\mathrm{K}}
+%\newcommand{\Domp}{\mathsf{D}}%複体のホモトピー圏
+
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
+\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}
+\newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
+\newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
+\newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
+\newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
+\newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
+\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+
+
+
+
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
+\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+\newcommand{\Rder}{\mathrm{R}}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
+\newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
+\newcommand{\simra}{\mathrel{\overset{\sim}{\leftarrow}}}%同型左矢印
+\newcommand{\simrra}{\mathrel{\overset{\sim}{\longleftarrow}}}%同型左矢印
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\PSh}{\mathrm{PSh}}
+
+\newcommand{\rmD}{\mathrm{D}}
+
+\newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
+\newcommand{\ori}{\mathord{\mathrm{or}}}
+\newcommand{\Db}{\mathord{\mathscr{D}b}}
+
+
+
+
+
+
+
+
+
+
+
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}[section]
+\newtheorem{DFN}[AXM]{定義}
+\newtheorem{THM}[AXM]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[AXM]{命題}
+\newtheorem{LMM}[AXM]{補題}
+\newtheorem{CRL}[AXM]{系}
+\newtheorem{EG}[AXM]{例}
+\newtheorem*{EG*}{例}
+\newtheorem{CNV}[AXM]{約束}
+\newtheorem{CMT}[AXM]{コメント}
+\newtheorem{NTN}[AXM]{記号}
+
+% 定理環境ここまで
+%====================================================
+
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+
+% =================================
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+\title{2024/01/25 セミナー資料}
+\author{大柴寿浩}
+\date{2024/01/25}
+\begin{document}
+\maketitle
+
+
+\section{向きづけと双対性{\cite[3.3]{KS90}}}
+
+\begin{leftbar}
+\begin{PRP}[{\cite[Prop3.3.6]{KS90}}]
+    \(X\)を\(n\)次元\(C^0\)多様体とする．
+    \begin{enumerate}[(i)]
+        \item \(\ori_X\)は前層\(U\mapsto\Hom(H^n_c(U;A_X),A)\)から誘導された層である．
+        \item \(x\in X\)に対し，
+        標準的な同型\(
+            \ori_{X,x}
+            \cong\Hom(H^n_\{x\}(X;A_X),A)
+            \cong H^n_\{x\}(X;A_X)
+        \)が存在する．
+        \item \(X\)が向きづけられた可微分多様体であるとする．このとき，同型\(\ori_X\cong A_X\)が存在する．この同型は\(X\)の向きをとりかえることで符号が変わる．
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
+
+\begin{leftbar}
+\begin{LMM}[{\cite[Prop3.3.7]{KS90}}]
+    \(E\)をユークリッド空間\(\rr^n\)とする．
+\end{LMM}
+\end{leftbar}
+
+\begin{leftbar}
+\begin{NTN}[{\cite[Notation 3.3.8]{KS90}}]
+    本書ではX章\S3をのぞき，実多様体\(X\)の次元を\(\dim X\)で表す．
+    \(f\colon Y\to X\)を\(C^0\)多様体の射とするとき，
+\end{NTN}
+\end{leftbar}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+    \Large{p.156の下の方までスキップ}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{向きづけ，微分形式，密度}
+\(C^0\)多様体\(M\)上の層として，向きづけ層\(\ori _M\)を
+考えることも必要になってくる．
+\(\ori_M\)は\(\zz_M\)と局所的に同型な層であり，
+\(M\)の向きが存在する場合，
+その向きを選ぶことと同型\(\ori_M\cong\zz_M\)を選ぶことが
+同義となるようなものである．
+\(\ori_M\)については次章で詳しくしらべる．
+
+いま，\(\alpha=\infty\)または\(\alpha=\omega\)とし，
+\(p\)を整数とする．\(C^\alpha_M\)を係数にもつ\(p\)次微分形式
+の層を\(C_M^{\alpha,(p)}\)とおく．
+また外微分を\(
+    d\colon C_M^{\alpha,(p)}\to C_M^{\alpha,(p+1)}
+\)で表す．
+
+\((x_1,\dots,x_n)\)が\(M\)上の局所座標系であるとする．
+このとき，\(p\)形式\(f\)は次の形にただ一通りに表されるのであった．
+\[
+    f=\sum_{\lvert I\rvert=p}^{}f_Idx_I,
+\]ここに，\(
+    I=\left\{i_1,\dots,i_p\right\}\subset\{1,\dots,n\}
+\), \((i_1<i_2<\dots<i_p)\), 
+\(dx_I=dx_{i_1}\wedge\dots\wedge dx_{i_p}\)で，
+\(f_I\)は\(C^\alpha_M\)の切断である．
+このとき，\[
+    df=\sum_{i=1}^{n}\sum_{\lvert I\rvert=p}^{}\frac{\partial f_I}{\partial x_i}dx_i\wedge dx_I
+\]となるのであった．
+もうひとつ層を導入する．
+\[
+    \scV_M^\alpha
+    \coloneqq
+    C^{\alpha,(n)}_M\otimes\ori_M
+%    \quad
+ %   \text{}
+\]（\(\alpha=\infty\)または\(\alpha=\omega\)）とおき，
+\(M\)上の\(C^\alpha\)密度の層とよぶ．
+
+コンパクト台をもつ\(C^\infty\)密度は積分することができる．
+\(\int_M\cdot\)で積分写像
+\begin{equation}
+    \int_M\cdot\colon\Gamma_c(M;\scV_M^\infty)\to\cc \label{eq:int}
+\end{equation}を表す．
+\(C^{\alpha,(p)}_M\)と\(\scV_M^\alpha\)は
+\(C^\alpha_M\)加群の層である．
+
+「1の分割」の存在から，
+層\(C^\alpha_M\)，\(C^{\alpha,(p)}\)，\(\scV_M^\alpha\)は
+\(\alpha\neq\omega\)に対してはc柔軟であることが従う．
+層\(C^\omega_M\)，\(C^{\omega,(p)}\)，\(\scV_M^\omega\)は
+関手\(\Gamma(M;\cdot)\)に対し非輪状，
+すなわち\(j>0\)に対し\(H^j(M;C^\omega_M)=0\)である．
+Grauert\cite{G58}を参照．
+
+\subsection{分布と超関数}
+\(C^\infty\)多様体\(M\)上には
+シュワルツ分布の層\(\Db_M\)が自然に定まる
+（Schwartz\cite{S66}，de Rham\cite{R55}を参照）．
+\(\Db_M\)はc柔軟層であり，
+\(\Gamma_c(M;\Db_M)\)は\(\Gamma(M;\scV_M^\infty)\)の
+双対位相線形空間である．
+ただし，\(\Gamma(M;\scV_M^\infty)\)には
+フレシェ空間としての自然な位相を入れている．
+
+\(C^\omega\)多様体\(M\)上にも同様に
+佐藤超関数の層\(\scB_M\)が自然に定まる（佐藤\cite{Sa59}を参照）．
+\(\scB_M\)は脆弱層であり，\(\Gamma_c(M;\scB_M)\)は
+\(\Gamma(M;\scV_M^\omega)\)の
+双対位相線形空間である．
+ただし，\(\Gamma(M;\scV_M^\omega)\)には
+DFS空間としての自然な位相を入れている
+（MartineauとSchapiraに詳細な解説がある）．
+しかし，佐藤による構成は純粋にコホモロジーによるものである．
+後ほど\ref{ssec:sato}項で復習する．
+
+積分写像\eqref{eq:int}はペアリング
+\begin{equation}
+    \begin{array}{ccc}
+        {\Gamma(M;C_M^\infty)\times\Gamma_c(M;\scV_M^\infty)}&\longrightarrow&\cc\\
+        \rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+        (f,g)&\longmapsto&\dip\int_Mfg
+    \end{array}
+\end{equation}
+を定める．
+このペアリングから\(C^\infty_M\)から\(\Db_M\)への層の射がひきおこされ，
+この射が単射であることも示せる．
+さらに，実解析多様体\(M\)の上では，
+単射\(\Gamma(M;\scV_M^\omega)\to\Gamma(M;\scV_M^\infty)\)から
+射\(\Db_M\to\scB_M\)が引き起こされ，こちらも単射であることがわかる．
+
+分布係数の\(p\)形式の層\(
+    \Db_M^{(p)}
+    \coloneqq 
+    C^{\infty,(p)}_M\otimes_{C^\infty_M}\Db_M
+\)や超関数係数の\(p\)形式の層\(
+    \scB_M^{(p)}
+    \coloneqq 
+    C^{\omega,(p)}_M\otimes_{C^\omega_M}\scB_M
+\)も定義することができる．
+\(\Db_M^{(p)}\)はc柔軟層，\(\scB_M^{(p)}\)は脆弱層である．
+
+\subsection{戻る}
+
+
+
+
+いま，\(X\)を\(n\)次元\(C^0\)多様体とし，
+\(\mathrm{a}_X\)で写像\(X\to\{\pt\}\)を表す．
+射\(
+    {\Rder\mathrm{a}_X}_!\mathrm{a}_X^!A_{\{\pt\}}
+    \to A_{\{\pt\}}
+\)から射
+\begin{equation}
+    {\Rder\mathrm{a}_X}_!\omega_X\to A
+\end{equation}
+が定まる．
+\(0\)次コホモロジーをとることで，「積分射」
+\begin{equation}\label{eq:int-mor-or}
+    \int_X\colon H^n_c(X;\ori_X)\to A
+\end{equation}
+が定まる．
+他方で，\(A=\cc\)かつ\(X\)が\(C^\infty\)多様体であるとき，
+よく知られた射\(H^n_c(X;\ori_X)\to \cc\)が次のようにして得られる．
+\(\ori_X\)はド・ラーム複体と擬同形である：
+\[
+    0\to C_X^{\infty,(0)}\otimes\ori_X\underset{d}{\to}
+    \cdots
+    \to
+    C_X^{\infty,(n)}\otimes\ori_X
+    \to0.
+\]
+\(
+    C_X^{\infty,(j)}\otimes\ori_X
+\)はc柔軟なので，
+\[
+    H^n_c(X;\ori_X)
+    \cong
+    \Gamma_c(X;C^{\infty,(n)}\otimes\ori_X)/d\Gamma_c(X;C^{\infty,(n-1)}\otimes\ori_X)
+\]である．
+\(\phi\)をコンパクト台をもつ密度，
+すなわち\(\Gamma_c(X;C^{\infty,(n)}\otimes\ori_X)\)の元とすると，
+\(\int_X\phi\)が意味をもち，ストークスの定理から
+\(\psi\in\Gamma_c(X;C^{\infty,(n-1)}\otimes\ori_X)\)で
+\(\phi=d\psi\)となるものが存在するとき\(\int_X\phi=0\)となる．
+したがって，\(\int_X\)は射
+\begin{equation}\label{eq:int-mor-dens}
+    \int_X\colon
+    \Gamma_c(X;C^{\infty,(n)}\otimes\ori_X)/d\Gamma_c(X;C^{\infty,(n-1)}\otimes\ori_X)
+    \to\cc
+\end{equation}
+を定める．
+この射\eqref{eq:int-mor-dens}は\eqref{eq:int-mor-or}と
+符号を除いて一致する．
+
+
+
+
+
+
+
+
+
+
+
+
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    \bibitem[Le13]{Le13} John M. Lee, 
+    \textit{Introduction to Smooth Manifolds}, Second Edition,
+    Graduate Texts in Mathematics, \textbf{218}, Springer, 2013.
+    \bibitem[Sp65]{Sp65} Michael Spivak, 
+    \textit{Calculus on Manifolds}, 
+    Benjamin, 1965.
+
+    \bibitem[B+84]{B+84} Borel, 
+    \textit{Intersection Cohomology}, 
+    Progress in Mathematics, 50, Birkh\"auser, 1984.
+\bibitem[G58]{G58} Grauert, 
+    \textit{On Levi's problem and the embedding of real analytic manifolds}, 
+    Ann. Math. 68, 460--472 (1958).
+\bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
+    \textit{Differential Topology}, 
+    Prentice-Hall, 1974.
+\bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Sheaves on Manifolds}, 
+    Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+\bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Categories and Sheaves}, 
+    Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
+\bibitem[R55]{R55} de Rham, 
+    \textit{Vari'et'es diff\'erentiables}, 
+    Hermann, Paris, 1955.
+\bibitem[Sa59]{Sa59} Mikio Sato, 
+    \textit{Theory of Hyperfunctions}, 
+    1959--60.
+\bibitem[S66]{S66} Schwartz, 
+    \textit{Th\'eorie de distributions}, 
+    Hermann, Paris, 1966.
+\bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
+\bibitem[Ike21]{Ike21} 池祐一, 超局所層理論概説, 2021.
+\bibitem[Tak17]{Tak17} 竹内潔, \(\D\)加群, 共立出版, 2017.
+
+\end{thebibliography}
+
+%===============================================
+
+
+\end{document}
