@@ -273,6 +273,7 @@
 \newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
 \newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
 \newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\rk}{\mathop{\mathrm{rank}}\nolimits}
 \newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
 \newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
 \newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
@@ -322,8 +323,14 @@
 \newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
 
 \newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
-\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
-\newcommand{\Domp}{\mathop{\mathrm{D}}\nolimits}%複体のホモトピー圏
+\newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
+\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}
+\newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
+\newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
+\newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
+\newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
+\newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
+\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
 
 \newcommand{\CCat}{\Comp(\cat)}
 \newcommand{\KCat}{\Komp(\cat)}
@@ -333,7 +340,8 @@
 
 \newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
 \newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
-\newcommand{\Rder}{\mathop{\mathrm{R}}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+\newcommand{\Rder}{\mathrm{R}}
 
 \newcommand{\simar}{\mathrel{\overset{\sim}{\longrightarrow}}}%内部Hom
 \newcommand{\simra}{\mathrel{\overset{\sim}{\longleftarrow}}}%内部Hom
@@ -1508,7 +1516,7 @@ $\cat$の三角とは射の列
 
 微分幾何学の基礎的な課程としてGuillemin-Pollack\cite{GP74}を挙げる．
 
-\subsection{向きづけ，微分形式，密度}
+\subsection{向きづけ，微分形式，密度}\label{ssec:ori-form-dens}
 \(C^0\)多様体\(M\)上の層として，向きづけ層\(\ori _M\)を
 考えることも必要になってくる．
 \(\ori_M\)は\(\zz_M\)と局所的に同型な層であり，
@@ -1562,7 +1570,7 @@ $\cat$の三角とは射の列
 すなわち\(j>0\)に対し\(H^j(M;C^\omega_M)=0\)である．
 Grauert\cite{G58}を参照．
 
-\subsection{分布と超関数}
+\subsection{分布と超関数}\label{ssec:dist-hyper}
 \(C^\infty\)多様体\(M\)上には
 シュワルツ分布の層\(\Db_M\)が自然に定まる
 （Schwartz\cite{S66}，de Rham\cite{R55}を参照）．
@@ -1611,9 +1619,198 @@ DFS空間としての自然な位相を入れている
 
 
 \subsection{ド・ラーム複体}
+
+\(M\)を\(C^\infty\)多様体とする．\emph{ポアンカレの補題}より，
+系列
+\begin{equation}\label{eq:dR-cpx}
+    0\to\cc_M
+    \to C^{\infty,(0)}_M
+    \underset{d}{\to}\dots\to
+    C^{\infty,(n)}_M\to0
+\end{equation}
+は完全である．
+したがって，\(\cc_M\)はc柔軟層のなす複体と擬同形である．
+\begin{equation}\label{eq:qis-dR}
+    \cc_M\underset{\text{qis}}{\longrightarrow}
+    \left(0\to C^{\infty,(0)}_M
+    \underset{d}{\to}\dots\to
+    C^{\infty,(n)}_M\to0\right).
+\end{equation}
+これによってコホモロジー群\(H^j(M;\cc_M)\)や\(H^j_c(M;\cc_M)\)を
+具体的に計算することができる．
+例えば，\eqref{eq:qis-dR}に\(\RG(M;\cdot)\)を適用することで，
+同型
+\begin{equation}
+    \RG(M;\cc_M)
+    \cong
+    \left(0\to \Gamma\left(M;C^{\infty,(0)}_M\right)
+    \underset{d}{\to}\dots\to
+    \Gamma\left(M;C^{\infty,(n)}_M\right)\to0\right)
+\end{equation}
+が得られる．
+\(C^{\infty}_M\)を\(\Db_M\)に取り替えても同じ結果が得られる．
+\(M\)が実解析的なら，
+\(C^{\infty}_M\)を\(C^{\omega}_M\)や\(\scB_M\)に
+取り替えることで同じ結果が従う．
+しかし，\(C^{\omega}_M\)はc柔軟ではなく
+\(\Gamma(M;\cdot)\)非輪状でしかないので注意が必要である．
+他方，\(\scB_M\)はc柔軟であるのみならず脆弱でもあるので，
+これを用いて\(M\)の局所閉集合\(Z\)に対する
+相対コホモロジー群\(H^j_Z(M;\cc_M)\)を具体的に計算することができる．
+
+複体\eqref{eq:dR-cpx}を\(M\)のド・ラーム複体と呼ぶ．
+
+
+
+
+
 \subsection{複素多様体}
+
+\(\scO_{\cc^n}\)で\(\cc^n\)上の正則関数のなす層を表す．
+\(n\)次元複素多様体\(X\)は\(\cc\)環付き空間\((X,\scO_X)\)で
+\((\cc^n,\scO_{\cc^n})\)と局所的に同型であるものをいう．
+
+複素多様体\(X\)の次元を\(\dim_\cc X\)で表す．
+複素微分幾何学の基本的な概念についての参考文献としてWellsを挙げる．
+解析幾何学のさらなる展開についてはBanica-Stanasilaの本を勧める．
+
+\(\scO_X^{(p)}\)で\(X\)上の正則\(p\)形式のなす層を表し，
+\({\partial}\)で正則微分を表す．
+\(\varOmega_X\)を次のように定めることも多い．
+\begin{equation}
+    \varOmega_X\coloneqq \scO_X^{(p)}\otimes\ori_X
+\end{equation}
+ただし\(\ori_X\)は\(X\)上の向きづけ層である．
+ポアンカレの補題は正則関数係数の場合にも成り立ったので
+層\(\cc_M\)は複体
+\begin{equation}\label{eq:c-dR-cpx}
+    0\to \scO_X^{(0)}
+    \underset{\partial}{\to}\dots\to
+    \scO_X^{(n)}\to0
+\end{equation}
+と擬同形である．
+
 \subsection{ドルボー複体}
+
+\((X,\scO_X)\)を複素多様体とする．
+\(\left(\overline{X},\scO_{\overline{X}}\right)\)
+で位相空間\(X\)に\(X\)上の反正則関数のなす層
+\(\scO_{\overline{X}}\)をあわせたものを表す．
+（ただし\(f\colon X\to \cc\)が反正則であるとは，
+\(\cc\)上の複素共役写像との合成が正則であることであった．）
+従って\(\left(\overline{X},\scO_{\overline{X}}\right)\)も複素多様体となる．
+
+\(X^\rr\)で\(X\)を実解析多様体とみなしたものを表す．
+\(X^\rr\)を\(X\times\overline{X}\)の対角集合と同一視すれば，
+\(X\times\overline{X}\)は\(X^\rr\)の複素化であるといえる．
+実際，
+\begin{equation}
+    \left.\scO_{X\times\overline{X}}\right\rvert_{X^\rr}
+    \cong
+    C^\omega_{X^\rr}
+\end{equation}
+である．
+\(X\times\overline{X}\)上で\(X\)の正則微分\(\partial\)と
+\(\overline{X}\)の\(\overline{\partial}\)を考えることができる．
+よって，\(X\times\overline{X}\)上の微分\(d\)は\(
+    d={\partial}+\overline{\partial}
+\)と分解できる．
+この分解から層\(C^{\alpha,(r)}_{X^\rr}\)
+（\(\alpha=\infty\)または\(\alpha=\omega\)とする）
+の分解
+\[
+    C^{\alpha,(r)}_{X^\rr}
+    =\bigoplus_{p+q=r}C^{\alpha,(p,q)}_{X}
+\]
+が引き起こされる．
+ただし，\(C^{\alpha,(p,q)}_{X}\)は
+\(X\)上の\((p,q)\)形式のなす層である．
+\(X\)の局所正則座標系\((z_1,\dots,z_n)\)において，
+\(C^{\alpha,(p,q)}_{X}\)の切断\(f\)は次の形にただ一通りに表される．
+\[
+    f=\sum_{\lvert I\rvert=p,\lvert J\rvert=q}^{}f_{I,J}dz_I\wedge d\overline{z}_J
+\]
+ただし，\ref{ssec:ori-form-dens}項と同様に，
+\(dz_I=dz_{i_1}\wedge\dots\wedge dz_{i_p}\)，
+\(  
+    d\overline{z}_J
+    =d\overline{z}_{j_1}\wedge\dots\wedge d\overline{z}_{j_q}
+\)である．
+とくに
+\[
+    \partial{f}=
+    \sum_{I}^{}\sum_{J}^{}\sum_{i=1}^{n}\frac{\partial{f_{I,J}}}{\partial{z_i}}
+    dz_i\wedge dz_I\wedge d\overline{z}_J
+\]である．
+ドルボーの補題によれば，
+複体
+\[
+    0\to\scO_X^{(p)}\to C^{\infty,(p,0)}_X
+    \underset{\bar{\partial}}{\to}
+    C^{\infty,(p,1)}_X\to\dots\to
+    C^{\infty,(p,n)}_X\to0
+\]
+は完全である．
+\(C^{\infty,(p,q)}_X\)を
+\(C^{\omega,(p,q)}_X\)や\(\Db^{(p,q)}_X\)，
+或いは\(\scB^{(p,q)}_X\)に取り替えた場合にも
+同様の結果がある．
+特に\(\scO_X^{(p)}\)は脆弱層の複体
+\begin{equation}\label{eq:sato-reol}
+    0\to\scB_X^{(p,0)}
+    \underset{\bar{\partial}}{\to}
+    \dots\to\scB^{(p,n)}_X\to0
+\end{equation}
+と擬同形である（Komatsu, Schapiraを参照）．
+この複体\eqref{eq:sato-reol}は入射\(\scO_X\)加群の複体である
+ことがGolovinによって示されている．
+
+
+
+
+
+
 \subsection{\(\scO_X\)上の演算}
+
+\(f\colon Y\to X\)を複素多様体の間の射とする．
+環付き空間の射の定義より，
+\(f\)は層の射\(f^{-1}\scO_X\to\scO_Y\)をひきおこす．
+もうひとつ，導来圏\(\Dompl(\cc_X)\)では射
+\begin{equation}\label{eq:mor-Ox}
+    \Rder f_!\varOmega_Y[\dim_\cc Y]
+    \to
+    \varOmega_X[\dim_\cc X]
+\end{equation}
+が定義される．
+この射は以下のように表される．
+
+\(n=\dim_\cc X\)，\(m=\dim_\cc Y\)，\(l=m-n\)とおく．
+射\(f^{-1}C^{\infty,(m-p,m-q)}_X\to C^{\infty,(m-p,m-q)}_Y\)
+から双対性より射
+\begin{equation}\label{eq:mor-Ox-Db}
+    f_!\Db_Y^{(p,q)}\otimes\ori_Y\to
+    \Db_X^{(p-l,q-l)}\otimes\ori_X
+\end{equation}
+が定まる．よって，\eqref{eq:mor-Ox-Db}と
+\(\varOmega_Y\)，\(\varOmega_X\)のドルボー分解から
+\eqref{eq:mor-Ox}が誘導される．
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{\(\scO_X\)のコホモロジー}
 H\"ormanderが\(\scO_X\)のコホモロジーについて詳しく調べている．
 \(\varOmega\)が\(\cc^n\)の開集合であるとする．
@@ -1649,19 +1846,157 @@ H\"ormanderが\(\scO_X\)のコホモロジーについて詳しく調べてい�
 
 Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準がある(SKKも参照)．
 \(X=\cc^n\)とし\(Z\)を\(X\)の部分閉凸集合とする．\(x\in Z\)のとき，
-\begin{equation}
+\begin{equation}\label{eq:rel-vanish}
     \begin{cases}
         \text{\(x\)を通る\(d\)次元アフィン空間\(L\)で，\(L\cap Z\)が}\\
         \text{\(L\)における\(x\)の近傍となるものが存在しないとき}\\
-        \quad H^j_Z(\scO_X)_x\quad\text{for \(j\leqq n-d\).}
+        \quad H^j_Z(\scO_X)_x=0\quad\text{for \(j\leqq n-d\).}
     \end{cases}
 \end{equation}
 
 \subsection{正則関数の境界値}
+
+\(\varOmega\)を\(C^2\)境界をもつ\(\cc^n\)の強擬凸開部分集合とする．
+\(\partial{\varOmega}\)上で局所的には，
+正則座標変換で\(\varOmega\)を\(\cc^n\)の強凸開集合にうつすもの
+が存在する．
+
+\(j\colon\varOmega\hookrightarrow\bar{\varOmega}\)を
+うめこみとする．\(\bar{\varOmega}\)上で次の特三角を得る．
+\begin{equation}\label{eq:dt-Ox}
+    \scO_X\rvert_{\bar{\varOmega}}
+    \to 
+    \Rder{j}_\ast\scO_\varOmega
+    \underset{+1}{\to}
+    \RG_{\partial\varOmega}(\scO_X\rvert_{\bar{\varOmega}})
+    \to.
+\end{equation}
+\(
+    H^0_{\partial\varOmega}(\scO_X\rvert_{\bar{\varOmega}})=0
+\)なので，前層\(
+    U\mapsto 
+    H^1_{U\cap\partial\varOmega}(
+        U\cap\bar{\varOmega};\scO_X\rvert_{\bar{\varOmega}}
+    )
+\)は層\(
+    H^1_{\partial\varOmega}(\scO_X\rvert_{\bar{\varOmega}})
+\)と同じである．（Ex II.13）
+さらに，\(k>0\)に対し\(\Rder^kj_\ast\scO_\varOmega=0\)なので，
+\(k>1\)に対し
+\(H^k_{\partial\varOmega}(\scO_X\rvert_{\bar{\varOmega}})=0\)
+である．
+また，次の\eqref{eq:coh-flb}も成り立つ．
+\begin{equation}\label{eq:coh-flb}
+    \text{\(
+        H^1_{\partial\varOmega}(\scO_X\rvert_{\bar{\varOmega}})
+    \)は脆弱層である．}
+\end{equation}
+\eqref{eq:coh-flb}を証明するために，
+命題2.4.10から\(\varOmega\)が強凸であると仮定してよい．
+\(U\)を\(\cc^n\)の凸開部分集合とする．
+特三角\eqref{eq:dt-Ox}に関手\(\RG(U;\cdot)\)を適用することで，
+\[
+    \Gamma(
+        U\cap\bar{\varOmega};
+        H^1_{\partial\varOmega}(
+            \scO_X\rvert_{\bar{\varOmega}}
+        )
+    )\cong
+    \scO_X(\varOmega\cap U)/\scO_X(\bar{\varOmega}\cap U)
+\]
+であることがわかる．
+実際，\(U\cap\bar{\varOmega}\)が\(U\)の凸開近傍の基本系をもつことから，
+\(k>0\)に対し\(H^k(U\cap\bar{\varOmega};\scO_X)=0\)である．
+
+\(\omega\)を\(\partial\varOmega\)の開部分集合とする．
+\(\cc^n\)の凸開部分集合\(U\)で，
+\(U\cap\bar{\varOmega}=\omega\)かつ
+\(U\cup \varOmega\)が凸となるものが存在する．
+このとき，マイヤー・ヴィートリス列
+\[
+    0\to\scO_X(U\cup\varOmega)
+    \to\scO_X(U)\oplus\scO_X(\varOmega)
+    \to\scO_X(U\cap\varOmega)\to0
+\]
+は完全であり，写像
+\(
+    \scO_X(\varOmega)/\scO_X(\bar{\varOmega})
+    \to
+    \scO_X(\varOmega\cap U)/\scO_X(\bar{\varOmega}\cap U)
+\)
+は全射である．以上で\eqref{eq:coh-flb}が示せた．
+
+
+
 \subsection{佐藤超関数}\label{ssec:sato}
+
+\(M\)を\(n\)次元実解析多様体とし，\(X\)を\(M\)の複素化とする．
+（\(X\)は\(M\)の近傍として一意に定まるのであった．）
+佐藤超関数の層\(\scB_M\)を
+\begin{equation}
+    \scB_M\coloneqq
+    H^n_M(\scO_X)\otimes\ori_{M/X}
+\end{equation}
+で定める．ただし，\(\ori_{M/X}=\ori_{M}\otimes\ori_X\)である．
+\eqref{eq:rel-vanish}により，
+複体\(\RG_M(\scO_X)[n]\)は次数0に集中しているので，
+\[
+    \scB_M\cong\RG_M(\scO_X)[n]\otimes \ori_{M/X}
+\]が成り立つ．
+層\(H^j_M(\scO_X)\)は\(j<n\)で０なので，
+（Exercise II.13より）前層\(
+    U\mapsto H^j_{U\cap M}(U;\scO_X)
+\)は層になり，これは\(\scB_M\)と等しくなる．
+（\(\scB_M\)は\(X\)上の層であるが，
+これを\(M\)に制限したものと同一視することが多い．）
+さらに，\eqref{eq:psudo-convex}より，
+\(\scB_M\)が脆弱層であることも従う．
+この層は\ref{ssec:dist-hyper}項で述べたものと一致する．
+（XI章でさらに詳しく述べる．）
+
+
 \subsection{局所定数層の例}
 
-
+\(X=\cc\)とし，\(z\)を\(X\)の正則座標とする．
+\(\alpha\)を複素数とし，
+\(P\)を正則微分作用素\(
+    \displaystyle z\frac{\partial}{\partial{z}}-\alpha
+\)とする．
+\(X\)上の層の複体
+\begin{equation}
+    F\coloneq 0\to \scO_X\underset{P}{\to}\scO_X\to0
+\end{equation}
+を考える．層\(
+    H^0(F)\rvert_{X-\{0\}}\cong\Ker(P)\rvert_{X-\{0\}}
+\)は局所定数層である．実際，\(X-\{0\}\)の
+任意の連結かつ単連結な開集合\(U\)の上で，
+\(H^0(F)\rvert_{U}\)は，
+\(z^\alpha\)（の分枝）で生成される定数層\(\cc_U\)と同型である．
+しかし，\(\alpha\notin\zz\)の場合，
+\(X-\{0\}\)上の0でない正則関数\(f\)で\(Pf=0\)をみたすもの
+は存在しないので，
+\(\Gamma(X-\{0\};H^0(F))=0\)である．
+\(\alpha\in\zz\)に対しては以下のようになる．
+\begin{quotation}
+    %\[\]
+    \begin{align*}
+        H^0(F)\rvert_{X-\{0\}}\colon\text{階}&\text{数} 1\text{の局所定数層．}\\
+        H^0(F)\rvert_{\{0\}}&=0,\\
+        H^1(F)&=0.
+    \end{align*}
+    \(\alpha=0,1,2,\dots\)のとき，
+    \begin{align*}
+        H^0(F)&\cong\cc_X,\\
+        H^1(F)&=\cc_{\{0\}}.
+    \end{align*}
+    \(\alpha=-1,-2,\dots\)のとき，
+    \begin{align*}
+        H^0(F)&\cong\cc_{X-\{0\}},\\
+        H^1(F)&=0.
+    \end{align*}
+\end{quotation}
+複体\(F\)は「偏屈層」と呼ばれるものの簡単な例になっている．
+このような複体についてはVIII章とX章で調べる．
 
 \chapter{Poincar\'e-Verdier 双対性}
 
