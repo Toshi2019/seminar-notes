@@ -270,7 +270,7 @@
 % ================================
 % コマンドを追加する場合のスペース 
 \renewcommand\proofname{\bf 証明} % 証明
-\numberwithin{equation}{subsection}
+\numberwithin{equation}{section}
 \newcommand{\cTop}{\textsf{Top}}
 %\newcommand{\cOpen}{\textsf{Open}}
 \newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
@@ -305,6 +305,7 @@
 \newcommand{\scD}{\mathscr{D}}
 \newcommand{\scE}{\mathscr{E}}
 \newcommand{\scF}{\mathscr{F}}
+\newcommand{\scL}{\mathscr{L}}
 
 \newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
 \newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
@@ -353,6 +354,29 @@
 \newcommand{\U}{\mathop{\mathrm{U}}}
 \newcommand{\Jstd}{\mathord{J_0}}
 
+\newcommand{\Lag}{\mathop{\mathcal{L}}}
+
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
+\newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
+\newcommand{\simra}{\mathrel{\overset{\sim}{\leftarrow}}}%同型左矢印
+\newcommand{\simrra}{\mathrel{\overset{\sim}{\longleftarrow}}}%同型左矢印
+
+
+
+
+
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{thinbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
 % =================================
 
 
@@ -385,13 +409,13 @@
 % ---------------------------
 
 \title{Notes on Introduction to Symplectic Topology}
-\author{大柴寿浩}
+\author{}
 \date{}
 \begin{document}
 \maketitle
 
 \chapter*{はじめに}
-2023年度1学期の数学独立探求1で行う
+2023年度の数学独立探求で行う
 \cite{MS17}のセミナーのノート．
 
 %\chapter*{記号}
@@ -400,6 +424,9 @@
     \item 添字：
     なんらかの族$(a_i)_{i\in I}$を$(a_i)_i$とか$(a_i)$と
     略記することがある．
+    \item ラグランジアン：\((
+        V,\omega
+    )\)のラグランジュ部分多様体全体を\(\Lag(V,\omega)\)で表す．
 \end{itemize}
 \begin{comment}
 \chapter*{第3版の前書き}
@@ -488,39 +515,127 @@
 \paragraph{この節の内容}
 \begin{itemize}
     \item 複素構造の空間の性質
-    \item シンプレクティック構造と整合的な複素構造
+    \item シンプレクティック構造と同調する複素構造
     \item シンプレクティック形式で統制された複素構造の集合
 \end{itemize}
 
 \paragraph{複素構造の空間の性質}
 次の命題は，任意の線形複素構造が標準複素構造\(\Jstd\)と同形である
 という主張である．
-\begin{PRP}
-    \(V\)を\(2n\)次元実ベクトル空間とし
-    \(J\)を\(V\)上の線形複素構造とする．
-    このとき，ベクトル空間の同形\(\Phi\colon\RR^{2n}\to V\)で
-    \(J\Phi=\Phi\Jstd\)をみたすものが存在する．
-\end{PRP}
+\begin{leftbar}
+    \begin{PRP}
+        \(V\)を\(2n\)次元実ベクトル空間とし
+        \(J\)を\(V\)上の線形複素構造とする．
+        このとき，ベクトル空間の同形\(\Phi\colon\RR^{2n}\to V\)で
+        \(J\Phi=\Phi\Jstd\)をみたすものが存在する．
+    \end{PRP}        
+\end{leftbar}
+\begin{leftbar}
+    \begin{PRP}
+        \begin{enumerate}[(i)]
+            \item 空間\(\cstr(\RR^{2n})\)は等質空間
+            \(\GL(2n,\RR)/\GL(n,\CC)\)と微分同相であり，
+            したがって連結成分の数は2つである．
+            \item \(\Jstd\)を含む連結成分\(\cstrp(\RR^{2n})\)は，
+            標準的な向きと同調する\(\RR^{2n}\)上の複素構造全体
+            のなす空間である．
+        \end{enumerate}
+    \end{PRP}        
+\end{leftbar}
 
+\paragraph{同調する複素構造}
+\((V,\omega)\)をシンプレクティックベクトル空間とする．
+\(J\in\cstr(V)\)が\(\omega\)に\textbf{同調する} (compatible)
+とは，
+\setcounter{equation}{1}
+すべての\(v,w\in V\)に対し，
+\begin{equation}
+    \omega(Jv,Jw)=\omega(v,w)\label{eq:Jcomp}
+\end{equation}
+をみたし，\(v\ne0\)に対し
+\begin{equation}
+    \omega(v,Jv)>0.\label{eq:posi}
+\end{equation}
+であることをいう．
+
+\(J\)が\(\omega\)と同調するとき，
+\begin{equation}
+    g_J(v,w)\coloneqq \omega(v,Jw)\label{eq:inner-J}
+\end{equation}
+が\(V\)上の内積を定め，
+\(J\)は\(g_J\)に対し，歪共役，すなわち
+\[
+    g_J(v,Jw)+g_J(Jv,w)=0\quad (v,w\in V)
+\]
+である．
+\begin{thinbar}
+\begin{proof}[\textbf{\(g_J\)が内積になることの証明}]
+    \begin{description}
+        \item[双線形性：] \(\omega\)の性質と\(J\)の線形性から従う．
+        \item[正定値性：] \(v\ne0\)を\(V\)のベクトルとすると，
+        \eqref{eq:posi}から，\[
+            g_J(v,v)=\omega(v,Jv)\underset{{\eqref{eq:posi}}}{>}0.
+        \]
+        \item[対称性：] \(v,w\in V\)に対し，
+        \begin{align*}
+            g_J(w,v)=
+            \omega(w,Jv)
+            \underset{\text{\(\omega\)の歪対称性}}{=}-\omega(Jv,w)\\
+            \underset{\text{\(\omega\)の双線形性}}{=}\omega(Jv,-w)
+            =\omega(Jv,J^2w)\\
+            \underset{{\eqref{eq:Jcomp}}}{=}\omega(v,Jw).
+        \end{align*}
+    \end{description}
+\end{proof}
+\end{thinbar}
+
+\begin{thinbar}
+\begin{proof}[\textbf{\(J\)が\(g_J\)に関して歪共役であることの証明}]
+    \(v,w\in V\)とする．
+    \begin{align*}
+        g_J(v,Jw)+g_J(Jv,w)
+        =\omega(v,-w)+\omega(Jv,Jw)\\
+        \underset{{\eqref{eq:Jcomp}}}{=}
+        -\omega(v,w)+\omega(v,w)=0.
+    \end{align*}
+\end{proof}
+\end{thinbar}
+    
+\(\omega\)と同調する複素構造全体を
+\[
+    \cstr(V,\omega)
+\]
+とかく．
+\setcounter{AXM}{3}
+\begin{leftbar}
 \begin{PRP}
+    \((V,\omega)\)をシンプレクティックベクトル空間とする．
+    \(J\in\cstr(V)\)とする．次の(i)--(iv)は同値である．
     \begin{enumerate}[(i)]
-        \item 空間\(\cstr(\RR^{2n})\)は等質空間
-        \(\GL(2n,\RR)/\GL(n,\CC)\)と微分同相であり，
-        したがって連結成分の数は2つである．
-        \item \(\Jstd\)を含む連結成分\(\cstrp(\RR^{2n})\)は，
-        標準的な向きと整合的な\(\RR^{2n}\)上の複素構造全体
-        のなす空間である．
+        \item \(J\in\cstr(V,\omega)\). 
+        \item \((V,\omega)\)のシンプレクティック基底で\(v_1,\dots,v_n,Jv_1,\dots,Jv_n\)と表せるものがある．
+        \item \(\Psi\colon \rr^{2n}\simar V\)で\(\Psi^\ast\omega=\omega_0\)，\(\Psi^\ast J=\Jstd\)となるものがある．
+        \item \(J\)は\eqref{eq:posi}をみたし，次が成り立つ．\begin{equation}
+            \Lambda\in\Lag(V,\omega)
+            \Longrightarrow
+            J\Lambda\in\Lag(V,\omega).
+        \end{equation}
     \end{enumerate}
 \end{PRP}
+\end{leftbar}
 
-
-
-
-
-
-
-
-
+\paragraph{\(\cstr(V,\omega)\)は可縮}
+ここからの目標は\(\cstr(V,\omega)\)は可縮であることの証明．
+3つの証明法が書いてある．
+\begin{enumerate}
+    \item \(\cstr(V,\omega)\)を対称正定値シンプレクティック行列の空間と同一視．
+    \item \(\cstr(V,\omega)\)と\(\mathfrak{Met}(V)=\left\{\text{内積全体}\right\}\)の間のホモトピー同値の構成．    
+    \item \(\cstr(V,\omega)\)をジーゲル上半空間と同一視．
+\end{enumerate}
+ここでは第1証明を扱う．
+\begin{proof}[\textbf{第1証明}]
+    定理2.1.3より，
+\end{proof}
 
 
 \clearpage
