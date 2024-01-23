@@ -17,3 +17,5 @@ Poincaré-Verdier双対性[(pdf)](grad-seminar/PV-duality.pdf)
 2024/01/11発表分[(pdf)](grad-seminar/2024-01-11.pdf)
 
 2024/01/18発表分[(pdf)](grad-seminar-2024-01/2024-01-18.pdf)
+
+[2024-01](2024-01.md)
