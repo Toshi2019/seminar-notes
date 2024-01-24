@@ -18,7 +18,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[11pt, a4paper, dvipdfmx]{jsarticle}
+\documentclass[11pt, a4paper, leqno, dvipdfmx]{jsarticle}
 
 % ------------------------
 % usepackage
@@ -31,6 +31,7 @@
 \usepackage[psamsfonts]{amssymb}
 \usepackage{amsthm}
 \usepackage{ascmac}
+\usepackage{bm}
 \usepackage{color}
 \usepackage{enumerate}
 \usepackage{fancybox}
@@ -369,6 +370,7 @@
 \newcommand{\ori}{\mathord{\mathrm{or}}}
 \newcommand{\Db}{\mathord{\mathscr{D}b}}
 
+\newcommand{\codim}{\mathop{\mathrm{codim}}\nolimits}
 
 
 
@@ -404,6 +406,7 @@
 \newtheorem{CRL}[AXM]{系}
 \newtheorem{EG}[AXM]{例}
 \newtheorem*{EG*}{例}
+\newtheorem{RMK}[AXM]{注意}
 \newtheorem{CNV}[AXM]{約束}
 \newtheorem{CMT}[AXM]{コメント}
 \newtheorem{NTN}[AXM]{記号}
@@ -461,44 +464,39 @@
 \begin{document}
 \maketitle
 
-
-\section{向きづけと双対性{\cite[3.3]{KS90}}}
-
+\section*{あとで使う定理（復習）}
 \begin{leftbar}
-\begin{PRP}[{\cite[Prop3.3.6]{KS90}}]
-    \(X\)を\(n\)次元\(C^0\)多様体とする．
-    \begin{enumerate}[(i)]
-        \item \(\ori_X\)は前層\(U\mapsto\Hom(H^n_c(U;A_X),A)\)から誘導された層である．
-        \item \(x\in X\)に対し，
-        標準的な同型\(
-            \ori_{X,x}
-            \cong\Hom\left(H^n_{\{x\}}(X;A_X),A\right)
-            \cong H^n_{\{x\}}(X;A_X)
-        \)が存在する．
-        \item \(X\)が向きづけられた可微分多様体であるとする．このとき，同型\(\ori_X\cong A_X\)が存在する．この同型は\(X\)の向きをとりかえることで符号が変わる．
-    \end{enumerate}
+\begin{PRP}[{\cite[Proposition 3.1.8]{KS90}}]\label{PRP318}
+    \(f\colon Y\to X\)，\(g\colon Z\to Y\)を
+    局所コンパクト空間の間の連続写像とする．
+    \(f_!\)と\(g_!\)のコホモロジー次元が有限であるとする．
+    このとき，\((f\circ g)_!\)のコホモロジー次元は有限で
+    \[
+        (f\circ g)^!\cong g^!\circ f^!
+    \]である．
 \end{PRP}
 \end{leftbar}
-
 \begin{leftbar}
-\begin{LMM}[{\cite[Prop3.3.7]{KS90}}]
-    \(E\)をユークリッド空間\(\rr^n\)とする．
-\end{LMM}
+    \begin{PRP}[{\cite[Proposition 3.1.12]{KS90}}]\label{PRP3112}
+        \(f\colon Y\to X\)を
+        \(Y\)から\(X\)の局所閉集合\(Z\)の上への同相写像とする．
+        このとき，
+        \[
+            f^!\cong f^{-1}\circ \RG_{f(Y)}(\cdot)
+        \]である．
+    \end{PRP}
 \end{leftbar}
 
 \begin{leftbar}
-\begin{NTN}[{\cite[Notation 3.3.8]{KS90}}]
-    本書ではX章\S3をのぞき，実多様体\(X\)の次元を\(\dim X\)で表す．
-    \(f\colon Y\to X\)を\(C^0\)多様体の射とするとき，
-\end{NTN}
+    \begin{PRP}[{\cite[Proposition 3.3.2]{KS90}}]\label{PRP332}
+        \(f\colon Y\to X\)をファイバー次元\(l\)の位相的沈めこみとする．
+        \begin{enumerate}[(i)]
+            \item \(k\ne -l\)に対し\(H^k(f^!A_X)=0\)であり，局所的に\(H^{-l}(f^!A_X)\cong A_Y\)である．
+            \item \(f^{-1}(\cdot)\otimes\omega_{Y/X}\to f^!(\cdot)\)は同型である．\label{332-2}
+        \end{enumerate}
+    \end{PRP}    
 \end{leftbar}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{center}
-    \Large{p.156の下の方までスキップ}
-\end{center}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{層の例（{\cite[\S2.9]{KS90}}から）}
 
 \subsection{向きづけ，微分形式，密度}
 \(C^0\)多様体\(M\)上の層として，向きづけ層\(\ori _M\)を
@@ -601,10 +599,161 @@ DFS空間としての自然な位相を入れている
 \)も定義することができる．
 \(\Db_M^{(p)}\)はc柔軟層，\(\scB_M^{(p)}\)は脆弱層である．
 
-\subsection{戻る}
+\section{向きづけと双対性{\cite[3.3]{KS90}}}
+
+\begin{leftbar}
+\begin{PRP}[{\cite[Prop3.3.6]{KS90}}]
+    \(X\)を\(n\)次元\(C^0\)多様体とする．
+    \begin{enumerate}[(i)]
+        \item \(\ori_X\)は前層\(U\mapsto\Hom(H^n_c(U;A_X),A)\)から誘導された層である．
+        \item \(x\in X\)に対し，
+        標準的な同型\(
+            \ori_{X,x}
+            \cong\Hom\left(H^n_{\{x\}}(X;A_X),A\right)
+            \cong H^n_{\{x\}}(X;A_X)
+        \)が存在する．
+        \item \(X\)が向きづけられた可微分多様体であるとする．このとき，同型\(\ori_X\cong A_X\)が存在する．この同型は\(X\)の向きをとりかえることで符号が変わる．
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
+
+\begin{leftbar}
+\begin{LMM}[{\cite[Prop3.3.7]{KS90}}]
+    \(E\)をユークリッド空間\(\rr^n\)とし，
+    同型\(\ori_E\cong A_E\)を固定する．
+    \(U\)と\(V\)を\(E\)の開集合とし，\(f\colon U\to V\)を
+    微分同相写像とする．このとき，次の図式は可換である．
+    \[    
+        \vcenter{\xymatrix
+        @C=22pt@R=32pt
+        {
+        \ori_U
+        \ar@{-}[r]^-{\sim}
+        &
+        \ori_{E/U}\ar@{-}[r]^-{\sim}
+        &
+        A_U
+        \\
+        f^{-1}(\ori_V)\ar@{-}[r]^-{\sim}
+        \ar[u]^-{f_{\ori}^\sharp}
+        &
+        f^{-1}(\ori_{E/V})\ar@{-}[r]^-{\sim}
+        &
+        f^{-1}(A_V)\ar[u]_-{f_{A}^\sharp} 
+        }}    
+    \]
+    （ただし，射\(f_{\ori}^\sharp\)と\(f_{A}^\sharp\)は
+    次のように定義する．
+    \(a_U\)と\(a_V\)を\(U\)と\(V\)から\(\{\pt\}\)への射影とする．
+    このとき\(f_A^\sharp\)は同型\(
+        f^{-1}\circ a_{V}^{-1}\simar a_{U}^{-1}
+    \)で\(f_{\ori}^\sharp\)は同型\(
+        f^{-1}\circ a_{V}^{-1}[-n]
+        \simar f^!\circ a^!_{V}[-n]
+        \simar  \circ a_{U}^{-1}
+    \)である．\(f^{-1}\cong f^!\)である．）
+\end{LMM}
+\end{leftbar}
+
+\(f\colon Y\to X\)を\(C^0\)多様体の間の射とする．
+\(f\)を閉うめ込み\(j\colon Y\hookrightarrow Y\times X\)と
+しずめ込み\(p\colon Y\times X\to X\)の合成に分解して
+\begin{equation}
+    f\colon Y\overset{j}{\hookrightarrow}
+    Y\times X\overset{p}{\longrightarrow}X\tag{3.3.5}\label{eq:decompose}
+\end{equation}とかくことができる．
+\(j(y)=(y,f(y))\)で\(p(y,x)=x\)である．
+%\cite[Proposition 3.1.8, 3.1.12, 3.3.2]{KS90}
+命題\ref{PRP318}--\ref{PRP332}を適用すると，
+\(F\in\Dompl(A_X)\)に対し，
+\begin{align*}
+    f^!{F}\cong(p\circ j)^!{F}
+    &\underset{\text{命題\ref{PRP318}}}{\cong} j^! p^!{F}\\
+    &\underset{\text{命題\ref{PRP3112}}}{\cong} j^{-1} \RG_{j(Y)}\left(p^!{F}\right)\\
+    &\underset{\text{命題\ref{PRP332} \eqref{332-2}}}{\cong} j^{-1} \RG_{j(Y)}p^{-1}{F}\otimes\omega_{(Y\times X)/X}\\
+    &\cong j^{-1} \RG_{j(Y)}p^{-1}{F}\otimes\ori_{{(Y\times X)}/X}[\dim Y\times X-\dim X]\\
+    &\cong j^{-1} \RG_{j(Y)}p^{-1}{F}\otimes\ori_Y[\dim Y],
+\end{align*}
+すなわち
+\begin{equation}
+    f^!{F}
+    \cong j^{-1} \RG_{j(Y)}p^{-1}{F}\otimes\ori_Y[\dim Y]\tag{3.3.6}
+\end{equation}
+である．
+\(F=A_X\)のとき，
+\begin{equation}
+    \ori_{Y/X}\cong
+    j^{-1} \left(H^{\dim Y}_{j(Y)}(A_{Y\times X})\right)\otimes\ori_Y\tag{3.3.7}
+\end{equation}
+である．
+さらに\(f=\id_X\)のときは，
+\begin{equation}
+    \ori_{X}\cong
+    H^{\dim X}_{X}(A_{X\times X})\rvert_{X}\tag{3.3.8}
+\end{equation}
+である（\(X\)と\(X\times X\)の対角集合を同一視した）．
+
+\begin{leftbar}
+\begin{NTN}[{\cite[Notation 3.3.8]{KS90}}]
+    本書ではX章\S3をのぞき，実多様体\(X\)の次元を\(\dim X\)で表す．
+    \(f\colon Y\to X\)を\(C^0\)多様体の射とするとき，
+    次のようにおく．
+    \begin{equation}
+        \dim{Y/X}\coloneqq \dim Y-\dim{X}.\tag{3.3.9}
+    \end{equation}
+    \(Y\)が部分多様体のとき，
+    \[
+        \codim_{X}Y\coloneqq-\dim{Y/X}
+    \]
+    のようにもかく．
+    混同する恐れがないときは\(\codim_X Y\)を\(\codim Y\)と略記する．
+    次が成り立つ．
+    \begin{equation}
+        \omega_{Y/X}\cong
+        \ori_{Y/X}[\dim{Y/X}].\tag{3.3.10}
+    \end{equation}
+    このとき，次のようにおくと自然．
+    \begin{align}
+            \omega_{Y/X}^{\otimes{-1}}&\coloneqq
+            \RHOM(\omega_{Y/X},A_Y),\tag{3.3.11}\\
+            &\cong\ori_{Y/X}[-\dim{Y/X}].\notag
+    \end{align}
+\end{NTN}
+\end{leftbar}
+\begin{leftbar}
+\begin{PRP}[{\cite[Proposition 3.3.9]{KS90}}]\label{339}
+    \(f\colon Y\to X\)を局所コンパクト空間の間の連続写像とする．
+    次の条件が成りたつとする．
+    \begin{enumerate}[(i)]
+        \item \(f\)は位相的しずめ込みである．
+        \item \(\Rder f_!f^!\zz_X\to\zz_X\)は同型である．\label{339-2}
+    \end{enumerate}
+    このとき，\(F\in\Dompl(\zz_X)\)に対し，射\(F\to \Rder f_\ast f^{-1}\)は同型である．
+\end{PRP}
+\end{leftbar}
 
 
+\begin{RMK}
+    \(f\colon Y\to X\)を局所コンパクト空間の間の連続写像とし，
+    \(f\)はファイバー次元\(l\)の位相的しずめ込みであるとする．
+    このとき，命題\ref{339}の条件\eqref{339-2}が成りたつためには
+    任意の\(x\in X\)に対し，次の同型が成り立つことが必要十分である．
+    \begin{equation}
+        \RG_c(f^{-1}(x);\omega_{f^{-1}(x)})\simar\zz.\tag{3.3.12}
+    \end{equation}
+    この同型は次の同型と同値である．
+    \begin{equation}
+        \zz\simar
+        \RG(f^{-1}(x);\zz_{f^{-1}(x)}).\tag{3.3.13}
+    \end{equation}
+\end{RMK}
+実際，\(M\coloneqq\RG_c(f^{-1}(x);\omega_{f^{-1}(x)})\)とおき，
+\(M^\ast\RHom(M,\zz)\)とおく．
+このとき，\(M^\ast\cong \RG(f^{-1}(x);\zz_{f^{-1}(x)})\)
+であり，\(\Dompb(\Mod(\zz))\)における同型\(M\simar\zz\)は
+同型\(\zz\simar M^\ast\)と同じである．
 
+\bigskip
 
 いま，\(X\)を\(n\)次元\(C^0\)多様体とし，
 \(\mathrm{a}_X\)で写像\(X\to\{\pt\}\)を表す．
@@ -613,12 +762,12 @@ DFS空間としての自然な位相を入れている
     \to A_{\{\pt\}}
 \)から射
 \begin{equation}
-    {\Rder\mathrm{a}_X}_!\omega_X\to A
+    {\Rder\mathrm{a}_X}_!\omega_X\to A\tag{3.3.14}
 \end{equation}
 が定まる．
 \(0\)次コホモロジーをとることで，「積分射」
 \begin{equation}\label{eq:int-mor-or}
-    \int_X\colon H^n_c(X;\ori_X)\to A
+    \int_X\colon H^n_c(X;\ori_X)\to A\tag{3.3.15}
 \end{equation}
 が定まる．
 他方で，\(A=\cc\)かつ\(X\)が\(C^\infty\)多様体であるとき，
@@ -648,13 +797,15 @@ DFS空間としての自然な位相を入れている
 \begin{equation}\label{eq:int-mor-dens}
     \int_X\colon
     \Gamma_c(X;C^{\infty,(n)}\otimes\ori_X)/d\Gamma_c(X;C^{\infty,(n-1)}\otimes\ori_X)
-    \to\cc
+    \to\cc\tag{3.3.16}
 \end{equation}
 を定める．
 この射\eqref{eq:int-mor-dens}は\eqref{eq:int-mor-or}と
-符号を除いて一致する．
+0でない定数倍を除いて一致する．
 
-
+\begin{PRP}
+    \(X\)を\(C^0\)多様体とし，
+\end{PRP}
 
 
 
