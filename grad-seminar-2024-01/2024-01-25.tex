@@ -374,6 +374,11 @@
 
 
 
+\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
+\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
+
+
+
 
 
 
@@ -464,141 +469,6 @@
 \begin{document}
 \maketitle
 
-\section*{あとで使う定理（復習）}
-\begin{leftbar}
-\begin{PRP}[{\cite[Proposition 3.1.8]{KS90}}]\label{PRP318}
-    \(f\colon Y\to X\)，\(g\colon Z\to Y\)を
-    局所コンパクト空間の間の連続写像とする．
-    \(f_!\)と\(g_!\)のコホモロジー次元が有限であるとする．
-    このとき，\((f\circ g)_!\)のコホモロジー次元は有限で
-    \[
-        (f\circ g)^!\cong g^!\circ f^!
-    \]である．
-\end{PRP}
-\end{leftbar}
-\begin{leftbar}
-    \begin{PRP}[{\cite[Proposition 3.1.12]{KS90}}]\label{PRP3112}
-        \(f\colon Y\to X\)を
-        \(Y\)から\(X\)の局所閉集合\(Z\)の上への同相写像とする．
-        このとき，
-        \[
-            f^!\cong f^{-1}\circ \RG_{f(Y)}(\cdot)
-        \]である．
-    \end{PRP}
-\end{leftbar}
-
-\begin{leftbar}
-    \begin{PRP}[{\cite[Proposition 3.3.2]{KS90}}]\label{PRP332}
-        \(f\colon Y\to X\)をファイバー次元\(l\)の位相的沈めこみとする．
-        \begin{enumerate}[(i)]
-            \item \(k\ne -l\)に対し\(H^k(f^!A_X)=0\)であり，局所的に\(H^{-l}(f^!A_X)\cong A_Y\)である．
-            \item \(f^{-1}(\cdot)\otimes\omega_{Y/X}\to f^!(\cdot)\)は同型である．\label{332-2}
-        \end{enumerate}
-    \end{PRP}    
-\end{leftbar}
-\section*{層の例（{\cite[\S2.9]{KS90}}から）}
-
-\subsection{向きづけ，微分形式，密度}
-\(C^0\)多様体\(M\)上の層として，向きづけ層\(\ori _M\)を
-考えることも必要になってくる．
-\(\ori_M\)は\(\zz_M\)と局所的に同型な層であり，
-\(M\)の向きが存在する場合，
-その向きを選ぶことと同型\(\ori_M\cong\zz_M\)を選ぶことが
-同義となるようなものである．
-\(\ori_M\)については次章で詳しくしらべる．
-
-いま，\(\alpha=\infty\)または\(\alpha=\omega\)とし，
-\(p\)を整数とする．\(C^\alpha_M\)を係数にもつ\(p\)次微分形式
-の層を\(C_M^{\alpha,(p)}\)とおく．
-また外微分を\(
-    d\colon C_M^{\alpha,(p)}\to C_M^{\alpha,(p+1)}
-\)で表す．
-
-\((x_1,\dots,x_n)\)が\(M\)上の局所座標系であるとする．
-このとき，\(p\)形式\(f\)は次の形にただ一通りに表されるのであった．
-\[
-    f=\sum_{\lvert I\rvert=p}^{}f_Idx_I,
-\]ここに，\(
-    I=\left\{i_1,\dots,i_p\right\}\subset\{1,\dots,n\}
-\), \((i_1<i_2<\dots<i_p)\), 
-\(dx_I=dx_{i_1}\wedge\dots\wedge dx_{i_p}\)で，
-\(f_I\)は\(C^\alpha_M\)の切断である．
-このとき，\[
-    df=\sum_{i=1}^{n}\sum_{\lvert I\rvert=p}^{}\frac{\partial f_I}{\partial x_i}dx_i\wedge dx_I
-\]となるのであった．
-もうひとつ層を導入する．
-\[
-    \scV_M^\alpha
-    \coloneqq
-    C^{\alpha,(n)}_M\otimes\ori_M
-%    \quad
- %   \text{}
-\]（\(\alpha=\infty\)または\(\alpha=\omega\)）とおき，
-\(M\)上の\(C^\alpha\)密度の層とよぶ．
-
-コンパクト台をもつ\(C^\infty\)密度は積分することができる．
-\(\int_M\cdot\)で積分写像
-\begin{equation}
-    \int_M\cdot\colon\Gamma_c(M;\scV_M^\infty)\to\cc \label{eq:int}
-\end{equation}を表す．
-\(C^{\alpha,(p)}_M\)と\(\scV_M^\alpha\)は
-\(C^\alpha_M\)加群の層である．
-
-「1の分割」の存在から，
-層\(C^\alpha_M\)，\(C^{\alpha,(p)}\)，\(\scV_M^\alpha\)は
-\(\alpha\neq\omega\)に対してはc柔軟であることが従う．
-層\(C^\omega_M\)，\(C^{\omega,(p)}\)，\(\scV_M^\omega\)は
-関手\(\Gamma(M;\cdot)\)に対し非輪状，
-すなわち\(j>0\)に対し\(H^j(M;C^\omega_M)=0\)である．
-Grauert\cite{G58}を参照．
-
-\subsection{分布と超関数}
-\(C^\infty\)多様体\(M\)上には
-シュワルツ分布の層\(\Db_M\)が自然に定まる
-（Schwartz\cite{S66}，de Rham\cite{R55}を参照）．
-\(\Db_M\)はc柔軟層であり，
-\(\Gamma_c(M;\Db_M)\)は\(\Gamma(M;\scV_M^\infty)\)の
-双対位相線形空間である．
-ただし，\(\Gamma(M;\scV_M^\infty)\)には
-フレシェ空間としての自然な位相を入れている．
-
-\(C^\omega\)多様体\(M\)上にも同様に
-佐藤超関数の層\(\scB_M\)が自然に定まる（佐藤\cite{Sa59}を参照）．
-\(\scB_M\)は脆弱層であり，\(\Gamma_c(M;\scB_M)\)は
-\(\Gamma(M;\scV_M^\omega)\)の
-双対位相線形空間である．
-ただし，\(\Gamma(M;\scV_M^\omega)\)には
-DFS空間としての自然な位相を入れている
-（MartineauとSchapiraに詳細な解説がある）．
-しかし，佐藤による構成は純粋にコホモロジーによるものである．
-後ほど\ref{ssec:sato}項で復習する．
-
-積分写像\eqref{eq:int}はペアリング
-\begin{equation}
-    \begin{array}{ccc}
-        {\Gamma(M;C_M^\infty)\times\Gamma_c(M;\scV_M^\infty)}&\longrightarrow&\cc\\
-        \rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
-        (f,g)&\longmapsto&\dip\int_Mfg
-    \end{array}
-\end{equation}
-を定める．
-このペアリングから\(C^\infty_M\)から\(\Db_M\)への層の射がひきおこされ，
-この射が単射であることも示せる．
-さらに，実解析多様体\(M\)の上では，
-単射\(\Gamma(M;\scV_M^\omega)\to\Gamma(M;\scV_M^\infty)\)から
-射\(\Db_M\to\scB_M\)が引き起こされ，こちらも単射であることがわかる．
-
-分布係数の\(p\)形式の層\(
-    \Db_M^{(p)}
-    \coloneqq 
-    C^{\infty,(p)}_M\otimes_{C^\infty_M}\Db_M
-\)や超関数係数の\(p\)形式の層\(
-    \scB_M^{(p)}
-    \coloneqq 
-    C^{\omega,(p)}_M\otimes_{C^\omega_M}\scB_M
-\)も定義することができる．
-\(\Db_M^{(p)}\)はc柔軟層，\(\scB_M^{(p)}\)は脆弱層である．
-
 \section{向きづけと双対性{\cite[3.3]{KS90}}}
 
 \begin{leftbar}
@@ -616,13 +486,49 @@ DFS空間としての自然な位相を入れている
     \end{enumerate}
 \end{PRP}
 \end{leftbar}
+\begin{proof}
+    (i) 
+    \(U\)を\(\rr^n\)と同相な\(X\)の開集合とすると，
+    \begin{align*}
+        \RG(U;\omega_X)
+        &\cong \RHom_{A_X}(A_U,\omega_X)\\
+        &\underset{(3.1.8)}{\cong}\RHom_A(\RG_c(X;A_U),A)\\
+        &\underset{\text{\(A\):単射的}}{\cong}\Hom_A(\RG_c(X;A_U),A)\\
+        &\underset{\text{Prop3.2.3}}{\cong}\Hom_A(H^{n}_{c}(U;A_U),A)[n]
+    \end{align*}
+    である．\(\omega_X\cong\ori_X[n]\)なので (i) が従う．
 
+    (ii) 
+    \(x\in X\)とする．\(x\)の近傍\(U\)で\(\rr^n\)と同相なものがある．
+    この近傍\(U\)に対して，
+    \cite[Proposition 3.3.4 (ii)]{KS90}より\[
+        \Hom(\ori_{X/\{x\}},A_X)\cong\ori_X
+    \]が，
+    \cite[Proposition 3.2.3 (ii)]{KS90}より，\[
+        \RG_{\{x\}}(U;A_U)\simarr\RG_c(U;A_U)
+    \]が成りたつ．コホモロジーを取ると
+    \[
+        H^n_{\{x\}}(U;A_U)\simarr H^n_c(U;A_U)
+    \]
+
+    (iii) 
+    \(X=\bigcup_{i}U_i\)を\(X\)の開被覆で，
+    各\(U_i\)が\(
+        U_i\mathrel{\underset{\text{diffeo}}{\cong}}\rr^n
+    \)であり，座標変換が\(X\)の向きづけと整合的なものとする．
+    各\(U_i\)ごとの同型\(
+        \phi_{U_i}\colon \ori_X\rvert_{U_i}\cong A_{U_i}
+    \)を次の補題\ref{337}により貼り合わせることができる．
+    \cite[Proposition 3.2.3]{KS90}により，向き反転させると，
+    \(\phi_{U_i}\)は\(-\phi_{U_i}\)になる．
+\end{proof}
 \begin{leftbar}
-\begin{LMM}[{\cite[Prop3.3.7]{KS90}}]
+\begin{LMM}[{\cite[Prop3.3.7]{KS90}}]\label{337}
     \(E\)をユークリッド空間\(\rr^n\)とし，
     同型\(\ori_E\cong A_E\)を固定する．
     \(U\)と\(V\)を\(E\)の開集合とし，\(f\colon U\to V\)を
-    微分同相写像とする．このとき，次の図式は可換である．
+    微分同相写像とする．\(U\)の各点における\(f\)のヤコビアンが正であるとする．
+    このとき，次の図式は可換である．
     \[    
         \vcenter{\xymatrix
         @C=22pt@R=32pt
@@ -654,6 +560,17 @@ DFS空間としての自然な位相を入れている
     \)である．\(f^{-1}\cong f^!\)である．）
 \end{LMM}
 \end{leftbar}
+
+
+
+
+
+
+
+
+
+
+
 
 \(f\colon Y\to X\)を\(C^0\)多様体の間の射とする．
 \(f\)を閉うめ込み\(j\colon Y\hookrightarrow Y\times X\)と
@@ -732,8 +649,25 @@ DFS空間としての自然な位相を入れている
 \end{PRP}
 \end{leftbar}
 
+\begin{proof}
+    \(l\)を\(f\)のファイバー次元とすると，
+    \[
+        f^!F\underset{\text{\ref{PRP332}\eqref{332-2}}}{\cong}
+        f^{-1}F\otimes f^!\zz_X
+    \]
+    であり，\(f^{!}\zz_X\)は\(\zz_Y[l]\)と局所的に同型である．
+    したがって，
+    \begin{align*}
+        f^{-1}F&\mathrel{\textcolor{red}{\cong}}\RHOM(f^!\zz_X,f^!F),\\
+        \Rder f_\ast f^{-1}F
+        &\cong \Rder f_\ast\RHOM(f^!\zz_X,f^!F)\\
+        &\mathrel{\underset{\text{V.D.}}{\cong}} \RHOM(\Rder f_! f^!\zz_X,F)\\
+        &\simra F.
+    \end{align*}
+\end{proof}
 
-\begin{RMK}
+
+\begin{RMK}[{\cite[Remark 3.3.10]{KS90}}]\label{3310}
     \(f\colon Y\to X\)を局所コンパクト空間の間の連続写像とし，
     \(f\)はファイバー次元\(l\)の位相的しずめ込みであるとする．
     このとき，命題\ref{339}の条件\eqref{339-2}が成りたつためには
@@ -772,14 +706,15 @@ DFS空間としての自然な位相を入れている
 が定まる．
 他方で，\(A=\cc\)かつ\(X\)が\(C^\infty\)多様体であるとき，
 よく知られた射\(H^n_c(X;\ori_X)\to \cc\)が次のようにして得られる．
-\(\ori_X\)はド・ラーム複体と擬同形である：
+\(\ori_X\)はド・ラーム複体
 \[
     0\to C_X^{\infty,(0)}\otimes\ori_X\underset{d}{\to}
     \cdots
     \to
     C_X^{\infty,(n)}\otimes\ori_X
-    \to0.
+    \to0
 \]
+と擬同形である．
 \(
     C_X^{\infty,(j)}\otimes\ori_X
 \)はc柔軟なので，
@@ -790,7 +725,8 @@ DFS空間としての自然な位相を入れている
 \]である．
 \(\phi\)をコンパクト台をもつ密度，
 すなわち\(\Gamma_c(X;C^{\infty,(n)}\otimes\ori_X)\)の元とすると，
-\(\int_X\phi\)が意味をもち，ストークスの定理から
+\(\int_X\phi\)が意味をもつ．
+ストークスの定理から，
 \(\psi\in\Gamma_c(X;C^{\infty,(n-1)}\otimes\ori_X)\)で
 \(\phi=d\psi\)となるものが存在するとき\(\int_X\phi=0\)となる．
 したがって，\(\int_X\)は射
@@ -801,18 +737,168 @@ DFS空間としての自然な位相を入れている
 \end{equation}
 を定める．
 この射\eqref{eq:int-mor-dens}は\eqref{eq:int-mor-or}と
-0でない定数倍を除いて一致する．
+符号を除いて一致する．
 
-\begin{PRP}
-    \(X\)を\(C^0\)多様体とし，
+\(X\)が連結のとき，
+\(H^n_c(X;\ori_X)\cong\Hom(H^0(X;\cc_X),\cc)\cong\cc\)である．
+したがって，
+\eqref{eq:int-mor-or}と\eqref{eq:int-mor-dens}は\(0\)以外の
+定数倍を除いて等しい．
+
+\begin{PRP}[{\cite[Proposition 3.3.11]{KS90}}]\label{3311}
+    \(X\)を\(n\)次元\(C^0\)多様体とし，\(A\)を環とする．
+    このとき，\(\Mod(A_X)\)のホモロジー次元は\(3n+\gld(A)+1\)で
+    おさえられる．
 \end{PRP}
 
+\begin{CRL}[{\cite[Corollary 3.3.12]{KS90}}]\label{3312}
+    \(X\)を\(C^0\)多様体とする．
+    このとき，\(\RHOM(\cdot,\cdot)\)は
+    \(\Dompb(A_X)^{\op}\times\Dompb(A_X)\)から
+    \(\Dompb(A_X)\)への関手を定める．
+\end{CRL}
 
 
 
 
 
 
+\appendix
+
+\section{あとで使う定理（復習）}
+\begin{leftbar}
+\begin{PRP}[{\cite[Proposition 3.1.8]{KS90}}]\label{PRP318}
+    \(f\colon Y\to X\)，\(g\colon Z\to Y\)を
+    局所コンパクト空間の間の連続写像とする．
+    \(f_!\)と\(g_!\)のコホモロジー次元が有限であるとする．
+    このとき，\((f\circ g)_!\)のコホモロジー次元は有限で
+    \[
+        (f\circ g)^!\cong g^!\circ f^!
+    \]である．
+\end{PRP}
+\end{leftbar}
+\begin{leftbar}
+    \begin{PRP}[{\cite[Proposition 3.1.12]{KS90}}]\label{PRP3112}
+        \(f\colon Y\to X\)を
+        \(Y\)から\(X\)の局所閉集合\(Z\)の上への同相写像とする．
+        このとき，
+        \[
+            f^!\cong f^{-1}\circ \RG_{f(Y)}(\cdot)
+        \]である．
+    \end{PRP}
+\end{leftbar}
+
+\begin{leftbar}
+    \begin{PRP}[{\cite[Proposition 3.3.2]{KS90}}]\label{PRP332}
+        \(f\colon Y\to X\)をファイバー次元\(l\)の位相的沈めこみとする．
+        \begin{enumerate}[(i)]
+            \item \(k\ne -l\)に対し\(H^k(f^!A_X)=0\)であり，局所的に\(H^{-l}(f^!A_X)\cong A_Y\)である．
+            \item \(f^{-1}(\cdot)\otimes\omega_{Y/X}\to f^!(\cdot)\)は同型である．\label{332-2}
+        \end{enumerate}
+    \end{PRP}    
+\end{leftbar}
+\section{層の例（{\cite[\S2.9]{KS90}}から）}
+
+\subsection{向きづけ，微分形式，密度}
+\(C^0\)多様体\(M\)上の層として，向きづけ層\(\ori _M\)を
+考えることも必要になってくる．
+\(\ori_M\)は\(\zz_M\)と局所的に同型な層であり，
+\(M\)の向きが存在する場合，
+その向きを選ぶことと同型\(\ori_M\cong\zz_M\)を選ぶことが
+同義となるようなものである．
+\(\ori_M\)については次章で詳しくしらべる．
+
+いま，\(\alpha=\infty\)または\(\alpha=\omega\)とし，
+\(p\)を整数とする．\(C^\alpha_M\)を係数にもつ\(p\)次微分形式
+の層を\(C_M^{\alpha,(p)}\)とおく．
+また外微分を\(
+    d\colon C_M^{\alpha,(p)}\to C_M^{\alpha,(p+1)}
+\)で表す．
+
+\((x_1,\dots,x_n)\)が\(M\)上の局所座標系であるとする．
+このとき，\(p\)形式\(f\)は次の形にただ一通りに表されるのであった．
+\[
+    f=\sum_{\lvert I\rvert=p}^{}f_Idx_I,
+\]ここに，\(
+    I=\left\{i_1,\dots,i_p\right\}\subset\{1,\dots,n\}
+\), \((i_1<i_2<\dots<i_p)\), 
+\(dx_I=dx_{i_1}\wedge\dots\wedge dx_{i_p}\)で，
+\(f_I\)は\(C^\alpha_M\)の切断である．
+このとき，\[
+    df=\sum_{i=1}^{n}\sum_{\lvert I\rvert=p}^{}\frac{\partial f_I}{\partial x_i}dx_i\wedge dx_I
+\]となるのであった．
+もうひとつ層を導入する．
+\[
+    \scV_M^\alpha
+    \coloneqq
+    C^{\alpha,(n)}_M\otimes\ori_M
+%    \quad
+ %   \text{}
+\]（\(\alpha=\infty\)または\(\alpha=\omega\)）とおき，
+\(M\)上の\(C^\alpha\)密度の層とよぶ．
+
+コンパクト台をもつ\(C^\infty\)密度は積分することができる．
+\(\int_M\cdot\)で積分写像
+\begin{equation}
+    \int_M\cdot\colon\Gamma_c(M;\scV_M^\infty)\to\cc \label{eq:int}
+\end{equation}を表す．
+\(C^{\alpha,(p)}_M\)と\(\scV_M^\alpha\)は
+\(C^\alpha_M\)加群の層である．
+
+「1の分割」の存在から，
+層\(C^\alpha_M\)，\(C_M^{\alpha,(p)}\)，\(\scV_M^\alpha\)は
+\(\alpha\neq\omega\)に対してはc柔軟であることが従う．
+層\(C^\omega_M\)，\(C^{\omega,(p)}\)，\(\scV_M^\omega\)は
+関手\(\Gamma(M;\cdot)\)に対し非輪状，
+すなわち\(j>0\)に対し\(H^j(M;C^\omega_M)=0\)である．
+Grauert\cite{G58}を参照．
+
+\subsection{分布と超関数}
+\(C^\infty\)多様体\(M\)上には
+シュワルツ分布の層\(\Db_M\)が自然に定まる
+（Schwartz\cite{S66}，de Rham\cite{R55}を参照）．
+\(\Db_M\)はc柔軟層であり，
+\(\Gamma_c(M;\Db_M)\)は\(\Gamma(M;\scV_M^\infty)\)の
+双対位相線形空間である．
+ただし，\(\Gamma(M;\scV_M^\infty)\)には
+フレシェ空間としての自然な位相を入れている．
+
+\(C^\omega\)多様体\(M\)上にも同様に
+佐藤超関数の層\(\scB_M\)が自然に定まる（佐藤\cite{Sa59}を参照）．
+\(\scB_M\)は脆弱層であり，\(\Gamma_c(M;\scB_M)\)は
+\(\Gamma(M;\scV_M^\omega)\)の
+双対位相線形空間である．
+ただし，\(\Gamma(M;\scV_M^\omega)\)には
+DFS空間としての自然な位相を入れている
+（MartineauとSchapiraに詳細な解説がある）．
+%しかし，佐藤による構成は純粋にコホモロジーによるものである．
+%後ほど\ref{ssec:sato}項で復習する．
+
+積分写像\eqref{eq:int}はペアリング
+\begin{equation}
+    \begin{array}{ccc}
+        {\Gamma(M;C_M^\infty)\times\Gamma_c(M;\scV_M^\infty)}&\longrightarrow&\cc\\
+        \rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+        (f,g)&\longmapsto&\dip\int_Mfg
+    \end{array}
+\end{equation}
+を定める．
+このペアリングから\(C^\infty_M\)から\(\Db_M\)への層の射がひきおこされ，
+この射が単射であることも示せる．
+さらに，実解析多様体\(M\)の上では，
+単射\(\Gamma(M;\scV_M^\omega)\to\Gamma(M;\scV_M^\infty)\)から
+射\(\Db_M\to\scB_M\)が引き起こされ，こちらも単射であることがわかる．
+
+分布係数の\(p\)形式の層\(
+    \Db_M^{(p)}
+    \coloneqq 
+    C^{\infty,(p)}_M\otimes_{C^\infty_M}\Db_M
+\)や超関数係数の\(p\)形式の層\(
+    \scB_M^{(p)}
+    \coloneqq 
+    C^{\omega,(p)}_M\otimes_{C^\omega_M}\scB_M
+\)も定義することができる．
+\(\Db_M^{(p)}\)はc柔軟層，\(\scB_M^{(p)}\)は脆弱層である．
 
 
 
