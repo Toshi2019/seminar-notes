@@ -1,0 +1,789 @@
+%=====================================
+%   local-system.tex
+%   局所系と局所定数層（とモノドロミー）
+%=====================================
+
+% -----------------------
+% preamble
+% -----------------------
+% ここから本文 (\begin{document}) までの
+% ソースコードに変更を加えた場合は
+% 編集者まで連絡してください. 
+% Don't change preamble code yourself. 
+% If you add something
+% (usepackage, newtheorem, newcommand, renewcommand),
+% please tell it 
+% to the editor of institutional paper of RUMS.
+
+% ------------------------
+% documentclass
+% ------------------------
+\documentclass[11pt, a4paper, leqno, dvipdfmx]{jsarticle}
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+
+\usetikzlibrary{cd}
+
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+\usepackage[mathcal]{eucal}
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem{Fact*}{事実}
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+%\newcommand{\Ring}{{\bf Ring}}
+\newcommand{\Ab}{{\bf Ab}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits} % 写像の集合
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits} % 射集合
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits} % 自己準同型の集合
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits} % 自己同型の集合
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits} % 射集合
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits} % 核
+\newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
+\newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
+\newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+%\newcommand{\OO}{\mcal{O}}
+
+
+
+\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{section}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\mathsf{Open}}\nolimits}
+\newcommand{\Cl}{\mathop{\mathrm{Cl}}\nolimits}
+\newcommand{\Ob}{\mathop{\mathrm{Ob}}\nolimits}
+\newcommand{\id}{\mathord{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathord{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+%\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
+
+\newcommand{\cat}{\mathscr{C}}
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+\newcommand{\scN}{\mathscr{N}}
+\newcommand{\scO}{\mathscr{O}}
+\newcommand{\scV}{\mathscr{V}}
+
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+%\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+%\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+%\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}%複体のホモトピー圏
+%\newcommand{\Comp}{\mathrm{C}}
+%\newcommand{\Komp}{\mathrm{K}}
+%\newcommand{\Domp}{\mathsf{D}}%複体のホモトピー圏
+
+\newcommand{\Comp}{\mathop{\mathsf{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
+\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}
+\newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
+\newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
+\newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
+\newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
+\newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
+\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+
+
+
+
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
+\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+\newcommand{\Rder}{\mathrm{R}}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
+\newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
+\newcommand{\simra}{\mathrel{\overset{\sim}{\leftarrow}}}%同型左矢印
+\newcommand{\simrra}{\mathrel{\overset{\sim}{\longleftarrow}}}%同型左矢印
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\PSh}{\mathrm{PSh}}
+
+\newcommand{\rmD}{\mathrm{D}}
+
+\newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
+\newcommand{\ori}{\mathord{\mathrm{or}}}
+\newcommand{\Db}{\mathord{\mathscr{D}b}}
+
+\newcommand{\codim}{\mathop{\mathrm{codim}}\nolimits}
+
+
+
+\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
+\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
+
+\newcommand{\Cov}{\mathop{\mathsf{Cov}}\nolimits}
+\newcommand{\Inv}{\mathop{\mathrm{Inv}}\nolimits}
+
+
+
+
+
+
+
+
+
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}[section]
+\newtheorem{DFN}[AXM]{定義}
+\newtheorem{THM}[AXM]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[AXM]{命題}
+\newtheorem{LMM}[AXM]{補題}
+\newtheorem{CRL}[AXM]{系}
+\newtheorem{EG}[AXM]{例}
+\newtheorem*{EG*}{例}
+\newtheorem{RMK}[AXM]{注意}
+\newtheorem{CNV}[AXM]{約束}
+\newtheorem{CMT}[AXM]{コメント}
+\newtheorem{NTN}[AXM]{記号}
+
+% 定理環境ここまで
+%====================================================
+
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+
+% =================================
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+\title{局所系と局所定数層}
+\author{toshi2019}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+    局所系と局所定数層が同じことを説明する．
+    余裕があればモノドロミーについて述べる．
+\end{abstract}
+\section*{記号と用語}
+\begin{itemize}
+    \item 単位閉区間\([0,1]\)を\(I\)とかく．
+    \item 位相空間\(X\)の部分集合\(A\)に対し，閉包を\(\Cl{A}\)とかく．
+    \item 位相空間\(X\)の点\(x\), \(y\)に対し，
+    \(x\)を始点，\(y\)を終点とする\(X\)内の道のホモトピー類の集合を
+    \(\varOmega(X;x,y)\)とかく．
+    \(X\)が明らかな場合は\(\varOmega(x,y)\)ともかく．
+    \item 開集合\(U\)の開被覆の族を\(\Cov(U)\)とかく．
+\end{itemize}
+
+
+
+\section{局所系}
+
+\subsection{亜群}
+
+\(X\)を弧状連結な位相空間とする．
+このとき，\(X\)上の\textbf{基本亜群} (fundamental groupoid) 
+\(\varPi(X)\)を次で定める．
+\begin{description}\setlength{\leftskip}{2zw}
+    \item[対象] \(x\)の各点．
+    \item[射] \(x, y\in X\)に対し，\(x\)から\(y\)への道\(l\colon I\to X\)たちのホモトピー類．
+    \item[合成] 道の結合．
+\end{description}
+次のように書いてもよい．
+\begin{align*}
+    \Ob(\varPi(X))&\coloneqq X,\\
+    \Hom_{\varPi(X)}(x,y)&\coloneqq \varOmega(x,y),\\
+    [l']\circ [l]&\coloneqq [l\cdot l'] \quad (l\in \varOmega(x,y), l'\in \varOmega(y,z)). 
+\end{align*}
+\(\varPi(X)\)の射はすべて同型なので\(\varPi(X)\)は亜群である．
+
+\subsection{局所系}
+\(X\)を弧状連結な位相空間とする．
+亜群\(\varPi(X)\)上の共変換手\(
+    F\colon \varPi(X)\to \cat
+\)を\(X\)上の\(\cat\)に値をとる局所系という．
+
+\section{局所定数層}
+
+\(X\)上の\(\cat\)に値をとる層\(F\)
+が\textbf{局所定数層} (locally constant sheaf) であるとは，
+\(X\)の開被覆\((U_i)_i\)で，各開集合\(U_i\)ごとに，
+\(F\rvert_{U_i}\)が定数層と同型となるものが存在することをいう．
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{{\cite{Sp66}}から}
+
+
+
+
+
+\subsection{{\cite[Chap 1]{Sp66}}}
+\cite[Chap 1]{Sp66}のExercise Fが局所系に関するものである．
+
+
+
+
+
+
+
+\subsubsection*{F 局所系\footnote{
+    Steenrod, Homology with local coefficients, 
+    Ann Math., 44, pp. 610--627, 1943 参照．
+}}
+
+\subparagraph{1} 空間\(X\)上の局所系とは，\(X\)の基本亜群から
+別の圏への共変関手である．任意の圏\(\mathcal{C}\)に対し，
+\(\mathcal{C}\)に値をとる\(X\)上の局所系の圏が定まることを示せ．
+（2つの局所系がこの圏の対象として同値であるとき，
+それらが同値であるという．）
+
+\subparagraph{2}
+\(f\colon X\to Y\)を写像とする．
+\(f\)は\(\mathcal{C}\)に値をとる\(Y\)上の局所系の圏から
+\(\mathcal{C}\)に値をとる\(X\)上の局所系の圏への関手
+をひきおこすことを示せ．
+
+\subparagraph{3}
+\(A\)が圏\(\mathcal{C}\)の対象であるとき，
+\(\Aut{A}\)を\(\mathcal{C}\)における\(A\)の自己同値のなす群とする．
+\(\varphi\colon A\approx B\)が\(\mathcal{C}\)における同値とであるとき，
+\(
+    \mathop{\overline{\varphi}}(\alpha)
+    =\varphi\circ\alpha\varphi^{-1}
+\)で定義される射\(
+    \mathop{\overline{\varphi}}\colon\Aut{A}\to\Aut{B}
+\)は群の同型であることを示せ．
+
+\subparagraph{4}
+\(\Gamma\)を\(X\)上の局所系とし\(x_0\in X\)とする．
+このとき，\(\Gamma\)は準同型
+\[
+    \mathop{\bar{\Gamma}_{x_0}}\colon \pi(X,x_0)\to\Aut{\Gamma(x_0)}
+\]
+をひきおこすことを示せ．
+
+\subparagraph{5}
+\(X\)が弧状連結であるとき，
+\(X\)上の\(\mathcal{C}\)に値をとる局所系\(\Gamma\), \(\Gamma'\)が同値であるためには，
+同値\(\varphi\colon \Gamma(x_0)\to\Gamma'(x_0)\)で，
+\(\Aut{\Gamma'(x_0)}\)において
+\(\bar{\varphi}\circ\bar{\Gamma}_{x_0}\)が
+\(\bar{\Gamma'}_{x_0}\)と共役となるものが存在する
+ことが必要十分であることを示せ．
+
+\subparagraph{6}
+\(X\)が弧状連結であるとき，
+\(A\in\mathcal{C}\)と準同型\(\alpha\colon\pi(X,x_0)\to\Aut{A}\)に対して，
+\(X\)上の\(\mathcal{C}\)に値をとる局所系\(\Gamma\)で，
+\(\Gamma(x_0)=A\)と\(\bar{\Gamma}_{x_0}=\alpha\)を
+みたすものが存在することを示せ．
+
+
+\subsection{{\cite[Chap 6]{Sp66}}}
+
+局所系と層の関係については\cite[Chap 6]{Sp66}のExercise Fに書いてある．
+
+\subsubsection*{F 局所系と層}
+
+以下の一連の演習問題では，\(X\)はパラコンパクトハウスドルフであるとする．
+
+\subparagraph{1}
+\(\Gamma\)が\(X\)上の局所系であるとき，
+\(\bar{\Gamma}\)を，開集合\(V\subset X\)に対し，
+\[\mathop{\bar{\Gamma}}(V)\coloneqq\left\{
+    f\colon X\to \Gamma(X);\text{
+        \(V\)内の任意の道\(\omega\)に対して，
+        \(f(\omega(1))
+        =\Gamma(\omega)\left(f\left(\omega(0)\right)\right)\)
+    }
+\right\}\]で定まる\(X\)上の前層とする．
+\(\bar{\Gamma}\)は\(X\)上の層であり，
+\(\Gamma\)に\(\bar{\Gamma}\)を対応させる操作は，
+局所系から層への自然変換であることを示せ．
+
+
+\subparagraph{2}
+\(X\)上の前層\(\Gamma\)が局所定数層であるとは，
+\(X\)の開被覆\(\mathscr{U}=\{U\}\)で
+\(U\in\mathscr{U}\)かつ\(x\in U\)のとき，
+\(\Gamma(U)\approx\indlim[V\ni x]\left\{\Gamma(V)\right\}\)が
+成りたつことをいう．
+\(U\in\mathscr{U}\)で\(U'\)が\(U\)の連結開集合のとき，
+合成
+\[
+    \Gamma(U)\to\Gamma(U')\to\hat{\Gamma}(U')
+\]
+が同型射になることを示せ．\footnote{
+    \(\hat{\Gamma}\)は前層\(\Gamma\)の完備化と呼ばれ，
+    次のように定義される．
+    \[
+        \Gamma(\mathscr{U})\coloneqq\left\{(s_U)_U\in\prod_{U\in\mathscr{U}}^{}\Gamma(U);
+            \text{各\(U, V\in\mathscr{U}\)に対し，
+            \(s_U\rvert_{U\cap V}
+            =s_V\rvert_{U\cap V}\)}\right\}
+    \]とおくとき，
+    \[
+        \hat{\Gamma}(W)\coloneqq 
+        \indlim[\mathscr{U}\in\Cov(W)]\Gamma(\mathscr{U}).
+    \]要するに層化．
+    \cite[p.78]{Sp66}
+    }
+\(\Gamma\)が局所定数層で，
+\(U'\)が\(U\in\mathscr{U}\)の連結開集合であるとき，
+\(\Gamma(U)\approx\Gamma(U')\)となることを示せ．
+
+
+\subparagraph{3}
+\(X\)が局所弧状連結で\(\Gamma'\)が\(X\)上の局所定数層であるとき，
+\(X\)上の局所系\(\Gamma\)で\(\bar{\Gamma}\approx\Gamma'\)と
+なるものが存在することを示せ．
+
+\subparagraph{4}
+\(X\)が局所弧状連結かつ半局所1連結\footnote{
+    空間\(X\)が\textbf{半局所1連結} (semilocally 1-connected) で
+    あるとは，
+    各点\(x_0\in X\)に対し近傍\(N\)で\(
+        \pi(N,x_0)\to\pi(X,x_0)
+    \)が自明となることをいう．
+    \cite[p.78]{Sp66}
+}であるとき，
+\(X\)上の局所系の同値類と
+\(X\)上の局所定数層の同値類と
+の間に一対一対応が存在することを示せ．
+
+\clearpage
+\section{局所定数層の分類{\cite[IV.9]{Iv}}}
+
+同変\(k\)層を導入する．
+\(k\)を可換環とし，\(X\)を位相空間で群\(G\)が右から作用するもの
+とするとき，層\(E\)に対する\(G\)作用とは，\(k\)層の射
+\(a_\sigma\colon E\to \sigma_{\ast}E\)で次をみたすものの族
+\((a_\sigma)_{\sigma\in G}\)のことである．
+\begin{equation}
+    a_{\sigma\tau}=\tau_{\ast}a_\sigma\circ a_{\tau}. \quad(\sigma,\tau\in G)\label{Iv91}
+\end{equation}
+\(G\)作用をもつ層を\(G\)同変層\(E\)という．
+\(k\)層の射で任意の\(\sigma\in G\)に対し
+次の図式が可換になるものを
+\(G\)同変層の射\(h\colon E\to F\)という．
+\[
+    \vcenter{\xymatrix@C=26pt@R=26pt{
+        E
+        \ar[r]^-{}
+        \ar[d]^-{h}
+        &
+        \sigma_\ast E
+        \ar[d]^-{\sigma_\ast h} 
+        \\
+        F \ar[r]^-{}
+        &
+        \sigma_\ast F.
+    }}
+\]
+\(X\)上の\(G\)同変層の圏を\(\Sh^G(X,k)\)とかく．
+以下で\(B=X/G\)とおき，\(f\colon X\to B\)で射影を表す．
+ここで，関手を2つ導入する．
+\begin{equation}
+    \vcenter{\xymatrix@C=26pt@R=26pt{
+        \Sh^G(X,k)
+        \ar@<-0.5ex>[r]_-{\Inv^G}
+        &
+        \Sh(B,k)
+        \ar@<-0.5ex>[l]_-{f^\ast}.
+    }}\label{Iv92}
+\end{equation}
+まず，\(X\)上の\(k\)層\(E\)への\(G\)作用は，随伴を考えることで，
+\(a^{\sigma}\colon\sigma^\ast E\to E\)という同型によって表すことも
+できることに注意する．
+したがって，\(B\)上の層\(F\)に対し，
+標準的な同型\[
+    \sigma^\ast f^\ast F\to f^\ast F\quad (\sigma\in G)
+\]によって\(f^\ast F\)への\(G\)作用が定まる．
+いま，\(E\)を\(X\)上の\(G\)同変層とする．
+\(B\)の開集合\(V\)での\(\Inv^G E\)の切断について述べるために，
+式\eqref{Iv91}から，\(\Gamma(f^{-1}(V),E)\)への左\(G\)作用が
+定まることに注意する．
+このとき，
+\[
+    \Gamma(V;\Inv^G E)\coloneqq 
+    \Gamma(f^{-1}(V),E)^G
+\]
+とおく．ただし，\(\Gamma(f^{-1}(V),E)^G\)は
+\(E\)の\(f^{-1}(V)\)における\(G\)不変な切断のなす集合である．
+\(f^\ast\)は\(\Inv^G\)の左随伴関手である．
+すなわち，任意の\(F\in\Sh(B,k)\), \(E\in\Sh^G(X,k)\)に対し
+\begin{equation}
+    \Hom_F(f^\ast{F},E)\cong \Hom(F,\Inv^G{E})
+\end{equation}
+である．
+証明は読者に任せる．
+\(G\)作用をもつ\(k\)加群\(N\)に対し，
+\(N\)上の\(G\)作用を対応させることができる．
+\(\sigma\in G\)と\(X\)の開集合\(U\)に対し，
+次の写像を対応させる．
+\begin{equation}
+    \Hom(U,N)\to \Hom(\sigma(U),N);
+    \quad 
+    \varphi\to \sigma_N\circ \varphi\circ\sigma.
+\end{equation}
+
+
+
+
+
+
+
+
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    \bibitem[B+84]{B+84} Borel, 
+    \textit{Intersection Cohomology}, 
+    Progress in Mathematics, 50, Birkh\"auser, 1984.
+    \bibitem[Iv]{Iv} Iversen, Cohomology of Sheaves.
+\bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Sheaves on Manifolds}, 
+    Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+\bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Categories and Sheaves}, 
+    Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
+\bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
+\bibitem[Sp66]{Sp66} Spanier: Algebraic Topology. McGraw-Hill, 1966.
+\end{thebibliography}
+
+%===============================================
+
+
+\end{document}
