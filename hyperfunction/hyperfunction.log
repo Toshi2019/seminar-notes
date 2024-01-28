@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  5 JAN 2024 22:40
+This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  28 JAN 2024 23:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -920,41 +920,46 @@ LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
 ) [2
 
 ]
+LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
+(Font)              scaled to size 8.32214pt on input line 439.
+LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
+(Font)              scaled to size 8.32214pt on input line 439.
+
 
 LaTeX Font Warning: Font shape `JT1/hmc/m/it' undefined
-(Font)              using `JT1/hmc/m/n' instead on input line 431.
+(Font)              using `JT1/hmc/m/n' instead on input line 454.
 
 
 LaTeX Font Warning: Font shape `JY1/hmc/m/it' undefined
-(Font)              using `JY1/hmc/m/n' instead on input line 431.
+(Font)              using `JY1/hmc/m/n' instead on input line 454.
 
 LaTeX Font Info:    Font shape `JT1/hmc/m/it' will be
-(Font)              scaled to size 9.24683pt on input line 434.
+(Font)              scaled to size 9.24683pt on input line 457.
 LaTeX Font Info:    Font shape `JY1/hmc/m/it' will be
-(Font)              scaled to size 9.24683pt on input line 434.
+(Font)              scaled to size 9.24683pt on input line 457.
 [3
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 448.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 448.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 471.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 471.
  (./hyperfunction.aux (./gen1.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 448.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 448.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 471.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 471.
 Package rerunfilecheck Info: File `hyperfunction.out' has not changed.
 (rerunfilecheck)             Checksum: D33C7D39E43A4E58BBD69F12B2020FD9;125.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 448.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 471.
  ) 
 Here is how much of TeX's memory you used:
- 24636 strings out of 493273
- 427041 string characters out of 6144919
- 553210 words of memory out of 5000000
- 28068 multiletter control sequences out of 15000+600000
- 27193 words of font info for 127 fonts, out of 8000000 for 9000
+ 24695 strings out of 493273
+ 428486 string characters out of 6144919
+ 554238 words of memory out of 5000000
+ 28126 multiletter control sequences out of 15000+600000
+ 27694 words of font info for 130 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  55i,8n,82p,3278b,991s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on hyperfunction.dvi (3 pages, 6256 bytes).
+Output written on hyperfunction.dvi (3 pages, 11588 bytes).
