@@ -472,7 +472,7 @@
     \item \(X\)における\(A\)の\textbf{閉包} (closure) を
     \(\Cl[X]A\)で表す．\(X\)が明らかなときは\(\Cl{A}\)とかく．
     \(\overline{A}\)とかくこともある．
-    \item \(X\)における\(A\)の\textbf{閉包} (boundary) を
+    \item \(X\)における\(A\)の\textbf{境界} (boundary) を
     \(\Bd[X]A\)で表す．\(X\)が明らかなときは\(\Bd{A}\)とかく．
     フランス語で Frontier ということから\(\Fr A\)とかくこともある．
     \(\p{A}\)や\(\dot{A}\)とかくこともある．
@@ -520,7 +520,7 @@
 
 \end{proof}
 
-\clearpage
+%\clearpage
 \begin{EG}
     複素平面\(\CC\)において，実数の開区間\(\left]a,b\right[\)は
     局所閉集合である．3つの条件について見てみる．
@@ -529,10 +529,7 @@
     \(\left]a,b\right[\)が開集合となることから従う．（図\ref{fig:loc-closed-closure}参照）
     \begin{figure}[htb]
         \centering
-        %\scalebox{0.8}{
-            \begin{tikzpicture}[x=1cm,y=1cm]
-            %\fill[black!10] (-3,0) ellipse (1 and 1);
-            %\draw (-2,-0.5) node[below]{$U$};
+        \begin{tikzpicture}[x=1cm,y=1cm]
             \draw[->,>=stealth,semithick] (-5,0)--(5,0)node[below]{$\RR$}; %x軸
             \draw[thick] (-2,0)--(2,0); %
             \fill[black!100] (-4,0.05) rectangle (4,-0.05);
@@ -546,10 +543,9 @@
             \fill[black!0](-4,0) ellipse (0.1 and 0.1);
             \draw (-4,0) ellipse (0.1 and 0.1);
 
-
             %\draw[thick] (-3,0.1)--(-3,-0.1) node[below]{\(x\)};
-        \end{tikzpicture}%}
-        \caption{各点まわりで開区間と円盤の共通部分は円盤の閉集合}
+        \end{tikzpicture}
+        \caption{開区間は閉区間の開集合}
         \label{fig:loc-closed-closure}
     \end{figure}
 
@@ -578,11 +574,11 @@
             \draw (-1.3,0.1) node[above]{$F$};
             \draw (1.3,-1) node[left]{$U$};
 
-            \fill[black!0](2,0) ellipse (0.1 and 0.1);
-            \draw (2,0) ellipse (0.1 and 0.1);
+            %\fill[black!100](2,0) ellipse (0.1 and 0.1);
+            %\draw (2,0) ellipse (0.1 and 0.1);
 
-            \fill[black!0](-2,0) ellipse (0.1 and 0.1);
-            \draw (-2,0) ellipse (0.1 and 0.1);
+            %\fill[black!100](-2,0) ellipse (0.1 and 0.1);
+            %\draw (-2,0) ellipse (0.1 and 0.1);
         \end{tikzpicture}%}
         \caption{開区間は円盤と閉区間の合併}
         \label{fig:loc-closed-intersection}
@@ -613,7 +609,7 @@
 
             \draw[thick] (-4,-0.2) node[left]{\(a\)};
             \draw[thick] (4,-0.2) node[right]{\(b\)};
-            %\draw (-1.3,0.1) node[above]{$F$};
+
             \draw[dashed,black!100] (-3,0) ellipse (1 and 1);
             %\fill[black!0](-2,0) ellipse (0.1 and 0.1);
             %\draw (-2,0) ellipse (0.1 and 0.1);
@@ -623,7 +619,6 @@
 
             \fill[black!0](-4,0) ellipse (0.1 and 0.1);
             \draw (-4,0) ellipse (0.1 and 0.1);
-
 
             \draw[thick] (-3,0.1)--(-3,-0.1) node[below]{\(x\)};
         \end{tikzpicture}%}
@@ -669,6 +664,24 @@
 \end{DFN}
 \end{leftbar}
 
+\begin{EG}
+    位相多様体\(X\)は局所コンパクトである．
+\end{EG}
+\begin{proof}
+    \(x\in X\)の近傍\(U_x\)でユークリッド空間の開集合\(U'_x\)と
+    同相なものが存在する．\(U_x\)と\(U'_x\)の間の
+    同相写像を\(\varphi\colon U_x\to U'_x\)とする．
+    \(\varphi(x)\)を中心とする開球\(B_x\)で\(U'_x\)に含まれるものが存在する．
+    この\(B_x\)に対し，\(\overline{B_x}\)はコンパクトである．
+    したがって，\(\varphi^{-1}\left(\overline{B_x}\right)
+    =\overline{\varphi^{-1}(B_x)}\)はコンパクトである．
+    すなわち\(\varphi^{-1}(B_x)\)は\(x\)の相対コンパクトな開近傍である．
+\end{proof}
+
+
+
+
+
 次の命題から，局所コンパクト空間においては，部分集合が
 局所コンパクトであることと局所閉であることは同じである．
 
@@ -684,27 +697,124 @@
     \end{enumerate}    
 \end{PRP}
 
-\begin{leftbar}    
+\subsection{局所コンパクトノルム空間の有限次元性}
+
+有限次元ノルム空間\(X\)は局所コンパクト．
+実際，実数\(r>0\)に対し，
+開球\(D_r(0)\)は有界閉集合なのでコンパクトである．
+したがって，
+\(x\in X\)に対し，\(D_{\lVert x\rVert +1}(0)\)はコンパクト近傍である．
+
+無限次元ノルム空間は局所コンパクトにはならない．\cite{Shw67}
+
+
+\subsection{関数列の局所的な一様収束概念}
+関数列の収束には各点収束と一様収束，その間の収束概念として広義一様収束があった．
+関数列が定義される空間が局所コンパクトなら，
+広義一様収束と局所一様収束の概念は一致する．
+この辺はシュヴァルツ解析学1を参考にした．
+金子関数論講義にも書いてある．
+\begin{leftbar}
 \begin{DFN}
-    \(X\)を局所コンパクト空間とする．
-    \(X\)が\textbf{無限遠点で可算} (countable at infinity) である
-    とは，\(X\)が可算個のコンパクト集合の合併であることをいう．
+    \(X\)を集合，\(Y\)を距離空間とする．
+    \(
+        \left(f_n\colon X\to Y\right)_{n\in \NN}
+    \)
+    を\(X\)から\(Y\)への写像の列とし，
+    \(f\colon X\to Y\)を\(X\)から\(Y\)への写像とする．
+
+    1.  
+    列
+    \(\left(f_n(x)\right)\)が\(X\)上で\(f(x)\)に
+    \textbf{一様収束} (uniform conbergent) するとは，
+    任意の実数\(q>0\)に対し，\(m\in\NN\)で
+    \(n\geqq m\)をみたすすべての自然数\(n\)に対し\(X\)で
+    \[
+        \dist(f_n(x),f(x))<q
+    \]
+    をみたすものが存在することをいう．
+
+    2. 
+    \(X\)を位相空間とする．列
+    \(\left(f_n\right)\)が\(X\)上で\(f\)に
+    \textbf{広義一様収束}\footnotemark[1]するとは，
+    \(X\)の任意のコンパクト集合\(K\)上で
+    \(\left(f_n\right)\)が\(f\)に一様収束することをいう．
+
+    3. 
+    \(X\)を位相空間とする．
+    列\(
+        \left(f_n\colon X\to Y\right)_{n\in \NN}
+    \)が\(X\)上で\(f\colon X\to Y\)に
+    \textbf{局所一様} (locally uniform) に収束するとは，
+    \(X\)の各点\(x\)に対して，
+    \(x\)の開近傍\(U\in I_x\)で，
+    \((f_n)\)が\(U\)上で\(n\to\infty\)で\(f\)に一様収束
+    するものが存在することをいう．
 \end{DFN}
 \end{leftbar}
+\footnotetext[1]{
+        海外では，広義一様収束にあたる言葉はなく，
+        いちいち，任意のコンパクト集合上で
+        一様収束するというらしい．（金子）
+        広義一様収束のことをコンパクト一様収束ということもある．
+    }
 
-\begin{EG}
-    位相多様体\(X\)は局所コンパクトである．
-\end{EG}
+    局所コンパクト空間\(X\)は各点がコンパクトな近傍を持つ．
+\begin{PRP}
+    \(X\)が局所コンパクト空間であるとする．\(Y\)を距離空間とする．
+    このとき，列\(
+        \left(f_n\colon X\to Y\right)_{n\in \NN}
+    \)が\(X\)上で\(f\colon X\to Y\)に局所一様に収束することと，
+    広義一様収束することは同値である．
+\end{PRP}
 \begin{proof}
-    \(x\in X\)の近傍\(U_x\)でユークリッド空間の開集合\(U'_x\)と
-    同相なものが存在する．\(U_x\)と\(U'_x\)の間の
-    同相写像を\(\varphi\colon U_x\to U'_x\)とする．
-    \(\varphi(x)\)を中心とする開球\(B_x\)で\(U'_x\)に含まれるものが存在する．
-    この\(B_x\)に対し，\(\overline{B_x}\)はコンパクトである．
-    したがって，\(\varphi^{-1}\left(\overline{B_x}\right)
-    =\overline{\varphi^{-1}(B_x)}\)はコンパクトである．
-    すなわち\(\varphi^{-1}(B_x)\)は\(x\)の相対コンパクトな開近傍である．
+    \(f_n\)が広義一様収束するとする．
+    \(x\in X\)とする．
+    \(X\)が局所コンパクトなので，
+    \(x\)に対しコンパクトな近傍\(K\in I_x\)が存在する．
+    この\(K\)に対し，
+    \(f_n\)は\(K\)上一様収束する．
+    よって，\(f_n\)は局所一様に収束する.
+
+    \(f_n\)が局所一様に収束するとする．
+    \(K\)を\(X\)のコンパクト集合とする．
+    \(q>0\)を実数とする．
+    各\(a\in K\)に対し，\(a\)の近傍\(U_a\in I_a\)で，
+    \((f_n)\)が\(U_a\)上\(f\)に一様収束するものが存在する．
+    この\(\left(U_a\right)_{a\in K}\)に対し，
+    有限個の添え字を選んで，
+    \(K\subset U_{a_1}\cup\dots\cup U_{a_n}\)とすることができる．
+    \(m_i\)を\(n\geqq m_i\)となるすべての自然数\(n\)に対し，
+    \(U_{a_i}\)上\[
+        \dist(f_n(x),f(x))<q
+    \]をみたすものとする．\(m=\max_i m_i\)とすると，
+    \(n\geqq m\)となるすべての自然数\(n\)に対し，
+    \(K\)上\[
+        \dist(f_n(x),f(x))<q
+    \]がなりたつ．
+    よって，\(K\)上一様収束する．
 \end{proof}
+
+
+\subsection{無限遠点で可算な局所コンパクト空間}
+
+\begin{leftbar}    
+    \begin{DFN}
+        \(X\)を局所コンパクト空間とする．\(X\)の1点コンパクト化を\(Y\)とし，
+        \(b\in Y\)を無限遠点とする．
+        \(X\)が\textbf{無限遠点で可算} (countable at infinity) である
+        とは，\(b\)の近傍系で可算なものが存在することをいう．
+    \end{DFN}
+    \end{leftbar}
+    
+
+
+\begin{PRP}
+    \(X\)を局所コンパクト空間とする．
+    \(X\)が無限遠点で可算であることと，
+    \(\sigma\)コンパクトであることは同値である．
+\end{PRP}
 
 
 
@@ -785,6 +895,8 @@
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
+    \bibitem[Bou1]{Bou1} ブルバキ 位相1．
+    \bibitem[Kan21]{Kan21} 金子晃, 関数論講義, サイエンス社, 2021.
     \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
         \textit{Sheaves on Manifolds}, 
         Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
@@ -792,11 +904,14 @@
         \textit{Categories and Sheaves}, 
         Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
     \bibitem[Mat65]{Mat65} 松島与三, 多様体入門, 裳華房, 1965.
+    
+    \bibitem[Mori81]{Mori81} 森田紀一, 位相空間論, 岩波書店, 1981.
 
     \bibitem[Sai09]{Sai09} 斎藤毅, 集合と位相, 東京大学出版会, 2009.
         
         第2可算，\(\sigma\)コンパクトの定義と，無限遠点で可算との同値性について．
 
+    \bibitem[Shw67]{Shw67} シュヴァルツ解析学1, 東京図書, 1970.
     \bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
 \end{thebibliography}
 
