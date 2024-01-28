@@ -17,7 +17,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[11pt, a4paper, dvipdfmx, draft]{jsarticle}
+\documentclass[11pt, a4paper, dvipdfmx]{jsarticle}
 
 % ------------------------
 % usepackage
@@ -172,23 +172,8 @@
 % 特殊な写像の記号
 \newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
 \newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+\newcommand{\dist}{\mathop{\mathrm{dist}}\nolimits} % 距離関数
 
-% スクリプト体にするコマンド
-%   例えば　{\mcal C} のように用いる
-\newcommand{\mcal}{\mathcal}
-
-% 花文字にするコマンド 
-%   例えば　{\h C} のように用いる
-\newcommand{\h}{\mathscr}
-
-% ヒルベルト空間などの記号
-\newcommand{\F}{\mcal{F}}
-\newcommand{\X}{\mcal{X}}
-\newcommand{\Y}{\mcal{Y}}
-\newcommand{\Hil}{\mcal{H}}
-\newcommand{\RKHS}{\Hil_{k}}
-\newcommand{\Loss}{\mcal{L}_{D}}
-\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
 
 % 偏微分作用素の記号
 \newcommand{\p}{\partial}
@@ -197,17 +182,25 @@
 \newcommand{\lan}{\langle}
 \newcommand{\ran}{\rangle}
 
+% 位相空間
+\newcommand{\Int}[1][]{\mathop{\mathrm{Int}}\nolimits_{#1}}
+\newcommand{\Cl}[1][]{\mathop{\mathrm{Cl}}\nolimits_{#1}}
+\newcommand{\Bd}[1][]{\mathop{\mathrm{Bd}}\nolimits_{#1}}
+\newcommand{\Fr}[1][]{\mathop{\mathrm{Fr}}\nolimits_{#1}}
 
 
-% 圏の記号など
-\newcommand{\Set}{{\bf Set}}
-\newcommand{\Vect}{{\bf Vect}}
-\newcommand{\FDVect}{{\bf FDVect}}
-\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
-\newcommand{\CGA}{{\bf CGA}}
-\newcommand{\GVect}{{\bf GVect}}
-\newcommand{\Lie}{{\bf Lie}}
-\newcommand{\dLie}{{\bf Liec}}
+
+
+
+
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+
 
 
 
@@ -273,7 +266,7 @@
 \newcommand{\sumf}{\mathop{\text{``}\hspace{-0.7pt}\bigoplus\hspace{-1.5pt}\text{''}}}
 
 \newcommand{\hh}{\mathop{\mathrm{h}}\nolimits}
-\newcommand{\Ind}{\mathop{\mathrm{Ind}}}
+
 
 
 %筆記体
@@ -367,6 +360,30 @@
 \newcommand{\smi}{\mathrel{\raisebox{2.33pt}{\rule{6.4pt}{1.3pt}}}}
 
 
+
+
+
+
+
+
+
+
+
+
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+
+
+
 % =================================
 
 
@@ -432,11 +449,12 @@
 
 \title{位相空間まとめノート}
 \author{Toshi2019}
-\date{\today\footnote{2023/09/21作成開始}}
+\date{\today 更新版\footnote{2023/09/21作成開始}}
 \begin{document}
 \maketitle
 
-位相空間論で調べたことをまとめるノート．
+位相空間論について調べたこととかをまとめる．
+
 
 \section*{記号など}
 \begin{itemize}
@@ -445,9 +463,199 @@
     \(X\)が明らかなときは\(\complement{A}\)ともかく．
     \(X-A\)とか\(X\smi A\)とか\(X\setminus A\)ともかく．
 \end{itemize}
+
+\(X\)を位相空間とする．\(A\)を\(X\)の部分集合とする．
+\begin{enumerate}
+    \item \(X\)における\(A\)の\textbf{内部} (interier) を
+    \(\Int[X]A\)で表す．\(X\)が明らかなときは\(\Int{A}\)とかく．
+    \(\mathring{A}\)とか\(A^{\circ}\)とかくこともある．
+    \item \(X\)における\(A\)の\textbf{閉包} (closure) を
+    \(\Cl[X]A\)で表す．\(X\)が明らかなときは\(\Cl{A}\)とかく．
+    \(\overline{A}\)とかくこともある．
+    \item \(X\)における\(A\)の\textbf{閉包} (boundary) を
+    \(\Bd[X]A\)で表す．\(X\)が明らかなときは\(\Bd{A}\)とかく．
+    フランス語で Frontier ということから\(\Fr A\)とかくこともある．
+    \(\p{A}\)や\(\dot{A}\)とかくこともある．
+\end{enumerate}
+
+
+\section{基本的な定義}
+
+
+
+
+
+
+
+\begin{leftbar}
+\begin{DFN}
+    \(X\)を位相空間とする．\(X\)の部分集合\(A\)に関する
+    次の条件\eqref{lc-closure}--\eqref{lc-neighbor}は同値である．
+    これらの条件をみたすとき，\(A\)は
+    \(X\)の\textbf{局所閉集合} (locally closed set) であるという．
+    \begin{enumerate}[(1)]
+        \item \(A\)は\(\bar{A}\)の開集合である．\label{lc-closure}
+        \item \(X\)の開集合\(U\)と閉集合\(F\)で\(A=U\cap F\)となるものが存在する．\label{lc-intersection}
+        \item \(A\)の各点\(x\)に対して，\(x\)の開近傍\(U\)で，\(A\cap U\)が\(U\)の閉集合となるものが存在する．\label{lc-neighbor}
+    \end{enumerate}
+\end{DFN}
+\end{leftbar}
+
+\begin{proof}[\textbf{条件\eqref{lc-closure}--\eqref{lc-neighbor}が同値であることの証明}]
+    
+    %\subparagraph{a}
+    \eqref{lc-closure}\(\Rightarrow\)\eqref{lc-intersection}：
+    仮定より，\(A\)は\(X\)の開集合\(U\)を用いて，
+    \(A=U\cap \bar{A}\)とかける．
+    \(\bar{A}\)は\(X\)の閉集合である．
+
+    \eqref{lc-intersection}\(\Rightarrow\)\eqref{lc-neighbor}：
+    \(A\)を\(X\)の開集合\(U\)と閉集合\(F\)で\(A=U\cap F\)と表す．
+    \(x\)を\(A=U\cap F\)の点とする．このとき，\(U\)は\(x\)の開近傍で，
+    \(A\cap U=(U\cap F)\cap U= U\cap F\subset U\)は\(U\)の
+    閉集合である．
+    実際，\(U\sm F=U\cap (X\sm F)\)は\(U\)の開集合である．
+
+    \eqref{lc-neighbor}\(\Rightarrow\)\eqref{lc-closure}：
+
+\end{proof}
+
+\clearpage
+\begin{EG}
+    複素平面\(\CC\)において，実数の開区間\(\left]a,b\right[\)は
+    局所閉集合である．3つの条件について見てみる．
+
+    条件\eqref{lc-closure}：閉包\([a,b]\)の中で
+    \(\left]a,b\right[\)が開集合となることから従う．（図\ref{fig:loc-closed-closure}参照）
+    \begin{figure}[htb]
+        \centering
+        %\scalebox{0.8}{
+            \begin{tikzpicture}[x=1cm,y=1cm]
+            %\fill[black!10] (-3,0) ellipse (1 and 1);
+            %\draw (-2,-0.5) node[below]{$U$};
+            \draw[->,>=stealth,semithick] (-5,0)--(5,0)node[below]{$\RR$}; %x軸
+            \draw[thick] (-2,0)--(2,0); %
+            \fill[black!100] (-4,0.05) rectangle (4,-0.05);
+
+            \draw[thick] (-4,-0.2) node[left]{\(a\)};
+            \draw[thick] (4,-0.2) node[right]{\(b\)};
+            
+            \fill[black!0](4,0) ellipse (0.1 and 0.1);
+            \draw (4,0) ellipse (0.1 and 0.1);
+
+            \fill[black!0](-4,0) ellipse (0.1 and 0.1);
+            \draw (-4,0) ellipse (0.1 and 0.1);
+
+
+            \draw[thick] (-3,0.1)--(-3,-0.1) node[below]{\(x\)};
+        \end{tikzpicture}%}
+        \caption{各点まわりで開区間と円盤の共通部分は円盤の閉集合}
+        \label{fig:loc-closed-closure}
+    \end{figure}
+
+    条件\eqref{lc-intersection}：    
+    例えば\(\left]a,b\right[\)を直径とする
+    開円盤\(U\)を
+    \[
+        U\coloneqq\left\{z\in\CC;\ 
+        \left\lvert z-\frac{a+b}{2}\right\rvert 
+        < \frac{b-a}{2}\right\}
+    \]
+    で定義し，閉集合\(F\)として閉区間\([a,b]\)をとれば，
+    \({\left]a,b\right[}= U\cap F\)とかける．（図\ref{fig:loc-closed-intersection}参照）
+    \begin{figure}[htb]
+        \centering
+        %\scalebox{0.8}{
+            \begin{tikzpicture}[x=1cm]
+            \fill[black!10] (0.7,0.1) (0,0) ellipse (2 and 2);
+            \draw[->,>=stealth,semithick] (-5,0)--(5,0)node[below]{$\RR$}; %x軸
+            \draw[thick] (-2,0)--(2,0); %
+            \fill[black!100] (-2,0.05) rectangle (2,-0.05);
+
+            \draw[thick] (-2,-0.2) node[left]{\(a\)};
+            \draw[thick] (2,-0.2) node[right]{\(b\)};
+            \draw (-1.3,0.1) node[above]{$F$};
+            \draw (1.3,-1) node[left]{$U$};
+
+            \fill[black!0](2,0) ellipse (0.1 and 0.1);
+            \draw (2,0) ellipse (0.1 and 0.1);
+
+            \fill[black!0](-2,0) ellipse (0.1 and 0.1);
+            \draw (-2,0) ellipse (0.1 and 0.1);
+        \end{tikzpicture}%}
+        \caption{開区間は円盤と閉区間の合併}
+        \label{fig:loc-closed-intersection}
+    \end{figure}
+
+    条件\eqref{lc-neighbor}：実数\(a<x<b\)に対して，
+    条件\eqref{lc-intersection}のときと同様に，
+    \[
+        U\coloneqq\left\{z\in\CC;\ 
+        \left\lvert z-\frac{a+b}{2}\right\rvert 
+        < \frac{b-a}{2}\right\}
+    \]とすれば，\(U\)は\(x\)の開近傍で\({\left]a,b\right[}\cap U\)は\(U\)の閉集合となる．
+    もう少し小さい近傍として，例えば\(x\)を中心とする開円盤
+    \[
+        U\coloneqq\left\{z\in\CC;
+        \left\lvert z-x\right\rvert 
+        < \min\left(x-a,b-x,1\right)\right\}
+    \]をとることもできる．（図\ref{fig:loc-closed-neibor}参照）
+    \begin{figure}[htb]
+        \centering
+        %\scalebox{0.8}{
+            \begin{tikzpicture}[x=1cm,y=1cm]
+            \fill[black!10] (-3,0) ellipse (1 and 1);
+            \draw (-2,-0.5) node[below]{$U$};
+            \draw[->,>=stealth,semithick] (-5,0)--(5,0)node[below]{$\RR$}; %x軸
+            \draw[thick] (-2,0)--(2,0); %
+            \fill[black!100] (-4,0.05) rectangle (4,-0.05);
+
+            \draw[thick] (-4,-0.2) node[left]{\(a\)};
+            \draw[thick] (4,-0.2) node[right]{\(b\)};
+            %\draw (-1.3,0.1) node[above]{$F$};
+            \draw[ultra thick,black!5] (-3,0) ellipse (1 and 1);
+            \fill[black!0](-2,0) ellipse (0.1 and 0.1);
+            \draw (-2,0) ellipse (0.1 and 0.1);
+            
+            \fill[black!0](4,0) ellipse (0.1 and 0.1);
+            \draw (4,0) ellipse (0.1 and 0.1);
+
+            \fill[black!0](-4,0) ellipse (0.1 and 0.1);
+            \draw (-4,0) ellipse (0.1 and 0.1);
+
+
+            \draw[thick] (-3,0.1)--(-3,-0.1) node[below]{\(x\)};
+        \end{tikzpicture}%}
+        \caption{各点まわりで開区間と円盤の共通部分は円盤の閉集合}
+        \label{fig:loc-closed-neibor}
+    \end{figure}
+\end{EG}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{局所コンパクト}
 
-
+\begin{leftbar}
 \begin{DFN}
     \(X\)をハウスドルフ空間とする．
     \begin{enumerate}
@@ -458,12 +666,30 @@
         \(X\)は\textbf{局所コンパクト空間}であるという．
     \end{enumerate}
 \end{DFN}
+\end{leftbar}
 
+次の命題から，局所コンパクト空間においては，部分集合が
+局所コンパクトであることと局所閉であることは同じである．
+
+\begin{PRP}
+    \(X\)をハウスドルフ空間とする．
+    \(X\)の部分空間\(A\)に関する次の条件
+    \eqref{loc-cpt-subsp}と\eqref{loc-cpt-lc}
+    について，一般に\eqref{loc-cpt-subsp}\(\Rightarrow\)\eqref{loc-cpt-lc}がなりたつ．
+    \(X\)が局所コンパクトなら\eqref{loc-cpt-lc}\(\Rightarrow\)\eqref{loc-cpt-subsp}もなりたつ．
+    \begin{enumerate}[(1)]%\setlength{\leftskip}{2zw}
+        \item \(A\)は局所コンパクト空間である．\label{loc-cpt-subsp}
+        \item \(A\)は\(X\)の局所閉集合である．\label{loc-cpt-lc}
+    \end{enumerate}    
+\end{PRP}
+
+\begin{leftbar}    
 \begin{DFN}
     \(X\)を局所コンパクト空間とする．
     \(X\)が\textbf{無限遠点で可算} (countable at infinity) である
     とは，\(X\)が可算個のコンパクト集合の合併であることをいう．
 \end{DFN}
+\end{leftbar}
 
 \begin{EG}
     位相多様体\(X\)は局所コンパクトである．
