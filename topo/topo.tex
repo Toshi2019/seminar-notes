@@ -270,32 +270,32 @@
 
 
 %筆記体
-\newcommand{\cA}{\mcal{A}}
-\newcommand{\cB}{\mcal{B}}
-\newcommand{\cC}{\mcal{C}}
-\newcommand{\cD}{\mcal{D}}
-\newcommand{\cE}{\mcal{E}}
-\newcommand{\cF}{\mcal{F}}
-\newcommand{\cG}{\mcal{G}}
-\newcommand{\cH}{\mcal{H}}
-\newcommand{\cI}{\mcal{I}}
-\newcommand{\cJ}{\mcal{J}}
-\newcommand{\cK}{\mcal{K}}
-\newcommand{\cL}{\mcal{L}}
-\newcommand{\cM}{\mcal{M}}
-\newcommand{\cN}{\mcal{N}}
-\newcommand{\cO}{\mcal{O}}
-\newcommand{\cP}{\mcal{P}}
-\newcommand{\cQ}{\mcal{Q}}
-\newcommand{\cR}{\mcal{R}}
-\newcommand{\cS}{\mcal{S}}
-\newcommand{\cT}{\mcal{T}}
-\newcommand{\cU}{\mcal{U}}
-\newcommand{\cV}{\mcal{V}}
-\newcommand{\cW}{\mcal{W}}
-\newcommand{\cX}{\mcal{X}}
-\newcommand{\cY}{\mcal{Y}}
-\newcommand{\cZ}{\mcal{Z}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
 
 %スクリプト体
 \newcommand{\scA}{\mathscr{A}}
@@ -456,12 +456,20 @@
 位相空間論について調べたこととかをまとめる．
 
 
-\section*{記号など}
+\section*{記号や用語など}
 \begin{itemize}
     \item \(X\)を集合とする．
     \(\dip \complement_X A\)で\(X\)の部分集合\(A\)の補集合を表す．
     \(X\)が明らかなときは\(\complement{A}\)ともかく．
     \(X-A\)とか\(X\smi A\)とか\(X\setminus A\)ともかく．
+    \item \(\rr\)は実数全体の集合．
+    \item \(I_x\)は\(x\)の近傍のなす有向順序集合．
+    \({\cU}_x\)や\(\mathrm{I}_x\)で表すこともある．
+    \item 小像：\(f\colon X\to Y\)を写像とする．
+    \(U\subset Y\)に対し，\(
+        f_!(U)\coloneqq\{y\in Y; f^{-1}(y)\subset U\}
+    \)とおき，\(U\)の\textbf{小像} (small image) とよぶ．
+    \footnote{何に書いてあったか思い出せない．記号はたけしくん．}
 \end{itemize}
 
 \(X\)を位相空間とする．\(A\)を\(X\)の部分集合とする．
@@ -479,6 +487,65 @@
 \end{enumerate}
 
 
+\paragraph{イプシロン・デルタ論法の言い回しについて}
+\cite[p.26]{Mori81}に結構自然な言い回しがあった．
+\begin{quotation}
+    実数の数列\(\{a_n\}\)が実数\(a\)に収束するとは，
+    \(\varepsilon\)を任意の正数とするとき，\(\varepsilon\)に
+    応じて1つの自然数\(n_0\)を定め
+    \[
+        n>n_0\Longrightarrow\lvert a_n- a\rvert <\varepsilon
+    \]
+    となるようにできることをいい，\(a_n\to a\)で表わす．
+\end{quotation}
+これは「\(\times\times\)が存在して\(\times\times\)」という
+言い方よりも自然だと思う．これは\(n\)の場合．
+\cite[pp.67--68]{Mori81}に\(\delta\)の場合も書いてあって
+\begin{quotation}
+    実数の閉区間\([a,b]\)上の実数値関数\(f\)が，区間の1点\(x_0\)で
+    連続であるとは，
+    任意の\(\varepsilon>0\)に対し，
+    \[
+        \lvert x- x_0\rvert<\delta
+        \Longrightarrow
+        \lvert f(x)- f(x_0)\rvert <\varepsilon
+    \]
+    が成り立つように，\(\delta>0\)を定めることができることをいう．
+\end{quotation}
+とか
+\begin{quotation}
+    \((X,\rho_X)\), 
+    \((Y,\rho_Y)\)を距離空間とするとき，
+    \(X\)から\(Y\)への写像\(f\colon X\to Y\)が，\(X\)の点\(x_0\)で
+    \textbf{連続}とは，
+    任意の正数\(\varepsilon\)に対し，
+    正数\(\delta\)を定めて
+    \[
+        \rho_X(x, x_0)\rvert<\delta
+        \Longrightarrow
+        \lvert \rho_Y(f(x),f(x_0))\rvert <\varepsilon
+    \]
+    が成り立つようにできることをいう．
+\end{quotation}
+とか
+\begin{quotation}
+    \((X,\mathfrak{T}_X)\), 
+    \((Y,\mathfrak{T}_Y)\)を位相空間とし，
+    \(\scU(x)\)を\(X\)の点\(x\)の近傍基，
+    \(\scV(y)\)を\(Y\)の点\(y\)の近傍基とする．
+    写像\(f\colon X\to Y\)が，（位相\(\mathfrak{T}_X\), 
+    \(\mathfrak{T}_Y\)に関して）\(X\)の点\(x_0\)で
+    \textbf{連続}とは，
+    \(y_0=f(x_0)\)の任意の近傍\(V(y_0)\in\scV(y_0)\)に対し，
+    \[
+        x\in U(x_0)
+        \Longrightarrow
+        f(x)\in V(y_0)
+    \]
+    が成り立つように，\(x_0\)の近傍\(U(x_0)\in \scU(x_0)\)を定めうる
+    ことをいう．
+\end{quotation}
+といった言い回しがされている．
 \section{基本的な定義}
 
 
