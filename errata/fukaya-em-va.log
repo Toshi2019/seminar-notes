@@ -1,9 +1,9 @@
-This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  31 JAN 2024 18:58
+This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  1 FEB 2024 02:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/Users/giuseppe/seminar-notes/shv/imst-errata
-(/Users/giuseppe/seminar-notes/shv/imst-errata.tex
+**/Users/giuseppe/seminar-notes/errata/fukaya-em-va
+(/Users/giuseppe/seminar-notes/errata/fukaya-em-va.tex
 pLaTeX2e <2018-05-20> (based on LaTeX2e <2018-04-01> patch level 5)
 (/usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
 Document Class: jsarticle 2018/06/23 jsclasses (okumura, texjporg)
@@ -815,8 +815,8 @@ Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
 \c@Axiom+=\count272
 \c@Alert+=\count273
 \c@AXM=\count274
- (./imst-errata.aux)
-\openout1 = `imst-errata.aux'.
+ (./fukaya-em-va.aux)
+\openout1 = `fukaya-em-va.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 409.
 LaTeX Font Info:    ... okay on input line 409.
@@ -873,9 +873,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 409.
 LaTeX Info: Redefining \pageref on input line 409.
 LaTeX Info: Redefining \nameref on input line 409.
- (./imst-errata.out) (./imst-errata.out)
+ (./fukaya-em-va.out) (./fukaya-em-va.out)
 \@outlinefile=\write6
-\openout6 = `imst-errata.out'.
+\openout6 = `fukaya-em-va.out'.
 
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
 (Font)              scaled to size 15.9785pt on input line 411.
@@ -908,50 +908,22 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
  [1
 
 ]
-LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 511.
-LaTeX Font Info:    Font shape `JT1/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 515.
-LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 515.
-LaTeX Font Info:    Font shape `JY1/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 515.
-LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 515.
-LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 527.
-LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 527.
-LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 536.
- [2]
-LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 629.
-LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 629.
-LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 657.
-LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 657.
- [3
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 661.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 661.
- (./imst-errata.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 661.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 661.
-Package rerunfilecheck Info: File `imst-errata.out' has not changed.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 432.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 432.
+ (./fukaya-em-va.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 432.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 432.
+Package rerunfilecheck Info: File `fukaya-em-va.out' has not changed.
 (rerunfilecheck)             Checksum: 05B9FF7757FE6A446D8F294B02146D28;54.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 661.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 432.
  ) 
 Here is how much of TeX's memory you used:
- 24936 strings out of 493273
- 433536 string characters out of 6144919
- 582590 words of memory out of 5000000
- 28370 multiletter control sequences out of 15000+600000
- 27745 words of font info for 131 fonts, out of 8000000 for 9000
+ 24703 strings out of 493273
+ 427896 string characters out of 6144919
+ 555414 words of memory out of 5000000
+ 28138 multiletter control sequences out of 15000+600000
+ 25535 words of font info for 117 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 55i,25n,82p,3266b,1002s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,82p,3270b,991s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on imst-errata.dvi (3 pages, 42680 bytes).
+Output written on fukaya-em-va.dvi (1 page, 3404 bytes).
