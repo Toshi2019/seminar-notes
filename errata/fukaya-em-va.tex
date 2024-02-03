@@ -374,6 +374,7 @@
 \newtheorem{EG}[Axiom]{例}
 \newtheorem{CNV}[Axiom]{規約}
 \newtheorem{CMT}[Axiom]{コメント}
+\newtheorem{PBM}{問}
 
 
 % 定理環境ここまで
@@ -403,11 +404,13 @@
 % 以下, 本文
 % ---------------------------
 
-\title{『電磁場とベクトル解析』(第16刷)の誤植表}
+\title{『電磁場とベクトル解析』(第16刷)のノート・誤植表}
 \author{Toshi2019}
 %\date{2023年6月26日--30日}
 \begin{document}
 \maketitle
+
+\section{誤植表}
 \paragraph{凡例}
 \begin{itemize}
     \item l.\(-4\)は下から4行目の意味．
@@ -423,10 +426,38 @@
         7&l.\(12\)&\(\textcolor{red}{\lVert}\bm{u}\cdot(\bm{v}\times\bm{w})\textcolor{red}{\rVert}\)&\(\textcolor{red}{\lvert}\bm{u}\cdot(\bm{v}\times\bm{w})\textcolor{red}{\rvert}\)&実数なので\\    
         \hline
         18&l.\(-3,4\)&\(\bm{l}\colon[\textcolor{red}{0},\textcolor{red}{\pi}]\to\RR^2\)&\(\bm{l}\colon[\textcolor{red}{a},\textcolor{red}{b}]\to\RR^2\)& \\    
+        \hline
+        165&問1&\(\textcolor{red}{\bm{u}}, \textcolor{red}{\bm{v}}\)&\(\textcolor{red}{\bm{v}}, \textcolor{red}{\bm{w}}\)&もとの問（p.5）の記号に合わせる．\\    
     \hline
 \end{tabular}
 \end{table}
 
-
+\section{問 解答}
+\subsection{第1章}
+\setcounter{PBM}{4}
+\begin{PBM}
+    \(\bm{l}(t)=\left(e^t\cos{t},e^t\sin{t}\right)\), 
+    \(\bm{V}(x,y)=(x,y)\)とするとき，線積分\(
+        \displaystyle
+        \lim_{T\to\infty}\int_{-T}^{0}\bm{V}\cdot{d}\bm{l}
+    \)を計算せよ．
+\end{PBM}
+\begin{proof}[解答]
+    \begin{align*}
+        \lim_{T\to\infty}\int_{-T}^{0}\bm{V}\cdot{d}\bm{l}
+        &=\lim_{T\to\infty}\int_{-T}^{0}\left(
+            e^t\cos{t},e^t\sin{t}
+        \right)\cdot\left(
+            e^t\cos{t}-e^t\sin{t},e^t\sin{t}+e^t\cos{t}
+        \right)dt\\
+        &=\lim_{T\to\infty}\int_{-T}^{0}\left(
+            e^{2t}\cos^2{t}-e^{2t}\cos{t}\sin{t}
+            +e^{2t}\sin^2{t}+e^{2t}\sin{t}\cos{t}
+        \right)dt\\
+        &=\lim_{T\to\infty}\int_{-T}^{0} e^{2t}dt\\
+        &=\lim_{T\to\infty}\frac{1}{2}\left(1-e^{-2T}\right)
+        =\frac{1}{2}.
+    \end{align*}
+\end{proof}
 
 \end{document}
