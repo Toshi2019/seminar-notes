@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  26 JAN 2024 22:33
+This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  6 FEB 2024 14:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -938,39 +938,40 @@ displayed correctly.
 194> <xymatrix 2x1 100>
 
 LaTeX Font Warning: Font shape `JT1/hmc/m/it' undefined
-(Font)              using `JT1/hmc/m/n' instead on input line 773.
+(Font)              using `JT1/hmc/m/n' instead on input line 768.
 
 
 LaTeX Font Warning: Font shape `JY1/hmc/m/it' undefined
-(Font)              using `JY1/hmc/m/n' instead on input line 773.
+(Font)              using `JY1/hmc/m/n' instead on input line 768.
 
-LaTeX Font Info:    Font shape `JT1/hmc/m/it' will be
-(Font)              scaled to size 9.24683pt on input line 777.
-LaTeX Font Info:    Font shape `JY1/hmc/m/it' will be
-(Font)              scaled to size 9.24683pt on input line 777.
 [4
 
-] [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 789.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 789.
+]
+LaTeX Font Info:    Font shape `JT1/hmc/m/it' will be
+(Font)              scaled to size 9.24683pt on input line 789.
+LaTeX Font Info:    Font shape `JY1/hmc/m/it' will be
+(Font)              scaled to size 9.24683pt on input line 789.
+ [5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 805.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 805.
  (./local-system.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 789.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 789.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 805.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 805.
 Package rerunfilecheck Info: File `local-system.out' has not changed.
 (rerunfilecheck)             Checksum: B562960A909AFD1050C76FF57781DB83;495.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 789.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 805.
  ) 
 Here is how much of TeX's memory you used:
- 24666 strings out of 493273
- 427173 string characters out of 6144919
- 556746 words of memory out of 5000000
- 28096 multiletter control sequences out of 15000+600000
+ 24667 strings out of 493273
+ 427177 string characters out of 6144919
+ 556795 words of memory out of 5000000
+ 28097 multiletter control sequences out of 15000+600000
  31214 words of font info for 148 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  55i,17n,82p,3260b,991s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on local-system.dvi (5 pages, 23324 bytes).
+Output written on local-system.dvi (5 pages, 24696 bytes).

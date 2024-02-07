@@ -545,17 +545,123 @@
 
 
 
+\section{\(\gamma\)位相}
+
+\paragraph{錐（体）}
+\cite{KS90}に錐の定義が書いてなかったのでまとめておく．
+\cite{BouTVS,Mo76}を参考にした．
+\begin{DFN}
+    \(n\)次元実ベクトル空間\(V\)の部分集合\(\gamma\)が次の条件をみたすとき，
+    \textbf{錐（あるいは錐体）}(cone) であるという．
+    \[
+        \text{任意の実数\(t>0\)に対し，}v\in \gamma\Longrightarrow tv\in\gamma.
+    \]
+\end{DFN}
+
+\begin{CMT}
+    \cite{Mo76}では\(\gamma\ne 0\)も課している．
+    空集合は錐である．
+    \[
+        \gamma=\left\{
+            (x_1,x2)\in\rr^2; 0<\arg(x_1,x_2)<7\pi/4
+            \right\}
+    \]
+    は錐である．（図\ref{fig:cone-example}）．
+\end{CMT}
+
+\begin{figure}[htb]
+    \centering
+    \scalebox{0.8}{
+        \begin{tikzpicture}[x=1cm]
+            \fill [fill=black!30](0,0)--(3,0)--(3,0)arc(0:315:3)--cycle;
+%                \fill[black!10] (0.7,0.1) (0,0) ellipse (2 and 2);
+%            \draw[dashed,black!100] (0.7,0.1) (0,0) ellipse (2 and 2);
+        \fill[black!30] (-3,3) rectangle (3,0);
+        \fill[black!30] (-3,0) rectangle (0,-3);
+        \fill[black!30] (0,0)--(0,-3)--(3,-3)--cycle;
+        \draw[->,>=stealth,semithick] (-3.2,0)--(3.2,0)node[below]{$x_1$}; %x軸
+        \draw[->,>=stealth,semithick] (0,-3.2)--(0,3.2)node[right]{$x_2$}; %y軸
+        %\draw[thick] (-2,0)--(2,0); %
+        \draw[dashed, thick] (0,0)--(3,-3);
+        \draw[black!30,thick] (0,0)--(3,0);
+        \draw[dashed, thick] (0,0)--(3,0);
+%            \draw[thick] (-2,-0.2) node[left]{\(a\)};
+%            \draw[thick] (2,-0.2) node[right]{\(b\)};
+%            \draw (-1.3,0.1) node[above]{$F$};
+%            \draw (1.3,-1) node[left]{$U$};
+
+        %\fill[black!100](2,0) ellipse (0.1 and 0.1);
+        %\draw (2,0) ellipse (0.1 and 0.1);
+
+        %\fill[black!100](-2,0) ellipse (0.1 and 0.1);
+        %\draw (-2,0) ellipse (0.1 and 0.1);
+    \end{tikzpicture}}
+    \caption{錐の例}
+    \label{fig:cone-example}
+\end{figure}
+次の例を見ると，有界でないことが大事っぽい．
+\begin{EG}
+    \(
+        \gamma\coloneqq\left\{
+            (x_1,x_2)\in\rr^2;
+            0<\arg(x_1,x_2)<\pi/3, 
+            \lVert(x_1,x_2)\rVert<1
+        \right\}
+    \)
+    は錐ではない．（図\ref{fig:cone-non-example}）
+\end{EG}
+
+\begin{figure}[htb]
+    \centering
+    %\scalebox{0.8}{
+        \begin{tikzpicture}[x=1cm]
+        \draw[->,>=stealth,semithick] (-3.2,0)--(3.2,0)node[below]{$x_1$}; %x軸
+        \draw[->,>=stealth,semithick] (0,-3.2)--(0,3.2)node[right]{$x_2$}; %x軸
+        \fill [draw=black,dashed,thick, fill=black!30](0,0)--(2,0)--(2,0)arc(0:60:2)--cycle;
+    \end{tikzpicture}%}
+    \caption{錐でない例}
+    \label{fig:cone-non-example}
+\end{figure}
+
+\begin{DFN}
+    閉凸錐は閉集合で凸集合な錐．
+\end{DFN}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
-    \bibitem[Le13]{Le13} John M. Lee, 
-    \textit{Introduction to Smooth Manifolds}, Second Edition,
-    Graduate Texts in Mathematics, \textbf{218}, Springer, 2013.
-    \bibitem[Sp65]{Sp65} Michael Spivak, 
-    \textit{Calculus on Manifolds}, 
-    Benjamin, 1965.
-
+    \bibitem[BouTVS]{BouTVS} ブルバキ, 位相線形空間1, 東京図書, 1968.
     \bibitem[B+84]{B+84} Borel, 
     \textit{Intersection Cohomology}, 
     Progress in Mathematics, 50, Birkh\"auser, 1984.
@@ -571,6 +677,10 @@
 \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
     \textit{Categories and Sheaves}, 
     Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
+    \bibitem[Le13]{Le13} John M. Lee, 
+    \textit{Introduction to Smooth Manifolds}, Second Edition,
+    Graduate Texts in Mathematics, \textbf{218}, Springer, 2013.
+    \bibitem[Mo76]{Mo76} 森本光生, 佐藤超函数入門, 共立出版, 1976. 
 \bibitem[R55]{R55} de Rham, 
     \textit{Vari\'et\'es diff\'erentiables}, 
     Hermann, Paris, 1955.
@@ -582,6 +692,9 @@
     Hermann, Paris, 1966.
 \bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
 \bibitem[SP]{SP} The Stacks Project.
+\bibitem[Sp65]{Sp65} Michael Spivak, 
+\textit{Calculus on Manifolds}, 
+Benjamin, 1965.
 \bibitem[Ike21]{Ike21} 池祐一, 超局所層理論概説, 2021.
 \bibitem[Tak17]{Tak17} 竹内潔, \(\D\)加群, 共立出版, 2017.
 \bibitem[Ue]{Ue} 植田一石, ホモロジー的ミラー対称性, \url{https://www.ms.u-tokyo.ac.jp/~kazushi/course/hms.pdf} 2024/02/04 最終閲覧.
