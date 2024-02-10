@@ -497,6 +497,7 @@
     \item 1点から成る集合を\(\{\pt\}\)で表す．
     \item 集合\(X\)の基数を\(\abs{X}\)とか\(\card{X}\)とか\(\Card{X}\)で表す．
     \item 圏\(\cat\)の始対象を\(\varnothing_\cat\)，終対象を\(\pt_\cat\)で表す．
+    \item 圏\(\cat\)の対象\(X\)から\(Y\)への射の集合を\(\Hom_\cat(X,Y)\)や\(\cat(X,Y)\)で表す．
     \item 有限集合とその間の写像のなす圏を\(\finSet\)で表す．
 \end{itemize}
 
@@ -504,11 +505,7 @@
 \cite{KS06}を参考にした．
 \begin{leftbar}
 \begin{DFN}
-    \textbf{単体圏} (simplex category)\footnote{\cite{KS06}では，
-    単体的圏 (simplicial category) と呼んでいるが，
-    Riehl とか，Riehl-Verity ではこう呼んでいたのでそちらに合わせる．
-    Lurieでは別の概念を表すのに simplicial category を使っていたので
-    衝突しないようにというのもある．} \(\cSimp\)を次で定める．
+    \textbf{単体圏} (simplex category)\footnotemark[1] \(\cSimp\)を次で定める．
     \begin{align*}
         \Ob(\cSimp)&\coloneqq\left\{\text{有限全順序集合}\right\},\\
         \Hom_{\cSimp}(\sigma,\tau)&\coloneqq\left\{
@@ -530,12 +527,19 @@
     \end{align*}
 \end{DFN}
 \end{leftbar}
+\footnotetext[1]{
+    \cite{KS06}では，\(\cSimp\)のことを 
+    simplicial category（単体的圏）と呼んでいるが，
+    \cite{Ri16}とか\cite{RV22}ではこう呼んでいたのでそちらに合わせる．
+    \cite{Lu09}では別の概念を表すのに simplicial category を
+    使っていたので，衝突しないようにする意図もある．
+}
 
 有限全順序集合\(\left[n,m\right]\)を\(
     \left\{k\in\zz; n\leqq k\leqq m\right\}
-\)で定める．
+\)で定める．\([0,n]\)をたんに\([n]\)とかくことが多い．
 
-以下単体的集合の性質を述べる．
+以下単体圏の性質を述べる．
 
 \begin{PRP}\label{PRP:half-full}
     うめこみ関手\(
@@ -590,6 +594,20 @@
     \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
     \textit{Categories and Sheaves}, 
     Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
+    \bibitem[La21]{La21} Markus Land, 
+    \textit{Introduction to Infinity-Categories}, 
+    Compact Textbooks in Mathematics, Birkh\"auser Cham, 2021.
+    \bibitem[Lu09]{Lu09} Jacob Lurie, 
+    \textit{Higher Topos Theory}, 
+    Annals of Mathematics Studies 170, 
+    Princeton University Press, 2009.
+    \bibitem[Ri16]{Ri16} Emily Riehl, 
+    \textit{Category Theory in Context}, 
+    Dover Publications, 2016. 
+    \bibitem[RV22]{RV22} Emily Riehl, Dominic Verity, 
+    \textit{Elements of \(\infty\)-Category Theory}, 
+    Cambridge Studies in Advanced Mathematics (194)
+    Cambridge University Press, 2022.
 \end{thebibliography}
 
 %===============================================
