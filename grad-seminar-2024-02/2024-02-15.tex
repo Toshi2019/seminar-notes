@@ -1,6 +1,6 @@
 %=====================================
-%   simplicial-cat.tex
-%   無限圏に向けて単体的圏とか
+%   2024-02-15.tex
+%   院生セミナー資料 大柴寿浩
 %=====================================
 
 % -----------------------
@@ -197,8 +197,7 @@
 
 
 % 圏の記号など
-\newcommand{\cSet}{\mathord{\mathsf{Set}}}
-\newcommand{\finSet}{\mathord{\mathsf{Set}^\mathsf{f}}}
+\newcommand{\Set}{{\bf Set}}
 \newcommand{\Vect}{{\bf Vect}}
 \newcommand{\FDVect}{{\bf FDVect}}
 %\newcommand{\Ring}{{\bf Ring}}
@@ -245,23 +244,8 @@
 %\newcommand{\OO}{\mcal{O}}
 
 
-\makeatletter
-\renewenvironment{proof}[1][\proofname]{\par
-  \pushQED{\qed}%
-  \normalfont \topsep6\p@\@plus6\p@\relax
-  \trivlist
-  \item[\hskip\labelsep
-%        \itshape
-         \bfseries
-%    #1\@addpunct{.}]\ignorespaces
-    {#1}]\ignorespaces
-}{%
-  \popQED\endtrivlist\@endpefalse
-}
-\makeatother
 
-\renewcommand{\proofname}{{[証明]}}
-%\renewcommand\proofname{\textrm{\textbf{証明}}} % 証明
+\renewcommand\proofname{\bf 証明} % 証明
 \numberwithin{equation}{section}
 \newcommand{\cTop}{\textsf{Top}}
 %\newcommand{\cOpen}{\textsf{Open}}
@@ -292,7 +276,7 @@
 \newcommand{\colim}{\mathop{\mathrm{colim}}}
 \newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
 
-\newcommand{\cat}{\mathcal{C}}
+\newcommand{\cat}{\mathscr{C}}
 
 \newcommand{\scA}{\mathscr{A}}
 \newcommand{\scB}{\mathscr{B}}
@@ -395,11 +379,8 @@
 \newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
 \newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
 
-\newcommand{\cSimp}{\mathord{\mathbf{\Delta}}}
-\newcommand{\card}{\mathop{\#}\nolimits}
-\newcommand{\Card}{\mathop{\mathrm{Card}}\nolimits}
-\newcommand{\abs}[1]{\lvert #1 \rvert}
-\newcommand{\norm}[1]{\lVert #1 \rVert}
+
+
 
 
 
@@ -484,86 +465,373 @@
 % begin document and end document.
 % ---------------------------
 
-\title{simplex category（単体圏）について}
-\author{Toshi2019}
+\title{2024/02/15 セミナー資料}
+\author{大柴寿浩}
 \date{}
 \begin{document}
 \maketitle
-\begin{abstract}
-    単体圏の性質についてまとめる．
-\end{abstract}
-\section*{記号など}
-\begin{itemize}
-    \item 1点から成る集合を\(\{\pt\}\)で表す．
-    \item 集合\(X\)の基数を\(\abs{X}\)とか\(\card{X}\)とか\(\Card{X}\)で表す．
-    \item 圏\(\cat\)の始対象を\(\varnothing_\cat\)，終対象を\(\pt_\cat\)で表す．
-    \item 圏\(\cat\)の対象\(X\)から\(Y\)への射の集合を\(\Hom_\cat(X,Y)\)や\(\cat(X,Y)\)で表す．
-    \item 有限集合とその間の写像のなす圏を\(\finSet\)で表す．
-\end{itemize}
 
-\section{単体的圏}
-\cite{KS06}を参考にした．
+\section*{記号}
+\begin{itemize}
+    \item \(\overline{\rr}\coloneqq \left[-\infty,+\infty\right]=\rr\cup\{\pm\infty\}\)
+    \item 集合\(U\)の開近傍系を\(I_U\)とかき，点\(x\)の開近傍系を\(I_x\)とかく．
+\end{itemize}
+\section{コホモロジー構成可能層}
+\subsection{理想複体}
+\(A\)を可換環とする．
+\(M\in\Dompb(A)\coloneqq \Dompb(\Mod(A))\)を\(A\)加群の導来圏の対象とする．
+\(M\)が\textbf{理想対象}\footnote{
+    \cite{Ue}による訳にしたがった．
+    定訳は未だ無いと思われる．
+} (perfect object) であるとは，
+有限生成射影的\(A\)加群の有界複体と擬同型であることをいう．
+
+\begin{PRP}[{\cite[Exercise I.30]{KS90}}]
+    \(A\)を可換環とする．
+    \begin{enumerate}[(i)]\setlength{\leftskip}{2zw}
+        \item \(X\to Y\to Z\underset{+1}{\to}\)が\(\Dompb(A)\)における
+        完全三角で，\(X\)と\(Y\)が理想的ならば，\(Z\)も理想的である．
+        \item 理想対象の直和因子も理想対象である．
+        \item \(M\in\Dompb(A)\)を理想対象とする．
+        \(M^\ast\coloneqq \RHom_A(M,A)\)とおく．
+        \(M^\ast\)は理想対象であり，
+        標準的な射\(M\to M^{\ast\ast}\)は同型である．
+    \end{enumerate}
+
+    \(A\)がネーター環で大域次元が有限であるとする．
+    \begin{enumerate}[(i)]\setcounter{enumi}{3}\setlength{\leftskip}{2zw}
+        \item \(\Modf(A)\)の導来圏\(\Dompb(\Modf(A))\)の
+        任意の対象は理想的である．
+        \item \(\Dompbf(A)\)で各コホモロジーが\(\Modf(A)\)に
+        属す対象の導来圏を表す．
+        \(\Dompb(\Modf(A))\to\Dompbf(\Mod(A))\)は圏同値である．\(\blacksquare\)
+    \end{enumerate}
+\end{PRP}   
+証明は略．
+
+擬連接かつtor次元が有限であることと同値らしい．(\cite[lem 15.74.2]{SP})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{\(\gamma\)位相}
+
+\paragraph{錐（体）}
+\cite{KS90}に錐の定義が書いてなかったのでまとめておく．
+\cite{BouTVS,Mo76}を参考にした．
+\begin{DFN}
+    \(n\)次元実ベクトル空間\(V\)の部分集合\(\gamma\)が次の条件をみたすとき，
+    \textbf{錐（あるいは錐体）}(cone) であるという．
+    \[
+        \text{任意の実数\(t>0\)に対し，}v\in \gamma\Longrightarrow tv\in\gamma.
+    \]
+\end{DFN}
+
+\begin{CMT}
+    \cite{Mo76}では\(\gamma\ne 0\)も課している．
+    空集合は錐である．
+    \[
+        \gamma=\left\{
+            (x_1,x2)\in\rr^2; 0<\arg(x_1,x_2)<7\pi/4
+            \right\}
+    \]
+    は錐である．（図\ref{fig:cone-example}）．
+\end{CMT}
+
+\begin{figure}[htb]
+    \centering
+    \scalebox{0.8}{
+        \begin{tikzpicture}[x=1cm]
+            \fill [fill=black!30](0,0)--(3,0)--(3,0)arc(0:315:3)--cycle;
+%                \fill[black!10] (0.7,0.1) (0,0) ellipse (2 and 2);
+%            \draw[dashed,black!100] (0.7,0.1) (0,0) ellipse (2 and 2);
+        \fill[black!30] (-3,3) rectangle (3,0);
+        \fill[black!30] (-3,0) rectangle (0,-3);
+        \fill[black!30] (0,0)--(0,-3)--(3,-3)--cycle;
+        \draw[->,>=stealth,semithick] (-3.2,0)--(3.2,0)node[below]{$x_1$}; %x軸
+        \draw[->,>=stealth,semithick] (0,-3.2)--(0,3.2)node[right]{$x_2$}; %y軸
+        %\draw[thick] (-2,0)--(2,0); %
+        \draw[dashed, thick] (0,0)--(3,-3);
+        \draw[black!30,thick] (0,0)--(3,0);
+        \draw[dashed, thick] (0,0)--(3,0);
+%            \draw[thick] (-2,-0.2) node[left]{\(a\)};
+%            \draw[thick] (2,-0.2) node[right]{\(b\)};
+%            \draw (-1.3,0.1) node[above]{$F$};
+%            \draw (1.3,-1) node[left]{$U$};
+
+        %\fill[black!100](2,0) ellipse (0.1 and 0.1);
+        %\draw (2,0) ellipse (0.1 and 0.1);
+
+        %\fill[black!100](-2,0) ellipse (0.1 and 0.1);
+        %\draw (-2,0) ellipse (0.1 and 0.1);
+    \end{tikzpicture}}
+    \caption{錐の例}
+    \label{fig:cone-example}
+\end{figure}
+次の例を見ると，有界でないことが大事っぽい．
+\begin{EG}
+    \(
+        \gamma\coloneqq\left\{
+            (x_1,x_2)\in\rr^2;
+            0<\arg(x_1,x_2)<\pi/3, 
+            \lVert(x_1,x_2)\rVert<1
+        \right\}
+    \)
+    は錐ではない．（図\ref{fig:cone-non-example}）
+\end{EG}
+
+\begin{figure}[htb]
+    \centering
+    %\scalebox{0.8}{
+        \begin{tikzpicture}[x=1cm]
+        \draw[->,>=stealth,semithick] (-3.2,0)--(3.2,0)node[below]{$x_1$}; %x軸
+        \draw[->,>=stealth,semithick] (0,-3.2)--(0,3.2)node[right]{$x_2$}; %x軸
+        \fill [draw=black,dashed,thick, fill=black!30](0,0)--(2,0)--(2,0)arc(0:60:2)--cycle;
+    \end{tikzpicture}%}
+    \caption{錐でない例}
+    \label{fig:cone-non-example}
+\end{figure}
+
+\paragraph{\(\gamma\)位相}
+\(\gamma\)から定まる位相を定義する．
+
 \begin{leftbar}
 \begin{DFN}
-    \textbf{単体圏} (simplex category)\footnotemark[1] \(\cSimp\)を次で定める．
-    \begin{align*}
-        \Ob(\cSimp)&\coloneqq\left\{\text{有限全順序集合}\right\},\\
-        \Hom_{\cSimp}(\sigma,\tau)&\coloneqq\left\{
-            u\colon\sigma\to\tau;\text{ \(u\)は順序を保つ写像}
-        \right\}.
-    \end{align*}
-    射の合成は写像の合成で定める．
-
-    \(\cSimp\)の部分圏\(\widetilde{\cSimp}\)を次で定める．
-    \begin{align*}
-        \Ob\left(\widetilde{\cSimp}\right)
-        &\coloneqq\left\{
-            \sigma\in\cSimp; \sigma\ne\varnothing
-        \right\},\\
-        \Hom_{\widetilde{\cSimp}}(\sigma,\tau)
-        &\coloneqq\left\{
-            u\in\Hom_{\cSimp}(\sigma,\tau);\text{ \(u\)は最大元と最小元を保つ}
-        \right\}.
-    \end{align*}
+    \(V\)を\(n\)次元実ベクトル空間とし，
+    \(\gamma\)を\(0\)を頂点とする閉凸錐とする．
+    \(V\)の\textbf{\(\gamma\)位相} (\(\gamma\)-topology) とは，
+    \(V\)の位相であって，その開集合\(\varOmega\subset V\)が
+    次の条件\eqref{enum:gtop1}--\eqref{enum:gtop2}を
+    みたすものをいう．
+    \begin{enumerate}[(i)]
+        \item \(\varOmega\)は\(V\)の元の位相に関して開集合である．\label{enum:gtop1}
+        \item \(\varOmega+\gamma=\varOmega\).\label{enum:gtop2}
+    \end{enumerate}
 \end{DFN}
 \end{leftbar}
-\footnotetext[1]{
-    \cite{KS06}では，\(\cSimp\)のことを 
-    simplicial category（単体的圏）と呼んでいるが，
-    \cite{Ri16}とか\cite{RV22}ではこう呼んでいたのでそちらに合わせる．
-    \cite{Lu09}では別の概念を表すのに simplicial category を
-    使っていたので，衝突しないようにする意図もある．
+
+\begin{EG}
+    \(X=\rr\), \(\gamma=\left[0,+\infty\right[\)のとき，
+    \(\rr\)の\(\gamma\)位相に関する開集合は，
+    \(-\infty\leqq c\leqq+\infty\)を用いて
+    \(\left]c,+\infty\right[\)とかかれるものである．
+\end{EG}
+\begin{redleftbar}
+    \(\mathbf{\because}\) \(\rr\)の開区間\(
+        \varOmega\coloneqq\left]c,d\right[
+    \)に対し，
+    \begin{align*}
+        \varOmega+\gamma 
+        &=\left\{x+x'\in\rr\mid x\in\varOmega,x'\in\gamma\right\}\\
+        &=\left\{x+x'\in\rr\mid c<x<d,0<x'<\infty\right\}\\
+        &=\left\{x+x'\in\rr\mid c<x+x'<\infty\right\}\\
+        &=\left]c,+\infty\right[.
+    \end{align*}
+\end{redleftbar}
+
+\(\gamma\)に対し，\textbf{反転錐} (opposite cone) \(\gamma^a\)を
+\[
+    \gamma^a\coloneqq -\gamma
+\]
+で定める．\footnote{
+    あとで導入する体蹠点写像\(a\colon X\to X;x\mapsto -x\)の
+    像としてもよい（はず？）．
 }
 
-有限全順序集合\(\left[n,m\right]\)を\(
-    \left\{k\in\zz; n\leqq k\leqq m\right\}
-\)で定める．\([0,n]\)をたんに\([n]\)とかくことが多い．
+\(\gamma\)位相に関する開集合・閉集合・近傍を
+それぞれ\(\gamma\)開集合・\(\gamma\)閉集合・\(\gamma\)近傍とよぶ．
 
-以下単体圏の性質を述べる．
+\(\gamma\)位相に関する開集合\(X\)はもとの\(V\)の位相に関する
+開集合になるので，\(\gamma\)位相は元の位相よりも荒い．したがって，
+\(X\)を\(\gamma\)位相に関する開集合と考えるとき，\(X_\gamma\)と
+かくことにすると，
+自然な連続写像\(\phi_\gamma\colon X\to X_\gamma\)が定まる．
 
-\begin{PRP}\label{PRP:half-full}
-    うめこみ関手\(
-        \iota\colon\cSimp\hookrightarrow\finSet
-    \)は半充満かつ忠実である．
+
+
+\begin{leftbar}
+    \begin{PRP}\label{prp:353}
+        \(X_\gamma\)を\(V_\gamma\)の開集合とし，
+        \(F\)を\(X_\gamma\)上の層とする．
+        \begin{enumerate}[(i)]
+            \item \(U\subset X\)を凸開集合とすると，\[
+                \RG(U+\gamma;F)\to\RG(U;\phi^{-1}_\gamma F)
+            \]は同型である．\label{353-1}
+            \item \(K\subset X\)を凸コンパクト集合とすると，\[
+                \RG(K+\gamma;F)\to\RG(K;\phi^{-1}_\gamma F)
+            \]は同型である．
+            \item \(F\to \Rder{\phi_{\gamma}}_\ast\phi_{\gamma}^{-1}F\)は同型である．
+        \end{enumerate}
+    \end{PRP}
+\end{leftbar}
+
+\eqref{353-1} の射の構成は以下の通り．
+\(U+\gamma\)は\(U+\gamma+\gamma=U+\gamma\)をみたすので，
+\(U\)の\(\gamma\)開近傍である．したがって，
+\(F\)の切断の射\(
+    \Gamma(U+\gamma;F)
+    \to \indlim[U+\gamma\in I_U]\Gamma(U+\gamma;F)
+    = \phi_\gamma^{p}F(U)
+\)が存在する．
+これに層化から定まる射\(
+    \phi_\gamma^{p}F(U)\to\phi_\gamma^{-1}F(U)
+\)を合成することで
+\[
+    \Gamma(U+\gamma;F)\to \Gamma(U;\phi_\gamma^{-1}F)
+\]
+を得る．
+これを導来圏に持ち上げれば，
+\eqref{353-1} の射が得られる．
+\begin{proof}
+    次の5段階に分けて証明する．
+    \begin{enumerate}[(a)]
+        \item \(\psi\colon \Gamma(U+\gamma;F)\to \Gamma(U;\phi_\gamma^{-1}F)\)が同型であることを示す．
+        \item コンパクト凸集合\(K\)に対し\(\Gamma(K+\gamma;\phi_\gamma^{-1}F)\to \Gamma(K;\phi_\gamma^{-1}F)\)が同型であることを示す．
+        \item 随伴から定まる射\(F\simarr {\phi_\gamma}_\ast\phi_\gamma^{-1}F\)が同型であることを示す．
+        \item \(F\)が脆弱層ならば，\(\RG(U+\gamma;F)\cong\RG(U;\phi_\gamma^{-1}F)\)である．
+        \item 一般の\(F\)に対し\(\RG(U+\gamma;F)\cong\RG(U;\phi_\gamma^{-1}F)\)である．
+    \end{enumerate}
+    
+    (a) 
+    \(\psi\colon \Gamma(U+\gamma;F)\to \Gamma(U;\phi_\gamma^{-1}F)\)が同型であることを示す．
+    
+    単射性：
+    
+    全射性：
+\end{proof}
+
+\paragraph{ここから新しい話．}
+
+\(\phi^{-1}_\gamma{\Rder\phi_\gamma}_\ast{F}\)を得る別の方法
+について述べる．
+\(X=V\)のとき，
+\begin{equation}
+    Z(\gamma)\coloneqq\left\{
+        (x,y)\in X\times X;y-x\in\gamma
+    \right\}
+\end{equation}
+とおき，\(q_1,q_2\)を\(X\times X\)から\(X\)への射影とする．
+
+例えば，\(X=\rr\)で\(\gamma={[}0,\infty{[}\)のとき，
+\begin{align*}
+    Z(\gamma)
+    &=\left\{(x,y)\in\rr^2;y-x\in[0,\infty[\right\}\\
+    &=\left\{(x,y)\in\rr^2;y-x\geqq0\right\}
+\end{align*}
+である．（図\ref{fig:zero-cone-example}）
+
+\begin{figure}[htb]
+    \centering
+    \scalebox{0.8}{
+        \begin{tikzpicture}[x=1cm]
+        \fill [fill=black!20](-3,-3)--(3,3)--(-3,3)--cycle;    
+        \draw[->,>=stealth,semithick] (-3.2,0)--(3.2,0)node[below]{$x_1$}; %x軸
+        \draw[->,>=stealth,semithick] (0,-3.2)--(0,3.2)node[right]{$x_2$}; %x軸
+        \fill [draw=black,thick](-3,-3)--(3,3);
+    \end{tikzpicture}}
+    \caption{\(Z(\gamma)\)の例}
+    \label{fig:zero-cone-example}
+\end{figure}
+
+
+\begin{PRP}
+    \(F\in\Dompl(X)\)に対し，
+    \[
+        \Rder{q_1}_\ast\left(\left(q_2^{-1}F\right)_{Z(\gamma)}\right)\cong \phi_{\gamma}^{-1}\Rder{\phi_\gamma}_{\ast}F
+    \]
+    が成り立つ．
 \end{PRP}
 
-\begin{RMK}
-    関手\(F\colon\cat\to\cat'\)が\textbf{半充満} (half-full) であるとは，
-    任意の対象\(X,Y\in\cat\)に対し，
-    \(F(X)\cong F(Y)\)ならば，\(X\)と\(Y\)の間の同型が存在することをいう．
-    ただし，\(\cat'\)における同型\(F(X)\simar F(Y)\)は
-    \(\cat\)における同型\(X\to Y\)から来るものでなくともよい．    
-    
-    \(\cat\)の部分圏\(\cat'\)が半充満であるとは，
-    うめこみ関手\(\cat\hookrightarrow\cat'\)が半充満であることをいう．
-\end{RMK}
+\begin{proof}
+    証明の方針は，
+    \begin{itemize}
+        \item 射を作って，
+        \item 擬同形であることを示す．
+    \end{itemize}
 
-\begin{proof}[命題\ref{PRP:half-full}の証明]
-    まず\(\iota\)が半充満であることを示す．
-    \(\sigma, \tau\in\cSimp\)を
-    \(\iota(\sigma)\cong\iota(\tau)\)をみたすものとすると，
-    \(\card{\sigma}=\card{\tau}\)である．
+    \(\widetilde{q_j}\colon Z(\gamma)\to X\)を\(q_j\)の制限とする．
+    このとき，\(X\)の任意の\(\gamma\)開集合\(\varOmega\)に対し，
+    \[
+        \widetilde{q_1}^{-1}\varOmega
+        =\left\{
+            (x,y)\in X\times X;x\in\varOmega, y\in x+\gamma
+        \right\}
+        \subset 
+        \widetilde{q_2}^{-1}\varOmega
+    \]
+    が成り立つ．
+
+
+\begin{figure}[htb]
+    \centering
+    %\scalebox{0.8}{
+        \begin{tikzpicture}[x=1cm]
+        \fill [fill=black!5](-3,-3)--(3,3)--(-3,3)--cycle;    
+        \fill [fill=black!15](-3,1)--(1,1)--(3,3)--(-3,3)--cycle;    
+        \fill [fill=black!30](1,3)--(1,1)--(3,3)--(1,3)--cycle;    
+        \draw [dashed](-3,1)--(1,1);
+        \draw [dashed](1,0)--(1,3);
+        %\draw [dashed](3,0)--(3,3);
+        \draw[->,>=stealth,semithick] (-3.2,0)--(3.2,0)node[below]{$x$}; %x軸
+        \draw[->,>=stealth,semithick] (0,-3.2)--(0,3)node[right]{$y$}; %x軸
+        \fill [draw=black,thick](-3,-3)--(3,3);
+        \fill [draw=black,very thick](1,0)--(3.2,0)node[above]{\(\varOmega\)};
+        \fill [draw=black,very thick](0,1)--(0,3.2)node[left]{\(\varOmega\)};
+        \draw (-2,2)node[right]{\(\widetilde{q_2}^{-1}\varOmega\)};
+        \draw (1,2.5)node[right]{\(\widetilde{q_1}^{-1}\varOmega\)};
+        %\draw (2,1.5)node[right]{\(\downarrow\widetilde{q_1}\)};
+    \end{tikzpicture}%}
+    \caption{\(\widetilde{q_1}^{-1}\varOmega\subset\widetilde{q_2}^{-1}\varOmega\)}
+    \label{fig:zero-cone-proj}
+\end{figure}
+
+
 \end{proof}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -591,23 +859,44 @@
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
-    \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
+    \bibitem[BouTVS]{BouTVS} ブルバキ, 位相線形空間1, 東京図書, 1968.
+    \bibitem[B+84]{B+84} Borel, 
+    \textit{Intersection Cohomology}, 
+    Progress in Mathematics, 50, Birkh\"auser, 1984.
+\bibitem[G58]{G58} Grauert, 
+    \textit{On Levi's problem and the embedding of real analytic manifolds}, 
+    Ann. Math. 68, 460--472 (1958).
+\bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
+    \textit{Differential Topology}, 
+    Prentice-Hall, 1974.
+\bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Sheaves on Manifolds}, 
+    Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+\bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
     \textit{Categories and Sheaves}, 
     Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
-    \bibitem[La21]{La21} Markus Land, 
-    \textit{Introduction to Infinity-Categories}, 
-    Compact Textbooks in Mathematics, Birkh\"auser Cham, 2021.
-    \bibitem[Lu09]{Lu09} Jacob Lurie, 
-    \textit{Higher Topos Theory}, 
-    Annals of Mathematics Studies 170, 
-    Princeton University Press, 2009.
-    \bibitem[Ri16]{Ri16} Emily Riehl, 
-    \textit{Category Theory in Context}, 
-    Dover Publications, 2016. 
-    \bibitem[RV22]{RV22} Emily Riehl, Dominic Verity, 
-    \textit{Elements of \(\infty\)-Category Theory}, 
-    Cambridge Studies in Advanced Mathematics (194)
-    Cambridge University Press, 2022.
+    \bibitem[Le13]{Le13} John M. Lee, 
+    \textit{Introduction to Smooth Manifolds}, Second Edition,
+    Graduate Texts in Mathematics, \textbf{218}, Springer, 2013.
+    \bibitem[Mo76]{Mo76} 森本光生, 佐藤超函数入門, 共立出版, 1976. 
+\bibitem[R55]{R55} de Rham, 
+    \textit{Vari\'et\'es diff\'erentiables}, 
+    Hermann, Paris, 1955.
+\bibitem[Sa59]{Sa59} Mikio Sato, 
+    \textit{Theory of Hyperfunctions}, 
+    1959--60.
+\bibitem[S66]{S66} Schwartz, 
+    \textit{Th\'eorie de distributions}, 
+    Hermann, Paris, 1966.
+\bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
+\bibitem[SP]{SP} The Stacks Project.
+\bibitem[Sp65]{Sp65} Michael Spivak, 
+\textit{Calculus on Manifolds}, 
+Benjamin, 1965.
+\bibitem[Ike21]{Ike21} 池祐一, 超局所層理論概説, 2021.
+\bibitem[Tak17]{Tak17} 竹内潔, \(\D\)加群, 共立出版, 2017.
+\bibitem[Ue]{Ue} 植田一石, ホモロジー的ミラー対称性, \url{https://www.ms.u-tokyo.ac.jp/~kazushi/course/hms.pdf} 2024/02/04 最終閲覧.
+
 \end{thebibliography}
 
 %===============================================
