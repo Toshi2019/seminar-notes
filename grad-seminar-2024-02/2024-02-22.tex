@@ -533,6 +533,7 @@
 \end{DFN}
 \end{leftbar}
 
+\begin{leftbar}
 \begin{PRP}[{\cite[Proposition 3.6.2]{KS90}}]
     \(\varPhi_K\dashv\varPsi_K\)である．
     すなわち\[
@@ -540,16 +541,18 @@
         \cong
         \Hom_{\Dompl(Y)}(\blk,\varPsi_K(\blk))
     \]が成り立つ．
-    \[\begin{tikzcd}
-        \Dompl(Y)
-        \arrow[r,bend left,"\varPhi_K"{name=F}]
-        & 
-        \Dompl(X)
-        \arrow[l,bend left,"\varPsi_K" name=G]
-        \arrow[phantom,from=F,to=G,"\perp"] 
-    \end{tikzcd}\]
-\end{PRP}
-
+\end{PRP}    
+\end{leftbar}
+\begin{comment}
+\[\begin{tikzcd}
+    \Dompl(Y)
+    \arrow[r,bend left,"\varPhi_K"{name=F}]
+    & 
+    \Dompl(X)
+    \arrow[l,bend left,"\varPsi_K" name=G]
+    \arrow[phantom,from=F,to=G,"\perp"] 
+\end{tikzcd}\]
+\end{comment}
 \begin{CMT*}
     \(\left(\otimes,\HOM\right)\)や\(
         \left(\Rder{f}_!,f^!\right)
@@ -584,14 +587,16 @@
     である．
 \end{proof}
 
+\begin{leftbar}
 \begin{PRP}[{\cite[Proposition 3.6.3]{KS90}}]\label{363}
     \(X=Y\)であり，\(K=A_\Delta\)のとき，
     \(\varPhi_K\)と\(\varPsi_K\)は\(\Dompl(X)\)の
     恒等関手と同型になる．
     ただし\(\Delta\)は\(X\)の対角集合である．
 \end{PRP}
-
+\end{leftbar}
 次の補題を用いる．
+\begin{leftbar}
 \begin{LMM}[{\cite[Proposition 3.1.14]{KS90}}]\label{3114}
     \(X\)をc柔軟次元が有限な局所コンパクト空間とする．
     \(F\in\Dompl(A_X)\)と\(G\in\Dompb(A_X)\)に対し，
@@ -601,6 +606,7 @@
         \Rder {q_1}_\ast\RG_{\Delta}\RHOM(q_2^{-1}G,q_1^!F).
     \]
 \end{LMM}
+\end{leftbar}
 
 \begin{proof}[命題\ref{363}の証明.]
     \(F\in\Dompl(X)\)に対し，
