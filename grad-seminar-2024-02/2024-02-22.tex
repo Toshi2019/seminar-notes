@@ -642,20 +642,325 @@
     \end{align*}
 \end{proof}
 
+こんどは\(Z\)をあわせて\(X\times Y\times Z\)を考える．
+射影を\[\begin{tikzcd}
+    &X\times Z 
+    \arrow[ld,"q'_1"']
+    \arrow[rd,"q'_2"]&
+    &
+    &Y\times Z 
+    \arrow[ld,"q''_1"']
+    \arrow[rd,"q''_2"]&
+    \\
+    X&&Z 
+    &
+    Y&&Z
+\end{tikzcd}\]
+のように定め，
+\begin{equation}
+    \begin{tikzcd}
+        &X\times Y\times Z
+        \arrow[ld,"q_{12}"']
+        \arrow[d,"q_{13}"]
+        \arrow[rd,"q_{23}"]
+        &\\
+        X\times Y 
+        \arrow[d,"q_1"']
+        \arrow[rd, very near end,"q_2"']&
+        X\times Z 
+        \arrow[ld, very near end,"q'_1"]
+        \arrow[rd, very near end,"q'_2"']&
+        Y\times Z 
+        \arrow[ld, very near end,"q''_1"]
+        \arrow[d,"q''_2"]
+        \\
+        X&Y&Z
+    \end{tikzcd}\tag{3.6.1}\label{eq361}
+\end{equation}
+のように射影を定める．
+
+\begin{leftbar}
+\begin{PRP}
+    \(K_1\in\Dompb(X\times Y)\)と\(K_2\in\Dompb(Y\times Z)\)に
+    対し，
+    \begin{equation*}
+        K\coloneqq
+        \Rder{{q_{13}}_!}\left(
+            q_{12}^{-1}K_{1}\ltens q_{23}^{-1}K_2
+        \right)
+    \end{equation*}
+    とおく．
+    このとき，次が成り立つ．
+    \[
+        \varPsi_{K_2}\circ\varPsi_{K_1}\cong\varPsi_{K},
+        \quad
+        \varPhi_{K_1}\circ\varPhi_{K_2}\cong\varPhi_{K}.
+    \]
+\end{PRP}
+\end{leftbar}
+
+\begin{proof}
+    \(F\in\Dompl(X)\)とすると，
+    \begin{align*}
+        &\varPsi_{K_2}\circ\varPsi_{K_1}(F)\\
+        =&
+        \Rder {q''_2}_\ast
+        \RHOM_{Y\times Z}\left(
+            K_2, {q_1''}^!\varPsi_{K_1}(F)
+        \right)\\
+        =&
+        \Rder {q''_2}_\ast
+        \RHOM_{Y\times Z}\left(
+            K_2,
+            \textcolor{black}
+            {
+                {q_1''}^!\Rder{{q_2}_\ast}   
+            }
+            \RHOM_{X\times Y}\left(K_1,q_1^!{F}\right)
+        \right)\\
+        =&
+        \Rder {q''_2}_\ast
+        \RHOM_{Y\times Z}\left(
+            K_2,
+            \textcolor{red}
+            {
+                \Rder{{q_{23}}_\ast}{q_{12}^!}
+            }
+            \RHOM_{X\times Y}\left(K_1,q_1^!{F}\right)
+        \right)&&\text{（固有基底変換）}\\
+        =&
+        \Rder {q''_2}_\ast
+        \textcolor{red}
+        {
+            \Rder{{q_{23}}_\ast}    
+        }
+        \RHOM_{Y\times Z}\left(
+            \textcolor{red}
+            {
+                q_{23}^{-1}    
+            }
+            K_2,
+            {q_{12}^!}
+            \RHOM_{X\times Y}\left(K_1,q_1^!{F}\right)
+        \right)&&\text{（順像逆像随伴）}\\
+        =&
+        \Rder {q''_2}_\ast
+        \Rder{{q_{23}}_\ast}    
+        \RHOM_{X\times Y\times Z}\left(
+            q_{23}^{-1}    
+            K_2,
+            \RHOM_{X\times Y\times Z}\left(
+                \textcolor{red}
+                {
+                    {q_{12}^{-1}}
+                }
+                K_1,
+                \textcolor{red}
+                {
+                    {q_{12}^!}
+                }
+                q_1^!{F}
+            \right)
+        \right)&&\text{（Prop.3.1.13）}\\
+        =&
+        \textcolor{red}
+        {
+            \Rder{{q_{13}}_\ast}    
+            \Rder {q'_2}_\ast
+        }
+        \RHOM_{X\times Y\times Z}\left(
+            q_{23}^{-1}    
+            K_2,
+            \RHOM_{X\times Y}\left(
+                {q_{12}^{-1}}
+                K_1,
+                {q_{12}^!}
+                q_1^!{F}
+            \right)
+        \right)&&\text{（図式の可換性）}\\
+        =&
+        \Rder{{q_{13}}_\ast}    
+        \Rder {q'_2}_\ast
+        \RHOM_{X\times Y\times Z}\left(
+            \textcolor{red}
+            {
+                {q_{12}^{-1}}K_1
+                \ltens    
+            }\
+            q_{23}^{-1}    
+            K_2,
+            {q_{12}^!}
+            q_1^!{F}
+        \right)&&\text{（テンソルホム随伴）}\\
+        =&
+        \Rder{{q_{13}}_\ast}    
+        \Rder {q'_2}_\ast
+        \RHOM_{X\times Y\times Z}\left(
+            {q_{12}^{-1}}K_1
+                \ltens    
+            q_{23}^{-1}    
+            K_2,
+            \textcolor{red}
+            {
+                {q_{13}^!}
+                {q'_1}^!
+            }
+            {F}
+        \right)&&\text{（図式の可換性）}\\
+        =&
+        \Rder{{q'_{2}}_\ast}    
+        \RHOM_{X\times Z}\left(
+            \textcolor{red}
+            {
+                \Rder{{q_{13}}_!}    
+            }\left(
+                {q_{12}^{-1}}K_1
+                \ltens    
+                q_{23}^{-1}K_2
+            \right),
+            \textcolor{red}
+            {
+                {q'_1}^!
+            }
+            {F}
+        \right)&&\text{（PV）}\\
+        =&\varPsi_{K}(F)
+    \end{align*}
+    である．
+
+    また，\(G\in \Dompl(Z)\)とすると
+    \begin{align*}
+        &\varPhi_{K_1}\circ\varPhi_{K_2}(G)\\
+        =&\Rder{{q_1}_{!}}\left(
+            K_1\lltens[A_{X\times Y}] q_2^{-1} \varPhi_{K_2}(G)
+        \right)\\
+        =&\Rder{{q_1}_{!}}\left(
+            K_1\lltens[A_{X\times Y}] q_2^{-1} \Rder{{q''_1}_{!}}\left(
+                K_2\lltens[A_{Y\times Z}] {q''_2}^{-1} G
+            \right)
+        \right)\\
+        =&\Rder{{q_1}_{!}}\left(
+            K_1\lltens[A_{X\times Y}] 
+            \textcolor{red}
+            {
+                \Rder{{q_{12}}_{!}}
+                q_{23}^{-1} 
+            }
+            \left(
+                K_2\lltens[A_{Y\times Z}] {q''_2}^{-1} G
+            \right)
+        \right)&&\text{（固有基底変換）}\\
+        =&\Rder{{q_1}_{!}}\left(
+            K_1\lltens[A_{X\times Y}] 
+            \Rder{{q_{12}}_{!}}
+            \left(\textcolor{red}
+            {
+                q_{23}^{-1} 
+                }
+                K_2\lltens[A_{X\times Y\times Z}]
+                \textcolor{red}
+            {
+                q_{23}^{-1} 
+                }
+            {q''_2}^{-1} G
+            \right)
+        \right)&&\text{（2.6.18）}\\
+        =&\Rder{{q_1}_{!}}\left(
+            K_1
+            \lltens[A_{X\times Y}] 
+            \Rder{{q_{12}}_{!}}\left(
+                q_{23}^{-1} K_2
+                \lltens[A_{X\times Y\times Z}]
+                \textcolor{red}
+                {
+                    q_{13}^{-1} 
+                    {q'_2}^{-1}
+                }
+                G
+            \right)
+        \right)&&\text{（図式の可換性）}\\
+        =&\Rder{{q_1}_{!}}
+        \textcolor{red}
+        {
+            \Rder{{q_{12}}_{!}}
+        }
+        \left(
+            \textcolor{red}
+            {
+                q_{12}^{-1}
+            }
+            K_1
+            \lltens[A_{X\times Y\times Z}] 
+            \left(
+                q_{23}^{-1} K_2
+                \lltens[A_{X\times Y\times Z}]
+                q_{13}^{-1} 
+                {q'_2}^{-1}    
+                G
+            \right)
+        \right)&&\text{（2.6.19）}\\
+        =&\textcolor{red}
+        {
+            \Rder{{q'_1}_{!}}  
+            \Rder{{q_{13}}_{!}}
+        }
+        \left(
+            q_{12}^{-1}
+            K_1
+            \lltens[A_{X\times Y\times Z}] 
+            \left(
+                q_{23}^{-1} K_2
+                \lltens[A_{X\times Y\times Z}]
+                q_{13}^{-1} 
+                {q'_2}^{-1}    
+                G
+            \right)
+        \right)&&\text{（図式の可換性）}\\
+        =&\Rder{{q'_1}_{!}}\Rder{{q_{13}}_{!}}
+        \left(
+            \left(q_{12}^{-1}
+            K_1
+            \lltens[A_{X\times Y\times Z}] 
+                q_{23}^{-1} K_2
+                \right)
+                \lltens[A_{X\times Y\times Z}]
+                q_{13}^{-1} 
+                {q'_2}^{-1}    
+                G
+        \right)&&\text{（テンソル積の結合則）}\\
+        \cong& \Rder{{q'_1}_{!}}\left(
+            \textcolor{red}
+            {
+                \Rder{{q_{13}}_!}
+            }
+            \left(
+                q_{12}^{-1}K_{1}\lltens[A_{X\times Y\times Z}] q_{23}^{-1}K_2
+            \right)\lltens[A_{X\times Z}] {q'_2}^{-1}G
+        \right)&&\text{（2.6.19）}\\
+        \cong& \varPhi_{K}(G)
+    \end{align*}
+    である．
+\end{proof}
 
 
 
 
+\begin{equation}
+    K_{1}\circ K_2\coloneqq
+    \Rder{{q_{13}}_!}\left(
+        q_{12}^{-1}K_{1}\ltens q_{23}^{-1}K_2
+    \right)
+    \tag{3.6.2}\label{eq362}
+\end{equation}
+とおく．\textbf{核の合成} (composition of kernels) というらしい．
 
 
 
-
-
-
-
-
-
-
+\begin{leftbar}
+\begin{CRL}[{\cite[Corollary 3.6.5]{KS90}}]\label{365}
+    \(Z\)を
+\end{CRL}
+\end{leftbar}
 
 
 
