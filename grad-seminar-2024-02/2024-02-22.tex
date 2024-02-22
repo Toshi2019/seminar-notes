@@ -680,7 +680,7 @@
 のように射影を定める．
 
 \begin{leftbar}
-\begin{PRP}
+\begin{PRP}[{\cite[Proposition 3.6.4]{KS90}}]\label{364}
     \(K_1\in\Dompb(X\times Y)\)と\(K_2\in\Dompb(Y\times Z)\)に
     対し，
     \begin{equation*}
@@ -958,18 +958,119 @@
 
 \begin{leftbar}
 \begin{CRL}[{\cite[Corollary 3.6.5]{KS90}}]\label{365}
-    \(Z\)を
+    \(Z=X\)であり，整数\(l\), \(l'\)で\(
+        K_2\circ K_1\cong A_{\Delta_X}[l]
+    \), \(
+        K_1\circ K_2\cong A_{\Delta_Y}[l']
+    \)となるものがあるとする．
+    このとき，\(\varPhi_{K_1}\), \(\varPhi_{K_2}\), 
+    \(\varPsi_{K_1}\), \(\varPsi_{K_2}\)は圏同値である．
 \end{CRL}
 \end{leftbar}
 
+\eqref{eq361}は次のようになる．
+\begin{equation*}
+    \begin{tikzcd}
+        &X\times Y\times X
+        \arrow[ld]
+        \arrow[d]
+        \arrow[rd]
+        &&
+        &Y\times X\times Y
+        \arrow[ld]
+        \arrow[d]
+        \arrow[rd]
+        &
+        \\
+        X\times Y 
+        \arrow[d]
+        \arrow[rd]&
+        X\times X 
+        \arrow[ld]
+        \arrow[rd]&
+        Y\times X 
+        \arrow[ld]
+        \arrow[d]
+        &
+        Y\times X 
+        \arrow[d]
+        \arrow[rd, very near end]&
+        Y\times Y 
+        \arrow[ld, very near end]
+        \arrow[rd, very near end]&
+        X\times Y 
+        \arrow[ld, very near end]
+        \arrow[d]
+        \\
+        X&Y&X
+        &
+        Y&X&Y
+    \end{tikzcd}
+\end{equation*}
+先の命題から，シフトを除けば
+\begin{align*}
+    \id_{\Dompl(Y)}
+    &\cong\varPhi_{K_2\circ K_1}
+    \cong\varPhi_{K_2}\circ\varPhi_{K_1},\\
+    \id_{\Dompl(X)}
+    &\cong\varPhi_{K_1\circ K_2}
+    \cong\varPhi_{K_1}\circ\varPhi_{K_2},\\
+    \id_{\Dompl(Y)}
+    &\cong\varPsi_{K_2\circ K_1}
+    \cong\varPsi_{K_1}\circ\varPsi_{K_2},\\
+    \id_{\Dompl(X)}
+    &\cong\varPsi_{K_1\circ K_2}
+    \cong\varPsi_{K_2}\circ\varPsi_{K_1}
+\end{align*}
+が成り立つので，圏同値．
 
 
+\begin{EG}[{\cite[Example 3.6.6]{KS90}}]\label{366}
+    \(\tau\colon E\to X\)を局所コンパクト空間\(X\)上の，
+    ファイバー次元が\(n\)である実ベクトル束とし，
+    \(\pi\colon E^\ast\to X\)をその双対束とする．
+    \(\dot{E}\coloneqq E-X\)と\(
+        \dot{E}^\ast\coloneqq E^\ast-X
+    \)をそれぞれ零切断を除いたものとし，
+    \begin{equation}
+        S\coloneqq \dot{E}/\rr^+,\quad
+        S^\ast\coloneqq {\dot{E}^\ast}/\rr^+\tag{3.6.3}\label{eq363}
+    \end{equation}
+    とおく．\(\tau\)と\(\pi\)からそれぞれ引き起こされる射影は
+    ファイバー次元\(n-1\)の位相的しずめこみである．
+\end{EG}
 
+次の集合を導入する．
+\begin{equation}
+    \begin{cases}
+        D\coloneqq\left\{
+            (x,y)\in S\times_{X}S^\ast;
+            \langle x,y\rangle\geqq0
+        \right\},\\
+        I\coloneqq\left\{
+            (y,x)\in S^\ast\times_{X}S;
+            \langle y,x\rangle>0
+        \right\}.
+    \end{cases}\tag{3.6.4}\label{eq364}
+\end{equation}
+さらに，\(\Dompb(S\times S^\ast)\)の対象\(K_1\)と
+\(\Dompb(S^\ast\times S)\)の対象\(K_2\)をそれぞれ次のように定める．
+\begin{equation}
+    \begin{cases}
+        K_1\coloneqq A_D\otimes\omega_{S^\ast/X},\\
+        K_2\coloneqq A_I.
+    \end{cases}\tag{3.6.5}\label{eq365}
+\end{equation}
 
-
-
-
-
+\begin{leftbar}
+    \begin{PRP}[{\cite[Proposition 3.6.7]{KS90}}]\label{367}
+        次が成り立つ．
+        \begin{align*}
+            K_1\circ K_2&\cong A_{\Delta_S}\quad\text{in \(\Dompb(S\times S)\)},\\
+            K_2\circ K_1&\cong A_{\Delta_{S^\ast}}\quad\text{in \(\Dompb(S^\ast\times S^\ast)\)}.
+        \end{align*}
+    \end{PRP}        
+\end{leftbar}
 
 
 
