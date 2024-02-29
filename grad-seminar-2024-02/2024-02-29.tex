@@ -1,6 +1,6 @@
 %=====================================
-%   simplicial-cat.tex
-%   無限圏に向けて単体的圏とか
+%   2024-02-22.tex
+%   院生セミナー資料 大柴寿浩
 %=====================================
 
 % -----------------------
@@ -197,8 +197,7 @@
 
 
 % 圏の記号など
-\newcommand{\cSet}{\mathord{\mathsf{Set}}}
-\newcommand{\finSet}{\mathord{\mathsf{Set}^\mathrm{f}}}
+\newcommand{\Set}{{\bf Set}}
 \newcommand{\Vect}{{\bf Vect}}
 \newcommand{\FDVect}{{\bf FDVect}}
 %\newcommand{\Ring}{{\bf Ring}}
@@ -245,6 +244,7 @@
 %\newcommand{\OO}{\mcal{O}}
 
 
+
 \makeatletter
 \renewenvironment{proof}[1][\proofname]{\par
   \pushQED{\qed}%
@@ -260,8 +260,11 @@
 }
 \makeatother
 
-\renewcommand{\proofname}{{[証明]}}
-%\renewcommand\proofname{\textrm{\textbf{証明}}} % 証明
+\renewcommand{\proofname}{証明.}
+
+
+
+%\renewcommand\proofname{\bf 証明} % 証明
 \numberwithin{equation}{section}
 \newcommand{\cTop}{\textsf{Top}}
 %\newcommand{\cOpen}{\textsf{Open}}
@@ -292,7 +295,7 @@
 \newcommand{\colim}{\mathop{\mathrm{colim}}}
 \newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
 
-\newcommand{\cat}{\mathcal{C}}
+\newcommand{\cat}{\mathscr{C}}
 
 \newcommand{\scA}{\mathscr{A}}
 \newcommand{\scB}{\mathscr{B}}
@@ -395,13 +398,35 @@
 \newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
 \newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
 
-\newcommand{\cSimp}{\mathord{\mathbf{\Delta}}}
-\newcommand{\card}{\mathop{\#}\nolimits}
-\newcommand{\Card}{\mathop{\mathrm{Card}}\nolimits}
-\newcommand{\abs}[1]{\lvert #1 \rvert}
-\newcommand{\norm}[1]{\lVert #1 \rVert}
+
+\newcommand{\tens}[1][]{\mathbin{\otimes_{\raise1.5ex\hbox to-.1em{}{#1}}}}
+\newcommand{\etens}{\mathbin{\boxtimes}}
+\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
+\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
+\newcommand{\detens}{\underline{\etens}}
+\newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
+\newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
+
+\newcommand{\blk}{\mathord{\ \cdot\ }}
 
 
+%\newcommand{\hocolim}{{\mathrm{hocolim}}}
+%\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+%\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+%\newcommand{\Pro}{\mathrm{Pro}}
+%\newcommand{\Ind}{\mathrm{Ind}}
+%\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+%\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+\newcommand{\proolim}[1][]{\mathop{\text{\rm``{$\varprojlim$}''}}\limits_{#1}}
+\newcommand{\sproolim}[1][]{\smash{\mathop{\rm``{\varprojlim}''}\limits_{#1}}}
+\newcommand{\inddlim}[1][]{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}
+\newcommand{\sinddlim}[1][]{\smash{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}\,}
+\newcommand{\ooplus}{\mathop{\text{\rm``{$\oplus$}''}}\limits}
+\newcommand{\bbigsqcup}{\mathop{``\bigsqcup''}\limits}
+\newcommand{\bsqcup}{\mathop{``\sqcup''}\limits}
+\newcommand{\dsum}[1][]{\mathbin{\oplus_{#1}}}
 
 
 
@@ -435,6 +460,7 @@
 \newtheorem{RMK}[AXM]{注意}
 \newtheorem{CNV}[AXM]{約束}
 \newtheorem{CMT}[AXM]{コメント}
+\newtheorem*{CMT*}{コメント}
 \newtheorem{NTN}[AXM]{記号}
 
 % 定理環境ここまで
@@ -484,88 +510,278 @@
 % begin document and end document.
 % ---------------------------
 
-\title{simplex category（単体圏）について}
-\author{Toshi2019}
+\title{2024/02/29 セミナー資料}
+\author{大柴寿浩}
 \date{}
 \begin{document}
 \maketitle
-\begin{abstract}
-    単体圏の性質についてまとめる．
-\end{abstract}
-\section*{記号など}
+
+\section*{記号}
 \begin{itemize}
-    \item 1点から成る集合を\(\{\pt\}\)で表す．
-    \item 集合\(X\)の基数を\(\abs{X}\)とか\(\card{X}\)とか\(\Card{X}\)で表す．
-    \item 圏\(\cat\)の始対象を\(\varnothing_\cat\)，終対象を\(\pt_\cat\)で表す．
-    \item 圏\(\cat\)の対象\(X\)から\(Y\)への射の集合を\(\Hom_\cat(X,Y)\)や\(\cat(X,Y)\)で表す．
-    \item 有限集合とその間の写像のなす圏を\(\finSet\)で表す．
+    \item \(\overline{\rr}\coloneqq \left[-\infty,+\infty\right]=\rr\cup\{\pm\infty\}\)
+    \item 集合\(U\)の開近傍系を\(I_U\)とかき，点\(x\)の開近傍系を\(I_x\)とかく．
 \end{itemize}
 
-\section{単体的圏}
-\cite{KS06}を参考にした．
-\begin{leftbar}
-\begin{DFN}
-    \textbf{単体圏} (simplex category)\footnotemark[1] \(\cSimp\)を次で定める．
-    \begin{align*}
-        \Ob(\cSimp)&\coloneqq\left\{\text{有限全順序集合}\right\},\\
-        \Hom_{\cSimp}(\sigma,\tau)&\coloneqq\left\{
-            u\colon\sigma\to\tau;\text{ \(u\)は順序を保つ写像}
-        \right\}.
-    \end{align*}
-    射の合成は写像の合成で定める．
 
-    \(\cSimp\)の部分圏\(\widetilde{\cSimp}\)を次で定める．
-    \begin{align*}
-        \Ob\left(\widetilde{\cSimp}\right)
-        &\coloneqq\left\{
-            \sigma\in\cSimp; \sigma\ne\varnothing
-        \right\},\\
-        \Hom_{\widetilde{\cSimp}}(\sigma,\tau)
-        &\coloneqq\left\{
-            u\in\Hom_{\cSimp}(\sigma,\tau);\text{ \(u\)は最大元と最小元を保つ}
-        \right\}.
-    \end{align*}
+
+\section{コホモロジー構成可能層}
+\subsection{理想複体}
+\(A\)を可換環とする．
+\(M\in\Dompb(A)\coloneqq \Dompb(\Mod(A))\)を\(A\)加群の導来圏の対象とする．
+\(M\)が\textbf{理想対象}\footnote{
+    \cite{Ue}による訳にしたがった．
+    定訳は未だ無いと思われる．
+} (perfect object) であるとは，
+有限生成射影的\(A\)加群の有界複体と擬同型であることをいう．
+
+\begin{PRP}[{\cite[Exercise I.30]{KS90}}]
+    \(A\)を可換環とする．
+    \begin{enumerate}[(i)]\setlength{\leftskip}{2zw}
+        \item \(X\to Y\to Z\underset{+1}{\to}\)が\(\Dompb(A)\)における
+        完全三角で，\(X\)と\(Y\)が理想的ならば，\(Z\)も理想的である．
+        \item 理想対象の直和因子も理想対象である．
+        \item \(M\in\Dompb(A)\)を理想対象とする．
+        \(M^\ast\coloneqq \RHom_A(M,A)\)とおく．
+        \(M^\ast\)は理想対象であり，
+        標準的な射\(M\to M^{\ast\ast}\)は同型である．
+    \end{enumerate}
+
+    \(A\)がネーター環で大域次元が有限であるとする．
+    \begin{enumerate}[(i)]\setcounter{enumi}{3}\setlength{\leftskip}{2zw}
+        \item \(\Modf(A)\)の導来圏\(\Dompb(\Modf(A))\)の
+        任意の対象は理想的である．
+        \item \(\Dompbf(A)\)で各コホモロジーが\(\Modf(A)\)に
+        属す対象の導来圏を表す．
+        \(\Dompb(\Modf(A))\to\Dompbf(\Mod(A))\)は圏同値である．\(\blacksquare\)
+    \end{enumerate}
+\end{PRP}   
+証明は略．
+
+擬連接かつtor次元が有限であることと同値らしい．(\cite[lem 15.74.2]{SP})
+
+\subsection{本編}
+
+\(X\)を局所コンパクト空間でc柔軟次元が有限なものとする．
+\begin{leftbar}
+\begin{DFN}[コホモロジー構成可能層 {\cite[Definition 3.4.1]{KS90}}]
+    \(F\in\Dompb(A_X)\)がコホモロジー構成可能とは，
+    任意の\(x\in X\)に対して，次の条件が成り立つことをいう．
+    \begin{enumerate}[(i)]
+        \item \(\inddlim[x\in U]\RG(U;F)\)と\(\proolim[x\in U] \RG_c(U;F)\)が共に表現可能である．
+        \item \(\sinddlim[x\in U]\RG(U;F)\to F_x\)と\(\RG_{\{x\}}(X;F)\to\proolim[x\in U] \RG_c(U;F)\)が共に同型である．
+        \item \(F_x\)と\(\RG_{\{x\}}(X;F)\)は perfect である．
+    \end{enumerate}
 \end{DFN}
 \end{leftbar}
-\footnotetext[1]{
-    \cite{KS06}では，\(\cSimp\)のことを 
-    simplicial category（単体的圏）と呼んでいるが，
-    \cite{Ri16}とか\cite{RV22}ではこう呼んでいたのでそちらに合わせる．
-    \cite{Lu09}では別の概念を表すのに simplicial category を
-    使っていたので，衝突しないようにする意図もある．
-}
-
-有限全順序集合\(\left[n,m\right]\)を\(
-    \left\{k\in\zz; n\leqq k\leqq m\right\}
-\)で定める．\([0,n]\)をたんに\([n]\)とかくことが多い．
-
-以下単体圏の性質を述べる．
-
-\begin{PRP}\label{PRP:half-full}
-    うめこみ関手\(
-        \iota\colon\cSimp\hookrightarrow\finSet
-    \)は半充満かつ忠実である．
-\end{PRP}
-
-\begin{RMK}
-    関手\(F\colon\cat\to\cat'\)が\textbf{半充満} (half-full) であるとは，
-    任意の対象\(X,Y\in\cat\)に対し，
-    \(F(X)\cong F(Y)\)ならば，\(X\)と\(Y\)の間の同型が存在することをいう．
-    ただし，\(\cat'\)における同型\(F(X)\simar F(Y)\)は
-    \(\cat\)における同型\(X\to Y\)から来るものでなくともよい．    
-    
-    \(\cat\)の部分圏\(\cat'\)が半充満であるとは，
-    うめこみ関手\(\cat\hookrightarrow\cat'\)が半充満であることをいう．
+\begin{RMK}[{\cite[Remark 3.4.2]{KS90}}]
+    (ii) は (i) から従う．
 \end{RMK}
+\begin{CMT}
+    \cite{HS23}では弱構成可能層（条件(ii)のみを課したもの）について
+    色々考察している．
+\end{CMT}
+\begin{leftbar}
+\begin{PRP}[{\cite[Proposition 3.4.3]{KS90}}]
+    \(F\)をコホモロジー構成可能層とする．
+    \begin{enumerate}[(i)]
+        \item \(\rmD{F}\)はコホモロジー構成可能である．
+        \item \(F\simar \rmD\rmD{F}\).
+        \item 任意の\(x\in X\)に対し
+        \begin{align*}
+            \RG_{\{x\}}(X;\rmD{F})&\cong \RHom(F_x,A),\\
+            \left(\rmD{F}\right)_x&\cong \RHom(\RG_{\{x\}}(X;F),A).        
+        \end{align*}
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
 
-\begin{proof}[命題\ref{PRP:half-full}の証明]
-    まず\(\iota\)が半充満であることを示す．
-    \(\sigma, \tau\in\cSimp\)を
-    \(\iota(\sigma)\cong\iota(\tau)\)をみたすものとすると，
-    \(\card{\sigma}=\card{\tau}\)である．
+\begin{proof}
+    (i) と (iii)：
+    \begin{equation}
+        \RHom(F,\omega_X)\cong 
+        \RHom(\RG_c(X;F),A)\tag{3.1.8}
+    \end{equation}
+    より，
+    \begin{align*}
+        \RG(U;\rmD{F})
+        &=
+        \RG(U;\RHOM(F,\omega_X))\\
+        &=
+        \RG(U;j_U^{-1}\RHOM(F,\omega_X))\\
+        &=
+        \RG(U;j_U^{!}\RHOM(F,\omega_X))\\
+        &=
+        \RG(U;\RHOM(j_U^{-1}F,j_U^{!}\omega_X))\\
+        &=
+        \RG(U;\RHOM(j_U^{-1}F,\omega_U))\\
+        &=
+        \RHom(\RG_c(U;j_U^{-1}F),A)\\
+        &=
+        \RHom(\RG_c(U;F),A)
+    \end{align*}
+    である．\(\inddlim[x\in U]\)をあてて，
+    \begin{align*}
+        \inddlim[x\in U]\RG(U;\rmD{F})
+        &\cong 
+        \inddlim[x\in U]\RHom(\RG_c(U;F),A)\\
+        &\underset{\text{定義(ii)}}{\cong}
+        \RHom(\RG_{\{x\}}(X;F),A)
+    \end{align*}
+    を得る．よって，(iii) の2つ目の式が成り立つ．
+    したがって，\(
+        \inddlim[x\in U]\RG(U;\rmD{F})
+    \)は表現可能であり，perfectでもある．
+
+    \(K\)を\(x\)のコンパクト近傍とし，\(\mathring{K}\)を内部とする．
+    このとき，
+    \begin{align*}
+        \RG_{K}(X;\rmD{F})
+        &\cong \RHom(A_K,\rmD{F})\\
+        &\cong \RHom(F_K,\omega_X) &&\text{Homテンソル随伴}\\
+        &\cong \RHom(\RG(X;F_K), A) &&\text{(3.1.8)使った（cptなのでcとった？）}
+    \end{align*}
+    である．\(\proolim[z\in U]\)あてて
+    \begin{align*}
+        \proolim[x\in U]\RG_{c}(U;\rmD{F})
+        &\cong\proolim[x\in \mathring{K}]\RG_{K}(X;\rmD{F})\\
+        &\cong\proolim[x\in \mathring{K}]\RHom(\RG(X;F_K), A)\\
+        &\cong\RHom\left(
+            \inddlim[x\in \mathring{K}]\RG(X;F_K), A
+        \right)\\
+        &\cong\RHom\left(
+            \inddlim[x\in U]\RG(U;F), A
+        \right)&&\text{微妙}\\
+        &\cong\RHom\left(F_x, A\right)
+    \end{align*}
+    を得る．よってこれはperfectで，(iii) の1つ目も示せた．
+    コホモロジー構成可能性の条件(i)も示せているから条件(ii)も成り立つ．
+    よって，\(\rmD{F}\)はコホモロジー構成可能である．（(i)が示せた．）
+
+    (ii) 
+    (i) より\(\rmD{F}\)と\(\rmD{\rmD{F}}\)はともにコホモロジー構成可能である．
+    \(x\in X\)に対し，(iii)より，
+    \begin{align*}
+        (\rmD{\rmD{F}})_x
+        &\cong
+        \RHom(\RG_{\{x\}}(X;\rmD{F}),A)\\
+        &\cong
+        \RHom(\RHom(F_x,A),A)\\
+        &\cong F_x
+    \end{align*}
+    なので\(\rmD{\rmD{F}}\)と\(F\)は同型である．？
 \end{proof}
 
+\begin{leftbar}
+\begin{PRP}[{\cite[Proposition 3.4.4]{KS90}}]
+    \(X\)と\(Y\)をc柔軟次元が有限な局所コンパクト空間とする．
+    \(q_1\colon X\times Y\to X\)と\(q_2\colon X\times Y\to Y\)を射影とする．
+    \(F\in \Dompb(A_X)\)をコホモロジー構成可能層とし，
+    \(G\in\Dompl(A_Y)\)とする．
+    このとき，
+    \[
+        \rmD{F}\letens G\to \RHOM(q_1^{-1}F,q_2^{!}G)
+    \]
+    は同型である．
+    \(X\)が\(C^0\)多様体なら
+    \[
+        \rmD'{F}\letens G\to \RHOM(q_1^{-1}F,q_2^{-1}G)
+    \]
+    も同型になる．
+\end{PRP}
+\end{leftbar}
 
+\begin{proof}
+    1個目を示せばよい．
+    \(U\subset X\)と\(V\subset Y\)をそれぞれ開集合とする．
+    このとき
+    \[
+        \RG\left(U\times V;\RHOM\left(q_1^{-1}F,q_2^{!}G\right)\right)\cong
+        \RHom\left(\RG_c(U;F),\RG(V;G)\right)
+    \]
+    である．（\cite[Proposition 3.1.15]{KS90}）
+    これに\(\inddlim[z\in U]\)をあてて，
+    \begin{align*}
+        &\inddlim[z\in U]
+        \RG\left(U\times V;\RHOM(q_1^{-1}F,q_2^{!}G)\right)\\
+        \cong&
+        \inddlim[z\in U]
+        \RHom(\RG_c(U;F),\RG(V;G))\\
+        \cong&
+        \RHom\left(\proolim[z\in U]\RG_c(U;F),\RG(V;G)\right)\\
+        \cong&
+        \RHom\left(\RG_{\{x\}}(X;F),\RG(V;G)\right)
+        &&\text{定義(ii)}\\
+        \cong&
+        \RHom\left(\RG_{\{x\}}(X;F),A\right)\ltens\RG(V;G)
+        &&\text{?}\\
+        \cong&
+        \left(\rmD{F}\right)_x\ltens\RG(V;G)    
+        &&\text{3.4.3(iii)}
+    \end{align*}
+    を得る．よって，
+    \begin{align*}
+        \RHOM(q_1^{-1}F,q_2^{!}G)
+        &\cong
+        q_1^{-1}\rmD{F}\ltens q_2^{-1}G\\
+        &\cong
+        q_1^{-1}\rmD'{F}\ltens q_2^{!}G
+    \end{align*}
+    である．
+\end{proof}
+
+\begin{EG}[{\cite[Example 3.4.5]{KS90}}]
+    (i) 
+    \(X\)を\(C^0\)多様体とし，\(Y\)を余次元\(p\)の閉部分多様体とする．
+    \(A_Y\)と\(\RG_Y(A_X)\)は\(X\)上のコホモロジー構成可能層である．
+    \begin{equation}
+        \rmD_X(A_Y)\cong \RG_Y(\omega_X)\cong\omega_Y\tag{3.4.3}
+    \end{equation}
+    が成り立つ．
+
+    (ii) 
+    \(X\)を有限次元実ベクトル空間とする．
+    \(Z\subset X\)を閉（開）凸集合とする．
+    このとき，\(A_Z\)と\(\RG_Z(A_X)\)は\(X\)上の
+    コホモロジー構成可能層である．
+\end{EG}
+
+\begin{leftbar}
+\begin{PRP}[{\cite[Proposition 3.4.6]{KS90}}]
+    \(F, G\in \Dompb(A_X)\)をコホモロジー構成可能層とする．
+    このとき，
+    \[
+        \RHOM(G,F)\cong
+        \RHOM(\rmD{G},\rmD{F})\cong
+        \rmD\left(\rmD(F)\ltens G\right)
+    \]
+    が成り立つ．
+\end{PRP}
+\end{leftbar}
+
+\begin{proof}
+    \[
+        \RHOM(G,F)\to
+        \RHOM(\rmD{G},\rmD{F})
+    \]
+    が同型であることを示すには
+    \[
+        q_2^{-1}\rmD{G}\ltens q_1^{!}F    
+        \cong
+        q_1^{-1}(\rmD\rmD{F})\ltens q_2^{!}\rmD G
+    \]
+    が成り立つことを示せばよいがこれは明らか．
+
+    後半はラク．
+    \begin{align*}
+        \RHOM(\rmD{F}\lltens G,\omega_X)
+        &\cong
+        \RHOM(G,\RHOM(\rmD{F},\omega_X))\\
+        &\cong
+        \RHOM(G,\rmD\rmD{F})\\
+        &\cong
+        \RHOM(G,F).
+    \end{align*}
+\end{proof}
 
 
 
@@ -591,23 +807,47 @@
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
-    \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
+    \bibitem[BouTVS]{BouTVS} ブルバキ, 位相線形空間1, 東京図書, 1968.
+    \bibitem[B+84]{B+84} Borel, 
+    \textit{Intersection Cohomology}, 
+    Progress in Mathematics, 50, Birkh\"auser, 1984.
+\bibitem[G58]{G58} Grauert, 
+    \textit{On Levi's problem and the embedding of real analytic manifolds}, 
+    Ann. Math. 68, 460--472 (1958).
+\bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
+    \textit{Differential Topology}, 
+    Prentice-Hall, 1974.
+    \bibitem[HS23]{HS23} Andreas Hohl, Pierre Schapira, 
+    \textit{Unusual Functorialities for weakly constructible sheaves}, 
+    2023.
+    \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Sheaves on Manifolds}, 
+    Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+\bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
     \textit{Categories and Sheaves}, 
     Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
-    \bibitem[La21]{La21} Markus Land, 
-    \textit{Introduction to Infinity-Categories}, 
-    Compact Textbooks in Mathematics, Birkh\"auser Cham, 2021.
-    \bibitem[Lu09]{Lu09} Jacob Lurie, 
-    \textit{Higher Topos Theory}, 
-    Annals of Mathematics Studies 170, 
-    Princeton University Press, 2009.
-    \bibitem[Ri16]{Ri16} Emily Riehl, 
-    \textit{Category Theory in Context}, 
-    Dover Publications, 2016. 
-    \bibitem[RV22]{RV22} Emily Riehl, Dominic Verity, 
-    \textit{Elements of \(\infty\)-Category Theory}, 
-    Cambridge Studies in Advanced Mathematics (194)
-    Cambridge University Press, 2022.
+    \bibitem[Le13]{Le13} John M. Lee, 
+    \textit{Introduction to Smooth Manifolds}, Second Edition,
+    Graduate Texts in Mathematics, \textbf{218}, Springer, 2013.
+    \bibitem[Mo76]{Mo76} 森本光生, 佐藤超函数入門, 共立出版, 1976. 
+\bibitem[R55]{R55} de Rham, 
+    \textit{Vari\'et\'es diff\'erentiables}, 
+    Hermann, Paris, 1955.
+\bibitem[Sa59]{Sa59} Mikio Sato, 
+    \textit{Theory of Hyperfunctions}, 
+    1959--60.
+\bibitem[S66]{S66} Schwartz, 
+    \textit{Th\'eorie de distributions}, 
+    Hermann, Paris, 1966.
+\bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
+\bibitem[SP]{SP} The Stacks Project.
+\bibitem[Sp65]{Sp65} Michael Spivak, 
+\textit{Calculus on Manifolds}, 
+Benjamin, 1965.
+\bibitem[Ike21]{Ike21} 池祐一, 超局所層理論概説, 2021.
+\bibitem[Tak17]{Tak17} 竹内潔, \(\D\)加群, 共立出版, 2017.
+\bibitem[Ue]{Ue} 植田一石, ホモロジー的ミラー対称性, \url{https://www.ms.u-tokyo.ac.jp/~kazushi/course/hms.pdf} 2024/02/04 最終閲覧.
+
 \end{thebibliography}
 
 %===============================================
