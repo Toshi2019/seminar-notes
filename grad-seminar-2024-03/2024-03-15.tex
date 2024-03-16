@@ -601,45 +601,126 @@
     次の順に証明する．
     \[\begin{tikzcd}
         (\mathrm{i})\ar[r,Leftrightarrow,"\ref{372-13}"]
-        &(\mathrm{iii})\ar[rd,Rightarrow]
-        &&(\mathrm{iv})\ar[ll,Rightarrow]\ar[r,Leftrightarrow]
+        &(\mathrm{iii})\ar[rd,Rightarrow,"\ref{372-32}"']
+        &&(\mathrm{iv})\ar[ll,Rightarrow,"\ref{372-43}"']\ar[r,Leftrightarrow,"\ref{372-45}"]
         &(\mathrm{v})\\
-        &&(\mathrm{ii})\ar[ru,Rightarrow]
+        &&(\mathrm{ii})\ar[ru,Rightarrow,"\ref{372-24}"']
     \end{tikzcd}.\]
     
     \begin{enumerate}
-        \item\label{372-13} (i)\(\Leftrightarrow\)(iii): 
-        まず，\(\rr^+\)軌道は\(\mu\)による像としてかけることから，
-        \(x\in X\)での\(p\)のファイバー\(p^{-1}(x)\)の軌道は
-        \(\mu\left(p^{-1}(x)\right)\)と表せることに注意する．
-        \(
-            j_{p^{-1}(x)}\colon 
-            p^{-1}(x)\hookrightarrow X\times \rr^+
-        \)を包含写像とする．このとき，
+        \item\label{372-13} (i) \(\Leftrightarrow\) (iii): 
+        まず，\(x\in X\)の\(\rr^+\)軌道は\(
+            \mu\left(p^{-1}(x)\right)
+        \)と表せることに注意する．実際，\(x\)の\(\rr^+\)軌道\(b\)は
+        \[
+            b=\left\{\mu(x,t); t\in\rr^+\right\}
+        \]であり，これは\(x\)での\(p\)のファイバー\[
+            p^{-1}(x)=\left\{(x,t);t\in\rr^+\right\}
+        \]の\(\mu\)による像
+        \[
+            \mu\left(p^{-1}(x)\right)=
+            \left\{\mu(x,t);(x,t)\in p^{-1}(x)\right\}
+        \]である．
         \begin{align*}
-            &\text{\(H^j\left(\mu^{-1}F\right)\)は
-            \(p^{-1}(x)\)で局所定数層である}\\
-            \Leftrightarrow&\ 
-            \text{\(
-                H^j\left(\mu^{-1}F\right)\rvert_{p^{-1}(x)}
-            \)は局所定数層である}\\
-            \Leftrightarrow&\ 
-            \text{\(
-                j_{p^{-1}(x)}^{-1}H^j\left(\mu^{-1}F\right)
-            \)は局所定数層である}\\
-            \Leftrightarrow&\ 
-            \text{\(
-                j_{p^{-1}(x)}^{-1}\mu^{-1}H^j\left(F\right)
-            \)は局所定数層である}\\
-            \Leftrightarrow&\ 
-            \text{\(
-                \left(\mu\circ j_{p^{-1}(x)}\right)^{-1}H^j\left(F\right)
-            \)は局所定数層である}\\
-            \Leftrightarrow&\ 
-            \text{\(
-                H^j\left(F\right)
-            \)は\(\mu\left(p^{-1}(x)\right)\)で局所定数層である}
+            j_{p^{-1}(x)}&\colon 
+            p^{-1}(x)\hookrightarrow X\times \rr^+\\
+            j_{\mu\left(p^{-1}(x)\right)}&\colon 
+            \mu\left(p^{-1}(x)\right)\hookrightarrow X
         \end{align*}
+        をそれぞれ包含写像とすると\[
+            j_{\mu\left(p^{-1}(x)\right)}\circ\mu
+            =\mu\circ j_{p^{-1}(x)}
+        \]が成り立つ．したがって，
+        \begin{align*}
+            H^j\left(\mu^{-1}F\right)&\cong H^j\left(\mu^{-1}F\right)\rvert_{p^{-1}(x)}\\
+            &\cong j_{p^{-1}(x)}^{-1}H^j\left(\mu^{-1}F\right)\\
+            &\cong
+            j_{p^{-1}(x)}^{-1}\mu^{-1}H^j\left(F\right)\\
+            &\cong
+            \left(\mu\circ j_{p^{-1}(x)}\right)^{-1}H^j\left(F\right)\\
+            &\cong
+            \left(
+                j_{\mu\left(p^{-1}(x)\right)}\circ\mu
+            \right)^{-1}H^j\left(F\right)\\
+            &\cong
+            \mu^{-1}j_{\mu\left(p^{-1}(x)\right)}^{-1}H^j\left(F\right)\\
+            &\cong
+            \mu^{-1}\left(H^j\left(F\right)\rvert_{\mu\left(p^{-1}(x)\right)}\right)
+        \end{align*}
+        である．
+        引き戻しが定数層なら元の層も定数層であり，
+        定数層の引き戻しも定数層\footnote{
+            \(f\colon Y\to X\)を位相空間の間の連続写像とし，
+            \(M\)を加群とする．
+            \(X\)上の層\(F\)の引き戻し\(f^{-1}F\)が\(Y\)上の
+            定数層\(M_Y\)になったとすると，
+            \(\mathrm{a}_Y=\mathrm{a}_X\circ f\)より，
+            \(
+                f^{-1}F
+                \cong M_Y
+                \cong \mathrm{a}_Y^{-1}M
+                \cong f^{-1}\mathrm{a}_X^{-1}M
+                \cong f^{-1}M_X
+            \)である．
+            逆像関手は conservative なので（ホンマか？）\(F\cong M_X\)である．
+        }なので，
+        \(H^j(\mu^{-1}F)\)が\(p\)の各ファイバーで局所定数層となるのは，
+        \(H^j\left(F\right)\)が\(\mu\left(p^{-1}(x)\right)\)で，
+        すなわち\(x\)の\(\rr^+\)軌道で局所定数層となるときである．
+        \item\label{372-45} (iv) \(\Leftrightarrow\) (v): 
+        \(
+            p^{-1}F\cong p^{-1}\ltens 
+            \omega_{X\times\rr^{+}/X}
+        \)と\(
+            \mu^{-1}F\cong \mu^{-1}\ltens 
+            \omega_{X\times\rr^{+}/X}
+        \)が成り立つ．
+        \item\label{372-24} (ii) \(\Leftrightarrow\) (iv): 
+        \(\alpha\)と\(\beta\)が同型なので，
+        互いに逆射となる射\[
+            \beta\alpha^{-1}\colon \mu^{-1}F\to p^{-1}F,\quad 
+            \alpha\beta^{-1}\colon  p^{-1}F\to \mu^{-1}F
+        \]が得られる．したがって，\(p^{-1}F\cong \mu^{-1}F\)である．
+        \item\label{372-43} (iv) \(\Leftrightarrow\) (iii): 
+        \(\mu^{-1}F\cong p^{-1}F\)とする．
+        \(x\in X\)とする．\(
+            p^{-1}(x)=\{x\}\times \rr^{+}
+        \)に対し\[
+            i_{p^{-1}(x)}\colon p^{-1}(x)\hookrightarrow X\times \rr^+,
+            \quad
+            i_{x}\colon\{x\} \hookrightarrow X
+        \]
+        とおくと次の図式が可換になる．
+        \[\begin{tikzcd}
+            p^{-1}(x)
+            \ar[r,hookrightarrow, "i_{p^{-1}(x)}"]
+            \ar[d, "p\rvert_{p^{-1}(x)}"']
+            &X\times \rr^+
+            \ar[d, "p"]\\
+            \{x\}
+            \ar[r,hookrightarrow, "i_{x}"']
+            &X
+        \end{tikzcd}.\]
+        したがって，\(j\)を整数とすると
+        \begin{align*}
+            H^j\left. \left(p^{-1}F\right)\right\rvert_{p^{-1}(x)}
+            &\cong
+            p^{-1}\left. H^j\left(F\right)\right\rvert_{p^{-1}(x)}\\
+            &\cong
+            i^{-1}_{p^{-1}(x)}p^{-1}H^j\left(F\right)\\
+            &\cong
+            \left(p\circ i_{p^{-1}(x)}\right)^{-1}H^j\left(F\right)\\
+            &\cong
+            \left(i_{x}\circ p\rvert_{p^{-1}(x)}\right)^{-1}H^j\left(F\right)\\
+            &\cong
+            \left(p\rvert_{p^{-1}(x)}\right)^{-1}i_{x}^{-1}H^j\left(F\right)\\
+            &\cong
+            \left(p\rvert_{p^{-1}(x)}\right)^{-1}H^j\left(F\right)_{x}\\
+            &\cong
+            \left(H^j\left(F\right)_{x}\right)_{p^{-1}(x)}
+        \end{align*}
+        で，定数層となる（よって特に局所定数層となる）．
+        \item\label{372-32} (iii) \(\Leftrightarrow\) (ii):      
     \end{enumerate}
 \end{proof}
 
