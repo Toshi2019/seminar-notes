@@ -49,7 +49,7 @@
 \usepackage[all]{xy}
 
 \usetikzlibrary{cd}
-
+\usetikzlibrary{arrows.meta}
 
 
 % ================================
@@ -518,17 +518,130 @@
 
 \section*{記号}
 \begin{itemize}
-    \item \(\overline{\rr}\coloneqq \left[-\infty,+\infty\right]=\rr\cup\{\pm\infty\}\)
+    \item 恒等射を\(\id\)や\(1\)で表す．
     \item 集合\(U\)の開近傍系を\(I_U\)とかき，点\(x\)の開近傍系を\(I_x\)とかく．
+    \item \(\rr^+\)：正の実数のなす乗法群．
 \end{itemize}
 
+\section{フーリエ・佐藤変換{\cite[section 3.7]{KS90}}}
 
+まず錐状層を定義する．
+そのために作用つきの空間を考える．
+\(X\)を局所コンパクト空間で\(\rr^+\)の作用\(\mu\)が入っているとする．
+つまり，連続写像\(\mu\colon X\times \rr^+\to X\)で
+\begin{align*}
+    \mu(x,t_1t_2)&=\mu(\mu(x,t_1),t_2)\\
+    \mu(x,1)&=x
+\end{align*}
+をみたすものが与えられているとする．
+\begin{leftbar}
+\begin{DFN}[{\cite[Definition 3.7.1]{KS90}}]
+    \begin{enumerate}[(i)]
+        \item 層\(F\in\Mod(A_X)\)が\textbf{錐状} (conic) であるとは，
+        \(X\)の各軌道\(b\)への制限\(F\rvert_b\)が局所定数層であることをいう．
+        \(\Mod(A_X)\)の充満部分圏\(\Mod_{\rr^+}(A_X)\)を錐状層からなるものとして定める．
+        \item \(\mathsf{D}^{+}_{\rr^+}(X)\)を，各\(j\in\zz\)に対して\(H^j(F)\)が
+        錐状のものからなる\(\Dompl(X)\)の充満部分圏として定める．
+    \end{enumerate}
+\end{DFN}
+\end{leftbar}
 
+錐状層がどのように特徴づけられるかを調べる．
+次の連続写像を考える．
+\[\begin{tikzcd}
+    X\ar[r,hook,"j"]&
+    X\times\rr^+
+    \ar[r,yshift=-0.7ex,"p"']
+    \ar[r,yshift=0.7ex,"\mu"]
+    &X.
+\end{tikzcd}\]
+\(j\colon X\to X\times \rr^+\)は
+\(x\in X\)を\(X\times\rr^+\)に\((x,1)\)として
+埋め込む写像であり．
+\(p\colon X\times\rr^+\to X\)は\(X\)への第1射影である．
+これらの連続写像を用いて，\(F\in\Dompl(X)\)に対し，次の2つの射を構成する．
+\[\begin{tikzcd}
+    \mu^{-1}F&
+    p^{-1}\Rder{p}_{\ast}\mu^{-1}F
+    \ar[l,"\alpha"']
+    \ar[r,"\beta"]
+    &p^{-1}F.
+\end{tikzcd}\]
+\(\alpha\)は随伴\((p^{-1},\Rder{p}_{\ast})\)の
+余単位\(p^{-1}\Rder{p}_{\ast}\to1_{\Dompl(X)}\)を\(\mu^{-1}F\)に
+適用することで得られる．
+\(\beta\)は次のように構成される．
+\begin{align*}
+    p^{-1}\Rder{p}_{\ast}\mu^{-1}F
+    &\to
+    p^{-1}\Rder{p}_{\ast}\Rder{j}_{\ast}j^{-1}\mu^{-1}F\\
+    &\cong
+    p^{-1}\Rder(p\circ{j})_{\ast}(\mu\circ{j})^{-1}F\\
+    &\cong
+    p^{-1}\Rder{1_X}_{\ast}1_X^{-1}F\\    
+    &\cong
+    p^{-1}F.
+\end{align*}
 
+\begin{leftbar}
+\begin{PRP}[{\cite[Proposition 3.7.2]{KS90}}]
+    \(F\in\mathsf{D}^{+}(X)\)に対し
+    次の条件(i)--(v)は同値である．
+    \begin{enumerate}[(i)]
+        \item \(F\in \mathsf{D}^{+}_{\rr^+}(X)\)
+        \item \(\alpha\)と\(\beta\)はどちらも同型である．
+        \item すべての\(j\in\zz\)に対し，\(H^j(\mu^{-1}F)\)が\(p\)の各ファイバーで局所定数層となる．
+        \item \(p^{-1}F\cong \mu^{-1}F\).
+        \item \(p^{!}F\cong \mu^{!}F\).
+    \end{enumerate}
+\end{PRP}    
+\end{leftbar}
 
-
-
-
+\begin{proof}
+    次の順に証明する．
+    \[\begin{tikzcd}
+        (\mathrm{i})\ar[r,Leftrightarrow,"\ref{372-13}"]
+        &(\mathrm{iii})\ar[rd,Rightarrow]
+        &&(\mathrm{iv})\ar[ll,Rightarrow]\ar[r,Leftrightarrow]
+        &(\mathrm{v})\\
+        &&(\mathrm{ii})\ar[ru,Rightarrow]
+    \end{tikzcd}.\]
+    
+    \begin{enumerate}
+        \item\label{372-13} (i)\(\Leftrightarrow\)(iii): 
+        まず，\(\rr^+\)軌道は\(\mu\)による像としてかけることから，
+        \(x\in X\)での\(p\)のファイバー\(p^{-1}(x)\)の軌道は
+        \(\mu\left(p^{-1}(x)\right)\)と表せることに注意する．
+        \(
+            j_{p^{-1}(x)}\colon 
+            p^{-1}(x)\hookrightarrow X\times \rr^+
+        \)を包含写像とする．このとき，
+        \begin{align*}
+            &\text{\(H^j\left(\mu^{-1}F\right)\)は
+            \(p^{-1}(x)\)で局所定数層である}\\
+            \Leftrightarrow&\ 
+            \text{\(
+                H^j\left(\mu^{-1}F\right)\rvert_{p^{-1}(x)}
+            \)は局所定数層である}\\
+            \Leftrightarrow&\ 
+            \text{\(
+                j_{p^{-1}(x)}^{-1}H^j\left(\mu^{-1}F\right)
+            \)は局所定数層である}\\
+            \Leftrightarrow&\ 
+            \text{\(
+                j_{p^{-1}(x)}^{-1}\mu^{-1}H^j\left(F\right)
+            \)は局所定数層である}\\
+            \Leftrightarrow&\ 
+            \text{\(
+                \left(\mu\circ j_{p^{-1}(x)}\right)^{-1}H^j\left(F\right)
+            \)は局所定数層である}\\
+            \Leftrightarrow&\ 
+            \text{\(
+                H^j\left(F\right)
+            \)は\(\mu\left(p^{-1}(x)\right)\)で局所定数層である}
+        \end{align*}
+    \end{enumerate}
+\end{proof}
 
 
 

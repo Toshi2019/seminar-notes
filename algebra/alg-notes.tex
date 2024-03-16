@@ -1,5 +1,5 @@
 %================================================
-%    層理論まとめノート
+%    位相空間まとめノート
 %================================================
 
 % -----------------------
@@ -17,7 +17,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[10pt, b5paper, dvipdfmx, leqno]{jsbook}
+\documentclass[11pt, a4paper, dvipdfmx]{jsreport}
 
 % ------------------------
 % usepackage
@@ -67,6 +67,8 @@
 }
 \usepackage{pxjahyper}
 \usepackage{layout}
+\usepackage{okumacro}
+
 %=================================
 
 
@@ -167,28 +169,13 @@
 \newcommand{\rr}{\mathbf{R}}
 \newcommand{\cc}{\mathbf{C}}
 \newcommand{\pp}{\mathbf{P}}
-\newcommand{\kk}{\mathbf{K}}
+\newcommand{\kk}{\mathbf{k}}
 
 % 特殊な写像の記号
 \newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
 \newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+\newcommand{\dist}{\mathop{\mathrm{dist}}\nolimits} % 距離関数
 
-% スクリプト体にするコマンド
-%   例えば　{\mcal C} のように用いる
-\newcommand{\mcal}{\mathcal}
-
-% 花文字にするコマンド 
-%   例えば　{\h C} のように用いる
-\newcommand{\h}{\mathscr}
-
-% ヒルベルト空間などの記号
-\newcommand{\F}{\mcal{F}}
-\newcommand{\X}{\mcal{X}}
-\newcommand{\Y}{\mcal{Y}}
-\newcommand{\Hil}{\mcal{H}}
-\newcommand{\RKHS}{\Hil_{k}}
-\newcommand{\Loss}{\mcal{L}_{D}}
-\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
 
 % 偏微分作用素の記号
 \newcommand{\p}{\partial}
@@ -197,17 +184,25 @@
 \newcommand{\lan}{\langle}
 \newcommand{\ran}{\rangle}
 
+% 位相空間
+\newcommand{\Int}[1][]{\mathop{\mathrm{Int}}\nolimits_{#1}}
+\newcommand{\Cl}[1][]{\mathop{\mathrm{Cl}}\nolimits_{#1}}
+\newcommand{\Bd}[1][]{\mathop{\mathrm{Bd}}\nolimits_{#1}}
+\newcommand{\Fr}[1][]{\mathop{\mathrm{Fr}}\nolimits_{#1}}
 
 
-% 圏の記号など
-\newcommand{\Set}{{\bf Set}}
-\newcommand{\Vect}{{\bf Vect}}
-\newcommand{\FDVect}{{\bf FDVect}}
-\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
-\newcommand{\CGA}{{\bf CGA}}
-\newcommand{\GVect}{{\bf GVect}}
-\newcommand{\Lie}{{\bf Lie}}
-\newcommand{\dLie}{{\bf Liec}}
+
+
+
+
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+
 
 
 
@@ -273,36 +268,36 @@
 \newcommand{\sumf}{\mathop{\text{``}\hspace{-0.7pt}\bigoplus\hspace{-1.5pt}\text{''}}}
 
 \newcommand{\hh}{\mathop{\mathrm{h}}\nolimits}
-\newcommand{\Ind}{\mathop{\mathrm{Ind}}}
+
 
 
 %筆記体
-\newcommand{\cA}{\mcal{A}}
-\newcommand{\cB}{\mcal{B}}
-\newcommand{\cC}{\mcal{C}}
-\newcommand{\cD}{\mcal{D}}
-\newcommand{\cE}{\mcal{E}}
-\newcommand{\cF}{\mcal{F}}
-\newcommand{\cG}{\mcal{G}}
-\newcommand{\cH}{\mcal{H}}
-\newcommand{\cI}{\mcal{I}}
-\newcommand{\cJ}{\mcal{J}}
-\newcommand{\cK}{\mcal{K}}
-\newcommand{\cL}{\mcal{L}}
-\newcommand{\cM}{\mcal{M}}
-\newcommand{\cN}{\mcal{N}}
-\newcommand{\cO}{\mcal{O}}
-\newcommand{\cP}{\mcal{P}}
-\newcommand{\cQ}{\mcal{Q}}
-\newcommand{\cR}{\mcal{R}}
-\newcommand{\cS}{\mcal{S}}
-\newcommand{\cT}{\mcal{T}}
-\newcommand{\cU}{\mcal{U}}
-\newcommand{\cV}{\mcal{V}}
-\newcommand{\cW}{\mcal{W}}
-\newcommand{\cX}{\mcal{X}}
-\newcommand{\cY}{\mcal{Y}}
-\newcommand{\cZ}{\mcal{Z}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
 
 %スクリプト体
 \newcommand{\scA}{\mathscr{A}}
@@ -361,6 +356,34 @@
 \newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
 
 \newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+
+\newcommand{\sm}{\raisebox{2.33pt}{~\rule{6.4pt}{1.3pt}~}}
+\newcommand{\smi}{\mathrel{\raisebox{2.33pt}{\rule{6.4pt}{1.3pt}}}}
+
+
+
+
+
+
+
+
+
+
+
+
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+
 
 
 % =================================
@@ -426,58 +449,59 @@
 % begin document and end document.
 % ---------------------------
 
-\title{確定特異点をもつ微分方程式}
-\author{ピエール・ドリーニュ}
-%\date{}
+\title{代数まとめノート}
+\author{Toshi2019}
+\date{\today 更新版\footnote{2024/03/16作成}}
 \begin{document}
 \maketitle
-\frontmatter
-\tableofcontents
-\layout
-\mainmatter
-\setcounter{chapter}{-1}
-\chapter{序}
-\(X\)が（非特異）複素解析多様体であるとき，
-以下の概念は同値である．
-\begin{enumerate}[a)]\setlength{\leftskip}{24pt}
-    \item \(X\)上の複素ベクトル空間の局所系；
-    \item 可積分接続をもつ\(X\)上のベクトル束．    
-\end{enumerate}
+\chapter{線形代数}
+代数について調べたこととかをまとめる．
 
-2つ目の概念は体\(k\)（ここでは標数0と仮定する）上の
-非特異代数多様体の場合には明らかに適用できる．
-しかし，一般の可積分接続をもつ代数的ベクトル束は
-病的な性質を持つ (cf. II 6.19). 
-すなわち，無限での「正則性」の条件を課さなければ，
-筋の通った理論にならないのである．
-Griffiths [8] の定理によると，「ガウス・マニン接続」(cf. \ref{sec27}) に
-対してはこの条件は自動的にみたされる．
-１次元では，これは微分方程式における確定特異点の概念と密接な関わりがある．
+\section{双対空間}
+\(V\)を体\(\kk\)上のベクトル空間とする．
+\(V\)に対して，ベクトル空間\(V^{\ast}\)を
+\[
+    V^{\ast}\coloneqq \Hom_{\kk}(V,\kk)
+\]
+として定める．
+\(V^{\ast}\)を\(V\)の\textbf{双対空間} (dual space) という．
+
+\subsection*{零化空間}
+\(V\)を体\(\kk\)上のベクトル空間とし，\(W\)を\(V\)の部分空間とする．
+\(W\)に対し，\[
+    \left\{u\in V^\ast\mid u(w)=0\ (w\in W)\right\}
+    \quad 
+    \left(=\left\{
+        u\in V^{\ast}\mid \langle u,w\rangle=0 
+        \ \left(w \in W\right)
+    \right\}\right)
+\]は\(V^{\ast}\)の部分空間となる．
+この空間を\(W\)の\textbf{零化空間} (annihilator) とよび，
+記号\ruby{\(W^{\bot}\)}{ダブリューボトム}で表す．
+
+\(V^{\ast}\)の部分空間\(W\)に対し，\[
+    \left\{v\in V\mid w(v)=0\ (w\in W)\right\}
+    \quad 
+    \left(=\left\{
+        v\in V\mid \langle w,v\rangle=0 
+        \ \left(w \in W\right)
+    \right\}\right)
+\]は\(V\)の部分空間となる．
+この空間を\(W\)の\textbf{被零化空間} (annihilated space) とよび，
+記号\ruby{\(W^{\top}\)}{ダブリュートップ}で表す．
 
 
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    \bibitem[I22]{I22} 池田岳, テンソル代数と表現論, 東京大学出版会, 2022．
+    \bibitem[Sa15]{Sa15} 佐武一郎, 線型代数学 (新装版), 数学選書1, 裳華房, 2015.
+    \bibitem[Sai07]{Sai07} 斎藤毅, 線形代数と表現論, 東京大学出版会, 2007．
+    \bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
+\end{thebibliography}
 
+%===============================================
 
-
-\renewcommand{\thechapter}{\Roman{chapter}}
-
-\chapter{辞書}\label{chap1}
-\section{局所系と基本群}\label{sec11}
-\section{可積分接続と局所系}\label{sec12}
-\section{1階偏微分方程式の言葉への翻訳}\label{sec13}
-\section{\(n\)階微分方程式}\label{sec14}
-\section{\(2\)階微分方程式}\label{sec15}
-\section{有限 determination の multiform 関数}\label{sec16}
-\chapter{確定特異点型接続}\label{chap2}
-\section{1次元における正則性}\label{sec21}
-\section{増大度の条件}\label{sec22}
-\section{対数型極}\label{sec23}
-\section{\(n\)次元における正則性}\label{sec24}
-\section{存在定理}\label{sec25}
-\section{比較定理}\label{sec26}
-\section{正則性定理}\label{sec27}
-
-\chapter{応用}\label{chap3}
-\section{Nilsson級関数}\label{sec31}
-\section{（Brieskornによる）モノドロミー定理}\label{sec32}
 
 \end{document}
