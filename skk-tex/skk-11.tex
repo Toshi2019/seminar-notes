@@ -1,0 +1,357 @@
+\chapter{Theory of Microfunctions}
+
+\section{Construction of the sheaf of microfunctions}
+
+\subsection{Hyperfunctions}
+
+
+Let $M$ be an $n$-dimentional real analytic manifold 
+and $X$ be a complex neighborhood of $M$. 
+$X$ is uniquely determined by $M$ if we pay attention 
+only to a neighborhood of $M$. 
+We denote 
+by $\shhol{X}$ the sheaf of holomorphic functions on $X$ 
+and 
+by $\shan{M}$ the sheaf of real analytic functions on $M$, 
+that is, 
+$\shan{M} = \iota^{-1}\shhol{X}$ by definition, 
+where $\iota \colon M\hookrightarrow X$ is 
+the canonical injection.
+We denote by $\shor{M}$ the sheaf of orientation of $M$. 
+$\shor{M}$ is isomorphic to $\HH_M^n(\ZZ_M)$. 
+$\shor{M}$ is locally isomorphic to $\ZZ_M$, and giving
+an isomorphism 
+$\mapres{\shor{M}}{U}\simeq \mapres{\ZZ_M}{U}$ 
+on an open subset $U$ of $M$ is equivalent to 
+giving an orientation of $U$.
+
+As in \cite{Sato1}, we define the sheaf of hyperfunctions on $M$: 
+
+\begin{dfn}
+    The sheaf $\shhyp{M}$ is by definition 
+    \begin{equation}
+        \shhyp{M} = \HH_M^n(\shhol{X})\otimes_{\ZZ_{M}}\shor{M}.
+    \end{equation}
+
+    A section of $\shhyp{M}$ is called a \emph{hyperfunction}.
+\end{dfn}
+
+As stated in \cite{Sato1}, $H_M^i(\shhol{X}) = 0$ for $i \neq n$ 
+and $\shhyp{M}$ constitutes a flabby sheaf on $M$.
+
+We first recall the fallowing general lemma:
+
+\begin{lem}
+    Let $Y$ be a $d$-codimensional submanifold of 
+    a topological manifold $X$ of dimension $n$. 
+    Then, for any sheaf (or complex of sheaves) $\mathscr{F}$
+    on $X$, we can define the following homomorphism
+    \begin{equation}
+        \mapres{\mathscr{F}}{Y} \longrightarrow \RR\Gamma_Y(\mathscr{F})[d]\otimes\shor{Y/X},
+    \end{equation}
+    where $\shor{Y/X} = \HH_Y^d(\ZZ_X)$ is the orientation sheaf 
+    of $Y\subset X$ and $\RR$ and $\Gamma_Y$ denote respectively 
+    the derived functor in the derived category and 
+    the functor of taking the sub sheaf with support 
+    in $Y$ of \cite{Hartshorne1}.
+\end{lem}
+
+\begin{proof}
+    Since $\RR\Gamma_Y(\ZZ_X) = \shor{Y/X}[-d]$, we obtain the desired homomorphism
+    as the composite of the following:
+    \begin{align*}
+        \mapres{\F}{Y} 
+        \simeq \F&\otimes_{\ZZ_X} \ZZ_Y 
+        \simeq \F\otimes_{\ZZ_X} \RR\Gamma_Y(\ZZ_X)\otimes\shor{Y/X}[d]\\
+        &\longrightarrow \RR\Gamma_Y(\mathscr{F})[d]\otimes\shor{Y/X}[d].
+    \end{align*}
+\end{proof}
+
+We apply this lemma to our case where $\F,X,Y$ correspond to
+$\shhol{X},X$ and $M$ respectively. Then we obtain the sheaf homomorphism
+\begin{equation}
+    \shan{M}\longrightarrow \shhyp{M},
+\end{equation}
+which will be proved to be injective later. 
+This injection allows us to consider hyperfunctions 
+as a generalization of functions.
+The purpose of this section is 
+to analyse the structure of the quotient sheaf 
+$\shhyp{M}/\shan{M}$ from a very new point of view.
+
+
+\subsection{Real monoidal transformation and real comonoidal transformation}
+
+
+Now consider the following situation, although we apply it 
+to a special case in this section. 
+
+Let $N$ and $M$ be real analytic manifolds 
+and $f\colon M \to N$ be a real analytic map. 
+We denote by $TN$ (resp.\ $TM$) the tangent vector bundle 
+of $N$ (resp.\ $M$) and by $T^\ast N$ (resp.\ $T^\ast M$) the
+cotangent vector bundle over $N$ (resp.\ $M$). 
+We can define the following canonical homomorphisms: 
+\begin{equation}
+    \begin{aligned}
+        0\to TM &\to TN\times_{N} M \to T_{M} N \to 0 \quad\text{(when $f$ is an embedding)}\\
+        T^\ast M &\leftarrow T^\ast N\times_{N} M \leftarrow T_{M}^\ast N \leftarrow 0
+    \end{aligned}    
+\end{equation}%in the original paper, this eq is numbered (1.2.1)
+where $T_{M} N$ (resp.\ $T_{M}^\ast N$) is 
+the normal (resp.\ conormal) fiber space.
+We denote by $SM$ (resp.\ $S^\ast M$, $SN$, $S^\ast N$, 
+$S_{M} N$, $S_{M}^\ast N$) the spherical 
+bundle $(TM - M)/ \RR^+$ (resp.\ $(T^\ast M - M)/ \RR^+$,\ldots), where $\RR^+$ is the 
+multiplicative group of strictly positive real numbers. 
+$S^\ast_{M}N$ is not necessarily a fiber bundle. 
+
+Then,
+\begin{align*}
+    S^\ast_{M}N \hookrightarrow S^\ast N \times_{N} M
+\end{align*}
+and we have a projection
+\begin{equation}
+    \rho \colon S^\ast N \times_{N} M - S^\ast_{M}N \longrightarrow S^\ast M.
+\end{equation}%in the original paper, this eq is numbered (1.2.2)
+Suppose moreover that $\iota\colon M \to N$ is an embedding. 
+Then we can provide the disjoint 
+union $\widetilde{M_N} = (N - M)\sqcup S_{M}N$ with 
+a structure of real analytic manifold with boundary $S_{M}N$.
+Since this is constructed in the same way as monoidal transforms 
+of complex manifolds, we call $\widetilde{M_N}$ the \emph{real monoidal 
+transform} of $N$ with center $M$.
+Let $\{U_j\}$ be a set of coordinate patches of $N$ with 
+a local coordinate $x_j = (x_j^1, \ldots ,x_j^n)$ such that
+\begin{align*}
+    M\cap U_j = \{x_j\in U_j ;\ x_j^1 = \cdots =x_j^m=0\}.
+\end{align*}
+Let 
+\begin{align}
+    x_j^\nu &= f_{jk}^\nu(x_k) \quad\nu = m+1,\ldots,n,  \label{eq:123}\\
+    x_j^\nu &= \sum_{\mu=1}^{m}x_k^\mu g_{jk,\mu}^\nu(x_k) \quad\nu = 1,\ldots,m \label{eq:124}
+\end{align}%in the original paper, this eq is numbered (1.2.3), (1.2.4)
+be a coordinate transformation. We put
+\begin{align*}
+    U_j' = \Big{\{} 
+        (x_j,\xi_j);\quad  
+        &x_j = (x_j^1, \ldots ,x_j^n)\in U_j,\ 
+        \xi_j = (\xi_j^1, \ldots ,\xi_j^m) \in\RR^m - \{0\}\\
+        \text{such that}&\quad 
+        x_j^\nu\xi_j^\mu = x_j^\mu \xi_j^\nu 
+        \quad\text{for}\quad 
+        \nu,\mu = 1,\ldots,m, 
+        \quad x_j^\nu \xi_j^\nu \geqq 0
+    \Big{\}}.
+\end{align*}    
+The multiplicative group $\RR^+$ of positive numbers 
+operates on $U_j'$ by \[
+    \left(\left(x_j, \xi_j\right), t\right)
+    \mapsto \left(x_j,t\xi_j\right).
+\] 
+We denote by $\widetilde{U_j}$ the quotient $U'_j/\RR^+$. 
+We glue together $\widetilde{U_j}$ in the following 
+manner: $(x_j,\xi_j)\in U_j$ and $(x_k,\xi_k)\in U_k$ are 
+identified if $x_j$ and $x_k$ satisfy \eqref{eq:123} and \eqref{eq:124} and
+\begin{align*}
+    {\xi}_j^{\nu} = \sum_{\mu=1}^{m}{\xi}_k^{\mu}g_{jk,\mu}^{\nu}(x_k)\quad {\nu} = 1,\ldots,m.
+\end{align*}
+
+We denote by $\widetilde{M_N}$ the real analytic manifold 
+with boundary obtained by gluing $\widetilde{U_j}$.
+Then, $\tau \colon \widetilde{M_N} \to N$ is the projection defined 
+by $\widetilde{U_j}\ni (x_j,\xi_j)\overset{\tau}{\mapsto}x_j\in U_j$. 
+Then, $\tau^{-1}(M)$ is isomorphic to the normal spherical 
+bundle $S_{M}N$, and seen to be the boundary 
+of $\widetilde{M_N}$. Moreover, $\tau$ gives 
+an isomorphism $\widetilde{M_N}-S_{M}N \to N - M$. 
+For a tangent vector $\xi \in T_{M}N_X - \{0\}$, 
+we denote by $x+\xi0$ the corresponding point 
+of $S_{M}N\subset \widetilde{M_N}$. 
+
+$D_{M}N$ is a subset of the fiber 
+product $S_{M}N\times_{M}S_{M}^{\ast}N$ defined 
+by $\{(\xi,\eta)\in S_{M}N\times_{M}S_{M}^{\ast}N; 
+\inner<\xi,\eta>\geqq 0\}$. 
+We define the toplogy on the 
+set $\widetilde{M_{N^+}} = (N-M) \sqcup D_{M}N$ as 
+follows: $N^M \subset \widetilde{M_{N^+}}$ is an open set 
+and the toplogy of $N-M$ induced from $\widetilde{M_{N^+}}$ is 
+usual one, and for 
+a point $x\in D_{M}N \subset \widetilde{M_{N^+}}$, a 
+neighborhood of $x$ is a subset $U$ such 
+that $U\cap D_{M}N$ is a neighborhood of $x$ with 
+respect to the usual toplogy of $D_{M}N$ ant that 
+the image of $U$ under the 
+projection $\pi\colon \widetilde{M_{N^+}}\to 
+\widetilde{M_{N}}$ is a neighborhood of $\pi(x)$. We note that 
+the topology of $\widetilde{M_{N^+}}$ is not Hausdorff.
+
+Let $\widetilde{M_N^{\ast}}$ be disjoint union 
+of $(N-M)$ and $S_{M}^{\ast}N$, $\tau\colon 
+\widetilde{M_{N^{\ast}}}$, $\pi\colon 
+\widetilde{M_{N^{\ast}}}\to N$ be the canonical projections. 
+$\widetilde{M_{N^{\ast}}}$ will be equipped 
+with the quotient toplogy 
+of $\widetilde{M_{N^{\ast}}}$ under $\tau$. 
+
+In this way we obtain a diagram of maps of topological spaces:
+\begin{equation}
+    \vcenter{\xymatrix
+    @C=32pt@R=32pt
+    {
+        &\widetilde{M_{N^+}}
+        \ar[dl]_(.6){\pi}
+        \ar[dr]_(.3){\tau}
+        &
+        D_{M}{N}
+        \ar@{_{(}->}[l]^-{}
+        \ar[dl]_(.3){\pi}
+        \ar[dr]^(.5){\tau}
+        &\\
+        \widetilde{M_N}
+        \ar[dr]_(.5){\tau}
+        &S_M{N}
+        \ar@{_{(}->}[l]^-{}
+        \ar[dr]_(.3){\tau}
+        &\widetilde{M_{N^\ast}}
+        \ar[dl]^(.3){\pi}
+        &S_M^\ast{N}
+        \ar@{_{(}->}[l]^-{}
+        \ar[dl]_(.6){\pi}
+        \\
+        &N
+        &M
+        \ar@{_{(}->}[l]^-{}
+    }}.
+\end{equation}
+Note that
+\begin{enumerate}[1)]
+    \item all horizontal inclusionas are closed embeddings;
+    \item \(\widetilde{M_{N^+}}\) can be considered as a closed subspace of \(\widetilde{M_N}\mathop{\times}\limits_{N}\widetilde{M_{N^\ast}}\);
+    \item \(\widetilde{M_N}\to N\) and \(\widetilde{M_{N^+}}\to \widetilde{M_{N^\ast}}\) are proper and separated.
+\end{enumerate}
+
+\begin{rem}
+    The map \(f\colon X\to Y\) of topological spaces is 
+    said to be \emph{separated} if \(X\) is closed 
+    in \(X\times_Y X\). 
+    \(f\) is said to be \emph{proper} 
+    if every fibre of \(f\) is compact 
+    and \(f\) is closed (that is, the image of a closed set 
+    in \(X\) by \(f\) is closed in \(Y\)). 
+    The following lemma is used frequetly in this note.
+\end{rem}
+
+\begin{lem}
+    Let \(f\colon X\to Y\) be separated and proper, 
+    \(\scF\) be a sheaf on \(X\). 
+    Then, for every point \(y\) of \(Y\), the homomorphism
+    \[
+        \Rder^k{f}_\ast(\scF)_{y}\to
+        H^k\left(f^{-1}(y);\scF\rvert{f^{-1}(y)}\right)
+    \]
+    is isomorphic for every integer \(k\).
+\end{lem}
+For the proof, we refer to Bredon.
+
+In the sequel, 
+the notion of derived category will be of constant use. 
+We refer to Hartshorne as to derived category. 
+We will not distinguishe the sheaf, 
+the complex of sheaves and the corresponding object 
+of the derived category. 
+
+\begin{prp}
+    Let \(\scF\) be a complex of sheves on \(N\) (or more precisely an object of the derived category of sheaves on \(N\)). 
+    Then we have an isomorphism
+    \[
+        \Rder{\tau_\ast}\pi^{-1}\RG_{S_{M}N}\left(
+            \tau^{-1}\scF
+        \right)
+        \simarr
+        \RG_{S_{M}^\ast{N}}\left(\pi^{-1}\scF\right).
+    \]
+\end{prp}
+\begin{proof}
+    At first note that
+    \[
+        \pi^{-1}\RG_{S_{M}N}\left(
+            \tau^{-1}\scF
+        \right)
+        \simarr
+        \RG_{D_{M}{N}}\left(\pi^{-1}\tau^{-1}\scF\right)
+    \]
+    is an isomorphism. 
+    This follows from the fact that 
+    for every point \(x\) in \(D_M{N}\), 
+    the family \(\{U-S_M{N}\}\) where \(U\) runs through 
+    the neighborhoods of \(\pi(x)\) is equivalent to 
+    the family \(V - D_M{N}\) where \(V\) runs through 
+    the neighborhoods of \(x\). 
+
+    Now we have a triangle:
+    \[    \vcenter{\xymatrix
+    @C=2pt@R=42pt
+    {
+        &\RG_{S^{\ast}_{M}N}\Rder{\Dist}_{\tau}\left(
+            \pi^{-1}\scF
+        \right)
+        \ar[dr]
+        &\\
+        \Rder{\tau_\ast}\RG_{D_{M}N}\left(
+            \tau^{-1}\pi^{-1}\scF
+        \right)
+        \ar[ur]^-{+1}
+        &&
+        \RG_{S^{\ast}_{M}N}\left(
+            \pi^{-1}\scF
+        \right).
+        \ar[ll]
+    }}
+\]
+(See Hartshorne for the notion of triangle.) 
+Since \(\tau\colon \widetilde{M_{N^+}}\to\widetilde{M_{N^\ast}}\) is proper and separated with contractible fiber, 
+\[
+    \Rder\Dist_{\tau}\left(\pi^{-1}\scF\right)=0.
+\]
+This proves the isomorphism
+\[
+    \Rder{\tau_\ast}\RG_{D_{M}N}\left(
+            \tau^{-1}\pi^{-1}\scF
+    \right)
+    \simarr    
+    \RG_{S^{\ast}_{M}N}\left(
+            \pi^{-1}\scF
+    \right).\]
+\end{proof}
+
+\begin{rem}
+    Let \(f\colon X\to Y\) be a continuous map, 
+    and \(\scF\) be a sheaf on \(Y\). 
+    Let \(\scF\to \scL^\bullet\), 
+    \(f^{-1}\scF\to\scM^\bullet\) be flabby resolutions 
+    of \(\scF\) and \(f^{-1}\scF\) with \(
+        \scL^\bullet\to f_\ast\scM^\bullet
+    \).
+\end{rem}
+\subsection{Definition of microfunctions}
+
+
+Now we will come back to the original situation. 
+
+
+
+
+\subsection{Sheaves on sphere bundle and on cosphere bundle}
+
+
+We consider the following situation.
+
+
+
+\subsection{Fundamental diagram on $\mathscr{C}$}
+
+
+We will apply the arguements in the preceding section 
+to a special case.

@@ -1,0 +1,184 @@
+%==========================================
+%   SKK TeX project
+%   2021.Sep.11 - 
+%   written by Toshihiro Oshiba
+%==========================================
+
+\documentclass[leqno]{book}
+
+
+%usepackage
+%------------------------
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{color}
+\usepackage{ascmac}
+\usepackage{amsfonts}
+\usepackage{calligra}
+\usepackage{mathrsfs}
+%\usepackage{rsfso}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{enumerate}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{proof}
+\usepackage{listings}
+\usepackage{otf}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{tikz}
+%\usetikzlibrary{arrows.meta}
+\usepackage[all]{xy}
+\usepackage{amscd}
+
+\usepackage[pdfborder=0,dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkblue,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+\usepackage{comment}
+%\usepackage{enumitem}
+\usepackage{layout}
+
+\usetikzlibrary{cd}
+
+%\theoremstyle{definition}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prp}[thm]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{lem}[thm]{Lemma}
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+
+\renewcommand{\qedsymbol}{q.e.d.}
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+% category theory
+\newcommand{\fin}[1]{{#1}^{\mathrm{f}}} % finiteness
+
+
+% sheaf theory
+\newcommand{\F}{\mathscr{F}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\shhol}[1]{\mathscr{O}_{#1}}
+\newcommand{\shan}[1]{\mathscr{A}_{#1}}
+\newcommand{\shor}[1]{\omega_{#1}}
+\newcommand{\shhyp}[1]{\mathscr{B}_{#1}}
+
+% D-modules
+\newcommand{\DD}{\mathscr{D}}
+\newcommand{\PP}{\mathscr{P}}
+
+\newcommand{\rmD}{\mathrm{D}}
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+\newcommand{\scL}{\mathscr{L}}
+\newcommand{\scM}{\mathscr{M}}
+\newcommand{\scN}{\mathscr{N}}
+\newcommand{\scO}{\mathscr{O}}
+\newcommand{\scV}{\mathscr{V}}
+
+\newcommand{\Rder}{\mathrm{R}}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
+\newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
+\newcommand{\simra}{\mathrel{\overset{\sim}{\leftarrow}}}%同型左矢印
+\newcommand{\simrra}{\mathrel{\overset{\sim}{\longleftarrow}}}%同型左矢印
+
+\newcommand{\Dist}{\mathscr{D}ist}
+
+
+%new definition macro
+%-------------------------
+\def\inner<#1>{\langle #1 \rangle}
+
+\newcommand{\mapres}[2]{\left. #1 \right|_{#2}}
+
+\numberwithin{equation}{subsection}
+
+
+%==============================================================
+% page layout 
+%--------------------------------------------------------------
+
+%\setlength{\oddsidemargin}{-1cm}
+\setlength{\evensidemargin}{\oddsidemargin}
+%\pagestyle{myheadings}
+
+
+
+
+
+
+%==============================================================
+
+
+
+
+
+
+\title{Hyperfunctions and Pseudo-differential Equations}
+\author{}
+
+\begin{document}
+\maketitle
+
+\frontmatter
+
+\tableofcontents
+\markboth{Contents}{Contents}
+
+\include{skk-preface}
+\layout
+\mainmatter
+
+%\include{skk-chap1}
+\include{skk-11}
+\include{skk-12}
+\include{skk-13}
+\include{skk-21}
+\include{skk-22}
+\include{skk-23}
+\include{skk-24}
+\include{skk-25}
+\include{skk-31}
+\include{skk-32}
+
+\backmatter
+
+%\include{skk-bib}
+\begin{thebibliography}{20}
+    \par
+    \bibitem[Hatshorne1]{Hartshorne1} R. Hartshorne, 
+    \textit{Residues and duality}, Lecture Notes in Mathematics, 
+    Vol.\ 20, Springer-Verlag, Berlin, 1966.
+
+    \bibitem[Sato1]{Sato1} Mikio Sato, \textit{Theory of hyperfunctions II}, J. Fac.\ Sci.\ Univ.\ Tokyo, {\bf{8}} (1960), 387--437.
+
+    \end{thebibliography}
+\end{document}

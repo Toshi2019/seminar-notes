@@ -1,0 +1,47 @@
+%このファイルは日本語文字を含みます.
+\BOOKMARK [0][-]{chapter.1}{Theory of Microfunctions}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Construction of the sheaf of microfunctions}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Hyperfunctions}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Real monoidal transformation and real comonoidal transformation}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{Definition of microfunctions}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.4}{Sheaves on sphere bundle and on cosphere bundle}{section.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.5}{Fundamental diagram on C}{section.1.1}% 7
+\BOOKMARK [1][-]{section.1.2}{Several oprations on hyperfunctions and microfunctions}{chapter.1}% 8
+\BOOKMARK [2][-]{subsection.1.2.1}{Linear differential operators}{section.1.2}% 9
+\BOOKMARK [2][-]{subsection.1.2.2}{Substitution}{section.1.2}% 10
+\BOOKMARK [2][-]{subsection.1.2.3}{Integration along fibers}{section.1.2}% 11
+\BOOKMARK [2][-]{subsection.1.2.4}{Products}{section.1.2}% 12
+\BOOKMARK [2][-]{subsection.1.2.5}{Micro-local operators}{section.1.2}% 13
+\BOOKMARK [2][-]{subsection.1.2.6}{Complex conjugation}{section.1.2}% 14
+\BOOKMARK [1][-]{section.1.3}{Techniques for construction of hyperfunctions and microfunctions}{chapter.1}% 15
+\BOOKMARK [2][-]{subsection.1.3.1}{Real analytic functions of positive type}{section.1.3}% 16
+\BOOKMARK [2][-]{subsection.1.3.2}{Boundary values of hyperfunctions with holomorphic parameters and examples}{section.1.3}% 17
+\BOOKMARK [0][-]{chapter.2}{Foundation of the Theory of Pseudo-differential Equations}{}% 18
+\BOOKMARK [1][-]{section.2.1}{Definition of pseudo-differential operators}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.2}{Fundamental properties of pseudo-differential operators}{chapter.2}% 20
+\BOOKMARK [2][-]{subsection.2.2.1}{Theorems on ellipticity and the equivalence of pseudo-differential operators}{section.2.2}% 21
+\BOOKMARK [2][-]{subsection.2.2.2}{Theorems on division of pseudo-differential operators}{section.2.2}% 22
+\BOOKMARK [1][-]{section.2.3}{Algebraic properties of the sheaf of pseudo-differential operators}{chapter.2}% 23
+\BOOKMARK [2][-]{subsection.2.3.1}{Pseudo-differential operators with holomorphic parameters}{section.2.3}% 24
+\BOOKMARK [2][-]{subsection.2.3.2}{Properties of the ring of formal pseudo-differential operators}{section.2.3}% 25
+\BOOKMARK [2][-]{subsection.2.3.3}{Contact structure and quantized contact transforms}{section.2.3}% 26
+\BOOKMARK [2][-]{subsection.2.3.4}{Faithful flatness}{section.2.3}% 27
+\BOOKMARK [2][-]{subsection.2.3.5}{Operations on systems of pseudo-differential equations}{section.2.3}% 28
+\BOOKMARK [1][-]{section.2.4}{Maximally overdetermined systems}{chapter.2}% 29
+\BOOKMARK [2][-]{subsection.2.4.1}{Definition of maximally overdetermined systems}{section.2.4}% 30
+\BOOKMARK [2][-]{subsection.2.4.2}{Invariants of maximally overdetermined systems}{section.2.4}% 31
+\BOOKMARK [2][-]{subsection.2.4.3}{Quantized contact transform ― general case ―}{section.2.4}% 32
+\BOOKMARK [1][-]{section.2.5}{Structure theorem for systems of pseudo-differential equations in the complex domain}{chapter.2}% 33
+\BOOKMARK [2][-]{subsection.2.5.1}{Structure theorem for systems of pseudo-differential equations with simple characteristics}{section.2.5}% 34
+\BOOKMARK [2][-]{subsection.2.5.2}{Equivalence of pseudo-differential operators with constant multiple characteristics}{section.2.5}% 35
+\BOOKMARK [2][-]{subsection.2.5.3}{Structure theorem for regular systems of pseudo-differential equations}{section.2.5}% 36
+\BOOKMARK [0][-]{chapter.3}{Structure of Systems of Pseudo-differential Equations}{}% 37
+\BOOKMARK [1][-]{section.3.1}{Realification of holomorphic microfunctions}{chapter.3}% 38
+\BOOKMARK [2][-]{subsection.3.1.1}{Realification of holomorphic hyperfunctions}{section.3.1}% 39
+\BOOKMARK [2][-]{subsection.3.1.2}{Realification of holomorphic microfunctions}{section.3.1}% 40
+\BOOKMARK [2][-]{subsection.3.1.3}{Real ``quantized'' contact transforms}{section.3.1}% 41
+\BOOKMARK [1][-]{section.3.2}{Structure theorems for systems of pseudo-differential equations in the real domain}{chapter.3}% 42
+\BOOKMARK [2][-]{subsection.3.2.1}{Structure theorem I ― partial de Rham type ―}{section.3.2}% 43
+\BOOKMARK [2][-]{subsection.3.2.2}{Structure theorem II ― partial Cauchy Riemann type ―}{section.3.2}% 44
+\BOOKMARK [2][-]{subsection.3.2.3}{Structure theorem III ― Lewy-Mizohata type ―}{section.3.2}% 45
+\BOOKMARK [2][-]{subsection.3.2.4}{Structure theorem IV ― general case ―}{section.3.2}% 46
