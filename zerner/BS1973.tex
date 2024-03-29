@@ -310,6 +310,7 @@
 \newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
 \newcommand{\CCat}{\Comp(\cat)}
 \newcommand{\KCat}{\Komp(\cat)}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
 
 % =================================
 
@@ -325,14 +326,14 @@
     {}%              % 本文フォント
     {}%                  % 1行目のインデント量
     {\bfseries}%                      % 見出しフォント
-    {.\quad ---}%                     % 見出し後の句読点
+    {. }%                     % 見出し後の句読点
     {10pt}%                     % 見出し後のスペース
     {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
 
 \theoremstyle{mystyle}
-\newtheorem{AXM}{公理}
+\newtheorem{AXM}{公理}[section]
 \newtheorem{DFN}{定義}
-\newtheorem{THM}{定理}
+\newtheorem{THM}[Axiom]{定理}
 \newtheorem*{THM*}{定理}
 \newtheorem{PRP}{命題}
 \newtheorem{LMM}[Axiom]{補題}
@@ -378,7 +379,7 @@
 % begin document and end document.
 % ---------------------------
 
-\title{コーシー問題の超関数解}
+\title{コーシー問題の超函数解}
 \author{ジャン・ミッシェル・ボニー\and ピエール・シャピラ}
 \date{}
 \begin{document}
@@ -389,53 +390,114 @@
 開集合\(U\)で定義された解析的係数の\(m\)階微分作用素で，
 主要部がある方向\(N\)に双曲型であるとする（\(P\)の特性多様体に関しては
 何も仮定しない）．
-コーシー問題$Pu = v$, $\gamma(u) = (w)$を
+\((w)\)が超曲面$(x, N) = 0$上の\(m\)組の超函数であり，
+\(v\)がこの超曲面の近傍で定義された超函数であり，
+\(N\)方向に「解析的」であるとき，
+コーシー問題$Pu = v$, $\gamma(u) = (w)$が
+超函数の空間で解けることを示す．
 
+証明は，超函数を
+正則関数の境界値の和としてあらわし，
+複素領域におけるコーシー問題を解き，
+そして得られた解が境界値をもつことを示す，という方法で行う．
+このとき重要となる道具が2つある．
+ひとつは偏微分方程式の正則解の延長定理である．
+もうひとつは双曲不等式で，これはボホナーの管定理の局所版にあたる
+小松・柏原の定理から導かれる．
 
-We show that we can resolve the Cauchy problem on the space of hyperfunctions, 
-if $(w)$ is an $m$-tuple of hyperfunctions on hypersurface $(x, N) = 0$
-and $v$ a hyperfunction defined on neighborhood of this hypersurface,
-and ``analytic'' to the direction $N$.
+我々は同時に，双曲型方程式の解析解を調べ，とくに，
+余方向が双曲型ならば，同次方程式の解は
+開集合の\(C^1\)級の境界を超えて延長できることを示す．
 
+単純特性的な双曲型作用素の研究は
+超函数の範囲については河合\cite{7}が行っている．
+定数係数の方程式の解の延長については
+キーセルマン\cite{8}によって全く異なる手法で研究されている．
 
-Nous montrons que 
-l'on peut résoudre le problème de Cauchy $Pu = v$,  
-$\gamma(u) = (w)$ dans l'espace des hyperfonctions, 
-si (w) est un m-uple d'hyperfonctions 
-sur l'hypersurface $(x, N) = 0$ 
-et $v$ une hyperfonction définie au voisinage 
-de cette hypersurface, 
-et "analytique" dans la direction N.
-La méthode consiste à représenter les hyperfonctions comme somme de valeurs au bord de fonctions holomorphes, à résoudre le problème de
-Cauchy dans le domaine complexe, et à montrer que la solution obtenue admet une valeur au bord. Les deux outils essentiels sont alors, d'une part un théorème de prolongement des solutions holomorphes d'une équa-
-tion aux dérivées partielles, d'autre part une inégalité hyperbolique,
-qui se déduit d'un théorême de M. Komatsu et Kashiwara, version locale du théorème des tubes de Bochner.
-Nous étudions en même temps les solutions analytiques d'une équa-
-tion hyperbolique, et montrons en particulier que les solutions de
-l'équation homogène se prolongent à travers la frontière d'un ouvert
-de classe d
-dès que la direction normale est hyperbolique.
-L'étude des opérateurs hyperboliques à caractéristiques simples a
-été faite dans le cadre des hyperfonctions par .T Kawai [7].
-Le prolongement des solutions d'une équation à c o e f fi c i e n t s con-
-stants a été étudiée par C. -0. Kiselman [8] par une méthode entièrement
-différente.
-Les résultats exposés ici sont extraits d'articles à paraître (cf. \cite{BS72a} \cite{BS72b} [3] [4]).
-
+ここで述べる手法は
+準備中の論文 (cf. \cite{BS72a} \cite{BS72b} [3] [4]) からの
+抜粋である．
 
 \section{記法と復習}
 
-\section{双曲型不等式}
+本稿を通して，
+\(P=P\left(x,\frac{\p}{\p{x}}\right)\)は\(\rr^n\)の
+開集合\(U\)上の解析関数係数微分作用素で，
+その係数が\(\cc^n\)の開集合\(\widetilde{U}\)に延長できるものを表す．
+\(\widetilde{U}\)上で定義された\(P\)の複素化を\(
+    P=P\left(z,\frac{\p}{\p z}\right)
+\)で表す．
+\(\cc^n\)にエルミート積\(\dip
+    \langle z,\zeta\rangle=\sum_{i}^{}z_i\zeta_i
+\)を入れたものを，ユークリッド空間\(\rr^{2n}\)にスカラー積\(
+    \Re\langle z,\zeta\rangle
+\)を入れたものと同一視する．
+超平面というときには，特に断らないかぎり，
+\(\rr^{2n}\)内の実超平面を意味する．
+\(z=x+iy\), \(\zeta=\xi+i\eta\)とかく．
+方程式\(\Re\langle z-z_0,\zeta\rangle\)で定義された超曲面が
+\(p(z_0,\zeta)=0\)をみたすとき，
+\(z_0\)で
+\textbf{特性的} (caract\'eristique) であるという．
+ここで\(p\)は\(
+    \widetilde{U}\times\left(\cc^n-\{0\}\right)
+\)で定義された\(P\)の主要表象を表す．
+同様に，ベクトル\(\zeta\)のことも\(z_0\)で特性的であるという．
+
+\(\rr^n\)と\(\rr^{2n}\)の単位球面を
+それぞれ\(S^{n-1}\), \(S^{2n-1}\)とかく．
+\(I\)が\(S^{n-1}\)の部分集合であるとき，
+\(I\)が\textbf{凸} (convexe), 
+あるいは\textbf{固有} (propre) であるとは，\(I\)の生成する錐が凸，
+あるいは直線を一切含まないことをいう．
+\(I\)の\textbf{極} (polaire) とは，
+原点を通る半空間で方空間の外部が\(I\)に属するものの共通部分である閉錐である．
+
+\(I\)の極の内部を\(\varGamma\)とかくことが多い．
+逆に\(\varGamma\)が\(\rr^n\)の凸錐であるとき，
+その極\(I\subset S^{n-1}\)は
+原点を通る\(\varGamma\)の法線の（閉）集合である．
+
+後で必要となる\cite{3}の定理を復習する．
+
+\begin{THM}
+    \(\widetilde{\omega}\)と\(\widetilde{\varOmega}\)を
+    \(\cc^n\)の凸集合とし，
+    \(\widetilde{\omega}\)は局所コンパクト，
+    \(\widetilde{\varOmega}\)は開集合で\(
+        \widetilde{\omega}\subset\widetilde{\varOmega}
+    \)をみたすとする．
+    \(\widetilde{\varOmega}\)の（少なくとも）ひとつの点で
+    特性的な方向の極限が法方向であるような超平面を考える．
+    そのような超平面で\(\widetilde{\varOmega}\)と交わるものは
+    すべて\(\widetilde{\omega}\)とも交わると仮定する．
+    このとき，\(f\)が\(\widetilde{\omega}\)の近傍上の正則関数であり，
+    \(Pf\)が\(\widetilde{\varOmega}\)上の正則関数に延長されるならば，
+    関数\(f\)も\(\widetilde{\varOmega}\)上の正則関数に延長される．
+\end{THM}
+
+\begin{RMK*}
+    この定理はツェルナー\cite{15}の定理から
+    ヘルマンダーによる幾何学的な議論によって
+    証明される（\cite{5}の定理5.3.3を参照．）．
+    第4節で類似の状況が現れる．
+    この定理は方程式系\(P_if=g_i\)の解\(f\)に関しても成り立つ
+    ことに注意しておく．
+    この定理はキーセルマン\cite{8}によって
+    定数係数作用素の場合に証明されている．
+\end{RMK*}
+
+\section{双曲不等式}
 
 \section{延長に関する2つの補題}
 
 \section{解析解}
 
-\section{超関数の復習}
+\section{超函数の復習}
 
-\section{コーシー問題の超関数解}
+\section{コーシー問題の超函数解}
 
-\section{超関数解の存在と延長}
+\section{超函数解の存在と延長}
 
 %===============================================
 % 参考文献スペース
@@ -450,14 +512,94 @@ Les résultats exposés ici sont extraits d'articles à paraître (cf. \cite{BS7
     Problème de Cauchy, existence et prolongement 
     pour les hyperfonctions solutions d'équations hyperboliques 
     non strictes. C. R. Acad. Sci. Paris, 274 (1972), 188--191.
-    \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
-        \textit{Sheaves on Manifolds}, 
-        Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
-        \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
-        \textit{Categories and Sheaves}, 
-        Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
-        \bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
-    %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+
+    \bibitem[3]{3} Bony, J. -M. et Schapira, P.: 
+    Existence et prolongement des solutions holomorphes 
+    des \'equations aux d\'eriv\'ees partielles. 
+    Article \`a para\^itre aux Inventiones Mathematicae.
+   
+    \bibitem[4]{4} Bony, J. -M. et Schapira, P.: 
+    Solutions analytiques et solutions hyperfonctions 
+    des \'equations hyperboliques non strictes. 
+    Article \`a para\^itre.
+
+    \bibitem[5]{5} H\"ormander, L.: 
+    Linear Partial Differential Operators. Springer, 1963.
+
+    \bibitem[6]{6} Kashiwara, M.: 
+    On the structure of hyperfunctions (after M. Sato). 
+    Sugaku no Ayumi, 15 (1970), 19--72 (en Japonais).
+
+    \bibitem[7]{7}
+    Kawai, T.: 
+    Construction of elementary solutions of 
+    I-hyperbolic operators and solutions 
+    with small singularities. 
+    Proc. Japan Acad., 46 (1970), 912--915.
+
+    \bibitem[7bis]{7bis}
+    Kawai, T.: 
+    On the theory of Fourier transform 
+    in the theory of hyperfunctions and its applications, 
+    Surikaiseki Kenkyusho Kokyuroku, RIMS, 
+    Kyoto Univ., 108 (1969), 84--288 (en Japonais).
+    
+    \bibitem[8]{8}
+    Kiselman, C.-O.: 
+    Prolongement des solutions d’une \'equation aux d\'eriv\'ees 
+    partielles \'a coefficients constants. 
+    Bull. Soc. Math. France, 97 (1969), 329--356.
+
+    \bibitem[8bis]{8bis}
+    Komatsu, H.: 
+    A local version of Bochner’s tube theorem. 
+    J. Fac. Sci. Univ. Tokyo, Sect. IA (\`a para\^itre).
+
+    \bibitem[9]{9}
+    Leray, J. et Ohya, Y.: 
+    Syst\'emes lin\'eaires hyperboliques non stricts. 
+    Colloque sur l’Analyse Fonctionnelle, 
+    Li\`ege, 1964, C.B.R.M., pp.105--144.
+
+    \bibitem[10]{10}
+    Martineau, A.: 
+    Distributions et valeurs au bord des fonctions holomorphes. 
+    Proc. of the Intern. Summer Inst. Lisborn, 1964, pp.193--326.
+
+    \bibitem[10bis]{10bis}
+    Morimoto, M.: 
+    Sur la d\'ecomposition du faisceau des germes 
+    de singularit\'es d’hyperfonctions, 
+    J. Fac. Sci. Univ. Tokyo, Sect. IA, 17 (1970), 215--239.
+
+    \bibitem[11]{11}
+    Sato, M.: 
+    Theory of hyperfunctions, I et II. 
+    J. Fac. Sci. Univ. Tokyo, Sect. I, 8 (1959–60), 
+    139--193 et 398--437.
+
+    \bibitem[12]{12}
+    Sato, M.: 
+    Regularity of hyperfunction solutions 
+    of partial differential equations. 
+    Intern. Congress of Math., Nice, 1970.
+
+    \bibitem[13]{13}
+    Schapira, P.: 
+    Theorie des Hyperfonctions. 
+    Lecture Notes in Math. Springer, No.126, 1970.
+
+    \bibitem[14]{14}
+    Schapira, P.: 
+    Th\'eor\`eme d’unicit\'e de Holmgren et op\'erateurs 
+    hyperboliques dans l’espace des hyperfonctions. 
+    Anais Acad. Brasil Sc., 43 (1971), 38--44.
+
+    \bibitem[15]{15}
+    Zerner, M.: 
+    Domaine d’holomorphie des fonctions v\'erifiant 
+    une \'equation aux d\'eriv\'ees partielles. 
+    C. R. Acad. Sci. Paris, 272 (1971), 1646--1648.
 \end{thebibliography}
 
 %===============================================

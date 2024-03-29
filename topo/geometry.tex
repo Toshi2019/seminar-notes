@@ -1,6 +1,6 @@
 %=====================================
-%   2024-02-22.tex
-%   院生セミナー資料 大柴寿浩
+%   geometry.tex
+%   幾何学まとめノート toshi2019
 %=====================================
 
 % -----------------------
@@ -18,7 +18,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[11pt, a4paper, leqno, dvipdfmx]{jsarticle}
+\documentclass[10pt, a4paper, dvipdfmx]{jsarticle}
 
 % ------------------------
 % usepackage
@@ -66,6 +66,9 @@
     urlcolor=darkblue,
 }
 \usepackage{pxjahyper}
+
+\usepackage[mathscr]{euscript} % mathscr のフォントを変更
+
 
 %=================================
 
@@ -306,6 +309,9 @@
 \newcommand{\scN}{\mathscr{N}}
 \newcommand{\scO}{\mathscr{O}}
 \newcommand{\scV}{\mathscr{V}}
+\newcommand{\scU}{\mathscr{U}}
+
+\newcommand{\cU}{\mcal{U}}
 
 
 \newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
@@ -449,7 +455,7 @@
     {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
 
 \theoremstyle{mystyle}
-\newtheorem{AXM}{公理}[section]
+\newtheorem{AXM}{公理}%[section]
 \newtheorem{DFN}[AXM]{定義}
 \newtheorem{THM}[AXM]{定理}
 \newtheorem*{THM*}{定理}
@@ -478,6 +484,9 @@
   \MakeFramed {\advance\hsize-\width \FrameRestore}}%
  {\endMakeFramed}
 
+
+
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
 
 % =================================
 
@@ -511,352 +520,13 @@
 % begin document and end document.
 % ---------------------------
 
-\title{2024/03/15 セミナー資料}
-\author{大柴寿浩}
-\date{}
+\title{幾何学まとめノート}
+\author{toshi2019}
+\date{\today\footnote{2024/03/29作成開始}}
 \begin{document}
 \maketitle
+\tableofcontents
 
-\section*{記号}
-\begin{itemize}
-    \item 恒等射を\(\id\)や\(1\)で表す．
-    \item 集合\(U\)の開近傍系を\(I_U\)とかき，点\(x\)の開近傍系を\(I_x\)とかく．
-    \item \(\rr^+\)：正の実数のなす乗法群．
-\end{itemize}
-
-\section{フーリエ・佐藤変換{\cite[section 3.7]{KS90}}}
-
-まず錐状層を定義する．
-そのために作用つきの空間を考える．
-\(X\)を局所コンパクト空間で\(\rr^+\)の作用\(\mu\)が入っているとする．
-つまり，連続写像\(\mu\colon X\times \rr^+\to X\)で
-\begin{align*}
-    \mu(x,t_1t_2)&=\mu(\mu(x,t_1),t_2)\\
-    \mu(x,1)&=x
-\end{align*}
-をみたすものが与えられているとする．
-\begin{leftbar}
-\begin{DFN}[{\cite[Definition 3.7.1]{KS90}}]
-    \begin{enumerate}[(i)]
-        \item 層\(F\in\Mod(A_X)\)が\textbf{錐状} (conic) であるとは，
-        \(X\)の各軌道\(b\)への制限\(F\rvert_b\)が局所定数層であることをいう．
-        \(\Mod(A_X)\)の充満部分圏\(\Mod_{\rr^+}(A_X)\)を錐状層からなるものとして定める．
-        \item \(\mathsf{D}^{+}_{\rr^+}(X)\)を，各\(j\in\zz\)に対して\(H^j(F)\)が
-        錐状のものからなる\(\Dompl(X)\)の充満部分圏として定める．
-    \end{enumerate}
-\end{DFN}
-\end{leftbar}
-
-錐状層がどのように特徴づけられるかを調べる．
-次の連続写像を考える．
-\[\begin{tikzcd}
-    X\ar[r,hook,"j"]&
-    X\times\rr^+
-    \ar[r,yshift=-0.7ex,"p"']
-    \ar[r,yshift=0.7ex,"\mu"]
-    &X.
-\end{tikzcd}\]
-\(j\colon X\to X\times \rr^+\)は
-\(x\in X\)を\(X\times\rr^+\)に\((x,1)\)として
-埋め込む写像であり．
-\(p\colon X\times\rr^+\to X\)は\(X\)への第1射影である．
-これらの連続写像を用いて，\(F\in\Dompl(X)\)に対し，次の2つの射を構成する．
-\[\begin{tikzcd}
-    \mu^{-1}F&
-    p^{-1}\Rder{p}_{\ast}\mu^{-1}F
-    \ar[l,"\alpha"']
-    \ar[r,"\beta"]
-    &p^{-1}F.
-\end{tikzcd}\]
-\(\alpha\)は随伴\((p^{-1},\Rder{p}_{\ast})\)の
-余単位\(p^{-1}\Rder{p}_{\ast}\to1_{\Dompl(X)}\)を\(\mu^{-1}F\)に
-適用することで得られる．
-\(\beta\)は次のように構成される．
-\begin{align*}
-    p^{-1}\Rder{p}_{\ast}\mu^{-1}F
-    &\to
-    p^{-1}\Rder{p}_{\ast}\Rder{j}_{\ast}j^{-1}\mu^{-1}F\\
-    &\cong
-    p^{-1}\Rder(p\circ{j})_{\ast}(\mu\circ{j})^{-1}F\\
-    &\cong
-    p^{-1}\Rder{1_X}_{\ast}1_X^{-1}F\\    
-    &\cong
-    p^{-1}F.
-\end{align*}
-
-\begin{leftbar}
-\begin{PRP}[{\cite[Proposition 3.7.2]{KS90}}]
-    \(F\in\mathsf{D}^{+}(X)\)に対し
-    次の条件(i)--(v)は同値である．
-    \begin{enumerate}[(i)]
-        \item \(F\in \mathsf{D}^{+}_{\rr^+}(X)\)
-        \item \(\alpha\)と\(\beta\)はどちらも同型である．
-        \item すべての\(j\in\zz\)に対し，\(H^j(\mu^{-1}F)\)が\(p\)の各ファイバーで局所定数層となる．
-        \item \(p^{-1}F\cong \mu^{-1}F\).
-        \item \(p^{!}F\cong \mu^{!}F\).
-    \end{enumerate}
-\end{PRP}    
-\end{leftbar}
-
-\begin{proof}
-    次の順に証明する．
-    \[\begin{tikzcd}
-        (\mathrm{i})\ar[r,Leftrightarrow,"\ref{372-13}"]
-        &(\mathrm{iii})\ar[rd,Rightarrow,"\ref{372-32}"']
-        &&(\mathrm{iv})\ar[ll,Rightarrow,"\ref{372-43}"']\ar[r,Leftrightarrow,"\ref{372-45}"]
-        &(\mathrm{v})\\
-        &&(\mathrm{ii})\ar[ru,Rightarrow,"\ref{372-24}"']
-    \end{tikzcd}.\]
-    
-    \begin{enumerate}
-        \item\label{372-13} (i) \(\Leftrightarrow\) (iii): 
-        まず，\(x\in X\)の\(\rr^+\)軌道は\(
-            \mu\left(p^{-1}(x)\right)
-        \)と表せることに注意する．実際，\(x\)の\(\rr^+\)軌道\(b\)は
-        \[
-            b=\left\{\mu(x,t); t\in\rr^+\right\}
-        \]であり，これは\(x\)での\(p\)のファイバー\[
-            p^{-1}(x)=\left\{(x,t);t\in\rr^+\right\}
-        \]の\(\mu\)による像
-        \[
-            \mu\left(p^{-1}(x)\right)=
-            \left\{\mu(x,t);(x,t)\in p^{-1}(x)\right\}
-        \]である．
-        \begin{align*}
-            j_{p^{-1}(x)}&\colon 
-            p^{-1}(x)\hookrightarrow X\times \rr^+\\
-            j_{\mu\left(p^{-1}(x)\right)}&\colon 
-            \mu\left(p^{-1}(x)\right)\hookrightarrow X
-        \end{align*}
-        をそれぞれ包含写像とすると\[
-            j_{\mu\left(p^{-1}(x)\right)}\circ\mu
-            =\mu\circ j_{p^{-1}(x)}
-        \]が成り立つ．したがって，
-        \begin{align*}
-            H^j\left(\mu^{-1}F\right)&\cong H^j\left(\mu^{-1}F\right)\rvert_{p^{-1}(x)}\\
-            &\cong j_{p^{-1}(x)}^{-1}H^j\left(\mu^{-1}F\right)\\
-            &\cong
-            j_{p^{-1}(x)}^{-1}\mu^{-1}H^j\left(F\right)\\
-            &\cong
-            \left(\mu\circ j_{p^{-1}(x)}\right)^{-1}H^j\left(F\right)\\
-            &\cong
-            \left(
-                j_{\mu\left(p^{-1}(x)\right)}\circ\mu
-            \right)^{-1}H^j\left(F\right)\\
-            &\cong
-            \mu^{-1}j_{\mu\left(p^{-1}(x)\right)}^{-1}H^j\left(F\right)\\
-            &\cong
-            \mu^{-1}\left(H^j\left(F\right)\rvert_{\mu\left(p^{-1}(x)\right)}\right)
-        \end{align*}
-        である．
-        引き戻しが定数層なら元の層も定数層であり，
-        定数層の引き戻しも定数層\footnote{
-            \(f\colon Y\to X\)を位相空間の間の連続写像とし，
-            \(M\)を加群とする．
-            \(X\)上の層\(F\)の引き戻し\(f^{-1}F\)が\(Y\)上の
-            定数層\(M_Y\)になったとすると，
-            \(\mathrm{a}_Y=\mathrm{a}_X\circ f\)より，
-            \(
-                f^{-1}F
-                \cong M_Y
-                \cong \mathrm{a}_Y^{-1}M
-                \cong f^{-1}\mathrm{a}_X^{-1}M
-                \cong f^{-1}M_X
-            \)である．
-            逆像関手は conservative なので（ホンマか？）\(F\cong M_X\)である．
-        }なので，
-        \(H^j(\mu^{-1}F)\)が\(p\)の各ファイバーで局所定数層となるのは，
-        \(H^j\left(F\right)\)が\(\mu\left(p^{-1}(x)\right)\)で，
-        すなわち\(x\)の\(\rr^+\)軌道で局所定数層となるときである．
-        \item\label{372-45} (iv) \(\Leftrightarrow\) (v): 
-        \(
-            p^{-1}F\cong p^{-1}\ltens 
-            \omega_{X\times\rr^{+}/X}
-        \)と\(
-            \mu^{-1}F\cong \mu^{-1}\ltens 
-            \omega_{X\times\rr^{+}/X}
-        \)が成り立つ．
-        \item\label{372-24} (ii) \(\Leftrightarrow\) (iv): 
-        \(\alpha\)と\(\beta\)が同型なので，
-        互いに逆射となる射\[
-            \beta\alpha^{-1}\colon \mu^{-1}F\to p^{-1}F,\quad 
-            \alpha\beta^{-1}\colon  p^{-1}F\to \mu^{-1}F
-        \]が得られる．したがって，\(p^{-1}F\cong \mu^{-1}F\)である．
-        \item\label{372-43} (iv) \(\Leftrightarrow\) (iii): 
-        \(\mu^{-1}F\cong p^{-1}F\)とする．
-        \(x\in X\)とする．\(
-            p^{-1}(x)=\{x\}\times \rr^{+}
-        \)に対し\[
-            i_{p^{-1}(x)}\colon p^{-1}(x)\hookrightarrow X\times \rr^+,
-            \quad
-            i_{x}\colon\{x\} \hookrightarrow X
-        \]
-        とおくと次の図式が可換になる．
-        \[\begin{tikzcd}
-            p^{-1}(x)
-            \ar[r,hookrightarrow, "i_{p^{-1}(x)}"]
-            \ar[d, "p\rvert_{p^{-1}(x)}"']
-            &X\times \rr^+
-            \ar[d, "p"]\\
-            \{x\}
-            \ar[r,hookrightarrow, "i_{x}"']
-            &X
-        \end{tikzcd}.\]
-        したがって，\(j\)を整数とすると
-        \begin{align*}
-            H^j\left. \left(p^{-1}F\right)\right\rvert_{p^{-1}(x)}
-            &\cong
-            p^{-1}\left. H^j\left(F\right)\right\rvert_{p^{-1}(x)}\\
-            &\cong
-            i^{-1}_{p^{-1}(x)}p^{-1}H^j\left(F\right)\\
-            &\cong
-            \left(p\circ i_{p^{-1}(x)}\right)^{-1}H^j\left(F\right)\\
-            &\cong
-            \left(i_{x}\circ p\rvert_{p^{-1}(x)}\right)^{-1}H^j\left(F\right)\\
-            &\cong
-            \left(p\rvert_{p^{-1}(x)}\right)^{-1}i_{x}^{-1}H^j\left(F\right)\\
-            &\cong
-            \left(p\rvert_{p^{-1}(x)}\right)^{-1}H^j\left(F\right)_{x}\\
-            &\cong
-            \left(H^j\left(F\right)_{x}\right)_{p^{-1}(x)}
-        \end{align*}
-        で，定数層となる（よって特に局所定数層となる）．
-        \item\label{372-32} (iii) \(\Leftrightarrow\) (ii):      
-    \end{enumerate}
-\end{proof}
-
-
-
-
-
-
-
-
-
-
-\clearpage
-\(X\)を位相空間とする．
-\(\Op(X)\coloneqq\left\{\text{\(X\)の開集合}\right\}\)とおく．
-\(\Op(X)\)に包含で順序構造を入れ，自然に圏とみなす．
-\begin{DFN}[前層]
-    \(X\)を位相空間とする．
-    \(\Op(X)\)から圏\(\mathscr{C}\)への反変関手
-    \(\mathscr{F}\colon\Op(X)^{\op}\to\mathscr{C}\)を
-    \(X\)上の\(\mathscr{C}\)に値を取る\textbf{前層} (presheaf) という．
-    包含\(V\hookrightarrow U\)の
-    行き先\(\mathscr{F}(V\hookrightarrow U)\colon \mathscr{F}(U)\to\mathscr{F}(V)\)を
-    制限射といい，\(\rho_{VU}\)とかく．
-
-    \(X\)上の\(\mathscr{C}\)に値を取る前層の圏を
-    関手圏\(
-        \PSh(X,\mathscr{C})
-        =\Op(X)^{\wedge}
-        =\Fct(\Op(X)^{\op},\mathscr{C})
-    \)として定める．
-    値に取る圏\(\mathscr{C}\)が明らかなときは，
-    たんに\(X\)上の前層ともいう．
-\end{DFN}
-
-\begin{DFN}[層]\label{def:sheaf}
-    \(X\)を位相空間とする．
-    \(\mathscr{F}\colon\Op(X)^{\op}\to\cat\)を
-    \(X\)上の前層とする．
-    \(\mathscr{F}\)が\textbf{層} (sheaf) であるとは，
-    任意の開集合\(U\in\Op(X)\)と
-    その開被覆\(\left(U_i\right)_{i\in I}\)に対して
-    次の条件をみたすことをいう．
-    \begin{enumerate}[(S1)]
-        \setcounter{enumi}{-1}
-        \item \(\mathscr{F}(\varnothing)=0\).
-        \item 列
-        \[\vcenter{\xymatrix
-            @C=16pt@R=28pt{
-            0\ar[r]
-            &
-            \mathscr{F}(U)
-            \ar[rr]^-{\prod_i\rho_{U_iU}}
-            &&
-            \dip \prod_{i\in I}\mathscr{F}(U_i)
-        }}\]が完全である．
-        すなわち，\(s\in\mathscr{F}(U)\)が各\(i\in I\)に対して\(U_i\)上\(s\rvert_{U_{i}}=0\)ならば，
-        \(s=0\)である．\label{sheaf-cond1}
-        \item 列
-        \[\vcenter{\xymatrix
-            @C=16pt@R=28pt{
-            \mathscr{F}(U)
-            \ar[rr]^-{\prod_i\rho_{U_iU}}
-            &&
-            \dip \prod_{i\in I}\mathscr{F}(U_i)
-            \ar[rr]^-{\prod_{i,j}\varphi_{ij}}
-            &&
-            \dip \prod_{i,j\in I}\mathscr{F}(U_i\cap U_j)
-        }}\]が完全である．
-        ただし，\(\varphi_{ij}=\rho_{U_{i}\cap U_{j},U_i}-\rho_{U_{i}\cap U_{j},U_j}\). 
-        すなわち，\(\left(s_i\right)_i\in\prod_{i}\mathscr{F}(U_i)\)が
-        各\(i,j\in I\)で\(U_i\cap U_j\ne\varnothing\)となるものに対して\(U_i\cap U_j\)上\(s_i\rvert_{U_i\cap U_j}-s_j\rvert_{U_i\cap U_j}=0\)ならば，
-        \(s\in\mathscr{F}(U)\)で各\(U_i\)上\(s\rvert_i=s_i\)となるものが存在する．\label{sheaf-cond2}
-    \end{enumerate}
-\end{DFN}
-
-
-\(\cc\)上の前層\(\scF\)を次で定める．
-\[
-    \scF(U)=
-    \begin{cases}
-        \cc &\text{\(U=\cc\)のとき，}\\
-        0 &\text{\(U\neq\cc\)のとき．}
-    \end{cases}
-\]
-\(\scF\)は層の条件
-
-%===============================================
-% 参考文献スペース
-%===============================================
-\begin{thebibliography}{20} 
-    \bibitem[BouTVS]{BouTVS} ブルバキ, 位相線形空間1, 東京図書, 1968.
-    \bibitem[B+84]{B+84} Borel, 
-    \textit{Intersection Cohomology}, 
-    Progress in Mathematics, 50, Birkh\"auser, 1984.
-\bibitem[G58]{G58} Grauert, 
-    \textit{On Levi's problem and the embedding of real analytic manifolds}, 
-    Ann. Math. 68, 460--472 (1958).
-\bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
-    \textit{Differential Topology}, 
-    Prentice-Hall, 1974.
-    \bibitem[HS23]{HS23} Andreas Hohl, Pierre Schapira, 
-    \textit{Unusual Functorialities for weakly constructible sheaves}, 
-    2023.
-    \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
-    \textit{Sheaves on Manifolds}, 
-    Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
-\bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
-    \textit{Categories and Sheaves}, 
-    Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
-    \bibitem[Le13]{Le13} John M. Lee, 
-    \textit{Introduction to Smooth Manifolds}, Second Edition,
-    Graduate Texts in Mathematics, \textbf{218}, Springer, 2013.
-    \bibitem[Mo76]{Mo76} 森本光生, 佐藤超函数入門, 共立出版, 1976. 
-\bibitem[R55]{R55} de Rham, 
-    \textit{Vari\'et\'es diff\'erentiables}, 
-    Hermann, Paris, 1955.
-\bibitem[Sa59]{Sa59} Mikio Sato, 
-    \textit{Theory of Hyperfunctions}, 
-    1959--60.
-\bibitem[S66]{S66} Schwartz, 
-    \textit{Th\'eorie de distributions}, 
-    Hermann, Paris, 1966.
-\bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
-\bibitem[SP]{SP} The Stacks Project.
-\bibitem[Sp65]{Sp65} Michael Spivak, 
-\textit{Calculus on Manifolds}, 
-Benjamin, 1965.
-\bibitem[Ike21]{Ike21} 池祐一, 超局所層理論概説, 2021.
-\bibitem[Tak17]{Tak17} 竹内潔, \(\D\)加群, 共立出版, 2017.
-\bibitem[Ue]{Ue} 植田一石, ホモロジー的ミラー対称性, \url{https://www.ms.u-tokyo.ac.jp/~kazushi/course/hms.pdf} 2024/02/04 最終閲覧.
-
-\end{thebibliography}
-
-%===============================================
-
+\section{多様体}
 
 \end{document}

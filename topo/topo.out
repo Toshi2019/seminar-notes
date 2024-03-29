@@ -1,7 +1,8 @@
 %このファイルは日本語文字を含みます.
 \BOOKMARK [1][-]{section.1}{基本的な定義}{}% 1
-\BOOKMARK [1][-]{section.2}{局所コンパクト}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{局所コンパクトノルム空間の有限次元性}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{関数列の局所的な一様収束概念}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{無限遠点で可算な局所コンパクト空間}{section.2}% 5
-\BOOKMARK [1][-]{section.3}{パラコンパクト性}{}% 6
+\BOOKMARK [1][-]{section.2}{局所コンパクト空間}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{定義と例}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{局所コンパクトノルム空間の有限次元性}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{関数列の局所的な一様収束概念}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{無限遠点で可算な局所コンパクト空間}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{パラコンパクト性}{}% 7
