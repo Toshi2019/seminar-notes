@@ -1,18 +1,20 @@
 \contentsline {chapter}{\numberline {第1章}層}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}アーベル圏の層}{1}{section.1.1}
+\contentsline {section}{\numberline {1.1}アーベル圏に値をとる層}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}前層と層の定義}{1}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}アーベル層}{2}{subsection.1.1.2}
 \contentsline {section}{\numberline {1.2}完全性}{2}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}茎}{2}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}切断}{3}{subsection.1.2.2}
 \contentsline {subsection}{\numberline {1.2.3}台を持つ切断}{4}{subsection.1.2.3}
 \contentsline {subsection}{\numberline {1.2.4}内部Hom}{4}{subsection.1.2.4}
 \contentsline {subsection}{\numberline {1.2.5}内部Hom}{4}{subsection.1.2.5}
-\contentsline {subsection}{\numberline {1.2.6}内部テンソル積}{4}{subsection.1.2.6}
+\contentsline {subsection}{\numberline {1.2.6}内部テンソル積}{5}{subsection.1.2.6}
 \contentsline {subsection}{\numberline {1.2.7}帰納極限}{5}{subsection.1.2.7}
 \contentsline {subsection}{\numberline {1.2.8}射影極限}{5}{subsection.1.2.8}
-\contentsline {subsection}{\numberline {1.2.9}順像}{5}{subsection.1.2.9}
+\contentsline {subsection}{\numberline {1.2.9}順像}{6}{subsection.1.2.9}
 \contentsline {subsection}{\numberline {1.2.10}逆像}{6}{subsection.1.2.10}
 \contentsline {subsection}{\numberline {1.2.11}部分集合から定まる層}{6}{subsection.1.2.11}
-\contentsline {subsubsection}{制限と切断の一般化}{6}{section*.2}
+\contentsline {subsubsection}{制限と切断の一般化}{7}{section*.2}
 \contentsline {paragraph}{2023/09/13分の行間埋め}{7}{section*.3}
 \contentsline {subsubsection}{制限の引き戻し}{7}{section*.4}
 \contentsline {section}{\numberline {1.3}各操作の関係}{7}{section.1.3}

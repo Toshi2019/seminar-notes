@@ -17,7 +17,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[10pt, b5paper, dvipdfmx, leqno, draft]{jsbook}
+\documentclass[11pt, a4paper, dvipdfmx, leqno, draft]{jsbook}
 
 % ------------------------
 % usepackage
@@ -241,7 +241,7 @@
 \numberwithin{equation}{subsection}
 \newcommand{\cTop}{\textsf{Top}}
 %\newcommand{\cOpen}{\textsf{Open}}
-\newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
+\newcommand{\Op}{\mathop{\textsf{Op}}\nolimits}
 \newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
 \newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
 \newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
@@ -365,8 +365,22 @@
 
 \newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
 
+\newcommand{\mres}[2][]{{{#1}\rvert}_{#2}}
 
 % =================================
+
+
+
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
 
 
 %================================================
@@ -392,7 +406,7 @@
 \newtheorem{LMM}[Axiom]{補題}
 \newtheorem{CRL}[Axiom]{系}
 \newtheorem{EG}[Axiom]{例}
-\newtheorem{CNV}[Axiom]{規約}
+\newtheorem{CNV}[Axiom]{約束}
 
 
 % 定理環境ここまで
@@ -431,7 +445,7 @@
 
 \title{層理論まとめノート}
 \author{Toshi2019}
-%\date{}
+\date{\today 更新}
 \begin{document}
 \maketitle
 \frontmatter
@@ -452,7 +466,58 @@
     \end{itemize}
 \end{CNV}
 
-\section{アーベル圏の層}
+\section{アーベル圏に値をとる層}
+
+\subsection{前層と層の定義}
+
+\begin{leftbar}
+\begin{DFN}[前層]
+    \(X\)を位相空間とし，\(\cat\)をアーベル圏とする．
+    反変関手\(F\colon\Op(X)^{\op}\to\cat\)のことを
+    \(\cat\)に値をとる\(X\)上の\textbf{前層} (presheaf) とよぶ．
+\end{DFN}
+\end{leftbar}
+
+\begin{leftbar}
+\begin{DFN}[層]
+    \(X\)を位相空間とし，\(\cat\)をアーベル圏とする．
+    \(F\)を\(\cat\)に値をとる\(X\)上の前層とする．
+    \(F\)が
+    任意の開集合\(U\)と\(U\)の開被覆\(
+            \cU=\left(U_i\right)_{i\in I}
+    \)に対し，次の列が完全になるとき，
+    \(F\)は\textbf{層} (sheaf) であるという．
+    \[
+        0\to F(U)\overset{d^0}{\to} 
+        \prod_{i\in I}F(U_i)\overset{d^1}{\to} 
+        \prod_{i,j\in I}F(U_{i}\cap U_j).
+    \]ただし，\(d^0\), \(d^1\)は\[
+        d^0\colon s\mapsto\left(\mres[s]{U_i}\right)_i,
+        \quad
+        d^1\colon \left(s_i\right)_i 
+        \mapsto\left(
+            \mres[s_i]{U_{i}\cap U_j}-\mres[s_j]{U_{i}\cap U_j}
+        \right)_{i,j}
+    \]で定める．    
+\end{DFN}
+\end{leftbar}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{アーベル層}
 層の圏における完全列等の概念を明確化しておく．
 アーベル圏$\cat$に値を取る位相空間$X$上の層を
 \textbf{アーベル層}(abelian sheaf) ということがある．
