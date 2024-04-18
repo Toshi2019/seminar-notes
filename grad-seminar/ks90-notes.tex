@@ -289,6 +289,35 @@
 
 \newcommand{\cat}{\mathscr{C}}
 
+%筆記体
+\newcommand{\cA}{\mcal{A}}
+\newcommand{\cB}{\mcal{B}}
+\newcommand{\cC}{\mcal{C}}
+\newcommand{\cD}{\mcal{D}}
+\newcommand{\cE}{\mcal{E}}
+\newcommand{\cF}{\mcal{F}}
+\newcommand{\cG}{\mcal{G}}
+\newcommand{\cH}{\mcal{H}}
+\newcommand{\cI}{\mcal{I}}
+\newcommand{\cJ}{\mcal{J}}
+\newcommand{\cK}{\mcal{K}}
+\newcommand{\cL}{\mcal{L}}
+\newcommand{\cM}{\mcal{M}}
+\newcommand{\cN}{\mcal{N}}
+\newcommand{\cO}{\mcal{O}}
+\newcommand{\cP}{\mcal{P}}
+\newcommand{\cQ}{\mcal{Q}}
+\newcommand{\cR}{\mcal{R}}
+\newcommand{\cS}{\mcal{S}}
+\newcommand{\cT}{\mcal{T}}
+\newcommand{\cU}{\mcal{U}}
+\newcommand{\cV}{\mcal{V}}
+\newcommand{\cW}{\mcal{W}}
+\newcommand{\cX}{\mcal{X}}
+\newcommand{\cY}{\mcal{Y}}
+\newcommand{\cZ}{\mcal{Z}}
+
+
 \newcommand{\scA}{\mathscr{A}}
 \newcommand{\scB}{\mathscr{B}}
 \newcommand{\scC}{\mathscr{C}}
@@ -297,6 +326,7 @@
 \newcommand{\scF}{\mathscr{F}}
 \newcommand{\scN}{\mathscr{N}}
 \newcommand{\scO}{\mathscr{O}}
+\newcommand{\scR}{\mathscr{R}}
 \newcommand{\scV}{\mathscr{V}}
 
 \newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
@@ -368,6 +398,8 @@
 \newcommand{\Db}{\mathord{\mathscr{D}b}}
 \newcommand{\Conti}{\mathord{\mathscr{C}}}
 
+\newcommand{\mres}[2][]{{{#1}\rvert}_{#2}}
+\newcommand{\blk}{\mathord{\ \cdot\ }}
 
 % =================================
 
@@ -397,7 +429,9 @@
 \newtheorem{CRL}[Axiom]{系}
 \newtheorem{EG}[Axiom]{例}
 \newtheorem{CNV}[Axiom]{規約}
+\newtheorem{RMK}[Axiom]{注意}
 \newtheorem{CMT}[Axiom]{コメント}
+\newtheorem*{CMT*}{コメント}
 
 
 % 定理環境ここまで
@@ -1249,10 +1283,9 @@ $\cat$の三角とは射の列
 
 よって，前層は各開集合\(U\subset X\)に対してアーベル群\(F(U)\)を
 対応させ，各包含写像\(V\subset U\)に対し，
-\textbf{制限射} (restriction morphism) と呼ばれる
-アーベル群の射\(
+次の条件\eqref{eq212}をみたすアーベル群の射\(
     \rho_{V,U}\colon F(U)\to F(V)
-\)であって，次の条件\eqref{eq212}をみたすものを対応させるものである．
+\)を対応させるものである．
 \begin{equation}
     \begin{cases}
         \text{任意の開集合\(U\)に対し\(\rho_{U,U}=\id_{F(U)}\)であり,}\\ 
@@ -1261,6 +1294,8 @@ $\cat$の三角とは射の列
         \).}
     \end{cases}\label{eq212}
 \end{equation}
+このアーベル群の射\(\rho_{V,U}\)を\textbf{制限射} (restriction morphism) と呼ぶ．
+
 前層の射\(\phi\colon F\to G\)の方は群の射\(
     \phi_{U}\colon F(U)\to G(U)
 \)であって制限射と両立するものの族ということになる．
@@ -1459,6 +1494,123 @@ $\cat$の三角とは射の列
     \eqref{abel:homTh} 
 
 \end{proof}
+
+
+
+
+
+
+
+
+
+\section{層}
+
+\begin{DFN}[層]
+    \(F\)を\(X\)上の（アーベル群の）前層とする．
+    \(F\)が
+    次の条件をみたすとき，
+    \(F\)は\textbf{層} (sheaf) であるという．
+    任意の開集合\(U\)と\(U\)の開被覆\(
+            \cU=\left(U_i\right)_{i\in I}
+    \)に対し，次の列が完全になる．
+    \[
+        0\to F(U)\overset{d^0}{\to} 
+        \prod_{i\in I}F(U_i)\overset{d^1}{\to} 
+        \prod_{i,j\in I}F(U_{i}\cap U_j).
+    \]ただし，\(d^0\), \(d^1\)は\[
+        d^0\colon s\mapsto\left(\mres[s]{U_i}\right)_i,
+        \quad
+        d^1\colon \left(s_i\right)_i 
+        \mapsto\left(
+            \mres[s_i]{U_{i}\cap U_j}-\mres[s_j]{U_{i}\cap U_j}
+        \right)_{i,j}
+    \]で定める．    
+\end{DFN}
+
+\begin{PRP}\label{prp222}
+    \(\phi\colon F\to G\)を層の射とする．
+\end{PRP}
+
+\begin{PRP}\label{prp223}
+    \(X\)上の前層\(F\)に対し，
+    層\(F^{\dag}\)と射\(\theta\colon F\to F^{\dag}\)で
+\end{PRP}
+
+\begin{PRP}\label{prp224}
+    \(X\)上のアーベル群の層の圏\(\Sh(X)\)はアーベル圏である．
+\end{PRP}
+
+\begin{RMK}\label{rmk225}
+    命題\ref{prp222}を適用することで，
+    層の複体が完全となる条件は群の複体が完全となることであることが分かる．
+    とくに，\(\Sh(X)\)から\(\cAb\)への関手\(F\mapsto F_x\)は
+    完全関手である．
+    他方で，\(\Sh(X)\)から\(\cAb\)への関手\(\Gamma(X;\blk)\)は
+    左完全関手である．
+\end{RMK}
+
+自然に現れる層は大抵，アーベル群の構造のみならず，
+それよりも豊かな構造を備えている．
+
+単位元をもつ環と単位元をもつ環の射の圏を\(\Ring\)で表す\footnote{
+    原著では\(\mathfrak{Ring}\)と書いている．
+}．\(\Ring\)に値をとる前層を環の前層とよぶ．
+環の前層が（\(\cAb\)に値をとる）層となるとき，環の層とよぶ．
+
+\begin{DFN}
+    \(\scR\)を\(X\)上の環の層とする．
+    \(\scR\)加群\(M\)（あるいは\(\scR\)上の加群の層）とは
+    層\(M\)で各開集合\(U\subset X\)に対し，
+    \(M(U)\)が左\(\scR(U)\)加群となり，
+    各開集合の包含\(V\subset U\)に対し，制限射が加群の構造と両立する，
+    すなわち任意の\(s\in\scR(U)\)と\(m\in M(U)\)に対し\(
+        \rho_{V,U}(sm)=\rho_{V,U}(s)\cdot\rho_{V,U}(m)
+    \)が成り立つもののことである．
+\end{DFN}
+
+自明な方法で\(\scR\)加群の射の概念を定義することができる．
+
+\begin{CMT*}
+    次のようにして射を定める．
+    \(\scR\)加群の射\(\phi\colon M\to N\)とは，層の射\(\phi\)で
+    \(\scR\)作用と両立する，すなわち任意の\(U\)に対し，
+    次の図式が可換になるものをいう．
+    \[\vcenter{\xymatrix@C=36pt@R=26pt{
+    \scR(U)\times M(U)
+    \ar[r]^-{\id_{\scR(U)}\times\phi_U}
+    \ar[d]_-{\mu_{U}}
+    &
+    \scR(U)\times N(U)\ar[d]^-{\mu_{U}} 
+    \\
+    M(U)\ar[r]_-{\phi_U}
+    &
+    N(U).
+    }}\]
+\end{CMT*}
+
+\subsection*{解層\(\HOM\)}
+\(\scR\)を\(X\)上の環の層とし，\(F\)と\(G\)を\(\scR\)加群とする．
+次の前層を考える．
+\begin{equation}
+    U\mapsto \Hom_{\mres[\scR]{U}}(\mres[F]{U},\mres[G]{U}).
+\end{equation}
+この前層はアーベル群の層となる（\(\scR\)が
+可換なら\(\scR\)加群の層となる）．
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{層の演算}
