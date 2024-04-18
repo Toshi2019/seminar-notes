@@ -81,6 +81,12 @@
 
 %=================================
 
+%============================================================
+% layout for a4 9pt
+%\setlength{\textwidth}{459pt}
+%\setlength{\marginparwidth}{105pt}
+%\setlength{\evensidemargin}{69pt}
+%============================================================
 
 % --------------------------
 % theoremstyle
@@ -253,7 +259,7 @@
 \numberwithin{equation}{section}
 \newcommand{\cTop}{\textsf{Top}}
 %\newcommand{\cOpen}{\textsf{Open}}
-\newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
+\newcommand{\Op}{\mathop{\textsf{Op}}\nolimits}
 \newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
 \newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
 \newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
@@ -443,6 +449,7 @@
     その開近傍系をそれぞれ\(I_x\)や\(I_Z\)で表す．
     これらは，包含関係の逆で有向順序集合をなす．
 \end{itemize}
+\tableofcontents
 \mainmatter
 \chapter{ホモロジー代数}
 \setcounter{section}{2}
@@ -1180,6 +1187,278 @@ $\cat$の三角とは射の列
 
 \clearpage
 \chapter{層}
+
+\subsection*{概要}
+
+本章では位相空問上の層のアーベル圏とその間のよく用いる関手として，
+逆像\(f^{-1}\)，順像\(f_\ast\)，固有順像\(f_!\)，
+テンソル積\(\otimes\), 内部 hom \(\HOM\)等を構成する．
+その後，第1章の結果を用い層の導来圏 \(\Dompb(X)\)と
+上記の関手の導来関手を定義する．
+議論の中で，入射層，平坦層，脆弱層，c柔軟層といった概念も導入し，
+非特性変形補題やコホモロジーのホモトピー不変性といった後の議論で
+用いる層理論の道具も与える．
+実際に必要ではないがチェック・コホモロジーついても（簡単に）述べる．
+最後に実・複素多様体上に自然に定まる層について復習する．
+ここで述べる結果のほんどは昔からよく矢られている．
+より詳しくは Bredon[1], Godement[1], Iversen[1] を参照．
+
+\section{前層}
+
+\(X\)を位相空間とする．\(\Op(X)\)で\(X\)の開集合を表す．
+\(\Op(X)\)には包含関係によって順序が定まる．
+\begin{quote}
+    順序関係が定まること：
+    \(U\in\Op(X)\)に対し\(U\subset U\)が成り立つ．
+    \(U\subset V\), \(V\subset W\)を\(X\)の開集合とする．
+    このとき，\(x\in U\)とすると，\(x\in V\)が成り立ち，
+    \(x\in W\)となる．
+    \(U\subset V\), \(V\subset U\)とすると\(U=V\)である．
+\end{quote}
+これを次のように圏とみなし，\(\Op(X)\)とかく\footnote{
+    原著\cite{KS90}では順序集合の方を\(\mathrm{OP}(X)\)，
+    圏とみなしたものを\(\mathfrak{OP}(X)\)と表しているが，
+    ここでは同じ記号を用いる．
+} (cf. I \S1)．
+\begin{equation}
+    \begin{cases}
+        \Ob(\Op(X))\coloneqq\Op(X)\\
+        \Hom_{\Op(X)}(V,U)\coloneqq\begin{cases}
+            \{\pt\}\quad&\text{\(V\subset U\)のとき，}\\
+            \varnothing\quad&\text{そうでないとき．}
+        \end{cases}
+    \end{cases}
+\end{equation}
+ただし，\(V\)と\(U\)は\(X\)の開集合であり，
+\(\{\pt\}\)は1点集合である．
+
+\begin{DFN}[前層]
+    \(\cat\)を圏とする．
+    \(\cat\)に値をとる\(X\)上の\textbf{前層} (presheaf) \(F\)とは，
+    \(\Op(X)\)から\(\cat\)への反変関手であり，
+    \textbf{前層の射} (morphism of presheaves) とは，
+    上記の関手の間の射である．
+\end{DFN}
+
+言い換えると，\(X\)上の前層とは\(\Op(X)\)で添字づけられた
+射影系ということである．
+
+本書ではアーベル群の前層（と層）のみを考える．
+したがって，特に断りのないかぎり，上述の定義で\(\cat=\cAb\)とし，
+前層といえばアーベル群の前層を意味する．
+
+よって，前層は各開集合\(U\subset X\)に対してアーベル群\(F(U)\)を
+対応させ，各包含写像\(V\subset U\)に対し，
+\textbf{制限射} (restriction morphism) と呼ばれる
+アーベル群の射\(
+    \rho_{V,U}\colon F(U)\to F(V)
+\)であって，次の条件\eqref{eq212}をみたすものを対応させるものである．
+\begin{equation}
+    \begin{cases}
+        \text{任意の開集合\(U\)に対し\(\rho_{U,U}=\id_{F(U)}\)であり,}\\ 
+        \text{任意の開集合\(W\subset V\subset U\)に対し\(
+            \rho_{W,U}=\rho_{V,U}\circ\rho_{W,V}
+        \).}
+    \end{cases}\label{eq212}
+\end{equation}
+前層の射\(\phi\colon F\to G\)の方は群の射\(
+    \phi_{U}\colon F(U)\to G(U)
+\)であって制限射と両立するものの族ということになる．
+すなわち，\(F\)と\(G\)の制限射をどちらも\(\rho_{V,U}\)で表すとき，
+全ての開集合\(V\subset U\)に対し次の図式が可換になるということである．
+\[\vcenter{\xymatrix@C=26pt@R=26pt{
+    F(U)
+    \ar[r]^-{\phi_U}
+    \ar[d]_-{\rho_{V,U}}
+    &
+    G(U)\ar[d]^-{\rho_{V,U}} 
+    \\
+    F(V)\ar[r]_-{\phi_V}
+    &
+    G(V).
+}}\]
+前層\(0\)が\(U\mapsto0\)で定まり，
+2つの前層\(F\), \(G\)の直和\(F\oplus G\)が\(
+    U\mapsto F(U)\oplus G(U)
+\)で定まる．
+したがって\(X\)上の（アーベル群の）前層と\(X\)上の前層の射の圏は
+加法圏である．この圏を\(\PSh(X)\)で表す\footnote{
+    原著では\(\mathfrak{PSh}(X)\)と書いている．
+}．
+
+\begin{proof}[\textbf{\(\PSh(X)\)が加法圏になること}]
+    加法圏の条件\eqref{additive:bilin}--\eqref{additive:biproduct}を
+    確かめる．
+
+    \eqref{additive:bilin} 
+    \(F\)と\(G\)を\(X\)上の前層とする．
+    まず\(\Hom_{\PSh(X)}(F,G)\)が加法群となることを示す．
+    \(\Hom_{\PSh(X)}(F,G)\)の加法を定める．
+    \(F\)から\(G\)への射\(\phi\)と\(\psi\)に対して
+    \(\phi+\psi\)を各開集合\(U\)に対して\(
+        \phi_{U}+\psi_{U}
+    \)を対応させることで定めると，
+    \(\phi+\psi\)が\(F\)から\(G\)への
+    射になることが，開集合\(V\subset U\)に対し，
+    \begin{align*}
+        \rho_{V,U}\circ(\phi_{U}+\psi_{U})
+        &=\rho_{V,U}\circ\phi_{U}+\rho_{V,U}\circ\psi_{U}&\text{（\(\cAb\)における射の合成は双線形）}\\
+        &=\phi_{V}\circ\rho_{V,U}+\psi_{V}\circ\rho_{V,U}&\text{（\(\phi\)と\(\psi\)は前層の射なので制限射と両立）}\\
+        &=(\phi_{V}+\psi_{V})\circ\rho_{V,U}&\text{（\(\cAb\)における射の合成は双線形）}
+    \end{align*}
+    が成り立つことから分かる．
+    
+    加法が結合法則をみたすことを示す．
+    \(\phi\), \(\psi\), \(\theta\)を\(F\)から\(G\)への射とする．
+    開集合\(U\)に対し，
+    \begin{align*}
+        ((\phi+\psi)+\theta)_U
+        &=(\phi+\psi)_{U}+\theta_U\\
+        &=(\phi_{U}+\psi_{U})+\theta_U\\
+        &=\phi_{U}+(\psi_{U}+\theta_U)\\
+        &=\phi_{U}+(\psi+\theta)_U\\
+        &=(\phi+(\psi+\theta))_U
+    \end{align*}
+    である．
+    
+    加法が可換であることを示す．
+    \(\phi\)と\(\psi\)を\(F\)から\(G\)への射とする．
+    開集合\(U\)に対し，
+    \begin{align*}
+        (\phi+\psi)_U
+        &=\phi_{U}+\psi_{U}\\
+        &=\psi_{U}+\phi_{U}\\
+        &=(\psi+\phi)_U
+    \end{align*}
+    である．
+    
+    \(\Hom_{\PSh(X)}(F,G)\)の零元を定める．
+    \(F\)から\(G\)への射\(0\colon F\to G\)を，
+    各開集合\(U\)に対し加法群の零射\(
+        0_{U}\colon F(U)\to G(U)
+    \)を対応させることで定める．
+    \(0\colon F\to G\)が前層の射となることは，\(s\in F(U)\)に対し
+    \[
+        \rho_{V,U}\circ0_U (s)=\rho_{V,U}(0_{F(V)})
+        =0_{G(V)}
+        =0_V\circ\rho_{V,U}(s)
+    \]
+    となることからわかる．
+    
+    \(0\colon F\to G\)が単位元の条件をみたすことを示す．
+    \(\phi\)を\(F\)から\(G\)への射とする．
+    開集合\(U\)に対し，
+    \begin{align*}
+        (\phi+0)_U&=\phi_{U}+0_{U}=\phi_{U},\\
+        (0+\phi)_U&=0_U+\phi_U=\phi_{U}
+    \end{align*}
+    である．
+    以上より，\(\Hom_{\PSh(X)}(F,G)\)は加法群となる．
+
+    前層の射の合成が双線形であることを示す．
+    \(F,G,H\)を\(X\)上の前層とする．
+    \(\phi,\psi\)を\(F\)から\(G\)への射とし，
+    \(\theta,\lambda\)を\(G\)から\(H\)への射とする．
+    開集合\(U\)に対し，
+    \begin{align*}
+        (\theta\circ(\phi+\psi))_U
+        &=\theta_U\circ(\phi+\psi)_U\\
+        &=\theta_U\circ(\phi_U+\psi_U)\\
+        &=\theta_U\circ\phi_U+\theta_U\circ\psi_U\\
+        &=(\theta\circ\phi)_U+(\theta\circ\psi)_U
+    \end{align*}
+    であり，
+    \begin{align*}
+        ((\theta+\lambda)\circ\phi)_U
+        &=(\theta+\lambda)_U\circ\phi_U\\
+        &=(\theta_U+\lambda_U)\circ\phi_U\\
+        &=\theta_U\circ\phi_U+\lambda_U\circ\phi_U\\
+        &=(\theta\circ\phi)_U+(\lambda\circ\phi)_U
+    \end{align*}
+    である．
+
+    \eqref{additive:zero} 
+    零対象が存在することを示す．
+    上で定めた前層\(0\)が前層になっていることを確認する．
+    任意の開集合\(V\subset U\)に対し\(0(U)=0(V)=0\)であり，\(
+        \rho_{U,V}=0\colon 0\to 0
+    \)で制限射が定まる．とくに\(\rho_{U,U}=\id_{0(U)}\)である．
+    また，開集合\(W\subset V\subset U\)に対し，
+    \[
+        \rho_{W,U}=0=0\circ0=\rho_{W,V}\circ\rho_{V,U}
+    \]
+    である．
+    前層\(0\)が零対象であることを示す．
+    \(F\)を\(X\)上の前層とする．
+    開集合\(U\)に対し，\(0(U)=0\)は\(\cAb\)の零対象である．
+    したがって，
+    \(\phi\)を\(0\)から\(F\)への射とすると，
+    各開集合\(U\)に対し\(\phi_U=0_U\)となるため\(\phi=0\)である．
+    また
+    \(\psi\)を\(F\)から\(0\)への射とすると，
+    各開集合\(U\)に対し\(\psi_U=0_U\)となるため\(\psi=0\)である．
+
+    \eqref{additive:biproduct}
+    直和が存在することを示す．
+    上で定めた2つの前層\(F\), \(G\)の直和\(F\oplus G\)が
+    前層であることを確認する．
+    各開集合\(V\subset U\)に対し，
+    \(F\)の制限射を\(F_{V,U}\), \(G\)の制限射を\(G_{V,U}\)で表す．
+    このとき，\(F\oplus G\)の制限射\(\rho_{V,U}\)が
+    \[
+        \rho_{V,U}\coloneqq F_{V,U}\oplus G_{V,U}\colon F(U)\oplus G(U)\to F(V)\oplus G(V)
+    \]
+    で定まる．制限射の条件を確かめる．各開集合\(U\)に対し，
+    \[
+        \rho_{U,U}
+        =F_{U,U}\oplus G_{U,U}
+        =\id_{F(U)}\oplus\id_{G(U)}
+        =\id_{F(U)\oplus G(U)}
+    \]である．
+    開集合\(W\subset V\subset U\)に対し，
+    \begin{align*}
+        \rho_{W,V}\circ\rho_{V,U}
+        &=(F_{W,V}\oplus G_{W,V})\circ(F_{V,U}\oplus G_{V,U})\\
+        &=(F_{W,V}\circ F_{V,U})\oplus(G_{W,V}\circ G_{V,U})\\
+        &=F_{W,U}\oplus G_{W,U}\\
+        &=\rho_{W,U}
+    \end{align*}
+    である．
+    前層\(F\oplus G\)が\(\PSh(X)\)における\(F\)と\(G\)の
+    直和であることを示す．
+    各開集合\(U\)に対し\(F\oplus G(U)=F(U)\oplus G(U)\)は
+    \(\cAb\)における\(F(U)\)と\(G(U)\)の直和である．
+    したがって，\(H\)を\(X\)上の前層とすると，
+    開集合\(U\)に対し，
+    \begin{align*}
+        \Hom_{\cAb}(F(U)\oplus G(U),H(U))
+        &\cong\Hom_{\cAb}(F(U),H(U))\oplus\Hom_{\cAb}(G(U),H(U))\\
+        \Hom_{\cAb}(H(U),F(U)\oplus G(U))
+        &\cong\Hom_{\cAb}(H(U),F(U))\oplus\Hom_{\cAb}(H(U),G(U))
+    \end{align*}
+    が成り立つ．
+\end{proof}
+
+\(\phi\colon F\to G\)を前層の射とする．
+対応\(U\mapsto \Ker{\phi_U}\)と\(U\mapsto \Coker{\phi_U}\)は
+\(X\)上の前層を定める．
+これらの前層はそれぞれ\(\PSh(X)\)における\(\phi\)の核と余核となる．
+この前層を\(\Ker{\phi}\), \(\Coker{\phi}\)とかく．
+\(\PSh(X)\)はアーベル圏の条件\eqref{abel:homTh}をみたす．
+したがって，\(\PSh(X)\)はアーベル圏となる．
+\begin{proof}[\textbf{\(\PSh(X)\)がアーベル圏になること}]
+    アーベル圏の条件\eqref{abel:ker}, \eqref{abel:homTh}を確かめる．
+
+    \eqref{abel:ker} 
+    上で定めた2つの前層\(\Ker{\phi}\), \(\Coker{\phi}\)が
+    前層になっていることを確認する．
+
+    前層\(\Ker{\phi}\), \(\Coker{\phi}\)が
+    \(\PSh(X)\)における\(\phi\)の核と余核となることを確かめる．
+
+    \eqref{abel:homTh} 
+
+\end{proof}
 
 
 \section{層の演算}

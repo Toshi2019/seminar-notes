@@ -746,7 +746,25 @@
     関手\(\widetilde{\varPhi}_{P'}\)と
     \(\widetilde{\varPsi}_{P}\)は自然に同型である．
 \end{THM}
-
+\begin{proof}
+    \(
+        \widetilde{\varPhi}_{P'}(F)
+        =\Rder{p_2}_!\left(p_1^{-1}F\right)_{P'}
+    \), \(
+        \widetilde{\varPsi}_{P}(F)
+        =\Rder{p_2}_{\ast}\RG_{P}(p_1^{-1}F)
+    \)なので，これらを同型で結ぶ．
+    \begin{align*}
+        \widetilde{\varPhi}_{P'}(F)
+        &=\Rder{p_2}_!\left(p_1^{-1}F\right)_{P'}\\
+        &\cong\Rder{p_2}_!\RG_{P}\left(p_1^{-1}F\right)_{P'}\\
+        &\cong\Rder{p_2}_!\left(\RG_{P}\left(p_1^{-1}F\right)_{P'}\right)\\
+        &\cong\Rder{p_2}_{\ast}\left(
+            \RG_{P}\left(p_1^{-1}F\right)_{P'}
+        \right)\\
+        &\cong\Rder{p_2}_{\ast}\RG_{P}(p_1^{-1}F).
+    \end{align*}
+\end{proof}
 \begin{DFN}[{\cite[Definition 3.7.8]{KS90}}]
     \(F\in\Dlcon(E)\)とする．
     \(F\)の\textbf{フーリエ・佐藤変換} (Fourier-Sato transform) 
