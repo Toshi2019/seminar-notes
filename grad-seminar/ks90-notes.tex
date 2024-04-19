@@ -317,6 +317,8 @@
 \newcommand{\cY}{\mcal{Y}}
 \newcommand{\cZ}{\mcal{Z}}
 
+\newcommand{\rmD}{\mathrm{D}}
+
 
 \newcommand{\scA}{\mathscr{A}}
 \newcommand{\scB}{\mathscr{B}}
@@ -327,6 +329,7 @@
 \newcommand{\scN}{\mathscr{N}}
 \newcommand{\scO}{\mathscr{O}}
 \newcommand{\scR}{\mathscr{R}}
+\newcommand{\scS}{\mathscr{S}}
 \newcommand{\scV}{\mathscr{V}}
 
 \newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
@@ -398,8 +401,22 @@
 \newcommand{\Db}{\mathord{\mathscr{D}b}}
 \newcommand{\Conti}{\mathord{\mathscr{C}}}
 
-\newcommand{\mres}[2][]{{{#1}\rvert}_{#2}}
+\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
 \newcommand{\blk}{\mathord{\ \cdot\ }}
+
+\newcommand{\tens}[1][]{\mathbin{\otimes_{\raise1.5ex\hbox to-.1em{}{#1}}}}
+\newcommand{\ttens}[1][]{\mathbin{\mathop{\overset{\mathrm{}}{\tens}}_{#1}}}
+
+\newcommand{\etens}{\mathbin{\boxtimes}}
+\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
+\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+%\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
+\newcommand{\detens}{\underline{\etens}}
+\newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
+\newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
+
+\newcommand{\letens}[1][]{\mathbin{\mathop{\overset{\mathrm{L}}{\etens}}_{#1}}}
 
 % =================================
 
@@ -1525,6 +1542,10 @@ $\cat$の三角とは射の列
             \mres[s_i]{U_{i}\cap U_j}-\mres[s_j]{U_{i}\cap U_j}
         \right)_{i,j}
     \]で定める．    
+    \begin{enumerate}[(S1)]
+        \item \(F(U)\)での完全性．\label{shv-1}
+        \item \(\prod_{i\in I}^{}F(U_i)\)での完全性．\label{shv-2}
+    \end{enumerate}
 \end{DFN}
 
 \begin{PRP}\label{prp222}
@@ -1535,7 +1556,10 @@ $\cat$の三角とは射の列
     \(X\)上の前層\(F\)に対し，
     層\(F^{\dag}\)と射\(\theta\colon F\to F^{\dag}\)で
 \end{PRP}
-
+\begin{align}
+    \left(\Ker\phi\right)_x&=\Ker{\phi_x},\\
+    \left(\Coker\phi\right)_x&=\Coker{\phi_x}
+\end{align}
 \begin{PRP}\label{prp224}
     \(X\)上のアーベル群の層の圏\(\Sh(X)\)はアーベル圏である．
 \end{PRP}
@@ -1587,26 +1611,303 @@ $\cat$の三角とは射の列
     N(U).
     }}\]
 \end{CMT*}
-
+\begin{equation}
+    \Sh(X)=\Mod(\zz_X).
+\end{equation}
 \subsection*{解層\(\HOM\)}
 \(\scR\)を\(X\)上の環の層とし，\(F\)と\(G\)を\(\scR\)加群とする．
 次の前層を考える．
-\begin{equation}
+\begin{equation}\label{eq224}
     U\mapsto \Hom_{\mres[\scR]{U}}(\mres[F]{U},\mres[G]{U}).
 \end{equation}
 この前層はアーベル群の層となる（\(\scR\)が
 可換なら\(\scR\)加群の層となる）．
 
+\begin{proof}[\textbf{層になることの証明}]
+    (S\ref{shv-1}) 
+    \(U\)を\(X\)の開集合とし，
+    \(\left(U_i\right)_{i\in I}\)を\(U\)の開被覆とする．
+    次の列が完全になることを示す．
+    \[
+        0\to \Hom_{\mres[\scR]{U}}(\mres[F]{U},\mres[G]{U})
+        \to \prod_{i\in I}\Hom_{\mres[\scR]{U_i}}(\mres[F]{U_i},\mres[G]{U_i}).
+    \]
+    層の射\(\phi\colon \mres[F]{U}\to \mres[G]{U}\)が
+    各\(U_i\)上\(\mres[\phi]{U_i}=0\)となるとする．
+    このとき\(\phi=0\)となることを示す．
+    \(V\)を\(U\)の開集合とし，
+    \(s\)を\(\mres[F]{U}(V)\)の切断とする．
+    \((V\cap U_i)_i\)は\(V\)の開被覆となる．
+    いま\(\phi_V(s)\)は\(\mres[G]{U}(V)\)の切断で，
+    各\(U_i\cap V\)上\[
+        \mres[\phi_V(s)]{V\cap U_i}
+        =\phi_{V\cap U_i}(\mres[s]{V\cap U_i})
+        =0
+    \]をみたす．
+    したがって，層\(\mres[G]{U}\)の条件 (S\ref{shv-1}) を\(V\subset U\), 
+    \(\left(V\cap U_i\right)_i\)に対して用いると
+    \(\phi_{V}(s)=0\)が成り立つ．
+    よって，\(\phi_V=0\)が各\(V\in\Op(U)\)が成り立つので\(\phi=0\)である．
 
+    (S\ref{shv-2}) 
+    \(U\)を\(X\)の開集合とし，
+    \(\left(U_i\right)_{i\in I}\)を\(U\)の開被覆とする．
+    次の列が完全になることを示す．
+    {\small\[
+        \Hom_{\mres[\scR]{U}}(\mres[F]{U},\mres[G]{U})
+        \to \prod_{i\in I}\Hom_{\mres[\scR]{U_i}}(\mres[F]{U_i},\mres[G]{U_i}).
+        \to \prod_{i, j\in I}\Hom_{\mres[\scR]{U_i\cap U_j}}(\mres[F]{U_i\cap U_j},\mres[G]{U_i\cap U_j}).
+    \]}
+    層の射の族\(\left(
+        \phi_{i}\colon \mres[F]{U_i}\to \mres[G]{U_i}
+    \right)_{i\in I}\)が各\(U_{i}\cap U_{j}\)で\(
+        \mres[\phi_i]{U_i\cap U_j}=\mres[\phi_j]{U_i\cap U_j}
+    \)をみたすとする．
+    このとき，層の射\(\phi\colon \mres[F]{U}\to\mres[G]{U}\)で
+    各\(i\in I\)に対し\(\mres[\phi]{U_i}=\phi_i\)をみたすもの
+    が存在することを示す．
+    \(V\subset U\)を開集合とする．
+    \((V\cap U_i)_i\)は\(V\)の開被覆である．
+    \(\phi_V\colon\mres[F]{U}(V)\to\mres[G]{U}(V)\)を以下のように定める．
+    \(s\in\mres[F]{U}(V)\)を切断とする．
+    \(\left(
+        \phi_{i,V\cap U_i}(\mres[s]{V\cap U_i})
+    \right)\in\prod_{i}\mres[G]{U}(V\cap U_i)\)は
+    各\(i,j\in I\)に対して
+    \begin{align*}
+        \mres[{
+            \phi_{i,V\cap U_i}\left(\mres[s]{V\cap U_i}\right)
+        }]{V\cap U_i\cap U_j}
+        &=
+        \mres[{
+            \left(\mres[\phi_i]{U_i\cap U_j}\right)
+        }]{V\cap U_i\cap U_j}\left(\mres[s]{V\cap U_i\cap U_j}\right)\\
+        &=
+        \mres[{
+            \left(\mres[\phi_j]{U_i\cap U_j}\right)
+        }]{V\cap U_i\cap U_j}\left(\mres[s]{V\cap U_i\cap U_j}\right)\\
+        &=
+        \mres[{
+            \phi_{j,V\cap U_j}\left(\mres[s]{V\cap U_i}\right)
+        }]{V\cap U_i\cap U_j}
+    \end{align*}
+    をみたす．
+    したがって層\(\mres[G]{U}\)の条件 (S\ref{shv-2}) から，
+    \(t\in\mres[G]{U}(V)\)で各\(i\in I\)に対して\(
+        \mres[t]{V\cap U_i}
+        =\phi_{i,V\cap U_i}(\mres[s]{V\cap U_i})
+    \)をみたすものがただひとつ存在する．これを\(\phi_V(s)\)と定める．
+    \(V\)に対して\(\phi_V\)を対応させる操作は，
+    開集合の包含\(W\subset V\)に対し\(
+        \mres[\phi_V(s)]{W}=\phi_W(\mres[s]{W})
+    \)をみたすので，制限射と可換になり層の射を定める．
+    この\(\phi\)は各\(V\cap U_i\)で\[
+        \mres[\phi]{V\cap U_i}(\mres[s]{V\cap U_i})
+        =\mres[\phi(s)]{V\cap U_i}
+        =\phi_{i,V\cap U_i}(\mres[s]{V\cap U_i})
+    \]をみたすので，各\(i\in I\)に対し\(
+        \mres[\phi]{U_i}=\phi_i
+    \)をみたす．
+\end{proof}
 
+\begin{DFN}
+    \eqref{eq224}で定めた層を\(\HOM_{\scR}(F,G)\)とかき，
+    \(F\)の\(G\)における（\(\scR\)上の）解層とよぶ．
+\end{DFN}
 
+一般に，自然な射
+\begin{equation}
+    \left(\HOM_{\scR}(F,G)\right)_{x}
+    \to
+    \Hom_{\scR_{x}}(F_{x},G_{x})
+\end{equation}
+は単射でも全射でもない．構成から次が成り立つ．
+\begin{equation}
+    \Gamma\left(X;\HOM_{\scR}(F,G)\right)
+    =\Hom_{\scR}(F,G).
+\end{equation}
+\begin{proof}
+    \begin{align*}
+        \Gamma\left(X;\HOM_{\scR}(F,G)\right)
+        &=\Hom_{\mres[\scR]{X}}(\mres[F]{X},\mres[G]{X})\\    
+        &=\Hom_{\scR}(F,G).    
+    \end{align*}        
+\end{proof}
 
+\subsection*{テンソル積\(\ttens\)}
+\begin{DFN}
+    前層\(U\mapsto F(U)\ttens[\scR(U)]G(U)\)に
+    対応する層を\(F\ttens[\scR]G\)とかき，
+    \(F\)と\(G\)の（\(\scR\)上の）テンソル積とよぶ．
+\end{DFN}
 
+\begin{equation}
+    \left(F\ttens[\scR]G\right)_x
+    =F_x\ttens[\scR_x]G_x.
+\end{equation}
+\begin{equation}
+    F\ttens[\scR]\left(H\ttens[\scS]G\right)
+    \cong
+    \left(F\ttens[\scR]H\right)\ttens[\scS]G.
+\end{equation}
 
+\begin{PRP}\label{prp229}
+    \begin{align}
+        \HOM_{\scR}\left(H\ttens[\scS]F,G\right)
+        &\cong
+        \HOM_{\scR}\left(F,\HOM_{\scS}(H,G)\right)\label{eq229}\\
+        &\cong
+        \HOM_{\scS}\left(H,\HOM_{\scR}(F,G)\right).\notag
+    \end{align}
+\end{PRP}
 
+\begin{CRL}
+    命題\ref{prp229}と同じ状況のとき，次の自然な射が存在する．
+    \begin{align}
+        \HOM_{\scR}(F,G)&\ttens[\scS]F\to G\quad\text{in \(\Mod(\scR)\)},\label{eq2210}\\
+        \HOM_{\scR}(F,G)\ttens[\scS]H
+        \to&\HOM_{\scR}\left(F,G\ttens[\scS]H\right)
+        \quad\text{in \(\Mod(\scS)\)},\label{eq2211}\\
+        \HOM_{\scR}(F,G)
+        \to
+        \HOM_{\scR^{\op}}&(
+            \HOM_{\scR}(G,\scR),\HOM_{\scR}(F,\scR)
+        )\quad\text{in \(\Mod(\scS)\)}.\label{eq2212}
+    \end{align}
+\end{CRL}
+\begin{proof}
+    (i) 
+    \eqref{eq229}で\(H=\HOM_{\scR}(F,G)\in\Mod(\scS)\)とすると
+    \[
+        \HOM_{\scR}\left(\HOM_{\scR}(F,G)\ttens[\scS]F,G\right)
+        \cong
+        \HOM_{\scS}\left(\HOM_{\scR}(F,G),\HOM_{\scR}(F,G)\right)
+    \]
+    が成り立つ．
+    \(X\)での切断を見ると
+    \[
+        \Hom_{\scR}\left(\HOM_{\scR}(F,G)\ttens[\scS]F,G\right)
+        \cong
+        \Hom_{\scS}\left(\HOM_{\scR}(F,G),\HOM_{\scR}(F,G)\right)
+    \]
+    右辺に属する恒等射\(1_{\HOM_{\scR}(F,G)}\)の
+    像が\eqref{eq2210}の射\[
+        \HOM_{\scR}(F,G)\ttens[\scS]F\to G
+    \]を定める．
 
+    (ii) 
+    \eqref{eq2210}に\(H\)をテンソルすると
+    \[
+        \HOM_{\scR}(F,G)\ttens[\scS]H\ttens[\scS]F\to G\ttens[\scS]H\tag*{(\(\natural\))}
+    \]
+    が定まる．
+    \eqref{eq229}を\(F=F\), \(G=G\ttens[\scS]H\), 
+    \(H=\HOM_{\scR}(F,G)\ttens[\scS]H\)に適用して
+    \begin{align*}
+        &\HOM_{\scR}\left(\HOM_{\scR}(F,G)\ttens[\scS]H\ttens[\scS]F,G\ttens[\scS]H\right)\\
+        \cong
+        &\HOM_{\scS}\left(\HOM_{\scR}(F,G)\ttens[\scS]H,\HOM_{\scR}(F,G\ttens[\scS]H)\right)
+    \end{align*}
+    が成り立つ．\(X\)での切断を取ると
+    \begin{align*}
+        &\Hom_{\scR}\left(\HOM_{\scR}(F,G)\ttens[\scS]H\ttens[\scS]F,G\ttens[\scS]H\right)\\
+        \cong
+        &\Hom_{\scS}\left(\HOM_{\scR}(F,G)\ttens[\scS]H,\HOM_{\scR}(F,G\ttens[\scS]H)\right)
+    \end{align*}
+    上の (\(\natural\)) はこの左辺に属する．
+    この像が\eqref{eq2211}の射\[
+        \HOM_{\scR}(F,G)\ttens[\scS]H
+        \to
+        \HOM_{\scR}\left(F,G\ttens[\scS]H\right)
+    \]
+    を定める．
 
-
+    (iii) 
+    \(\rmD_{\scR}F\coloneqq\HOM_{\scR}(F,\scR)\)と略記する．
+    このとき，
+    \(\rmD_{\scR}\)は\(\Mod(\scR)\)から\(\Mod(\scR^\op)\)への
+    関手を定める．
+    \eqref{eq2210}で\(F=G\), \(G=\scR\)とすると自然な射
+    \[
+        \rmD_{\scR}G\ttens[\scS]G=\HOM_{\scR}(G,\scR)\ttens[\scS]G\to \scR
+    \]
+    が定まる．これに関手\(\HOM_\scR(F,\blk)\)を適用すると
+    \[
+        \HOM_{\scR}\left(
+            F,\rmD_{\scR}G\ttens[\scS]G
+        \right)
+        \to\HOM_\scR(F,\scR)=\rmD_{\scR}F
+    \]
+    が得られる．
+    これに関手\(\HOM_{\scR^{\op}}(\blk,\rmD_{\scR}F)\)を
+    適用すると
+    \[
+        \HOM_{\scR^{\op}}(\rmD_{\scR}F,\rmD_{\scR}F)
+        \to
+        \HOM_{\scR^{\op}}\left(
+            \HOM_{\scR}\left(
+                F,\rmD_{\scR}G\ttens[\scS]G
+            \right),\rmD_{\scR}F
+        \right)
+    \]
+    が得られる．
+    いま\eqref{eq2211}で\(H=\rmD_{\scR}G\)とした
+    \begin{align*}
+        \HOM_{\scR}(F,G)\ttens[\scS]\rmD_{\scR}G
+        \to
+        \HOM_{\scR}\left(F,G\ttens[\scS]\rmD_{\scR}G\right)
+        \mathbin{{\underset{\text{\(\scS\)の可換性}}{\simar}}}
+        \HOM_{\scR}\left(F,\rmD_{\scR}G\ttens[\scS]G\right)%\quad\text{（\(\scS\)の可換性を用いた）}
+    \end{align*}
+    に関手\(
+        \HOM_{\scR^{\op}}(\blk,\rmD_{\scR}F)
+    \)を適用することで
+    \begin{align*}
+        &\HOM_{\scR^{\op}}\left(
+            \HOM_{\scR}\left(
+                F,\rmD_{\scR}G\ttens[\scS]G
+            \right),\rmD_{\scR}F
+        \right)\\
+        \to&
+        \HOM_{\scR^{\op}}\left(
+        \HOM_{\scR}(F,G)\ttens[\scS]\rmD_{\scR}G
+        ,\rmD_{\scR}F\right)
+    \end{align*}
+    という射が得られるので，これを合成すれば
+    \begin{align*}
+        \HOM_{\scR^{\op}}(\rmD_{\scR}F,\rmD_{\scR}F)
+        &\to
+        \HOM_{\scR^{\op}}\left(
+            \HOM_{\scR}\left(
+                F,\rmD_{\scR}G\ttens[\scS]G
+            \right),\rmD_{\scR}F
+        \right)\\
+        &\to
+        \HOM_{\scR^{\op}}\left(
+        \HOM_{\scR}(F,G)\ttens[\scS]\rmD_{\scR}G
+        ,\rmD_{\scR}F\right)
+    \end{align*}
+    という射が定まる．
+    最後の層は\eqref{eq229}より，
+    \[
+        \HOM_{\scS}\left(
+            \HOM_{\scR}(F,G),\HOM_{\scR^{\op}}(\rmD_{\scR}G,\rmD_{\scR}F)
+        \right)
+    \]
+    と同型である．\(X\)での切断を取れば
+    \[
+        \Hom_{\scR^{\op}}(\rmD_{\scR}F,\rmD_{\scR}F)
+        \to
+        \Hom_{\scS}\left(
+            \HOM_{\scR}(F,G),\HOM_{\scR^{\op}}(\rmD_{\scR}G,\rmD_{\scR}F)
+        \right)
+    \]
+    が得られるので，
+    この射による\(1_{\rmD_{\scR}F}\)の値が\eqref{eq2212}の射
+    \[
+        \HOM_{\scR}(F,G)\to\HOM_{\scR^{\op}}(\HOM_{\scR}(G,\scR),\HOM_{\scR}(F,\scR))
+    \]
+\end{proof}
 
 
 
