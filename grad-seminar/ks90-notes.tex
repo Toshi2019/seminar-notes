@@ -17,7 +17,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[9pt, b5paper, dvipdfmx, leqno]{jsbook}
+\documentclass[9pt, b5paper, dvipdfmx, leqno]{jsreport}
 
 % ------------------------
 % usepackage
@@ -485,7 +485,7 @@
 \date{\today 更新}
 \begin{document}
 \maketitle
-\frontmatter
+%\frontmatter
 \layout
 \chapter*{はじめに}
 2023年度から始めた\cite{KS90}のセミナーのノート．
@@ -501,7 +501,7 @@
     これらは，包含関係の逆で有向順序集合をなす．
 \end{itemize}
 \tableofcontents
-\mainmatter
+%\mainmatter
 \chapter{ホモロジー代数}
 \setcounter{section}{2}
 
@@ -1616,12 +1616,21 @@ $\cat$の三角とは射の列
 \end{equation}
 \subsection*{解層\(\HOM\)}
 \(\scR\)を\(X\)上の環の層とし，\(F\)と\(G\)を\(\scR\)加群とする．
-次の前層を考える．
-\begin{equation}\label{eq224}
-    U\mapsto \Hom_{\mres[\scR]{U}}(\mres[F]{U},\mres[G]{U}).
-\end{equation}
-この前層はアーベル群の層となる（\(\scR\)が
-可換なら\(\scR\)加群の層となる）．
+
+\begin{leftbar}
+\begin{DFN}
+    次の前層を考える．
+    \begin{equation}\label{eq224}
+        U\mapsto \Hom_{\mres[\scR]{U}}(\mres[F]{U},\mres[G]{U}).
+    \end{equation}
+    この前層はアーベル群の層となる（\(\scR\)が
+    可換なら\(\scR\)加群の層となる）．
+
+    \eqref{eq224}で定めた層を\(\HOM_{\scR}(F,G)\)とかき，
+    \(F\)の\(G\)における（\(\scR\)上の）解層とよぶ．
+\end{DFN}
+\end{leftbar}
+
 
 \begin{proof}[\textbf{層になることの証明}]
     (S\ref{shv-1}) 
@@ -1710,11 +1719,6 @@ $\cat$の三角とは射の列
     \)をみたす．
 \end{proof}
 
-\begin{DFN}
-    \eqref{eq224}で定めた層を\(\HOM_{\scR}(F,G)\)とかき，
-    \(F\)の\(G\)における（\(\scR\)上の）解層とよぶ．
-\end{DFN}
-
 一般に，自然な射
 \begin{equation}
     \left(\HOM_{\scR}(F,G)\right)_{x}
@@ -1735,11 +1739,13 @@ $\cat$の三角とは射の列
 \end{proof}
 
 \subsection*{テンソル積\(\ttens\)}
-\begin{DFN}
-    前層\(U\mapsto F(U)\ttens[\scR(U)]G(U)\)に
-    対応する層を\(F\ttens[\scR]G\)とかき，
-    \(F\)と\(G\)の（\(\scR\)上の）テンソル積とよぶ．
-\end{DFN}
+\begin{leftbar}
+    \begin{DFN}
+        前層\(U\mapsto F(U)\ttens[\scR(U)]G(U)\)に
+        対応する層を\(F\ttens[\scR]G\)とかき，
+        \(F\)と\(G\)の（\(\scR\)上の）テンソル積とよぶ．
+    \end{DFN}    
+\end{leftbar}
 
 \begin{equation}
     \left(F\ttens[\scR]G\right)_x
@@ -1751,30 +1757,33 @@ $\cat$の三角とは射の列
     \left(F\ttens[\scR]H\right)\ttens[\scS]G.
 \end{equation}
 
-\begin{PRP}\label{prp229}
-    \begin{align}
-        \HOM_{\scR}\left(H\ttens[\scS]F,G\right)
-        &\cong
-        \HOM_{\scR}\left(F,\HOM_{\scS}(H,G)\right)\label{eq229}\\
-        &\cong
-        \HOM_{\scS}\left(H,\HOM_{\scR}(F,G)\right).\notag
-    \end{align}
-\end{PRP}
-
-\begin{CRL}
-    命題\ref{prp229}と同じ状況のとき，次の自然な射が存在する．
-    \begin{align}
-        \HOM_{\scR}(F,G)&\ttens[\scS]F\to G\quad\text{in \(\Mod(\scR)\)},\label{eq2210}\\
-        \HOM_{\scR}(F,G)\ttens[\scS]H
-        \to&\HOM_{\scR}\left(F,G\ttens[\scS]H\right)
-        \quad\text{in \(\Mod(\scS)\)},\label{eq2211}\\
-        \HOM_{\scR}(F,G)
-        \to
-        \HOM_{\scR^{\op}}&(
-            \HOM_{\scR}(G,\scR),\HOM_{\scR}(F,\scR)
-        )\quad\text{in \(\Mod(\scS)\)}.\label{eq2212}
-    \end{align}
-\end{CRL}
+\begin{leftbar}
+    \begin{PRP}[テンソル・Hom 随伴]\label{prp229}
+        \begin{align}
+            \HOM_{\scR}\left(H\ttens[\scS]F,G\right)
+            &\cong
+            \HOM_{\scR}\left(F,\HOM_{\scS}(H,G)\right)\label{eq229}\\
+            &\cong
+            \HOM_{\scS}\left(H,\HOM_{\scR}(F,G)\right).\notag
+        \end{align}
+    \end{PRP}
+\end{leftbar}
+\begin{leftbar}
+    \begin{CRL}
+        命題\ref{prp229}と同じ状況のとき，次の自然な射が存在する．
+        \begin{align}
+            \HOM_{\scR}(F,G)&\ttens[\scS]F\to G\quad\text{in \(\Mod(\scR)\)},\label{eq2210}\\
+            \HOM_{\scR}(F,G)\ttens[\scS]H
+            \to&\HOM_{\scR}\left(F,G\ttens[\scS]H\right)
+            \quad\text{in \(\Mod(\scS)\)},\label{eq2211}\\
+            \HOM_{\scR}(F,G)
+            \to
+            \HOM_{\scR^{\op}}&(
+                \HOM_{\scR}(G,\scR),\HOM_{\scR}(F,\scR)
+            )\quad\text{in \(\Mod(\scS)\)}.\label{eq2212}
+        \end{align}
+    \end{CRL}
+\end{leftbar}
 \begin{proof}
     (i) 
     \eqref{eq229}で\(H=\HOM_{\scR}(F,G)\in\Mod(\scS)\)とすると
@@ -1907,6 +1916,7 @@ $\cat$の三角とは射の列
     \[
         \HOM_{\scR}(F,G)\to\HOM_{\scR^{\op}}(\HOM_{\scR}(G,\scR),\HOM_{\scR}(F,\scR))
     \]
+    を定める．
 \end{proof}
 
 
@@ -2906,9 +2916,9 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 
 
 
-\backmatter
-\appendix
-\chapter{aa}
+%\backmatter
+%\appendix
+%\chapter{aa}
 %===============================================
 % 参考文献スペース
 %===============================================
