@@ -1925,9 +1925,11 @@ $\cat$の三角とは射の列
 
 
 \section{層の演算}
-\subsection{部分集合から定まる関手}
+\subsection*{部分集合から定まる関手}
 \(X\)を位相空間とする．
-\(Z\)を\(X\)の部分集合とし，\(j\colon Z\hookrightarrow X\)を
+\(X\)の部分集合\(Z\)から定まる関手を考える．
+\(Z\)を\(X\)からの誘導位相で部分位相空間とみなし，
+\(j\colon Z\hookrightarrow X\)を
 包含写像とする．
 \paragraph{制限の一般的な定義}
 \(F\in\Sh(X)\)に対し，
@@ -1945,26 +1947,110 @@ $\cat$の三角とは射の列
     \end{align*}
     となる．
 \end{proof}
+
+自然な射\(\Gamma(X;F)\to\Gamma(Z;\mres[F]{Z})\)が存在する．
+\(s\in\Gamma(X;F)\)のとき，その\(\Gamma(Z;\mres[F]{Z})\)での
+像を\(\mres[s]{Z}\)とかき，\(s\)の\(Z\)への制限とよぶ．
+\begin{proof}[\textbf{射の構成}]
+    順像・逆像随伴の単位\(
+        \varepsilon\colon\id\to j_{\ast}j^{-1}
+    \)を\(F\)に適用すると射\(
+        \varepsilon_F\colon F\to j_{\ast}j^{-1}F
+    \)が得られる．
+    これに\(X\)から1点への連続写像\(a_X\colon X\to\{\pt\}\)から
+    定まる順像関手\({a_X}_{\ast}\colon \Sh(X)\to\cAb\)を
+    施すことで
+    \[
+        \Gamma(X;F)\cong {a_X}_{\ast}F
+        \overset{{a_X}_{\ast}(\varepsilon_F)}{\longrightarrow} {a_X}_{\ast}j_{\ast}j^{-1}F
+        \cong {a_Z}_{\ast}(\mres[F]{Z})
+        \cong\Gamma(Z;\mres[F]{Z})
+    \]
+    が得られる．
+\end{proof}
+
 \paragraph{順像を用いた閉集合での定義}
 \(Z\)が閉集合であるときを考える．
 このとき，\(F\in\Sh(X)\)に対し，
 \[
     F_Z\coloneqq j_{\ast}j^{-1}F
 \]
-とおく．
-\begin{CMT}\label{CMT:supp-cut}
+とおく．\footnote{\label{CMT:supp-cut}
     池ノート\cite{Ike21}や竹内\cite{Tak17}だと，
     固有順像 (\ref{ssec:pdimg}項) を
     定義してから，\(j_{!}j^{-1}F\)で切り落としを定義している．
     閉集合からの包含写像に対しては\(j_!=j_\ast\)であり，
     これらの定義は一致する．
-\end{CMT}
+}
+このとき，自然な射\(F\to \mres[F]{Z}\)が定まる．
+さらに，
+\begin{equation}\label{eq233}
+    \begin{cases}
+        \mres[F_{Z}]{Z}\cong \mres[F]{Z},\\
+        \mres[F_{Z}]{X-Z}\cong 0
+    \end{cases}
+\end{equation}
+が成り立つ．とくに\(x\in X\)ならば\((F_Z)_x=F_x\)であり，
+\(x\notin Z\)ならば\((F_Z)_x=0\)である．
+\begin{proof}
+    注意\ref{rmk253}を先取りするのがよいと思う．
+    \(j\colon Z\hookrightarrow X\)は固有写像である．
+    実際，\(Z\)の閉集合は\(X\)の閉集合でもあるので\(j\)は閉写像だし，
+    1点\(x\in X\)の逆像\(j^{-1}(x)\)は，
+    \(x\in Z\)のとき\(\{x\}\)，\(x\notin Z\)のとき\(\varnothing\)で，
+    どちらも有限集合なのでコンパクトである．
+    よって，注意\ref{rmk253}より，
+    \(Z\)上の層\(G\)と\(X\)の点\(x\in X\)に対して，
+    \[
+        \left(j_{\ast}G\right)_x
+        \cong
+        \Gamma(j^{-1}(x);\mres[G]{j^{-1}(x)})
+    \]
+    が成り立つ．
+    
+    \eqref{eq233}の1つ目の式を示す．
+    自然な射\(F\to F_Z\)に\(j^{-1}\)を適用して
+    \(Z\)上の層の射\(\mres[F]{Z}\to\mres[F_Z]{Z}\)を得る．
+    これらの\(x\in Z\)における茎が同型であることを示す．
+    \begin{align*}
+        \left(\mres[F]{Z}\right)_x
+        &\cong \left(j^{-1}F\right)_x\\
+        &\cong F_{j(x)}=F_x
+    \end{align*}
+    である．一方
+    \begin{align*}
+        \left(\mres[F_Z]{Z}\right)_x
+        &\cong \left(j^{-1}j_{\ast}j^{-1}F\right)_x\\
+        &\cong \left(j_{\ast}j^{-1}F\right)_x\\
+        &\cong \Gamma(j^{-1}(x);\mres[j^{-1}F]{j^{-1}(x)})\\
+        &\cong \Gamma(\{x\};\mres[j^{-1}F]{\{x\}})\\
+        &\cong F_x
+    \end{align*}
+    である．よって，両者は一致する．
+    \textcolor{red}{最後の同型はひょっとするとハウスドルフ性がいるかも}
+
+    \eqref{eq233}の2つ目の式を示す．
+    \(i\colon X-Z\hookrightarrow Z\)を\(X-Z\)から\(X\)への
+    包含写像とする．
+    \(F_Z\)に\(i^{-1}\)を適用して
+    \(X-Z\)上の層\(\mres[F_Z]{X-Z}\)を得る．
+    これの\(x\in X-Z\)における茎を計算する．
+    \begin{align*}
+        \left(\mres[F_Z]{X-Z}\right)_x
+        &\cong \left(i^{-1}j_{\ast}j^{-1}F\right)_x\\
+        &\cong \left(j_{\ast}j^{-1}F\right)_x\\
+        &\cong \Gamma(j^{-1}(x);\mres[j^{-1}F]{j^{-1}(x)})\\
+        &\cong \Gamma(\varnothing;\mres[j^{-1}F]{\varnothing})\\
+        &\cong 0.
+    \end{align*}
+    よって，\eqref{eq233}が成り立つ．
+\end{proof}
 
 \subsection{固有順像}\label{ssec:pdimg}
 
 \(f_!\colon\Sh(X)\to\Sh(Y)\)
 について，\(f\)がプロパーなら\(f_!\cong f_\ast\)である．
-つまり，コメント\ref*{CMT:supp-cut}の主張は
+つまり，脚注 \ref{CMT:supp-cut}の主張は
 もっと一般に\(f\)がプロパーなら成り立つ．
 
 \section{分解}

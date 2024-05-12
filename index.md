@@ -10,8 +10,9 @@
 [](位相空間まとめノート[(pdf)](topo/topo.pdf))
 [](ツェルナー和訳[(pdf)](zerner/zerner1971.pdf))
 
-[](KS82和訳[(pdf)](KS82-ja/KS82-ja.pdf))
+KS82和訳[(pdf)](KS82-ja/KS82-ja.pdf)
 
+全体的なまとめ[(pdf)](grad-seminar/ks90-notes.pdf)
 
 ## 院生ゼミ
 

@@ -8,33 +8,32 @@
 \contentsline {section}{\numberline {2.1}前層}{12}{section.2.1}
 \contentsline {section}{\numberline {2.2}層}{15}{section.2.2}
 \contentsline {section}{\numberline {2.3}層の演算}{20}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}部分集合から定まる関手}{20}{subsection.2.3.1}
-\contentsline {paragraph}{制限の一般的な定義}{20}{section*.19}
-\contentsline {paragraph}{順像を用いた閉集合での定義}{20}{section*.20}
-\contentsline {subsection}{\numberline {2.3.2}固有順像}{20}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}分解}{21}{section.2.4}
-\contentsline {section}{\numberline {2.5}局所コンパクト空間上の層}{21}{section.2.5}
-\contentsline {section}{\numberline {2.6}弱大域次元}{22}{section.2.6}
-\contentsline {section}{\numberline {2.7}非特性変形補題}{24}{section.2.7}
-\contentsline {section}{\numberline {2.9}実・複素多様体上の層の例}{26}{section.2.9}
-\contentsline {subsection}{\numberline {2.9.1}層\(\mathord {\mathscr {C}}_X^0\)}{26}{subsection.2.9.1}
-\contentsline {subsection}{\numberline {2.9.2}層\(\Lloc [dx]\)}{26}{subsection.2.9.2}
-\contentsline {subsection}{\numberline {2.9.3}環付き空間}{26}{subsection.2.9.3}
-\contentsline {subsection}{\numberline {2.9.4}\(C^\alpha \)多様体}{27}{subsection.2.9.4}
-\contentsline {subsection}{\numberline {2.9.5}向きづけ，微分形式，密度}{27}{subsection.2.9.5}
-\contentsline {subsection}{\numberline {2.9.6}分布と超関数}{27}{subsection.2.9.6}
-\contentsline {subsection}{\numberline {2.9.7}ド・ラーム複体}{28}{subsection.2.9.7}
-\contentsline {subsection}{\numberline {2.9.8}複素多様体}{28}{subsection.2.9.8}
-\contentsline {subsection}{\numberline {2.9.9}ドルボー複体}{29}{subsection.2.9.9}
-\contentsline {subsection}{\numberline {2.9.10}\(\mathscr {O}_X\)上の演算}{30}{subsection.2.9.10}
-\contentsline {subsection}{\numberline {2.9.11}\(\mathscr {O}_X\)のコホモロジー}{30}{subsection.2.9.11}
-\contentsline {subsection}{\numberline {2.9.12}正則関数の境界値}{30}{subsection.2.9.12}
-\contentsline {subsection}{\numberline {2.9.13}佐藤超関数}{31}{subsection.2.9.13}
-\contentsline {subsection}{\numberline {2.9.14}局所定数層の例}{31}{subsection.2.9.14}
-\contentsline {chapter}{\numberline {第3章}Poincar\'e-Verdier 双対性}{33}{chapter.3}
-\contentsline {section}{\numberline {3.1}上付きびっくり}{33}{section.3.1}
-\contentsline {subparagraph}{\cite [V, 6.1]{B+84}}{33}{section*.22}
-\contentsline {subsection}{\numberline {3.1.1}構成}{34}{subsection.3.1.1}
-\contentsline {paragraph}{\(f\)に関する仮定}{34}{section*.23}
-\contentsline {paragraph}{構成}{35}{section*.25}
-\contentsline {chapter}{参考文献}{36}{chapter*.26}
+\contentsline {paragraph}{制限の一般的な定義}{20}{section*.20}
+\contentsline {paragraph}{順像を用いた閉集合での定義}{21}{section*.21}
+\contentsline {subsection}{\numberline {2.3.1}固有順像}{22}{subsection.2.3.1}
+\contentsline {section}{\numberline {2.4}分解}{22}{section.2.4}
+\contentsline {section}{\numberline {2.5}局所コンパクト空間上の層}{22}{section.2.5}
+\contentsline {section}{\numberline {2.6}弱大域次元}{23}{section.2.6}
+\contentsline {section}{\numberline {2.7}非特性変形補題}{25}{section.2.7}
+\contentsline {section}{\numberline {2.9}実・複素多様体上の層の例}{27}{section.2.9}
+\contentsline {subsection}{\numberline {2.9.1}層\(\mathord {\mathscr {C}}_X^0\)}{27}{subsection.2.9.1}
+\contentsline {subsection}{\numberline {2.9.2}層\(\Lloc [dx]\)}{27}{subsection.2.9.2}
+\contentsline {subsection}{\numberline {2.9.3}環付き空間}{27}{subsection.2.9.3}
+\contentsline {subsection}{\numberline {2.9.4}\(C^\alpha \)多様体}{28}{subsection.2.9.4}
+\contentsline {subsection}{\numberline {2.9.5}向きづけ，微分形式，密度}{28}{subsection.2.9.5}
+\contentsline {subsection}{\numberline {2.9.6}分布と超関数}{28}{subsection.2.9.6}
+\contentsline {subsection}{\numberline {2.9.7}ド・ラーム複体}{29}{subsection.2.9.7}
+\contentsline {subsection}{\numberline {2.9.8}複素多様体}{29}{subsection.2.9.8}
+\contentsline {subsection}{\numberline {2.9.9}ドルボー複体}{30}{subsection.2.9.9}
+\contentsline {subsection}{\numberline {2.9.10}\(\mathscr {O}_X\)上の演算}{31}{subsection.2.9.10}
+\contentsline {subsection}{\numberline {2.9.11}\(\mathscr {O}_X\)のコホモロジー}{31}{subsection.2.9.11}
+\contentsline {subsection}{\numberline {2.9.12}正則関数の境界値}{31}{subsection.2.9.12}
+\contentsline {subsection}{\numberline {2.9.13}佐藤超関数}{32}{subsection.2.9.13}
+\contentsline {subsection}{\numberline {2.9.14}局所定数層の例}{32}{subsection.2.9.14}
+\contentsline {chapter}{\numberline {第3章}Poincar\'e-Verdier 双対性}{34}{chapter.3}
+\contentsline {section}{\numberline {3.1}上付きびっくり}{34}{section.3.1}
+\contentsline {subparagraph}{\cite [V, 6.1]{B+84}}{34}{section*.23}
+\contentsline {subsection}{\numberline {3.1.1}構成}{35}{subsection.3.1.1}
+\contentsline {paragraph}{\(f\)に関する仮定}{35}{section*.24}
+\contentsline {paragraph}{構成}{36}{section*.26}
+\contentsline {chapter}{参考文献}{37}{chapter*.27}
