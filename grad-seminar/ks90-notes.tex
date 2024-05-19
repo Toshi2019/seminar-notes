@@ -441,13 +441,15 @@
 \newtheorem{DFN}[Axiom]{定義}
 \newtheorem{THM}[Axiom]{定理}
 \newtheorem*{THM*}{定理}
+\newtheorem{STT}{主張}[chapter]
+\newtheorem*{STT*}{主張}
 \newtheorem{PRP}[Axiom]{命題}
 \newtheorem{LMM}[Axiom]{補題}
 \newtheorem{CRL}[Axiom]{系}
 \newtheorem{EG}[Axiom]{例}
 \newtheorem{CNV}[Axiom]{規約}
 \newtheorem{RMK}[Axiom]{注意}
-\newtheorem{CMT}[Axiom]{コメント}
+\newtheorem{CMT}{コメント}[chapter]
 \newtheorem*{CMT*}{コメント}
 
 
@@ -1594,7 +1596,7 @@ $\cat$の三角とは射の列
 
 自明な方法で\(\scR\)加群の射の概念を定義することができる．
 
-\begin{CMT*}
+\begin{CMT}
     次のようにして射を定める．
     \(\scR\)加群の射\(\phi\colon M\to N\)とは，層の射\(\phi\)で
     \(\scR\)作用と両立する，すなわち任意の\(U\)に対し，
@@ -1610,7 +1612,7 @@ $\cat$の三角とは射の列
     &
     N(U).
     }}\]
-\end{CMT*}
+\end{CMT}
 \begin{equation}
     \Sh(X)=\Mod(\zz_X).
 \end{equation}
@@ -1931,7 +1933,7 @@ $\cat$の三角とは射の列
 \(Z\)を\(X\)からの誘導位相で部分位相空間とみなし，
 \(j\colon Z\hookrightarrow X\)を
 包含写像とする．
-\paragraph{制限の一般的な定義}
+\subsubsection*{制限の一般的な定義}
 \(F\in\Sh(X)\)に対し，
 \begin{align}
     F\rvert_Z&\coloneqq j^{-1}F,\\
@@ -1969,7 +1971,8 @@ $\cat$の三角とは射の列
     が得られる．
 \end{proof}
 
-\paragraph{順像を用いた閉集合での定義}
+\subsubsection*{切り落とし}
+\paragraph{ふつうの順像を用いた閉集合での定義}
 \(Z\)が閉集合であるときを考える．
 このとき，\(F\in\Sh(X)\)に対し，
 \[
@@ -1984,11 +1987,11 @@ $\cat$の三角とは射の列
 }
 このとき，自然な射\(F\to \mres[F]{Z}\)が定まる．
 さらに，
-\begin{equation}\label{eq233}
+\begin{equation}\label{eq2313}
     \begin{cases}
         \mres[F_{Z}]{Z}\cong \mres[F]{Z},\\
         \mres[F_{Z}]{X-Z}\cong 0
-    \end{cases}
+    \end{cases}\tag{2.3.13}
 \end{equation}
 が成り立つ．とくに\(x\in X\)ならば\((F_Z)_x=F_x\)であり，
 \(x\notin Z\)ならば\((F_Z)_x=0\)である．
@@ -2008,7 +2011,7 @@ $\cat$の三角とは射の列
     \]
     が成り立つ．
     
-    \eqref{eq233}の1つ目の式を示す．
+    \eqref{eq2313}の1つ目の式を示す．
     自然な射\(F\to F_Z\)に\(j^{-1}\)を適用して
     \(Z\)上の層の射\(\mres[F]{Z}\to\mres[F_Z]{Z}\)を得る．
     これらの\(x\in Z\)における茎が同型であることを示す．
@@ -2027,9 +2030,9 @@ $\cat$の三角とは射の列
         &\cong F_x
     \end{align*}
     である．よって，両者は一致する．
-    \textcolor{red}{最後の同型はひょっとするとハウスドルフ性がいるかも}
+    %\textcolor{red}{最後の同型はひょっとするとハウスドルフ性がいるかも}
 
-    \eqref{eq233}の2つ目の式を示す．
+    \eqref{eq2313}の2つ目の式を示す．
     \(i\colon X-Z\hookrightarrow Z\)を\(X-Z\)から\(X\)への
     包含写像とする．
     \(F_Z\)に\(i^{-1}\)を適用して
@@ -2043,9 +2046,239 @@ $\cat$の三角とは射の列
         &\cong \Gamma(\varnothing;\mres[j^{-1}F]{\varnothing})\\
         &\cong 0.
     \end{align*}
-    よって，\eqref{eq233}が成り立つ．
+    よって，\eqref{eq2313}が成り立つ．
+\end{proof}
+\begin{proof}[\textbf{別証明\((\mathbf{2024/05/20})\)}]
+    注意\ref{rmk253}の先取りは要らない．
+    次の主張が一般に成り立つ．
+    \begin{leftbar}
+    \begin{STT}\label{STT21}
+        位相空間\(X\)の部分集合\(Z\)に\(X\)の相対位相を入れて
+        部分空間とする．
+        \(j\colon Z\hookrightarrow X\)を包含写像とする．
+        \(Z\)上の全ての層\(G\)に対して\(
+            j^{-1}j_{\ast}G\cong G
+        \)が成り立つ．
+    \end{STT}
+    \end{leftbar}
+    \begin{center}        
+    \begin{minipage}{.9\textwidth}
+    %\begin{redleftbar}
+    \begin{proof}[\textbf{主張\(\mathbf{\ref{STT21}}\)の証明}]
+        順像と逆像に関する随伴の余単位\(
+            \eta\colon j^{-1}j_{\ast}\to1
+        \)を\(G\)に適用して，\(Z\)上の層の射\[
+            \eta_G\colon j^{-1}j_{\ast}G\to G
+        \]を得る．これらが茎ごとに同型であることを示す．
+        \(x\in Z\)とする．
+        \begin{align*}
+            \left(j^{-1}j_{\ast}G\right)_x
+            &\cong
+            \left(j_{\ast}G\right)_{j(x)}\\
+            &=
+            \left(j_{\ast}G\right)_{x}\\
+            &=
+            \indlim[U\in I_{x}^{X}]G\left(j^{-1}(U)\right)\\
+            &=
+            \indlim[U\in I_{x}^{X}]G\left(U\cap Z\right)\\
+            &=
+            \indlim[V\in I_{x}^{Z}]G\left(V\right)\\
+            &= G_{x}.
+        \end{align*}
+        したがって，層として\(
+            j^{-1}j_{\ast}G\cong G
+        \)である．
+    \end{proof}
+    %\end{redleftbar}
+    \end{minipage}
+    \end{center}
+    この主張を用いると\eqref{eq2313}の前半は次のようになる．
+    \begin{align*}
+        \mres[F_Z]{Z}
+        &=j^{-1}j_{\ast}j^{-1}F\\
+        &\underset{\eta_{j^{-1}F}}{\simar}j^{-1}F=\mres[F]{Z}
+    \end{align*}
+    である．
+
+    \eqref{eq2313}の後半には次の主張を用いる．
+    \begin{leftbar}
+    \begin{STT}\label{STT22}
+        \(Z\)を\(X\)の閉集合とし，\(j\colon Z\hookrightarrow X\)を
+        包含写像とする．このとき\(Z\)上の層\(G\)に対し，次が成り立つ．
+        \[\left(j_{\ast}G\right)_x
+        \cong\begin{cases}
+            G_x& (x\in Z),\\
+            0&(x\in X-Z).
+        \end{cases}\]
+    \end{STT}
+    \end{leftbar}
+    \begin{center}
+        \begin{minipage}{.9\textwidth}
+        %\begin{redleftbar}
+            \begin{proof}[\textbf{主張\(\mathbf{\ref{STT22}}\)の証明}]
+                \(x\in Z\)の場合は主張\ref{STT21}で示した．
+                \(x\in X-Z\)の場合の主張（閉集合であることが必要）を示す．
+                \(x\in X-Z\)に対し，
+                \begin{align*}
+                    \left(j_{\ast}G\right)_{x}
+                    &=\indlim[U\in I_{x}^X]G(j^{-1}(U))\\
+                    &=\indlim[U\in I_{x}^X]G(U\cap Z)\\
+                    &=\indlim[V\in I_{x}^Z]G(V)\\
+                    &=\indlim[V\in \varnothing]G(V)\\
+                    &=0
+                \end{align*}
+                である．
+            \end{proof}
+        %\end{redleftbar}
+        \end{minipage}
+     \end{center}        
+    
+    以上の主張を用いると後半の証明は以下のようになる．
+    \(i\colon X-Z\hookrightarrow X\)を開集合の包含写像とする．
+    \(x\in X-Z\)に対し，
+    \begin{align*}
+        \left(\mres[F_Z]{X-Z}\right)_{x}
+        &=\left(i^{-1}j_{\ast}j^{-1}F\right)_x\\
+        &=\left(j_{\ast}j^{-1}F\right)_{i(x)}\\
+        &=\left(j_{\ast}j^{-1}F\right)_{x}\\
+        &=0
+    \end{align*}
+    よって，\eqref{eq2313}が成り立つ．
 \end{proof}
 
+\paragraph{開集合での定義}
+\(Z\)が\(X\)の局所閉集合の場合でも，
+\eqref{eq2313}をみたす\(X\)上の層\(F_Z\)を構成することができる．
+まず，開集合の場合に構成する．
+\(Z\)が\(X\)の開集合のとき，\(F_Z\)を次のように定める．
+\[
+    F_Z\coloneqq \Ker\left(F\to F_{X-Z}\right).
+\]
+これは\eqref{eq2313}をみたす．
+\begin{proof}
+    1つ目の式：\(\iota\colon F_Z\to F\)を
+    核の普遍性から定まる射とする．
+    \(i\colon Z\hookrightarrow X\)を包含写像とする．
+    \(i^{-1}\)を\(\iota\)に適用することで\[
+        i^{-1}(\iota)\colon i^{-1}F_Z\to i^{-1}F
+    \]が定まる．この射が茎ごとの同型を誘導することを示す．
+    \(x\in Z\)とする．\[
+        \left(i^{-1}F\right)_{x}=F_{i(x)}=F_x
+    \]である．また，閉集合\(X-Z\)と\(x\in Z\)に対し
+    主張\ref{STT22}の2つ目の式が成り立つことに注意すると，
+    \begin{align*}
+        \left(i^{-1}F_Z\right)_{x}
+        &=\left(F_Z\right)_{i(x)}=\left(F_Z\right)_x\\
+        &=\Ker\left(F\to F_{X-Z}\right)_{x}\\
+        &=\Ker\left(F_{x}\to \left(F_{X-Z}\right)_{x}\right)\\
+        &=\Ker\left(F_{x}\to 0\right)\\
+        &=F_{x}
+    \end{align*}
+    となる．よって\(
+        \mres[F_{Z}]{Z}\cong \mres[F]{Z}
+    \)が成り立つ．
+
+    2つ目の式：\(x\in X-Z\)とし，
+    \(j\colon X-Z\hookrightarrow X\)を包含写像とする．
+    閉集合\(X-Z\)と\(x\in X-Z\)に対し今度は
+    主張\ref{STT22}の1つ目の式が成り立つことに注意すると，
+    \begin{align*}
+        \left(\mres[F_Z]{X-Z}\right)_{x}
+        &=\left(j^{-1}F_Z\right)_{x}=\left(F_Z\right)_{j(x)}\\
+        &=\left(F_Z\right)_{x}\\
+        &=\Ker\left(F\to F_{X-Z}\right)_{x}\\
+        &=\Ker\left(F_{x}\to \left(F_{X-Z}\right)_{x}\right)\\
+        &=\Ker\left(F_{x}\to F_x\right)\\
+        &=0
+    \end{align*}
+    である．よって\(\mres[F_Z]{X-Z}=0\)が成り立つ．
+\end{proof}
+\paragraph{局所閉集合での定義}
+閉集合と開集合に対して切り落としが定義できたので，
+局所閉集合\(Z\)に対して\(F_Z\)を定義する．
+一般に\(X\)の開集合\(U\)と閉集合\(A\)を用いて\(Z=U\cap A\)と
+かいておく．
+このとき\(F_Z\)を
+\[
+    F_Z\coloneqq \left(F_U\right)_A
+\]
+とおく．（\(F_Z\)が\eqref{eq2313}をみたすことの証明は以下の命題）
+この定義は\(U\)と\(A\)の選び方に依らない（以下の命題の(i)を参照）．
+
+関手\((\blk)_Z\colon F\mapsto F_Z\)の主な性質を列挙する．
+\begin{leftbar}
+\begin{PRP}\label{PRP236}
+    \(Z\)を\(X\)の局所閉部分集合とし，\(F\)を\(X\)上の層とする．
+    \begin{enumerate}[(i)]
+        \item 層\(F_Z\)は\eqref{eq2313}をみたす．
+        さらに\(X\)上の層で\eqref{eq2313}をみたすものは
+        すべて\(F_Z\)に同型である．
+        \item 関手\((\blk)_Z\colon F\mapsto F_Z\)は完全である．
+        \item \(Z'\)を\(Z\)とは別の\(X\)の局所閉部分集合とする．
+        このとき次が成り立つ．\[
+            \left(F_Z\right)_{Z'}=F_{Z\cap Z'}.
+        \]
+        \item \(Z\)が\(X\)の閉集合であるとし，
+        \(j\colon Z\hookrightarrow X\)を\(Z\)の\(X\)への
+        包含写像とする．このとき，\[F_Z=j_{\ast}j^{-1}F\]が成り立つ．
+        \item \(Z'\)を\(Z\)の閉部分集合とする（\(Z\)は局所閉）．
+        このとき，次の列は完全である．\[
+            0\to F_{Z-Z'}\to F_Z\to F_{Z'}\to 0.
+        \]
+        \item \(Z_1\)と\(Z_2\)を\(X\)の閉部分集合とする．
+        このとき列\[
+            0\to F_{Z_1\cup Z_2}\underset{\alpha}{\to}
+            F_{Z_1}\oplus F_{Z_2}\underset{\beta}{\to}
+            F_{Z_1\cap Z_2}\to0
+        \]は完全である．
+        ただし\(\alpha=\left(\alpha_1,\alpha_2\right)\)と\(
+            \beta=\left(\beta_1,-\beta_2\right)
+        \)はそれぞれ自然な射\(F_{Z_1\cup Z_2}\to F_{Z_i}\)と\(
+            F_{Z_i}\to F_{Z_1\cap Z_2}
+        \)（\(i=1,2\)）から引きおこされるものである．
+        \item \(U_1\)と\(U_2\)を\(X\)の開部分集合とする．
+        このとき列\[
+            0\to F_{U_1\cap U_2}\underset{\gamma}{\to}
+            F_{U_1}\oplus F_{U_2}\underset{\delta}{\to}
+            F_{U_1\cup U_2}\to0
+        \]は完全である．
+        ただし\(\gamma=\left(\gamma_1,\gamma_2\right)\)と\(
+            \delta=\left(\delta_1,-\delta_2\right)
+        \)はそれぞれ自然な射\(F_{U_1\cap U_2}\to F_{U_i}\)と\(
+            F_{U_i}\to F_{U_1\cup U_2}
+        \)（\(i=1,2\)）から引きおこされるものである．
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
+\begin{proof}
+    (i) 
+    まず\(F_Z\)が\eqref{eq2313}をみたすことを示す．
+    1つ目の式を示す．
+    \begin{align*}
+        \mres[\left(F_U\right)_A]{U\cap A}
+        &=\mres[{\left(\mres[\left(F_U\right)_A]{A}\right)}]{U\cap A}\\
+        &=\mres[{\left(\mres[F_U]{A}\right)}]{U\cap A}\\
+        &=\mres[\left({\mres[F_U]{U}}\right)]{U\cap A}\\
+        &=\mres[\left({\mres[F]{U}}\right)]{U\cap A}\\
+        &=\mres[F]{U\cap A}
+    \end{align*}
+    である．2つ目の式\(\mres[\left(F_Z\right)]{X-Z}=0\)を示す．
+    \(X-Z=(X-U)\cup(X-A)\)の各点\(x\)での茎が0になることを示せばよい．
+    \begin{enumerate}[(a)]
+        \item \(x\in X-A\)のとき，\(
+            \left(\left(F_U\right)_A\right)_{x}=0
+        \)である．
+        \item \(x\notin X-A\)すなわち\(x\in A\)のとき，\(x\in X-U\)であるから，
+        \[
+            \left(\left(F_U\right)_A\right)_{x}
+            =\left(F_U\right)_{x}
+            =0
+        \]である．したがって，\(\mres[\left(F_Z\right)]{X-Z}=0\)である．
+    \end{enumerate}
+    
+    次に，\eqref{eq2313}をみたす\(X\)上の層\(F'\)が\(F_Z\)に
+    同型であることを示す．
+\end{proof}
 \subsection{固有順像}\label{ssec:pdimg}
 
 \(f_!\colon\Sh(X)\to\Sh(Y)\)
