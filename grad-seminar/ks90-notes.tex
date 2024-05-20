@@ -2262,7 +2262,21 @@ $\cat$の三角とは射の列
         &=\mres[\left({\mres[F]{U}}\right)]{U\cap A}\\
         &=\mres[F]{U\cap A}
     \end{align*}
-    である．2つ目の式\(\mres[\left(F_Z\right)]{X-Z}=0\)を示す．
+    である\footnote{
+        可換図式\[\vcenter{\xymatrix@C=36pt@R=26pt{
+            U
+            \ar@{^{(}-_>}[r]^-{i}
+            &
+            X
+            \\
+            U\cap A\ar@{^{(}-_>}[r]_-{i'}
+            \ar@{^{(}-_>}[u]_-{j'}
+            &
+            A\ar@{^{(}-_>}[u]_-{j}.
+        }}\]を考えて\(j^{-1}j_{\ast}\cong1\)と\(
+            i^{-1}F_U\cong i^{-1}F
+        \)に注意すればよい．
+    }．2つ目の式\(\mres[\left(F_Z\right)]{X-Z}=0\)を示す．
     \(X-Z=(X-U)\cup(X-A)\)の各点\(x\)での茎が0になることを示せばよい．
     \begin{enumerate}[(a)]
         \item \(x\in X-A\)のとき，\(
@@ -2276,8 +2290,135 @@ $\cat$の三角とは射の列
         \]である．したがって，\(\mres[\left(F_Z\right)]{X-Z}=0\)である．
     \end{enumerate}
     
-    次に，\eqref{eq2313}をみたす\(X\)上の層\(F'\)が\(F_Z\)に
-    同型であることを示す．
+    次に，
+    \eqref{eq2313}をみたす\(X\)上の層\(\widetilde{F}\)が\(F_Z\)に
+    同型であることを示す．\(j\colon Z\to X\)を包含写像とする．
+    \(j^{-1}F_Z\cong j^{-1}F\cong j^{-1}\widetilde{F}\)である．
+    順像逆像に関する随伴から一対一対応\[
+        \Hom_{\Sh(Z)}\left(j^{-1}F_Z,j^{-1}\widetilde{F}\right)
+        \cong
+        \Hom_{\Sh(X)}\left(F_Z,j_{\ast}j^{-1}\widetilde{F}\right)
+    \]
+    が存在するので，
+    \(F_Z\cong j_{\ast}j^{-1}\widetilde{F}\)である．
+    この同型を自然な射\(
+        \widetilde{F}\to j_{\ast}j^{-1}\widetilde{F}
+    \)と合成することで\(X\)上の層の射\(
+        \widetilde{F}
+        \to j_{\ast}j^{-1}\widetilde{F}
+        \simar F_Z
+    \)を得る．
+    あとは茎ごとに同型であればよいが，
+    \[\widetilde{F}_x
+    \cong\begin{cases}
+        F_x,\quad (x\in Z)\\
+        0\quad (x\in X-Z)
+    \end{cases}
+    \cong (F_Z)_x
+    \]より同型である．
+
+    (ii) 
+    \[
+        0\to F\to G\to H\to 0
+    \]を\(X\)上の層の完全列とする．
+    \[
+        0\to F_Z\to G_Z\to H_Z\to 0
+    \]が完全列となるのは，各点\(x\in X\)に対し
+    \[
+        0\to (F_Z)_x\to (G_Z)_x\to (H_Z)_x\to 0
+    \]が完全列となるときである．
+    \(x\in Z\)のとき，これは\[
+        0\to F_x\to G_x\to H_x\to 0
+    \]と同じで，元の完全列からこれは完全列である．
+    \(x\in X-Z\)のときは各項が0の完全列となる，
+    よって，\((\blk)_Z\)は完全関手である．
+
+    (iii) 
+    (i) の結果から\[
+        \begin{cases}
+            \mres[\left(F_Z\right)_{Z'}]{Z\cap Z'}\cong \mres[F]{Z\cap Z'},\\
+            \mres[\left(F_Z\right)_{Z'}]{X-(Z\cap Z')}\cong 0
+        \end{cases}
+    \]を示せばよい．
+    1つ目は\begin{align*}
+        \mres[\left(F_Z\right)_{Z'}]{Z\cap Z'}
+        &\cong \mres[{\left(\mres[\left(F_Z\right)_{Z'}]{Z'}\right)}]{Z\cap Z'}\\
+        &\cong \mres[{\left(\mres[F_Z]{Z'}\right)}]{Z\cap Z'}\\
+        &\cong \mres[{\left(\mres[F_Z]{Z}\right)}]{Z\cap Z'}\\
+        &\cong \mres[{\left(\mres[F]{Z}\right)}]{Z\cap Z'}\\
+        &\cong \mres[F]{Z\cap Z'}
+    \end{align*}
+    から分かる．
+
+    2つ目は\(X-\left(Z\cap Z'\right)=(X-Z)\cup(X-Z')\)として
+    (i) の一意性の証明のように場合分けをする．
+    \begin{enumerate}[(a)]\setlength{\leftskip}{3zw}
+        \item \(x\in X-Z'\)のとき，\(\left(\left(F_Z\right)_{Z'}\right)_x=0\)である．
+        \item \(x\notin X-Z'\)すなわち\(x\in Z'\)のとき\(x\in X-Z\)より\[
+            \left(\left(F_Z\right)_{Z'}\right)_x
+            =\left(F_Z\right)_x=0    
+        \]である．
+    \end{enumerate}
+    
+    (iv) 
+    \(j_{\ast}j^{-1}F\)は\eqref{eq2313}をみたすから(i)からしたがう．
+
+    (v) 茎ごとに完全であることを示す．\begin{enumerate}[(a)]\setlength{\leftskip}{3zw}
+        \item \(x\in X-Z\)のとき，全て0の完全列
+        \item \(x\in Z'\)のとき，\(x\notin Z- Z'\)なので\(0,F_x,F_x\)の完全列．
+        \item \(x\in Z-Z'\)のとき，\(x\notin Z'\)なので\(F_x,F_x,0\)の完全列．
+    \end{enumerate}
+
+    (vi) 
+    順当にやればいける．
+
+    (vii)
+    順当にやればいける．
+\end{proof}
+
+\begin{leftbar}
+\begin{CRL}
+    \(Z_1, Z_2\)を\(X\)の閉集合とする．次は完全列である．
+    \[
+        0\to \Gamma(Z_1\cup Z_2;F)
+        \to \Gamma(Z_1;F)\oplus\Gamma(Z_2;F)
+        \to \Gamma(Z_1\cap Z_2;F).
+    \]
+\end{CRL}
+\end{leftbar}
+\begin{proof}
+    (vi) の完全列\[
+        0\to F_{Z_1\cup Z_2}\underset{\alpha}{\to}
+        F_{Z_1}\oplus F_{Z_2}\underset{\beta}{\to}
+        F_{Z_1\cap Z_2}\to0
+    \]に\(\Gamma(X;\blk)\)を適用すると各項は次のようになる．
+    \(j_{Z_1\cup Z_2}\colon Z_1\cup Z_2\hookrightarrow X\)を閉集合の包含として
+    \begin{align*}
+        \Gamma(X;F_{Z_1\cup Z_2})
+        &\cong\Gamma(X;(j_{Z_1\cup Z_2})_{\ast}(j_{Z_1\cup Z_2})^{-1}F)\\
+        &\cong\Gamma((j_{Z_1\cup Z_2})^{-1}(X);(j_{Z_1\cup Z_2})^{-1}F)\\
+        &\cong\Gamma(Z_1\cup Z_2;F).
+    \end{align*}
+    \(j_{Z_i}\colon Z_i\hookrightarrow X\)を閉集合の包含として
+    \begin{align*}
+        \Gamma(X;F_{Z_1}\oplus F_{Z_2})
+        &\cong\Gamma(X;F_{Z_1})\oplus\Gamma(X;F_{Z_2})\\
+        &\cong\Gamma(X;(j_{Z_1})_{\ast}(j_{Z_1})^{-1}F)\oplus\Gamma(X;(j_{Z_2})_{\ast}(j_{Z_2})^{-1}F)\\
+        &\cong\Gamma((j_{Z_1})^{-1}(X);(j_{Z_1})^{-1}F)\oplus\Gamma((j_{Z_2})^{-1}(X);(j_{Z_2})^{-1}F)\\
+        &\cong\Gamma(Z_1;F)\oplus\Gamma(Z_2;F).
+    \end{align*}
+    \(j_{Z_1\cap Z_2}\colon Z_1\cap Z_2\hookrightarrow X\)を閉集合の包含として
+    \begin{align*}
+        \Gamma(X;F_{Z_1\cap Z_2})
+        &\cong\Gamma(X;(j_{Z_1\cap Z_2})_{\ast}(j_{Z_1\cap Z_2})^{-1}F)\\
+        &\cong\Gamma((j_{Z_1\cap Z_2})^{-1}(X);(j_{Z_1\cap Z_2})^{-1}F)\\
+        &\cong\Gamma((Z_1\cap Z_2;F).
+    \end{align*}
+    したがって，\(\Gamma(X;\blk)\)の左完全性から\[
+        0\to \Gamma(Z_1\cup Z_2;F)
+        \to \Gamma(Z_1;F)\oplus\Gamma(Z_2;F)
+        \to \Gamma(Z_1\cap Z_2;F)
+    \]は完全列である．
 \end{proof}
 \subsection{固有順像}\label{ssec:pdimg}
 
