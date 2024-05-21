@@ -363,7 +363,7 @@
 
 \newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
 \newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
-\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}
+\newcommand{\Domp}{\mathsf{D}}
 \newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
 \newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
 \newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
@@ -1928,20 +1928,130 @@ $\cat$の三角とは射の列
 
 
 \section{層の演算}
+
+\(X\)と\(Y\)を位相空間とし，\(f\colon Y\to X\)を連続写像とする．
+\begin{DFN}
+    \begin{enumerate}[(i)]
+        \item \(G\)を\(Y\)上の層とする．
+        次のように定義される\(X\)上の層のことを
+        \(G\)の\(f\)による\textbf{順像} (direct image) といい，
+        \(f_\ast{G}\)で表す．
+        \[
+            U\mapsto f_{\ast}G(U)\coloneqq G(f^{-1}(U)),
+            \quad \text{\(U\)は\(X\)の開集合．}
+        \]
+        \item \(F\)を\(X\)上の層とする．
+        次の前層から定まる\(Y\)上の層のことを\(F\)の\(f\)による
+        \textbf{逆像} (inverse image) といい，
+        \(f^{-1}F\)で表す．\[
+            V\mapsto \indlim[U\in I_{f(V)}]F(U), 
+            \quad \text{\(V\)は\(Y\)の開集合，\(I_{f(V)}\)は\(f(V)\)の\(X\)における開近傍系}
+        \]
+    \end{enumerate}
+\end{DFN}
+
+\(Y\)上の層の射に対する順像・\(X\)上の層の射に対する逆像も
+自明な仕方で定義することができる．
+したがって次の関手が定まる．
+\begin{align*}
+    f_{\ast}\colon\Sh(Y)\to\Sh(X),\\
+    f^{-1}\colon\Sh(X)\to\Sh(Y).
+\end{align*}
+\(\scR\), \(\scS\)がそれぞれ\(X\), \(Y\)上の環の層であるとき，
+\(f^{-1}\scR\), \(f_{\ast}\scS\)はそれぞれ\(Y\), \(X\)上の
+環の層となる．
+したがって\(f_{\ast}\), \(f^{-1}\)は次の関手をひきおこす．
+\begin{align*}
+    f_{\ast}\colon\Mod(\scS)&\to\Mod(f_\ast\scS),\\
+    f^{-1}\colon\Mod(\scR)&\to\Mod(f^{-1}\scR).
+\end{align*}
+
+\begin{EG}
+    \(a_X\colon X\to\{\pt\}\)を定値写像とする．
+    （\(\{\pt\}\)は1つの要素からなる集合であった．）
+    \(M\)をアーベル群とするとき
+    \begin{equation}
+        M_X= a_X^{-1}M_{\{\pt\}}
+    \end{equation}
+    となる．
+    \(F\)を\(X\)上の層とするとき
+    \begin{equation}
+        \Gamma(X;F)=\Gamma(\{\pt\};{a_X}_{\ast}F)
+        \cong {a_X}_{\ast}F
+    \end{equation}
+    が成り立つ．
+    \(y\in Y\)とし，
+    \(F\)を\(X\)上の層とする．このとき
+    \begin{equation}
+        \left(f^{-1}F\right)_{y}=F_{f(y)}
+    \end{equation}
+    が成り立つ．
+    この公式から，\(f^{-1}\)が完全関手であることがわかる．
+    他方，関手\(f_{\ast}\)の方は左完全にしかならない．
+    こちらは関手\(\Gamma(U;\blk)\)の左完全性からしたがう．
+\end{EG}
+
+自然な関手の射が存在する．
+\begin{align}
+    f^{-1}\circ f_{\ast}\to\id&\quad \text{in \(\Mod(f^{-1}\scR)\),}\\
+    \id\to f_{\ast}\circ f^{-1}&\quad\text{in \(\Mod(\scR)\).}
+\end{align}
+
+\begin{leftbar}
+\begin{PRP}\label{PRP233}
+    \(\scR\)を\(X\)上の層とする．
+    \(F\in\Mod(\scR)\), \(G\in\Mod(f^{-1}\scR)\)のとき，
+    次が成り立つ．
+    \begin{equation}
+        \Hom_{\scR}(F,f_{\ast}G)
+        \cong
+        \Hom_{\scR}(f^{-1}F,G)
+    \end{equation}
+    すなわち，\(f^{-1}\)は\(f_{\ast}\)の左随伴，
+    \(f_{\ast}\)は\(f^{-1}\)の右随伴である．
+\end{PRP}
+\end{leftbar}
+
+\begin{leftbar}\begin{CRL}
+    命題\ref{PRP233}の状況で次が成り立つ．
+    \begin{equation}
+        \HOM_{\scR}(F,f_{\ast}G)
+        \cong
+        \HOM_{\scR}(f^{-1}F,G)
+    \end{equation}
+\end{CRL}\end{leftbar}
+    
+さらに\(Z\)を位相空間とし\(g\colon Z\to Y\)を連続写像とする．
+順像と逆像の構成から直ちに次がわかる．
+\begin{align}
+    \left(f\circ g\right)_{\ast}&=f_{\ast}\circ g_{\ast},\\
+    \left(f\circ g\right)^{-1}&=g^{-1}\circ f^{-1}.
+\end{align}
+順像はテンソル積と交換する．より正確には
+\begin{leftbar}\begin{PRP}
+    \(F_1\)を右\(\scR\)加群，\(F_2\)を左\(\scR\)加群とする．
+    このとき標準同型
+    \begin{equation}
+        f^{-1}F_1\ttens[f^{-1}\scR]f^{-1}F_2\cong
+        f^{-1}\left(F_1\ttens[f^{-1}\scR]F_2\right)
+    \end{equation}
+    が存在する．
+\end{PRP}\end{leftbar}
+    
+
 \subsection*{部分集合から定まる関手}
-\(X\)を位相空間とする．
-\(X\)の部分集合\(Z\)から定まる関手を考える．
-\(Z\)を\(X\)からの誘導位相で部分位相空間とみなし，
+ここでは\(X\)の部分集合\(Z\)に関連する関手を構成する．
+\(Z\)に\(X\)からの誘導位相を入れ，
 \(j\colon Z\hookrightarrow X\)を
 包含写像とする．
-\subsubsection*{制限の一般的な定義}
+\subsubsection*{一般の部分集合への制限}
 \(F\in\Sh(X)\)に対し，
 \begin{align}
     F\rvert_Z&\coloneqq j^{-1}F,\\
     \Gamma(Z;F)&\coloneqq\Gamma\left(Z;j^{-1}F\right)    
 \end{align}
 とおく．\(Z\)が開集合のとき，元の定義に一致する．
-\begin{proof}[\textbf{元の定義に一致することのチェック}]
+\begin{proof}
     \(U\subset Z\)を開集合とすると，
     \begin{align*}
         \Gamma\left(U;j^{-1}F\right)
@@ -2367,14 +2477,43 @@ $\cat$の三角とは射の列
         \to \Gamma(Z_1\cap Z_2;F)
     \]は完全列である．
 \end{proof}
-\subsection{固有順像}\label{ssec:pdimg}
 
-\(f_!\colon\Sh(X)\to\Sh(Y)\)
-について，\(f\)がプロパーなら\(f_!\cong f_\ast\)である．
-つまり，脚注 \ref{CMT:supp-cut}の主張は
-もっと一般に\(f\)がプロパーなら成り立つ．
+\subsubsection*{局所台切断}
 
-\section{分解}
+もうひとつ，\(X\)の閉部分集合\(Z\)に対して関手的に定まる層ががある．
+\(U\)を\(X\)の開集合とし，\(Z\)を\(U\)の閉集合とする．
+\begin{equation}
+    \Gamma_Z(U;F)\coloneqq
+    \Ker\left(F(U)\to F(U-Z)\right)
+\end{equation}
+とおく．
+すなわち，\(\Gamma_Z(U;F)\)は
+切断の台が\(Z\)に含まれるものからなる\(\Gamma(U;F)\)の部分群である．
+
+\(V\)を\(Z\)を含む\(U\)の開集合とする．
+自然な射\(\Gamma_Z(U;F)\to\Gamma_Z(V;F)\)は同型である．
+したがって\(X\)の局所閉集合\(Z\)に対し，\(Z\)を
+閉集合として含む\(X\)の任意の開集合\(U\)を用いることで，\(
+    \Gamma_Z(X;F)
+\)を\(\Gamma_Z(U;F)\)として定めることができる．
+前層\(U\mapsto\Gamma_{Z\cap U}(U;F)\)は層である．
+
+\begin{DFN}
+    層\(U\mapsto\Gamma_{Z\cap U}(U;F)\)を
+    \textbf{\(Z\)に台をもつ\(F\)の切断の層}とよび
+    \(\Gamma_Z(F)\)で表す\footnote{
+        本多ノートだと local support functor と呼んでいるので
+        \(Z\)が明らかなときは局所台切断の層とも呼ぶことにしたい．
+    }．
+\end{DFN}
+
+\subsection*{各操作の関係}
+
+ここまでに定義してきた圏\(\Sh(X)\)上の関手\(\HOM(\blk,\blk)\), 
+\(\blk\tens\blk\), \(f_\ast\), \(f^{-1}\), \((\blk)_Z\), 
+\(\Gamma_Z\), \(\Gamma(X;\blk)\)の関係を調べる．
+
+\section{入射的層，脆弱層，平坦層}
 \section{局所コンパクト空間上の層}
 位相空間\(X\)が局所コンパクト性など，何らかの有限性をもつ場合，
 新しい種類の層と関手が関心の的になる．
@@ -2540,11 +2679,23 @@ $\cat$の三角とは射の列
 \end{proof}
 
 
+\subsection{固有順像}\label{ssec:pdimg}
+
+\(f_!\colon\Sh(X)\to\Sh(Y)\)
+について，\(f\)がプロパーなら\(f_!\cong f_\ast\)である．
+つまり，脚注 \ref{CMT:supp-cut}の主張は
+もっと一般に\(f\)がプロパーなら成り立つ．
 
 
 
-
-\section{弱大域次元}
+\section{層のコホモロジー}
+1章の結果を層の圏に応用する．
+\(X\)を位相空間とし，\(\scR\)を\(X\)上の層とする．
+\(X\)上の（左）\(\scR\)加群の層の圏\(\Mod(\scR)\)はアーベル圏である．
+したがって導来圏\(\Domp(\Mod(\scR))\)と
+その充満部分圏\(\Domp^{\ast}(\Mod(\scR))\)を考えることができる．
+ただし\(\ast=+,-,\mathrm{b}\)である．
+\section*{弱大域次元}
 アーベル層の圏はアーベル圏になる．
 したがって層の導来圏が考えられる．
 
