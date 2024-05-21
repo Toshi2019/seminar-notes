@@ -9,12 +9,12 @@
 \contentsline {section}{\numberline {2.2}層}{15}{section.2.2}
 \contentsline {section}{\numberline {2.3}層の演算}{20}{section.2.3}
 \contentsline {paragraph}{ふつうの順像を用いた閉集合での定義}{21}{section*.22}
-\contentsline {paragraph}{開集合での定義}{23}{section*.24}
-\contentsline {paragraph}{局所閉集合での定義}{24}{section*.25}
-\contentsline {subsection}{\numberline {2.3.1}固有順像}{27}{subsection.2.3.1}
+\contentsline {paragraph}{開集合での定義}{22}{section*.24}
+\contentsline {paragraph}{局所閉集合での定義}{23}{section*.25}
+\contentsline {subsection}{\numberline {2.3.1}固有順像}{26}{subsection.2.3.1}
 \contentsline {section}{\numberline {2.4}分解}{27}{section.2.4}
 \contentsline {section}{\numberline {2.5}局所コンパクト空間上の層}{27}{section.2.5}
-\contentsline {section}{\numberline {2.6}弱大域次元}{28}{section.2.6}
+\contentsline {section}{\numberline {2.6}弱大域次元}{29}{section.2.6}
 \contentsline {section}{\numberline {2.7}非特性変形補題}{31}{section.2.7}
 \contentsline {section}{\numberline {2.9}実・複素多様体上の層の例}{33}{section.2.9}
 \contentsline {subsection}{\numberline {2.9.1}層\(\mathord {\mathscr {C}}_X^0\)}{33}{subsection.2.9.1}

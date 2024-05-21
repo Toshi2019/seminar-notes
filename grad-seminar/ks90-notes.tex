@@ -445,6 +445,7 @@
 \newtheorem*{STT*}{主張}
 \newtheorem{PRP}[Axiom]{命題}
 \newtheorem{LMM}[Axiom]{補題}
+\newtheorem*{LMM*}{補題}
 \newtheorem{CRL}[Axiom]{系}
 \newtheorem{EG}[Axiom]{例}
 \newtheorem{CNV}[Axiom]{規約}
@@ -1995,61 +1996,7 @@ $\cat$の三角とは射の列
 \end{equation}
 が成り立つ．とくに\(x\in X\)ならば\((F_Z)_x=F_x\)であり，
 \(x\notin Z\)ならば\((F_Z)_x=0\)である．
-\begin{proof}
-    注意\ref{rmk253}を先取りするのがよいと思う．
-    \(j\colon Z\hookrightarrow X\)は固有写像である．
-    実際，\(Z\)の閉集合は\(X\)の閉集合でもあるので\(j\)は閉写像だし，
-    1点\(x\in X\)の逆像\(j^{-1}(x)\)は，
-    \(x\in Z\)のとき\(\{x\}\)，\(x\notin Z\)のとき\(\varnothing\)で，
-    どちらも有限集合なのでコンパクトである．
-    よって，注意\ref{rmk253}より，
-    \(Z\)上の層\(G\)と\(X\)の点\(x\in X\)に対して，
-    \[
-        \left(j_{\ast}G\right)_x
-        \cong
-        \Gamma(j^{-1}(x);\mres[G]{j^{-1}(x)})
-    \]
-    が成り立つ．
-    
-    \eqref{eq2313}の1つ目の式を示す．
-    自然な射\(F\to F_Z\)に\(j^{-1}\)を適用して
-    \(Z\)上の層の射\(\mres[F]{Z}\to\mres[F_Z]{Z}\)を得る．
-    これらの\(x\in Z\)における茎が同型であることを示す．
-    \begin{align*}
-        \left(\mres[F]{Z}\right)_x
-        &\cong \left(j^{-1}F\right)_x\\
-        &\cong F_{j(x)}=F_x
-    \end{align*}
-    である．一方
-    \begin{align*}
-        \left(\mres[F_Z]{Z}\right)_x
-        &\cong \left(j^{-1}j_{\ast}j^{-1}F\right)_x\\
-        &\cong \left(j_{\ast}j^{-1}F\right)_x\\
-        &\cong \Gamma(j^{-1}(x);\mres[j^{-1}F]{j^{-1}(x)})\\
-        &\cong \Gamma(\{x\};\mres[j^{-1}F]{\{x\}})\\
-        &\cong F_x
-    \end{align*}
-    である．よって，両者は一致する．
-    %\textcolor{red}{最後の同型はひょっとするとハウスドルフ性がいるかも}
-
-    \eqref{eq2313}の2つ目の式を示す．
-    \(i\colon X-Z\hookrightarrow Z\)を\(X-Z\)から\(X\)への
-    包含写像とする．
-    \(F_Z\)に\(i^{-1}\)を適用して
-    \(X-Z\)上の層\(\mres[F_Z]{X-Z}\)を得る．
-    これの\(x\in X-Z\)における茎を計算する．
-    \begin{align*}
-        \left(\mres[F_Z]{X-Z}\right)_x
-        &\cong \left(i^{-1}j_{\ast}j^{-1}F\right)_x\\
-        &\cong \left(j_{\ast}j^{-1}F\right)_x\\
-        &\cong \Gamma(j^{-1}(x);\mres[j^{-1}F]{j^{-1}(x)})\\
-        &\cong \Gamma(\varnothing;\mres[j^{-1}F]{\varnothing})\\
-        &\cong 0.
-    \end{align*}
-    よって，\eqref{eq2313}が成り立つ．
-\end{proof}
-\begin{proof}[\textbf{別証明\((\mathbf{2024/05/20})\)}]
-    注意\ref{rmk253}の先取りは要らない．
+\begin{proof}[\textbf{証明\((\mathbf{2024/05/20})\)}]
     次の主張が一般に成り立つ．
     \begin{leftbar}
     \begin{STT}\label{STT21}
@@ -2467,7 +2414,35 @@ $\cat$の三角とは射の列
 パラコンパクト空間の閉部分集合はパラコンパクトである．
 無限遠で可算な局所コンパクト空間や距離空間もパラコンパクトである．
 \begin{proof}
-    命題の証明．．．
+    (i) あとで書く．
+
+    (ii), (iii) 
+    \(s\in\Gamma(Z;F)\)とする．
+    次の補題を用いる．
+    \begin{leftbar}
+    \begin{LMM*}
+        \(s\in\Gamma(Z;F)\)とする．
+        各点\(x\in Z\)の開近傍\(U_x\in I_x^X\)と\(
+            s^x\in\Gamma(U_x;F)
+        \)で\(\mres[s^x]{U_x\cap Z}=\mres[s]{U_x\cap Z}\)と
+        なるものがある．
+    \end{LMM*}
+    \end{leftbar}
+    各点\(x\in Z\)において\(U_x\in I_x^X\)と\(
+        s^x\in\Gamma(U_x;F)
+    \)で\(\mres[s^x]{U_x\cap Z}=\mres[s]{U_x\cap Z}\)と
+    なるものがある．\((U_x)_{x\in Z}\)は\(Z\)の開被覆．
+    \(X-Z\)を加えれば\(X\)の開被覆になる．
+    (ii) のときはコンパクト性から有限個を選んで
+    開集合族\((U_i)_{i\in I}\)と\(
+        (s_i)_i\in\prod_{i\in I}\Gamma(U_i;F)
+    \)で\(Z\subset \bigcup_{i\in I}U_i\)となるものが得られる．
+    (iii) のときはパラコンパクト性から\((U_i)_{i\in I}\)を
+    局所有限な\(X\)の開被覆とできる．
+
+    ここからはパラレルに議論する．
+    パラコンパクト性から開集合族\((V_i)_{i\in I}\)で
+    各点\(x\in X\)\(I(x)\)
 \end{proof}
 \(f\colon Y\to X\)を連続写像とする（\(X\)と\(Y\)は
 局所コンパクトでなくとも良い）．
@@ -2505,7 +2480,64 @@ $\cat$の三角とは射の列
     \]
     が同型であることが分かる．
 \end{RMK}
+\begin{CMT}
+    この注意\ref{rmk253}を用いると，
+    閉集合\(Z\)に対し\(F_Z=j_{\ast}j^{-1}F\)が\eqref{eq2313}
+    をみたすことを以下のように証明できる．
+\end{CMT}
+\begin{proof}
+    \(j\colon Z\hookrightarrow X\)は固有写像である．
+    実際，\(Z\)の閉集合は\(X\)の閉集合でもあるので\(j\)は閉写像である．
+    さらに，1点\(x\in X\)の逆像\(j^{-1}(x)\)は，
+    \(x\in Z\)のとき\(\{x\}\)，\(x\notin Z\)のとき\(\varnothing\)で，
+    どちらも有限集合なのでコンパクトである．
+    よって特に\(\supp{F}\)上でも固有である．
+    よって，注意\ref{rmk253}より，
+    \(Z\)上の層\(G\)と\(X\)の点\(x\in X\)に対して，
+    \[
+        \left(j_{\ast}G\right)_x
+        \cong
+        \Gamma(j^{-1}(x);\mres[G]{j^{-1}(x)})
+    \]
+    が成り立つ．
+    
+    \eqref{eq2313}の1つ目の式を示す．
+    自然な射\(F\to F_Z\)に\(j^{-1}\)を適用して
+    \(Z\)上の層の射\(\mres[F]{Z}\to\mres[F_Z]{Z}\)を得る．
+    これらの\(x\in Z\)における茎が同型であることを示す．
+    \begin{align*}
+        \left(\mres[F]{Z}\right)_x
+        &\cong \left(j^{-1}F\right)_x\\
+        &\cong F_{j(x)}=F_x
+    \end{align*}
+    である．一方
+    \begin{align*}
+        \left(\mres[F_Z]{Z}\right)_x
+        &\cong \left(j^{-1}j_{\ast}j^{-1}F\right)_x\\
+        &\cong \left(j_{\ast}j^{-1}F\right)_x\\
+        &\cong \Gamma(j^{-1}(x);\mres[j^{-1}F]{j^{-1}(x)})\\
+        &\cong \Gamma(\{x\};\mres[j^{-1}F]{\{x\}})\\
+        &\cong F_x
+    \end{align*}
+    である．よって，両者は一致する．
+    %\textcolor{red}{最後の同型はひょっとするとハウスドルフ性がいるかも}
 
+    \eqref{eq2313}の2つ目の式を示す．
+    \(i\colon X-Z\hookrightarrow Z\)を\(X-Z\)から\(X\)への
+    包含写像とする．
+    \(F_Z\)に\(i^{-1}\)を適用して
+    \(X-Z\)上の層\(\mres[F_Z]{X-Z}\)を得る．
+    これの\(x\in X-Z\)における茎を計算する．
+    \begin{align*}
+        \left(\mres[F_Z]{X-Z}\right)_x
+        &\cong \left(i^{-1}j_{\ast}j^{-1}F\right)_x\\
+        &\cong \left(j_{\ast}j^{-1}F\right)_x\\
+        &\cong \Gamma(j^{-1}(x);\mres[j^{-1}F]{j^{-1}(x)})\\
+        &\cong \Gamma(\varnothing;\mres[j^{-1}F]{\varnothing})\\
+        &\cong 0.
+    \end{align*}
+    よって，\eqref{eq2313}が成り立つ．
+\end{proof}
 
 
 
