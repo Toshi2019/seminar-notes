@@ -17,7 +17,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[9pt, b5paper, dvipdfmx, leqno,draft]{jsreport}
+\documentclass[9pt, b5paper, dvipdfmx, leqno]{jsreport}
 
 % ------------------------
 % usepackage
@@ -2661,10 +2661,10 @@ $\cat$の三角とは射の列
         U'-Z\cap U
         &=U'\cap U- Z\cap U\\
         &=(U'- Z)\cap U\\
-        &=(U'- Z)\cap \bigcup_{i\in}U_i\\
-        &=\bigcup_{i\in} (U'- Z)\cap U_i\\
-        &=\bigcup_{i\in} (U'\cap U_i- Z\cap U_i)\\
-        &=\bigcup_{i\in} (U'_i- Z\cap U_i)
+        &=(U'- Z)\cap \bigcup_{i\in I}U_i\\
+        &=\bigcup_{i\in I} (U'- Z)\cap U_i\\
+        &=\bigcup_{i\in I} (U'\cap U_i- Z\cap U_i)\\
+        &=\bigcup_{i\in I} (U'_i- Z\cap U_i)
     \end{align*}
     なので\(\left(U'_i-Z\cap U_i\right)_{i\in I}\)は\(U'-Z\cap U\)を被覆する．
     各\(U'_i-Z\cap U_i\)上で\(

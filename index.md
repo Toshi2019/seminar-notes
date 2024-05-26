@@ -12,9 +12,9 @@
 
 KS82和訳[(pdf)](KS82-ja/KS82-ja.pdf)
 
-全体的なまとめ[(pdf)](grad-seminar/ks90-notes.pdf)
-
 ## 院生ゼミ
+
+全体的なまとめ[(pdf)](grad-seminar/ks90-notes.pdf)
 
 Poincaré-Verdier双対性[(pdf)](grad-seminar/PV-duality.pdf)
 
@@ -26,6 +26,8 @@ Poincaré-Verdier双対性[(pdf)](grad-seminar/PV-duality.pdf)
 [2024年03月分](grad-notes/2024-03.md)
 
 [2024年04月分](grad-notes/2024-04.md)
+
+[2024年05月分](grad-notes/2024-05.md)
 
 ## 自主ゼミ
 
