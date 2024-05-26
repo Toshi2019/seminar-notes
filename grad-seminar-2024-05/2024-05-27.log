@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  27 MAY 2024 04:05
+This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  27 MAY 2024 08:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -911,38 +911,38 @@ LaTeX Warning: Reference `eq2313' on page 5 undefined on input line 845.
 
 LaTeX Warning: Reference `PRP236' on page 5 undefined on input line 846.
 
-<xymatrix 4x2
+[5] <xymatrix 4x2
 
 Package xypdf Warning: The produced DVI file is NOT PORTABLE. Convert it with
 dvipdfm(x) to the PDF format but do not expect the DVI file itself to be
 displayed correctly.
 
-474> <xymatrix 5x2 614> [5] [6]
+474> <xymatrix 5x2 614> [6] [7]
 
-LaTeX Warning: Reference `eq2313' on page 7 undefined on input line 1006.
+LaTeX Warning: Reference `eq2313' on page 8 undefined on input line 1098.
 
 
-LaTeX Warning: Reference `PRP236' on page 7 undefined on input line 1018.
+LaTeX Warning: Reference `PRP236' on page 8 undefined on input line 1110.
 
-[7] [8]
+[8] [9]
 
 LaTeX Font Warning: Font shape `JT1/hmc/m/it' undefined
-(Font)              using `JT1/hmc/m/n' instead on input line 1178.
+(Font)              using `JT1/hmc/m/n' instead on input line 1270.
 
 
 LaTeX Font Warning: Font shape `JY1/hmc/m/it' undefined
-(Font)              using `JY1/hmc/m/n' instead on input line 1178.
+(Font)              using `JY1/hmc/m/n' instead on input line 1270.
 
 LaTeX Font Info:    Font shape `JT1/hmc/m/it' will be
-(Font)              scaled to size 9.24683pt on input line 1181.
+(Font)              scaled to size 9.24683pt on input line 1273.
 LaTeX Font Info:    Font shape `JY1/hmc/m/it' will be
-(Font)              scaled to size 9.24683pt on input line 1181.
-[9] [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1222.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1222.
+(Font)              scaled to size 9.24683pt on input line 1273.
+[10] [11]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1314.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1314.
  (./2024-05-27.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1222.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1222.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1314.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1314.
 Package rerunfilecheck Info: File `2024-05-27.out' has not changed.
 (rerunfilecheck)             Checksum: 79B2B31683EB503B77FF720CC8BD3B81;104.
 
@@ -952,15 +952,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1222.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1314.
  ) 
 Here is how much of TeX's memory you used:
  24712 strings out of 493273
  427048 string characters out of 6144919
- 570878 words of memory out of 5000000
+ 570677 words of memory out of 5000000
  28152 multiletter control sequences out of 15000+600000
  29177 words of font info for 140 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  55i,19n,82p,3266b,991s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 2024-05-27.dvi (10 pages, 58180 bytes).
+Output written on 2024-05-27.dvi (11 pages, 65120 bytes).

@@ -848,9 +848,101 @@
     \eqref{eq2316}：まず\(Z\)が開集合の場合と閉集合の場合に示す．
     その後開集合と閉集合の共通部分として表したときに示す．
 
-    \(Z\)が開集合のとき，\textcolor{darkred}{あとでかく．}
+    \eqref{eq2316}：まず\(Z\)が開集合の場合と閉集合の場合に示す．
+    その後開集合と閉集合の共通部分として表したときに示す．
 
-    \(Z\)が閉集合のとき，完全列\[
+    \subparagraph*{\(Z\)が開集合のとき}
+    \(X\)の任意の開集合\(U\)と\(U\)上の\(\scR_Z\)の切断\(
+        s\in \Gamma(U;\scR_Z)
+    \)に対し，
+    \(s\)の台\(\supp{s}\)は\(U\cap Z\)の閉集合である．
+    実際，\(\mres[\scR]{X-Z}=0\)より，
+    \(x\in X-Z\)に対し\((\scR_Z)_x=0\)である．
+    よってとくに\(x\in U-U\cap Z\)に対して\((\scR_Z)_x=0\)となる．
+    したがって，任意の\(s\in\Gamma(U;\scR_Z)\)に対し，
+    \(x\in U-U\cap Z\)ならば\(s_x=0\in(\scR_Z)_x=0\)となる．
+    すなわち\(\supp{s}\subset U\cap Z\)である．
+    台の定義から\(\supp{s}\)は\(U\)の閉集合なので，
+    \(U\cap Z\)の相対位相に関しても閉集合である．
+    この注意のもとで，\(\Hom_{\scR}(\scR_Z,F)\)の制限射として
+    定まる自然な射\[
+        \Hom_{\scR}(\scR_Z,F)
+        \to
+        \Hom_{\mres[\scR]{Z}}(\mres[\scR_Z]{Z},\mres[F]{Z})
+    \]が同型であることがわかる．
+    
+    まず単射であること示す．
+    \(\scR\)加群の層の射\(\varphi\colon\scR_Z\to F\)に対し，
+    \(  
+        \mres[\varphi]{Z}\colon\mres[\scR_Z]{Z}\to\mres[F]{Z}
+    \)が零射であるとする．このとき，\(\varphi=0\)であることを示す．
+    \(U\)を\(X\)の開集合とし，\(s\in\Gamma(U;\scR_Z)\)とする．
+    \begin{align*}
+        \mres[\varphi_U(s)]{U\cap Z}
+        &=\varphi_{U\cap Z}(\mres[s]{U\cap Z})
+        =0_{U\cap Z}(\mres[s]{U\cap Z})=0,\\
+        \mres[\varphi_U(s)]{U-\supp{s}}
+        &=\varphi_{U-\supp{s}}(\mres[s]{U-\supp{s}})
+        =\varphi_{U-\supp{s}}(0)=0
+    \end{align*}
+    であるから\(U\cap Z-\supp{s}=(U\cap Z)\cap(U-\supp{s})\)上で
+    \[
+        \mres[\varphi_U(s)]{U\cap Z-\supp{s}}=0
+    \]となる．\(U=(U\cap Z)\cup(U-\supp{s})\)であるから，
+    \(F\)の層の条件から\(\varphi_U(s)=0\)である．
+
+    全射であることを示す．
+    \(\psi\colon\mres[\scR_Z]{Z}\to\mres[F]{Z}\)を\(
+        \mres[\scR]{Z}
+    \)加群の層の射とする．
+    \(\scR\)加群の層の射\(\varphi\colon\scR_Z\to F\)で\(
+        \mres[\varphi]{Z}=\psi
+    \)となるものを構成する．
+    \(U\)を\(X\)の開集合とし，\(s\in\Gamma(U;\scR_Z)\)とする．
+    \(\psi_{U\cap Z}(\mres[s]{U\cap Z})\)と\(0\in\Gamma(U-\supp{s};F)\)は\(U\cap Z-\supp{s}\)上で\[
+        \mres[\psi_{U}(s)]{U\cap Z-\supp{s}}=\psi_{U\cap Z-\supp{s}}(\mres[s]{U\cap Z-\supp{s}})=0
+    \]となるので，\(U=(U\cap Z)\cup(U-\supp{s})\)上の切断\(t\)で\begin{align*}
+        \mres[t]{U\cap Z}&=\psi_{U\cap Z}(\mres[s]{U\cap Z}),\\
+        \mres[t]{U-\supp{s}}&=0
+    \end{align*}
+    となるものがただひとつ存在する．
+    この\(t\)に対し\(\varphi_U(s)=t\)と定めれば，
+    \(X\)の任意の開集合\(U\)と\(U\cap Z\)上の切断\(s\in\Gamma(U\cap Z; \mres[\scR_Z]{Z})\)に対し
+    \[
+        \left(\mres[\varphi]{Z}\right)_{U\cap Z}(s)
+        =
+        \psi_{U\cap Z}(s)
+    \]
+    となる．
+    以上より自然な射\[
+        \Hom_{\scR}(\scR_Z,F)
+        \to
+        \Hom_{\mres[\scR]{Z}}(\mres[\scR_Z]{Z},\mres[F]{Z})
+    \]は同型である．右辺は
+    \[
+        \Hom_{\mres[\scR]{Z}}(\mres[\scR_Z]{Z},\mres[F]{Z})
+        \cong
+        \Hom_{\mres[\scR]{Z}}(\mres[\scR]{Z},\mres[F]{Z})
+        \cong
+        \Gamma(Z;F)
+    \]
+    であるから，
+    同型で\(X\)上の切断としたところを各開集合\(U\)上の切断として
+    取り替えることで，開集合ごとの同型
+    \begin{align*}
+        \Hom_{\mres[\scR]{U}}(\mres[\scR_Z]{U},\mres[F]{U})
+        &\cong
+        \Hom_{\mres[\scR]{Z\cap U}}(\mres[\scR_Z]{Z\cap U},\mres[F]{Z\cap U})\\
+        &\cong\Gamma(Z\cap U;F)\\
+        &\cong\Gamma_{Z}(U;F)
+    \end{align*}
+    が得られる．よって
+    \[
+        \Hom_{\scR}(\scR_Z,F)
+        \cong
+        \Gamma_{Z}(F)
+    \]が成り立つ．
+    \subparagraph*{\(Z\)が閉集合のとき}完全列\[
         0\to \scR_{X-Z}\to\scR\to\scR_{Z}\to 0
     \]に対して\(\HOM_{\scR}(\blk,F)\)を適用すると，
     \(X-Z\)に開集合の場合を適用したものと
@@ -909,7 +1001,7 @@
     }}\]
     に五項補題を適用することで\eqref{eq2316}がしたがう．
 
-    \(Z\)が一般の局所閉集合のとき，
+    \subparagraph*{\(Z\)が一般の局所閉集合のとき}
     開集合\(U\)と閉集合\(A\)を用いて\(Z=U\cap A\)と表す．
     このとき，開集合と閉集合の場合を用いて
     \begin{align*}
