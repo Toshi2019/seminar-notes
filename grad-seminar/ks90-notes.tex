@@ -2874,7 +2874,7 @@ $\cat$の三角とは射の列
         \cong
         F_{1}&\ttens[\scR]\left(F_{2}\right)_{Z}
         \cong
-        \left(F_{1}\right)_{Z}\ttens[\scR]F_{2},\label{eq2317}\\
+        \left(F_{1}\right)_{Z}\ttens[\scR]F_{2},\quad (\text{in \(\Mod(\zz_X)\)})\label{eq2317}\\
         \HOM_{\scR}\left(\left(F_{1}\right)_{Z},F_{2}\right)
         \cong
         \HOM_{\scR}&\left(F_{1},\Gamma_{Z}(F_{2})\right)
@@ -2889,13 +2889,76 @@ $\cat$の三角とは射の列
     \end{align}
 \end{RMK}
 \begin{proof}
-    \eqref{eq2317}：次の射の列を考える．
+    \eqref{eq2317}：\(\zz_X\)加群の層として
+    \begin{align*}
+        \left(F_{1}\ttens[\scR]F_{2}\right)_{Z}
+        &\cong
+        \zz_{Z}\ttens[\zz_X]\left(F_{1}\ttens[\scR]F_{2}\right)
+        \cong
+        \left(\zz_{Z}\ttens[\zz_X]F_{1}\right)\ttens[\scR]F_{2}
+        \cong
+        \left(F_{1}\right)_{Z}\ttens[\scR]F_{2},\\
+        \left(F_{1}\ttens[\scR]F_{2}\right)_{Z}
+        &\cong
+        \left(F_{1}\ttens[\scR]F_{2}\right)\ttens[\zz_X]\zz_{Z}
+        \cong
+        F_{1}\ttens[\scR]\left(F_{2}\ttens[\zz_X]\zz_{Z}\right)
+        \cong
+        F_{1}\ttens[\scR]\left(F_{2}\right)_{Z}
+    \end{align*}
+    である．
 
-    \eqref{eq2318}：次の射の列を考える．
+    \eqref{eq2318}：\(\scR\)加群として
+    \begin{align*}
+        \HOM_{\scR}\left((F_1)_{Z},F_2\right)
+        &\cong
+        \HOM_{\scR}\left(\scR_{Z}\ttens[\scR]F_1,F_2\right)\\
+        &\cong
+        \HOM_{\scR}\left(F_1,\HOM_{\scR}\left(\scR_{Z},F_2\right)\right)\\
+        &\cong
+        \HOM_{\scR}\left(F_{1},\Gamma_{Z}(F_{2})\right),\\
+        \HOM_{\scR}\left((F_1)_{Z},F_2\right)
+        &\cong
+        \HOM_{\scR}\left(\scR_{Z}\ttens[\scR]F_1,F_2\right)\\
+        &\cong
+        \HOM_{\scR}\left(\scR_{Z}\HOM_{\scR}\left(F_1,F_2\right)\right)\\
+        &\underset{\eqref{eq2316}}{\cong}
+        \Gamma_{Z}\HOM_{\scR}\left(F_1,F_2\right)
+    \end{align*}
+    である．
+    この変形でテンソル積を用いている部分があるが，
+    \(F_1\)は左\(\scR\)加群としている．
 
-    \eqref{eq2319}：次の射の列を考える．
+    \eqref{eq2319}：
+    \(f^{-1}F_Z\)が\eqref{eq2313}をみたすことを示す．
+    \(Y\)の点\(y\)に対して，\begin{align*}
+        \left(f^{-1}(F_Z)\right)_{y}
+        \cong (F_Z)_{f(y)}
+        \cong \begin{cases}
+            F_{f(y)}& f(y)\in Z\quad\text{すなわち}\quad y\in f^{-1}(Z)\\
+            0& f(y)\in X-Z\quad\text{すなわち}\quad  y\in Y-f^{-1}(Z)
+        \end{cases}
+    \end{align*}
+    である．よって\(\mres[F_Z]{f^{-1}(Z)}\)は\(
+        \mres[f^{-1}F]{f^{-1}(Z)}
+    \)と同型であり\(\mres[F_Z]{Y-f^{-1}(Z)}\)は\(0\)である．
+    したがって，命題\ref{PRP236} (i) より\eqref{eq2319}が成り立つ．
 
-    \eqref{eq2320}：次の射の列を考える．
+    \eqref{eq2320}：
+    任意の\(\scR\)加群の層\(F\)に対して\begin{align*}
+        \Hom_{\scR}\left(F,\Gamma_{Z}(f_{\ast}G)\right)
+        &\underset{\eqref{eq2318}}{\cong}
+        \Hom_{\scR}\left(F_{Z},f_{\ast}G\right)\\
+        &\ \ \ \cong\ \ \ 
+        \Hom_{f^{-1}\scR}\left(f^{-1}F_{Z},G\right)\\
+        &\underset{\eqref{eq2319}}{\cong}
+        \Hom_{f^{-1}\scR}\left((f^{-1}F)_{f^{-1}(Z)},G\right)\\
+        &\underset{\eqref{eq2318}}{\cong}
+        \Hom_{f^{-1}\scR}\left(f^{-1}F,\Gamma_{f^{-1}(Z)}(G)\right)\\
+        &\ \ \ \cong\ \ \ 
+        \Hom_{\scR}\left(F,f_{\ast}\Gamma_{f^{-1}(Z)}(G)\right)
+    \end{align*}
+    が成り立つ．したがって米田の補題から\eqref{eq2320}がしたがう．
 
     \eqref{eq2321}：次の射の列を考える．
     \begin{align*}
@@ -2911,16 +2974,118 @@ $\cat$の三角とは射の列
     随伴の余単位\(
         \eta_G\colon f^{-1}f_{\ast}G\to G
     \)に\(f^{-1}F\)の恒等射を掛けたものの引き戻しである．
-    以上の射の合成による\(G\tens[]f^{-1}F\)の恒等射の像が\(
+    以上の射の合成による\(G\tens[]f^{-1}F\)の恒等射の像が\[
         f_{\ast}G\tens[]F\to f_{\ast}\left(G\tens[]f^{-1}F\right)
-    \)を定める．
+    \]を定める．
 
     \eqref{eq2322}：次の射の列を考える．
+    \begin{align*}
+        \Hom_{f^{-1}\scR}\left(G_1\ttens[f^{-1}\scR]G_2,G_1\ttens[f^{-1}\scR]G_2\right)
+        &\to
+        \Hom_{f^{-1}\scR}\left(f^{-1}f_{\ast}G_1\ttens[f^{-1}\scR]f^{-1}f_{\ast}G_2,G_1\ttens[f^{-1}\scR]G_2\right)\\
+        &\cong
+        \Hom_{f^{-1}\scR}\left(f^{-1}\left(f_{\ast}G_1\ttens[\scR]f_{\ast}G_2\right),G_1\ttens[f^{-1}\scR]G_2\right)\\
+        &\cong
+        \Hom_{f^{-1}\scR}\left(f_{\ast}G_1\ttens[\scR]f_{\ast}G_2,f_{\ast}\left(G_1\ttens[f^{-1}\scR]G_2\right)\right)
+    \end{align*}
+    最初の射は随伴の余単位のテンソル積\[
+        \eta_{G_1}\tens[]\eta_{G_2}\colon 
+        G_1\ttens[f^{-1}\scR]G_2
+        \to
+        f^{-1}f_{\ast}G_1\ttens[f^{-1}\scR]f^{-1}f_{\ast}G_2
+    \]による引き戻しの定める射である．
+    以上の射の合成による\(G_1\ttens[f^{-1}\scR]G_2\)の恒等射の像が
+    \[
+        f_{\ast}G_{1}\ttens[\scR]f_{\ast}G_{2}
+        \to 
+        f_{\ast}\left(G_{1}\ttens[f^{-1}\scR]G_{2}\right)
+    \]を定める．
 
-    \eqref{eq2323}：次の射の列を考える．
+    \eqref{eq2323}：
+    \(Y\)の開集合\(V\)に対し，\[
+        \Hom_{\mres[(f^{-1}\scR)]{V}}\left(\mres[G_1]{V},\mres[G_2]{V}\right)\ttens[f^{-1}\scR(V)]G_1(V)\to G_2(V)
+    \]が\[
+        \left(
+            \mres[\varphi]{V}\colon \mres[G_1]{V}\to\mres[G_2]{V}
+        \right)\tens[]s
+        \mapsto
+        \left(\mres[\varphi]{V}\right)_{V}(s)=\varphi_V(s)
+    \]により定まる．
+    したがって，\(f^{-1}\scR\)加群の層の射\[
+        \alpha\colon\HOM_{f^{-1}\scR}\left(G_1,G_2\right)\ttens[f^{-1}\scR]G_1\to G_2
+    \]が存在する．
+    次の射の列を考える．
+    \begin{align*}
+        &\Hom_{f^{-1}\scR}\left(
+            \HOM_{f^{-1}\scR}(G_1,G_2)\ttens[f^{-1}\scR]G_1, 
+            G_2
+        \right)\\
+        \to&
+        \Hom_{\scR}\left(
+            f_{\ast}\left(
+                \HOM_{f^{-1}\scR}(G_1,G_2)\ttens[f^{-1}\scR]G_1
+            \right), 
+            f_{\ast}G_2
+        \right)\\
+        \to&
+        \Hom_{\scR}\left(
+            f_{\ast}\HOM_{f^{-1}\scR}(G_1,G_2)\ttens[\scR]f_{\ast}G_1, 
+            f_{\ast}G_2
+        \right)\\
+        \cong&
+        \Hom_{\scR}\left(
+            f_{\ast}\HOM_{f^{-1}\scR}(G_1,G_2), 
+            \HOM_{\scR}(f_{\ast}G_1,f_{\ast}G_2)
+        \right).
+    \end{align*}
+    最初の射は順像関手の定める射である．
+    2番目の射は\(\HOM_{f^{-1}\scR}(G_1,G_2)\)と\(G_1\)に
+    \eqref{eq2322}を適用した\[
+        f_{\ast}
+        \HOM_{f^{-1}\scR}(G_1,G_2)\ttens[\scR]f_{\ast}G_1
+        \to
+        f_{\ast}\left(
+                \HOM_{f^{-1}\scR}(G_1,G_2)\ttens[f^{-1}\scR]G_1
+            \right)
+    \]による引き戻しの定める射である．
+    以上の射の列の合成による\(\alpha\)の像が\[
+        f_{\ast}\HOM_{f^{-1}\scR}(G_1,G_2)\to 
+        \HOM_{\scR}(f_{\ast}G_1,f_{\ast}G_2)
+    \]をひきおこす．
 
     \eqref{eq2324}：次の射の列を考える．
-
+    \begin{align*}
+        &\Hom_{\scR}\left(
+            \HOM_{\scR}(F_1,F_2)\ttens[\scR]F_1,F_2
+        \right)\\
+        \to&
+        \Hom_{f^{-1}\scR}\left(
+            f^{-1}\left(
+                \HOM_{\scR}(F_1,F_2)\ttens[\scR]F_1
+            \right),f^{-1}F_2
+        \right)\\
+        \cong&
+        \Hom_{f^{-1}\scR}\left(
+            f^{-1}\HOM_{\scR}(F_1,F_2)
+            \ttens[f^{-1}\scR]f^{-1}F_1
+            ,f^{-1}F_2
+        \right)\\
+        \cong&
+        \Hom_{f^{-1}\scR}\left(
+            f^{-1}\HOM_{\scR}(F_1,F_2)
+            ,\HOM_{f^{-1}\scR}(f^{-1}F_1
+            ,f^{-1}F_2)
+        \right).
+    \end{align*}
+    \eqref{eq2323}の証明で構成した\(\alpha\)と
+    同様にして\(\scR\)加群の層の射\[
+        \beta\colon \HOM_{\scR}(F_1,F_2)\ttens[\scR]F_1\to F_2
+    \]が定まる．
+    射の列の合成による\(\beta\)の像が\[
+        f^{-1}\HOM_{\scR}(F_1,F_2)
+        \to
+        \HOM_{f^{-1}\scR}(f^{-1}F_1,f^{-1}F_2)
+    \]をひきおこす．
 \end{proof}
 
 
