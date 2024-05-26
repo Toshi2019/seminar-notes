@@ -2102,7 +2102,7 @@ $\cat$の三角とは射の列
     \begin{cases}
         \mres[F_{Z}]{Z}\cong \mres[F]{Z},\\
         \mres[F_{Z}]{X-Z}\cong 0
-    \end{cases}\tag{2.3.13}
+    \end{cases}%\tag{2.3.13}
 \end{equation}
 が成り立つ．とくに\(x\in X\)ならば\((F_Z)_x=F_x\)であり，
 \(x\notin Z\)ならば\((F_Z)_x=0\)である．
@@ -2739,6 +2739,197 @@ $\cat$の三角とは射の列
 \(\blk\tens\blk\), \(f_\ast\), \(f^{-1}\), \((\blk)_Z\), 
 \(\Gamma_Z\), \(\Gamma(X;\blk)\)の関係を調べる．
 
+\begin{leftbar}\begin{PRP}
+    \(\scR\)を\(X\)上の環の層とし，\(F\in\Mod(\scR)\)とする．
+    \(Z\)を\(X\)の局所閉部分集合とするとき，次の自然な同型が存在する．
+    \begin{align}
+        \scR_{Z}\ttens[\scR]F&\cong F_Z,\label{eq2315}\\
+        \HOM_{\scR}\left(\scR_Z,F\right)&\cong\Gamma_Z(F).\label{eq2316}
+    \end{align}
+\end{PRP}\end{leftbar}
+\begin{proof}
+    \eqref{eq2315}：左辺が\eqref{eq2313}をみたすことを示す．
+    \begin{align*}
+        \mres[{\left(\scR_{Z}\ttens[\scR]F\right)}]{Z}
+        &\cong
+        \left(\mres[\scR_{Z}]{Z}\right)\ttens[{\mres[\scR]{Z}}]\left(\mres[F]{Z}\right)\\
+        &\cong
+        \left(\mres[\scR]{Z}\right)\ttens[{\mres[\scR]{Z}}]\left(\mres[F]{Z}\right)\\
+        &\cong
+        \mres[{\left(\scR\ttens[\scR]F\right)}]{Z}
+        \cong
+        \mres[F]{Z}
+    \end{align*}
+    である．また，\[
+        \mres[{\left(\scR_{Z}\ttens[\scR]F\right)}]{X-Z}
+        \cong
+        \left(\mres[\scR_{Z}]{X-Z}\right)\ttens[{\mres[\scR]{X-Z}}]\left(\mres[F]{X-Z}\right)
+        \cong
+        0\ttens[{\mres[\scR]{X-Z}}]\left(\mres[F]{X-Z}\right)
+        \cong
+        0
+    \]
+    であるから，左辺は\eqref{eq2313}をみたす．
+    よって命題\ref{PRP236} (i) より\eqref{eq2315}がしたがう．
+
+    \eqref{eq2316}：まず\(Z\)が開集合の場合と閉集合の場合に示す．
+    その後開集合と閉集合の共通部分として表したときに示す．
+
+    \(Z\)が開集合のとき，\textcolor{darkred}{あとでかく．}
+
+    \(Z\)が閉集合のとき，完全列\[
+        0\to \scR_{X-Z}\to\scR\to\scR_{Z}\to 0
+    \]に対して\(\HOM_{\scR}(\blk,F)\)を適用すると，
+    \(X-Z\)に開集合の場合を適用したものと
+    命題\ref{PRP239} (iv) の完全列とあわせて次の図式を得る．
+    \[\vcenter{\xymatrix@C=36pt@R=26pt{
+            0
+            \ar[r]^-{}
+            \ar@{=}[d]_-{}
+            &
+            \HOM_{\scR}(\scR_{Z},F)\ar[r]_-{}
+            \ar[d]_-{}
+            &
+            \HOM_{\scR}(\scR,F)\ar[r]_-{}
+            \ar@{=}[d]_-{}
+            &
+            \HOM_{\scR}(\scR_{X-Z},F)
+            \ar@{=}[d]_-{}
+            \\
+            0\ar[r]_-{}
+            &
+            \Gamma_{Z}(F)\ar[r]_-{}
+            &
+            F\ar[r]_-{}
+            &
+            \Gamma_{X-Z}(F)
+    }}\]
+    したがって，左に0を付け加えた
+    \[\vcenter{\xymatrix@C=36pt@R=26pt{
+        0
+        \ar[r]^-{}
+        \ar@{=}[d]_-{}
+        &
+        0
+        \ar[r]^-{}
+        \ar@{=}[d]_-{}
+        &
+        \HOM_{\scR}(\scR_{Z},F)\ar[r]_-{}
+        \ar[d]_-{}
+        &
+        \HOM_{\scR}(\scR,F)\ar[r]_-{}
+        \ar@{=}[d]_-{}
+        &
+        \HOM_{\scR}(\scR_{X-Z},F)
+        \ar@{=}[d]_-{}
+        \\
+        0
+        \ar[r]^-{}
+        &
+        0\ar[r]_-{}
+        &
+        \Gamma_{Z}(F)\ar[r]_-{}
+        &
+        F\ar[r]_-{}
+        &
+        \Gamma_{X-Z}(F)
+    }}\]
+    に五項補題を適用することで\eqref{eq2316}がしたがう．
+
+    \(Z\)が一般の局所閉集合のとき，
+    開集合\(U\)と閉集合\(A\)を用いて\(Z=U\cap A\)と表す．
+    このとき，開集合と閉集合の場合を用いて
+    \begin{align*}
+        \HOM_{\scR}\left(\scR_Z,F\right)
+        &\cong
+        \HOM_{\scR}\left(\scR_{U\cap A},F\right)\\
+        &\cong
+        \HOM_{\scR}\left(\left(\scR_{U}\right)_A,F\right)\\
+        &\cong
+        \HOM_{\scR}\left(\scR_{U}\ttens[\scR]\scR_A,F\right)\\
+        &\cong
+        \HOM_{\scR}\left(
+            \scR_{U},\HOM_{\scR}\left(\scR_{A},F\right)
+        \right)\\
+        &\cong
+        \HOM_{\scR}\left(\scR_{U},\Gamma_{A}(F)\right)\\
+        &\cong
+        \Gamma_{A}\left(\Gamma_{A}(F)\right)\\
+        &\cong
+        \Gamma_{U\cap A}(F)
+    \end{align*}
+    となる．
+\end{proof}
+
+\begin{RMK}
+    命題を用いることで他にも多くの射や同型が得られる．
+    例えば，\(f\colon Y\to X\)を連続写像，
+    \(\scR\)を\(Z\)を\(X\)の局所閉部分集合とし，
+    \(F,F_1,F_2\)を\(\scR\)加群の層，
+    \(G,G_1,G_2\)を\(f^{-1}\scR\)加群の層とする．
+    （テンソル積を考える場合は\(F_1,G,G_1\)は右加群とする．）
+    このとき，以下のような射や同型が存在する．
+    \begin{align}
+        \left(F_{1}\ttens[\scR]F_{2}\right)_{Z}
+        \cong
+        F_{1}&\ttens[\scR]\left(F_{2}\right)_{Z}
+        \cong
+        \left(F_{1}\right)_{Z}\ttens[\scR]F_{2},\label{eq2317}\\
+        \HOM_{\scR}\left(\left(F_{1}\right)_{Z},F_{2}\right)
+        \cong
+        \HOM_{\scR}&\left(F_{1},\Gamma_{Z}(F_{2})\right)
+        \cong
+        \Gamma_{Z}\HOM_{\scR}\left(F_{1},F_{2}\right)\label{eq2318}\\
+        f^{-1}F_{Z}&\cong\left(f^{-1}F\right)_{f^{-1}(Z)},\label{eq2319}\\
+        \Gamma_{Z}f_{\ast}G&\cong f_{\ast}\Gamma_{f^{-1}(Z)}(G),\label{eq2320}\\
+        f_{\ast}G\ttens[\scR]F&\to f_{\ast}\left(G\ttens[f^{-1}\scR]f^{-1}F\right),\label{eq2321}\\
+        f_{\ast}G_{1}\ttens[\scR]f_{\ast}G_{2}&\to f_{\ast}\left(G_{1}\ttens[f^{-1}\scR]G_{2}\right),\label{eq2322}\\
+        f_{\ast}\HOM_{f^{-1}\scR}(G_1,G_2)&\to\HOM_{\scR}(f_{\ast}G_1,f_{\ast}G_2),\label{eq2323}\\
+        f^{-1}\HOM_{\scR}(F_1,F_2)&\to\HOM_{f^{-1}\scR}(f^{-1}F_1,f^{-1}F_2).\label{eq2324}
+    \end{align}
+\end{RMK}
+\begin{proof}
+    \eqref{eq2317}：次の射の列を考える．
+
+    \eqref{eq2318}：次の射の列を考える．
+
+    \eqref{eq2319}：次の射の列を考える．
+
+    \eqref{eq2320}：次の射の列を考える．
+
+    \eqref{eq2321}：次の射の列を考える．
+    \begin{align*}
+        \Hom(G\tens[]f^{-1}F,G\tens[]f^{-1}F)
+        &\underset{(\eta_{G}\tens[]f^{-1}F)^{\ast}}{\longrightarrow}
+        \Hom(f^{-1}f_{\ast}G\tens[]f^{-1}F,G\tens[]f^{-1}F)\\
+        &\cong
+        \Hom(f^{-1}\left(f_{\ast}G\tens[]F\right),G\tens[]f^{-1}F)\\
+        &\cong
+        \Hom\left(f_{\ast}G\tens[]F,f_{\ast}\left(G\tens[]f^{-1}F\right)\right).
+    \end{align*}
+    ただし，最初の\((\eta_{G}\tens[]f^{-1}F)^{\ast}\)は
+    随伴の余単位\(
+        \eta_G\colon f^{-1}f_{\ast}G\to G
+    \)に\(f^{-1}F\)の恒等射を掛けたものの引き戻しである．
+    以上の射の合成による\(G\tens[]f^{-1}F\)の恒等射の像が\(
+        f_{\ast}G\tens[]F\to f_{\ast}\left(G\tens[]f^{-1}F\right)
+    \)を定める．
+
+    \eqref{eq2322}：次の射の列を考える．
+
+    \eqref{eq2323}：次の射の列を考える．
+
+    \eqref{eq2324}：次の射の列を考える．
+
+\end{proof}
+
+
+
+
+
+
+
+\clearpage
 \section{入射的層，脆弱層，平坦層}
 \section{局所コンパクト空間上の層}
 位相空間\(X\)が局所コンパクト性など，何らかの有限性をもつ場合，
