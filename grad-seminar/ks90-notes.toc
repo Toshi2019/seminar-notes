@@ -11,30 +11,30 @@
 \contentsline {paragraph}{ふつうの順像を用いた閉集合での定義}{22}{section*.22}
 \contentsline {paragraph}{開集合での定義}{24}{section*.23}
 \contentsline {paragraph}{局所閉集合での定義}{25}{section*.24}
-\contentsline {section}{\numberline {2.4}入射的層，脆弱層，平坦層}{37}{section.2.4}
-\contentsline {section}{\numberline {2.5}局所コンパクト空間上の層}{37}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}固有順像}{39}{subsection.2.5.1}
-\contentsline {section}{\numberline {2.6}層のコホモロジー}{39}{section.2.6}
-\contentsline {section}{\numberline {2.7}非特性変形補題}{41}{section.2.7}
-\contentsline {section}{\numberline {2.9}実・複素多様体上の層の例}{43}{section.2.9}
-\contentsline {subsection}{\numberline {2.9.1}層\(\mathord {\mathscr {C}}_X^0\)}{43}{subsection.2.9.1}
-\contentsline {subsection}{\numberline {2.9.2}層\(\Lloc [dx]\)}{43}{subsection.2.9.2}
-\contentsline {subsection}{\numberline {2.9.3}環付き空間}{43}{subsection.2.9.3}
-\contentsline {subsection}{\numberline {2.9.4}\(C^\alpha \)多様体}{44}{subsection.2.9.4}
-\contentsline {subsection}{\numberline {2.9.5}向きづけ，微分形式，密度}{44}{subsection.2.9.5}
-\contentsline {subsection}{\numberline {2.9.6}分布と超関数}{44}{subsection.2.9.6}
-\contentsline {subsection}{\numberline {2.9.7}ド・ラーム複体}{45}{subsection.2.9.7}
-\contentsline {subsection}{\numberline {2.9.8}複素多様体}{45}{subsection.2.9.8}
-\contentsline {subsection}{\numberline {2.9.9}ドルボー複体}{46}{subsection.2.9.9}
-\contentsline {subsection}{\numberline {2.9.10}\(\mathscr {O}_X\)上の演算}{47}{subsection.2.9.10}
-\contentsline {subsection}{\numberline {2.9.11}\(\mathscr {O}_X\)のコホモロジー}{47}{subsection.2.9.11}
-\contentsline {subsection}{\numberline {2.9.12}正則関数の境界値}{47}{subsection.2.9.12}
-\contentsline {subsection}{\numberline {2.9.13}佐藤超関数}{48}{subsection.2.9.13}
-\contentsline {subsection}{\numberline {2.9.14}局所定数層の例}{48}{subsection.2.9.14}
-\contentsline {chapter}{\numberline {第3章}Poincar\'e-Verdier 双対性}{50}{chapter.3}
-\contentsline {section}{\numberline {3.1}上付きびっくり}{50}{section.3.1}
-\contentsline {subparagraph}{\cite [V, 6.1]{B+84}}{50}{section*.34}
-\contentsline {subsection}{\numberline {3.1.1}構成}{51}{subsection.3.1.1}
-\contentsline {paragraph}{\(f\)に関する仮定}{51}{section*.35}
-\contentsline {paragraph}{構成}{52}{section*.37}
-\contentsline {chapter}{参考文献}{53}{chapter*.38}
+\contentsline {section}{\numberline {2.4}入射的層，脆弱層，平坦層}{39}{section.2.4}
+\contentsline {section}{\numberline {2.5}局所コンパクト空間上の層}{39}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}固有順像}{41}{subsection.2.5.1}
+\contentsline {section}{\numberline {2.6}層のコホモロジー}{41}{section.2.6}
+\contentsline {section}{\numberline {2.7}非特性変形補題}{43}{section.2.7}
+\contentsline {section}{\numberline {2.9}実・複素多様体上の層の例}{45}{section.2.9}
+\contentsline {subsection}{\numberline {2.9.1}層\(\mathord {\mathscr {C}}_X^0\)}{45}{subsection.2.9.1}
+\contentsline {subsection}{\numberline {2.9.2}層\(\Lloc [dx]\)}{45}{subsection.2.9.2}
+\contentsline {subsection}{\numberline {2.9.3}環付き空間}{45}{subsection.2.9.3}
+\contentsline {subsection}{\numberline {2.9.4}\(C^\alpha \)多様体}{46}{subsection.2.9.4}
+\contentsline {subsection}{\numberline {2.9.5}向きづけ，微分形式，密度}{46}{subsection.2.9.5}
+\contentsline {subsection}{\numberline {2.9.6}分布と超関数}{46}{subsection.2.9.6}
+\contentsline {subsection}{\numberline {2.9.7}ド・ラーム複体}{47}{subsection.2.9.7}
+\contentsline {subsection}{\numberline {2.9.8}複素多様体}{47}{subsection.2.9.8}
+\contentsline {subsection}{\numberline {2.9.9}ドルボー複体}{48}{subsection.2.9.9}
+\contentsline {subsection}{\numberline {2.9.10}\(\mathscr {O}_X\)上の演算}{49}{subsection.2.9.10}
+\contentsline {subsection}{\numberline {2.9.11}\(\mathscr {O}_X\)のコホモロジー}{49}{subsection.2.9.11}
+\contentsline {subsection}{\numberline {2.9.12}正則関数の境界値}{49}{subsection.2.9.12}
+\contentsline {subsection}{\numberline {2.9.13}佐藤超関数}{50}{subsection.2.9.13}
+\contentsline {subsection}{\numberline {2.9.14}局所定数層の例}{50}{subsection.2.9.14}
+\contentsline {chapter}{\numberline {第3章}Poincar\'e-Verdier 双対性}{52}{chapter.3}
+\contentsline {section}{\numberline {3.1}上付きびっくり}{52}{section.3.1}
+\contentsline {subparagraph}{\cite [V, 6.1]{B+84}}{52}{section*.34}
+\contentsline {subsection}{\numberline {3.1.1}構成}{53}{subsection.3.1.1}
+\contentsline {paragraph}{\(f\)に関する仮定}{53}{section*.35}
+\contentsline {paragraph}{構成}{54}{section*.37}
+\contentsline {chapter}{参考文献}{55}{chapter*.38}

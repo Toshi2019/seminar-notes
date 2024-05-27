@@ -2733,6 +2733,136 @@ $\cat$の三角とは射の列
     \end{enumerate}
 \end{PRP}\end{leftbar}
 
+\begin{proof}
+    (i) 
+    \[
+        0\to F\overset{\varphi}{\to}G\overset{\psi}{\to}H\to0
+    \]
+    を\(X\)上の層の完全列とする．
+    \[
+        0\to \Gamma_Z(X;F)\overset{\varphi_X}{\to}
+        \Gamma_Z(X;G)\overset{\psi_X}{\to}\Gamma_Z(X;H)
+    \]
+    が完全であることを示す．
+    この列は\(Z\)を閉集合として含む\(X\)の開集合\(U\)を用いて
+    \[
+        0\to \Gamma_{Z\cap U}(U;F)\overset{\varphi_U}{\to}
+        \Gamma_{Z\cap U}(U;G)\overset{\psi_U}{\to}\Gamma_{Z\cap U}(X;H)
+    \]とかかれるので，こちらの完全性を示せばよい．
+    
+    \(\varphi_U\)が単射であることを示す．
+    \(s\in\Gamma_{Z\cap U}(U;F)\)に対し\(\varphi_U(s)=0\)であるとする．
+    \(\Gamma(U;\blk)\)の左完全性から，
+    \(\Gamma(U;F)\)の元として\(s=0\)となる．
+
+    \(\Gamma_{Z\cap U}(U;G)\)での完全性を示す．
+    \(t\in\Gamma_{Z\cap U}(U;G)\)を\(\psi_U(t)=0\)をみたすものとする．
+    このとき，\(\Gamma(U;\blk)\)の左完全性から，
+    \(s\in\Gamma(U;F)\)で\(\varphi_U(s)=t\)となるものが存在する．
+    \(\mres[t]{U-U\cap Z}=0\)なので，\[
+        \varphi_{U-Z\cap U}(\mres[s]{U-Z\cap U})
+        =\mres[\varphi_{U}(s)]{U-Z\cap U}
+        =\mres[t]{U-Z\cap U}
+        =0
+    \]である．
+    \(\varphi_{U-Z\cap U}\)は単射なので\(
+        \mres[s]{U-Z\cap U}=0
+    \)である．よって\(s\in\Gamma_{Z\cap U}(U;F)\)である．
+    \(\psi_{U}\circ\varphi_{U}=0\)は明らか．
+    よって，\(\Gamma_Z(X;\blk)\)は左完全関手である．
+
+    次に\(\Gamma_Z\)が左完全であることを示す．
+    \[
+        0\to \Gamma_Z(F)\overset{\Gamma_Z(\varphi)}{\to}
+        \Gamma_Z(G)\overset{\Gamma_Z(\psi)}{\to}
+        \Gamma_Z(H)
+    \]
+    が完全となるのは，\(X\)の各点\(x\)に対して
+    \[
+        0\to \Gamma_Z(F)_x\overset{\Gamma_Z(\varphi)_x}{\to}
+        \Gamma_Z(G)_x\overset{\Gamma_Z(\psi)_x}{\to}
+        \Gamma_Z(H)_x
+    \]
+    が完全となるときである．そのためには
+    \(x\)の任意の開近傍\(U\)に対し，
+    \[
+        0\to \Gamma_{Z\cap U}(U;F)
+        \overset{\Gamma_Z(\varphi)_U}{\to}
+        \Gamma_{Z\cap U}(U;G)\overset{\Gamma_Z(\psi)_U}{\to}
+        \Gamma_{Z\cap U}(U;H)
+    \]
+    が完全であればよいが，
+    \(X\)の任意の開集合\(U\)に対して\(
+        \Gamma_{Z\cap U}(U;\blk)
+    \)が左完全だったので，
+    この列は完全である．
+
+    \(\Gamma_Z(X;\blk)\cong\Gamma(X;\blk)\circ\Gamma_Z\)となることを示す．
+    \(\Gamma(X;\Gamma_Z(F))=\Gamma_Z(X;F)=\)なのでよい．
+
+    (ii) 
+    \(U\)を\(X\)の開集合とする．\begin{align*}
+        \Gamma(U;\Gamma_{Z'}\Gamma_{Z}(F))&=\Gamma_{Z'\cap U}(U';\Gamma_{Z}(F)),\\
+        \Gamma_{}(U';\Gamma_{Z}(F))&=\Gamma_{Z\cap U'}(U'';F)
+    \end{align*}
+    なので，\(s\in \Gamma(U;\Gamma_{Z'}\Gamma_{Z}(F))\)は
+    \[
+        s\in\Gamma_{Z\cap U'}(U'';F)\quad\text{で}\quad \mres[s]{U''-Z'\cap U}=0
+    \]すなわち
+    \[
+        s\in\Gamma(U'';F)\quad\text{で}
+        \quad \mres[s]{U''-Z\cap U'}=0,
+        \quad \mres[s]{U''-Z'\cap U}=0
+    \]
+    となるもの．よって
+    \begin{align*}
+        \Gamma(U;\Gamma_{Z'}\Gamma_{Z}(F))
+        &\cong
+        \left\{s\in\Gamma(U'';F);
+            \mres[s]{U''-Z\cap U'}=0,\mres[s]{U''-Z'\cap U}=0
+        \right\}\\
+        &\cong
+        \left\{s\in\Gamma(U'';F);
+            \mres[s]{(U''-Z\cap U')\cup(U''-Z'\cap U)}=0
+        \right\}\\
+        &\cong
+        \left\{s\in\Gamma(U'';F);
+            \mres[s]{U''-(Z\cap U')\cap(Z'\cap U)}=0
+        \right\}\\
+        &\cong
+        \left\{s\in\Gamma(U'';F);
+            \mres[s]{U''-(Z\cap Z'\cap U)}=0
+        \right\}\\
+        &\cong
+        \Gamma_{Z\cap Z'\cap U}(U'';F)
+    \end{align*}
+    であり，\(
+        \Gamma_{Z'}\Gamma_{Z}(F)\cong\Gamma_{Z\cap Z'}(F)
+    \)となる．
+
+    (iii) 
+    \(Z\)が開集合のとき，
+    \(\Gamma_{Z\cap V}(V;F)\)において\(Z\cap V\)を閉集合として
+    含む開集合\(V'\subset V\)として\(V'=Z\cap V\)を取れる．
+    つまり\[
+        \Gamma_{Z\cap V}(V;F)=\Gamma_{Z\cap V}(Z\cap V;F)
+    \]である．右辺は\(\Gamma(Z\cap V;F)\)に他ならない．
+    よって，\begin{align*}
+        \Gamma(V;\Gamma_{Z}(F))
+        &=\Gamma(Z\cap V;F)\\
+        &=\Gamma(i^{-1}(V);F)\\
+        &=\Gamma(i^{-1}(V);\mres[F]{Z})\\
+        &=i_{\ast}\mres[F]{Z}(V)\\
+        &=i_{\ast}i^{-1}F(V)
+    \end{align*}
+    である．すなわち\(\Gamma_Z\cong i_{\ast}i^{-1}\)である．
+
+    (iv) 順当にやればいける．（茎ごとに完全性を示す）
+
+    (v) 順当にやればいける．
+
+    (vi) 順当にやればいける．
+\end{proof}
 \subsection*{各操作の関係}
 
 ここまでに定義してきた圏\(\Sh(X)\)上の関手\(\HOM(\blk,\blk)\), 
