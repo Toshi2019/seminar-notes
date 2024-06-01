@@ -3937,6 +3937,97 @@ c柔軟層の例は\ref{sec29}節で大量に与える．
 したがって導来圏\(\Domp(\Mod(\scR))\)と
 その充満部分圏\(\Domp^{\ast}(\Mod(\scR))\)を考えることができる．
 ただし\(\ast=+,-,\mathrm{b}\)である．
+次のように略記する．
+\begin{equation}
+    \Domp^{\ast}(\scR)=\Domp^{\ast}(\Mod(\scR)), \quad \ast=\varnothing,+,-,\mathrm{b}.
+\end{equation}
+とくに，\(A\)が環であるとき，
+圏\(\Domp(A_X)\)は\(X\)上の\(A\)加群の層の圏の導来圏である．
+例えば\(\Domp(\zz_X)=\Domp(\Sh(X))\)である．
+
+以前に導入した関手の導来関手を定義するために，次の状況を考える．
+\(Z\)は\(X\)の局所閉集合，\(f\colon Y\to X\)は連続写像，
+\(g\colon W\to Y\)は連続写像，
+\(\scS\to\scR\)は\(X\)上の環の層の射で
+像が\(\scR\)の中心に含まれるものであり\(\scS\)は可換である．
+関手\(f_{!}\)（あるいは\(g_{!}\)など）を考える場合は，
+空間はすべて局所コンパクトであると暗に仮定する．
+
+圏\(\Mod(\scR)\)は十分多くの入射的対象をもつので，
+すべての左完全関手を導来できる．次の関手を得る．
+\[\def\arraystretch{1.3}
+\begin{array}{ll}
+    \RG_{Z}(X;\blk)         &\colon\Dompl(\scR)\to\Dompl(\cAb),\\
+    \RG_{Z}                 &\colon\Dompl(\scR)\to\Dompl(\scR),\\
+    \RG(Z;\blk)             &\colon\Dompl(\scR)\to\Dompl(\cAb),\\
+    \Rder{f_{\ast}}         &\colon\Dompl(f^{-1}\scR)\to\Dompl(\scR),\\
+    \RHOM_{\scR}(\blk,\blk) &\colon\Dompu(\scR)^{\op}\times\Dompl(\scR)\to\Dompl(\scS),\\
+    \RHOM_{\scS}(\blk,\blk) &\colon\Dompu(\scS)^{\op}\times\Dompl(\scR)\to\Dompl(\scR),\\
+    \RG_{c}(X;\blk)         &\colon\Dompl(\scR)\to\Dompl(\cAb),\\
+    \Rder{f_{!}}            &\colon\Dompl(f^{-1}\scR)\to\Dompl(\scR).
+\end{array}\]
+さらに，関手\((\blk)_{Z}\colon F\mapsto F_Z\)と\(
+    f^{-1}\colon F\mapsto f^{-1}F
+\)は完全なので，それぞれ導来圏に拡張される．
+\(\ast=+,-,\mathrm{b}\)に対して次の関手を得る．
+\begin{align*}
+    (\blk)_{Z}&\colon\Domp^{\ast}(\scR)\to\Domp^{\ast}(\scR),\\
+    f^{-1}&\colon \Domp^{\ast}(\scR)\to \Domp^{\ast}(f^{-1}\scR).
+\end{align*}
+
+これらの導来関手を計算するには，
+層の複体\(F\)を入射的層の複体\(I\)で\(F\)に擬同形なものに置き換えて，
+\(I\)にこれらの関手を適用する．
+さらに，与えられた関手に対しては，
+その関手に関して入射的な部分圏から各\(I^j\)を選べば良い．
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
 \section*{弱大域次元}
 アーベル層の圏はアーベル圏になる．
 したがって層の導来圏が考えられる．

@@ -19,26 +19,26 @@
 \contentsline {paragraph}{テンソル積との関係}{45}{section*.41}
 \contentsline {subsection}{\numberline {2.5.1}固有順像}{46}{subsection.2.5.1}
 \contentsline {section}{\numberline {2.6}層のコホモロジー}{46}{section.2.6}
-\contentsline {section}{\numberline {2.7}非特性変形補題}{49}{section.2.7}
-\contentsline {section}{\numberline {2.9}実・複素多様体上の層の例}{51}{section.2.9}
-\contentsline {subsection}{\numberline {2.9.1}層\(\mathord {\mathscr {C}}_X^0\)}{51}{subsection.2.9.1}
-\contentsline {subsection}{\numberline {2.9.2}層\(\Lloc [dx]\)}{51}{subsection.2.9.2}
-\contentsline {subsection}{\numberline {2.9.3}環付き空間}{51}{subsection.2.9.3}
-\contentsline {subsection}{\numberline {2.9.4}\(C^\alpha \)多様体}{52}{subsection.2.9.4}
-\contentsline {subsection}{\numberline {2.9.5}向きづけ，微分形式，密度}{52}{subsection.2.9.5}
-\contentsline {subsection}{\numberline {2.9.6}分布と超関数}{52}{subsection.2.9.6}
-\contentsline {subsection}{\numberline {2.9.7}ド・ラーム複体}{53}{subsection.2.9.7}
-\contentsline {subsection}{\numberline {2.9.8}複素多様体}{53}{subsection.2.9.8}
-\contentsline {subsection}{\numberline {2.9.9}ドルボー複体}{54}{subsection.2.9.9}
-\contentsline {subsection}{\numberline {2.9.10}\(\mathscr {O}_X\)上の演算}{55}{subsection.2.9.10}
-\contentsline {subsection}{\numberline {2.9.11}\(\mathscr {O}_X\)のコホモロジー}{55}{subsection.2.9.11}
-\contentsline {subsection}{\numberline {2.9.12}正則関数の境界値}{55}{subsection.2.9.12}
-\contentsline {subsection}{\numberline {2.9.13}佐藤超関数}{56}{subsection.2.9.13}
-\contentsline {subsection}{\numberline {2.9.14}局所定数層の例}{56}{subsection.2.9.14}
-\contentsline {chapter}{\numberline {第3章}Poincar\'e-Verdier 双対性}{58}{chapter.3}
-\contentsline {section}{\numberline {3.1}上付きびっくり}{58}{section.3.1}
-\contentsline {subparagraph}{\cite [V, 6.1]{B+84}}{58}{section*.44}
-\contentsline {subsection}{\numberline {3.1.1}構成}{59}{subsection.3.1.1}
-\contentsline {paragraph}{\(f\)に関する仮定}{59}{section*.45}
-\contentsline {paragraph}{構成}{60}{section*.47}
-\contentsline {chapter}{参考文献}{61}{chapter*.48}
+\contentsline {section}{\numberline {2.7}非特性変形補題}{50}{section.2.7}
+\contentsline {section}{\numberline {2.9}実・複素多様体上の層の例}{52}{section.2.9}
+\contentsline {subsection}{\numberline {2.9.1}層\(\mathord {\mathscr {C}}_X^0\)}{52}{subsection.2.9.1}
+\contentsline {subsection}{\numberline {2.9.2}層\(\Lloc [dx]\)}{52}{subsection.2.9.2}
+\contentsline {subsection}{\numberline {2.9.3}環付き空間}{52}{subsection.2.9.3}
+\contentsline {subsection}{\numberline {2.9.4}\(C^\alpha \)多様体}{53}{subsection.2.9.4}
+\contentsline {subsection}{\numberline {2.9.5}向きづけ，微分形式，密度}{53}{subsection.2.9.5}
+\contentsline {subsection}{\numberline {2.9.6}分布と超関数}{53}{subsection.2.9.6}
+\contentsline {subsection}{\numberline {2.9.7}ド・ラーム複体}{54}{subsection.2.9.7}
+\contentsline {subsection}{\numberline {2.9.8}複素多様体}{54}{subsection.2.9.8}
+\contentsline {subsection}{\numberline {2.9.9}ドルボー複体}{55}{subsection.2.9.9}
+\contentsline {subsection}{\numberline {2.9.10}\(\mathscr {O}_X\)上の演算}{56}{subsection.2.9.10}
+\contentsline {subsection}{\numberline {2.9.11}\(\mathscr {O}_X\)のコホモロジー}{56}{subsection.2.9.11}
+\contentsline {subsection}{\numberline {2.9.12}正則関数の境界値}{56}{subsection.2.9.12}
+\contentsline {subsection}{\numberline {2.9.13}佐藤超関数}{57}{subsection.2.9.13}
+\contentsline {subsection}{\numberline {2.9.14}局所定数層の例}{57}{subsection.2.9.14}
+\contentsline {chapter}{\numberline {第3章}Poincar\'e-Verdier 双対性}{59}{chapter.3}
+\contentsline {section}{\numberline {3.1}上付きびっくり}{59}{section.3.1}
+\contentsline {subparagraph}{\cite [V, 6.1]{B+84}}{59}{section*.44}
+\contentsline {subsection}{\numberline {3.1.1}構成}{60}{subsection.3.1.1}
+\contentsline {paragraph}{\(f\)に関する仮定}{60}{section*.45}
+\contentsline {paragraph}{構成}{61}{section*.47}
+\contentsline {chapter}{参考文献}{62}{chapter*.48}
