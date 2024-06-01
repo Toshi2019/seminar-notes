@@ -285,6 +285,7 @@
 \newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
 \newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
 \newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Ext}{\mathop{\mathrm{Ext}}\nolimits}
 \newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
 
 \newcommand{\cat}{\mathscr{C}}
@@ -408,15 +409,21 @@
 \newcommand{\ttens}[1][]{\mathbin{\mathop{\overset{\mathrm{}}{\tens}}_{#1}}}
 
 \newcommand{\etens}{\mathbin{\boxtimes}}
-\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+%\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\ltens}[1][]{\mathbin{\tens}^\mathrm{L}_{#1}}
 \newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
-\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+\newcommand{\lltens}[1][]{\mathbin{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
 %\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
 \newcommand{\detens}{\underline{\etens}}
 \newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
 \newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
 
-\newcommand{\letens}[1][]{\mathbin{\mathop{\overset{\mathrm{L}}{\etens}}_{#1}}}
+\newcommand{\letens}[2][]{\mathbin{\mathop{\overset{\mathrm{L}}{\etens}_{#1}}_{#2\ \ }}}
+
+\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
+\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
+\newcommand{\hd}{\mathop{\mathrm{hd}}\nolimits}
+
 
 % =================================
 
@@ -449,9 +456,11 @@
 \newtheorem{CRL}[Axiom]{系}
 \newtheorem{EG}[Axiom]{例}
 \newtheorem{CNV}[Axiom]{規約}
+\newtheorem{NTT}[Axiom]{記法}
 \newtheorem{RMK}[Axiom]{注意}
 \newtheorem{CMT}{コメント}[chapter]
 \newtheorem*{CMT*}{コメント}
+\newtheorem{EXC}{演習}[chapter]
 
 
 % 定理環境ここまで
@@ -1238,6 +1247,147 @@ $\cat$の三角とは射の列
 %\end{equation}
 
 %$\Ob(\Comp(\cat))=\left\{\right\}$
+
+\section{導来圏}
+
+\begin{CRL}\label{CRL178}
+    aa
+\end{CRL}
+
+
+\section*{演習}
+
+
+\setcounter{EXC}{16}
+\begin{leftbar}
+\begin{EXC}[ホモロジー次元]\label{EXC116}
+    \(\cat\)をアーベル圏とする．
+    \(n\)を非負自然数として，
+    任意の\(X,Y\in\cat\)と\(j>n\)に対して\(\Ext^{j}(X,Y)=0\)であるとき，
+    \(\cat\)はホモロジー次元は\(\leqq n\)であるという．
+    ここで\(\Ext^{j}(X,Y)=\Hom_{\Domp(\cat)}(X,Y[j])\)である．
+    \(\cat\)が十分多くの入射的対象をもつとする．
+    次の条件は同値であることを示せ．    
+    \begin{enumerate}[(i)]
+        \item \(\cat\)のホモロジー次元は\(\leqq n\)である．
+        \item 任意の\(X\in\cat\)に対し，
+        \(X\)の長さ\(\leqq n\)の入射分解，
+        すなわち完全列\(
+            0\to X\to I^{0}\to \cdots\to I^{n}\to 0
+        \)で各\(I^{j}\)が入射的であるものが存在する．
+    \end{enumerate}
+    
+    これらの条件をみたす最小の\(
+        n\in\nn\cup\{+\infty\}
+    \)を\(\cat\)の\textbf{ホモロジー次元} (homological 
+    dimension) とよび\(\hd(\cat)\)で表す．
+\end{EXC}
+\end{leftbar}
+
+
+\setcounter{EXC}{27}
+
+\begin{leftbar}
+\begin{EXC}[大域ホモロジー次元]\label{EXC128}
+    \(A\)を環とする．
+    次の条件 (i)--(iii) が同値であることを示せ．    
+    \begin{enumerate}[(i)]
+        \item \(\Mod(A)\)のホモロジー次元は\(\leqq n\)である．
+        \item 任意の左加群\(M\)が長さ\(\leqq n\)の入射分解をもつ．
+        \item 任意の左加群\(M\)が長さ\(\leqq n\)の射影分解をもつ．\\（すなわち，完全列\(0\to P_{n}\to \cdots\to P_{0}\to M\to 0\)で各\(P_j\)が射影的であるものが存在する．）
+    \end{enumerate}
+    
+    \(
+        \gld(A)\coloneqq
+        \sup\left(\hd(\Mod(A)),\hd(\Mod(A^{\op}))\right)
+    \)とおき，\(\gld(A)\)を
+    \(A\)の\textbf{大域ホモロジー次元} (global 
+    homological dimension) とよぶ．
+\end{EXC}
+\end{leftbar}
+
+
+\begin{leftbar}
+\begin{EXC}[弱大域次元]\label{EXC129}
+    \(A\)を環とする．
+    \begin{enumerate}[(i)]
+        \item 自由加群は射影加群であることを示せ．
+        \item 射影加群は自由加群の自由加群の直和因子であることを示せ．
+        \item 射影加群は平坦加群であることを示せ．
+        \item \(n\geqq0\)を整数とする．
+            次の条件(a)--\((\text{b})^{\op}\)が同値であることを示せ．
+            \begin{enumerate}[(a)]
+                \item 任意の\(j>n\), \(N\in\Mod(A^\op)\), 
+                \(M\in\Mod(A)\)に対し，\(\Tor_j^A(N,M)=0\)
+                \item 任意の\(M\in\Mod(A)\)に対し，分解\[
+                    0\to P^n\to\dots\to P^0\to M\to0\quad\text{(\(P^j\)は平坦)}
+                    \]が存在する．
+                \item[\((\text{b})^{\op}\)]\setlength{\leftskip}{10pt}
+                任意の\(M\in\Mod(A^\op)\)に対し，分解\[
+                    0\to P^n\to\dots\to P^0\to M\to0\quad\text{(\(P^j\)は平坦)}
+                \]が存在する．
+            \end{enumerate}
+            \(A\)の\textbf{弱大域次元} (weak global dimension) \(\wgld(A)\)を
+            これらの条件を満たす最小の\(n\in\nn\cup\{+\infty\}\)として定める．
+        \item \(\wgld(A)\leqq\gld(A)\)を示せ．
+    \end{enumerate}
+\end{EXC}
+\end{leftbar}
+\begin{proof}
+    (i) 
+    \(M\)を自由加群とする．左\(A\)加群の全射
+    \(g\colon N\twoheadrightarrow N'\)に対し，\[
+        g_\ast\colon\Hom_A(M,N)\to\Hom_A(M,N') 
+        \quad\text{in \(\Mod(\zz)\)}
+    \]が全射であることを示す．
+    \(\psi\colon M\to N'\)を\(A\)加群の射とする．
+    \(I\)を\(M\cong A^{\oplus I}\)となる添字集合とすると
+    任意の\(m\in M\)は，
+    \(M\)の生成系\((m_i)\)と\((a_i)_i\in A^{\oplus I}\)を
+    用いて，\(m=\sum_{i\in I}a_im_i\)とかける．
+    このとき，\[
+        \psi(m)=\sum_{i}a_i\psi(m_i)\in N'
+    \]であり，\(g\)が全射なので，\(n\in N\)で\[
+        g(n)=\psi(m)=\sum_{i}a_i\psi(m_i),
+        \quad
+        \psi(m_i)=g(n_i)
+    \]となるものがある．
+    この\((n_i)_i\)に対して，\(\phi\colon M\to N\)を
+    \[
+        \phi(m_i)=n_i
+    \]で定めると，
+    \[
+        \left(g_\ast(\phi)\right)(m_i)=g\circ\phi(m_i)=g(n_i)=\psi(m_i)
+    \]となる．
+    
+    (ii) 
+    \(P\)を射影加群とする．
+    自由加群\(A^{\oplus I}\)と
+    全射\(p\colon A^{\oplus I}\twoheadrightarrow P\)が存在する．
+    実際，\(I= P\)として，
+    \(p\)を\(p((a_x)_{x\in P})=\sum_{x\in P}a_xx\)と
+    定めればよい．\(Q=\Ker p\)とすると，\[
+        0\to Q\hookrightarrow A^{\oplus I}\twoheadrightarrow P\to0
+    \]は完全列である．
+    このとき，\(P\)が射影加群であることから，
+    \(\id_P\)に対して，\(u\colon P\to A^{\oplus I}\)で
+    \[p_\ast(u)=p\circ u=\id_P\]となる者が存在する．
+    したがって，上の完全列は分裂し，
+    \(A^{\oplus I}\cong P\oplus Q\)となる．
+    
+    (iii) 
+    まず「自由\(\Rightarrow\)平坦」を示す．\(F=A^{\bigoplus I}\)を自由加群とし，\[
+        0\to N_1\to N_2\to N_3\to0
+    \]を右\(A\)加群の完全系列とする．\[
+        0\to N_1\otimes A^{\bigoplus I}\to N_2\otimes A^{\bigoplus I}\to N_3\otimes A^{\bigoplus I}\to0
+    \]において，\[
+        N_1\otimes A^{\bigoplus I}\cong N_1^{\bigoplus I},\quad
+        N_2\otimes A^{\bigoplus I}\cong N_2^{\bigoplus I}
+    \]であり，\(j\colon N_1\to N_2\)は単射なので，\[
+        \bigoplus_{i\in I}j_i\colon N_1^{\bigoplus I}\to N_2^{\bigoplus I}
+    \]で
+\end{proof}
+
 
 \clearpage
 \chapter{層}
@@ -3307,6 +3457,9 @@ $\cat$の三角とは射の列
     \]をひきおこす．
 \end{proof}
 
+\begin{NTT}\label{NTT2312}
+    aa
+\end{NTT}
 
 
 
@@ -3976,11 +4129,61 @@ c柔軟層の例は\ref{sec29}節で大量に与える．
 \end{align*}
 
 これらの導来関手を計算するには，
-層の複体\(F\)を入射的層の複体\(I\)で\(F\)に擬同形なものに置き換えて，
+層の複体\(F\)を入射的層の複体\(I\)で\(F\)に擬同形なものに置き換えてから，
 \(I\)にこれらの関手を適用する．
 さらに，与えられた関手に対しては，
 その関手に関して入射的な部分圏から各\(I^j\)を選べば良い．
 
+\begin{EG}
+    \(F\in\Sh(X)\)とする．
+    完全列\(
+        0\to F\to F^{0}\to\cdots
+    \)で各\(F^{j}\)が脆弱であるものを考える．
+    \(F\)を0次の項が\(F\)である複体\(
+        \cdots\to0\to F\to 0\to\cdots
+    \)と同一視すると，\(F\)は複体\[
+        F^{\bullet}\colon\cdots\to0\to F^{0}\to F^{1}\to\cdots
+    \]（ただし0次の項は\(F^{0}\)である）と擬同形である．
+    このとき\(\RG_{Z}(X;F)\)は複体\(\Gamma_{Z}(X;F^{\bullet})\)で
+    表される．
+\end{EG}
+
+左導来関手\(\blk\ltens[\scR]\blk\)を定義するためには，
+\(\scR\)に対する仮定が必要である．
+
+\begin{DFN}
+    \(\scR\)を\(X\)上の環の層とする．\[
+        \wgld(\scR)\coloneqq\sup_{x\in X}\left(
+            \wgld(\scR_x)
+        \right)
+    \]とおく（演習\ref{EXC129}）．
+    \(\wgld(\scR)\)を\(\scR\)の弱大域次元とよぶ．
+\end{DFN}
+
+環の層\(\scR\)上のテンソル積を考える際には，
+常に\(\scR\)の弱大域次元は有限であると仮定する：
+\begin{equation}
+    \wgld(\scR)<\infty.
+\end{equation}
+命題\ref{PRP2412}，系\ref{CRL178}，演習I.23 を適用することで，
+\(F\in\Dompb(\scR)\)または\(F\in\Dompl(\scR)\)ならば，
+\(F\)は平坦\(\scR\)加群の有界複体，または下に有界な複体と
+それぞれ擬同形であることが分かる．
+したがって左導来関手
+\begin{align*}
+    \blk\lltens[\scR]\blk&\colon\Domp^{\ast}(\scR^{\op})\times\Domp^{\ast}(\scR)\to\Domp^{\ast}(\scS),\\
+    \blk\lltens[\scS]\blk&\colon\Domp^{\ast}(\scS)\times\Domp^{\ast}(\scS)\to\Domp^{\ast}(\scR)
+\end{align*}
+を\(\ast=-,+,\mathrm{b}\)に対して定義することができる．
+
+とくに記法\ref{NTT2312}の状況を考える．
+\(\ast=-,+,\mathrm{b}\)に対し関手\[
+    \blk\letens[\scR]{S}\blk\colon
+    \Domp^{\ast}(p_{X}^{-1}(\scR^{\op}))
+    \times
+    \Domp^{\ast}(p_{Y}^{-1}\scR)
+    \to\Domp^{\ast}(p^{-1}\scS)
+\]が定まる．（ここで\(\scR\)と\(\scS\)は\(S\)上の環の層である．）
 
 
 
@@ -4019,98 +4222,6 @@ c柔軟層の例は\ref{sec29}節で大量に与える．
 
 
 
-
-
-
-
-
-
-
-
-\clearpage
-\section*{弱大域次元}
-アーベル層の圏はアーベル圏になる．
-したがって層の導来圏が考えられる．
-
-\(\cdot\otimes\cdot\)の導来関手を考えたいが，
-テンソルに関する複体が有界になるとは限らないので，
-平坦分解の長さが有限になるという仮定をおく．
-
-\begin{PRP}
-    \(A\)を環とする．
-    \begin{enumerate}
-        \item 自由加群は射影加群である．
-        
-        \item 射影加群は自由加群の自由加群の直和因子である．
-        
-        \item 射影加群は平坦加群である．
-        
-        \item \(n\geqq0\)を整数とする．
-            次の条件(a)--\((\text{b})^{\op}\)は同値である．
-            \begin{enumerate}[(a)]
-                \item 任意の\(j>n\), \(N\in\Mod(A^\op)\), 
-                \(M\in\Mod(A)\)に対し，\(\Tor_j^A(N,M)=0\)
-                \item 任意の\(M\in\Mod(A)\)に対し，分解\[
-                    0\to P^n\to\dots\to P^0\to M\to0\quad\text{(\(P^j\)は平坦)}
-                    \]が存在する．
-                \item[\((\text{b})^{\op}\)]\setlength{\leftskip}{10pt}
-                任意の\(M\in\Mod(A^\op)\)に対し，分解\[
-                    0\to P^n\to\dots\to P^0\to M\to0\quad\text{(\(P^j\)は平坦)}
-                \]が存在する．
-            \end{enumerate}
-    \end{enumerate}
-\end{PRP}
-\begin{proof}
-    \begin{enumerate}
-        \item \(M\)を自由加群とする．左\(A\)加群の全射
-        \(g\colon N\twoheadrightarrow N'\)に対し，\[
-            g_\ast\colon\Hom_A(M,N)\to\Hom_A(M,N') 
-            \quad\text{in \(\Mod(\zz)\)}
-        \]が全射であることを示す．
-        \(\psi\colon M\to N'\)を\(A\)加群の射とする．
-        \(I\)を\(M\cong A^{\oplus I}\)となる添字集合とすると
-        任意の\(m\in M\)は，
-        \(M\)の生成系\((m_i)\)と\((a_i)_i\in A^{\oplus I}\)を
-        用いて，\(m=\sum_{i\in I}a_im_i\)とかける．
-        このとき，\[
-            \psi(m)=\sum_{i}a_i\psi(m_i)\in N'
-        \]であり，\(g\)が全射なので，\(n\in N\)で\[
-            g(n)=\psi(m)=\sum_{i}a_i\psi(m_i),
-            \quad
-            \psi(m_i)=g(n_i)
-        \]となるものがある．
-        この\((n_i)_i\)に対して，\(\phi\colon M\to N\)を
-        \[
-            \phi(m_i)=n_i
-        \]で定めると，
-        \[
-            \left(g_\ast(\phi)\right)(m_i)=g\circ\phi(m_i)=g(n_i)=\psi(m_i)
-        \]となる．
-        \item \(P\)を射影加群とする．
-        自由加群\(A^{\oplus I}\)と
-        全射\(p\colon A^{\oplus I}\twoheadrightarrow P\)が存在する．
-        実際，\(I= P\)として，
-        \(p\)を\(p((a_x)_{x\in P})=\sum_{x\in P}a_xx\)と
-        定めればよい．\(Q=\Ker p\)とすると，\[
-            0\to Q\hookrightarrow A^{\oplus I}\twoheadrightarrow P\to0
-        \]は完全列である．
-        このとき，\(P\)が射影加群であることから，
-        \(\id_P\)に対して，\(u\colon P\to A^{\oplus I}\)で
-        \[p_\ast(u)=p\circ u=\id_P\]となる者が存在する．
-        したがって，上の完全列は分裂し，
-        \(A^{\oplus I}\cong P\oplus Q\)となる．
-        \item まず「自由\(\Rightarrow\)平坦」を示す．\(F=A^{\bigoplus I}\)を自由加群とし，\[
-            0\to N_1\to N_2\to N_3\to0
-        \]を右\(A\)加群の完全系列とする．\[
-            0\to N_1\otimes A^{\bigoplus I}\to N_2\otimes A^{\bigoplus I}\to N_3\otimes A^{\bigoplus I}\to0
-        \]において，\[
-            N_1\otimes A^{\bigoplus I}\cong N_1^{\bigoplus I},\quad
-            N_2\otimes A^{\bigoplus I}\cong N_2^{\bigoplus I}
-        \]であり，\(j\colon N_1\to N_2\)は単射なので，\[
-            \bigoplus_{i\in I}j_i\colon N_1^{\bigoplus I}\to N_2^{\bigoplus I}
-        \]で
-    \end{enumerate}
-\end{proof}
 
 \clearpage
 \section{非特性変形補題}
