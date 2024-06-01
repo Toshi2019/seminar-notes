@@ -1752,12 +1752,12 @@ $\cat$の三角とは射の列
 
 \begin{equation}
     \left(F\ttens[\scR]G\right)_x
-    =F_x\ttens[\scR_x]G_x.
+    =F_x\ttens[\scR_x]G_x.\label{eq227}
 \end{equation}
 \begin{equation}
     F\ttens[\scR]\left(H\ttens[\scS]G\right)
     \cong
-    \left(F\ttens[\scR]H\right)\ttens[\scS]G.
+    \left(F\ttens[\scR]H\right)\ttens[\scS]G.\label{eq228}
 \end{equation}
 
 \begin{leftbar}
@@ -1993,8 +1993,8 @@ $\cat$の三角とは射の列
 
 自然な関手の射が存在する．
 \begin{align}
-    f^{-1}\circ f_{\ast}\to\id&\quad \text{in \(\Mod(f^{-1}\scR)\),}\\
-    \id\to f_{\ast}\circ f^{-1}&\quad\text{in \(\Mod(\scR)\).}
+    f^{-1}\circ f_{\ast}\to\id&\quad \text{in \(\Mod(f^{-1}\scR)\),}\label{eq234}\\
+    \id\to f_{\ast}\circ f^{-1}&\quad\text{in \(\Mod(\scR)\).}\label{eq235}
 \end{align}
 
 \begin{leftbar}
@@ -2002,7 +2002,7 @@ $\cat$の三角とは射の列
     \(\scR\)を\(X\)上の層とする．
     \(F\in\Mod(\scR)\), \(G\in\Mod(f^{-1}\scR)\)のとき，
     次が成り立つ．
-    \begin{equation}
+    \begin{equation}\label{eq236}
         \Hom_{\scR}(F,f_{\ast}G)
         \cong
         \Hom_{\scR}(f^{-1}F,G)
@@ -2014,7 +2014,7 @@ $\cat$の三角とは射の列
 
 \begin{leftbar}\begin{CRL}
     命題\ref{PRP233}の状況で次が成り立つ．
-    \begin{equation}
+    \begin{equation}\label{eq237}
         \HOM_{\scR}(F,f_{\ast}G)
         \cong
         \HOM_{\scR}(f^{-1}F,G)
@@ -2024,8 +2024,8 @@ $\cat$の三角とは射の列
 さらに\(Z\)を位相空間とし\(g\colon Z\to Y\)を連続写像とする．
 順像と逆像の構成から直ちに次がわかる．
 \begin{align}
-    \left(f\circ g\right)_{\ast}&=f_{\ast}\circ g_{\ast},\\
-    \left(f\circ g\right)^{-1}&=g^{-1}\circ f^{-1}.
+    \left(f\circ g\right)_{\ast}&=f_{\ast}\circ g_{\ast},\label{eq238}\\
+    \left(f\circ g\right)^{-1}&=g^{-1}\circ f^{-1}.\label{eq239}
 \end{align}
 順像はテンソル積と交換する．より正確には
 \begin{leftbar}\begin{PRP}
@@ -3313,8 +3313,176 @@ $\cat$の三角とは射の列
 
 
 
-\clearpage
+
 \section{入射的層，脆弱層，平坦層}
+\subsection*{入射的層}
+\(X\)を位相空間，\(\scR\)を\(X\)上の環の層，
+\(F\)を\(\Mod(\scR)\)の対象とする．
+\(F\)が圏\(\Mod(\scR)\)において入射的であるとき，
+\(F\)は\(\scR\)入射的であるという．
+
+\begin{leftbar}
+\begin{PRP}\label{PRP241}
+    \begin{enumerate}[(i)]
+        \item \(F\)が\(\scR\)入射的であるとする．
+        \(U\)を\(X\)の開集合とする．
+        このとき\(\mres[F]{U}\)は\(\mres[\scR]{U}\)入射的である．
+        \item \(f\colon Y\to X\)を連続写像とし，
+        \(G\)を\(Y\)上の\(f^{-1}\scR\)入射的層とする．
+        このとき\(f_{\ast}G\)は\(\scR\)入射的である．
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
+
+\begin{leftbar}
+\begin{CRL}\label{CRL242}
+    \(F\)が\(\scR\)入射的であるとする．
+    このとき関手\(\HOM_{\scR}(\blk,F)\)は完全である．
+\end{CRL}
+\end{leftbar}
+
+\begin{leftbar}
+\begin{PRP}\label{PRP243}
+    \(\scR\)を\(X\)上の環の層とする．
+    このとき圏\(\Mod(\scR)\)は十分入射的対象をもつ．
+\end{PRP}
+\end{leftbar}
+
+\begin{RMK}\label{RMK244}
+    圏\(\Mod(\scR)\)は一般には十分射影的対象をもたない．
+\end{RMK}
+\subsection*{脆弱層}
+
+\begin{DFN}\label{DFN245}
+    \(X\)上の層\(F\)が\textbf{脆弱} (flabby) であるとは，
+    \(X\)の任意の開集合\(U\)に対し
+    制限射\(\Gamma(X;F)\to\Gamma(U;F)\)が全射であることをいう．
+\end{DFN}
+
+\begin{leftbar}
+\begin{PRP}\label{PRP246}
+    \(F\)を\(X\)上の脆弱層とする．
+    \begin{enumerate}[(i)]
+        \item 任意の開集合\(U\subset X\)に対し，
+        \(U\)上の層\(\mres[F]{U}\)は脆弱である．
+        \item \(f\colon X\to Y\)を連続写像とする．
+        このとき\(Y\)上の層\(f_{\ast}F\)は脆弱である．
+        \item \(Z\)を\(X\)の局所閉部分集合とする．
+        このとき層\(\Gamma_{Z}(F)\)は脆弱である．
+        \item \(Z\)を\(X\)の局所閉部分集合とし，\(Z'\)を\(Z\)の
+        閉部分集合とする．このとき次の列は完全である．\[
+            0\to \Gamma_{Z'}(F)
+            \to \Gamma_{Z}(F)
+            \to \Gamma_{Z-Z'}(F)\to0.
+        \]
+        \item \(U_1\)と\(U_2\)を\(X\)の開部分集合とする．
+        このとき列\[
+            0\to \Gamma_{U_1\cup U_2}(F)\underset{\alpha}{\to}
+            \Gamma_{U_1}(F)\oplus \Gamma_{U_2}(F)\underset{\beta}{\to}
+            \Gamma_{U_1\cap U_2}(F)\to0
+        \]は完全である．（\(\alpha\)と\(\beta\)は
+        命題\ref{PRP239}で定義した．）
+        \item \(Z_1\)と\(Z_2\)を\(X\)の閉部分集合とする．
+        このとき列\[
+            0\to \Gamma_{Z_1\cap Z_2}(F)\underset{\gamma}{\to}
+            \Gamma_{Z_1}(F)\oplus \Gamma_{Z_2}(F)\underset{\delta}{\to}
+            \Gamma_{Z_1\cup Z_2}(F)\to0
+        \]は完全である．（\(\gamma\)と\(\delta\)は
+        命題\ref{PRP239}で定義した．）
+        \item \(\scR\)を\(X\)上の環の層，\(G\)を\(\scR\)加群，
+        \(H\)を\(\scR\)入射加群とする．
+        このとき\(\HOM_{\scR}(G,H)\)は脆弱である．
+        とくに\(\scR\)入射加群は脆弱である．
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
+
+\begin{leftbar}
+\begin{PRP}\label{PRP247}
+    \(0\to F'\to F\to F''\to0\)を\(\Sh(X)\)における完全列とする．
+    \(F'\)が脆弱であるとする．
+    このとき列\(
+        0\to\Gamma(X;F')\to\Gamma(X;F)\to\Gamma(X;F'')\to0
+    \)は完全である．
+\end{PRP}
+\end{leftbar}
+
+\begin{leftbar}
+\begin{CRL}\label{CRL248}
+    命題\ref{PRP247}の状況で\(Z\)を\(X\)の局所閉部分集合とする．
+    このとき列\[
+        0\to\Gamma_{Z}(X;F')\to\Gamma_{Z}(X;F)\to\Gamma_{Z}(X;F'')\to0
+    \]と\[
+        0\to\Gamma_{Z}(F')\to\Gamma_{Z}(F)\to\Gamma_{Z}(F'')\to0
+    \]は完全である．
+\end{CRL}
+\end{leftbar}
+    
+\begin{leftbar}
+\begin{CRL}\label{CRL249}
+    \(0\to F'\to F\to F''\to0\)を\(\Sh(X)\)における完全列とする．
+    \(F'\)と\(F\)が脆弱ならば，\(F''\)も脆弱である．
+\end{CRL}
+\end{leftbar}
+
+定義1.8.2を考慮すると，
+脆弱層からなる\(\Sh(X)\)の充満部分圏は
+関手\(\Gamma(X;\blk)\), \(\Gamma_{Z}\), \(f_{\ast}\)に
+関して入射的であることがわかる．
+
+入射的あるいは脆弱であることは局所的な性質である．
+
+\begin{leftbar}
+\begin{PRP}\label{PRP2410}
+    \(X=\bigcup_{i\in I}U_{i}\)を開被覆とする．
+    \begin{enumerate}[(i)]
+        \item \(F\in\Sh(X)\)とする．すべての\(i\)に対し\(\mres[F]{U_{i}}\)が脆弱ならば，\(F\)は脆弱である．
+        \item \(\scR\)を\(X\)上の環の層とし，
+        \(F\in\Mod(\scR)\)とする．
+        すべての\(i\)に対し\(\mres[F]{U_{i}}\)が\(
+            \mres[\scR]{U_{i}}
+        \)入射的ならば，\(F\)は\(\scR\)入射的である．
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
+\subsection*{平坦層}
+
+\begin{DFN}\label{DFN2411}
+    \(\scR\)を\(X\)上の環の層とし，\(F\in\Mod(\scR)\)とする．
+    右\(\scR\)加群の圏から\(\Sh(X)\)への
+    関手\(\blk\ttens[\scR]F\)が完全であるとき，
+    \(F\)は\(\scR\)\textbf{平坦} (\(\scR\)-flat) であるという．
+\end{DFN}
+
+誤解の恐れがない場合，「\(\scR\)平坦」の代わりに「平坦」という．
+
+\eqref{eq227}より，\(F\)が\(\scR\)平坦となるのは，
+各\(x\in X\)に対し\(F_{x}\)が\(\scR_{x}\)平坦となるときである．
+
+\begin{leftbar}
+\begin{PRP}\label{PRP2412}
+    \(F\in\Mod(\scR)\)とする．
+    このとき\(\scR\)平坦加群\(P\)からの全射\(P\to F\)が存在する．
+\end{PRP}
+\end{leftbar}
+
+\begin{leftbar}
+\begin{PRP}\label{PRP2413}
+    \(0\to F'\to F\to F''\to0\)を\(\Mod(\scR)\)における完全列とする．
+    \(F\)と\(F''\)が\(\scR\)平坦ならば，\(F'\)も\(\scR\)平坦である．
+\end{PRP}
+\end{leftbar}
+
+以上の2つの結果から，
+任意の右\(\scR\)加群\(G\)に対して，
+圏\(\Mod(\scR)\)は関手\(G\ttens[\scR]\blk\)に関して
+射影的な対象を十分多くもつことがわかる．
+
+
+
+
+
+
 \section{局所コンパクト空間上の層}
 位相空間\(X\)が局所コンパクト性など，何らかの有限性をもつ場合，
 新しい種類の層と関手が関心の的になる．
@@ -3384,6 +3552,11 @@ $\cat$の三角とは射の列
     パラコンパクト性から開集合族\((V_i)_{i\in I}\)で
     各点\(x\in X\)\(I(x)\)
 \end{proof}
+
+\subsection*{固有な台を持つ順像}
+
+\paragraph{定義}
+
 \(f\colon Y\to X\)を連続写像とする（\(X\)と\(Y\)は
 局所コンパクトでなくとも良い）．
 \(f\)が固有であるとは，\(f\)が閉（すなわち，
@@ -3394,6 +3567,46 @@ $\cat$の三角とは射の列
 コンパクトであることをいう．
 \(X\)と\(Y\)が局所コンパクトである場合，\(f\)が固有となるのは，
 \(X\)の任意のコンパクト集合の\(f\)による逆像がコンパクトとなるときである．
+\(G\)を\(Y\)上の層とする．
+\(f_{\ast}G\)の部分層\(f_{!}G\)を\(X\)の開集合\(U\)に対し
+\begin{equation}\label{eq251}
+    \Gamma(U;f_{!}G)\coloneqq\left\{
+        s\in\Gamma(f^{-1}(U);G);
+        \text{\(\mres[f]{\supp(s)}\colon\supp(s)\to U\)は固有}
+    \right\}
+\end{equation}
+とおくことで定める．
+
+固有であるという性質は\(X\)において局所的なので，
+\eqref{eq251}で定めた前層は\(f_{\ast}(G)\)の部分層である．
+この層を\(G\)の\textbf{固有な台を持つ順像} (direct 
+image with proper supports) とよぶ\footnote{
+    \textbf{固有順像} (proper direct image) とも．
+}．\(\Sh(Y)\)から\(\Sh(X)\)への
+関手\(G\mapsto f_{!}G\)を\(f_{!}\)で表す．
+\(\scR\)が\(X\)上の環の層であるとき，この関手は\(\Mod(f^{-1}\scR)\)から\(\Mod(\scR)\)への関手をひきおこす．この関手も\(f_{!}\)で表す．
+関手\(f_{!}\)は明らかに左完全である．
+また\begin{equation}\label{eq252}
+    \Gamma_{c}(X;F)\coloneqq
+    \left\{
+        s\in\Gamma(X;F);
+        \text{\(\supp(s)\)はコンパクトハウスドルフ}
+    \right\}
+\end{equation}
+とおく．
+\(a_{X}\)が写像\(X\to\{\pt\}\)であるとき，\(
+    \Gamma_c(X;F)\cong {a_{X}}_{!}F
+\)である．
+
+\(g\colon Z\to Y\)を\(f\)とは別の連続写像とする．
+次が成り立つ．
+\begin{equation}\label{eq253}
+    f_{!}\circ g_{!} = (f\circ g)_{!}.
+\end{equation}
+とくに，次が成り立つ．
+\begin{equation}\label{eq254}
+    \Gamma_c(X;f_{!}G)\cong\Gamma_c(Y;G).
+\end{equation}
 
 \begin{PRP}\label{prp252}
     \(X\)と\(Y\)を局所コンパクト空間（とくにハウスドルフ空間）とし，
@@ -3478,6 +3691,234 @@ $\cat$の三角とは射の列
     \end{align*}
     よって，\eqref{eq2313}が成り立つ．
 \end{proof}
+
+\paragraph{固有順像による台の切り落とし}
+
+
+以下の命題\ref{PRP254}では，\(X\)は局所コンパクトと仮定しない．
+
+\begin{leftbar}
+\begin{PRP}\label{PRP254}
+    \(Z\)を\(X\)の局所閉部分集合とし，\(
+        i\colon Z\hookrightarrow X
+    \)を包含写像とする．
+    \begin{enumerate}[(i)]
+        \item 関手\(i_{!}\)は完全である．
+        \item \(F\in\Sh(X)\)のとき，次が成り立つ．\[
+            F_{Z}\cong i_{!}\circ i^{-1}(F).
+        \]
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
+
+\subsection*{c柔軟層}
+
+この節の終わりまで，空間は全て局所コンパクトと再び仮定する．
+
+\begin{DFN}
+    \(F\in\Sh(X)\)とする．
+    \(X\)の任意のコンパクト部分集合\(K\)に対し，
+    制限射\(\Gamma(X;F)\to \Gamma(K;F)\)が全射であるとき，
+    \(F\)は\textbf{c柔軟} (c-soft) であるという．
+\end{DFN}
+
+命題\ref{prp251}を考慮すると，脆弱層，そしてとくに入射的層はc柔軟である．
+c柔軟層の例は\ref{sec29}節で大量に与える．
+
+\begin{leftbar}
+\begin{PRP}\label{PRP256}
+    \(F\in\Sh(X)\)とする．このとき\(F\)がc柔軟となるのは，\(X\)の
+    任意の閉部分集合\(Z\)に対し，制限射\(
+        \Gamma_{c}(X;F)\to \Gamma_{c}(Z;\mres[F]{Z})
+    \)が全射となるときである．
+\end{PRP}
+\end{leftbar}
+
+\begin{leftbar}
+\begin{PRP}\label{PRP257}
+    \(F\)を\(X\)上のc柔軟層とする．
+    \begin{enumerate}[(i)]
+        \item \(Z\)を\(X\)の局所閉集合とする．このとき\(\mres[F]{Z}\)はc柔軟である．
+        \item \(f\colon F\to Y\)を連続写像とする．このとき\(f_{!}F\)はc柔軟である．
+        \item (i) と同様の\(Z\)に対し，\(F_Z\)はc柔軟である．
+    \end{enumerate}    
+\end{PRP}
+\end{leftbar}
+
+
+\begin{leftbar}
+\begin{PRP}\label{PRP258}
+    \(0\to F'\to F\to F''\to0\)を\(X\)上の層の完全列とする．
+    \(F'\)がc柔軟であるとする．\(f\colon X\to Y\)を連続写像とする．
+    このとき列\(
+        0\to f_{!}F'\to f_{!}F\to f_{!}F''\to0
+    \)は完全である．とくに列\(
+        0\to\Gamma_{c}(X;F')\to\Gamma_{c}(X;F)\to\Gamma_{c}(X;F'')\to0
+    \)は完全である．
+\end{PRP}
+\end{leftbar}
+
+\begin{leftbar}
+\begin{CRL}\label{CRL259}
+    \(0\to F'\to F\to F''\to0\)を\(\Sh(X)\)における完全列とする．
+    \(F'\)と\(F\)がc柔軟ならば，\(F''\)もc柔軟である．
+\end{CRL}
+\end{leftbar}
+
+以上の結果から，\(X\)上のc柔軟層の圏は
+関手\(\Gamma_{c}(X;\blk)\), \(f_{!}\), \(\Gamma(K;\blk)\)（\(K\)は
+コンパクト）に対し入射的である．
+\(X\)が無限遠点で可算のときには，もっとよい結果が得られる．
+
+\begin{leftbar}
+\begin{PRP}\label{PRP2510}
+    \(X\)が局所コンパクトかつ無限遠点で可算であるとする．
+    このとき\(X\)上のc柔軟層の圏は関手\(\Gamma(X;\blk)\)に対し
+    入射的である．
+\end{PRP}
+\end{leftbar}
+
+\subsection*{他の関手との関係}
+
+ここでは関手\(f_!\)と，以前に導入した他の関手との間の関係を調べる．
+\paragraph{逆像との関係（基底変換）}
+まず局所コンパクト空間のカルテシアン図式
+\begin{equation}
+    \vcenter{\xymatrix@C=36pt@R=36pt{
+            Y'
+            \ar[r]^-{f'}
+            \ar[d]_-{g'}
+            \ar@{}[dr]|\square
+            &
+            X'
+            \ar[d]^-{g}
+            \\
+            Y\ar[r]_-{f}
+            &
+            X
+    }}
+\end{equation}
+を考える．
+図式がカルテシアンであるとは，図式が可換であり，
+\(Y'\)がファイバー積\(
+    Y\times_{X}X'=\left\{
+        (y,x')\in Y\times X';f(y)=g(x')
+    \right\}
+\)と位相空間として同型であることをいうのであった．
+（図式の中の四角は図式がカルテシアンであることを強調するためにある．）
+
+
+\begin{leftbar}
+\begin{PRP}\label{PRP2511}
+    次の関手の標準的な同型が存在する．
+    \begin{equation}
+        g^{-1}\circ f_{!}\simar f'_{!}\circ g'^{-1}.
+    \end{equation}
+\end{PRP}
+\end{leftbar}
+\begin{proof}
+    まず次の標準的な射
+    \begin{equation}
+        g^{-1}\circ f_{!}\to f'_{!}\circ g'^{-1}
+    \end{equation}
+    を構成する．
+\end{proof}
+
+\paragraph{テンソル積との関係}
+最後に，\(f_!\)とテンソル積との関係を調べる．
+
+\begin{leftbar}
+\begin{LMM}\label{LMM2512}
+    \(A\)を環とし，\(M\)を平坦\(A\)加群とする．
+    \(F\)を右\(A_X\)加群の層とする．このとき次の自然な同型が存在する．
+    \[
+        \Gamma_{c}(X;F)\ttens[A]M\simar\Gamma_{c}\left(X;F\ttens[A_X]M_X\right).
+    \]
+\end{LMM}
+\end{leftbar}
+\begin{proof}
+    \begin{equation}
+        0\to \Gamma(X;F)\overset{\lambda}{\to}
+        \bigoplus_{j}\Gamma(K_{j};F)\overset{\mu}{\to}
+        \bigoplus_{j,k}\Gamma(K_{j}\cap K_{k};F).
+    \end{equation}
+
+    \begin{equation}
+        \indlim[U]\left(\Gamma(U;F)\ttens[A]M\right)
+        \simar\indlim[U]\Gamma\left(U;F\ttens[A_X]M_X\right).
+    \end{equation}
+\end{proof}
+
+\begin{leftbar}
+\begin{PRP}\label{PRP2513}
+    \(f\colon Y\to X\)を連続写像とし，\(\scR\)を\(X\)上の環の層，\(F\in\Mod(\scR)\), \(G\in\Mod(f^{-1}\scR^{\op})\)とする．
+    \begin{enumerate}[(i)]
+        \item 次の関手の標準的な同型が存在する．
+        \begin{equation}\label{eq2510}
+            f_{!}G\ttens[\scR]F
+            \to f_{!}\left(
+                G\ttens[f^{-1}\scR]f^{-1}F
+            \right).
+        \end{equation}
+        \item \(F\)が平坦\(\scR\)加群ならば，\eqref{eq2510}は同型である．（射影公式）
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
+
+命題\ref{PRP2513}を用いることで，自然な射を新しく作ることが当然できる．
+例えば\(G_1\)と\(G_2\)を\(f^{-1}\scR\)加群とすると，
+次の自然な射を得る（テンソル積を考える場合は\(G_1\)は右加群とする）．
+\begin{align}
+    \vcenter{\xymatrix@C=76pt@R=36pt{\displaystyle
+        f_{!}G_1\ttens[\scR]f_{\ast}G_2
+        \ar[r]^-{}
+        &\displaystyle
+        f_{!}\left(G_1\ttens[f^{-1}\scR]G_2\right),
+    }}\label{eq2511}\\
+    \vcenter{\xymatrix@C=36pt@R=36pt{
+            f_{!}\HOM_{f^{-1}\scR}(G_1,G_2)
+            \ar[r]^-{}
+            \ar[d]_-{}
+            %\ar@{}[dr]|\square
+            &
+            \HOM_{\scR}(f_{\ast}G_1,f_{!}G_2)
+            \ar[d]^-{}
+            \\
+            f_{\ast}\HOM_{f^{-1}\scR}(G_1,G_2)
+            \ar[r]_-{}
+            &
+            \HOM_{f^{-1}\scR}(f_{!}G_1,f_{!}G_2).
+    }}\label{eq2512}
+\end{align}
+
+公式\eqref{eq2511}は\eqref{eq2510}と\eqref{eq234}からすぐにしたがう．
+\eqref{eq2512}の上の矢印について説明する．
+\(H=\HOM_{f^{-1}\scR}(G_1,G_2)\)とおく．
+このとき自然な射\[
+    f_{!}H\ttens[]f_{\ast}G_{1}\to
+    f_{!}(H\ttens[]f_{\ast}G_{1})\to
+    f_{!}G_2
+\]が存在し，命題\ref{prp229}から上の矢印が定まる．
+\eqref{eq2512}の他の矢印も同様に定まる．
+\(\scR\)が可換ならば，これらの射は\(\scR\)線形であることに注意．
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsection{固有順像}\label{ssec:pdimg}
@@ -3742,7 +4183,7 @@ $\cat$の三角とは射の列
 \end{proof}
 
 \setcounter{section}{8}
-\section{実・複素多様体上の層の例}
+\section{実・複素多様体上の層の例}\label{sec29}
 ここで層の例をいくつか挙げる．
 そのうちの大部分については11章で詳しい説明を与えることにする．
 
