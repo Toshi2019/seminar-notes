@@ -66,7 +66,7 @@
     urlcolor=darkblue,
 }
 \usepackage{pxjahyper}
-\usepackage[mathcal]{euscript}
+%\usepackage[mathcal]{euscript}
 \usepackage{layout}
 \usepackage{framed}
 \definecolor{lightgray}{rgb}{0.75,0.75,0.75}
@@ -4098,6 +4098,8 @@ c柔軟層の例は\ref{sec29}節で大量に与える．
 圏\(\Domp(A_X)\)は\(X\)上の\(A\)加群の層の圏の導来圏である．
 例えば\(\Domp(\zz_X)=\Domp(\Sh(X))\)である．
 
+\subsection*{導来関手と計算例}
+
 以前に導入した関手の導来関手を定義するために，次の状況を考える．
 \(Z\)は\(X\)の局所閉集合，\(f\colon Y\to X\)は連続写像，
 \(g\colon W\to Y\)は連続写像，
@@ -4148,6 +4150,8 @@ c柔軟層の例は\ref{sec29}節で大量に与える．
     表される．
 \end{EG}
 
+\subsection*{導来テンソル積}
+
 左導来関手\(\blk\ltens[\scR]\blk\)を定義するためには，
 \(\scR\)に対する仮定が必要である．
 
@@ -4185,18 +4189,83 @@ c柔軟層の例は\ref{sec29}節で大量に与える．
     \to\Domp^{\ast}(p^{-1}\scS)
 \]が定まる．（ここで\(\scR\)と\(\scS\)は\(S\)上の環の層である．）
 
+\subsection*{導来関手の間の関係}
 
+以上全ての関手の間には多くの関係があるが，
+ここではその中のいくつかについて簡単に述べる．
+命題1.8.7と1.10.9を組織的に用いる．
 
+\(F\in\Dompl(\scR)\)とするとき，次が成り立つ．
+\begin{equation}
+    \RG_{Z}(X;F)\RG(X;\RG_Z(F)).
+\end{equation}
 
+\begin{proof}
+    \(
+        \cI(\scR)\coloneqq\left\{
+            \text{\(\scR\)入射加群}
+        \right\}
+    \)とおくと，\(\cI(\scR)\)は\(\Gamma(X;\blk)\)と\(\Gamma_Z\)に関して入射的である．
+    さらに\(I\)が入射的ならば\(\Gamma_Z(I)\)も入射的なので，命題1.8.7より
+    \[
+        \Rder(\Gamma_Z(X;\blk))
+        \cong
+        \Rder(\Gamma(X;\blk)\circ\Gamma_Z)
+        \cong
+        \RG(X;\blk)\circ\RG_Z
+    \]である．
+\end{proof}
 
+\(F\in\Dompu(\scR)\)とし\(G\in\Dompl(\scR)\)とする\footnote{
+    \cite{KS90}だと\(F\in\Dompb(\scR)\)となっているが，
+    \(F\in\Dompu(\scR)\)であれば下に有界な複体に値をとる．
+}．
+このとき次が成り立つ．
+\begin{equation}
+    \RHom_{\scR}(F,G)\cong\RG(X;\RHOM_{\scR}(F,G)).
+\end{equation}
 
+\begin{proof}
+    \(\mathrm{Fl}(\scR)\coloneqq\left\{
+        \text{脆弱層}
+    \right\}\)とおく．
+    \(\mathrm{Fl}(\scR)\)は\(\Gamma(X;\blk)\)に関して入射的である．
+    \(F\)と\(G\)が\(\scR\)加群で\(G\)が入射的ならば，
+    \(\Hom_{\scR}(F,G)\in\mathrm{Fl}(\scR)\)だった．
+    したがって，命題1.10.9より，合成の導来関手\(
+        \Rder(\Gamma(X;\blk)\circ\HOM_{\scR}(\blk,\blk))\colon
+        \Dompu(\scR)^{\op}\times\Dompl(\scR)\to\Dompl(\cAb)
+    \)が存在し，\[
+        \Rder(\Gamma(X;\blk)\circ\HOM_{\scR}(\blk,\blk))
+        \cong
+        \Rder\Gamma(X;\blk)\circ\RHOM_{\scR}(\blk,\blk)
+    \]となる．
+\end{proof}
 
+\begin{equation}
+    \Rder(f\circ g)_{\ast}F\cong \Rder{f_{\ast}}\Rder{g_{\ast}}F.
+\end{equation}
 
+\begin{equation}
+    \Rder(f\circ g)_{!}F\cong \Rder{f_{!}}\Rder{g_{!}}F.
+\end{equation}
 
-
-
-
-
+\begin{leftbar}
+\begin{PRP}\label{PRP263}
+    \(\phi\colon\Dompl(\scR)\to\Dompl(\scS)\)を忘却関手\(\Mod(\scR)\to\Mod(\scS)\)から定まる関手とする．
+    \(F\in\Dompu(\scR)\), \(G\in\Dompl(\scR)\), \(H\in\Dompu(\scS)\)とし，\(\wgld(\scS)<\infty\)とする．このとき
+    \begin{enumerate}[(i)]
+        \item \(\phi(\RHOM_{\scS}(H,G))\cong\RHOM_{\scS}(H,\phi(G))\).
+        \item \(\Dompl(\scS)\)における次の同型が成り立つ．\begin{align}
+            \RHOM_{\scR}\left(F\lltens[\scS]H,G\right)
+            &\cong
+            \RHOM_{\scR}\left(F,\RHOM_{\scS}(H,G)\right)\\
+            &\cong
+            \RHOM_{\scS}\left(H,\RHOM_{\scR}(F,G)\right).\notag
+        \end{align}
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
 
 
 
