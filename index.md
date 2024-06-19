@@ -8,7 +8,10 @@
 
 [](準アーベル圏について[(pdf)](quasi-abel/quasi-abel.pdf))
 [](位相空間まとめノート[(pdf)](topo/topo.pdf))
-[](ツェルナー和訳[(pdf)](zerner/zerner1971.pdf))
+
+ツェルナー和訳[(pdf)](zerner/zerner1971.pdf)
+
+ボニー・シャピラ和訳（途中）[(pdf)](zerner/BS1973.pdf)
 
 KS82和訳[(pdf)](KS82-ja/KS82-ja.pdf)
 

@@ -1922,7 +1922,7 @@ $\cat$の三角とは射の列
     \end{PRP}
 \end{leftbar}
 \begin{leftbar}
-    \begin{CRL}
+    \begin{CRL}\label{crl2210}
         命題\ref{prp229}と同じ状況のとき，次の自然な射が存在する．
         \begin{align}
             \HOM_{\scR}(F,G)&\ttens[\scS]F\to G\quad\text{in \(\Mod(\scR)\)},\label{eq2210}\\
@@ -4259,7 +4259,7 @@ c柔軟層の例は\ref{sec29}節で大量に与える．
         \item \(\Dompl(\scS)\)における次の同型が成り立つ．\begin{align}
             \RHOM_{\scR}\left(F\lltens[\scS]H,G\right)
             &\cong
-            \RHOM_{\scR}\left(F,\RHOM_{\scS}(H,G)\right)\\
+            \RHOM_{\scR}\left(F,\RHOM_{\scS}(H,G)\right)\label{eq267}\\
             &\cong
             \RHOM_{\scS}\left(H,\RHOM_{\scR}(F,G)\right).\notag
         \end{align}
@@ -4267,18 +4267,96 @@ c柔軟層の例は\ref{sec29}節で大量に与える．
 \end{PRP}
 \end{leftbar}
 
+\eqref{eq267}に\(\RG(X;\blk)\)を適用し，0次コホモロジーをとることで
+次の同型が得られる．
+\begin{align}
+    \Hom_{\Dompl(\scR)}\left(F\lltens[\scS]H,G\right)
+    &\cong
+    \Hom_{\Dompl(\scR)}\left(F,\RHOM_{\scS}(H,G)\right)\label{eq268}\\
+    &\cong
+    \Hom_{\Dompl(\scS)}\left(H,\RHOM_{\scR}(F,G)\right).\notag
+\end{align}
+\eqref{eq267}で\(H=\scS_Z\)と選ぶと\(\Dompl(\scS)\)における同型
+\begin{align}
+    \RHOM_{\scR}\left(F_Z,G\right)
+    &\cong
+    \RHOM_{\scR}\left(F,\RG_{Z}(G)\right)\label{eq269}\\
+    &\cong
+    \RG_{Z}\RHOM_{\scR}(F,G).\notag
+\end{align}
+が成り立つ．
 
+\begin{CMT}
+    \eqref{eq269}では導来関手の合成に関して
+    \[
+        \scS_Z\lltens[\scS]F=F_Z,
+        \quad
+        \RG_{Z}F=\RHOM_{\scS}(\scR_{Z},F)
+    \]
+    が成り立つことも用いている．
+    1つ目の式は，
+    \((\blk)_{Z}\)が完全関手であることから
+    \(\scS_Z\)が平坦となるので成り立つ．
+    2つ目の式は\(F\)が入射的なら\(\Gamma_{Z}\)入射的なので，
+    \[
+        \RG_{Z}F=\Gamma_{Z}F
+    \]であり，また\(
+        \RHOM_{\scS}(\scR_{Z},F)
+        \cong
+        \HOM_{\scS}(\scR_{Z},F)
+    \)となることから，
+    \(\Gamma_{Z}F=\HOM_{\scS}(\scR_{Z},F)\)を用いて示せる．
+\end{CMT}
 
+さらに，系\ref{crl2210}と同様の議論で，
+次の自然な射を得ることができる．
+\begin{align}
+    \RHOM_{\scR}(F,G)\lltens[\scS]F
+    &\to G\qquad\text{in \(\Dompl(\scS)\),}\label{eq2610}\\
+    \RHOM_{\scR}(F,G)\lltens[\scS]H
+    &\to \RHOM_{\scR}\left(F,G\lltens[\scS]H\right) 
+    \qquad\text{in \(\Dompl(\scS)\),}\label{eq2611}\\
+    \RHOM_{\scR}(F,G)
+    &\to 
+    \RHOM_{\scR}\left(
+        \RHOM_{\scR}\left(G,\scR\right),
+        \RHOM_{\scR}\left(F,\scR\right)
+    \right)\quad\text{in \(\Dompl(\scR)\).}\label{eq2612}
+\end{align}
+\eqref{eq2612}では\(\scR\)が可換で，\(\wgld(\scR)<\infty\)かつ\(F\)，\(G\)，\(\RHOM_{\scR}(G,\scR)\)は有界と仮定する．
 
+\begin{proof}
+    \eqref{eq2610}：
+    \eqref{eq268}で\(
+        H=\RHOM_{\scR}(F,G)\in\Dompl(\scS)
+    \)とすると
+    \[
+        \Hom_{\Dompl(\scR)}\left(
+            F\lltens[\scS]\RHOM_{\scR}(F,G),G
+        \right)
+        \cong
+        \Hom_{\Dompl(\scS)}\left(
+            \RHOM_{\scR}(F,G),\RHOM_{\scR}(F,G)
+        \right)
+    \]
+    となるので，右辺の恒等射の像が
+    \[
+        F\lltens[\scS]\RHOM_{\scR}(F,G)\to G
+    \]
+    を定める．（\(\scS\)が可換なので\eqref{eq2610}の形にしてよい．）
 
-
-
-
-
-
-
-
-
+    \eqref{eq2611}：
+    \eqref{eq2610}に\(H\)をテンソルすると自然な射
+    \[
+        \RHOM_{\scR}(F,G)\lltens[\scS]H\lltens[\scS]F
+        \to 
+        G\lltens[\scS]H
+    \]
+    が得られる．
+    \eqref{eq268}で\(H\)を\(
+        \RHOM_{\scR}(F,G)\lltens[\scS]H
+    \)としたものに用いると
+\end{proof}
 
 
 

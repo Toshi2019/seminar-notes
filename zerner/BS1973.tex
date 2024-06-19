@@ -1,5 +1,5 @@
 %================================================
-%    sheaves on manifolds ノート
+%    Bony-Schapira ノート
 %================================================
 
 % -----------------------
@@ -17,7 +17,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[11pt, a4paper, dvipdfmx, draft, leqno]{jsarticle}
+\documentclass[11pt, a4paper, dvipdfmx, leqno]{jsarticle}
 
 % ------------------------
 % usepackage
@@ -415,7 +415,7 @@
 キーセルマン\cite{8}によって全く異なる手法で研究されている．
 
 ここで述べる手法は
-準備中の論文 (cf. \cite{BS72a} \cite{BS72b} [3] [4]) からの
+準備中の論文 (cf. \cite{BS72a} \cite{BS72b} \cite{3} \cite{4}) からの
 抜粋である．
 
 \section{記法と復習}
@@ -489,6 +489,113 @@
 
 \section{双曲不等式}
 
+\begin{THM}\label{thm21}
+    \(Q(z,\tau)\)を\(\cc^p\)の開集合\(\widetilde{V}\)上の
+    正則関数\(\tau\)を係数とする\(m\)次多項式とする．
+    \(\tau^m\)の係数は\(1\)で，
+    方程式\(Q(z,\tau)=0\)は
+    \textcolor{red}{
+        \(z\)が実数 (\(
+            z\in V=\widetilde{V}\cap \rr^p
+        \)) のとき，\(\tau\)の実根を持たない    
+    }と仮定する．
+
+    このとき\(\widetilde{V}\cap \rr^p\)の
+    任意のコンパクト集合\(K\)に対し\(\varepsilon>0\)と\(C>0\)で\[
+        Q(z,\tau)=0,\quad \Re{z}\in K,
+        \quad
+        \lvert\im{z}\rvert<\varepsilon
+        \Longrightarrow
+        \lvert\im{\tau}\rvert\leqq C\lvert\im{z}\rvert
+    \]
+    となるものが存在する．
+\end{THM}
+
+柏原の指摘したように，この定理はボホナーの管定理の次の定式化から
+ただちに従う（Kashiwara \cite{6}, Komatsu \cite{8bis}）．
+
+\begin{THM}\label{thm22}
+    \(\cc^{p+1}\)の部分集合\(L\)を次で定める．
+    \[
+        L=\left\{
+            x+iy\mid
+            \lvert{x}\rvert<r,\ 
+            y_1=\cdots=y_p=0,\ 
+            0<y_{p+1}\leqq b
+        \right\}.
+    \]
+    \(f\)が\(L\)の近傍上の正則関数のとき，
+    任意の\(a<r\)に対し定数\(C>0\)で\(f\)が開集合
+    \[
+        \widetilde{L}=\left\{
+            x+iy\mid
+            \lvert{x}\rvert<a,\ 
+            \lvert{y_1}\rvert+\cdots+\lvert{y_p}\rvert<C\lvert{y_{p+1}}\rvert,\ 
+            0<y_{p+1}< b
+        \right\}.
+    \]
+    で正則となる．
+\end{THM}
+
+以下では\(\rr^n\)のベクトル\((0,\dots,0,1)\)を\(N\)で表し，
+\(z=(z',z_n)\), \(\zeta=(\zeta',\zeta_n)\)とかく．
+
+方程式\(p(x_0,\xi',\zeta_n)=0\)が\(\zeta_n\)しか
+実根を持たない（\(\xi'\in\rr^{n-1}\)）とき，
+作用素\(P(x,\frac{\p}{\p x})\)は点\(x_0\)で\(N\)の方向に
+双曲的な主部をもつのだった．
+とくに，方向\(N\)は非特性的である．
+
+\begin{THM}\label{thm23}
+    \(P\)の主部は\(x_0\)の近傍の任意の点において\(N\)の方向に
+    双曲的であると仮定する．
+    定数\(C>0\)と数\(\varepsilon>0\)で次をみたすものが存在する．
+    \[\begin{multlined}
+        \lvert{z-x_0}\rvert<\varepsilon,\ 
+        \zeta\in\cc^{n},\ 
+        p(z,\zeta+\tau N)=0\\
+        \Longrightarrow
+        \lvert{\im{\tau}}\rvert
+        \leqq
+        C\left[\lvert{\xi'}\rvert\lvert{y}\rvert+\lvert{\eta}\rvert\right].
+    \end{multlined}\]
+\end{THM}
+
+\begin{proof}
+    定理\ref{thm21}より，
+    \(x\in K\), \(\lvert{y}\rvert<\varepsilon\), 
+    \(\lvert{\xi'}\rvert=1\), 
+    \(\lvert{\eta'}\rvert<\varepsilon\)とすれば，
+    方程式\(p(z,\zeta',\tau)=0\)の解は
+    \[
+        \lvert\im{z}\rvert
+        \leqq 
+        C_{1}\left[
+            \lvert{y}\rvert+\lvert{\eta'}\rvert
+        \right]
+    \]をみたす．
+    同様に\(
+        \lvert{\eta'}\rvert
+        \leqq\varepsilon\lvert\xi'\rvert
+    \)とすることで\[
+        \lvert\im{z}\rvert
+        \leqq 
+        C_{1}\left[
+            \lvert{y}\rvert\lvert\xi'\rvert+\lvert{\eta'}\rvert
+        \right]
+    \]を得る．
+
+    他方で，\(x_0\)の近傍で\(N\)は非特性的なので，
+    \(p(z,\zeta+\tau N)\)の解の上からの評価\[
+        \lvert{\tau+\zeta_n}\rvert\leqq C_2\lvert{\zeta'}\rvert
+    \]とそこから\[
+        \lvert{\im{\tau}}\rvert\leqq C_3\left[\lvert{\zeta'}\rvert+\lvert{\zeta_n}\rvert\right]
+    \]が得られ，これより\(
+        \lvert{\eta'}\rvert\leqq\alpha\lvert{\xi'}\rvert
+    \)に対して\[
+        \lvert{\im{\tau}}\rvert\leqq C_4\lvert{\eta}\rvert
+    \]が成り立つ．
+\end{proof}
 \section{延長に関する2つの補題}
 
 \section{解析解}
