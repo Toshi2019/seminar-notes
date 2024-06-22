@@ -1,3 +1,5 @@
+# 和訳
+
 [](モース理論[(pdf)](morse-th/morse-th.pdf))
 
 [](層理論まとめノート[(pdf)](shv/shv.pdf))
@@ -21,7 +23,6 @@ KS82和訳[(pdf)](KS82-ja/KS82-ja.pdf)
 
 Poincaré-Verdier双対性[(pdf)](grad-seminar/PV-duality.pdf)
 
-
 [2024年01月分](grad-notes/2024-01.md)
 
 [2024年02月分](grad-notes/2024-02.md)
@@ -35,4 +36,3 @@ Poincaré-Verdier双対性[(pdf)](grad-seminar/PV-duality.pdf)
 ## 自主ゼミ
 
 [自主ゼミ用](seminar.md)
-

@@ -67,7 +67,7 @@
 }
 \usepackage{pxjahyper}
 
-\usepackage[mathscr]{euscript} % mathscr のフォントを変更
+%\usepackage[mathscr]{euscript} % mathscr のフォントを変更
 
 
 %=================================
@@ -300,6 +300,35 @@
 
 \newcommand{\cat}{\mathscr{C}}
 
+%筆記体
+\newcommand{\cA}{\mcal{A}}
+\newcommand{\cB}{\mcal{B}}
+\newcommand{\cC}{\mcal{C}}
+\newcommand{\cD}{\mcal{D}}
+\newcommand{\cE}{\mcal{E}}
+\newcommand{\cF}{\mcal{F}}
+\newcommand{\cG}{\mcal{G}}
+\newcommand{\cH}{\mcal{H}}
+\newcommand{\cI}{\mcal{I}}
+\newcommand{\cJ}{\mcal{J}}
+\newcommand{\cK}{\mcal{K}}
+\newcommand{\cL}{\mcal{L}}
+\newcommand{\cM}{\mcal{M}}
+\newcommand{\cN}{\mcal{N}}
+\newcommand{\cO}{\mcal{O}}
+\newcommand{\cP}{\mcal{P}}
+\newcommand{\cQ}{\mcal{Q}}
+\newcommand{\cR}{\mcal{R}}
+\newcommand{\cS}{\mcal{S}}
+\newcommand{\cT}{\mcal{T}}
+\newcommand{\cU}{\mcal{U}}
+\newcommand{\cV}{\mcal{V}}
+\newcommand{\cW}{\mcal{W}}
+\newcommand{\cX}{\mcal{X}}
+\newcommand{\cY}{\mcal{Y}}
+\newcommand{\cZ}{\mcal{Z}}
+
+
 \newcommand{\scA}{\mathscr{A}}
 \newcommand{\scB}{\mathscr{B}}
 \newcommand{\scC}{\mathscr{C}}
@@ -310,8 +339,6 @@
 \newcommand{\scO}{\mathscr{O}}
 \newcommand{\scV}{\mathscr{V}}
 \newcommand{\scU}{\mathscr{U}}
-
-\newcommand{\cU}{\mcal{U}}
 
 
 \newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
@@ -416,6 +443,7 @@
 \newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
 
 \newcommand{\blk}{\mathord{\ \cdot\ }}
+\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
 
 
 %\newcommand{\hocolim}{{\mathrm{hocolim}}}
@@ -521,12 +549,150 @@
 % ---------------------------
 
 \title{幾何学まとめノート}
-\author{toshi2019}
+%\author{}
 \date{\today\footnote{2024/03/29作成開始}}
 \begin{document}
 \maketitle
-\tableofcontents
+%\tableofcontents
 
 \section{多様体}
+\begin{leftbar}
+\begin{DFN}[{\cite[\S\S 2.9.4]{KS90}}]
+  \(n\geqq 0\)を整数とする．
+  \(\scC_{\rr^n}\)を\(\rr^n\)上の複素数値連続関数の層とする．
+  \(n\)次元\textbf{位相多様体} (topological manifold) \(M\)とは，
+  無限遠で可算な局所コンパクト空間\(M\)と環の層\(\scC_M\)の
+  組\((M,\scC_M)\)で，
+  \((M,\scC_M)\)が\((\rr^n,\scC_{\rr^n})\)と\(\cc\)環付き空間
+  として同型であるものをいう．
+\end{DFN}
+\end{leftbar}
+\(M\)が無限遠で可算な局所コンパクト空間であり，
+各点\(x\in M\)に対して，\(x\)の開近傍\(U\)で
+\(\rr^n\)の開集合\(V\)と同相なものが存在するとき，
+\(M\)は位相多様体となる．
+
+\begin{EG}
+  \(a<b\)を実数とする．
+  \(\rr\)の閉区間\([a,b]\)は無限遠で可算な局所コンパクト空間であるが，
+  \(a,b\)で\(\rr\)の開集合
+  と同相な近傍をもたない．
+  したがって，
+  \([a,b]\)は局所コンパクト空間であるが位相多様体にならない空間の例である．
+\end{EG}
+\section{ベクトル束}
+\begin{leftbar}
+\begin{DFN}[{\cite[\S 3.1 (p.80)]{Hat89}}]
+  \(E\)と\(X\)を位相空間とし，
+  \(\pi\colon E\to X\)を連続写像とする．
+  \((E,\pi,X)\)が
+  階数\(r\)の実\textbf{ベクトル束} (vector bundle) であるとは，
+  各点\(x\in X\)に対し，\(\pi^{-1}(x)\)が\(r\)次元実線形空間となり，
+  各点\(x\in X\)に対し，開近傍\(U\subset X\)と同相写像\(
+    \varphi\colon \pi^{-1}(U)\simar U\times \rr^r
+  \)で\(\pr_1\circ\varphi=\pi\)となり，
+  各\(y\in U\)に対し\(
+    \mres[\varphi]{\pi^{-1}(y)}\colon 
+    \pi^{-1}(y)\to \{y\}\times\rr^r\cong \rr^n
+  \)が線形となるものが存在することをいう．
+  \[\vcenter{\xymatrix@C=36pt@R=36pt{
+    \pi^{-1}(U)
+    \ar[dr]_-{\pi}
+    \ar[r]^-{\varphi}
+    %\ar@{}[dr]|\square
+    &
+    U\times \rr^r
+    \ar[d]^-{\pr_1}
+    \\
+    &
+    U
+  }}\]
+\end{DFN}  
+\end{leftbar}
+
+\begin{leftbar}
+\begin{DFN}[{\cite[Def.3.3.1]{KS90}}]
+  \(Y\)と\(X\)を局所コンパクト空間とし，
+  \(\tau\colon Y\to X\)を連続写像とする．
+  \(\tau\)がファイバー次元\(l\)の\textbf{位相的しずめこみ} (topological submersion) であるとは，
+  各点\(y\in Y\)に対して\(y\)の開近傍\(V\)で，\(U=\tau(V)\)が\(X\)の開集合であり，
+  同相写像\(h\colon U\times \rr^l\simar V\)で\(\mres[\tau]{V}\circ h=\pr_1\)となるものが存在することをいう．
+  \[\vcenter{\xymatrix@C=36pt@R=36pt{
+    U\times \rr^l
+    \ar[dr]_-{\pr_1}
+    \ar[r]^-{h}
+    %\ar@{}[dr]|\square
+    &
+    V
+    \ar[d]^-{\mres[\tau]{V}}
+    \\
+    &
+    U
+  }}\]
+\end{DFN} 
+\end{leftbar}
+  
+\begin{EG}\label{bdl-is-subm}
+  階数\(r\)のベクトル束\(\pi\colon E\to X\)はファイバー次元\(r\)の
+  位相的沈めこみである．
+  実際，
+  各点\(y\in E\)に対し，\(\pi(y)\)の開近傍\(U\)と同相写像\(
+      \varphi\colon \pi^{-1}(U)\simar U\times \rr^r
+  \)で\(\pr_1\circ\varphi=\pi\)となるものが存在する．
+  この\(U\)と\(\varphi\)に対して，
+  \(\varphi\)の逆写像を\(
+    h\colon U\times \rr^r \to \pi^{-1}(U)
+  \)とおき，\(V= \pi^{-1}(U)\)とおくと，
+  \(\pi(V)=U\)は\(X\)の開集合であり，
+  \(h\)は\(
+    \mres[\pi]{V}\circ h
+    =\mres[\pi]{V}\circ \varphi^{-1}
+    =\pr_1
+  \)をみたす．    
+\end{EG}
+
+局所コンパクト空間上のベクトル束で位相多様体とならないものの例を挙げる．
+
+\begin{EG}\label{ceg:bdl-mfd}
+  \(a<b\)を実数とし，\(X=[a,b]\)とする．
+  \(E=X\times\rr\)とおき，\(\pi\colon E\to X\)を\(\pi(t,s)=t\)で
+  定める．これは階数\(1\)の実ベクトル束である．
+  \((a,s)\in E\)に対し，\(\rr^2\)の開集合\[
+    U_{r}(a,s)\coloneqq\{(x,y)\in\rr^2;\lVert{(x,y)-(a,s)}\rVert<r\}
+  \]は\((a,s)\)を含み，\(
+    U'_{r}(a,s)\coloneqq E\cap U_{r}(a,s)
+  \)とおくと，\(U'_{r}(a,s)\)は\(E\)における\((a,s)\)の開近傍である．
+  しかし，\(U'_{r}(a,s)={[a,a+r[}\times {\left]s-r,s+r\right[}\)は\(\rr^2\)の開集合と同相ではない．
+  したがって\(E\)は位相多様体にはならない．
+\end{EG}
+
+例\ref{bdl-is-subm},\ref{ceg:bdl-mfd}から，位相的沈め込みの源が
+位相多様体とは限らないこともわかる．
+ベクトル束に多様体の構造を入れるには底空間が位相多様体でなければならない．
+ベクトル束の局所座標を取る際に，底空間の局所座標を用いるからである．
+
+
+
+
+
+
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+  \bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
+      \textit{Differential Topology}, 
+      Prentice-Hall, 1974.
+  \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+      \textit{Sheaves on Manifolds}, 
+      Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+  \bibitem[Hat89]{Hat89} 服部晶夫, 多様体 増補版, 岩波全書 288, 岩波書店, 1989.
+  %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+\end{thebibliography}
+
+%===============================================
+
+
+
 
 \end{document}

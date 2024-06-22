@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  29 MAR 2024 20:45
+This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  23 JUN 2024 03:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -754,10 +754,6 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 Package hyperref Info: Option `colorlinks' set `true' on input line 67.
  (/usr/local/texlive/2018/texmf-dist/tex/platex/pxjahyper/pxjahyper.sty
 Package: pxjahyper 2018/01/25 v0.3c
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/euscript.sty
-Package: euscript 2009/06/22 v3.00 Euler Script fonts
-LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
-(Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
 )
 \c@Axiom=\count174
 \c@Fact*=\count175
@@ -774,51 +770,51 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 ) (./geometry.aux)
 \openout1 = `geometry.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 526.
-LaTeX Font Info:    ... okay on input line 526.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 526.
-LaTeX Font Info:    ... okay on input line 526.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 526.
-LaTeX Font Info:    ... okay on input line 526.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 526.
-LaTeX Font Info:    ... okay on input line 526.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 526.
-LaTeX Font Info:    ... okay on input line 526.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 526.
-LaTeX Font Info:    ... okay on input line 526.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 526.
-LaTeX Font Info:    ... okay on input line 526.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 526.
-LaTeX Font Info:    ... okay on input line 526.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 526.
-LaTeX Font Info:    ... okay on input line 526.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 554.
+LaTeX Font Info:    ... okay on input line 554.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 554.
+LaTeX Font Info:    ... okay on input line 554.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 554.
+LaTeX Font Info:    ... okay on input line 554.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 554.
+LaTeX Font Info:    ... okay on input line 554.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 554.
+LaTeX Font Info:    ... okay on input line 554.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 554.
+LaTeX Font Info:    ... okay on input line 554.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 554.
+LaTeX Font Info:    ... okay on input line 554.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 554.
+LaTeX Font Info:    ... okay on input line 554.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 554.
+LaTeX Font Info:    ... okay on input line 554.
 \c@lstlisting=\count179
  ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 526.
+(Font)              scaled to size 6.47278pt on input line 554.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 526.
-LaTeX Font Info:    Try loading font information for U+msa on input line 526.
+(Font)              scaled to size 4.62341pt on input line 554.
+LaTeX Font Info:    Try loading font information for U+msa on input line 554.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 526.
+LaTeX Font Info:    Try loading font information for U+msb on input line 554.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 526.
+(Font)              scaled to size 9.60999pt on input line 554.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 526.
+(Font)              scaled to size 6.72699pt on input line 554.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 4.805pt on input line 526.
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 526.
+(Font)              scaled to size 4.805pt on input line 554.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 554.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Package xypdf Info: Line width: 0.39998pt on input line 526.
+Package xypdf Info: Line width: 0.39998pt on input line 554.
 \AtBeginShipoutBox=\box80
-Package hyperref Info: Link coloring ON on input line 526.
+Package hyperref Info: Link coloring ON on input line 554.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -826,78 +822,111 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count180
 )
-LaTeX Info: Redefining \ref on input line 526.
-LaTeX Info: Redefining \pageref on input line 526.
-LaTeX Info: Redefining \nameref on input line 526.
+LaTeX Info: Redefining \ref on input line 554.
+LaTeX Info: Redefining \pageref on input line 554.
+LaTeX Info: Redefining \nameref on input line 554.
  (./geometry.out) (./geometry.out)
 \@outlinefile=\write6
 \openout6 = `geometry.out'.
 
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 528.
+(Font)              scaled to size 15.9785pt on input line 557.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 528.
+(Font)              scaled to size 15.9785pt on input line 557.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 528.
+(Font)              scaled to size 11.09619pt on input line 557.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 528.
+(Font)              scaled to size 11.09619pt on input line 557.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 528.
+(Font)              scaled to size 7.39746pt on input line 557.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 528.
+(Font)              scaled to size 5.5481pt on input line 557.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 528.
+(Font)              scaled to size 11.53198pt on input line 557.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 528.
+(Font)              scaled to size 7.68799pt on input line 557.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 5.76599pt on input line 528.
+(Font)              scaled to size 5.76599pt on input line 557.
+
+
+LaTeX Warning: No \author given.
+
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 528.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 528.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
+(Font)              scaled to size 7.39746pt on input line 557.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 557.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 528.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 557.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 528.
+(Font)              scaled to size 5.5481pt on input line 557.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 528.
-LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 528.
-LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 528.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 557.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 528.
+(Font)              scaled to size 13.31541pt on input line 558.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 528.
+(Font)              scaled to size 13.31541pt on input line 558.
 LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 528.
+(Font)              scaled to size 13.31541pt on input line 558.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 528.
- (./geometry.toc)
-\tf@toc=\write7
-\openout7 = `geometry.toc'.
+(Font)              scaled to size 13.31541pt on input line 558.
+LaTeX Font Info:    Font shape `JT1/hmc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 560.
+LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 560.
+LaTeX Font Info:    Font shape `JY1/hmc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 560.
+LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 560.
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 560.
+LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 562.
+LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
+(Font)              scaled to size 4.62341pt on input line 562.
+ <xymatrix 2x2
 
- [1
+Package xypdf Warning: The produced DVI file is NOT PORTABLE. Convert it with
+dvipdfm(x) to the PDF format but do not expect the DVI file itself to be
+displayed correctly.
+
+150> <xymatrix 2x2 150> [1
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 532.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 532.
+
+LaTeX Font Warning: Font shape `JT1/hmc/m/it' undefined
+(Font)              using `JT1/hmc/m/n' instead on input line 684.
+
+
+LaTeX Font Warning: Font shape `JY1/hmc/m/it' undefined
+(Font)              using `JY1/hmc/m/n' instead on input line 684.
+
+LaTeX Font Info:    Font shape `JT1/hmc/m/it' will be
+(Font)              scaled to size 9.24683pt on input line 687.
+LaTeX Font Info:    Font shape `JY1/hmc/m/it' will be
+(Font)              scaled to size 9.24683pt on input line 687.
+[2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 698.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 698.
  (./geometry.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 532.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 532.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 698.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 698.
 Package rerunfilecheck Info: File `geometry.out' has not changed.
-(rerunfilecheck)             Checksum: A2D93103364FF492974603B03D255529;98.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 532.
+(rerunfilecheck)             Checksum: 97593E04474AD6F15568B8380674DD9D;148.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 698.
  ) 
 Here is how much of TeX's memory you used:
- 24624 strings out of 493273
- 426388 string characters out of 6144919
- 549782 words of memory out of 5000000
- 28064 multiletter control sequences out of 15000+600000
- 26746 words of font info for 125 fonts, out of 8000000 for 9000
+ 24666 strings out of 493273
+ 426434 string characters out of 6144919
+ 556978 words of memory out of 5000000
+ 28112 multiletter control sequences out of 15000+600000
+ 26989 words of font info for 127 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 55i,6n,82p,3248b,991s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,17n,82p,3248b,991s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on geometry.dvi (1 page, 2052 bytes).
+Output written on geometry.dvi (2 pages, 12340 bytes).
