@@ -177,14 +177,102 @@
 %   例えば　{\h C} のように用いる
 \newcommand{\h}{\mathscr}
 
-% ヒルベルト空間などの記号
-\newcommand{\F}{\mcal{F}}
-\newcommand{\X}{\mcal{X}}
-\newcommand{\Y}{\mcal{Y}}
-\newcommand{\HH}{\mcal{H}}
-\newcommand{\RKHS}{\Hil_{k}}
-\newcommand{\Loss}{\mcal{L}_{D}}
-\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+%筆記体
+\newcommand{\cA}{\mcal{A}}
+\newcommand{\cB}{\mcal{B}}
+\newcommand{\cC}{\mcal{C}}
+\newcommand{\cD}{\mcal{D}}
+\newcommand{\cE}{\mcal{E}}
+\newcommand{\cF}{\mcal{F}}
+\newcommand{\cG}{\mcal{G}}
+\newcommand{\cH}{\mcal{H}}
+\newcommand{\cI}{\mcal{I}}
+\newcommand{\cJ}{\mcal{J}}
+\newcommand{\cK}{\mcal{K}}
+\newcommand{\cL}{\mcal{L}}
+\newcommand{\cM}{\mcal{M}}
+\newcommand{\cN}{\mcal{N}}
+\newcommand{\cO}{\mcal{O}}
+\newcommand{\cP}{\mcal{P}}
+\newcommand{\cQ}{\mcal{Q}}
+\newcommand{\cR}{\mcal{R}}
+\newcommand{\cS}{\mcal{S}}
+\newcommand{\cT}{\mcal{T}}
+\newcommand{\cU}{\mcal{U}}
+\newcommand{\cV}{\mcal{V}}
+\newcommand{\cW}{\mcal{W}}
+\newcommand{\cX}{\mcal{X}}
+\newcommand{\cY}{\mcal{Y}}
+\newcommand{\cZ}{\mcal{Z}}
+
+\newcommand{\rmD}{\mathrm{D}}
+
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+\newcommand{\scN}{\mathscr{N}}
+\newcommand{\scO}{\mathscr{O}}
+\newcommand{\scR}{\mathscr{R}}
+\newcommand{\scP}{\mathscr{P}}
+\newcommand{\scS}{\mathscr{S}}
+\newcommand{\scV}{\mathscr{V}}
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
+\newcommand{\Domp}{\mathsf{D}}
+\newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
+\newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
+\newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
+\newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
+\newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
+\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
+\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+\newcommand{\Rder}{\mathrm{R}}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\longrightarrow}}}%内部Hom
+\newcommand{\simra}{\mathrel{\overset{\sim}{\longleftarrow}}}%内部Hom
 
 % 偏微分作用素の記号
 \newcommand{\p}{\partial}
@@ -207,6 +295,12 @@
 \newcommand{\Lie}{{\bf Lie}}
 \newcommand{\dLie}{{\bf Liec}}
 
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
 
 
 % 射の集合など
@@ -322,19 +416,18 @@
 
 \include{KS83-intro}
 \mainmatter
-\chapter{Microfunctions}
-\chapter{Microdifferential Systems}
-\chapter{Structure of Coherent $\mcal{E}_X$-modules}
-\chapter{Holomorphic Solutions of Systems of Partial Differential Equations}
-\chapter{Solutions of Holonomic Systems}
-\chapter{Index Theorems}
+\chapter{Microfunctions}\label{ch1}
+\chapter{Microdifferential Systems}\label{ch2}
+\chapter{Structure of Coherent $\mcal{E}_X$-modules}\label{ch3}
+\chapter{Holomorphic Solutions of Systems of Partial Differential Equations}\label{ch4}
+\chapter{Solutions of Holonomic Systems}\label{ch5}
+\chapter{Index Theorems}\label{ch6}
 \appendix
-\chapter{Derived Categories and Functors}
-\chapter{Whitney Stratification and Constructible Sheaves}
+\chapter{Derived Categories and Functors}\label{chA}
+\chapter{Whitney Stratification and Constructible Sheaves}\label{chB}
 
 
 \backmatter
-
 
 
 
@@ -381,7 +474,7 @@
     New spaces in Mathematics, edited by Mathieu Anel 
     and Gabriel Catren, 
     Cambridge University Press, 2021, pp. 117--152.
-    \bibitem[SKK73]{SKK73}
+    \bibitem[44]{SKK}
     Mikio Sato, Takahiro Kawai, and Masaki Kashiwara, 
     \textit{Microfunctions and pseudo-differential equations}, 
     Hyperfunctions and pseudo-differential equations 
@@ -390,6 +483,13 @@
     Springer, Berlin, 1973, pp. 265–-529. 
     Lecture Notes in Math., Vol. 287.
 
+\end{thebibliography}
+
+\begin{thebibliography}{15}
+    \bibitem[Boutet de Monvel-Kree]{BK76} 
+    Boutet de Monvel, L.; Kree,: 
+    \textit{Pseudo-differential operators and Geverey classes}, 
+    Ann. Inst. Fourier Grenoble, t.26, 1, p.81--140. (1976)
 \end{thebibliography}
 %\bibliographystyle{junsrt}
 %\bibliography{ref}
