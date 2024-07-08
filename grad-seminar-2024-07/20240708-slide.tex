@@ -1,0 +1,678 @@
+\documentclass[dvipdfmx,12pt,aspectratio=169,leqno]{beamer}% dvipdfmxしたい
+\usepackage{bxdpx-beamer}% dvipdfmxなので必要
+\usepackage{pxjahyper}% 日本語で'しおり'したい
+\usepackage{minijs}% min10ヤダ
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+\renewcommand{\emph}[1]{{\upshape\bfseries #1}}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{color}
+\usepackage{ascmac}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{enumerate}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{proof}
+\usepackage{listings}
+\usepackage{otf}
+\usepackage[all]{xy}
+\usepackage{amscd}
+%\usepackage[dvipdfmx]{hyperref}
+
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkblue,
+    urlcolor=darkblue,
+}
+
+\usetikzlibrary{positioning}
+
+
+\usepackage{latexsym}
+\usepackage{wrapfig}
+\usepackage{layout}
+\usepackage{url}
+
+\usepackage{okumacro}
+
+\usepackage{comment}
+%\usepackage{pxjahyper}
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+%\newcommand{\Ring}{{\bf Ring}}
+\newcommand{\Ab}{{\bf Ab}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\Modf}{\mathop{\mathrm{Mod}^\mathrm{f}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits} % 写像の集合
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits} % 射集合
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits} % 自己準同型の集合
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits} % 自己同型の集合
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits} % 射集合
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits} % 核
+\newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
+\newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
+\newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+%\newcommand{\OO}{\mcal{O}}
+
+
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+%        \itshape
+         \bfseries
+%    #1\@addpunct{.}]\ignorespaces
+    {#1}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
+\renewcommand{\proofname}{\textrm{Proof.}}
+
+
+
+%\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{subsection}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Op}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+%\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
+
+\newcommand{\cat}{\mathscr{C}}
+
+%筆記体
+\newcommand{\cA}{\mcal{A}}
+\newcommand{\cB}{\mcal{B}}
+\newcommand{\cC}{\mcal{C}}
+\newcommand{\cD}{\mcal{D}}
+\newcommand{\cE}{\mcal{E}}
+\newcommand{\cF}{\mcal{F}}
+\newcommand{\cG}{\mcal{G}}
+\newcommand{\cH}{\mcal{H}}
+\newcommand{\cI}{\mcal{I}}
+\newcommand{\cJ}{\mcal{J}}
+\newcommand{\cK}{\mcal{K}}
+\newcommand{\cL}{\mcal{L}}
+\newcommand{\cM}{\mcal{M}}
+\newcommand{\cN}{\mcal{N}}
+\newcommand{\cO}{\mcal{O}}
+\newcommand{\cP}{\mcal{P}}
+\newcommand{\cQ}{\mcal{Q}}
+\newcommand{\cR}{\mcal{R}}
+\newcommand{\cS}{\mcal{S}}
+\newcommand{\cT}{\mcal{T}}
+\newcommand{\cU}{\mcal{U}}
+\newcommand{\cV}{\mcal{V}}
+\newcommand{\cW}{\mcal{W}}
+\newcommand{\cX}{\mcal{X}}
+\newcommand{\cY}{\mcal{Y}}
+\newcommand{\cZ}{\mcal{Z}}
+
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+\newcommand{\scN}{\mathscr{N}}
+\newcommand{\scO}{\mathscr{O}}
+\newcommand{\scV}{\mathscr{V}}
+\newcommand{\scU}{\mathscr{U}}
+
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+%\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+%\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+%\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}%複体のホモトピー圏
+%\newcommand{\Comp}{\mathrm{C}}
+%\newcommand{\Komp}{\mathrm{K}}
+%\newcommand{\Domp}{\mathsf{D}}%複体のホモトピー圏
+
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
+\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}
+\newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
+\newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
+\newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
+\newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
+\newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
+\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+\newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
+
+
+
+
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
+\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+\newcommand{\Rder}{\mathrm{R}}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
+\newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
+\newcommand{\simra}{\mathrel{\overset{\sim}{\leftarrow}}}%同型左矢印
+\newcommand{\simrra}{\mathrel{\overset{\sim}{\longleftarrow}}}%同型左矢印
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\PSh}{\mathrm{PSh}}
+
+\newcommand{\rmD}{\mathrm{D}}
+
+\newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
+\newcommand{\ori}{\mathord{\mathrm{or}}}
+\newcommand{\Db}{\mathord{\mathscr{D}b}}
+
+\newcommand{\codim}{\mathop{\mathrm{codim}}\nolimits}
+
+
+
+\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
+\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
+
+
+\newcommand{\tens}[1][]{\mathbin{\otimes_{\raise1.5ex\hbox to-.1em{}{#1}}}}
+\newcommand{\etens}{\mathbin{\boxtimes}}
+\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
+\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
+\newcommand{\detens}{\underline{\etens}}
+\newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
+\newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
+
+\newcommand{\blk}{\mathord{\ \cdot\ }}
+\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
+
+
+%\newcommand{\hocolim}{{\mathrm{hocolim}}}
+%\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+%\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+%\newcommand{\Pro}{\mathrm{Pro}}
+%\newcommand{\Ind}{\mathrm{Ind}}
+%\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+%\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+\newcommand{\proolim}[1][]{\mathop{\text{\rm``{$\varprojlim$}''}}\limits_{#1}}
+\newcommand{\sproolim}[1][]{\smash{\mathop{\rm``{\varprojlim}''}\limits_{#1}}}
+\newcommand{\inddlim}[1][]{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}
+\newcommand{\sinddlim}[1][]{\smash{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}\,}
+\newcommand{\ooplus}{\mathop{\text{\rm``{$\oplus$}''}}\limits}
+\newcommand{\bbigsqcup}{\mathop{``\bigsqcup''}\limits}
+\newcommand{\bsqcup}{\mathop{``\sqcup''}\limits}
+\newcommand{\dsum}[1][]{\mathbin{\oplus_{#1}}}
+
+\newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
+
+
+
+
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}%[section]
+\newtheorem{DFN}[AXM]{定義}
+\newtheorem{THM}[AXM]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[AXM]{命題}
+\newtheorem{LMM}[AXM]{補題}
+\newtheorem{CRL}[AXM]{系}
+\newtheorem{EG}[AXM]{例}
+\newtheorem*{EG*}{例}
+\newtheorem{RMK}[AXM]{注意}
+\newtheorem{CNV}[AXM]{約束}
+\newtheorem{CMT}[AXM]{コメント}
+\newtheorem*{CMT*}{コメント}
+\newtheorem{NTN}[AXM]{記号}
+\newtheorem{CLM}[AXM]{Claim}
+
+% 定理環境ここまで
+%====================================================
+
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+
+
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+
+% =================================
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+
+\usetheme{Singapore}
+\usecolortheme{rose}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{navigaton symbols}{\false}
+\setbeamertemplate{footline}[frame number]
+%\usepackage{graphicx,xcolor}
+
+\def\fracinline#1/#2{\mbox{\raise0.5ex\hbox{\footnotesize$#1$}{\hskip-.1em$/$\hskip-.1em}\raise-0.5ex\hbox{\footnotesize$#2$}}}
+
+\begin{document}
+    
+\title{Normal Deformation and Normal Cones\subtitle{本多研 院生ゼミ}}
+\date{2024年7月8日}
+\author{大柴 寿浩}
+
+
+
+
+\begin{frame}
+    \titlepage
+\end{frame}
+\begin{comment}
+    \begin{frame}\frametitle{書くこと}
+    \begin{itemize}
+        \item 特に興味を持った定理や理論の背景
+        \item それを記述するための記号や概念の導入
+        \item 正確な主張の紹介
+        \item 証明の基本的なアイデアやアウトラインの紹介
+        \item または定理の過程を満たす具体例や定理の応用例の紹介
+    \end{itemize}
+    \end{frame}
+\end{comment}
+\setcounter{section}{3}
+\section[sect.4.1]{Normal Deformation and Normal Cones\cite[sect.4.1]{KS90}}
+\subsection{normal deformation}
+\begin{frame}
+    \frametitle{Normal Deformation}
+
+    \begin{itemize}
+        \item \(X\): a manifold of \(\dim{M}=n\)
+        \item \(M\subset X\): a closed submanifold of\(\codim{M}=l\)
+        \item \(T_{M}X\): the normal bundle to \(M\) in \(X\)
+    \end{itemize}
+
+    We defined the \textbf{normal deformation} of \(M\) in \(X\):
+    \begin{itemize}
+        \item \(\widetilde{X}_{M}\)
+        \item \(p\colon \widetilde{X}_{M}\to X\)
+        \item \(t\colon \widetilde{X}_{M}\to\rr\)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Normal Deformation}
+
+    \(p\) and \(t\) satisfy the following conditions:
+    \begin{equation}\tag{4.1.3}\label{4.1.3}
+        \begin{cases}
+            p^{-1}(X-M)\cong (X-M)\times (\rr-\{0\}),\\
+            t^{-1}(\rr-\{0\})\cong X\times (\rr-\{0\}),\\
+            t^{-1}(0)\cong T_{M}X.
+        \end{cases}
+    \end{equation}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Normal Deformation}
+
+    \begin{itemize}
+        \item \(\varOmega\coloneqq t^{-1}\big({\left]0,+\infty\right[}\big)\)
+        \item \(j\colon\varOmega\hookrightarrow \widetilde{X}_{M}\)
+        \item \(\widetilde{p}\coloneqq p\circ j\)
+    \end{itemize}
+    \begin{equation}\tag{4.1.5}\label{4.1.5}
+        \vcenter{\xymatrix@C=36pt@R=36pt{
+        T_{M}X
+        \ar[d]_-{\tau}
+        \ar@{^{(}->}[r]_-{s}
+        &
+        \widetilde{X}_{M}
+        \ar[d]^-{p}
+        &
+        \varOmega
+        \ar@{_{(}->}[l]_-{j}
+        \ar[ld]^-{\widetilde{p}}
+        \\
+        M
+        \ar@{^{(}->}[r]_-{i}
+        &
+        X
+      }}
+    \end{equation}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Normal Deformation}
+    \begin{CLM}
+        \(\widetilde{p}\) is smooth 
+        and 
+        \(\varOmega\) is isomorphic to \(X\times \rr^{+}\) 
+        by the map \(\left(\widetilde{p},t\right)\).
+    \end{CLM}
+    \begin{proof}
+        We have \(
+            \widetilde{p}^{-1}(X)
+            =j^{-1}p^{-1}(X)
+            =\varOmega
+        \) by the definition of \(\widetilde{p}\) and 
+        the surjectivity of \(p\). 
+        The condition about tangent maps is a local property, 
+        and the claim follows.
+
+        We have \(t^{-1}(\rr^{+})\cong\varOmega\). Therfore
+        \begin{align*}
+            \left(\widetilde{p},t\right)(\varOmega)
+            &\cong \widetilde{p}(\varOmega)\times t(\varOmega)\\
+            &\cong X\times \rr^{+}.
+        \end{align*}
+        The inverse morphism is induced by \eqref{4.1.3}.
+    \end{proof}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Normal Deformation}
+    \begin{CLM}
+        \(p^{-1}(M)\) is the union of \(T_{M}X\) 
+        and \(M\times \rr\).
+    \end{CLM}
+    \begin{proof}
+        We can see locally
+        \begin{align*}
+            p^{-1}(M)
+            &=\left\{(x,t)\in\widetilde{X}_{M};~(tx',x'')\in M\right\}\\
+            &=\left\{(x,t)\in\widetilde{X}_{M};~tx'=0\right\}\\
+            &=\left\{(x,t)\in\widetilde{X}_{M};~t=0,\text{ or }~x'=0\right\}\\
+            &=T_{M}X\cup (M\times \rr).
+        \end{align*}
+    \end{proof}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Normal Deformation}
+    \begin{CLM}
+        \(T_{M}X\cap (M\times \rr)=M\times\{0\}\) coincides 
+        with the zero-section of \(T_{M}X\).
+    \end{CLM}
+    \begin{proof}
+        As how we consider above,
+        \begin{align*}
+            T_{M}X\cap (M\times \rr)
+            &=t^{-1}(0)\cap (M\times \rr)\\
+            &=\left\{(x,t)\in\widetilde{X}_{M};~t=0,\text{ and }x'=0\right\}\\
+            &=M\times\{0\},
+        \end{align*}
+        and \(
+            M\times\{0\}\cong M \subset T_{M}X.
+        \)
+    \end{proof}
+\end{frame}
+
+\subsection{normal cones}
+\begin{frame}
+    \frametitle{Normal Cones}
+    \begin{definition}[{\cite[Def.4.1.1]{KS90}}]
+        \begin{enumerate}[(i)]
+            \item For \(S\subset X\), the \emph{normal cone to} \(S\) \emph{along} \(M\) is\[
+                C_{M}(S)=T_{M}X\cap\overline{\widetilde{p}^{-1}(S)}.
+            \]
+            \item \(S_1, S_2\subset X\)
+        \end{enumerate}
+    \end{definition}
+\end{frame}
+
+
+\begin{comment}
+    \begin{frame}\frametitle{同値関係の幾何的イメージ}
+    %\scalebox{0.8}{
+    \begin{tikzpicture}
+        \draw[>=stealth,semithick] (-2,0)--(3,0); %x軸
+        \draw[>=stealth,semithick] (0,-2)--(0,4); %y軸
+        \draw (0,0)node[below right]{O}; %原点
+        \draw[thick, domain=-2:3] plot(\x,{0.5*\x});
+        \draw[thick, domain=-1.:2] plot(\x,2*\x);
+        \fill[black!20] (1.5,3) rectangle (2.5,1.25); %四角2U
+        \draw[line width = 0.5pt] (1.5,3) rectangle (2.5,1.25); %四角2U
+        \draw (2.5,1.25)node[below]{$2U$}; %点(2.5,1.25)
+        \fill[black!20] (1,2) rectangle (1.66,0.83); %四角Uずらし
+        \draw[line width = 0.5pt] (1,2) rectangle (1.66,0.83); %四角Uずらし
+        \fill[black!40] (0.75,1.5) rectangle (1.25,0.625); %四角U
+        \draw[line width = 0.5pt] (0.75,1.5) rectangle (1.25,0.625); %四角U
+        \draw (0.75,1.5)node[left]{$U$}; %点(2.5,1.25)\draw[line width=1pt] (0.75,1.5) rectangle (1.25,0.625); %四角
+        \fill[black!20] (-0.75,-1.5) rectangle (-1.25,-0.625); %四角-U
+        \draw[line width = 0.5pt] (-0.75,-1.5) rectangle (-1.25,-0.625); %四角-U
+        \fill[black!20] (-1,-2) rectangle (-1.66,-0.83); %四角-U
+        \draw[line width = 0.5pt] (-1,-2) rectangle (-1.66,-0.83); %四角-U
+        \draw (-0.75,-1.5)node[right]{$-U$}; %点(2.5,1.25)
+        \fill[black!20] (0.375,0.75) rectangle (0.625,0.3125); %四角(1/2)U
+        \draw[line width = 0.5pt] (0.375,0.75) rectangle (0.625,0.3125); %四角(1/2)U
+        \draw (0.625,0.2)node[right]{$(1/2)U$}; %点(2.5,1.25)
+        \draw[very thick, domain=-2.:3] plot(\x,{0.8*\x});
+        %\draw[very thick, domain=-1.7:2.7] plot(\x,{1.3*\x});
+        \draw (1.8,3.6)node[right]{$U$を通る直線の上端};
+        \draw (3,2.4)node[right]{$U$を通る直線};
+        \draw (3,1.5)node[right]{$U$を通る直線の下端};
+    \end{tikzpicture}
+    \centering
+    %}
+        %\caption{商写像の逆像1}
+\end{frame}
+
+\end{comment}
+
+\section{References}
+
+\begin{frame}[allowframebreaks]{References}
+    \begin{thebibliography}{KS90}\beamertemplatetextbibitems
+        \bibitem[KS90]{KS90} Kashiwara, Schapira 
+        \textit{Sheaves on Manifolds}, Springer, 1990.
+    \end{thebibliography}
+\end{frame}
+
+\begin{comment}
+\begin{frame}[noframenumbering]
+aaa
+\end{frame}
+\end{comment}
+
+\end{document}

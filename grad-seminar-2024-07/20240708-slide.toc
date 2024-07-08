@@ -1,0 +1,4 @@
+\beamer@sectionintoc {4}{Normal Deformation and Normal Cones\cite [sect.4.1]{KS90}}{2}{0}{1}
+\beamer@subsectionintoc {4}{1}{normal deformation}{2}{0}{1}
+\beamer@subsectionintoc {4}{2}{normal cones}{8}{0}{1}
+\beamer@sectionintoc {5}{References}{9}{0}{2}
