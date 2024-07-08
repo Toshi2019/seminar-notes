@@ -403,6 +403,7 @@
 \newtheorem*{CMT*}{コメント}
 \newtheorem{NTN}[AXM]{記号}
 \newtheorem{CLM}[AXM]{Claim}
+\newtheorem{Prop}[AXM]{Proposition}
 
 % 定理環境ここまで
 %====================================================
@@ -616,9 +617,92 @@
             \item For \(S\subset X\), the \emph{normal cone to} \(S\) \emph{along} \(M\) is\[
                 C_{M}(S)=T_{M}X\cap\overline{\widetilde{p}^{-1}(S)}.
             \]
-            \item \(S_1, S_2\subset X\)
+            \item For \(S_1, S_2\subset X\), 
+            we define \(C(S_1,S_2)\coloneqq C_{\Delta_{X}}(S_1\times S_2)\subset TX\).
         \end{enumerate}
+        \[
+            \begin{array}{ccc}
+                T_{\Delta_X}(X\times X)&\longrightarrow&TX\\
+                \rotatebox{90}{$\in$}&&\rotatebox{90}{$\in$}\\
+                \left((x,x),(\xi,0)\right)&\longmapsto&\left(x, \xi\right)        
+            \end{array}
+        \]    
     \end{definition}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Normal Cones}
+
+    We can write an element of \(T_{\Delta_X}(X\times X)\) as
+    \[
+        \left((x,x),(\xi,0)\right).
+    \]
+    Indeed, for \((\xi,\eta) \in T_{(x,x)}(X\times X)\), 
+    we have
+    \begin{align*}
+        (\xi,\eta) + T_{(x,x)}\Delta_X
+        &=\{(\xi+\zeta,\eta+\zeta);\zeta\in T_{(x,x)}\Delta_X\}\\
+        &=\{(\xi+(\zeta-\eta),\eta+(\zeta-\eta));\zeta\in T_{(x,x)}\Delta_X\}\\
+        &=\{(\xi-\eta,0)+\zeta;\zeta\in T_{(x,x)}\Delta_X\}\\
+        &=(\xi-\eta,0)+ T_{(x,x)}\Delta_X.
+    \end{align*}
+    That is to say, we can make any vectors \(
+        (\xi,\eta)
+    \) in \(T_{\Delta_X}(X\times X)\) in the form \(
+        (\zeta,0)
+    \) preserving the difference between the first and second entries.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Normal Cones}
+
+    \begin{CLM}
+        \begin{enumerate}
+            \item \(C_{M}(S)\) is a closed conic subset of \(T_{M}X\).
+            \item its projection onto \(M\) is 
+            the set \(M\cap\overline{S}\).
+        \end{enumerate}
+    \end{CLM}
+    \begin{proof}
+        1. 
+        The claim follows from
+        \begin{align*}
+            C_{M}(S)
+            &=T_{M}X\cap\overline{\widetilde{p}^{-1}(S)}\\
+            &=T_{M}X\cap\overline{\left\{(x'/t,x'')\in\varOmega; x\in S, t\in\rr^{+}\right\}}\\
+            &=T_{M}X\cap\overline{\rr^{+}\left\{(x',x'')\in\varOmega; x\in S\right\}}.
+        \end{align*}
+    \end{proof}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Normal Cones}
+
+    \begin{proof}
+        2. ????
+        \[\tau(C_{M}(S))\overset{?}{=}M\cap\overline{S}\]
+        \begin{align*}
+            \tau(C_{M}(S))
+            &=\tau(T_{M}X\cap\overline{\widetilde{p}^{-1}(S)})\\
+            &=\tau\left(s^{-1}\left(\overline{\widetilde{p}^{-1}(S)}\right)\right)\\
+            &=\tau\left(s^{-1}\left(\overline{j^{-1}(p^{-1}(S))}\right)\right)\\
+            &=\tau\left(\overline{s^{-1}\left(j^{-1}(p^{-1}(S))\right)}\right)
+        \end{align*}
+    \end{proof}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Normal Cones}
+
+    As a consequence of the claim, 
+    \begin{center}
+        \(C(S_1,S_2)\subset TX\): closed conic.
+    \end{center}
+    If \(M\) is a closed submanifold, then \(C(S,M)\) is 
+    the inverse image of \(C_M(S)\) by the projection \(
+        M\times_{X}TX\to T_{M}X
+    \) by the next proposition.
+
 \end{frame}
 
 
