@@ -1,6 +1,6 @@
 %=====================================
-%   geometry.tex
-%   幾何学まとめノート toshi2019
+%   accesible.tex
+%   到達可能圏まとめノート toshi2019
 %=====================================
 
 % -----------------------
@@ -224,6 +224,7 @@
 \newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
 \newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
 \newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
+\newcommand{\card}{\mathop{\mathrm{card}}\nolimits} % 余像
 
 % その他便利なコマンド
 \newcommand{\dip}{\displaystyle} % 本文中で数式モード
@@ -548,241 +549,52 @@
 % begin document and end document.
 % ---------------------------
 
-\title{本永翔也さんとのやりとり}
-\author{}
+\title{到達可能対象・到達可能圏}
+\author{うるち米}
 \date{\today}
 \begin{document}
 \maketitle
 %\tableofcontents
 
-\section*{本永翔也さんへの質問 (2024年7月15日)}
-\paragraph{前提}
-まず，私の持っている知識について前提を述べます．
-私の専門は代数解析で，
-とくに超局所層理論と呼ばれている分野の本\cite{KS90}をM1から
-セミナーで読んでいます．
-とりわけ興味があるのは超局所層理論のシンプレクティック幾何への応用です．
-シンプレクティック幾何については基本的なところを
-\cite{MS17}で3章くらいまで（かいつまんで）勉強しました．
-力学系については全くの門外漢で，KAM理論についても全く知りません．
-後ほど述べる劣微分に関しては，
-凸解析や最適化に関する本を二，三手にとって，古典的な定義と
-滑らかとは限らない関数に対しての例を幾つか見ました．
-劣微分の定義は色々あるそうなので，
-何を古典的な劣微分と思っているかを明確にしておきます．
-\begin{DFN}
-    \(x_0\)を\(\rr^n\)の点とし，
-    \(f\colon\rr^n\to\rr\)を関数とする．
-    このとき\(f\)の\(x_0\)における劣微分\(\partial f\)を
-    \[
-        \partial f\coloneqq
-        \left\{\alpha\in\rr^n;f(x)>f(x_0)+\langle\alpha,x-x_0\rangle\right\}
-    \]
-    で定める．
+
+\section{\(\kappa\)フィルター余極限{\cite[sect.1.1]{MP89}}}
+\begin{leftbar}
+\begin{DFN}[{\cite[def.1.1.1]{MP89}}]
+    \(\kappa\)を無限正則基数とする．
+    圏\(I\)が\(\kappa\)フィルター (\(\kappa\)-filtered) であるとは，
+    \(\kappa\)より小さな濃度をもつ任意のグラフ\(G\)に対して，
+    任意の図式\(D\colon G\to I\)が余錐をもつ，すなわち
+    図式\(\bar{D}\colon G^{+}\to I\)で\(D\)に拡張される図式
+    をもつことをいう．
 \end{DFN}
-\paragraph{質問に至った経緯}
-以上の興味から応用が書いてある論文をいろいろ漁っていたところ，
-Viterbo の学生であった Vichery の論文\cite{Vic1}を見つけました．
-そこでは，\(C^\infty\)多様体上の実数値関数に対する劣微分の定義を超局所層理論を用いて与えており，
-筆者はこれを homological subdifferential と呼んでいます．
+\end{leftbar}
 
-homological subdifferential の応用として\cite[sec.1]{Vic1}に
-挙げられているのが Aubry-Mather 理論（以下，AM理論）でした．
-筆者の別の論文\cite{Vic2}において，
-homological subdifferential を用いると AM 理論の non-convex な
-場合への拡張が可能になる，というようなことが述べられているようです．
-
-\paragraph{質問}
-そこで，本永さんに伺いたいのが以下のことです．
-\begin{enumerate}[質問1. ]
-    \item KAM理論とAM理論自体のモチベーションは何であり，どんな理論なのでしょうか．
-    \item あるいは，それについて簡単に述べてあるような文献等をご教示いただけますでしょうか．
-    \item AM理論の文脈で，劣微分はどのように用いられているのでしょうか．
-\end{enumerate}
-以上．お忙しいところ恐縮ですがよろしくお願いします．
-\clearpage
-
-\section*{本永翔也さんからの回答 (2024年7月21日)}
-大柴さん，
-ご質問ありがとうございました．
-超局所層理論の方は私は全く触れたことがありませんが，
-non-convex AM 理論に応用できるというのは興味深い話です．
-
-さて，質問に関する回答は以下になります．
-以下，全て厳密性を犠牲にした『標語的な』説明を行います．
-また，あくまで私個人の見解も入っていることを断っておきます．
-
-まず，KAM 理論も AM 理論も力学系理論的なものなので
-力学系理論の考え方の一つを先に紹介します．
-力学系理論の基本的な考え方の一つに「不変集合に着目する」という
-考え方があります．物事の時間発展による変化を知る際，
-むしろ変わらないところに注目し，
-問題を『不変集合の上でのダイナミクス』と『不変集合同士の関係』に
-分解するという考え方です．
-KAM 理論も AM 理論も力学系理論における不変集合に関する理論と言えます．
-
-\paragraph*{質問1}
-\begin{quote}
-  KAM 理論と AM 理論自体のモチベーションは何であり，
-  どんな理論なのでしょうか．
-\end{quote}
-三段階で説明します．
-
-\subparagraph*{段階1)}
-まず，力学系理論の中に，（ハミルトン系の）可積分系の
-理論があります．
-可積分系とは，幾何学的には「たくさんの保存量（第一積分）
-と対称性を持つ」微分方程式系のことで，
-代数的には「求積法によって解くことができる」方程式系，
-力学系理論的には「不変トーラスが（隙間なく）何層にも
-重なっている（葉層構造になっている）」方程式系です（さらに
-言えば解軌道が直線的に振る舞い，
-非常に単純な動きをします：Liouville-Arnoldの定理）．
-一般にはそのような方程式はごく稀にしか存在しないはずなのですが，
-例えば二体問題（太陽と地球の運動の方程式）など
-重要な数理モデルの中にはしばしば可積分系が現れるため
-応用上重要視されています．
-\subparagraph*{段階2)}
-こうした数理モデルはあくまで理想化（簡略化）された方程式なので，
-実際には微小な摂動項を加えて解析するのが自然ですが，
-摂動項が入ると一般には可積分系の良い特徴だった「たくさんの
-保存量（第一積分）と対称性を持つ」・「求積法によって
-解くことができる」・「不変トーラスが（隙間なく）何層にも
-重なっている（葉層構造になっている）」といった性質がなくなってしまいます．
-しかし，摂動する前は可積分系だったので
-その良さが何かに反映されて欲しいところです．
-それに応えるのがKAM理論（KAM定理）です．
-KAM定理は，「可積分系を微小摂動しても，
-『力学系理論的な良さ』は残っている」ことを主張します．
-もう少し具体的にいうと，
-「不変トーラスが『小さい間隔で（隙間はできてしまうけれど）』
-いくつも存在する」（かつ，各不変トーラスの上で解軌道は直線的に振る舞い，
-非常に単純な動きをする）ということを保証しています．
-ちなみにですが，
-歴史的には太陽系の安定性（天体達は今後も同じように
-運動してくれるか？）という問題が
-欧米の方では（宗教的理由もあり）非常に重要視されていた過去があり，
-KAM定理によって「（おおよそ）YES」という回答が与えられた
-という経緯があります．
-また，段階3との関わりのために述べておくと，
-証明手法（オリジナル）は摂動論＋級数展開を用いて
-所望の形式級数を構成した後，
-級数の収束を非常に技巧的に示すといったアプローチになっています．  
-\subparagraph*{段階3)}
-KAM定理によって，可積分系に摂動を加えた場合には
-力学系理論的な良い性質（たくさんの不変トーラスの存在＋その上の
-軌道の単純な挙動）が残っていることが分かりました．
-しかし，「可積分系の微小摂動」というクラスはやはり小さいクラスなので，
-これをどうにか一般化したいところです．
-より一般の微分方程式系に対して，
-何らかの意味で「『良い』挙動（『良い』不変集合）」を
-捕まえる統一的な方法はないでしょうか？
-AM理論はこの問に対し，今のところ最も成功していると考えられている，
-変分法的（より正確には作用最小化法的）アプローチです．
-解析力学の文脈ではオイラー・ラグランジュ方程式の解（ハミルトン
-形式に移行するとハミルトン系の解）はラグランジアンの作用積分の
-臨界点として特徴づけられることが知られていますが，
-作用積分の「最小点」に対応する解は他の解に比べて
-何らかの『良い』性質を持つのでであろう，
-というのがAM理論の出発点（の解釈の一つ）です．
-AM理論ではラグランジュ形式とハミルトン形式を行き来する必要があるため，
-AM理論の対象は（可積分系を微小摂動したものとは限らない）
-一般の\(T^\ast M\)上のハミルトン系です．
-「今のところ最も成功している」根拠は大きく二つあり，
-第一に，いくつかの条件（Tonelli性）の元で，
-とりあえず作用積分に対する最小化元 (minimizer) の存在は
-保証されている点が挙げられます．
-第二に，段階1や段階2で述べた可積分系の不変トーラスやKAM定理による
-不変トーラスが，実際，ラグラジアンに対する作用積分を
-ある意味で最小化するものとして特徴づけることができます．
-この意味で，作用積分に対する最小化元 (minimizer) に対応する不変集合は，
-一般のハミルトン系において『良い』挙動を捕まえてくれている
-と期待されますが，実際どのような性質を満たすか？ということが
-現在でも研究されています．
-
-\paragraph*{質問2}
-\begin{quote}
-  あるいは，それについて簡単に述べてあるような
-  文献等をご教示いただけますでしょうか．
-\end{quote}
-可積分系・KAM理論周辺については：
-\begin{quote}
-  柴山允瑠「重点解説 ハミルトン力学系」（サイエンス社）
-\end{quote}
-KAM理論周辺は：
-\begin{quote}
-  Poshchel「A lecture on the classical KAM theorem」
-\end{quote}
-AM理論周辺は：
-\begin{quote}
-  Sorrentino「Lecture notes on Mether's theory for Lagrangian systems」
-\end{quote}
-かより詳しくは
-\begin{quote}
-  Sorrentino
-  「Action-minimizing methods in Hamiltonian dynamics: an introduction to Aubry-Mather theory」Princeton and Oxford University Press (2015)
-\end{quote}
-にかなり整理されて書かれています（SorrentinoはMatherの弟子です）．
-
-\paragraph*{質問1}
-\begin{quote}
-  AM 理論の文脈で，劣微分はどのように用いられているのでしょうか． 
-\end{quote}
-AM理論では「1次ホモロジーに対する制約条件つきの作用最小化問題」と
-そのラグランジュ双対による「1次コホモロジーをラグランジュ乗数とする
-作用最小化問題」の両方を考えるのですが，
-両者の関係式を与える際に劣微分が用いられます．
-この関係は重要なはずですが，
-積極的に使っている研究者はあまり多くないように思います．
-というのも，Hamilton-Jacobi方程式の粘性解理論の一つの
-weak KAM理論というものとの関連でAM理論の重要性が再認識されたのですが，
-そこでは「1次コホモロジーをラグランジュ乗数とする作用最小化問題」の方
-のみが活躍したため，
-制約付き問題の方は専門家以外はあまり知られていない印象です．
-多分日本国内でAubry-Mather理論における劣微分の役割について
-研究しているのは（おそらく把握しているのすら）僕のみかと
-思われます（そもそも古典ハミルトン力学系周辺の研究者が少ないので．）
-丁度投稿中の論文の一部がAM理論の知識をまとめたものになっているので，
-少し書き換え・書き足したものを共有いたします．
-投稿中の論文の一部なのでくれぐれも扱いに注意していただければと思います．
-
-引用されたていた論文（Nicolas Vichery, 
-Spectral Invariants towards 
-a Non-Convex Aubry-Mather theory）は
-少し調べた限りでは出版はされていないようなのでなんとも言えませんが，
-私としては非常に興味深く，
-一緒に読んでみるのもいいかもしれません（大柴さんにその気があれば，ですが）．
-ただ，斜め読みした感じですと
-どこに超局所層理論が使われているのかはよくわかりませんでした．
-Clark微分の別の特徴づけが大事なのでしょうかね？
-
-また，丁度今年の9月9--12日の期間に
-熊本大学で行われる力学系理論勉強会の今年のテーマが
-Aubry-Mather理論となっており，
-私もそこでAubry-Mather理論の基礎を話すことになっているので
-興味があれば参加してみてください（旅費の補助等が
-あるかは今のところ分かりませんが
-もし興味があるならオーガナイザーの柴山先生に尋ねてみます．
-多分ポジティブな返答をもらえる可能性の方が高いです．）
-
-
+\begin{leftbar}
+\begin{PRP}
+    \(I\)を圏とする．
+    次の条件は同値である．
+    \begin{enumerate}[(i)]
+        \item 次の2つの条件が成り立つ．\begin{enumerate}[(a)]
+            \item 任意の\(A\subset\Ob(I)\)で\(\card(A)<\pi\)をみたすものに対し，\(j\in I\)でどの\(a\in A\)に対しても\(I\)の射\(a\to j\)が存在するものが存在する．
+            \item 任意の\(i,j\in I\)と任意の\(B\subset\Hom_{I}(i,j)\)で\(\card(B)<\pi\)となるものに対し，\(I\)の射\(j\to k\)で合成\(i\overset{s}{\to}j\to k\)が\(s\in B\)によらないものが存在する．
+        \end{enumerate}
+        \item 任意の圏\(J\)で\(\card(\Mor(J))<\pi\)となるものと任意の関手\(\varphi\colon J\to I\)に対し，\(i\in I\)で\(\indlim[j\in I]\Hom_{I}(\varphi(j),i)\ne\varnothing\)となるものが存在する．
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
-    \bibitem[J1]{J1} Benoit, Jubin, 
-    \textit{A Microlocal Characterization of Lipschitz Continuity}, 
-    \url{https://doi.org/10.4171/PRIMS/54-4-2}.
-    質問に直接は関係ありませんが\cite{Vic1}の応用の一つとして読んでいる論文です．
   \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
     \textit{Sheaves on Manifolds}, 
     Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
-  \bibitem[MS17]{MS17} Dusa McDuff, Dietmar Salamon, 
-    \textit{Introduction to Symplectic Topology}, 
-    3rd ed., Oxford University Press, 2017.
-  \bibitem[Vic1]{Vic1} Nicolas Vichery, \textit{Homological Differential Calculus}, \url{https://doi.org/10.48550/arXiv.1310.4845}.
-  \bibitem[Vic2]{Vic2} Nicolas Vichery, \textit{Spectral Invariants towards a Non-Convex Aubry-Mather theory
-  }, \url{https://doi.org/10.48550/arXiv.1403.2058}.
+  \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Categories and Sheaves}, 
+    Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
+  \bibitem[MP89]{MP89} Michael Makkai, Robert Par\'e, 
+    \textit{Accesible Categories: The Foundation of Categorical Model Theory}, 
+    AMS, 1989.
 \end{thebibliography}
 
 %===============================================

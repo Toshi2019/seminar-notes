@@ -1,5 +1,5 @@
 %================================================
-%    帰納圏について
+%    多様体上の密度について
 %================================================
 
 % -----------------------
@@ -480,6 +480,74 @@
 秋月調和積分にもカレントは載っている．
 
 他に，幾何学的量子化と関連して，\cite{BW97}が面白そう．
+
+\section{Duistermaat から}
+
+\paragraph{ベクトル空間上の密度}
+\(E\)を\(\rr\)上の\(n\)次元ベクトル空間とし，
+\(\Lambda^n E\)を\(E\)の\(n\)ベクトルの空間とする．
+これは例えば\(n\)交代線形形式\(E^n\to \rr\)の空間の
+双対として定義される．
+\(\Lambda^n{E}\)は\(\rr\)上1次元である．
+任意の\(\alpha\in\rr\)に対し，
+写像\(\rho\colon\Lambda^n{E}-\{0\}\to\cc\)で
+各\(v\in\Lambda^n{E}-\{0\}\), \(\lambda\in\rr-\{0\}\)に対し\(
+    \rho(\lambda v)
+    =\lvert{\lambda}\rvert^{\alpha}\cdot\rho(v)
+\)をみたすものを
+それぞれ階数\(\alpha\)の\textbf{複素数値密度} (complex valued 
+density)（または\textbf{無向体積} (nonoriented volume)）とよぶ．
+階数\(\alpha\)の密度全体は\(\cc\)上1次元のベクトル空間であり，
+\(\Omega_\alpha(E)\)で表す．
+
+\paragraph{多様体上の密度}
+今度は\(X\)を\(n\)次元\(C^{\infty}\)多様体とする．
+\(X\)の\(x\in X\)における接空間を\(T_{x}(X)\)で表す．
+\(\Omega_{\alpha}(T_{x}(X))\), \(x\in X\)は自然に
+複素\(C^{\infty}\)ベクトル束のファイバーとなる．
+このとき，階数\(\alpha\)の\(C^{\infty}\)\textbf{密度}を
+\(C^{\infty}\)切断\(\rho\colon X\to \Omega_{\alpha}(X)\)として
+定義する．
+\(X\)上の階数\(\alpha\)の\(C^{\infty}\)密度の
+空間を\(C^{\infty}(X,\Omega_{\alpha})\)で表す．
+至るところ0にならない階数\(\alpha\)の標準的な密度を選べば，
+空間\(C^{\infty}(X,\Omega_{\alpha})\)は\(C^{\infty}(X)\)と
+同一視できる．
+\(X\)がパラコンパクト（ここでは\(C^{\infty}\)多様体に対してはいつも
+パラコンパクトであることを仮定する）であるときには，
+単位の分割を用いることで，\(X\)上の\(C^{\infty}\)密度として，
+常に正の値をとるものをいつでも構成できる．
+
+%中略==========================================
+
+\paragraph{分布密度}
+\(\rho\in C^{\infty}(X,\Omega_{\alpha})\), \(
+    \sigma\in C^{\infty}(X,\Omega_{\beta})
+\)のとき，各点での積で積\(
+    \rho\cdot\sigma\in C^{\infty}(X,\Omega_{\alpha+\beta})
+\)が定まる．特に\[
+    (\rho,\sigma)\to\int\rho\cdot\sigma dx
+\]とすることで\(
+    C^{\infty}(X,\Omega_{\alpha})
+    \times 
+    C^{\infty}_{0}(X,\Omega_{1-\alpha})
+\)上の双線形形式が定まり，
+これにより\(\sigma\to\int(\rho\cdot\sigma)dx\)は\(
+    (C^{\infty}_{0}(X,\Omega_{1-\alpha}))'
+\)の元になる．これも\(\rho\)で表す．
+連続なうめこみ\(
+    C^{\infty}(X,\Omega_{\alpha})
+    \to
+    (C^{\infty}_{0}(X,\Omega_{1-\alpha}))'
+\)が定まることが分かるので，\(
+    (C^{\infty}_{0}(X,\Omega_{1-\alpha}))'
+\)を階数\(\alpha\)の\textbf{分布密度} (distribution density) の空間とよび，
+\(\D'(X,\Omega_{\alpha})\)で表す．（分布密度
+は de Rham [20]\footnote{
+    de Rham, ``Vari\'et\'es diff\'erentiables'' のこと．
+} によって初めて導入された．）
+
+
 
 
 
