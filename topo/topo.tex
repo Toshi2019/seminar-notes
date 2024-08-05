@@ -33,6 +33,7 @@
 \usepackage{bm}
 \usepackage{color}
 \usepackage{enumerate}
+%\usepackage{enumitem}
 \usepackage{fancybox}
 \usepackage[stable]{footmisc}
 \usepackage{graphicx}
@@ -549,8 +550,30 @@
 といった言い回しがされている．
 \section{基本的な定義}
 
+\subsection{近傍系}
+
+\cite[Prop.4.1.4]{KS90}で使った．
+
+距離空間の\(\varepsilon\)近傍の持つ性質を抽象したのが
+近傍の概念らしい．(\cite[p.41]{Mori81})
+\begin{leftbar}
+\begin{DFN}
+    \(X\)を集合とする．\(X\)の各元\(x\in X\)に対し，
+    \(X\)の部分集合の空でない族\(\cU(x)\)が定まり，
+    次の条件\(\mathrm{N}_\text{\ref{nb-have}}\)--\(\mathrm{N}_\text{\ref{nb-open}}\)をみたすとき，\(
+        \cU=(\cU(x))_{x\in X}
+    \)を\(X\)の\textbf{近傍系} (neiborfood system) とよぶ．
+    \begin{enumerate}[\(\mathrm{N}_1\)]%[label=N\arabic*,ref=N\arabic*]
+        \item \(\cU(x)\)の元はすべて，\(x\)を元として含む．\label{nb-have}
+        \item \(U_1, U_2\in\cU(x)\)ならば，\(U_3\subset U_1\cap U_2\)となる\(U_3\in\cU(x)\)が存在する．\label{nb-flt}
+        \item \(U\in\cU(x)\)かつ\(y\in\cU(x)\)ならば，\(V\in\cU(y)\)で，\(V\subset U\)をみたすものが存在する．\label{nb-open}
+    \end{enumerate}
+\end{DFN}
+\end{leftbar}
 
 
+
+\subsection{局所閉集合}
 
 
 

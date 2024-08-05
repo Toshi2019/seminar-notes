@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  23 JUN 2024 03:31
+This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  5 AUG 2024 22:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -896,37 +896,37 @@ displayed correctly.
 ]
 
 LaTeX Font Warning: Font shape `JT1/hmc/m/it' undefined
-(Font)              using `JT1/hmc/m/n' instead on input line 684.
+(Font)              using `JT1/hmc/m/n' instead on input line 688.
 
 
 LaTeX Font Warning: Font shape `JY1/hmc/m/it' undefined
-(Font)              using `JY1/hmc/m/n' instead on input line 684.
+(Font)              using `JY1/hmc/m/n' instead on input line 688.
 
 LaTeX Font Info:    Font shape `JT1/hmc/m/it' will be
-(Font)              scaled to size 9.24683pt on input line 687.
+(Font)              scaled to size 9.24683pt on input line 691.
 LaTeX Font Info:    Font shape `JY1/hmc/m/it' will be
-(Font)              scaled to size 9.24683pt on input line 687.
+(Font)              scaled to size 9.24683pt on input line 691.
 [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 698.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 698.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 702.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 702.
  (./geometry.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 698.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 698.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 702.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 702.
 Package rerunfilecheck Info: File `geometry.out' has not changed.
-(rerunfilecheck)             Checksum: 97593E04474AD6F15568B8380674DD9D;148.
+(rerunfilecheck)             Checksum: FEC832E8994FD3C5716DD9137D1AA7E8;245.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 698.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 702.
  ) 
 Here is how much of TeX's memory you used:
  24666 strings out of 493273
  426434 string characters out of 6144919
- 556978 words of memory out of 5000000
+ 556979 words of memory out of 5000000
  28112 multiletter control sequences out of 15000+600000
  26989 words of font info for 127 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  55i,17n,82p,3248b,991s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on geometry.dvi (2 pages, 12340 bytes).
+Output written on geometry.dvi (2 pages, 12908 bytes).

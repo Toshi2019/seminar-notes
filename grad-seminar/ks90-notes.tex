@@ -424,6 +424,8 @@
 \newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
 \newcommand{\hd}{\mathop{\mathrm{hd}}\nolimits}
 
+\newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
+\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
 
 % =================================
 
@@ -5231,6 +5233,348 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 
 
 
+\chapter{特殊化と超局所化}
+多様体\(X\)における，部分多様体\(M\)の法変形という幾何学的な構成法を復習したのち，
+特殊化関手\(\nu_M\)という，\(X\)上の層に法束\(T_MX\)上の層を
+対応させる関手と，超局所化関手\(\mu_M\)をそのフーリエ佐藤変換として定義する．
+\(\mu_M\)の自然な一般化として\(\mu hom\)を定義し，
+これらの関手の関手的性質を調べる．
+
+\section{法変形}
+\begin{equation}
+    0\to TM\to M\pb[X]TX\to T_{M}X\to0.
+\end{equation}
+\begin{equation}
+    \begin{cases}
+        p,\\
+        t,
+    \end{cases}
+\end{equation}
+で
+\begin{equation}
+    \begin{cases}
+        p^{-1}(X-M)\\
+        t^{-1}(\rr-\{0\}),\\
+        t^{-1}(0)
+    \end{cases}
+\end{equation}
+となるものを構成する．
+
+\begin{equation}
+    \begin{dcases}
+        \psi'_{ji}(x,0)=\sum_{k=1}^{l}x_k\frac{\partial}{\partial x_k}\phi'_{ji}(0,x''),\\
+        \psi''_{ji}(x,0)=\phi''_{ji}(0,x'').
+    \end{dcases}
+\end{equation}
+
+\begin{equation}
+    \vcenter{\xymatrix@C=36pt@R=36pt{
+    T_{M}X
+    \ar[d]_-{\tau}
+    \ar@{^{(}->}[r]_-{s}
+    %\ar@{}[dr]|\square
+    &
+    \widetilde{X}_{M}
+    \ar[d]^-{p}
+    &
+    \varOmega
+    \ar[ld]^-{\tilde{p}}
+    \ar@{_{(}->}[l]^-{j}
+    \\
+    M
+    \ar@{^{(}->}[r]_-{i}
+    &
+    X
+  }}
+\end{equation}
+
+\begin{DFN}
+    \begin{enumerate}[(i)]
+        \item \(S\)
+        \item \(S_1\), \(S_2\)
+    \end{enumerate}
+\end{DFN}
+
+\begin{leftbar}
+\begin{PRP}
+    \begin{enumerate}[(i)]
+        \item \((x)\)を\begin{equation}
+            x_n\underset{n}{\longrightarrow}x_{\circ},\quad
+            y_n\underset{n}{\longrightarrow}x_{\circ},\quad
+            c(x_n-y_n)\underset{n}{\longrightarrow}v_{\circ}.
+        \end{equation}
+        \item \((x)\)を
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
+
+\begin{leftbar}
+\begin{PRP}
+    \begin{enumerate}[(i)]
+        \item \((x)\)を
+        \item \((x)\)を
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+次の結果は定理423の証明に不可欠である．
+
+\begin{leftbar}
+\begin{PRP}
+    \(V\)を\(T_{M}X\)の錐状開集合とする．
+    このとき，\(V\)の\(\widetilde{X}_{M}\)における開近傍\(W\)で
+    \(p\colon W\cap \varOmega\to X\)によるファイバーが全て連結であるものは，
+    \(V\)の基本近傍系をなす．
+\end{PRP}
+\end{leftbar}
+\begin{CMT}
+    \cite{KS90}では「近傍系」となっているが基本近傍系のことだと思う．
+    つまり，\(\cW\)を\[
+        \cW\coloneqq\left\{
+            W\in I_{V};\text{
+                \(\mres[p]{W\cap\varOmega}\colon 
+                W\cap\varOmega\to X\)によるファイバーが全て連結
+            }
+            \right\}
+    \]とおくとき，\begin{description}
+        %\item \(U\in\cW\)ならば\(U\)は\(V\)の開近傍であり，
+        \item[(N)] \(V\)の任意の開近傍\(U\)に対し\(W\subset U\)を
+        みたす元\(W\in\cW\)が存在する\footnote{\cite[1.1.3.定義5]{Bou1}}
+    \end{description}というのが主張である．
+\end{CMT}
+
+\begin{proof}
+    \(W\)を\(\widetilde{X}_M\)における\(V\)の開近傍とする．
+    次のようにおく．
+    \[
+        X'=\widetilde{X}_M,\quad
+        \mathring{X'}
+        =\dot{T}_{M}X\cup p^{-1}(X-M)
+        =X'-(\times\rr),\quad
+        S=\mathring{X'}/\rr^{+}
+    \]
+    （\(\dot{T}_{M}X=T_{M}X-M\)であり\(
+        p^{-1}(M)=T_{M}X\cup(M\times \rr)
+    \)だった．）
+
+    このとき\(S\)は多様体であり\(
+        \alpha\colon X'\to S
+    \)は\(\rr^+\)束となる．
+    また\(S\)は\(\dot{T}_{M}X/\rr^{+}\)を超曲面として含み
+    \(S\to X\)は固有写像となる．
+    必要なら\(X\)を縮めて，\(\dot{T}_{M}X\to\dot{T}_{M}X/\rr^{+}\)の切断を延長することにより\(\mathring{X'}\to S\)の切断\(\sigma\)を選ぶ．
+    \[
+        W'\coloneqq\bigcup_{x\in\sigma^{-1}(W)}\left\{
+            \text{\(\sigma(x)\)を含む\(\alpha^{-1}(x)\cap W\)の連結成分}
+        \right\}
+    \]
+    とおく．
+
+    構成から，写像\(W'\to S\)のファイバーは連結であり，
+    \(W'\)は\(V\cap \dot{T}_{M}X\)の開近傍となる．
+
+    このとき\(W''\coloneqq W'\cup V\cup (W\cap t^{-1}\rr^{-})\)と定める．
+    これは\(W"\subset W\)をみたす\(V\)の開近傍で，\(
+        p\colon W''\cap \varOmega=W'\to X
+    \)のファイバーは連結である．
+\end{proof}
+
+\subsection*{接写像}
+\(f\colon Y\to X\)を多様体の射とし，
+\(N\)を\(Y\)の閉部分多様体で余次元\(k\)のものとする．
+\(f(N)\subset M\)と仮定する．
+\(f\)のひきおこす\(N\)から\(M\)への写像を\(f_{|N}\)で表す\footnote{
+    \cite[p.503]{KS90}の記号・規約の表には\(\mres[f]{N}\)と
+    記載してある．
+}．
+
+\(f\)によって定まる\(TY\)から\(Y\times_{X}TX\)への写像
+を\(f'\)で表し
+基底変換\(Y\times_{X}TX\to TX\)を\(f_{\tau}\)で表す．
+このとき接写像\(\mtan[f]\)は合成写像\(f_{\tau}\circ f'\)：
+\begin{equation}
+    \mtan[f]\colon TY\underset{f'}{\longrightarrow}
+    Y\pb[X]TX\underset{f_{\tau}}{\longrightarrow} TX
+\end{equation}
+である．
+\(\mtan[f]\)によって定まる\(T_{N}Y\)から\(T_{M}X\)への
+写像を\(T_{N}f\)で表し\(T_{N}Y\)から\(N\times_{M}T_{M}X\)への
+写像を\(f'_{N}\)で，
+基底変換\(N\times_{M}T_{M}X\to T_{M}X\)を\({f_{N}}_{\tau}\)で
+表す．
+\begin{equation}
+    T_{N}f\colon T_{N}Y\underset{f'_{N}}{\longrightarrow}
+    N\pb[M]T_{M}X\underset{{f_{N}}_{\tau}}{\longrightarrow} T_{M}X
+\end{equation}
+混同する恐れのないときには，\({f_{N}}_{\tau}\)も\(f_{\tau}\)で，
+\({f'_{N}}\)も\(f'\)で表す．
+
+\(X\)における\(M\)の法変形から定まる写像
+を\(p_X\), \(j_X\), \(t_X\), \(s_X\), \(\tilde{p}_X\)で
+表し．\(\varOmega_X\colon t_X^{-1}(\rr^{+})\)とする．
+\(p_Y\), \(j_Y\), \(t_Y\), \(s_Y\), \(\tilde{p}_Y\), \(\varOmega_Y\)についても
+同様に定める．
+写像\(f\)は\(\widetilde{Y}_N\)から\(\widetilde{X}_M\)への
+写像\(\tilde{f'}\)を定める．\(y=(y',y'')\)と\(x=(x',x'')\)が
+それぞれ\(Y\)と\(X\)の上の局所座標系
+で\(N=\{y;y'=0\}\), \(M=\{x;x'=0\}\)をみたすものであり，
+\(f=(f_1,f_2)\)であるとき，
+\begin{equation}
+    \begin{dcases}
+        \tilde{f'}(y',y'',t)=\left(\frac{1}{t}f_1(ty',y''),f_2(ty',y''),t\right)\quad\text{\(t\ne0\)のとき},\\
+        \tilde{f'}(y',y'',0)=\left(d_{y'}f_1(0,y'')\cdot y',f_2(0,y''),0\right)
+    \end{dcases}
+\end{equation}
+となる．
+したがって次の図式は可換である．ただし四角はすべてカルテシアンである．
+\begin{equation}
+    \vcenter{\xymatrix@C=36pt@R=36pt{
+    T_{N}Y
+    \ar[d]_-{T_{N}f}
+    \ar@{^{(}->}[r]_-{s_Y}
+    \ar@{}[dr]|\square
+    &
+    \widetilde{Y}_{N}
+    \ar[d]_-{\tilde{f'}}
+    \ar@{}[dr]|\square
+    &
+    \varOmega_Y
+    \ar[d]_-{\tilde{f}}
+    \ar@{_{(}->}[l]^-{j_Y}
+    \ar[r]^-{\tilde{p}_Y}
+    \ar@{}[dr]|\square
+    &
+    Y
+    \ar[d]_-{f}\\
+    T_{M}X
+    \ar@{^{(}->}[r]_-{s_x}
+    %\ar@{}[dr]|\square
+    &
+    \widetilde{X}_{M}
+    %\ar[r]^-{\varphi}
+    %\ar@{}[dr]|\square
+    &
+    \varOmega_X
+    \ar@{_{(}->}[l]^-{j_X}
+    \ar[r]^-{\tilde{p}_X}
+    %\ar@{}[dr]|\square
+    &
+    X.
+  }}
+\end{equation}
+\(\tilde{p}_X\)と\(\tilde{p}_Y\)は滑らか
+であり\(t_Y=t_X\circ \tilde{f'}\)が成り立つことに注意する．
+しかし図式
+\begin{equation}
+    \vcenter{\xymatrix@C=36pt@R=36pt{
+    \widetilde{Y}_{N}
+    \ar[d]_-{\tilde{f'}}
+    \ar[r]^-{\tilde{p}_Y}
+    %\ar@{}[dr]|\square
+    &
+    Y
+    \ar[d]^-{f}\\
+    \widetilde{X}_{M}
+    \ar[r]^-{\tilde{p}_X}
+    %\ar@{}[dr]|\square
+    &
+    X.
+  }}
+\end{equation}
+は一般にはカルテシアンではないし，\(f\)がプロパーであったとしても，
+\(\tilde{f'}\)がプロパーになるとは限らない．
+このような病的な状況は，
+\(f\)が\(M\)に関して「斉」あるいは「横断的」であれば回避できる．
+これらの定義を述べるためには，
+余接束や余法束で考える方がよい．
+
+\(f\colon Y\to X\)を多様体の射とし，\(M\)を\(X\)の閉部分多様体とする．
+
+\begin{DFN}
+    \begin{enumerate}[(i)]
+        \item  \(f^{-1}(M)\)が\(Y\)の部分多様体\(N\)で，
+        写像\(
+            {}^{t}f'_{N}\colon 
+            N\times_{M}T^{\ast}_{M}X\to T^{\ast}_{N}Y
+        \)が全射であるとき，
+        \(f\)は\(M\)に関して\textbf{斉} (clean) であるという．
+        \item  写像\(
+            \mres[{}^{t}f']{T\times_{X}T^{\ast}_{M}X}\colon 
+            T\times_{X}T^{\ast}_{M}X\to T^{\ast}Y
+        \)が単射であるとき，
+        \(f\)は\(M\)と\textbf{横断的} (transvesal) であるという．
+    \end{enumerate}
+\end{DFN}
+
+\begin{CMT}
+    clean の訳は\cite{Fuk99}による clean intersection の訳「斉交叉」に
+    倣った．出典はおそらくEGA IV で，
+    \cite[Def.17.3.1]{EGA IV}に定義がある．
+    その脚注 (1) に次のように述べられている．
+    \begin{quote}
+        Les mots net et formellement net paraissent 
+        bien pr\'ef\'erables \`a la terminologie 
+        consacr\'ee de non ramifi\'e (resp. formellement 
+        non ramifi\'e) et seront employ\'es \`a' 
+        peu pr\`es exclusivement \`a partir du Chap.V.
+
+        和訳：
+        「斉」(net) と「形式的に斉」(formellement net) という言葉は，
+        「不分岐」(non ramifi\'e) あるいは
+        「形式的に不分岐」 (formellement non ramifi\'e)という
+        既存の用語よりも，はるかに好ましいと思われるので，第 V 章以降では
+        ほぼこちらの方を用いる．
+    \end{quote}
+    すなわち，ここ（\cite{KS90}）での斉な射の定義は，
+    代数幾何学における不分岐射を真似たものと思われる．（代数幾何を
+    知らないので何とも言えないが．）
+
+    ちなみに，clean というと「清潔な」というような感じがするが，
+    フランス語における net は「はっきりした，鮮明な」というような
+    意味もあり，clean intersection のような場合には，
+    交わり方がはっきりしているというような感じがする
+    ように名付けられているのだと思われる．
+\end{CMT}
+
+\(f\)が閉埋め込みのとき，\(f\)が斉または横断的である
+という代わりに\(Y\)が斉または横断的であるともいう
+\(f\)が\(M\)と横断的であるとき，\(f\)は\(M\)に関して斉となるが，
+逆は偽である．
+\(Y\)が\(X\)の部分多様体で，
+\(M\)が\(Y\)の部分多様体のときのが反例である．
+\(f\)が\(M\)に関して斉であり\(f^{-1}(M)=N\)ならば，
+写像\(
+    p\times\tilde{f'}\colon
+    \widetilde{Y}_N\to Y\times \widetilde{X}_M
+\)は閉埋め込みである．
+これは，\(f'_N\colon T_{N}Y\to N\times_{M}T_{M}X\)が閉埋め込みであることと，
+\(\widetilde{Y}_{N}\hookrightarrow Y\times \widetilde{X}_M\)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5246,6 +5590,9 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
     \bibitem[B+84]{B+84} Borel, 
         \textit{Intersection Cohomology}, 
         Progress in Mathematics, 50, Birkh\"auser, 1984.
+    \bibitem[Bou1]{Bou1} ブルバキ, 位相1, 東京図書, 1968.
+    \bibitem[EGA IV]{EGA IV} Grothendieck, EGA IV, Pub. IHES., 32 1967.
+    \bibitem[Fuk99]{Fuk99} 深谷賢治, シンプレクティック幾何学, 岩波講座 現代数学の展開 岩波書店, 1999.
     \bibitem[G58]{G58} Grauert, 
         \textit{On Levi's problem and the embedding of real analytic manifolds}, 
         Ann. Math. 68, 460--472 (1958).
