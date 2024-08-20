@@ -1,6 +1,9 @@
 %================================================
 %    sheaves on manifolds ノート
 %================================================
+\title{Notes on Sheaves on Manifolds}
+\author{大柴寿浩}
+\date{\today 更新}
 
 % -----------------------
 % preamble
@@ -494,9 +497,6 @@
 % begin document and end document.
 % ---------------------------
 
-\title{Notes on Sheaves on Manifolds}
-\author{大柴寿浩}
-\date{\today 更新}
 \begin{document}
 \maketitle
 %\frontmatter
@@ -5233,14 +5233,14 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 
 
 
-\chapter{特殊化と超局所化}
+\chapter{特殊化と超局所化}\label{chap4}
 多様体\(X\)における，部分多様体\(M\)の法変形という幾何学的な構成法を復習したのち，
 特殊化関手\(\nu_M\)という，\(X\)上の層に法束\(T_MX\)上の層を
 対応させる関手と，超局所化関手\(\mu_M\)をそのフーリエ佐藤変換として定義する．
 \(\mu_M\)の自然な一般化として\(\mu hom\)を定義し，
 これらの関手の関手的性質を調べる．
 
-\section{法変形}
+\section{法変形}\label{sec41}
 \begin{equation}
     0\to TM\to M\pb[X]TX\to T_{M}X\to0.
 \end{equation}
@@ -5267,7 +5267,7 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
     \end{dcases}
 \end{equation}
 
-\begin{equation}
+\begin{equation}\label{eq415}
     \vcenter{\xymatrix@C=36pt@R=36pt{
     T_{M}X
     \ar[d]_-{\tau}
@@ -5297,17 +5297,19 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 
 \begin{leftbar}
 \begin{PRP}
-    \begin{enumerate}[(i)]
+    \begin{enumerate}[(i)]\setcounter{equation}{6}
         \item \((x)\)を\begin{equation}
             x_n\underset{n}{\longrightarrow}x_{\circ},\quad
             y_n\underset{n}{\longrightarrow}x_{\circ},\quad
-            c(x_n-y_n)\underset{n}{\longrightarrow}v_{\circ}.
+            c(x_n-y_n)\underset{n}{\longrightarrow}v_{\circ}
         \end{equation}
+        である．\footnotemark[1]
         \item \((x)\)を
     \end{enumerate}
 \end{PRP}
 \end{leftbar}
-
+\footnotetext[1]{\cite{KS90}では式番号 (4.1.6) は無い}
+\setcounter{footnote}{1}
 \begin{leftbar}
 \begin{PRP}
     \begin{enumerate}[(i)]
@@ -5330,7 +5332,7 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 
 
 
-次の結果は定理423の証明に不可欠である．
+次の結果は定理4.2.3の証明に不可欠である．
 
 \begin{leftbar}
 \begin{PRP}
@@ -5387,21 +5389,43 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
     \(W'\)は\(V\cap \dot{T}_{M}X\)の開近傍となる．
 
     このとき\(W''\coloneqq W'\cup V\cup (W\cap t^{-1}\rr^{-})\)と定める．
-    これは\(W"\subset W\)をみたす\(V\)の開近傍で，\(
+    これは\(W''\subset W\)をみたす\(V\)の開近傍で，\(
         p\colon W''\cap \varOmega=W'\to X
     \)のファイバーは連結である．
 \end{proof}
 
 \subsection*{接写像}
-\(f\colon Y\to X\)を多様体の射とし，
-\(N\)を\(Y\)の閉部分多様体で余次元\(k\)のものとする．
-\(f(N)\subset M\)と仮定する．
-\(f\)のひきおこす\(N\)から\(M\)への写像を\(f_{|N}\)で表す\footnote{
+\(f\colon Y\to X\)を多様体の射，
+\(N\)を\(Y\)の余次元\(k\)の閉部分多様体とし\(
+    f(N)\subset M
+\)と仮定する．
+\(f\)がひきおこす\(N\)から\(M\)への
+写像を\(f_{|N}\)で表す\footnote{
     \cite[p.503]{KS90}の記号・規約の表には\(\mres[f]{N}\)と
     記載してある．
 }．
 
-\(f\)によって定まる\(TY\)から\(Y\times_{X}TX\)への写像
+\[
+    \vcenter{\xymatrix@C=26pt@R=20pt{
+    Y
+    %\ar[d]_-{\tilde{f'}}
+    \ar[r]^-{f}
+    %\ar@{}[dr]|\square
+    &
+    X
+    %\ar[d]^-{f}
+    \\
+    N
+    \ar@{}[u]|{\rotatebox{90}{\(\subset\)}}
+    \ar[r]_-{\mres[f]{N}}
+    %\ar@{}[dr]|\square
+    &
+    \ar@{}[u]|{\rotatebox{90}{\(\subset\)}}
+    M.
+  }}
+\]
+
+\(f\)から定まる\(TY\)から\(Y\times_{X}TX\)への写像
 を\(f'\)で表し
 基底変換\(Y\times_{X}TX\to TX\)を\(f_{\tau}\)で表す．
 このとき接写像\(\mtan[f]\)は合成写像\(f_{\tau}\circ f'\)：
@@ -5410,6 +5434,28 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
     Y\pb[X]TX\underset{f_{\tau}}{\longrightarrow} TX
 \end{equation}
 である．
+\[
+    \vcenter{\xymatrix@C=36pt@R=36pt{
+    TY
+    \ar[rd]_-{\mtan[f]}
+    \ar[r]^-{f'}
+    &
+    Y\times TX
+    \ar@{}[dr]|\square
+    \ar[d]_-{f_{\tau}}
+    \ar[r]^-{\pr_1}
+    &
+    Y
+    \ar[d]^-{f}
+    \\
+    &
+    TX
+    \ar[r]_-{\tau}
+    %\ar@{}[dr]|\square
+    &
+    X.
+  }}
+\]
 \(\mtan[f]\)によって定まる\(T_{N}Y\)から\(T_{M}X\)への
 写像を\(T_{N}f\)で表し\(T_{N}Y\)から\(N\times_{M}T_{M}X\)への
 写像を\(f'_{N}\)で，
@@ -5478,7 +5524,7 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 \(\tilde{p}_X\)と\(\tilde{p}_Y\)は滑らか
 であり\(t_Y=t_X\circ \tilde{f'}\)が成り立つことに注意する．
 しかし図式
-\begin{equation}
+\begin{equation}\label{eq4112}
     \vcenter{\xymatrix@C=36pt@R=36pt{
     \widetilde{Y}_{N}
     \ar[d]_-{\tilde{f'}}
@@ -5494,7 +5540,7 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
     X.
   }}
 \end{equation}
-は一般にはカルテシアンではないし，\(f\)がプロパーであったとしても，
+は一般にはカルテシアンになるとは限らず，\(f\)がプロパーであったとしても，
 \(\tilde{f'}\)がプロパーになるとは限らない．
 このような病的な状況は，
 \(f\)が\(M\)に関して「斉」あるいは「横断的」であれば回避できる．
@@ -5503,16 +5549,16 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 
 \(f\colon Y\to X\)を多様体の射とし，\(M\)を\(X\)の閉部分多様体とする．
 
-\begin{DFN}
+\begin{DFN}\label{def415}
     \begin{enumerate}[(i)]
         \item  \(f^{-1}(M)\)が\(Y\)の部分多様体\(N\)で，
         写像\(
-            {}^{t}f'_{N}\colon 
+            {}^{t}\!f'_{N}\colon 
             N\times_{M}T^{\ast}_{M}X\to T^{\ast}_{N}Y
         \)が全射であるとき，
         \(f\)は\(M\)に関して\textbf{斉} (clean) であるという．
         \item  写像\(
-            \mres[{}^{t}f']{T\times_{X}T^{\ast}_{M}X}\colon 
+            \mres[{}^{t}\!f']{T\times_{X}T^{\ast}_{M}X}\colon 
             T\times_{X}T^{\ast}_{M}X\to T^{\ast}Y
         \)が単射であるとき，
         \(f\)は\(M\)と\textbf{横断的} (transvesal) であるという．
@@ -5550,7 +5596,7 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 \end{CMT}
 
 \(f\)が閉埋め込みのとき，\(f\)が斉または横断的である
-という代わりに\(Y\)が斉または横断的であるともいう
+という代わりに\(Y\)が斉または横断的であるともいう．
 \(f\)が\(M\)と横断的であるとき，\(f\)は\(M\)に関して斉となるが，
 逆は偽である．
 \(Y\)が\(X\)の部分多様体で，
@@ -5560,22 +5606,67 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
     p\times\tilde{f'}\colon
     \widetilde{Y}_N\to Y\times \widetilde{X}_M
 \)は閉埋め込みである．
-これは，\(f'_N\colon T_{N}Y\to N\times_{M}T_{M}X\)が閉埋め込みであることと，
-\(\widetilde{Y}_{N}\hookrightarrow Y\times \widetilde{X}_M\)
+これは，\(f'_N\colon T_{N}Y\to N\times_{M}T_{M}X\)が
+閉埋め込みであることと，\(
+    \widetilde{Y}_{N}
+    \hookrightarrow 
+    Y\times \widetilde{X}_M
+\)の単射性，\(t_Y=t_X\circ\tilde{f'}\), 
+\(T_{N}Y=t_y^{-1}(0)\), \(T_{M}X=t_x^{-1}(0)\)から従う． 
 
+\(f\)が\(M\)と横断的かつ\(f^{-1}(M)=N\)ならば，
+\(f'\colon T_{N}Y\to Y\times_{X} T_{M}X\)は同型であり
+図式\eqref{eq4112}はカルテシアンになる．
 
+第VII章において定義\ref{def415}を次のように一般化したものが必要になる．
 
+\begin{DFN}
+    \(f_1\colon Y_1\to X\)と
+    \(f_2\colon Y_2\to X\)を多様体の射とする．
+    写像\(
+        \left(f_1,f_2\right)\colon 
+        Y_1\times Y_2\to X\times X
+    \)が\(X\times X\)の対角集合と横断的であるとき，
+    \(f_1\)と\(f_2\)は横断的であるといい，
+    \(
+        \left(f_1,f_2\right)\colon 
+        Y_1\times Y_2\to X\times X
+    \)が\(X\times X\)の対角集合に関して斉なとき，
+    \(f_1\)と\(f_2\)は斉であるという．
+\end{DFN}
 
+\(f_2\)が部分多様体\(Y_2\)の\(X\)への埋め込みならば，
+これは\(f_1\)が\(Y_2\)に関して横断的，あるいは斉であるというのと
+同値である．
 
+\section{特殊化}\label{sec42}
+第\ref{sec41}節と同様に，\(M\)を\(X\)の閉部分多様体とする．
+本書全体を通して第\ref{sec41}節で導入した記号，とりわけ\eqref{eq415}を用いる．
 
+\(F\in\Dompb(X)\)とする．
 
+\begin{leftbar}
+\begin{LMM}
+    次の自然な同型が存在する．
+    \[
+        s^{-1}\Rder{j_{\ast}}\tilde{p}^{-1}F\cong
+        s^{!}j_{!}\tilde{p}^{!}F.
+    \]
+\end{LMM}
+\end{leftbar}
 
-
-
-
-
-
-
+\begin{DFN}
+    \(F\in\Dompb(X)\)とする．
+    \[ 
+        \nu_{M}(F)\coloneqq 
+        s^{-1}\Rder{j_{\ast}}\tilde{p}^{-1}F
+        \cong
+        s^{!}j_{!}\tilde{p}^{!}F
+    \]
+    とおき，
+    \(\nu_{M}(F)\)を\(F\)の\(M\)に
+    沿った\textbf{特殊化} (specialization) という．
+\end{DFN}
 
 
 

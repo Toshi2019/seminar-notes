@@ -1,15 +1,12 @@
-This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  9 AUG 2024 20:38
+This is e-pTeX, Version 3.14159265-p3.8.1-180226-2.6 (utf8.euc) (TeX Live 2018) (preloaded format=platex 2018.7.14)  9 AUG 2024 17:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/Users/giuseppe/seminar-notes/KS82-ja/KS82-ja
-(/Users/giuseppe/seminar-notes/KS82-ja/KS82-ja.tex
+**/Users/giuseppe/seminar-notes/homological-differential/AM-vichery
+(/Users/giuseppe/seminar-notes/homological-differential/AM-vichery.tex
 pLaTeX2e <2018-05-20> (based on LaTeX2e <2018-04-01> patch level 5)
 (/usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jsarticle.cls
 Document Class: jsarticle 2018/06/23 jsclasses (okumura, texjporg)
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/leqno.clo
-File: leqno.clo 2016/12/29 v1.2a Standard LaTeX option (left equation numbers)
-)
 \jsc@mpt=\dimen118
 \jsc@mmm=\dimen119
 \jsc@smallskipamount=\skip41
@@ -44,7 +41,7 @@ LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 \jsc@tocl@width=\dimen121
 \@lnumwidth=\dimen122
 \bibindent=\dimen123
- (/usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jslogo.sty
+(/usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/jslogo.sty
 Package: jslogo 2017/02/24 okumura, texjporg
 LaTeX Info: Redefining \TeX on input line 94.
 LaTeX Info: Redefining \LaTeX on input line 147.
@@ -178,7 +175,15 @@ Package: tascmac 2018/03/09 v2.0h ascmac package (community edition)
 \@@bwsp=\box55
 \@bcal=\count110
 \shaderule=\dimen141
-)) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/color.sty
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup7
+\symboldletters=\mathgroup8
+\symboldsymbols=\mathgroup9
+\symboldmincho=\mathgroup10
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
  (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
@@ -252,7 +257,7 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
  (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
-\symrsfs=\mathgroup7
+\symrsfs=\mathgroup11
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
  (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/calc.sty
@@ -745,201 +750,198 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip62
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 66.
+Package hyperref Info: Option `colorlinks' set `true' on input line 71.
  (/usr/local/texlive/2018/texmf-dist/tex/platex/pxjahyper/pxjahyper.sty
 Package: pxjahyper 2018/01/25 v0.3c
-) (/usr/local/texlive/2018/texmf-dist/tex/platex/jsclasses/okumacro.sty
-Package: okumacro 2018/06/11 okumura, texjporg
-LaTeX Info: Redefining \yen on input line 132.
-\EXAMPLEWIDTH=\dimen324
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/layout.sty
+Package: layout 2014/10/28 v1.2c Show layout parameters
+\oneinch=\count174
+\cnt@paperwidth=\count175
+\cnt@paperheight=\count176
+\cnt@hoffset=\count177
+\cnt@voffset=\count178
+\cnt@textheight=\count179
+\cnt@textwidth=\count180
+\cnt@topmargin=\count181
+\cnt@oddsidemargin=\count182
+\cnt@evensidemargin=\count183
+\cnt@headheight=\count184
+\cnt@headsep=\count185
+\cnt@marginparsep=\count186
+\cnt@marginparwidth=\count187
+\cnt@marginparpush=\count188
+\cnt@footskip=\count189
+\fheight=\count190
+\ref@top=\count191
+\ref@hoffset=\count192
+\ref@voffset=\count193
+\ref@head=\count194
+\ref@body=\count195
+\ref@foot=\count196
+\ref@margin=\count197
+\ref@marginwidth=\count198
+\ref@marginpar=\count199
+\Interval=\count266
+\ExtraYPos=\count267
+\PositionX=\count268
+\PositionY=\count269
+\ArrowLength=\count270
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip63
-\fb@frw=\dimen325
-\fb@frh=\dimen326
-\FrameRule=\dimen327
-\FrameSep=\dimen328
+\fb@frw=\dimen324
+\fb@frh=\dimen325
+\FrameRule=\dimen326
+\FrameSep=\dimen327
 )
-\c@Axiom=\count174
-\c@Axiom+=\count175
-\c@Alert+=\count176
-\c@AXM=\count177
-\c@DFN=\count178
-\c@THM=\count179
-\c@PRP=\count180
-\c@EG=\count181
-\c@CMT=\count182
-\c@RMK=\count183
- (./KS82-ja.aux)
-\openout1 = `KS82-ja.aux'.
+\c@Axiom=\count271
+\c@Axiom+=\count272
+\c@Alert+=\count273
+\c@AXM=\count274
+ (./AM-vichery.aux)
+\openout1 = `AM-vichery.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 428.
-LaTeX Font Info:    ... okay on input line 428.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 428.
-LaTeX Font Info:    ... okay on input line 428.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 428.
-LaTeX Font Info:    ... okay on input line 428.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 428.
-LaTeX Font Info:    ... okay on input line 428.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 428.
-LaTeX Font Info:    ... okay on input line 428.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 428.
-LaTeX Font Info:    ... okay on input line 428.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 428.
-LaTeX Font Info:    ... okay on input line 428.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 428.
-LaTeX Font Info:    ... okay on input line 428.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 428.
-LaTeX Font Info:    ... okay on input line 428.
-\c@lstlisting=\count184
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 500.
+LaTeX Font Info:    ... okay on input line 500.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 500.
+LaTeX Font Info:    ... okay on input line 500.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 500.
+LaTeX Font Info:    ... okay on input line 500.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 500.
+LaTeX Font Info:    ... okay on input line 500.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 500.
+LaTeX Font Info:    ... okay on input line 500.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 500.
+LaTeX Font Info:    ... okay on input line 500.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 500.
+LaTeX Font Info:    ... okay on input line 500.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 500.
+LaTeX Font Info:    ... okay on input line 500.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 500.
+LaTeX Font Info:    ... okay on input line 500.
+\c@lstlisting=\count275
  ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 428.
+(Font)              scaled to size 6.47278pt on input line 500.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 428.
-LaTeX Font Info:    Try loading font information for U+msa on input line 428.
+(Font)              scaled to size 4.62341pt on input line 500.
+LaTeX Font Info:    Try loading font information for U+msa on input line 500.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 428.
+LaTeX Font Info:    Try loading font information for U+msb on input line 500.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 428.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 500.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 500.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.805pt on input line 500.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 500.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Package xypdf Info: Line width: 0.39998pt on input line 428.
+Package xypdf Info: Line width: 0.39998pt on input line 500.
 \AtBeginShipoutBox=\box80
-Package hyperref Info: Link coloring ON on input line 428.
+Package hyperref Info: Link coloring ON on input line 500.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count185
+\c@section@level=\count276
 )
-LaTeX Info: Redefining \ref on input line 428.
-LaTeX Info: Redefining \pageref on input line 428.
-LaTeX Info: Redefining \nameref on input line 428.
- (./KS82-ja.out) (./KS82-ja.out)
+LaTeX Info: Redefining \ref on input line 500.
+LaTeX Info: Redefining \pageref on input line 500.
+LaTeX Info: Redefining \nameref on input line 500.
+ (./AM-vichery.out) (./AM-vichery.out)
 \@outlinefile=\write6
-\openout6 = `KS82-ja.out'.
+\openout6 = `AM-vichery.out'.
 
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 430.
+(Font)              scaled to size 15.9785pt on input line 502.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 430.
-LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 430.
+(Font)              scaled to size 15.9785pt on input line 502.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 430.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 430.
+(Font)              scaled to size 11.09619pt on input line 502.
+LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 502.
+LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
+(Font)              scaled to size 7.39746pt on input line 502.
+LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
+(Font)              scaled to size 5.5481pt on input line 502.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 502.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 502.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.76599pt on input line 502.
+LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
+(Font)              scaled to size 7.39746pt on input line 502.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 502.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 430.
-LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 430.
-LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 430.
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 502.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 430.
-LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 430.
+(Font)              scaled to size 5.5481pt on input line 502.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 430.
-LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 430.
-LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 430.
-
-
-LaTeX Font Warning: Font shape `JT1/hgt/m/it' undefined
-(Font)              using `JT1/hgt/m/n' instead on input line 430.
-
-
-LaTeX Font Warning: Font shape `JY1/hgt/m/it' undefined
-(Font)              using `JY1/hgt/m/n' instead on input line 430.
-
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 502.
 LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 430.
+(Font)              scaled to size 13.31541pt on input line 503.
 LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 430.
+(Font)              scaled to size 13.31541pt on input line 503.
 LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 430.
+(Font)              scaled to size 13.31541pt on input line 503.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 430.
-LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 437.
-LaTeX Font Info:    Font shape `JY1/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 437.
+(Font)              scaled to size 13.31541pt on input line 503.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@ifnextchar' on input line 503.
+
+
+LaTeX Font Warning: Font shape `JT1/hmc/m/it' undefined
+(Font)              using `JT1/hmc/m/n' instead on input line 511.
+
+
+LaTeX Font Warning: Font shape `JY1/hmc/m/it' undefined
+(Font)              using `JY1/hmc/m/n' instead on input line 511.
+
 LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 437.
+(Font)              scaled to size 9.24683pt on input line 512.
 LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 437.
-LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 442.
-LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 442.
-LaTeX Font Info:    Font shape `JT1/hgt/m/it' will be
-(Font)              scaled to size 9.24683pt on input line 442.
-LaTeX Font Info:    Font shape `JY1/hgt/m/it' will be
-(Font)              scaled to size 9.24683pt on input line 442.
-LaTeX Font Info:    Font shape `JT1/hgt/m/it' will be
-(Font)              scaled to size 4.62341pt on input line 442.
-LaTeX Font Info:    Font shape `JY1/hgt/m/it' will be
-(Font)              scaled to size 4.62341pt on input line 442.
-LaTeX Font Info:    Font shape `JT1/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/hgt/m/n' tried instead on input line 445.
-LaTeX Font Info:    Font shape `JT1/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 445.
-LaTeX Font Info:    Font shape `JY1/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/hgt/m/n' tried instead on input line 445.
-LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 445.
-LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 450.
-LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 450.
-LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 451.
-LaTeX Font Info:    Font shape `JT1/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 451.
-LaTeX Font Info:    Font shape `JY1/hgt/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 473.
+(Font)              scaled to size 9.24683pt on input line 512.
+LaTeX Font Info:    Font shape `JT1/hmc/m/it' will be
+(Font)              scaled to size 9.24683pt on input line 515.
+LaTeX Font Info:    Font shape `JY1/hmc/m/it' will be
+(Font)              scaled to size 9.24683pt on input line 515.
 [1
 
 ]
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 510.
- [2] [3] [4]
-LaTeX Font Info:    Font shape `JT1/hgt/m/it' will be
-(Font)              scaled to size 7.39746pt on input line 723.
-LaTeX Font Info:    Font shape `JY1/hgt/m/it' will be
-(Font)              scaled to size 7.39746pt on input line 723.
- [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 741.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 741.
- (./KS82-ja.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 741.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 741.
-Package rerunfilecheck Info: File `KS82-ja.out' has not changed.
-(rerunfilecheck)             Checksum: F9C4B349B2092B0E46E1C222B74D6330;327.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 530.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 530.
+ (./AM-vichery.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 530.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 530.
+Package rerunfilecheck Info: File `AM-vichery.out' has not changed.
+(rerunfilecheck)             Checksum: 0CCDD3F5836880EE8A48A0E10E769C0D;105.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 741.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 530.
  ) 
 Here is how much of TeX's memory you used:
- 24644 strings out of 493273
- 426566 string characters out of 6144919
- 559836 words of memory out of 5000000
- 28092 multiletter control sequences out of 15000+600000
- 27598 words of font info for 134 fonts, out of 8000000 for 9000
+ 24705 strings out of 493273
+ 427145 string characters out of 6144919
+ 553170 words of memory out of 5000000
+ 28147 multiletter control sequences out of 15000+600000
+ 26955 words of font info for 126 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 55i,11n,82p,3266b,991s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,6n,82p,3286b,991s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on KS82-ja.dvi (5 pages, 31712 bytes).
+Output written on AM-vichery.dvi (1 page, 3880 bytes).

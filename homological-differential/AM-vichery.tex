@@ -1,7 +1,10 @@
 %=====================================
-%   geometry.tex
-%   幾何学まとめノート toshi2019
+%   AM-vichery.tex
+%   homological subdifferential について toshi2019
 %=====================================
+\title{ホモロジカル劣微分について}
+\author{大柴寿浩}
+\date{\today\footnote{2024/08/07かきはじめ}}
 
 % -----------------------
 % preamble
@@ -47,13 +50,14 @@
 \usepackage{tikz}
 \usepackage{verbatim}
 \usepackage[all]{xy}
-
+\usepackage{url}
 \usetikzlibrary{cd}
-\usetikzlibrary{arrows.meta}
+
 
 
 % ================================
 % パッケージを追加する場合のスペース 
+%\usepackage{calligra}
 \usepackage[dvipdfmx]{hyperref}
 \usepackage{xcolor}
 \definecolor{darkgreen}{rgb}{0,0.45,0} 
@@ -66,12 +70,27 @@
     urlcolor=darkblue,
 }
 \usepackage{pxjahyper}
-
-%\usepackage[mathscr]{euscript} % mathscr のフォントを変更
-
+%\usepackage[mathcal]{euscript}
+\usepackage{layout}
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 0.7zw} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{red}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
 
 %=================================
 
+%============================================================
+% layout for a4 9pt
+%\setlength{\textwidth}{459pt}
+%\setlength{\marginparwidth}{105pt}
+%\setlength{\evensidemargin}{69pt}
+%============================================================
 
 % --------------------------
 % theoremstyle
@@ -103,6 +122,7 @@
 \newtheorem{Consideration}[Axiom]{考察}
 \newtheorem{Alert}[Axiom]{警告}
 \newtheorem{Fact}[Axiom]{事実}
+\newtheorem{com}[Axiom]{コメント}
 
 
 % 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
@@ -121,7 +141,9 @@
 \newtheorem*{Problem*}{問題}
 \newtheorem*{Consideration*}{考察}
 \newtheorem*{Alert*}{警告}
-\newtheorem{Fact*}{事実}
+\newtheorem*{Fact*}{事実}
+\newtheorem*{com*}{コメント}
+
 
 
 % 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
@@ -203,10 +225,7 @@
 \newcommand{\Set}{{\bf Set}}
 \newcommand{\Vect}{{\bf Vect}}
 \newcommand{\FDVect}{{\bf FDVect}}
-%\newcommand{\Ring}{{\bf Ring}}
-\newcommand{\Ab}{{\bf Ab}}
 \newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
-\newcommand{\Modf}{\mathop{\mathrm{Mod}^\mathrm{f}}\nolimits}
 \newcommand{\CGA}{{\bf CGA}}
 \newcommand{\GVect}{{\bf GVect}}
 \newcommand{\Lie}{{\bf Lie}}
@@ -215,15 +234,11 @@
 
 
 % 射の集合など
-\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits} % 写像の集合
-\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits} % 射集合
-\newcommand{\End}{\mathop{\mathrm{End}}\nolimits} % 自己準同型の集合
-\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits} % 自己同型の集合
-\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits} % 射集合
-\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits} % 核
-\newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
-\newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
-\newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits}
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits}
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits}
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits}
 
 % その他便利なコマンド
 \newcommand{\dip}{\displaystyle} % 本文中で数式モード
@@ -244,30 +259,7 @@
 
 % ================================
 % コマンドを追加する場合のスペース 
-%\newcommand{\OO}{\mcal{O}}
-
-
-
-\makeatletter
-\renewenvironment{proof}[1][\proofname]{\par
-  \pushQED{\qed}%
-  \normalfont \topsep6\p@\@plus6\p@\relax
-  \trivlist
-  \item[\hskip\labelsep
-%        \itshape
-         \bfseries
-%    #1\@addpunct{.}]\ignorespaces
-    {#1}]\ignorespaces
-}{%
-  \popQED\endtrivlist\@endpefalse
-}
-\makeatother
-
-\renewcommand{\proofname}{証明.}
-
-
-
-%\renewcommand\proofname{\bf 証明} % 証明
+\renewcommand\proofname{\bf 証明} % 証明
 \numberwithin{equation}{section}
 \newcommand{\cTop}{\textsf{Top}}
 %\newcommand{\cOpen}{\textsf{Open}}
@@ -275,6 +267,7 @@
 \newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
 \newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
 \newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\Int}{\mathop{\mathrm{Int}}\nolimits}
 \newcommand{\res}{\mathop{\rho}\nolimits}
 \newcommand{\A}{\mcal{A}}
 \newcommand{\B}{\mcal{B}}
@@ -288,14 +281,15 @@
 \newcommand{\OO}{\mcal{O}}
 \newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
 \newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
-%\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
 \newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\rk}{\mathop{\mathrm{rank}}\nolimits}
 \newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
 \newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
-\newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
 \newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
 \newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
 \newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Ext}{\mathop{\mathrm{Ext}}\nolimits}
 \newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
 
 \newcommand{\cat}{\mathscr{C}}
@@ -328,6 +322,8 @@
 \newcommand{\cY}{\mcal{Y}}
 \newcommand{\cZ}{\mcal{Z}}
 
+\newcommand{\rmD}{\mathrm{D}}
+
 
 \newcommand{\scA}{\mathscr{A}}
 \newcommand{\scB}{\mathscr{B}}
@@ -337,9 +333,9 @@
 \newcommand{\scF}{\mathscr{F}}
 \newcommand{\scN}{\mathscr{N}}
 \newcommand{\scO}{\mathscr{O}}
+\newcommand{\scR}{\mathscr{R}}
+\newcommand{\scS}{\mathscr{S}}
 \newcommand{\scV}{\mathscr{V}}
-\newcommand{\scU}{\mathscr{U}}
-
 
 \newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
 \newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
@@ -370,26 +366,15 @@
 
 \newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
 
-%\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
-%\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
-%\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}%複体のホモトピー圏
-%\newcommand{\Comp}{\mathrm{C}}
-%\newcommand{\Komp}{\mathrm{K}}
-%\newcommand{\Domp}{\mathsf{D}}%複体のホモトピー圏
-
 \newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
 \newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
-\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}
+\newcommand{\Domp}{\mathsf{D}}
 \newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
 \newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
 \newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
 \newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
 \newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
 \newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
-\newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
-
-
-
 
 \newcommand{\CCat}{\Comp(\cat)}
 \newcommand{\KCat}{\Komp(\cat)}
@@ -402,10 +387,8 @@
 \newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
 \newcommand{\Rder}{\mathrm{R}}
 
-\newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
-\newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
-\newcommand{\simra}{\mathrel{\overset{\sim}{\leftarrow}}}%同型左矢印
-\newcommand{\simrra}{\mathrel{\overset{\sim}{\longleftarrow}}}%同型左矢印
+\newcommand{\simar}{\mathrel{\overset{\sim}{\longrightarrow}}}%内部Hom
+\newcommand{\simra}{\mathrel{\overset{\sim}{\longleftarrow}}}%内部Hom
 
 \newcommand{\hocolim}{{\mathrm{hocolim}}}
 \newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
@@ -418,53 +401,37 @@
 \newcommand{\Sh}{\mathrm{Sh}}
 \newcommand{\PSh}{\mathrm{PSh}}
 
-\newcommand{\rmD}{\mathrm{D}}
-
 \newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
 \newcommand{\ori}{\mathord{\mathrm{or}}}
 \newcommand{\Db}{\mathord{\mathscr{D}b}}
+\newcommand{\Conti}{\mathord{\mathscr{C}}}
 
-\newcommand{\codim}{\mathop{\mathrm{codim}}\nolimits}
-
-
-
-\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
-\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
-
+\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
+\newcommand{\blk}{\mathord{\ \cdot\ }}
 
 \newcommand{\tens}[1][]{\mathbin{\otimes_{\raise1.5ex\hbox to-.1em{}{#1}}}}
+\newcommand{\ttens}[1][]{\mathbin{\mathop{\overset{\mathrm{}}{\tens}}_{#1}}}
+
 \newcommand{\etens}{\mathbin{\boxtimes}}
-\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+%\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\ltens}[1][]{\mathbin{\tens}^\mathrm{L}_{#1}}
 \newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
-\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
-\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
+\newcommand{\lltens}[1][]{\mathbin{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+%\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
 \newcommand{\detens}{\underline{\etens}}
 \newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
 \newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
 
-\newcommand{\blk}{\mathord{\ \cdot\ }}
-\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
+\newcommand{\letens}[2][]{\mathbin{\mathop{\overset{\mathrm{L}}{\etens}_{#1}}_{#2\ \ }}}
 
+\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
+\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
+\newcommand{\hd}{\mathop{\mathrm{hd}}\nolimits}
 
-%\newcommand{\hocolim}{{\mathrm{hocolim}}}
-%\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
-%\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
-%\newcommand{\Pro}{\mathrm{Pro}}
-%\newcommand{\Ind}{\mathrm{Ind}}
-%\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
-%\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
-\newcommand{\proolim}[1][]{\mathop{\text{\rm``{$\varprojlim$}''}}\limits_{#1}}
-\newcommand{\sproolim}[1][]{\smash{\mathop{\rm``{\varprojlim}''}\limits_{#1}}}
-\newcommand{\inddlim}[1][]{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}
-\newcommand{\sinddlim}[1][]{\smash{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}\,}
-\newcommand{\ooplus}{\mathop{\text{\rm``{$\oplus$}''}}\limits}
-\newcommand{\bbigsqcup}{\mathop{``\bigsqcup''}\limits}
-\newcommand{\bsqcup}{\mathop{``\sqcup''}\limits}
-\newcommand{\dsum}[1][]{\mathbin{\oplus_{#1}}}
+\newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
+\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
 
-\newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
-
-
+% =================================
 
 
 
@@ -483,44 +450,27 @@
     {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
 
 \theoremstyle{mystyle}
-\newtheorem{AXM}{公理}%[section]
-\newtheorem{DFN}[AXM]{定義}
-\newtheorem{THM}[AXM]{定理}
+\newtheorem{AXM}{公理}[section]
+\newtheorem{DFN}[Axiom]{定義}
+\newtheorem{THM}[Axiom]{定理}
 \newtheorem*{THM*}{定理}
-\newtheorem{PRP}[AXM]{命題}
-\newtheorem{LMM}[AXM]{補題}
-\newtheorem{CRL}[AXM]{系}
-\newtheorem{EG}[AXM]{例}
-\newtheorem*{EG*}{例}
-\newtheorem{RMK}[AXM]{注意}
-\newtheorem{CNV}[AXM]{約束}
-\newtheorem{CMT}[AXM]{コメント}
-\newtheorem*{CMT*}{コメント}
-\newtheorem{NTN}[AXM]{記号}
+%\newtheorem{STT}{主張}[chapter]
+\newtheorem*{STT*}{主張}
+\newtheorem{PRP}[Axiom]{命題}
+\newtheorem{LMM}[Axiom]{補題}
+\newtheorem*{LMM*}{補題}
+\newtheorem{CRL}[Axiom]{系}
+\newtheorem{EG}[Axiom]{例}
+\newtheorem{CNV}[Axiom]{規約}
+\newtheorem{NTT}[Axiom]{記法}
+\newtheorem{RMK}[Axiom]{注意}
+%\newtheorem{CMT}{コメント}[chapter]
+%\newtheorem*{CMT*}{コメント}
+%\newtheorem{EXC}{演習}[chapter]
+
 
 % 定理環境ここまで
 %====================================================
-
-\usepackage{framed}
-\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
-\renewenvironment{leftbar}{%
-  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
-  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
-{\endMakeFramed}
-\newenvironment{redleftbar}{%
-  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
-  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
- {\endMakeFramed}
-
-
-
-\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
-
-% =================================
-
-
-
-
 
 % ---------------------------
 % new definition macro
@@ -547,193 +497,29 @@
 % Your main code must be written between 
 % begin document and end document.
 % ---------------------------
-
-\title{幾何学まとめノート}
-%\author{}
-\date{\today\footnote{2024/03/29作成開始}}
 \begin{document}
 \maketitle
-%\tableofcontents
 
-\section{多様体}
-\begin{leftbar}
-\begin{DFN}[{\cite[\S\S 2.9.4]{KS90}}]
-  \(n\geqq 0\)を整数とする．
-  \(\scC_{\rr^n}\)を\(\rr^n\)上の複素数値連続関数の層とする．
-  \(n\)次元\textbf{位相多様体} (topological manifold) \(M\)とは，
-  無限遠で可算な局所コンパクト空間\(M\)と環の層\(\scC_M\)の
-  組\((M,\scC_M)\)で，
-  \((M,\scC_M)\)が\((\rr^n,\scC_{\rr^n})\)と\(\cc\)環付き空間
-  として同型であるものをいう．
-\end{DFN}
-\end{leftbar}
-\(M\)が無限遠で可算な局所コンパクト空間であり，
-各点\(x\in M\)に対して，\(x\)の開近傍\(U\)で
-\(\rr^n\)の開集合\(V\)と同相なものが存在するとき，
-\(M\)は位相多様体となる．
-
-\begin{EG}
-  \(a<b\)を実数とする．
-  \(\rr\)の閉区間\([a,b]\)は無限遠で可算な局所コンパクト空間であるが，
-  \(a,b\)で\(\rr\)の開集合
-  と同相な近傍をもたない．
-  したがって，
-  \([a,b]\)は局所コンパクト空間であるが位相多様体にならない空間の例である．
-\end{EG}
-
-
-\section{リーマン計量}
-
-\begin{leftbar}
-\begin{DFN}
-  \(M\)を\(C^{\infty}\)多様体とする．
-  \(M\)の各点\(p\in M\)における接空間\(T_{p}M\)に正定値内積
-  \[
-    g_{p}\colon T_{p}M\times T_{p}M\to \rr
-  \]
-  が与えられ，それらが\(p\)について\(C^{\infty}\)級のとき，
-  \(g=(g_p)_{p\in M}\)を\(M\)上の\textbf{リーマン計量} (Riemannian metric) という．
-\end{DFN}
-\end{leftbar}
-
-
-
-
-
-
-
-\section{ベクトル束}
-\begin{leftbar}
-\begin{DFN}[{\cite[\S 3.1 (p.80)]{Hat89}}]
-  \(E\)と\(X\)を位相空間とし，
-  \(\pi\colon E\to X\)を連続写像とする．
-  \((E,\pi,X)\)が
-  階数\(r\)の実\textbf{ベクトル束} (vector bundle) であるとは，
-  各点\(x\in X\)に対し，\(\pi^{-1}(x)\)が\(r\)次元実線形空間となり，
-  各点\(x\in X\)に対し，開近傍\(U\subset X\)と同相写像\(
-    \varphi\colon \pi^{-1}(U)\simar U\times \rr^r
-  \)で\(\pr_1\circ\varphi=\pi\)となり，
-  各\(y\in U\)に対し\(
-    \mres[\varphi]{\pi^{-1}(y)}\colon 
-    \pi^{-1}(y)\to \{y\}\times\rr^r\cong \rr^n
-  \)が線形となるものが存在することをいう．
-  \[\vcenter{\xymatrix@C=36pt@R=36pt{
-    \pi^{-1}(U)
-    \ar[dr]_-{\pi}
-    \ar[r]^-{\varphi}
-    %\ar@{}[dr]|\square
-    &
-    U\times \rr^r
-    \ar[d]^-{\pr_1}
-    \\
-    &
-    U
-  }}\]
-\end{DFN}  
-\end{leftbar}
-
-\begin{leftbar}
-\begin{DFN}[{\cite[Def.3.3.1]{KS90}}]
-  \(Y\)と\(X\)を局所コンパクト空間とし，
-  \(\tau\colon Y\to X\)を連続写像とする．
-  \(\tau\)がファイバー次元\(l\)の\textbf{位相的しずめこみ} (topological submersion) であるとは，
-  各点\(y\in Y\)に対して\(y\)の開近傍\(V\)で，\(U=\tau(V)\)が\(X\)の開集合であり，
-  同相写像\(h\colon U\times \rr^l\simar V\)で\(\mres[\tau]{V}\circ h=\pr_1\)となるものが存在することをいう．
-  \[\vcenter{\xymatrix@C=36pt@R=36pt{
-    U\times \rr^l
-    \ar[dr]_-{\pr_1}
-    \ar[r]^-{h}
-    %\ar@{}[dr]|\square
-    &
-    V
-    \ar[d]^-{\mres[\tau]{V}}
-    \\
-    &
-    U
-  }}\]
-\end{DFN} 
-\end{leftbar}
-  
-\begin{EG}\label{bdl-is-subm}
-  階数\(r\)のベクトル束\(\pi\colon E\to X\)はファイバー次元\(r\)の
-  位相的沈めこみである．
-  実際，
-  各点\(y\in E\)に対し，\(\pi(y)\)の開近傍\(U\)と同相写像\(
-      \varphi\colon \pi^{-1}(U)\simar U\times \rr^r
-  \)で\(\pr_1\circ\varphi=\pi\)となるものが存在する．
-  この\(U\)と\(\varphi\)に対して，
-  \(\varphi\)の逆写像を\(
-    h\colon U\times \rr^r \to \pi^{-1}(U)
-  \)とおき，\(V= \pi^{-1}(U)\)とおくと，
-  \(\pi(V)=U\)は\(X\)の開集合であり，
-  \(h\)は\(
-    \mres[\pi]{V}\circ h
-    =\mres[\pi]{V}\circ \varphi^{-1}
-    =\pr_1
-  \)をみたす．    
-\end{EG}
-
-局所コンパクト空間上のベクトル束で位相多様体とならないものの例を挙げる．
-
-\begin{EG}\label{ceg:bdl-mfd}
-  \(a<b\)を実数とし，\(X=[a,b]\)とする．
-  \(E=X\times\rr\)とおき，\(\pi\colon E\to X\)を\(\pi(t,s)=t\)で
-  定める．これは階数\(1\)の実ベクトル束である．
-  \((a,s)\in E\)に対し，\(\rr^2\)の開集合\[
-    U_{r}(a,s)\coloneqq\{(x,y)\in\rr^2;\lVert{(x,y)-(a,s)}\rVert<r\}
-  \]は\((a,s)\)を含み，\(
-    U'_{r}(a,s)\coloneqq E\cap U_{r}(a,s)
-  \)とおくと，\(U'_{r}(a,s)\)は\(E\)における\((a,s)\)の開近傍である．
-  しかし，\(U'_{r}(a,s)={[a,a+r[}\times {\left]s-r,s+r\right[}\)は\(\rr^2\)の開集合と同相ではない．
-  したがって\(E\)は位相多様体にはならない．
-\end{EG}
-
-例\ref{bdl-is-subm},\ref{ceg:bdl-mfd}から，位相的沈め込みの源が
-位相多様体とは限らないこともわかる．
-ベクトル束に多様体の構造を入れるには底空間が位相多様体でなければならない．
-ベクトル束の局所座標を取る際に，底空間の局所座標を用いるからである．
-
-\section{リー群}
-\begin{EG}
-  乗法群\(\rr^{+}\)（\(\rr_{>0}\)ともかく）はリー群である．
-\end{EG}
-
-\clearpage
-\section{ファイバー束}
-\begin{leftbar}
-\begin{DFN}
-  \(G\)を位相群で空間\(F\)に左から効果的に作用するものとする．
-  空間の間の全射\(\pi\colon E\to B\)が\(F\)をファイバーとし\(G\)を構造群とする\textbf{ファイバー束} (fiber bundle) であるとは，
-  \(B\)が開被覆\(\{U_{\alpha}\}\)でファイバーを保つ同相写像\[
-    \phi_{\alpha}\colon
-    \mres[E]{U_{\alpha}}\simar U_{\alpha}\times F
-  \]をもち，変換関数が\(G\)に値をとる連続写像であることをいう．
-  \[
-    g_{\alpha\beta}(x)=\phi_{\alpha}\mres[\phi_{\beta}^{-1}]{\{x\}\times F}\in G
-  \]
-\end{DFN}
-\end{leftbar}
-
-\(G\)が効果的に作用するとは，
-\(F\)全体で\(g\cdot y=y\)となるならば\(g=1\)となることをいう．
-
-%\(\rr^+\)束は主束？
-
-
+\section{\cite{Vic2}のノート}
 
 
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
-  \bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
-    \textit{Differential Topology}, 
-    Prentice-Hall, 1974.
+    \bibitem[J1]{J1} Benoit, Jubin, 
+    \textit{A Microlocal Characterization of Lipschitz Continuity}, 
+    \url{https://doi.org/10.4171/PRIMS/54-4-2}.
+    %質問に直接は関係ありませんが\cite{Vic1}の応用の一つとして読んでいる論文です．
   \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
     \textit{Sheaves on Manifolds}, 
     Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
-  \bibitem[Hat89]{Hat89} 服部晶夫, 多様体 増補版, 岩波全書 288, 岩波書店, 1989.
-  %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+  \bibitem[MS17]{MS17} Dusa McDuff, Dietmar Salamon, 
+    \textit{Introduction to Symplectic Topology}, 
+    3rd ed., Oxford University Press, 2017.
+  \bibitem[Vic1]{Vic1} Nicolas Vichery, \textit{Homological Differential Calculus}, \url{https://doi.org/10.48550/arXiv.1310.4845}.
+  \bibitem[Vic2]{Vic2} Nicolas Vichery, \textit{Spectral Invariants towards a Non-Convex Aubry-Mather theory
+  }, \url{https://doi.org/10.48550/arXiv.1403.2058}.
 \end{thebibliography}
 
 %===============================================

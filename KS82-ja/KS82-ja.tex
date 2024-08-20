@@ -321,7 +321,7 @@
 
 \newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
 \newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
-\newcommand{\Domp}{\mathop{\mathrm{D}}\nolimits}%複体のホモトピー圏
+\newcommand{\Domp}{{\mathrm{D}}}
 
 \newcommand{\CCat}{\Comp(\cat)}
 \newcommand{\KCat}{\Komp(\cat)}
@@ -421,7 +421,7 @@
     \emph{Micro-support des faisceaux: 
     application aux modules diff\'erentiels}, 
     C. R. Acad. Sc. Paris, 295 (8 novembre 1982) 
-    の和訳 (2023/10/28).
+    の和訳 (2023/10/28).（\today 更新）
 }}
 \author{柏原正樹\and ピエール・シャピラ}
 \date{1982年9月27日 提出}
@@ -442,8 +442,9 @@
 \emph{\ruby{対蹠}{たいせき}写像} (application anti-podale) とし，
 \(S^a\)を\(T^\ast M\)の部分集合\(S\)の像とする．
 \(M\)の2つの集合\(S\)と\(Z\)に対し，
-点\(x\in M\)における\(Z\)に沿った\(S\)の法錐\(C_x(S,Z)\)とは，
-接空間\(T_xM\)の閉錐体で，局所座標系を用いて次のように定義されるものである．
+点\(x\in M\)における\(Z\)に沿った\(S\)の\textbf{法錐} (c\^one 
+normal) \(C_x(S,Z)\)とは，
+接空間\(T_xM\)の閉錐で，局所座標系を用いて次のように定義されるものである．
 \[
     \begin{cases}
         v\in C_x(S,Z)\Leftrightarrow S\times Z\times \rr^+
@@ -457,22 +458,26 @@
 \(Z\)が\(M\)の部分多様体のとき，\(C_x(S,Z)\)は\(T_xZ\)で安定であり，
 \(C_Z(S)\)で\(C(S,Z)\)の法束\(T_ZM\)での像を表す．
 \(M\)の閉部分集合\(S\)に対し，
-錐体\(TM\setminus C(M\setminus S,S)\)を
+錐\(TM\setminus C(M\setminus S,S)\)を
 \emph{強い意味での法錐} (c\^one normal strict) といい
 \(N(S)\)とかく．
 また\(N(S)\cap T_xM\)の双対閉錐体を\(N_x^\ast S\)とかき，
-\(x\)における\(S\)の余法錐という (cf.\cite{KS79})．
+\(x\)における\(S\)の\textbf{余法錐} (c\^one conrmal) という (cf.\cite{KS79})．
 
 \section{超局所台}
-\(\Domp^+(M)\) (\(\Domp^b(M)\)) を\(M\)上の\(A\)加群の層の
-下に有界な（有界な）複体のなす圏の導来圏とする．ここで\(A\)は環である．
+\(\Domp_+(M)\)（\(\Domp_b(M)\)）を\(M\)上の\(A\)加群の層の
+下に有界な（有界な）複体のなす圏の導来圏とする．\footnote{
+    [訳注] \(\Domp_{+}\)と\(\Domp_{b}\)は現在，
+    上つきの\(\Domp^{+}\)と
+    \(\Domp^{b}\)でそれぞれ表すのが通例である．
+}ここで\(A\)は環である．
 
 \begin{PRP}\label{PRP:SS}
-    \(F^\bullet\in\Ob(\Domp^+(M))\)とし
+    \(F^\bullet\in\Ob(\Domp_+(M))\)とし
     \(\xi\)を\(T^\ast M\)の点とする．
     次の条件は同値である．
     \begin{enumerate}[(i)]
-        \item \(\xi\)の錐近傍\(U\)と\(\pi(\xi)\)の近傍\(V\)で，
+        \item \(\xi\)の錐状近傍\(U\)と\(\pi(\xi)\)の近傍\(V\)で，
         \(V\)の任意の閉部分集合\(Z\)と
         任意の点\(x\in\partial Z\cap V\)で
         \(N^\ast_x(Z)\subset U^a\cup\{0\}\)を満たすものに対し
@@ -486,29 +491,29 @@
         \(\xi=(x_0,\xi_0)\)とする）
         実数\(\delta>0,\e>0\)で，\(\lvert a-x_0\rvert<\e\)を
         みたす全ての点\(a\in M\)に対し次が成り立つものが存在する．
-        \begin{align*}
+        \begin{multline*}
             \RG(\{
                     x;-\delta
                     \leqq\langle x-x_0,\xi_0\rangle, 
                     \langle x-a,\xi_0\rangle
-                    &\leqq-\e\lvert x-a\rvert
+                    \leqq-\e\lvert x-a\rvert
             \}, F^\bullet)\\
             \simeq
             \RG(\{
-                x;-\delta&=\langle x-x_0,\xi_0\rangle, 
+                x;-\delta=\langle x-x_0,\xi_0\rangle, 
                 \langle x-a,\xi_0\rangle
                 \leqq-\e\lvert x-a\rvert
             \}, F^\bullet).
-        \end{align*}
+        \end{multline*}
     \end{enumerate}
 \end{PRP}
 この命題は\cite[\S4]{KS79}で暗に示されている．
 
 \begin{DFN}
-    \(F^\bullet\in\Ob(\Domp^+(M))\)とする．
+    \(F^\bullet\in\Ob(\Domp_+(M))\)とする．
     \(F^\bullet\)の\emph{超局所台} (micro-support) 
     \(\muS(F^\bullet)\)とは，
-    次で定義される\(T^\ast M\)の閉錐体である．：
+    次で定義される\(T^\ast M\)の閉錐である．：
     \begin{enumerate}[(a)]
         \item \(\muS(F^\bullet)\cap T^\ast_MM=\overline{\bigcup_j\supp(\mathscr{H}^j(F^\bullet))}\);
         \item \(\xi\in\dot{T}^\ast M, \xi\in\muS(F^\bullet)\Leftrightarrow\text{命題\ref{PRP:SS}の同値な条件をみたす．}\)
@@ -516,7 +521,10 @@
 \end{DFN}
 
 \begin{EG}
-    \(M=\rr^n\), \(Z=\{x\in M, x_1\geqq0\}\), \(F=\underline{\cc}_Z\). 
+    \(M=\rr^n\), \(Z=\{x\in M, x_1\geqq0\}\), \(F=\underline{\cc}_Z\).\footnote{
+        [訳注] \(\underline{\cc}_{Z}\)は\(Z\)に台を持つ定数層である．
+        現在は\(\cc_Z\)で表すのが通例である．
+    }
     
     このとき\(\muS(F)=\{(x,\xi);x_1\geqq0,\xi=0\}\cup\{(x,\xi);\xi_1\geqq0,x_1=\xi_2=\dots=\xi_n=0\}\).
 \end{EG}
@@ -538,7 +546,7 @@
 \begin{PRP}
     \(\omega\)を\(M\)上の双対化複体とする．
 
-    このとき，任意の\(F^\bullet\in\Ob(\Domp^b(M))\)に対し，
+    このとき，任意の\(F^\bullet\in\Ob(\Domp_b(M))\)に対し，
     \(\muS(\RHOM(F^\bullet,\omega))\subset\muS(F^\bullet)^a\)が
     成り立つ．
 \end{PRP}
@@ -550,19 +558,21 @@
 \(f\)から定まる写像とする．
 
 \begin{PRP}
-    \(F^\bullet\in\Ob(\Domp^+(M))\)を\(f\)の\(\overline{\bigcup_j\supp(\mathscr{H}^j(F^\bullet))}\)が固有となるものとする．
+    \(F^\bullet\in\Ob(\Domp_+(M))\)を\(f\)の\(
+        \overline{\bigcup_j\supp(\mathscr{H}^j(F^\bullet))}
+    \)への制限が固有となるものとする．
     このとき\(\muS(\mathrm{R}f_\ast(F^\bullet))\subset\rho(T^\ast N\mathop{\times}\limits_NM)\)が成り立つ．
 \end{PRP}
 
 \begin{PRP}
     \(f\)が滑らかであるとする．
     \begin{enumerate}[(i)]
-        \item \(G^\bullet\in\Ob(\Domp^+(N))\)とする．
-        このとき，\(\muS(f^{-1}(G^\bullet))=\rho\bar{\omega}^{-1}(\muS(G^\bullet))\)が成り立つ．
-        \item \(F^\bullet\in\Ob(\Domp^b(M))\)とする．
+        \item \(G^\bullet\in\Ob(\Domp_+(N))\)とする．
+        このとき，\(\muS(f^{-1}(G^\bullet))=\rho\bar{\omega}^{-1}(\muS(G^\bullet))\)である．
+        \item \(F^\bullet\in\Ob(\Domp_b(M))\)とする．
         このとき，任意の\(\mathscr{H}^j(F^\bullet)\)が\(f\)のファイバー上で
         局所定数層となるのは，
-        \(\muS((F^\bullet))\subset\rho(T^\ast N\mathop{\times}\limits_N M)\)が成り立つとなるときである．
+        \(\muS((F^\bullet))\subset\rho(T^\ast N\mathbin{\mathop{\times}\limits_N} M)\)が成り立つとなるときである．
     \end{enumerate}
 \end{PRP}
 
@@ -570,12 +580,12 @@
     \(M\)と\(N\)を\(C^1\)級多様体とし，
     \(p_1\)と\(p_2\)を\(M\times N\)から\(M\)と\(N\)への射影とする．
     \begin{enumerate}[(i)]
-        \item \(F^\bullet\in\Ob(\Domp^b(M))\)と\(G^\bullet\in\Ob(\Domp^+(N))\)に対し，\[
+        \item \(F^\bullet\in\Ob(\Domp_b(M))\)と\(G^\bullet\in\Ob(\Domp_+(N))\)に対し，\[
             \muS(\RHOM_A(p_1^{-1}F^\bullet,p_2^{-1}G^\bullet))\subset\muS(F^\bullet)^a\times\muS(G^\bullet)
         \]が成り立つ．
         \item \(A\)のコホモロジー次元が有限であるとする．
-        このとき，\(F^\bullet\in\Ob(\Domp^b(M))\)と\(G^\bullet\in\Ob(\Domp^+(N))\)に対し，\[
-            \muS(p_1^{-1}F^\bullet\LT_A p_2^{-1}G^\bullet))\subset\muS(F^\bullet)\times\muS(G^\bullet)
+        このとき，\(F^\bullet\in\Ob(\Domp_b(M))\)と\(G^\bullet\in\Ob(\Domp_+(N))\)に対し，\[
+            \muS(p_1^{-1}F^\bullet\LT_A p_2^{-1}G^\bullet)\subset\muS(F^\bullet)\times\muS(G^\bullet)
         \]が成り立つ．  
     \end{enumerate}
 \end{PRP}
@@ -585,15 +595,15 @@
 以降，\(N\)は\(M\)の部分多様体であるとし，
 \(M\)と\(N\)は\(C^2\)級であるとする．
 \(M\setminus N \cup T_NM\) (\(M\setminus N \cup T^\ast_NM\)) 
-には\emph{実モノイダル変換} (\'eclat\'e) の（\emph{余実モノイダル変換} 
-(co-\'eclat\'e) の）自然な位相を与える (cf. \cite{SKK})．
+には\emph{ブローアップ} (\'eclat\'e) の（\emph{余ブローアップ} 
+(co-\'eclat\'e) の）自然な位相を入れる (cf.\cite{SKK})．
 \(j\)を\(M\)から\(M\setminus N \cup T_NM\)への包含とし\(\pi\)を
 \(M\setminus N \cup T^\ast_NM\)から\(M\)への射影とする．
-\(F^\bullet\in\Ob(\Domp^+(M))\)に対し，
-\(\lambda(F^\bullet)\)で（\cite{Mal}と同様に）\(\Domp^+(T_NM)\)の対象
+\(F^\bullet\in\Ob(\Domp_+(M))\)に対し，
+\(\lambda(F^\bullet)\)で（\cite{Mal}と同様に）\(\Domp_+(T_NM)\)の対象
 \(\mathrm{R}j_\ast(F^\bullet)\rvert_{T_NM}\)を表し，
 \(\mu_N(F^\bullet)\)で\(F^\bullet\)に対する\(N\)での佐藤の超局所化，
-すなわち，\(\Domp^+(T^\ast_NM)\)の対象\(\RG_{T^\ast_NM}(\pi^{-1}(F^\bullet))^a\)を表す．
+すなわち，\(\Domp_+(T^\ast_NM)\)の対象\(\RG_{T^\ast_NM}(\pi^{-1}(F^\bullet))^a\)を表す．
 \(\Lambda\)で\(M\)の\(N\)に対する余法束\(T_N^\ast M\)を表す．
 ハミルトン同相写像\(T^\ast(T^\ast M)\simeq T(T^\ast M)\)によって，
 束\(T^\ast\Lambda\)と\(T_\Lambda T^\ast M\)を同一視することができ，
@@ -610,7 +620,7 @@
 \(T^\ast M\)が\(TT^\ast M\)の部分多様体と同一視されることがわかる．
 
 \begin{THM}
-    \(F^\bullet\in\Ob(\Domp^+(M))\)とする，次の包含関係が成り立つ．
+    \(F^\bullet\in\Ob(\Domp_+(M))\)とする，次の包含関係が成り立つ．
     \begin{enumerate}[(i)]
         \item \(\muS(\mu_N(F^\ast))\subset C_\Lambda(\muS(F^\bullet))\),
         \item \(\muS(\lambda_N(F^\ast))\subset C_\Lambda(\muS(F^\bullet))\),
@@ -634,8 +644,8 @@
 （\cite[1章]{SKK}の 命題 1.2.5 を用いる．）
 \begin{CRL}
     \begin{enumerate}[(i)]
-        \item \(F^\bullet\in\Ob(\Domp^b(M)), 
-        G^\bullet\in\Ob(\Domp^+(M))\)とする．このとき
+        \item \(F^\bullet\in\Ob(\Domp_b(M)), 
+        G^\bullet\in\Ob(\Domp_+(M))\)とする．このとき
         \[
             \muS(\RHOM_A(F^\bullet, G^\bullet))
             \subset 
@@ -643,7 +653,7 @@
         \]
         が成り立つ．
         \item \(A\)のコホモロジー次元が有限であるとする．
-        このとき\(F^\bullet,G^\bullet\in\Ob(\Domp^+(M))\)に対し，
+        このとき\(F^\bullet,G^\bullet\in\Ob(\Domp_+(M))\)に対し，
         \[
             \muS(F^\bullet\LT_A G^\bullet)\subset T^\ast M\cap C(\muS(F^\bullet),\muS(G^\bullet)^a)
         \]
@@ -654,7 +664,7 @@
 \section{包合性}
 
 \begin{THM}
-    \(F^\bullet\in\Ob(\Domp^b(M))\)とする．
+    \(F^\bullet\in\Ob(\Domp_b(M))\)とする．
     このとき\(\muS(F^\bullet)\)は包合的である
     （関数\(f\)が\(\muS(F^\bullet)\)で0になるとき，
     \(\muS(F^\bullet)\)はハミルトンベクトル場\(H_f\)で不変である）．
@@ -725,7 +735,7 @@
         \emph{Microfunctions and Pseudo-differential Equations}, 
         Springer Lecture Notes in Math., 287, 1973, p. 265-529.
     \bibitem[7]{Mal} B. Malgrange, Transformation de Fourier cohomologique, Expose a Nancy, mai 1982.
-    \bibitem[8]{Sch82} Schapira, \emph{Micro-supporl des faisceaux}, 
+    \bibitem[8]{Sch82} Schapira, \emph{Micro-support des faisceaux}, 
         Expose a Nancy, mai 1982.
 \end{thebibliography}
 \end{document}
