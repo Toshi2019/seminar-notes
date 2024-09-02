@@ -374,6 +374,7 @@
 \newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
 \newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
 \newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+\newcommand{\Dbcon}{\mathop{\mathsf{D}^\mathrm{b}_{\rr^+}}\nolimits}
 
 \newcommand{\CCat}{\Comp(\cat)}
 \newcommand{\KCat}{\Komp(\cat)}
@@ -5311,7 +5312,7 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 \footnotetext[1]{\cite{KS90}では式番号 (4.1.6) は無い}
 \setcounter{footnote}{1}
 \begin{leftbar}
-\begin{PRP}
+\begin{PRP}\label{prp413}
     \begin{enumerate}[(i)]
         \item \((x)\)を
         \item \((x)\)を
@@ -5335,7 +5336,7 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 次の結果は定理4.2.3の証明に不可欠である．
 
 \begin{leftbar}
-\begin{PRP}
+\begin{PRP}\label{prp414}
     \(V\)を\(T_{M}X\)の錐状開集合とする．
     このとき，\(V\)の\(\widetilde{X}_{M}\)における開近傍\(W\)で
     \(p\colon W\cap \varOmega\to X\)によるファイバーが全て連結であるものは，
@@ -5657,12 +5658,12 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 
 \begin{proof}
     次の完全三角を考える．
-    \[
+    \begin{equation}
         (p^{-1}F)_{\varOmega}\to 
         \Rder{j}_{\ast}\tilde{p}^{-1}F\to 
         \RG_{\{t=0\}}\left((p^{-1}F)_{\varOmega}\right)[1]
         \to +1.
-    \]
+    \end{equation}
     これに\(s^{-1}\)を適用すると
     \begin{align*}
         s^{-1}\Rder{j}_{\ast}\tilde{p}^{-1}F
@@ -5687,6 +5688,330 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
     \(\nu_{M}(F)\)を\(F\)の\(M\)に
     沿った\textbf{特殊化} (specialization) という．
 \end{DFN}
+
+\begin{THM}
+    \(F\in\Dompb(X)\)とする．
+    \begin{enumerate}[(i)]
+        \item \(\nu_{M}(F)\in\Dbcon(T_{M}X)\)であり，
+        \(\supp(\nu_{M}(F))\subset C_{M}(\supp(F))\)である．
+        \item \(V\)を\(T_{M}X\)の錐状開集合とする．このとき\[
+            H^{j}(V;\nu_{M}(F))
+            \cong
+            \indlim[U]H^{j}(U;F)
+        \]である．
+        ただし\(U\)は\(
+            C_{M}(X-U)\cap V=\varnothing
+        \)となる\(X\)の開集合の族を走る．
+        とくに\(v\in T_{M}X\)ならば，
+        \[
+            H^{j}(\nu_{M}(F))_{v}
+            \cong
+            \indlim[U]H^{j}(U;F)
+        \]である．
+        ただし\(U\)は\(
+            v\notin C_{M}(X-U)
+        \)となる\(X\)の開集合の族を走る．
+        \item \(A\)を\(T_{M}X\)の錐状閉集合とする．このとき\[
+            H^{j}_{A}(T_{M}X;\nu_{M}(F))
+            \cong
+            \indlim[Z,U]H^{j}_{Z\cap U}(U;F)
+        \]である．
+        ただし\(U\)は\(
+            M
+        \)の\(X\)における開近傍の族を走り，
+        \(Z\)は\(C_{M}(Z)\subset A\)となる\(X\)の閉集合を走る．
+        \item 次の同型が成り立つ．\begin{align*}
+            \mres[\nu_{M}(F)]{M}&\cong \Rder{\tau}_{\ast}(\nu_{M}(F))\cong \mres[F]{M},\\
+            \mres[(\RG_{M}(\nu_{M}(F)))]{M}&\cong \Rder{\tau}_{!}(\nu_{M}(F))\cong \mres[\RG_{M}(F)]{M}.
+        \end{align*}
+        \item \(\Rder{\dot{\tau}}_{\ast}(\mres[\nu_{M}(F)]{\dot{T}_{M}X})\cong\mres[\RG_{X-M}(F)]{M}\)である．
+    \end{enumerate}
+\end{THM}
+
+\begin{proof}
+    (i)：
+    \(\tilde{p}^{-1}F\)が錐状層であることを示せば，
+    \(\Rder{j}_{\ast}\)と\(s^{-1}\)が
+    錐状層を錐状層に送ることから結果が従う．
+    各次数\(j\in \zz\)に対し，
+    \(H^{j}(\tilde{p}^{-1}F)\)が各ファイバー\(
+        (x',x'',t)\in \varOmega
+    \)の\(\rr^{+}\)軌道\(b=\rr^{+}(x',x'',t)\)上で
+    局所定数であることを示す．
+    \((cx',x'',c^{-1}t)\in b\)とする．このとき
+    \begin{align*}
+        \left(
+            \mres[H^{j}(\tilde{p}^{-1}F)]{b}
+        \right)_{(cx',x'',c^{-1}t)}
+        &\cong
+        \left(
+            H^{j}(\tilde{p}^{-1}F)
+        \right)_{(cx',x'',c^{-1}t)}\\
+        &\cong
+        \left(
+            \tilde{p}^{-1}H^{j}(F)
+        \right)_{(cx',x'',c^{-1}t)}\\
+        &\cong
+        \left(
+            H^{j}(F)
+        \right)_{\tilde{p}(cx',x'',c^{-1}t)}\\
+        &\cong
+        H^{j}(F)_{\tilde{p}(x',x'')}
+    \end{align*}
+    であり，\(b\)の全ての点での茎が同型となる．
+    よって各実数\(c>0\)に対し，\((cx',x'',c^{-1}t)\)の
+    十分小さい近傍\(B_c\subset \varOmega\)で\(
+        \mres[H^{j}(\tilde{p}^{-1}F)]{b\cap B_c}
+    \)が定数層\(\left(
+        H^{j}(F)_{\tilde{p}(x',x'')}
+    \right)_{b\cap B_c}\)となるものが存在する．
+    \(b=\bigcup_{c\in\rr^+}B_{c}\cap b\)である．
+    よって\(H^{j}(\tilde{p}^{-1}F)\)は錐状層である．
+
+    \((x'';v)\in T_{M}X-{C_{M}(\supp(F))}\)とする．
+    各\(j\in\zz\)に対し
+    \[
+        H^{j}(F)_{(x'';v)}=0
+    \]
+    であるから\((x,0)=(x'';v)\in T_{M}X=t^{-1}(0)\)として，
+    \begin{align*}
+        \left(
+            H^{j}(s^{-1}\Rder{j}_{\ast}\tilde{p}^{-1}F)
+        \right)_{(x,0)}
+        =s^{-1}\Rder{j}_{\ast}\tilde{p}^{-1}H^{j}(F)_{(x'';v)}
+        =0
+    \end{align*}
+    である．したがって\((x'';v)\in T_{M}X-\supp(\nu_{M}(F))\)である．
+
+    (ii)：
+    \(U\)を\(X\)の開集合で\(C_{M}(X-U)\cap V=\varnothing\)となるものとする．
+    次の射がある．
+    \begin{equation}
+        \begin{cases}
+            \RG(U;F)
+            &\underset{(1)}{\to}\RG(p^{-1}(U);p^{-1}F)\\
+            &\underset{(2)}{\to}\RG(p^{-1}(U)\cap \varOmega;p^{-1}F)\\
+            &\underset{(3)}{\to}\RG(\tilde{p}^{-1}(U)\cup V;\Rder{j}_{\ast}j^{-1}p^{-1}F)\\
+            &\underset{(4)}{\to}\RG(V;\nu_{M}(F)).
+        \end{cases}
+    \end{equation}
+    ただし，それぞれの射は次のように定まる．
+    \begin{enumerate}[(1)]
+        \item \(F\to\Rder{p}_{\ast}p^{-1}F\)から定まる．
+        \item 制限射．もっというと\(A_{p^{-1}(U)\cap\varOmega}\to A_{p^{-1}(U)}\)から定まる．
+        \item まず\(
+            p^{-1}F\to\Rder{j}_{\ast}j^{-1}p^{-1}F
+        \)から\(
+            \RG(\tilde{p}^{-1}(U);\Rder{j}_{\ast}j^{-1}p^{-1}F)
+        \)への射が定まる．
+        \(\varOmega\)で台を切り落としているので\(
+            \RG(\tilde{p}^{-1}(U);\Rder{j}_{\ast}j^{-1}p^{-1}F)
+        \)を\(V\)の\(\bar{\varOmega}\)での開近傍\(
+            \tilde{p}^{-1}(U)\cup V
+        \)に広げてもよい．
+        \item \(
+            \Rder{j}_{\ast}j^{-1}p^{-1}F
+            \to
+            \Rder{s}_{\ast}s^{-1}\Rder{j}_{\ast}j^{-1}p^{-1}F
+        \)と\(
+            s^{-1}A_{\tilde{p}^{-1}(U)\cup V}
+            =A_{s^{-1}(\tilde{p}^{-1}(U)\cup V)}
+            =A_V
+        \)から定まる．
+    \end{enumerate}
+    コホモロジーをとって，帰納極限の普遍性を考えると次の射
+    が定まる．
+    \[
+        \indlim[U]H^{k}(U;F)\to H^{k}(V;\nu_{M}(F)).
+    \]
+    この射が同型であることを示す．いま
+    \begin{align*}
+        H^{k}(V;\nu_{M}(F))
+        &\cong
+        \indlim[W\in I_V]H^{k}(W,\Rder{j}_{\ast}j^{-1}p^{-1}F)
+        \quad (\because\text{注意2.6.9})\\
+        &\cong\indlim[W\in I_V]H^{k}(W\cap\varOmega,p^{-1}F)
+        \quad (\because j^{-1}\dashv \Rder{j}_{\ast},
+        ~ j_{!}\dashv j^{-1})
+    \end{align*}
+    である．
+    命題\ref{prp414}より，
+    \(p\colon W\cap\varOmega \to p(W\cap\varOmega)\)の
+    各ファイバーは連結，すなわち\(\rr\)と同相としてよい．
+    このとき，\begin{enumerate}[(i)]
+        \item \(p\)は位相的沈めこみである．
+        \item \(
+            \Rder{p}_{!}p^{!}\zz_{p(W\cap\varOmega)}
+            \to\zz_{W\cap\varOmega}
+        \)は同型である．
+        実際，ファイバーが\(\rr\)と同相であることから，
+        注意3.3.10の式(3.3.13)\[
+            \zz\simar\RG(p^{-1}(x);\zz_{p^{-1}(x)})
+        \]が成り立つ．
+    \end{enumerate}したがって命題3.3.9を\(p\)に適用すると\(
+        F\to \Rder{p}_{!}p^{!}F
+    \)となることから\[
+        H^{k}(W\cap\varOmega;p^{-1}F)
+        \cong 
+        H^{k}(p(W\cap\varOmega);F)
+    \]である．命題\ref{prp413} (i) より，\(W\)を走らせたときの
+    \(U=p(W\cap\varOmega)\)は\(
+        C_{M}(X-U)\cap V=\varnothing
+    \)となる\(X\)の開集合を走る．したがって上の同型が示された．
+
+    (iii)：
+    \(U\)を\(M\)の\(X\)における開近傍，
+    \(Z\)を\(C_{M}(Z)\subset A\)となる\(X\)の閉集合とする．
+    次の射の列がある．
+    \begin{align*}
+        \RG_{Z\cap U}(U;F)
+        &\underset{(1)}{\to}\RG_{p^{-1}(Z\cap U)}(p^{-1}(U);p^{-1}F)\\
+        &\underset{(2)}{\to}\RG_{p^{-1}(Z\cap U)\cap \varOmega}(p^{-1}(U)\cap \varOmega;p^{-1}F)\\
+        &\underset{(3)}{\to}\RG_{(p^{-1}(Z\cap U)\cap \varOmega)\cup A}(p^{-1}(U);\Rder{j}_{\ast}j^{-1}p^{-1}F)\\
+        &\underset{(4)}{\to}\RG_{A}(T_{M}X;\nu_{M}(F)).
+    \end{align*}
+    ただし，それぞれの射は次のように定まる．
+    \begin{enumerate}[(1)]
+        \item \(F\to \Rder{p}_{\ast}p^{-1}F\)に\(\RG_{Z\cap U}(U;\blk)\)を適用．
+        \item \(p^{-1}F\to \Rder{j}_{\ast}j^{-1}p^{-1}F\)に\(\RG_{p^{-1}(Z\cap U)}(p^{-1}(U);\blk)\)を適用．
+        \item 切り落としと台の随伴と微妙なやつ．
+        \item \(s^{-1}\)を当てる．\(T_{M}X\)上の切断は\(A\)に台を持つことから．
+    \end{enumerate}
+    以上の合成と切除の三角を考えると，次の可換図式が得られる．
+    \[    
+        \vcenter{\xymatrix@C=18pt@R=18pt{
+        \cdots
+        \ar[r]
+        &
+        \indlim[U]H^{k-1}(U-Z;F)
+        \ar[d]^-{\gamma_{k-1}}
+        \ar[r]
+        %\ar@{}[dr]|\square
+        &
+        \indlim[U]H^{k}_{U-Z}(U;F)
+        \ar[r]
+        \ar[d]^-{\alpha_k}
+        &
+        \indlim[U]H^{k}(U;F)
+        \ar[r]
+        \ar[d]^-{\beta_k}
+        &
+        \cdots
+        \\
+        \cdots
+        \ar[r]
+        &
+        H^{k-1}(T_{M}X-A;\nu_{M}F)
+        \ar[r]
+        %\ar@{}[dr]|\square
+        &
+        H^{k}_{A}(T_{M}X;\nu_{M}F)
+        \ar[r]
+        &
+        H^{k}(T_{M}X;\nu_{M}F)
+        \ar[r]
+        &
+        \cdots.
+      }}
+    \]
+    各行は完全であり，\(\gamma_k\)と\(\beta_k\)は (ii) より同型である．
+    したがって，\(\alpha_k\)も同型である．
+
+    (iv)：
+    \(k\colon M\hookrightarrow T_{M}X\)を零切断とみなす閉埋め込みとする．
+    このとき，\begin{align*}
+        \mres[F]{M}
+        =i^{-1}F
+        &\cong k^{-1}s^{-1}p^{-1}F\\
+        &\to k^{-1}s^{-1}\Rder{j}_{\ast}j^{-1}p^{-1}F\\
+        &\cong k^{-1}\nu_{M}F\\
+        &=\mres[\nu_{M}F]{M}
+    \end{align*}
+    と\begin{align*}
+        k^{!}\nu_{M}F
+        &= k^{!}s^{!}j_{!}j^{!}p^{!}F\\
+        &\to k^{!}s^{!}p^{!}F\\
+        &= i^{!}F=i^{-1}\RG_{M}F
+    \end{align*}
+    という射が得られる．
+    これらは (ii), (iii) から同型である．（\(v\in T_{M}X\)として\(0\)を取ればよい．）
+    残りの同型は\(i^{-1}\cong \Rder{\tau}_{\ast}\)と\(i^{!}\cong \Rder{\tau}_{!}\)から従う．
+
+    (v)：
+    次の三角の射がある．
+    \[    
+        \vcenter{\xymatrix@C=26pt@R=26pt{
+        \mres[\RG_{M}(F)]{M}    
+        \ar[d]
+        \ar[r]
+        %\ar@{}[dr]|\square
+        &
+        \mres[F]{M}    
+        \ar[r]
+        \ar[d]
+        &
+        \mres[\RG_{X-M}(F)]{M}    
+        \ar[r]
+        \ar[d]
+        &
+        +1
+        \\
+        \mres[\RG_{M}(\nu_{M}F)]{M}    
+        \ar[r]
+        %\ar@{}[dr]|\square
+        &
+        \Rder{\tau_{\ast}}\nu_{M}F    
+        \ar[r]
+        &
+        \Rder{\dot{\tau}}_{\ast}(\mres[\nu_{M}F]{\dot{T}_{M}X})    
+        \ar[r]
+        &
+        +1.
+      }}
+    \]
+    左と真ん中が同型なので右も同型である．
+\end{proof}
+
+\subsection*{順像との関係}
+\subsection*{逆像との関係}
+\subsection*{テンソル積との関係}
+
+\section{超局所化}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
