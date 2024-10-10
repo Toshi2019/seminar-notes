@@ -1,0 +1,1374 @@
+%=====================================
+%   homological-subdifferential-slide.tex
+%   Homological Subdifferential について
+%   toshi2019
+%=====================================
+\documentclass[dvipdfmx,12pt,aspectratio=169,leqno]{beamer}% dvipdfmxしたい
+\title{Homological Subdifferential
+\subtitle{本永さんゼミ}}
+\date{2024年9月27日}
+\author{大柴 寿浩}
+
+
+
+
+
+    
+
+\usetheme{Singapore}
+\usecolortheme{rose}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{navigaton symbols}{\false}
+\setbeamertemplate{footline}[frame number]
+%\usepackage{graphicx,xcolor}
+
+
+
+
+
+\usepackage{bxdpx-beamer}% dvipdfmxなので必要
+\usepackage{pxjahyper}% 日本語で'しおり'したい
+\usepackage{minijs}% min10ヤダ
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+\renewcommand{\emph}[1]{{\upshape\bfseries #1}}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{color}
+\usepackage{ascmac}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage[mathscr]{eucal}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{enumerate}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{proof}
+\usepackage{listings}
+\usepackage{otf}
+\usepackage[all]{xy}
+\usepackage{amscd}
+%\usepackage[dvipdfmx]{hyperref}
+
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkblue,
+    urlcolor=darkblue,
+}
+
+\usetikzlibrary{positioning}
+
+
+\usepackage{latexsym}
+\usepackage{wrapfig}
+\usepackage{layout}
+\usepackage{url}
+
+\usepackage{okumacro}
+
+\usepackage{comment}
+%\usepackage{pxjahyper}
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{k}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+%\newcommand{\Ring}{{\bf Ring}}
+\newcommand{\Ab}{{\bf Ab}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\Modf}{\mathop{\mathrm{Mod}^\mathrm{f}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits} % 写像の集合
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits} % 射集合
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits} % 自己準同型の集合
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits} % 自己同型の集合
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits} % 射集合
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits} % 核
+\newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
+\newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
+\newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+%\newcommand{\OO}{\mcal{O}}
+
+
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+%        \itshape
+         \bfseries
+%    #1\@addpunct{.}]\ignorespaces
+    {#1}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
+\renewcommand{\proofname}{\textrm{Proof.}}
+
+
+
+%\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{subsection}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Op}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+%\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
+
+\newcommand{\cat}{\mathscr{C}}
+
+%筆記体
+\newcommand{\cA}{\mcal{A}}
+\newcommand{\cB}{\mcal{B}}
+\newcommand{\cC}{\mcal{C}}
+\newcommand{\cD}{\mcal{D}}
+\newcommand{\cE}{\mcal{E}}
+\newcommand{\cF}{\mcal{F}}
+\newcommand{\cG}{\mcal{G}}
+\newcommand{\cH}{\mcal{H}}
+\newcommand{\cI}{\mcal{I}}
+\newcommand{\cJ}{\mcal{J}}
+\newcommand{\cK}{\mcal{K}}
+\newcommand{\cL}{\mcal{L}}
+\newcommand{\cM}{\mcal{M}}
+\newcommand{\cN}{\mcal{N}}
+\newcommand{\cO}{\mcal{O}}
+\newcommand{\cP}{\mcal{P}}
+\newcommand{\cQ}{\mcal{Q}}
+\newcommand{\cR}{\mcal{R}}
+\newcommand{\cS}{\mcal{S}}
+\newcommand{\cT}{\mcal{T}}
+\newcommand{\cU}{\mcal{U}}
+\newcommand{\cV}{\mcal{V}}
+\newcommand{\cW}{\mcal{W}}
+\newcommand{\cX}{\mcal{X}}
+\newcommand{\cY}{\mcal{Y}}
+\newcommand{\cZ}{\mcal{Z}}
+
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+\newcommand{\scN}{\mathscr{N}}
+\newcommand{\scO}{\mathscr{O}}
+\newcommand{\scV}{\mathscr{V}}
+\newcommand{\scU}{\mathscr{U}}
+
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+%\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+%\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+%\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}%複体のホモトピー圏
+%\newcommand{\Comp}{\mathrm{C}}
+%\newcommand{\Komp}{\mathrm{K}}
+%\newcommand{\Domp}{\mathsf{D}}%複体のホモトピー圏
+
+\newcommand{\Comp}{\mathsf{C}}
+\newcommand{\Komp}{\mathsf{K}}
+\newcommand{\Domp}{\mathsf{D}}
+\newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
+\newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
+\newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
+\newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
+\newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
+\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+\newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
+
+
+
+
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
+\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+\newcommand{\Rder}{\mathrm{R}}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
+\newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
+\newcommand{\simra}{\mathrel{\overset{\sim}{\leftarrow}}}%同型左矢印
+\newcommand{\simrra}{\mathrel{\overset{\sim}{\longleftarrow}}}%同型左矢印
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\PSh}{\mathrm{PSh}}
+
+\newcommand{\rmD}{\mathrm{D}}
+
+\newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
+\newcommand{\ori}{\mathord{\mathrm{or}}}
+\newcommand{\Db}{\mathord{\mathscr{D}b}}
+
+\newcommand{\codim}{\mathop{\mathrm{codim}}\nolimits}
+
+
+
+\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
+\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
+
+
+\newcommand{\tens}[1][]{\mathbin{\otimes_{\raise1.5ex\hbox to-.1em{}{#1}}}}
+\newcommand{\etens}{\mathbin{\boxtimes}}
+\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
+\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
+\newcommand{\detens}{\underline{\etens}}
+\newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
+\newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
+
+\newcommand{\blk}{\mathord{\ \cdot\ }}
+\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
+
+
+%\newcommand{\hocolim}{{\mathrm{hocolim}}}
+%\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+%\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+%\newcommand{\Pro}{\mathrm{Pro}}
+%\newcommand{\Ind}{\mathrm{Ind}}
+%\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+%\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+\newcommand{\proolim}[1][]{\mathop{\text{\rm``{$\varprojlim$}''}}\limits_{#1}}
+\newcommand{\sproolim}[1][]{\smash{\mathop{\rm``{\varprojlim}''}\limits_{#1}}}
+\newcommand{\inddlim}[1][]{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}
+\newcommand{\sinddlim}[1][]{\smash{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}\,}
+\newcommand{\ooplus}{\mathop{\text{\rm``{$\oplus$}''}}\limits}
+\newcommand{\bbigsqcup}{\mathop{``\bigsqcup''}\limits}
+\newcommand{\bsqcup}{\mathop{``\sqcup''}\limits}
+\newcommand{\dsum}[1][]{\mathbin{\oplus_{#1}}}
+
+\newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
+\newcommand{\Red}{\mathop{\mathsf{Red}}\nolimits}
+\newcommand{\Cone}{\mathop{\mathsf{Cone}}\nolimits}
+\newcommand{\epi}{\mathop{\mathsf{epi}}\nolimits}
+
+
+
+
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}%[section]
+\newtheorem{DFN}[AXM]{定義}
+\newtheorem{THM}[AXM]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[AXM]{命題}
+\newtheorem{LMM}[AXM]{補題}
+\newtheorem{CRL}[AXM]{系}
+\newtheorem{EG}[AXM]{例}
+\newtheorem*{EG*}{例}
+\newtheorem{RMK}[AXM]{注意}
+\newtheorem{CNV}[AXM]{約束}
+\newtheorem{CMT}[AXM]{コメント}
+\newtheorem*{CMT*}{コメント}
+\newtheorem{NTN}[AXM]{記号}
+\newtheorem{CLM}[AXM]{Claim}
+\newtheorem{Prop}[AXM]{Proposition}
+
+% 定理環境ここまで
+%====================================================
+
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+
+
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+
+
+% =================================
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+
+
+\def\fracinline#1/#2{\mbox{\raise0.5ex\hbox{\footnotesize$#1$}{\hskip-.1em$/$\hskip-.1em}\raise-0.5ex\hbox{\footnotesize$#2$}}}
+
+\begin{document}
+
+
+
+
+\begin{frame}
+    \titlepage
+\end{frame}
+\begin{comment}
+    \begin{frame}\frametitle{書くこと}
+    \begin{itemize}
+        \item 特に興味を持った定理や理論の背景
+        \item それを記述するための記号や概念の導入
+        \item 正確な主張の紹介
+        \item 証明の基本的なアイデアやアウトラインの紹介
+        \item または定理の過程を満たす具体例や定理の応用例の紹介
+    \end{itemize}
+    \end{frame}
+\end{comment}
+%\setcounter{section}{3}
+\section*{はじめに}
+\begin{frame}
+    \frametitle{目次}
+    \tableofcontents
+\end{frame}
+
+\begin{frame}
+    \frametitle{はじめに}
+    \cite{Ike24}は導来圏を使わずに\(\SS(F)\)を定義している．
+
+    \bigskip
+    劣微分の定義をダイジェスト的に述べると
+    \begin{itemize}
+        \item \(f\colon X\to \rr\)：下半連続関数
+        \item \(\epi(f)\subset X\times \rr\)：\(f\)のエピグラフ
+        \item \(F_{f}=\kk_{\epi(f)}\)：エピグラフに台を持つ定数層
+        \item \(\SS(F_{f})\subset T^{\ast}X\times T^{\ast}\rr\)：超局所台をとる
+        \item \(\p f = -\Red(\SS(F_{f}))\subset T^{\ast}X\)：「射影」（簡約）をとってひねる
+    \end{itemize}
+\end{frame}
+\section[層]{層理論}
+\subsection{定義}
+
+\begin{frame}
+    \frametitle{設定と記号}
+    \begin{itemize}
+        \item \(X\)：位相空間
+        \item \(\Op(X)\)：開集合のなす順序集合
+        \item \(I_P\)：\(P\in X\)の開近傍のなす有向順序集合
+        \item \(U\in \Op(X)\)：開集合
+        \item \(C^0(U)\)：\(U\)上の連続関数環
+        \item \((U_i)_{i\in I}\)：\(U\)の被覆．
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{簡単な例}
+
+    連続関数に対する2つの操作：
+    \begin{description}
+        \item[制限]\(f\in C^0(U)\)の\(V\subset U\)上の\(f\rvert_V\in C^0(V)\)への制限．
+        \[
+            \text{\(U\supset V\supset W\)ならば，}
+            \left.({f\rvert_V})\right\rvert_W=f\rvert_W.
+        \]
+        \item[はりあわせ]
+        \((f_i)_{i}\in\prod_{i\in I}^{}C^{0}(U_i)\)で\(f_i=f_j\) on \(U_i\cap U_j\)のとき，
+        \(f\rvert_{U_i}=f_i\)として\(f\in C^{0}(U)\)に貼り合わせ．
+    \end{description}
+
+    \bigskip
+    \begin{itemize}
+        \item 制限\(\to\)前層
+        \item 貼り合わせ\(\to\)層
+    \end{itemize}
+    として定式化
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{前層の定義}
+
+    \begin{definition}[前層]
+        \(\kk\)加群の前層\(\mathscr{F}\)とは\(\kk\)加群の族と\(\kk\)加群の射の族の組\[\left(
+        \left(\mathscr{F}(U)\right)_{U\in\Op(X)},
+        \left(\rho_{VU}\colon\mathscr{F}(U)\to\mathscr{F}(V)\right)_{(V\hookrightarrow U)}
+    \right)\]で次をみたすもののこと
+    \begin{enumerate}
+        %\renewcommand{\labelenumi}{({\arabic{enumi}})}
+        \item $\rho_{UU} = \id_{\mathscr{F}(U)}$ 
+        \item $W \subset V \subset U$ ならば, 
+        $\rho_{WU} = \rho_{WV} \circ \rho_{VU}$.\label{enum:res}
+    \end{enumerate}
+    \end{definition}
+\end{frame}
+\begin{frame}
+    \frametitle{前層の定義}
+
+    \begin{definition}[前層の射]
+        \(\kk\)加群の前層の射\(\mathscr{F}\to\mathscr{G}\)とは
+        \(\kk\)加群の射の族\[
+            (\phi_{U}\colon \mathscr{F}(U)
+            \to \mathscr{G}(U))_{U\in\Op(X)}
+        \]
+        で次を可換にするもののこと
+        \[\vcenter{\xymatrix@C=26pt@R=26pt{
+            \mathscr{F}(U)
+            \ar[r]^-{\phi_{U}}
+            \ar[d]^-{\rho^{\mathscr{F}}_{VU}}
+            &
+            \mathscr{G}(U)
+            \ar[d]^-{\rho^{\mathscr{G}}_{VU}} 
+            \\
+            \mathscr{F}(V)
+            \ar[r]^-{\phi_{V}}
+            &
+            \mathscr{G}(V)
+            }}
+        \]
+    \end{definition}
+\end{frame}
+\begin{frame}
+    \frametitle{前層の例}
+\begin{EG}
+    \(X\)を位相空間とする．
+    \begin{enumerate}
+        \item \(C_X^r\colon U\mapsto C_X^r(U)\coloneqq\left\{\text{\(U\)上の\(C^r\)級関数}\right\}\)は\(X\)上の
+        前層である．
+        \item \(
+            \mathscr{O}_X\colon U\mapsto 
+            \mathscr{O}_X(U)\coloneqq\left\{\text{\(U\)上の正則関数}\right\}
+        \)は\(X\)上の前層である．
+        \item \(
+            \mathscr{M}_X\colon U\mapsto 
+            \mathscr{M}_X(U)\coloneqq\left\{\text{\(U\)上の有理型関数}\right\}
+        \)は\(X\)上の前層である．
+        \item \(M\)をアーベル群とする．
+        \(U\mapsto M\)は\(X\)上の前層である．
+    \end{enumerate}
+\end{EG}
+\end{frame}
+
+\begin{frame}
+    \frametitle{前層の例}
+    \begin{EG}
+        \(E\to X\)を\(C^{\infty}\)ベクトル束とする．
+        \[
+            U\mapsto \Gamma(U;E)\coloneqq
+            \left\{s\colon U\to E;s\colon C^{\infty},\pi\circ s=\id_U\right\}
+        \]は前層である．
+    \end{EG}
+\end{frame}
+
+\begin{frame}
+    \frametitle{層の定義}
+    \begin{definition}[層]\label{def:sheaf}
+        \(\mathscr{F}\)：\(X\)上の\(\kk\)加群の前層．
+        
+        \(\mathscr{F}\)が\textbf{層} (sheaf) であるとは，
+        \(\forall U\in\Op(X)\)と
+        その開被覆\(\left(U_i\right)_{i\in I}\)に対して
+        \begin{enumerate}[(S1)]
+            \setcounter{enumi}{-1}
+            \item \(\mathscr{F}(\varnothing)=0\).
+            \item \(s\in\mathscr{F}(U)\)が各\(i\in I\)に対して\(U_i\)上\(s\rvert_{U_{i}}=0\)ならば，
+            \(s=0\).\label{sheaf-cond1}
+            \item \(\left(s_i\right)_i\in\prod_{i}\mathscr{F}(U_i)\)が
+            各\(i,j\in I\)で\(U_i\cap U_j\ne\varnothing\)となるものに対して\(U_i\cap U_j\)上\(s_i\rvert_{U_i\cap U_j}-s_j\rvert_{U_i\cap U_j}=0\)ならば，
+            \(s\in\mathscr{F}(U)\)で各\(U_i\)上\(s\rvert_i=s_i\)となるものが存在する．\label{sheaf-cond2}
+        \end{enumerate}
+    \end{definition}    
+\end{frame}
+
+\begin{frame}
+    \frametitle{層の定義}
+    層の射は前層としての射
+
+    \bigskip
+    記号を定める．
+    \begin{itemize}
+        \item \(\PSh(X)\coloneqq\left\{\text{\(X\)上の前層}\right\}\)
+        \item \(\Sh(X)\coloneqq\left\{\text{\(X\)上の層}\right\}\)
+        \item \(\Mod(\kk_X)\coloneqq\left\{\text{\(X\)上の\(\kk\)加群の層}\right\}\)
+        \item \(\Ab\coloneqq\left\{\text{アーベル群}\right\}\)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{切断関手}
+
+    \begin{DFN}[切断関手]
+        %\(F\in\Sh(X)\), 
+        \(U\in\Op(X)\)：fixed
+        \[
+            \Gamma(U;\blk)\colon \Sh(X)\to \Ab;\quad F\mapsto
+            \Gamma(U;F)=F(U)
+        \]
+    \end{DFN}    
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{層の例}
+    \begin{EG}\label{eg:sheaf}
+        \(X\)を位相空間とする．
+        \begin{enumerate}
+            \item 前層\(C_X^r\)は\(X\)上の層である．
+            \item 前層\(\mathscr{O}_X\)は\(X\)上の層である．
+            \item 前層\(\mathscr{M}_X\)は\(X\)上の層である．
+            \item \(M\)をアーベル群とする．前層\(M\colon U\mapsto M\)は\(X\)上の層ではない．
+            実際，\(X\)を2点からなる離散空間\(2=\left\{0,1\right\}\)とし，その上の
+            前層として\(M=\cc\)を考えると，
+            \(1\in\cc(\{0\})\), \(i\in\cc(\{1\})\)に対して，
+            \(\cc(\{0\}\cap\{1\})=\cc(\varnothing)=0\)
+            より，\(\rho_{\varnothing,{0}}(1)=0
+            =\rho_{\varnothing,{1}}(i)\)となるが，
+            \(2\)上の切断\(z\in\cc(2)\)で\(z\rvert_{\{0\}}=1,
+            z\rvert_{\{1\}}=i\)をみたすものは存在しない．
+            したがって，条件 (S\ref{sheaf-cond2}) が成り立たない．\label{eg:non-sheaf}
+        \end{enumerate}
+    \end{EG}    
+\end{frame}
+
+\begin{frame}
+    \frametitle{前層の例}
+    \begin{EG}
+        \(E\to X\)を\(C^{\infty}\)ベクトル束とする．
+        \[
+            C^{\infty}(E)\colon U\mapsto \Gamma(U;E)\coloneqq
+            \left\{s\colon U\to E;s\colon C^{\infty}, \pi\circ s=\id_U\right\}
+        \]は層である．
+    \end{EG}
+\end{frame}
+
+
+\subsection{層化と茎}
+
+\begin{frame}
+    \frametitle{層化}
+    層ではない前層に対して，
+    「最も近い」層を自然に対応させる．
+    \begin{THM}\label{thm:sheafification}
+        \(X\)上の任意の前層\(\mathscr{F}\)に対して，
+        \(X\)上の層\(\mathscr{F}^\dagger\)と
+        前層の射\(\theta\colon \mathscr{F}\to\mathscr{F}^\dagger\)で
+        次の普遍性をみたすものが
+        ただ一つ存在する．
+        \begin{quote}
+            任意の層 \(\mathcal{G}\in\Sh(X)\)と
+            前層の射\(\varphi\colon \mathscr{F}\to\mathscr{G}\)に
+            対し，層の射\(\varphi^\dagger\colon\mathscr{F}^\dagger
+            \to\mathscr{G}\)で，
+            \[\varphi^\dagger\circ \theta=\varphi\]をみたすものが
+            ただ一つ存在する．
+        \end{quote}
+    \end{THM}    
+\end{frame}
+
+\begin{frame}
+    \frametitle{茎の例から}
+    \begin{itemize}
+        \item \(X\)：例えばリーマン面，\(U\subset X\)：開集合
+        \item 正則関数\(f\in\OO_{X}(U)\)は
+        各点\(P\)のまわりで冪級数展開可能
+        \item 関数\(f\in \mathscr{O}_X(U)\)と\(g\in \mathscr{O}_X(V)\)が\(P\)の近くで等しいとは
+        
+        \begin{quote}
+            \(U\cap V\)に含まれる\(P\)の近傍\(W\)とって，
+            \(P\)のまわりの座標\(z\colon W\to z(W)\)
+            を用いて\(f,g\)を展開したとき，
+            収束冪級数として等しいということ
+        \end{quote}
+    \end{itemize}
+
+定義域の異なる関数（環）に対して，
+各点まわりに注目するという操作を茎として定式化．
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{茎の定義}
+    \begin{DFN}[茎]
+        \begin{itemize}
+            \item \(\mathscr{F}\in\Sh(X)\)
+            \item \(P\in X\)
+        \end{itemize}
+        \(\mathscr{F}\)の\(P\)での\textbf{茎} (stalk) \(
+            \mathscr{F}_P
+        \)を次で定める．
+        \[
+            \mathscr{F}_P\coloneqq
+            \varinjlim_{U\in I_P}\mathscr{F}(U).
+        \]
+    
+        \(\mathscr{F}(U)\to\mathscr{F}_P\)から定まる
+        \(s\in\mathscr{F}(U)\)の行き先を\(s_P\)とかき，
+        \(s\)の\textbf{芽} (germ) という．
+    \end{DFN}
+\end{frame}
+
+\begin{frame}
+    \frametitle{茎の定義}
+    \[
+        \mathscr{F}_{P}\cong
+        \left.\left(
+            \bigsqcup_{U\in I_P}\mathscr{F}(U)
+        \right)\right/\mathop{\sim}
+    \]
+ここで，\((f,U)\), \((g,V)\in \bigsqcup_{U\in I_P}\mathscr{F}(U)\)に
+対し，\[
+    (f,U)\sim(g,V)
+    \colon\Longleftrightarrow
+    \begin{cases}
+        \text{\(P\)の開近傍\(W\in I_P\)で\(W\subset U\cap V\)と}\\
+        \text{\(f\rvert_W=g\rvert_W\)をみたすものが存在する．}
+    \end{cases}
+\]
+つまり，\(P\)のまわりでの挙動が同じ切断を
+同一視した類が芽．
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{層化の構成}
+
+    開集合\(U\)に対し，
+    \[
+        \mathscr{F}^\dagger(U)\coloneqq
+        \left\{
+            (s^P)_{P\in U}\in\prod_{P\in U}^{}\mathscr{F}_P;
+            \begin{aligned}
+                \text{任意の\(P\in U\)に対し，近傍\(W\in I_P\cap U\)と}\\
+                \text{切断\(t\in\mathscr{F}(W)\)で，任意の\(Q\in W\)に対し，}\\            
+                \text{\(s^Q=t_Q\)となるものが存在する．}            
+            \end{aligned}
+        \right\}
+    \]
+    とおき，
+    制限射\(\mathscr{F}^\dagger(U)\to\mathscr{F}^\dagger(V)\)を
+    \((s^P)_{P\in U}\mapsto(s^P)_{P\in V}\)で定めると，
+    前層\(\mathscr{F}^\dagger\)が定まり，
+    \(\mathscr{F}^\dagger\)が層の条件をみたすことも確かめられる．
+
+    \begin{CMT}層化は茎を保つ．
+        \(\mathscr{F}_P=\mathscr{F}^\dagger_P\)
+    \end{CMT}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{層化の例}
+
+    \begin{EG}
+        \(M\colon U\mapsto M\)をアーベル群\(M\)から定まる前層とする．
+        \(M\)の層化\(M^\dagger\)は\[
+            M^\dagger(U)=\left\{
+            \text{\(U\)上の\(M\)に値をとる局所定数関数}\right\}
+        \]である．
+        \(M^\dagger\)を\(M_X\)とかき，\(X\)上の定数層と呼ぶ．
+    \end{EG}
+
+    \begin{PRP}
+        \[M_X(U)\cong M^{\# \pi_0(U)}\]
+        ここで，\(\pi_0(U)\)は\(U\)の連結成分の集合．
+    \end{PRP}
+
+\end{frame}
+
+
+
+
+
+\section[層係数コホモロジー]{層係数コホモロジー}
+\begin{frame}
+    \frametitle{層の全射・単射}
+    \begin{DFN}
+        \(X\)上の層の射\(\varphi\colon\mathscr{F}\to\mathscr{G}\)が
+        \begin{enumerate}
+            \item 単射とは各点\(x\)に対し，\(\varphi_x\colon\mathscr{F}_x\to\mathscr{G}_x\)が単射．
+            \item 全射とは各点\(x\)に対し，\(\varphi_x\colon\mathscr{F}_x\to\mathscr{G}_x\)が全射．
+        \end{enumerate}
+    \end{DFN}
+\end{frame}
+
+\begin{frame}
+    \frametitle{層の完全列}
+    \begin{DFN}
+        \[
+            \mathscr{F}\to
+            \mathscr{G}\to
+            \mathscr{H}
+            \quad
+            \text{in \(\Sh(X)\)}
+        \]が完全列であるとは各点\(x\)に対し，
+        \[
+            \mathscr{F}_x\to
+            \mathscr{G}_x\to
+            \mathscr{H}_x
+            \quad
+            \text{in \(\Mod(\kk)\)}
+        \]
+        が完全列であることである．
+    \end{DFN}    
+\end{frame}
+
+\begin{frame}
+    \frametitle{切断は左完全}
+    \begin{PRP}
+        \[
+            0\to F\to G\to H\to 0
+            \quad
+            \text{in \(\Sh(X)\)}
+        \]が完全列のとき
+        \[
+            0\to \Gamma(U;F)\to \Gamma(U;F)\to \Gamma(U;H)
+            \quad
+            \text{in \(\Ab\)}
+        \]は完全列．
+    \end{PRP}
+\end{frame}
+
+\begin{frame}
+    \frametitle{導来関手}
+    右完全でない度合いを定量化する量としてコホモロジーを導入
+\end{frame}
+
+
+
+
+
+
+
+
+\section[導来圏]{導来圏}
+
+\begin{frame}\frametitle{アーベル圏から導来圏まで}
+    \[\vcenter{\xymatrix@C=32pt@R=32pt{
+        \text{アーベル圏\(\cat\)}
+        \ar@{=>}[d]^-{\text{複体をとる}}
+        \\
+        \text{複体の圏\(\CCat\)}
+        \ar@{=>}[d]^-{\text{射の集合をホモトピー同値で割る}}
+        \\
+        \text{ホモトピー圏\(\KCat\)}
+        \ar@{=>}[d]^-{\text{局所化}}
+        \\
+        \text{導来圏\(\DCat\)}
+    }}\]
+\end{frame}
+\begin{frame}
+    \frametitle{導来圏の動機}
+    完全列
+    \[
+        0\to X\to Y\to Z\to 0
+    \]
+    を考える．
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{層係数コホモロジー}
+    空間\(X\)の上の層\(\mathscr{F}\)について，
+    コホモロジー
+    \[
+        H^i(X;\mathscr{F})
+    \]は重要な量．
+\end{frame}
+
+\begin{frame}
+    \frametitle{層係数コホモロジー}
+    計算するときには，``良い層''\(\mathscr{I}^i\)たちで分解して
+    \[\vcenter{\xymatrix@C=22pt@R=26pt{
+        \text{もとの層}\mathscr{F}
+        \ar@{~>}[d]^-{\text{分解}}
+        \\ 
+        \text{層の複体\((\mathscr{I}^i)\)}
+        \ar@{~>}[d]^-{H^i}
+        \\        
+        \text{コホモロジー}H^i(X;\mathscr{I})
+    }}\]
+    のようにする
+\end{frame}
+\begin{frame}
+    \frametitle{層係数コホモロジー}
+    もっと一般に，アーベル圏\(\mathscr{A}, \mathscr{B}\)に対して，
+    左完全関手\(F\colon \mathscr{A}\to \mathscr{B}\)があるとき，
+    \[
+        \rr^iF\colon\mathscr{A}\to \mathscr{B}
+    \]
+    を定めた
+\end{frame}
+
+\begin{frame}
+    \frametitle{問題点}
+    \begin{itemize}
+        \item 導来関手どうしの合成の計算が面倒
+        \item ``双対性''の定式化がしづらい
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{複体の圏}
+    \begin{Definition}[アーベル圏の複体の圏\(\mathsf{C}(\cat)\)]
+        \begin{description}\setlength{\leftskip}{-25pt}
+            \item[対象]：$\Ob(\Comp(\cat))=\left\{
+                X=\left(
+                    (X^n)_{n\in\zz},(d_X^{n})_{n\in\zz}
+                \right); 
+                d_X^{n+1}\circ d_X^{n}=0\quad  (n\in\zz)
+                \right\}$
+            \item[射]：$\Hom_{\Comp(\cat)}(X,Y)
+            =\{\text{$\cat$の複体の射}\}$
+        \end{description}
+    \end{Definition}
+
+複体の射\(f\colon X\to Y\)は，
+射の族$(f^n\colon X^n\to Y^n)_{n\in\zz}$で，次を可換にするもの．
+\begin{equation*}
+    \vcenter{\xymatrix@C=26pt@R=26pt{
+    \cdots \ar[r]
+    & 
+    X^{n}
+    \ar[r]^-{d_X^n}
+    \ar[d]^-{f^n}
+    &
+    X^{n+1}
+    \ar[r]
+    \ar[d]^-{f^{n+1}} 
+    &\cdots
+    \\
+    \cdots \ar[r]
+    & 
+    Y^{n}
+    \ar[r]^-{d_Y^n}
+    &
+    Y^{n+1}
+    \ar[r]
+    &\cdots
+    }}
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{ホモトピー圏}
+\begin{Definition}[$f,g\colon X\to Y$ in $\CCat$が0にホモトピック]
+    $\cat$の射の族$(s^n\colon X^n\to Y^{n-1})$で，
+    \begin{equation*}
+        f^n-g^n=d_Y^{n-1}\circ s^n+s^{n+1}\circ d_X^{n}\quad(n\in\zz)
+    \end{equation*}
+    となるものが存在すること．
+\end{Definition}    
+\begin{equation*}
+    \vcenter{\xymatrix@C=26pt@R=26pt{
+    \cdots \ar[r]
+    & 
+    X^{n}
+    \ar[r]%^-{d_X^n}
+    \ar[d]
+    &
+    X^{n}
+    \ar[r]^-{d_X^n}
+    \ar[d]^-{f^n-g^n}
+    \ar[dl]_-{s^n}
+    &
+    X^{n+1}
+    \ar[r]
+    \ar[d]
+    \ar[dl]^-{s^{+1}}
+    &\cdots
+    \\
+    \cdots \ar[r]
+    & 
+    Y^{n-1}
+    \ar[r]_-{d_Y^{n-1}}
+    &
+    Y^{n}
+    \ar[r]%_-{d_Y^n}
+    &
+    Y^{n+1}
+    \ar[r]
+    &\cdots
+    }}
+\end{equation*}
+%    $f-g\colon X\to Y$が0にホモトピックであるとき，
+%    $f$と$g$はホモトピック ($f\simeq g$)
+\end{frame}
+\begin{frame}
+    \frametitle{ホモトピー圏}
+\begin{Definition}[$f,g\colon X\to Y$ in $\CCat$が0にホモトピック]
+    $\cat$の射の族$(s^n\colon X^n\to Y^{n-1})$で，
+    \begin{equation*}
+        f^n-g^n=d_Y^{n-1}\circ s^n+s^{n+1}\circ d_X^{n}\quad(n\in\zz)
+    \end{equation*}
+    となるものが存在すること．
+\end{Definition}    
+これは同値関係．
+\[\Ht(X,Y)\coloneqq\{f\colon X\to Y\text{のホモトピー類}\}\]
+とおく．
+\end{frame}
+\begin{frame}\frametitle{ホモトピー圏}
+    \begin{Definition}[圏$\cat$のホモトピー圏$\KCat$]
+        \begin{description}\setlength{\leftskip}{-25pt}
+            \item[対象]：$\Ob(\KCat)=\Ob(\CCat)$
+            \item[射]：$\Hom_{\KCat}(X,Y)=\Hom_{\CCat}(X,Y)/\Ht(X,Y)$
+        \end{description}        
+    \end{Definition}
+    \begin{alertblock}{注意} 
+        $\KCat$はアーベル圏ではない！
+    \end{alertblock}
+    完全列の代わりに完全三角というものを用いる．
+\end{frame}
+\begin{frame}\frametitle{写像錐}
+    \begin{Definition}[$f$の写像錐$M(f)$]
+        \begin{align*}
+            \begin{cases}
+                M(f)^n=X^{n+1}\oplus Y^{n},\\
+                d^{n}_{M(f)}=\begin{bmatrix*}
+                    d_{X[1]}^n & 0\\
+                    f^{n+1} & d_Y^n\\
+                \end{bmatrix*}
+            \end{cases}
+        \end{align*}
+    \end{Definition}
+\end{frame}
+\begin{frame}\frametitle{写像錐}
+    射$\alpha(f)\colon Y\to M(f)$と$\beta(f)\colon M(f)\to X[1]$を
+    次で定める．
+    \begin{align}
+        \alpha(f)^{n}=\begin{bmatrix*}
+            0\\\id_{Y^n}
+        \end{bmatrix*},\\
+        \beta(f)^{n}=\begin{bmatrix*}
+            \id_{X^{n+1}}&0
+        \end{bmatrix*}.
+    \end{align}    
+\end{frame}
+\begin{frame}\frametitle{ホモトピー圏$\KCat$は三角圏}
+    \begin{definition}[三角]
+        射の列
+        \[
+            X\to Y\to Z\to X[1] \quad\text{in }\KCat    
+        \]
+        を三角という
+    \end{definition}
+    \[
+        X\to Y\to M(f)\to X[1]
+    \]
+    と同形な$\triangle$を完全三角という
+\end{frame}
+
+\section{層の導来圏}
+\begin{frame}\frametitle{層の複体の圏}
+    \begin{Definition}[層の導来圏\(\Domp^b(\kk_X)\)]
+        \[
+            \Domp^b(\kk_X)\coloneqq \Domp^b(\Mod(\kk_X))
+        \]
+    \end{Definition}
+\end{frame}
+
+\section{層の超局所台}
+\begin{frame}\frametitle{層の超局所台}
+    \(\Dompb(\kk_X)\ni F\mapsto \SS(F)\subset T^{\ast}X\)
+    \begin{Definition}[層の超局所台]
+        \(p\notin \SS(F)\)となるのは，
+        \(\exists U\in I_{p}\)で\(
+            \forall x_0\in X,
+            \varphi\colon X\to\rr
+        \)で\(d\varphi(x_0)\in U\)となるものに対し，\[
+            \indlim[x_0\in B]H^{n}(B;F)\simarr
+            \indlim[x_0\in B]H^{n}(B\cap \{\varphi<\varphi(x_0)\};F)
+        \]
+        となるものが存在するとき．
+    \end{Definition}
+\end{frame}
+
+\begin{frame}\frametitle{超局所台の性質}
+    \(F, F_i~ (i=1,2,3) \in\Dompb(\kk_M)\)
+    \begin{itemize}
+        \item 超局所台は\(T^{\ast}M\)の錐状閉集合
+        \item \(\SS(F)\cap{T^{\ast}_{M}M}=\supp(F)\)
+        \item \(F_1\to F_2\to F_3\to+1\): d.t.のとき，\(\SS(F_i)\subset\SS(F_j)\cup\SS(F_k)\) (\(j\ne k\))
+    \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{超局所台の性質}
+    \(F\in\Dompb(\kk_M)\)
+    \begin{THM}
+        \(SS(F)\)は包合的．
+    \end{THM}
+\end{frame}
+
+\begin{frame}\frametitle{超局所台の例}
+    \begin{enumerate}[a)]
+        \item \(F\)を連結多様体\(M\)上の零でない局所系とすると\(SS(F)=T^{\ast}_{M}M\).
+        \item \(Z\subset M\)：滑らかな閉部分多様体，\(F=\kk_Z\)とすると\(\SS(F)=T^{\ast}_{Z}M\).
+        \item \(\phi\)を\(\phi(x)=0\)となる\(x\)で\(d\phi(x)\ne0\)となる\(C^1\)級関数とする．\(Z\coloneqq\left\{x\in M;\phi(x)\geqq0\right\}\)とすると\[
+            \SS(\kk_Z)
+            =Z\times_{M}T^{\ast}_{M}M
+            \cup
+            \left\{
+                (x;\lambda d\phi(x));\phi(x)=0,\lambda\geqq0
+            \right\}.
+        \]
+    \end{enumerate}
+\end{frame}
+
+
+\section[劣微分]{ホモロジカル劣微分}
+
+\begin{frame}
+    \frametitle{補助的な定義}
+
+    \begin{itemize}
+        \item \(X\)：\(C^\infty\) 多様体
+        \item \(J^{1}(X)\coloneqq T^{\ast}X\times \rr\)：1ジェット空間，\((x,t;\xi)\)
+        \item \(\tilde{\lambda}=\lambda+dt\)：\(J^{1}(X)\)の接触形式
+    \end{itemize}
+    
+    \[
+        \vcenter{\xymatrix@C=26pt@R=26pt{
+        \left\{\tau>0\right\}\cap T^{\ast}(X\times\rr)
+        \ar[rd]_-{\tilde{\rho}_{t}}
+        \ar[rr]^-{\rho_{t}}
+        &&
+        T^{\ast}X
+        \\
+        &
+        J^{1}(X)
+        \ar[ru]_-{r}
+      }}
+    \]
+    \[
+        \rho_{t}\left(x,t;\xi,\tau\right)
+        \coloneqq
+        \left(x,\frac{\xi}{\tau}\right),
+        \quad
+        \tilde{\rho}_{t}\left(x,t;\xi,\tau\right)
+        \coloneqq
+        \left(x,\frac{\xi}{\tau},t\right),
+        \quad
+        r\colon\text{projection}.
+    \]
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{錐化と簡約}
+    \begin{definition}[錐化集合 (conification)]
+        \begin{itemize}
+            \item \(L\subset T^{\ast}X\)：滑らかなラグランジュ部分多様体
+        \end{itemize}
+        \[
+            \Cone(L)\coloneqq
+            \rho_{t}^{-1}(L)\subset 
+            T^{\ast}X\times T^{\ast}\rr
+            \colon\text{\((n+2)\)次元部分多様体}
+        \]
+    \end{definition}
+    
+    \begin{definition}[簡約集合 (reduction)]
+        \begin{itemize}
+            \item \(A\subset T^{\ast}X\times T^{\ast}\rr\)：錐状部分集合
+        \end{itemize}
+        \[\Red(A)\coloneqq\rho_{t}(A\cap\left\{\tau>0\right\})\]
+    \end{definition}
+
+\end{frame}
+\begin{frame}
+    \frametitle{錐化と簡約}
+
+    \begin{CLM}
+        \(\Red(\Cone(L))=L\subset T^{\ast}X\)
+    \end{CLM}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{層の representative}
+
+    \begin{itemize}
+        \item \(X\): \(C^\infty\) 多様体
+        \item \(\mathbf{k}\): 単位元を持つ大域次元が有限な可換環
+    \end{itemize}
+    
+    \begin{definition}[層の representative]
+        \begin{itemize}
+            \item \(F\in \Dompb(\kk_{X\times \rr})\)に対し，
+            次の集合\(\mathrm{R}(F)\)を\(F\)の representative という．
+        \end{itemize}
+        \[\mathrm{R}(F)\coloneqq\Red(\SS(F))\subset T^{\ast}X\]
+    \end{definition}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{エピグラフ}
+    
+    \begin{definition}[エピグラフ (epigraph)]
+        \begin{itemize}
+            \item \(f\colon X\to \rr\)に対し，
+            次の集合\(\epi(f)\)を\(f\)のエピグラフという．
+        \end{itemize}
+        \[
+            \epi(f)\coloneqq
+            \left\{(x,t)\in X\times \rr;f(x)\leqq t\right\}.
+        \]
+    \end{definition}
+    \(\epi(f)\)を\(Z_f\)ともかく．
+    エピグラフに台を持つ層を\(
+            F_{f}\coloneqq\kk_{\epi(f)}\)で表す．
+    \begin{definition}[ホモロジカル劣微分]
+        下半連続関数\(f\colon X\to \rr\)に対し，
+        \(f\)の劣微分\(\p f\)とは
+        \[\p f\coloneqq \mathrm{R}(F_{f})^{a}\]
+    \end{definition}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{\(C^1\)級関数の劣微分は1点}
+    \begin{NTN}
+        \begin{itemize}
+            \item \(\mres[\partial f]{x}=\partial f\cap T^{\ast}_{x}X\)
+            \item \(\partial f(x)=\mres[\partial f]{x}\)
+        \end{itemize}
+    \end{NTN}
+    \begin{EG}
+        \(f\in C^{1}(X)\)とすると\[
+            \mres[\partial f]{x}=\left\{df(x)\right\}.
+        \]
+    \end{EG}
+\end{frame}
+
+\begin{frame}
+    \frametitle{劣微分の特徴づけ}
+    劣微分は\(\epi(f)\)上の定数層の超局所台の計算に帰着．
+
+    \(\leadsto\)等位集合コホモロジーの局所的な振る舞いを見れば良い．
+    \begin{DFN}
+        \(f\colon X\to \rr\)：連続関数 (!?)
+        \begin{itemize}
+            \item \(x\in X\)が\(f\)の特異点とは次が同型でないことをいう．\[
+                \indlim[U\ni x,\epsilon\to0]
+                H^{\ast}(U\cap f^{<\epsilon+a})
+                \to
+                \indlim[U\ni x,\epsilon\to0]
+                H^{\ast}(U\cap f^{<a})
+                \quad\text{ただし\(a=f(x)\)}
+            \]
+            \item \(x\)が臨界点とは，
+            列\((\phi_n,x_n)\in C^{1}(X)\times X\)で
+            \(f-\phi_n\)が\(x_n\)で特異かつ\(x_n\to x\)かつ
+            \(d\phi_n(x_n)\to0\)となるものが存在することをいう．
+        \end{itemize}
+    \end{DFN}
+\end{frame}
+
+\begin{frame}
+    \frametitle{劣微分の特徴づけ}
+    \begin{PRP}
+        \(f\colon X\to \rr\).
+        \(\xi\in\mres[\partial f]{x}\)となるのは，
+        \(x\)が\(x\mapsto f(x)-\inner<\xi,x>\)の臨界点となるときである．
+    \end{PRP}
+\end{frame}
+
+
+\section{References}
+
+\begin{frame}[allowframebreaks]{References}
+    \begin{thebibliography}{90}\beamertemplatetextbibitems
+        \bibitem[Ike24]{Ike24} 池 祐一, 
+        層理論と層のモース理論, \url{https://drive.google.com/file/d/1x1ibUAqXxNQHSLJrIYg72Rbu6O-043JZ/view?usp=drive_link}.
+        \bibitem[KS90]{KS90} Kashiwara, Schapira, 
+        \textit{Sheaves on Manifolds}, Springer, 1990.
+        \bibitem[Vic13]{Vic13} Vichery, 
+        \textit{Homological Differential Calculus}, \url{https://doi.org/10.48550/arXiv.1310.4845}.
+    \end{thebibliography}
+\end{frame}
+
+\begin{comment}
+\begin{frame}[noframenumbering]
+aaa
+\end{frame}
+\end{comment}
+
+\end{document}
