@@ -21,7 +21,8 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[10pt, a4paper, dvipdfmx,leqno]{jsarticle}
+%\documentclass[10pt, a4paper, dvipdfmx,leqno]{jsarticle}
+\documentclass[uplatex,10pt, a4paper, dvipdfmx,leqno]{jsarticle} 
 
 % ------------------------
 % usepackage
@@ -58,7 +59,7 @@
 % ================================
 % パッケージを追加する場合のスペース 
 \usepackage[dvipdfmx]{hyperref}
-\usepackage{xcolor}
+%\usepackage{xcolor}
 \definecolor{darkgreen}{rgb}{0,0.45,0} 
 \definecolor{darkred}{rgb}{0.75,0,0}
 \definecolor{darkblue}{rgb}{0,0,0.6} 
@@ -248,14 +249,6 @@
 % コマンドを追加する場合のスペース 
 %\newcommand{\OO}{\mcal{O}}
 
-\usepackage{tcolorbox}
-
-\newtcolorbox{mybox}{empty,% 一回全部消すよ〜
-breakable,% 箱のページまたぎを許すよ〜
-underlay={% 色塗って線引くよ〜
-\fill[black!5] (frame.north west) rectangle (frame.south east);% 色塗ったよ〜
-\draw[line width=2pt] ([xshift=1pt]frame.north west)--([xshift=1pt]frame.south west);% 線引いたよ〜幅 2pt の線だから 1pt ずらしておこうね〜
-}}
 
 
 
@@ -512,7 +505,7 @@ underlay={% 色塗って線引くよ〜
 
 
 
-\newenvironment{thm}{\begin{mybox}\begin{THM}}{\end{THM}\end{mybox}}
+%\newenvironment{thm}{\begin{mybox}\begin{THM}}{\end{THM}\end{mybox}}
 
 
 
