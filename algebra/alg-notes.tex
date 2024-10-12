@@ -490,7 +490,55 @@
 この空間を\(W\)の\textbf{被零化空間} (annihilated space) とよび，
 記号\ruby{\(W^{\top}\)}{ダブリュートップ}で表す．
 
+\chapter{環上の加群}
 
+\section{準同型加群}
+\subsubsection*{自身との同型}
+
+\(A\)を環とする．\(A\)は自分自身\((A,A)\)両側加群と見なせるので，
+\(\Hom_{A}(A,M)\)は左\(A\)加群の構造を持つ．
+\begin{PRP}
+    \(M\)を左\(A\)加群とする．
+    次の射\(\ev_{1}\colon\Hom_{A}(A,M)\to M\)は同型である．
+    \[
+        \ev_{1}(\varphi)=\varphi(1).
+    \]
+\end{PRP}
+\begin{proof}
+    \(A\)加群の射\(h\colon M\to \Hom_{A}(A,M)\)を\[
+        h(x)\coloneqq (a\mapsto a\cdot x)
+    \]で定める．\(h\)が\(\ev_{1}\)の逆射になることを示せばよい．
+
+    \(\varphi\in \Hom_{A}(A,M)\)とする．
+    \begin{align*}
+        (h\circ\ev_{1})(\varphi)
+        &=h(\varphi(1))\\
+        &=h(\varphi(1))
+    \end{align*}
+    である．任意の\(b\in A\)に対して，
+    \begin{align*}
+        h(\varphi(1))(b)
+        &=b\cdot\varphi(1)\\
+        &=\varphi(b)
+    \end{align*}
+    が成り立つので
+    \[
+        h(\varphi(1))=\varphi
+    \]
+    である．
+    したがって\(h\circ\ev_{1}=\id_{\Hom_{A}(A,M)}\)となる．
+
+    \(x\in M\)とする．
+    \begin{align*}
+        (\ev_{1}\circ h)(x)
+        &=\ev_{1}(h(x))\\
+        &=h(x)(1)\\
+        &=1\cdot x\\
+        &=x\\
+        &=\id_{M}(x)
+    \end{align*}
+    である．
+\end{proof}
 %===============================================
 % 参考文献スペース
 %===============================================
