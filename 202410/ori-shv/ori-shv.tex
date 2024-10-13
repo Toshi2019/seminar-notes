@@ -542,6 +542,8 @@
 %
 \newtheorem{mythm}{定理}[section]
 \newtheorem{mydfn}[mythm]{定義}
+\newtheorem{mylmm}[mythm]{補題}
+\newtheorem{myprp}[mythm]{命題}
 
 
 \newtcolorbox{thmbox}{empty,% 一回全部消すよ〜
@@ -551,6 +553,14 @@ underlay={% 色塗って線引くよ〜
 \draw[line width=2pt] ([xshift=1pt]frame.north west)--([xshift=1pt]frame.south west);% 線引いたよ〜幅 2pt の線だから 1pt ずらしておこうね〜
 }}
 
+\newtcolorbox{prpbox}{empty,% 一回全部消すよ〜
+breakable,% 箱のページまたぎを許すよ〜
+underlay={% 色塗って線引くよ〜
+\fill[black!5] (frame.north west) rectangle (frame.south east);% 色塗ったよ〜
+\draw[line width=2pt] ([xshift=1pt]frame.north west)--([xshift=1pt]frame.south west);% 線引いたよ〜幅 2pt の線だから 1pt ずらしておこうね〜
+}}
+
+
 \newtcolorbox{dfnbox}{empty,% 一回全部消すよ〜
 breakable,% 箱のページまたぎを許すよ〜
 underlay={% 色塗って線引くよ〜
@@ -558,8 +568,18 @@ underlay={% 色塗って線引くよ〜
 \draw[line width=2pt] ([xshift=1pt]frame.north west)--([xshift=1pt]frame.south west);% 線引いたよ〜幅 2pt の線だから 1pt ずらしておこうね〜
 }}
 
+\newtcolorbox{lmmbox}{empty,% 一回全部消すよ〜
+breakable,% 箱のページまたぎを許すよ〜
+underlay={% 色塗って線引くよ〜
+\fill[black!5] (frame.north west) rectangle (frame.south east);% 色塗ったよ〜
+%\draw[line width=2pt] ([xshift=1pt]frame.north west)--([xshift=1pt]frame.south west);% 線引いたよ〜幅 2pt の線だから 1pt ずらしておこうね〜
+}}
+
+
 \newenvironment{thm}{\begin{thmbox}\begin{mythm}}{\end{mythm}\end{thmbox}}
 \newenvironment{dfn}{\begin{dfnbox}\begin{mydfn}}{\end{mydfn}\end{dfnbox}}
+\newenvironment{lmm}{\begin{lmmbox}\begin{mylmm}}{\end{mylmm}\end{lmmbox}}
+\newenvironment{prp}{\begin{prpbox}\begin{myprp}}{\end{myprp}\end{prpbox}}
 
 % 枠つき環境ここまで
 %=======================================================
@@ -603,7 +623,31 @@ underlay={% 色塗って線引くよ〜
 \maketitle
 
 \section{局所自由層}
+\subsection{局所的な条件について}\label{ssec:locality}
 
+以後，「層が局所的に同型」という形の条件をよく用いる．
+これについては次の2つの表現がある．
+\begin{prp}
+    \(F\)と\(G\)を\(X\)上の層とする．
+    次の条件は同値である．
+    \begin{enumerate}[(i)]
+        \item 各点\(x\)に対し，開近傍\(U\)で\(\mres[F]{U}\cong\mres[G]{U}\)となるものが存在する．
+        \item \(X\)の開被覆\((U_i)_{i\in I}\)で，各\(i\)に対し\(\mres[F]{U_{i}}\cong\mres[G]{U_{i}}\)となるものが存在する．
+    \end{enumerate}
+\end{prp}
+\begin{proof}
+    (i)\(\Rightarrow\)(ii)：
+    \(X\)の各点\(x\)に対し開近傍\(U_x\)で\(
+        \mres[F]{U_{x}}\cong\mres[G]{U_{x}}
+    \)となるものが存在する．
+    \((U_x)_{x\in X}\)は\(X\)の開被覆である．
+
+    (ii)\(\Rightarrow\)(i)：
+    \((U_i)_{i\in I}\)を\(X\)の開被覆で
+    各\(U_i\)に対し\(\mres[F]{U_{i}}\cong\mres[G]{U_{i}}\)となるものとする．
+    \(x\in X\)とすると\(x\in U_{i}\)となる\(i\in I\)が存在する．
+\end{proof}
+\subsection{局所自由層}
 \(X\)を局所コンパクト空間とする．
 \(\cA\)を\(X\)上の環とする．
 まず，局所自由層を定義しよう．
@@ -621,6 +665,10 @@ underlay={% 色塗って線引くよ〜
     階数1の局所自由層のことを\textbf{可逆層} (invertible sheaf) とよぶ．
 \end{dfn}
 
+\ref{ssec:locality}節のことばを用いると，
+\(\cL\)が局所自由層であるとは，
+\(\cL\)が局所的に\(\cA^{\oplus k}\)と同型であるということである．
+
 \(\bk\)を大域次元が有限な環とする．
 \(\cA=\bk_X\)のとき，局所自由層は局所定数層である．
 可逆層は局所的に\(\bk_X\)と同型な層である．
@@ -629,6 +677,181 @@ underlay={% 色塗って線引くよ〜
 \(L^{\otimes -1}\coloneqq\RHOM_{\bk_X}(L,\bk_X)\)とおく．
 \(\bk\)が体ならば，\(\bk_X\)は入射的なので，
 \(\RHOM_{\bk_X}(L,\bk_X)=\HOM_{\bk_X}(L,\bk_X)\)が成り立つ．
+
+\section{向きづけ層}
+
+\subsection{対合律}
+
+\(A_X\)を\(A\)をファイバーとする定数層とする．
+\[
+    \rmD'F\coloneqq \RHOM_{A_X}(F,A_X)
+\]
+とおく．
+次の公式が成り立つ．
+
+\begin{thm}[{\cite[演習III.3]{KS90}}]\label{thm:ori-dual}
+    \(X\)を位相空間とする．
+    \(F\)を\(\ZZ_X\)と局所的に同型な層とする．
+    このとき，次の同型がある．\[
+        F\ttens[]F\cong \ZZ_X,
+        \quad
+        \rmD'_{X} F\cong F.
+    \]
+\end{thm}
+このノートだけの用語で定理\ref{thm:ori-dual}を
+\(F\)の対合律 (involution law) とよぶことにする．
+
+証明にあたり，次の事実に注意しよう．
+\begin{lmm}\label{lmm:pm1}
+    \(\varphi\colon\ZZ\to\ZZ\)をアーベル群の同型とする．
+    このとき\(\varphi\)は\(\pm\id_{\ZZ}\)のどちらか一方である．
+\end{lmm}
+
+\begin{proof}
+    \(\varphi(1)=m\)とおくと
+    任意の整数\(n\)に対し\(\varphi(n)=n\varphi(1)=nm\)となるので，
+    \(\ZZ\)から\(\ZZ\)への射は\(m\)倍写像である．
+    \(\psi\colon\ZZ\to\ZZ\)を\(\varphi\)の逆射とすると
+    \[
+        1=\psi(\varphi(1))=\psi(m)=m\psi(1)
+    \]
+    となる．\(\ZZ\)の可逆元は\(\pm1\)のみであるから，
+    \[
+        m=\pm1,
+        \quad
+        \psi(1)=\pm1
+        \quad
+        \text{（複合同順）}
+    \]
+    である．
+\end{proof}
+
+\begin{proof}[{定理\ref{thm:ori-dual}の証明}]
+    1つ目の主張を示す．
+    \(X\)の開被覆\((U_i)_{i\in I}\)と各\(U_i\)上の層の射
+    \[
+        \theta_i\colon\mres[F]{U_{i}}\simar\mres[\ZZ_X]{U_{i}}
+    \]で同型であるものが存在する．
+    補題\ref{lmm:pm1}より，この\((\theta_i)_{i}\)は各\(i\)に対し
+    \(\theta_i=\pm1\)とかける．実際，
+    \(x\in U_i\)とすると，\(s_x\in F_x\cong\ZZ\)に対し\(
+        (\theta_{i})_x(s_x)=\pm{s_x}
+    \)となる．
+    したがって，各\(i,j\)に対して    
+    \begin{align*}
+        \mres[\theta_{i}\otimes\theta_{i}]{{U_{i}\cap U_{j}}}
+        &\cong
+        (\pm1)\ttens[](\pm1)\\
+        &\cong
+        1\\
+        &\cong
+        \mres[\theta_{j}\otimes\theta_{j}]{{U_{i}\cap U_{j}}}
+    \end{align*}
+    となるので\((\theta_i\ttens[]\theta_i)_i\)から層の射
+    \[
+        \theta\tens[]\theta\colon F\tens[]F
+        \to\ZZ_X\tens[]\ZZ_X
+    \]
+    がひきおこされる．これと同型
+    \[
+        \ZZ_X\tens[]\ZZ_X\to\ZZ_X
+    \]
+    の合成を\(\varphi\)で表す．
+    各点\(x\in X\)に対して
+    \[
+        \varphi_x\colon F_x\ttens[]F_x\simar\ZZ\ttens[]\ZZ\cong(\ZZ_{X})_x
+    \]が成り立つので，\(\varphi\)は同型である．
+
+    1つ目の主張から2つ目の主張が従うことを示す．
+    随伴\((\ttens[],\HOM)\)から
+    \begin{align*}
+        \Hom_{\ZZ_X}(F\ttens[]F,\ZZ_X)
+        \cong
+        \Hom_{\ZZ_X}(F,\HOM_{\ZZ_X}(F,\ZZ_X))
+    \end{align*}
+    である．
+    同型は同型に送られるので同型\(
+        F\ttens[]F\to \ZZ_X
+    \)は同型\(F\to\HOM_{\ZZ_X}(F,\ZZ_X)=\rmD'F\)に送られる．
+\end{proof}
+
+定理\ref{thm:ori-dual}によると，\(\ZZ_X\)上の可逆層は対合律をみたす．
+\subsection{向きづけ層}
+
+\(A\)を可換環とし\(A_X\)で\(A\)をファイバーとする定数層とする．
+\(\ori_{X}^{\ZZ}\)で\(\ZZ\)上の向きづけ層，
+\(\ori_X\)で\(A\)上の向きづけ層を表す．
+\(\ori_X\cong\ori^{\ZZ}_{X}\ttens[]A_X\)である．
+
+\(\ori_X\)も対合律をみたす．
+
+\begin{prp}[{\cite[命題3.3.4]{KS90}}]
+    \(f\colon Y\to X\)をファイバー次元が\(l\)の位相的しずめ込みとする．
+    \begin{enumerate}[(i)]
+        \item \(\omega_{Y/X}^\zz\in\Dompl(\zz_Y)\)と
+        \(\ori_{Y/X}^\zz\in\Mod(\zz_Y)\)を\(\zz\)上の
+        双対化複体と向きづけ層とするとき，次の同型が成り立つ．\[
+            \omega_{Y/X}\cong A_Y
+            \mathop{\otimes}\limits_{\zz_Y}
+            \omega_{Y/X}^\zz, 
+            \quad
+            \ori_{Y/X}\cong A_Y
+            \mathop{\otimes}\limits_{\zz_Y}
+            \ori_{Y/X}^\zz. 
+        \]
+        \item 次の自然な同型が成り立つ．
+        \begin{align*}
+                \ori_{Y/X}\otimes \ori_{Y/X}\cong A_Y,\\
+                \HOM(\ori_{Y/X},A_Y)\cong A_Y.
+        \end{align*}
+        \item \(g\colon Z\to Y\)を連続写像で
+        \(f\circ g\)がファイバー次元\(m\)の位相的しずめ込み
+        になるものとする．\(F\in\Dompl(A_X)\)に対して，
+        \[
+            g^{!}\circ f^{-1}F
+            \cong
+            \left(f\circ g\right)^{-1}F
+            \otimes \ori_{Z/X}
+            \otimes g^{-1}\ori_{Y/X}[m-l]
+        \]が成り立つ．
+    \end{enumerate}
+\end{prp}
+
+
+\[
+    \ori_{Y/X}\otimes \ori_{Y/X}
+    \cong
+    \left(\ori_{Y/X}^\zz\otimes \ori_{Y/X}^\zz\right)\otimes A_Y
+    \cong Z_Y\otimes A_Y
+    \cong A_Y
+\]
+である．
+
+\paragraph{うめこみについて}
+以降，\(A=\cc\)とし\(\cc\)上の向きづけ層を考える．
+\(i\colon M\hookrightarrow X\)を閉埋め込みとし，
+\(a_M\colon M\to\{\pt\}\)と\(a_X\colon X\to\{\pt\}\)を
+一点への射とすると
+\begin{align*}
+    \ori_{M/X}[-n]
+    &\cong \omega_{M/X} \cong i^{!}\cc_X\\
+    &\cong i^{!}a_{X}^{-1}\cc\\
+    &\cong (a_{X}\circ i)^{-1}\cc\ttens[\cc_M]\ori_{M}\ttens[\cc_M]i^{-1}\ori_{X}[n-2n]\\
+    &\cong a_{M}^{-1}\cc\ttens[\cc_M]\ori_{M}\ttens[\cc_M]i^{-1}\ori_{X}[-n]\\
+    &\cong \cc_{M}\ttens[\cc_M]\ori_{M}\ttens[\cc_M]i^{-1}\ori_{X}[-n]\\
+    &\cong \ori_{M}\ttens[\cc_M]i^{-1}\ori_{X}[-n]
+\end{align*}
+が成り立つ．\(\omega_{M/X}\cong\ori_{M/X}[-n]\)なので，
+\begin{equation}\label{eq:rel-ori1}
+    \ori_{M/X}\cong \ori_{M}\ttens[\cc_M]i^{-1}\ori_{X}    
+\end{equation}
+である．\(X\)上の層\(\ori_X\)と制限\(
+    \mres[\ori_{X}]{M}=i^{-1}\ori_{X}
+\)を\(M\)上で同一視すると，上の式は
+\begin{equation}\label{eq:rel-ori2}
+    \ori_{M/X}\cong \ori_{M}\ttens \ori_{X}    
+\end{equation}
+とも書ける．（\cite[p.130]{KS90}の記法．）
 
 \section{超関数}
 \begin{equation}\label{eq:Bdefs}
@@ -690,6 +913,21 @@ underlay={% 色塗って線引くよ〜
 
 
 
-
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    %\bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, \textit{Differential Topology}, Prentice-Hall, 1974.
+    \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+      \textit{Sheaves on Manifolds}, 
+      Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+    %\bibitem[Hat89]{Hat89} 服部晶夫, 多様体 増補版, 岩波全書 288, 岩波書店, 1989.
+    \bibitem[Sch04]{Sch04} Pierre Schapira, 
+      \textit{Sheaves: from Leray to Grothendieck and Sato}, 
+      S\'eminaires et Congres 9, Soc. Math. France, pp.173--181, 2004.
+    %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+\end{thebibliography}
+%===============================================
+  
 
 \end{document}

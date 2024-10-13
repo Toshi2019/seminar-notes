@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1728639981.26636 "ori-shv.dvi" "ori-shv.pdf" "ori-shv" 1728639982.22752 0
-  "ori-shv.dvi" 1728639981.09791 8952 7fdefc8aa88dbfae64505bbfe7b17841 "latex"
+["dvipdf"] 1728816219.68587 "ori-shv.dvi" "ori-shv.pdf" "ori-shv" 1728816220.89163 0
+  "ori-shv.dvi" 1728816219.4897 32776 aef9611a6269ec50b5b4d994ff005cac "latex"
   (generated)
   "ori-shv.pdf"
   (rewritten before read)
-["latex"] 1728639979.48399 "/Users/giuseppe/seminar-notes/202410/ori-shv/ori-shv.tex" "ori-shv.dvi" "ori-shv" 1728639982.22154 0
-  "/Users/giuseppe/seminar-notes/202410/ori-shv/ori-shv.tex" 1728639964.13009 20200 367d6e19a216cd67482b51ed20efb7d0 ""
+["latex"] 1728816217.23934 "/Users/giuseppe/seminar-notes/202410/ori-shv/ori-shv.tex" "ori-shv.dvi" "ori-shv" 1728816220.88065 0
+  "/Users/giuseppe/seminar-notes/202410/ori-shv/ori-shv.tex" 1728816207.06901 29444 c44e4ad38947c25d184bea263b1643a5 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -46,9 +46,11 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1136768653 1316 b636689f1933f24d1294acdf6041daaa ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss12.tfm" 1136768653 1324 37b971caf729d7edd9cbb9f9b0ea76eb ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss8.tfm" 1136768653 1296 d77f431d10d47c8ea2cc18cf45346274 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlgothr-h.tfm" 1645134245 868 d00a8d6d9ddcb5aa8cde656e259e4d35 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlgothr-v.tfm" 1645134245 588 e1ae0e7b22becffa2385cb523a787c37 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlminr-h.tfm" 1645134245 868 d00a8d6d9ddcb5aa8cde656e259e4d35 ""
@@ -259,9 +261,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ori-shv.aux" 1728639981.09612 563 233c8e336486ce57045813fd8bd0b5fa "latex"
-  "ori-shv.out" 1728639981.09712 204 0fc9b8a55d26650b1727fc2871ae52d3 "latex"
-  "ori-shv.tex" 1728639964.13009 20200 367d6e19a216cd67482b51ed20efb7d0 ""
+  "ori-shv.aux" 1728816219.4873 1726 80c9e92d3f544f82ab5f9548bed53f0b "latex"
+  "ori-shv.out" 1728816219.48902 699 c11c49d7c71cc86eaf2fff81e4f2d2e2 "latex"
+  "ori-shv.tex" 1728816207.06901 29444 c44e4ad38947c25d184bea263b1643a5 ""
   (generated)
   "ori-shv.aux"
   "ori-shv.dvi"
