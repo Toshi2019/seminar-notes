@@ -1,14 +1,15 @@
 # Fdb version 4
-["dvipdf"] 1728972032.22635 "ori-shv.dvi" "ori-shv.pdf" "ori-shv" 1728972034.16644 0
-  "ori-shv.dvi" 1728972031.98624 28472 b09f599a6d118ef6ee92339b30ebbf41 "latex"
+["dvipdf"] 1729002521.63019 "20241016.dvi" "20241016.pdf" "20241016" 1729002523.44414 0
+  "20241016.dvi" 1729002521.32121 59616 77a5593c57117ca384e24663837f5b53 "latex"
   (generated)
-  "ori-shv.pdf"
+  "20241016.pdf"
   (rewritten before read)
-["latex"] 1728972029.15299 "/Users/giuseppe/seminar-notes/202410/ori-shv/ori-shv.tex" "ori-shv.dvi" "ori-shv" 1728972034.15578 0
-  "/Users/giuseppe/seminar-notes/202410/ori-shv/ori-shv.tex" 1728972024.85292 29457 24f207048a657217cd7f03ce1adf7fa2 ""
+["latex"] 1729002518.06302 "/Users/giuseppe/seminar-notes/202410/20241016/20241016.tex" "20241016.dvi" "20241016" 1729002523.43423 0
+  "/Users/giuseppe/seminar-notes/202410/20241016/20241016.tex" 1729002514.18178 40474 641a438faa89fcf99562b6dacfa2c54f ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcss1440.tfm" 1136768653 1536 20b080237b56d4b67bdb3a5b0a64b2f8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -165,6 +166,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty" 1591045760 12594 0d51ac3a545aaaa555021326ff22a6cc ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1359763108 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty" 1359763108 13829 94730e64147574077f8ecfea9bb69af4 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/eucal.sty" 1359763108 1354 3b57e8e5596e08010088a7c0c36760f9 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd" 1359763108 961 6518c6525a34feb5e8250ffa91731cff ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd" 1359763108 961 d02606146ba5601b5645f987c92e6193 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1686341992 2222 499d61426192c39efd8f410ee1a52b9c ""
@@ -180,12 +182,14 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/atbegshi-ltx.sty" 1705352648 3045 273c666a54e60b9f730964f431a56c1b ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/atveryend-ltx.sty" 1705352648 2462 6bc53756156dbd71c1ad550d30a3b93f ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty" 1705352648 5319 2b738d02ce36ada6dcdd9534940db0ee ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmss.fd" 1705352648 2374 aa4b7f3486fd0e2c4239f39c19432915 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/bxjatoucs/bxjatoucs.sty" 1571867428 9159 ebd68ea70b64dbc04bdc806c9afa9ea1 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/environ/environ.sty" 1399239813 4378 f429f0da968c278653359293040a8f52 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/fancybox/fancybox.sty" 1274111957 27261 5ae6156674330dc345adb79b6e5d8966 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/footmisc/footmisc.sty" 1688586963 21399 e9fa1517a82f349507e998594ef20b82 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/fundus-calligra/calligra.sty" 1334709462 2329 9b6efb7033ac4e81c6d0aa3aaa8bb7f1 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/dvipdfmx.def" 1663965824 12296 04d6453afafd99986deba3629756d9ec ""
@@ -261,10 +265,10 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ori-shv.aux" 1728972031.98469 1726 80c9e92d3f544f82ab5f9548bed53f0b "latex"
-  "ori-shv.tex" 1728972024.85292 29457 24f207048a657217cd7f03ce1adf7fa2 ""
+  "20241016.aux" 1729002521.31814 1014 33b6e51ea0b47ec2f23f866a15761730 "latex"
+  "20241016.tex" 1729002514.18178 40474 641a438faa89fcf99562b6dacfa2c54f ""
   (generated)
-  "ori-shv.aux"
-  "ori-shv.dvi"
-  "ori-shv.log"
+  "20241016.aux"
+  "20241016.dvi"
+  "20241016.log"
   (rewritten before read)
