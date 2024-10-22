@@ -1,0 +1,27 @@
+\frametitle{Two-column and image}
+\begin{columns}[c]
+   \begin{column}{.4\textwidth}
+    \centering
+    \includegraphics[keepaspectratio,width=.8\textwidth]{NIT_Logo.pdf}
+   \end{column}
+   %
+   \begin{column}{.6\textwidth}
+    \metroset{block=fill}
+    \begin{tcolorbox}[title=Two-column code]
+     \footnotesize
+    \begin{verbatim}
+\begin{columns}[m]
+ \begin{column}{.4\textwidth}
+  \centering
+  \includegraphics[..]{...}
+ \end{column}
+ %
+ \begin{column}{.6\textwidth}
+   Some content...
+ \end{column}
+\end{columns} \end{verbatim}
+    \end{tcolorbox}
+    プレゼンではtwo-columnをよく使う．
+   \end{column}
+  \end{columns}
+

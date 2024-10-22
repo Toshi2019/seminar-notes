@@ -1,0 +1,1359 @@
+%\documentclass[12pt]{article}
+\documentclass[uplatex,dvipdfmx,a4paper,10pt,draft]{jsarticle} 
+
+
+
+
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{bm}
+\usepackage{calligra}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage[mathcal]{eucal}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+
+\usetikzlibrary{cd}
+\usetikzlibrary{arrows.meta}
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+\usepackage[dvipdfmx]{hyperref}
+%\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+
+%\usepackage[mathscr]{euscript} % mathscr のフォントを変更
+
+%=================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\usepackage{tcolorbox}
+\tcbuselibrary{listings,breakable, skins, theorems}
+%\tcbuselibrary{breakable}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem{Fact*}{事実}
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+\newcommand{\bk}{\mathbf{k}}
+
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+%\newcommand{\Ring}{{\bf Ring}}
+\newcommand{\Ab}{{\bf Ab}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\Modf}{\mathop{\mathrm{Mod}^\mathrm{f}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits} % 写像の集合
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits} % 射集合
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits} % 自己準同型の集合
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits} % 自己同型の集合
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits} % 射集合
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits} % 核
+\newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
+\newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
+\newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+%        \itshape
+         \bfseries
+%    #1\@addpunct{.}]\ignorespaces
+    {#1}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
+\renewcommand{\proofname}{証明.}
+
+
+
+%\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{section}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Op}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+%\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
+
+\newcommand{\cat}{\mathscr{C}}
+
+%筆記体
+\newcommand{\cA}{\mcal{A}}
+\newcommand{\cB}{\mcal{B}}
+\newcommand{\cC}{\mcal{C}}
+\newcommand{\cD}{\mcal{D}}
+\newcommand{\cE}{\mcal{E}}
+\newcommand{\cF}{\mcal{F}}
+\newcommand{\cG}{\mcal{G}}
+\newcommand{\cH}{\mcal{H}}
+\newcommand{\cI}{\mcal{I}}
+\newcommand{\cJ}{\mcal{J}}
+\newcommand{\cK}{\mcal{K}}
+\newcommand{\cL}{\mcal{L}}
+\newcommand{\cM}{\mcal{M}}
+\newcommand{\cN}{\mcal{N}}
+\newcommand{\cO}{\mcal{O}}
+\newcommand{\cP}{\mcal{P}}
+\newcommand{\cQ}{\mcal{Q}}
+\newcommand{\cR}{\mcal{R}}
+\newcommand{\cS}{\mcal{S}}
+\newcommand{\cT}{\mcal{T}}
+\newcommand{\cU}{\mcal{U}}
+\newcommand{\cV}{\mcal{V}}
+\newcommand{\cW}{\mcal{W}}
+\newcommand{\cX}{\mcal{X}}
+\newcommand{\cY}{\mcal{Y}}
+\newcommand{\cZ}{\mcal{Z}}
+
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+\newcommand{\scN}{\mathscr{N}}
+\newcommand{\scO}{\mathscr{O}}
+\newcommand{\scV}{\mathscr{V}}
+\newcommand{\scU}{\mathscr{U}}
+
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+%\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+%\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+%\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}%複体のホモトピー圏
+%\newcommand{\Comp}{\mathrm{C}}
+%\newcommand{\Komp}{\mathrm{K}}
+%\newcommand{\Domp}{\mathsf{D}}%複体のホモトピー圏
+
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
+\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}
+\newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
+\newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
+\newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
+\newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
+\newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
+\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+\newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
+
+
+
+
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+%\DeclareMathOperator{\HOM}{\mathscr{H}\text{\kern -4.5pt {\calligra\large om}}\,}
+%\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\HOM}{\mathop{\mathcal{H}\hspace{-0.5pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
+\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+\newcommand{\mhom}{\mathop{\mu\hspace{-0pt}hom}\nolimits}
+\newcommand{\Rder}{\mathrm{R}}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
+\newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
+\newcommand{\simra}{\mathrel{\overset{\sim}{\leftarrow}}}%同型左矢印
+\newcommand{\simrra}{\mathrel{\overset{\sim}{\longleftarrow}}}%同型左矢印
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\PSh}{\mathrm{PSh}}
+
+\newcommand{\rmD}{\mathrm{D}}
+
+\newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
+\newcommand{\ori}{\mathord{\mathrm{or}}}
+\newcommand{\Db}{\mathord{\mathscr{D}b}}
+
+\newcommand{\codim}{\mathop{\mathrm{codim}}\nolimits}
+
+
+
+\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
+\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
+
+
+\newcommand{\tens}[1][]{\mathbin{\otimes_{\raise1.5ex\hbox to-.1em{}{#1}}}}
+\newcommand{\ttens}[1][]{\mathbin{\mathop{\overset{\mathrm{}}{\tens}}_{#1}}}
+\newcommand{\etens}{\mathbin{\boxtimes}}
+\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
+\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+%\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
+\newcommand{\letens}[1][]{\mathbin{\mathop{\overset{\mathrm{L}}{\etens}}_{#1}}}
+\newcommand{\detens}{\underline{\etens}}
+\newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
+\newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
+
+\newcommand{\blk}{\mathord{\ \cdot\ }}
+\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
+
+
+
+
+%\newcommand{\hocolim}{{\mathrm{hocolim}}}
+%\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+%\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+%\newcommand{\Pro}{\mathrm{Pro}}
+%\newcommand{\Ind}{\mathrm{Ind}}
+%\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+%\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+\newcommand{\proolim}[1][]{\mathop{\text{\rm``{$\varprojlim$}''}}\limits_{#1}}
+\newcommand{\sproolim}[1][]{\smash{\mathop{\rm``{\varprojlim}''}\limits_{#1}}}
+\newcommand{\inddlim}[1][]{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}
+\newcommand{\sinddlim}[1][]{\smash{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}\,}
+\newcommand{\ooplus}{\mathop{\text{\rm``{$\oplus$}''}}\limits}
+\newcommand{\bbigsqcup}{\mathop{``\bigsqcup''}\limits}
+\newcommand{\bsqcup}{\mathop{``\sqcup''}\limits}
+\newcommand{\dsum}[1][]{\mathbin{\oplus_{#1}}}
+
+\newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
+
+
+
+
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}%[section]
+\newtheorem{DFN}[AXM]{定義}
+\newtheorem{THM}[AXM]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[AXM]{命題}
+\newtheorem{LMM}[AXM]{補題}
+\newtheorem{CRL}[AXM]{系}
+\newtheorem{EG}[AXM]{例}
+\newtheorem*{EG*}{例}
+\newtheorem{RMK}[AXM]{注意}
+\newtheorem{CNV}[AXM]{約束}
+\newtheorem{CMT}[AXM]{コメント}
+\newtheorem*{CMT*}{コメント}
+\newtheorem{NTN}[AXM]{記号}
+
+
+
+% 定理環境ここまで
+%====================================================
+
+%====================================================
+% 枠つき環境
+% 参考 1：https://note.com/totomin/n/n0b02d6539728
+% 参考 2：https://qiita.com/rityo_masu/items/5ef248024b294d72799a
+%
+\newtheorem{mythm}{定理}[section]
+\newtheorem{mydfn}[mythm]{定義}
+\newtheorem{mylmm}[mythm]{補題}
+\newtheorem{myprp}[mythm]{命題}
+
+
+\newtcolorbox{thmbox}{empty,% 一回全部消すよ〜
+breakable,% 箱のページまたぎを許すよ〜
+underlay={% 色塗って線引くよ〜
+\fill[black!5] (frame.north west) rectangle (frame.south east);% 色塗ったよ〜
+\draw[line width=2pt] ([xshift=1pt]frame.north west)--([xshift=1pt]frame.south west);% 線引いたよ〜幅 2pt の線だから 1pt ずらしておこうね〜
+}}
+
+\newtcolorbox{prpbox}{empty,% 一回全部消すよ〜
+breakable,% 箱のページまたぎを許すよ〜
+underlay={% 色塗って線引くよ〜
+\fill[black!5] (frame.north west) rectangle (frame.south east);% 色塗ったよ〜
+\draw[line width=2pt] ([xshift=1pt]frame.north west)--([xshift=1pt]frame.south west);% 線引いたよ〜幅 2pt の線だから 1pt ずらしておこうね〜
+}}
+
+
+\newtcolorbox{dfnbox}{empty,% 一回全部消すよ〜
+breakable,% 箱のページまたぎを許すよ〜
+underlay={% 色塗って線引くよ〜
+%\fill[black!5] (frame.north west) rectangle (frame.south east);% 色塗ったよ〜
+\draw[line width=2pt] ([xshift=1pt]frame.north west)--([xshift=1pt]frame.south west);% 線引いたよ〜幅 2pt の線だから 1pt ずらしておこうね〜
+}}
+
+\newtcolorbox{lmmbox}{empty,% 一回全部消すよ〜
+breakable,% 箱のページまたぎを許すよ〜
+underlay={% 色塗って線引くよ〜
+\fill[black!5] (frame.north west) rectangle (frame.south east);% 色塗ったよ〜
+%\draw[line width=2pt] ([xshift=1pt]frame.north west)--([xshift=1pt]frame.south west);% 線引いたよ〜幅 2pt の線だから 1pt ずらしておこうね〜
+}}
+
+
+\newenvironment{thm}{\begin{thmbox}\begin{mythm}}{\end{mythm}\end{thmbox}}
+\newenvironment{dfn}{\begin{dfnbox}\begin{mydfn}}{\end{mydfn}\end{dfnbox}}
+\newenvironment{lmm}{\begin{lmmbox}\begin{mylmm}}{\end{mylmm}\end{lmmbox}}
+\newenvironment{prp}{\begin{prpbox}\begin{myprp}}{\end{myprp}\end{prpbox}}
+
+% 枠つき環境ここまで
+%=======================================================
+
+
+
+
+
+
+
+
+
+\newcommand{\Dlcon}{\mathop{\mathsf{D}^{+}_{\rr_{>0}}}\nolimits}
+%\newcommand{\Dlcon}{\mathop{\mathsf{D}^{+}_{\rr^+}}\nolimits}
+\newcommand{\Dbcon}{\mathop{\mathsf{D}^{\mathrm{b}}_{\rr^+}}\nolimits}
+
+\newcommand{\Int}[1][]{\mathop{\mathrm{Int}}\nolimits_{#1}}
+\newcommand{\Cl}[1][]{\mathop{\mathrm{Cl}}\nolimits_{#1}}
+\newcommand{\Bd}[1][]{\mathop{\mathrm{Bd}}\nolimits_{#1}}
+\newcommand{\Fr}[1][]{\mathop{\mathrm{Fr}}\nolimits_{#1}}
+
+
+
+\newcommand{\rrp}{\rr_{>0}}
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\title{ゼミノート（2024/10/23 発表分）}
+\author{大柴寿浩}
+\begin{document}
+\maketitle
+
+\section{フーリエ・佐藤変換（復習）{\cite[\S 3.7]{KS90}}}
+
+\begin{CRL}[{\cite[Corollary 3.7.3]{KS90}}]\label{373}
+    \(U\)を\(X\)の開集合とする．
+    \(X\)内の任意の\(\rr^{+}\)軌道\(b\)に対し，
+    \(b\cap U\)が可縮である（よってとくに空でない）とする．
+    さらに，任意の\(x\in X\)に対し，集合\(
+        \{t\in\rr^{+};\mu(x,t)\in U\}
+    \)が可縮であると仮定する．
+    このとき，\(F\in\Dlcon(X)\)に対し，
+    制限射\(\RG(X;F)\to\RG(U;F)\)は同型となる．
+\end{CRL}
+
+\begin{CMT}
+    「さらに」から始まる文はSchapira のホームページにあるerrataによる．
+\end{CMT}
+
+\begin{thm}[{\cite[Theorem 3.7.7]{KS90}}]
+    \(\Dlcon(E)\)から\(\Dlcon(E^\ast)\)への
+    関手\(\widetilde{\varPhi}_{P'}\)と
+    \(\widetilde{\varPsi}_{P}\)は自然に同型である．
+\end{thm}
+\begin{proof}
+    \(
+        \widetilde{\varPhi}_{P'}(F)
+        =\Rder{p_2}_!\left(p_1^{-1}F\right)_{P'}
+    \), \(
+        \widetilde{\varPsi}_{P}(F)
+        =\Rder{p_2}_{\ast}\RG_{P}(p_1^{-1}F)
+    \)なので，これらを同型で結ぶ．
+    \begin{align*}
+        \widetilde{\varPhi}_{P'}(F)
+        &=\Rder{p_2}_!\left(p_1^{-1}F\right)_{P'}\\
+        &\cong\Rder{p_2}_!\RG_{P}\left(p_1^{-1}F\right)_{P'}\\
+        &\cong\Rder{p_2}_!\left(\RG_{P}\left(p_1^{-1}F\right)_{P'}\right)\\
+        &\cong\Rder{p_2}_{\ast}\left(
+            \RG_{P}\left(p_1^{-1}F\right)_{P'}
+        \right)\\
+        &\cong\Rder{p_2}_{\ast}\RG_{P}(p_1^{-1}F).
+    \end{align*}
+\end{proof}
+\begin{dfn}[{\cite[Definition 3.7.8]{KS90}}]
+    \(F\in\Dlcon(E)\)とする．
+    \(F\)の\textbf{フーリエ・佐藤変換} (Fourier-Sato transform) 
+    \(F^{\wedge}\)を
+    \begin{align*}
+        F^{\wedge}
+        \coloneqq \widetilde{\varPhi}_{P'}(F)\
+        \left(=\Rder{p_2}_!\left(p_1^{-1}F\right)_{P'}\right)\\
+        \left(
+            \cong\widetilde{\varPsi}_{P}(F)
+            =\Rder{p_2}_{\ast}\RG_{P}(p_1^{-1}F)
+        \right)
+    \end{align*}
+    で定める．
+
+    \(G\in\Dlcon(E^\ast)\)とする．
+    \(G\)の\textbf{逆フーリエ・佐藤変換} (inverse 
+    Fourier-Sato transform) \(G^{\vee}\)を
+    \begin{align*}
+        G^{\vee}
+        \coloneqq \widetilde{\varPsi}_{P'}(F)\
+        \left(=\Rder{p_1}_{\ast}\RG_{P'}(p_2^{!}G)\right)\\
+        \left(
+            \cong \widetilde{\varPhi}_{P}(G)
+            =\Rder{p_1}_!\left(p_2^{!}G\right)_{P}
+        \right)
+    \end{align*}
+    で定める．
+\end{dfn}
+\begin{thm}[{\cite[Theorem 3.7.9]{KS90}}]
+    \(\Dlcon(E)\)から\(\Dlcon(E^\ast)\)への
+    関手\({}^{\wedge}\)と
+    \(\Dlcon(E^\ast)\)から\(\Dlcon(E)\)への
+    関手\({}^{\vee}\)は圏同値であり，互いに準逆である．
+    とくに，\(F\)と\(F'\)を\(\Dlcon(E)\)の対象とするとき，
+    \[
+        \Hom_{\Dlcon(E)}(F',F)\cong
+        \Hom_{\Dlcon(E)}(F'^{\wedge},F^{\wedge})
+    \]
+    が成りたつ．
+\end{thm}
+\begin{lmm}[{\cite[Lemma 3.7.10]{KS90}}]
+    \begin{enumerate}[(i)]
+        \item \(\gamma\)を\(E\)の固有閉凸錐で零切断を含むものとする．
+        このとき，次が成り立つ．\[
+            \left(A_\gamma\right)^\wedge
+            \cong A_{\Int{\gamma^\circ}}.
+        \]
+        \item \(U\)を\(E\)の開凸錐とする．このとき次が成り立つ．
+        \[
+            \left(A_U\right)^\wedge\cong
+            A_{{U^{\circ}}^a}\tens \ori_{E^\ast/Z}[-n].
+        \]
+    \end{enumerate}
+\end{lmm}
+\begin{RMK}[{\cite[Remark 3.7.11]{KS90}}]
+    RMK
+\end{RMK}
+\begin{prp}[{\cite[Proposition 3.7.12]{KS90}}]
+    \(F\in\Dlcon(E)\)とする．
+    \begin{enumerate}[(i)]
+        \item \(F^{\wedge\wedge}\cong F^a\tens \ori_{E/Z}[-n]\).
+        \item \(U\)を\(E^\ast\)の開凸集合とすると\[
+            \RG(U;F^\wedge)
+            \cong\RG_{U^\circ}(\tau^{-1}\pi(U);F)
+            \cong\RG_{U^\circ}(E;F).
+        \]
+        \item \(\gamma\)を\(E^\ast\)の固有閉凸錐で
+        零切断を含むものとすると\[
+            \RG_{\gamma}(E^\ast;F^\wedge)
+            \cong
+            \RG(\Int{\gamma^{\circ a}};F\tens\ori_{E/Z}[-n]).
+        \]
+        \item 次が成り立つ．\[
+            \left(\rmD'F\right)^\vee\cong\rmD'(F^\wedge),
+            \quad
+            \left(\rmD F\right)^\vee\cong\rmD(F^\wedge).
+            \]
+    \end{enumerate}
+\end{prp}
+\begin{proof}
+    (ii) 
+    \begin{align*}
+        \RG(U;F^{\wedge})
+        &\cong \RHom_{A_{E^{\ast}}}(A_{U},F^{\wedge})\\
+        &\cong \dots\\
+        &\cong \RG_{U^{\circ}}(\tau^{-1}(\pi(U));F)\\
+        &\cong \RG_{U^{\circ}}(E;F)
+    \end{align*}
+    後半の\[
+        \RG_{U^{\circ}}(\tau^{-1}(\pi(U));F)
+        \cong 
+        \RG_{U^{\circ}}(E;F)
+    \]について，\(\tau^{-1}(\pi(U))\)は次の2条件
+    \begin{itemize}
+        \item 各\(\rrp\)軌道\(b\)に対し，\(b\cap \tau^{-1}(\pi(U))\)が可縮である
+        \item 任意の\(v\in E\)に対し，集合\(\{t\in\rrp;\mu(v,t)\in\tau^{-1}(\pi(U))\}\)が可縮である
+    \end{itemize}
+    をみたす．したがって，系\ref{373}から，制限射が同型であることが従う．
+
+    (iii) 
+    \begin{align*}
+        \RG_{\gamma}(E^{\ast};F^{\wedge})
+        &\cong\RHom(A_{\gamma},F^{\wedge})\\
+        &\underset{\text{Thm.3.7.9}}{\cong}\RHom((A_{\gamma})^{\wedge},F^{\wedge\wedge})\\
+        &\underset{\text{Thm.3.7.10(i);(i)}}{\cong}\RHom(A_{\Int{\gamma^{\circ}}},F^a\tens \ori_{E/Z}[-n])\\
+        &\cong\RHom(A_{\Int{\gamma^{\circ a}}},F\tens \ori_{E/Z}[-n])\\
+        &\cong\RG({\Int{\gamma^{\circ a}}};F\tens \ori_{E/Z}[-n]).
+    \end{align*}
+
+    (iv) 
+    \(\rmD\)の方について示す．
+    \begin{align*}
+        \RHOM_{A_{E}}(F^{\wedge},\omega_{E^{\ast}/Z})
+        &=\RHOM_{A_{E}}(\Rder{{p_{2}}_{!}}(p_{1}^{-1}F)_{P'},\omega_{E^{\ast}/Z})\\
+        &=\Rder{{p_{2}}_{\ast}}\RHOM_{A_{E}}((p_{1}^{-1}F)_{P'},p_{2}^{!}\omega_{E^{\ast}/Z})\\
+        &=\Rder{{p_{2}}_{\ast}}\RG_{P'}\RHOM_{A_{E}}(p_{1}^{-1}F,p_{2}^{!}\omega_{E^{\ast}/Z})\\
+        &=\Rder{{p_{2}}_{\ast}}\RG_{P'}\RHOM_{A_{E}}(p_{1}^{-1}F,p_{1}^{!}\omega_{E/Z})\\
+        &=\Rder{{p_{2}}_{\ast}}\RG_{P'}p_{1}^{!}\RHOM_{A_{E}}(F,\omega_{E/Z})\\
+        &=(\rmD{F})^{\vee}
+    \end{align*}
+\end{proof}
+
+\begin{prp}[{\cite[Proposition 3.7.13]{KS90}}]
+    \begin{enumerate}[(i)]
+        \item \(F\in\Dlcon(E)\)とする．このとき次が成り立つ．\[
+            (f_\tau^!F)^\wedge\cong f_\pi^!(F^\wedge),
+            \quad
+            (f_\tau^{-1}F)^\wedge\cong f_\pi^{-1}(F^\wedge).
+            \]
+        \item \(G\in\Dlcon(E')\)とする．このとき次が成り立つ．\[
+            (\Rder{f_\tau}_\ast G)^\wedge\cong \Rder{f_\pi}_\ast(G^\wedge),
+            \quad
+            (\Rder{f_\tau}_! G)^\wedge\cong \Rder{f_\pi}_!(G^\wedge),
+            \]
+    \end{enumerate}
+\end{prp}
+
+\begin{prp}[{\cite[Proposition 3.7.14]{KS90}}]
+    \begin{enumerate}[(i)]
+        \item \(F\in\Dlcon(E_1)\)とする．このとき次が成り立つ．
+        \begin{align*}
+            {}^tf^{-1}(F^\wedge)&\cong (\Rder{f}_!F)^\wedge,\\
+            {}^tf^{!}(F^\vee)&\cong (\Rder{f}_\ast F)^\vee,\\
+            {}^tf^{!}(F^\wedge)&\cong (\Rder{f}_{\ast}F)^\wedge\tens\omega_{E_2^\ast/E_1^\ast},\\
+            {}^tf^{!}(F^\vee)&\cong (\Rder{f}_{!}F)^\vee\tens\omega_{E_2^\ast/E_1^\ast}.
+        \end{align*}
+        \item \(G\in\Dlcon(E_2)\)とする．このとき次が成り立つ．
+        \begin{align*}
+            (f^{-1}F)^\vee&\cong \Rder^t{f}_!(G^\vee),\\
+            (f^{!}F)^\wedge&\cong \Rder^t{f}_\ast(G^\wedge),\\
+            (\omega_{E_1/E_2}\tens f^!G)^\vee&\cong \Rder^t{f}_\ast(G^\vee),\\
+            (\omega_{E_1/E_2}\tens f^{-1}G)^\wedge&\cong \Rder^t{f}_!(G^\wedge).
+        \end{align*}
+    \end{enumerate}
+\end{prp}
+
+\begin{prp}[{\cite[Proposition 3.7.15]{KS90}}]
+    \(F_i\in\Dlcon(E_i)\), \(i=1,2\)とする．このとき次が成り立つ．
+    \[
+        F_1^\wedge\letens[Z]F_2^\wedge
+        \cong
+        \left(F_1\letens[Z]F_2\right)^\wedge.
+    \]
+\end{prp}
+
+\section{特殊化（復習）{\cite[\S 4.2]{KS90}}}
+
+\begin{thm}[{\cite[Thm 4.2.3]{KS90}}]
+    \(F\in\Dompb(X)\)とする．
+    \begin{enumerate}[(i)]
+        \item \(\nu_{M}(F)\in\Dbcon(T_{M}X)\)であり，
+        \(\supp(\nu_{M}(F))\subset C_{M}(\supp(F))\)である．
+        \item \(V\)を\(T_{M}X\)の錐状開集合とする．このとき\[
+            H^{j}(V;\nu_{M}(F))
+            \cong
+            \indlim[U]H^{j}(U;F)
+        \]である．
+        ただし\(U\)は\(
+            C_{M}(X-U)\cap V=\varnothing
+        \)となる\(X\)の開集合の族を走る．
+        とくに\(v\in T_{M}X\)ならば，
+        \[
+            H^{j}(\nu_{M}(F))_{v}
+            \cong
+            \indlim[U]H^{j}(U;F)
+        \]である．
+        ただし\(U\)は\(
+            v\notin C_{M}(X-U)
+        \)となる\(X\)の開集合の族を走る．
+        \item \(A\)を\(T_{M}X\)の錐状閉集合とする．このとき\[
+            H^{j}_{A}(T_{M}X;\nu_{M}(F))
+            \cong
+            \indlim[Z,U]H^{j}_{Z\cap U}(U;F)
+        \]である．
+        ただし\(U\)は\(
+            M
+        \)の\(X\)における開近傍の族を走り，
+        \(Z\)は\(C_{M}(Z)\subset A\)となる\(X\)の閉集合を走る．
+        \item 次の同型が成り立つ．\begin{align*}
+            \mres[\nu_{M}(F)]{M}&\cong \Rder{\tau}_{\ast}(\nu_{M}(F))\cong \mres[F]{M},\\
+            \mres[(\RG_{M}(\nu_{M}(F)))]{M}&\cong \Rder{\tau}_{!}(\nu_{M}(F))\cong \mres[\RG_{M}(F)]{M}.
+        \end{align*}
+        \item \(\Rder{\dot{\tau}}_{\ast}(\mres[\nu_{M}(F)]{\dot{T}_{M}X})\cong\mres[\RG_{X-M}(F)]{M}\)である．
+    \end{enumerate}
+\end{thm}
+
+\begin{proof}
+    (i)：
+    \(\tilde{p}^{-1}F\)が錐状層であることを示せば，
+    \(\Rder{j}_{\ast}\)と\(s^{-1}\)が
+    錐状層を錐状層に送ることから結果が従う．
+    各次数\(j\in \zz\)に対し，
+    \(H^{j}(\tilde{p}^{-1}F)\)が各ファイバー\(
+        (x',x'',t)\in \varOmega
+    \)の\(\rr^{+}\)軌道\(b=\rr^{+}(x',x'',t)\)上で
+    局所定数であることを示す．
+    \((cx',x'',c^{-1}t)\in b\)とする．このとき
+    \begin{align*}
+        \left(
+            \mres[H^{j}(\tilde{p}^{-1}F)]{b}
+        \right)_{(cx',x'',c^{-1}t)}
+        &\cong
+        \left(
+            H^{j}(\tilde{p}^{-1}F)
+        \right)_{(cx',x'',c^{-1}t)}\\
+        &\cong
+        \left(
+            \tilde{p}^{-1}H^{j}(F)
+        \right)_{(cx',x'',c^{-1}t)}\\
+        &\cong
+        \left(
+            H^{j}(F)
+        \right)_{\tilde{p}(cx',x'',c^{-1}t)}\\
+        &\cong
+        H^{j}(F)_{\tilde{p}(x',x'')}
+    \end{align*}
+    であり，\(b\)の全ての点での茎が同型となる．
+    よって各実数\(c>0\)に対し，\((cx',x'',c^{-1}t)\)の
+    十分小さい近傍\(B_c\subset \varOmega\)で\(
+        \mres[H^{j}(\tilde{p}^{-1}F)]{b\cap B_c}
+    \)が定数層\(\left(
+        H^{j}(F)_{\tilde{p}(x',x'')}
+    \right)_{b\cap B_c}\)となるものが存在する．
+    \(b=\bigcup_{c\in\rr^+}B_{c}\cap b\)である．
+    よって\(H^{j}(\tilde{p}^{-1}F)\)は錐状層である．
+
+    \((x'';v)\in T_{M}X-{C_{M}(\supp(F))}\)とする．
+    各\(j\in\zz\)に対し
+    \[
+        H^{j}(F)_{(x'';v)}=0
+    \]
+    であるから\((x,0)=(x'';v)\in T_{M}X=t^{-1}(0)\)として，
+    \begin{align*}
+        \left(
+            H^{j}(s^{-1}\Rder{j}_{\ast}\tilde{p}^{-1}F)
+        \right)_{(x,0)}
+        =s^{-1}\Rder{j}_{\ast}\tilde{p}^{-1}H^{j}(F)_{(x'';v)}
+        =0
+    \end{align*}
+    である．したがって\((x'';v)\in T_{M}X-\supp(\nu_{M}(F))\)である．
+
+    (ii)：
+    \(U\)を\(X\)の開集合で\(C_{M}(X-U)\cap V=\varnothing\)となるものとする．
+    次の射がある．
+    \begin{equation}
+        \begin{cases}
+            \RG(U;F)
+            &\underset{(1)}{\to}\RG(p^{-1}(U);p^{-1}F)\\
+            &\underset{(2)}{\to}\RG(p^{-1}(U)\cap \varOmega;p^{-1}F)\\
+            &\underset{(3)}{\to}\RG(\tilde{p}^{-1}(U)\cup V;\Rder{j}_{\ast}j^{-1}p^{-1}F)\\
+            &\underset{(4)}{\to}\RG(V;\nu_{M}(F)).
+        \end{cases}
+    \end{equation}
+    ただし，それぞれの射は次のように定まる．
+    \begin{enumerate}[(1)]
+        \item \(F\to\Rder{p}_{\ast}p^{-1}F\)から定まる．
+        \item 制限射．もっというと\(A_{p^{-1}(U)\cap\varOmega}\to A_{p^{-1}(U)}\)から定まる．
+        \item まず\(
+            p^{-1}F\to\Rder{j}_{\ast}j^{-1}p^{-1}F
+        \)から\(
+            \RG(\tilde{p}^{-1}(U);\Rder{j}_{\ast}j^{-1}p^{-1}F)
+        \)への射が定まる．
+        \(\varOmega\)で台を切り落としているので\(
+            \RG(\tilde{p}^{-1}(U);\Rder{j}_{\ast}j^{-1}p^{-1}F)
+        \)を\(V\)の\(\bar{\varOmega}\)での開近傍\(
+            \tilde{p}^{-1}(U)\cup V
+        \)に広げてもよい．
+        \item \(
+            \Rder{j}_{\ast}j^{-1}p^{-1}F
+            \to
+            \Rder{s}_{\ast}s^{-1}\Rder{j}_{\ast}j^{-1}p^{-1}F
+        \)と\(
+            s^{-1}A_{\tilde{p}^{-1}(U)\cup V}
+            =A_{s^{-1}(\tilde{p}^{-1}(U)\cup V)}
+            =A_V
+        \)から定まる．
+    \end{enumerate}
+    コホモロジーをとって，帰納極限の普遍性を考えると次の射
+    が定まる．
+    \[
+        \indlim[U]H^{k}(U;F)\to H^{k}(V;\nu_{M}(F)).
+    \]
+    この射が同型であることを示す．いま
+    \begin{align*}
+        H^{k}(V;\nu_{M}(F))
+        &\cong
+        \indlim[W\in I_V]H^{k}(W,\Rder{j}_{\ast}j^{-1}p^{-1}F)
+        \quad (\because\text{注意2.6.9})\\
+        &\cong\indlim[W\in I_V]H^{k}(W\cap\varOmega,p^{-1}F)
+        \quad (\because j^{-1}\dashv \Rder{j}_{\ast},
+        ~ j_{!}\dashv j^{-1})
+    \end{align*}
+    である．
+    命題\ref{prp414}より，
+    \(p\colon W\cap\varOmega \to p(W\cap\varOmega)\)の
+    各ファイバーは連結，すなわち\(\rr\)と同相としてよい．
+    このとき，\begin{enumerate}[(i)]
+        \item \(p\)は位相的沈めこみである．
+        \item \(
+            \Rder{p}_{!}p^{!}\zz_{p(W\cap\varOmega)}
+            \to\zz_{W\cap\varOmega}
+        \)は同型である．
+        実際，ファイバーが\(\rr\)と同相であることから，
+        注意3.3.10の式(3.3.13)\[
+            \zz\simar\RG(p^{-1}(x);\zz_{p^{-1}(x)})
+        \]が成り立つ．
+    \end{enumerate}したがって命題3.3.9を\(p\)に適用すると\(
+        F\to \Rder{p}_{!}p^{!}F
+    \)となることから\[
+        H^{k}(W\cap\varOmega;p^{-1}F)
+        \cong 
+        H^{k}(p(W\cap\varOmega);F)
+    \]である．命題\ref{prp413} (i) より，\(W\)を走らせたときの
+    \(U=p(W\cap\varOmega)\)は\(
+        C_{M}(X-U)\cap V=\varnothing
+    \)となる\(X\)の開集合を走る．したがって上の同型が示された．
+
+    (iii)：
+    \(U\)を\(M\)の\(X\)における開近傍，
+    \(Z\)を\(C_{M}(Z)\subset A\)となる\(X\)の閉集合とする．
+    次の射の列がある．
+    \begin{align*}
+        \RG_{Z\cap U}(U;F)
+        &\underset{(1)}{\to}\RG_{p^{-1}(Z\cap U)}(p^{-1}(U);p^{-1}F)\\
+        &\underset{(2)}{\to}\RG_{p^{-1}(Z\cap U)\cap \varOmega}(p^{-1}(U)\cap \varOmega;p^{-1}F)\\
+        &\underset{(3)}{\to}\RG_{(p^{-1}(Z\cap U)\cap \varOmega)\cup A}(p^{-1}(U);\Rder{j}_{\ast}j^{-1}p^{-1}F)\\
+        &\underset{(4)}{\to}\RG_{A}(T_{M}X;\nu_{M}(F)).
+    \end{align*}
+    ただし，それぞれの射は次のように定まる．
+    \begin{enumerate}[(1)]
+        \item \(F\to \Rder{p}_{\ast}p^{-1}F\)に\(\RG_{Z\cap U}(U;\blk)\)を適用．
+        \item \(p^{-1}F\to \Rder{j}_{\ast}j^{-1}p^{-1}F\)に\(\RG_{p^{-1}(Z\cap U)}(p^{-1}(U);\blk)\)を適用．
+        \item 切り落としと台の随伴と微妙なやつ．
+        \item \(s^{-1}\)を当てる．\(T_{M}X\)上の切断は\(A\)に台を持つことから．
+    \end{enumerate}
+    以上の合成と切除の三角を考えると，次の可換図式が得られる．
+    \[    
+        \vcenter{\xymatrix@C=18pt@R=18pt{
+        \cdots
+        \ar[r]
+        &
+        \indlim[U]H^{k-1}(U-Z;F)
+        \ar[d]^-{\gamma_{k-1}}
+        \ar[r]
+        %\ar@{}[dr]|\square
+        &
+        \indlim[U]H^{k}_{U-Z}(U;F)
+        \ar[r]
+        \ar[d]^-{\alpha_k}
+        &
+        \indlim[U]H^{k}(U;F)
+        \ar[r]
+        \ar[d]^-{\beta_k}
+        &
+        \cdots
+        \\
+        \cdots
+        \ar[r]
+        &
+        H^{k-1}(T_{M}X-A;\nu_{M}F)
+        \ar[r]
+        %\ar@{}[dr]|\square
+        &
+        H^{k}_{A}(T_{M}X;\nu_{M}F)
+        \ar[r]
+        &
+        H^{k}(T_{M}X;\nu_{M}F)
+        \ar[r]
+        &
+        \cdots.
+      }}
+    \]
+    各行は完全であり，\(\gamma_k\)と\(\beta_k\)は (ii) より同型である．
+    したがって，\(\alpha_k\)も同型である．
+
+    (iv)：
+    \(k\colon M\hookrightarrow T_{M}X\)を零切断とみなす閉埋め込みとする．
+    このとき，\begin{align*}
+        \mres[F]{M}
+        =i^{-1}F
+        &\cong k^{-1}s^{-1}p^{-1}F\\
+        &\to k^{-1}s^{-1}\Rder{j}_{\ast}j^{-1}p^{-1}F\\
+        &\cong k^{-1}\nu_{M}F\\
+        &=\mres[\nu_{M}F]{M}
+    \end{align*}
+    と\begin{align*}
+        k^{!}\nu_{M}F
+        &= k^{!}s^{!}j_{!}j^{!}p^{!}F\\
+        &\to k^{!}s^{!}p^{!}F\\
+        &= i^{!}F=i^{-1}\RG_{M}F
+    \end{align*}
+    という射が得られる．
+    これらは (ii), (iii) から同型である．（\(v\in T_{M}X\)として\(0\)を取ればよい．）
+    残りの同型は\(i^{-1}\cong \Rder{\tau}_{\ast}\)と\(i^{!}\cong \Rder{\tau}_{!}\)から従う．
+
+    (v)：
+    次の三角の射がある．
+    \[    
+        \vcenter{\xymatrix@C=26pt@R=26pt{
+        \mres[\RG_{M}(F)]{M}    
+        \ar[d]
+        \ar[r]
+        %\ar@{}[dr]|\square
+        &
+        \mres[F]{M}    
+        \ar[r]
+        \ar[d]
+        &
+        \mres[\RG_{X-M}(F)]{M}    
+        \ar[r]
+        \ar[d]
+        &
+        +1
+        \\
+        \mres[\RG_{M}(\nu_{M}F)]{M}    
+        \ar[r]
+        %\ar@{}[dr]|\square
+        &
+        \Rder{\tau_{\ast}}\nu_{M}F    
+        \ar[r]
+        &
+        \Rder{\dot{\tau}}_{\ast}(\mres[\nu_{M}F]{\dot{T}_{M}X})    
+        \ar[r]
+        &
+        +1.
+      }}
+    \]
+    左と真ん中が同型なので右も同型である．
+\end{proof}
+
+%\subsection*{前回飛ばしたところ}
+\begin{prp}[{\cite[Prop.4.2.4]{KS90}}]
+    \(G\in\Dompb(Y)\)とする．
+    \begin{enumerate}[(i)]
+        \item 標準的な射による可換図式    \[    
+            \vcenter{\xymatrix@C=36pt@R=36pt{
+            \Rder(T_{N}f)_{!}\nu_{N}(G)
+            \ar[d]
+            \ar[r]
+            %\ar@{}[dr]|\square
+            &
+            \Rder({f_{!}}G)
+            %\ar[r]
+            \ar[d]
+            \\
+            \Rder(T_{N}f)_{\ast}\nu_{N}(G)
+            %\ar@{}[dr]|\square
+            &
+            \Rder({f_{\ast}}G)
+            \ar[l]
+          }}
+        \]が存在する．
+        \item さらに，\(\supp(G)\to X\)と\(
+            C_N(\supp(G))\to T_{M}X
+        \)が固有かつ\(\supp(G)\cap f^{-1}(M)\subset N\)ならば，
+        以上の射はすべて同型である．
+        
+        とくに\(f^{-1}(M)=N\)かつ，
+        \(f\)が\(M\)に関して斉かつ\(\supp(G)\)上固有のとき，
+        以上の射はすべて同型である．
+    \end{enumerate}
+\end{prp}
+
+\begin{proof}
+    (ii) 
+    \(\overline{\tilde{p}_{Y}^{-1}(\supp(G))}\)が\(
+        \tilde{X}_M
+    \)上固有ならば，
+    \(\Rder{\tilde{f'}_{\ast}}\)と\(\Rder(T_{N}f)_{\ast}\)を
+    それぞれ\(\Rder{\tilde{f'}_{!}}\)と\(\Rder(T_{N}f)_{!}\)に
+    置き換えることができるので，射はすべて同型となる．
+    したがって，\(Y\)の閉部分集合\(Z\)に対し，
+    \(Z\)が\(X\)上固有であること，
+    \(C_{N}(Z)\)が\(T_{M}X\)上固有であること，
+    そして\(Z\cap f^{-1}(M)\subset N\)であることを仮定したとき，
+    \(\overline{\tilde{p}_{Y}^{-1}(Z)}\)が\(\tilde{X}_{M}\)上
+    固有であることを示せばよい．
+    \(
+        \overline{\tilde{p}_{Y}^{-1}(Z)}\to\tilde{X}_{M}
+    \)のファイバーはコンパクトなので，閉写像であることを示せば十分である．
+    \(\{u_{n}\}_{n}\)を\(
+        \overline{\tilde{p}_{Y}^{-1}(Z)}
+    \)の点列で\(\{\tilde{f}'(u_{n})\}_{n}\)が収束するものとする．
+    \(\{u_{n}\}_{n}\)の部分列で収束するものが存在することを示せばよい．
+    \(\{\tilde{p}_{Y}(u_{n})\}_{n}\)が収束すると仮定してよい．
+    \(\tilde{p}^{-1}_{Y}(Z)-T_{N}Y\to \tilde{X}_{M}-T_{M}X\)は固有なので，
+    \(\{\tilde{f}'(u_{n})\}_{n}\)は\(T_{M}X\)の点に収束するとしてよい．
+    このとき，\(\{\tilde{p}_{Y}(u_{n})\}_{n}\)の
+    極限点は\(Z\cap f^{-1}(M)\)に含まれるので\(N\)に含まれる．
+
+    \(X\)と\(Y\)の局所座標系を(4.1.10)のようにとり，
+    \(u_{n}=(y'_{n},y''_{n},t_n)\)とおく．
+    このとき，\(
+        t_{n}\underset{n}{\to}0
+    \), \(t_{n}y'_{n}\underset{n}{\to}0\)である．
+    さらに\(t_{n}>0\)（すなわち\(
+        u_{n}\in\tilde{p}_{Y}^{-1}(z)
+    \)）としてよい．
+    \(\{y''_{n}\}_{n}\)は収束するので，
+    \(\{\lvert{y'_n}\rvert\}_{n}\)が有界であることを示せばよい．
+    いま，\(\lvert{y'_{n}}\rvert\underset{n}{\to}\infty\)だったと仮定して矛盾を導く．
+    部分列を取り出すことで，\(
+        \{y'_{n}/\lvert{y'_{n}}\rvert\}_{n}
+    \)は\(0\)でないベクトル\(v\)に収束する．
+    このとき\(
+        \{(y'_{n}/\lvert{y'_{n}}\rvert,
+        y''_{n},
+        t_{n}\lvert{y'_{n}}\rvert)\}_{n}
+    \)は\(\tilde{p}^{-1}_{Y}(Z)\)に属し，
+    点\(p\in T_{N}Y\)で零切断に属さないものに収束する．
+    他方，\(
+        \tilde{f'}(u_{n})
+        =\left(
+            \dfrac{1}{t_{n}}f_1(t_n,y'_n,y''_n),
+            f_2(t_n,y'_n,y''_n)
+        \right)
+    \)は収束し\(
+        \left\{
+            \dfrac{1}{t_{n}\lvert{y'_{n}}\rvert}
+            f_{1}(t_{n},y'_n,y''_n)
+        \right\}_{n}
+    \)は\(0\)に収束する．
+    これより\(T_{N}f(p)\)は\(T_{M}X\)の零切断に属することが従う．
+    したがって\(
+        C_{N}(Z)\cap (T_{N}f)^{-1}(T_{N}f(p))
+        \supset\rr_{\geqq0}p
+    \)となる．
+    これは\(C_{N}(Z)\to T_{M}X\)が固有であるという
+    事実にムジュンする．
+\end{proof}
+
+\section{超局所化{\cite[\S 4.3]{KS90}}}
+
+\begin{dfn}[{\cite[Def 4.3.1]{KS90}}]
+    \(F\in\Dompb(X)\)とする．\(\nu_{M}(F)\)のフーリエ佐藤変換
+    \[
+        \mu_{M}(F)
+        \coloneqq 
+        \nu_{M}(F)^{\wedge}
+    \]
+    を\(F\)の\(M\)に沿った\textbf{超局所化} (microlocalization) と
+    いう．
+\end{dfn}
+
+定理4.2.3とIII \S7の結果を適用することで次が得られる．
+
+\begin{thm}[{\cite[Thm 4.3.2]{KS90}}]
+    \(F\in\Dompb(X)\)とする．
+    \begin{enumerate}[(i)]
+        \item \(\mu_{M}(F)\in\Dbcon(T_{M}X)\)である．
+        \item \(V\)を\(T^{\ast}_{M}X\)の錐状開集合とする．
+        このとき\[
+            H^{j}(V;\mu_{M}(F))
+            \cong
+            \indlim[U,Z]H_{Z\cap U}^{j}(U;F)
+        \]である．
+        ただし\(U\)は\(
+            U\cap M=\pi(V)
+        \)となる\(X\)の開集合の族を走り，
+        \(Z\)は\(X\)の閉集合で\(
+            C_{M}(Z)_{\pi(p)}
+            \subset 
+            \{v\in (T_{M}X)_{\pi(p)};\inner<v,p>>0\}\cup\{0\}
+        \)となるものの族を走る．
+        \item \(Z\)を\(T_{M}X\)の固有閉凸錐で零切断を含むものとする．
+        このとき\[
+            H^{j}_{Z}(T^{\ast}_{M}X;\mu_{M}(F)\tens[]\ori_{M/X})
+            \cong
+            \indlim[U]H^{j-l}(U;F)
+        \]である．
+        ただし\(U\)は\(X\)の開集合で\(
+            C_{M}(X-U)\cap\Int[]{Z^{\circ a}}=\varnothing
+        \)となるものの族を走る．
+        \item 次の同型が成り立つ．\begin{align*}
+            \mres[\mu_{M}(F)]{M}
+            &\cong \Rder{\pi}_{\ast}(\mu_{M}(F))
+            \cong \mres[\RG_{M}(F)]{M}
+            \cong i^{!}F,\\
+            \RG_{M}(\mu_{M}(F))
+            &\cong \Rder{\pi}_{!}(\mu_{M}(F))
+            \cong i^{-1}F\tens[]\omega_{M/X}.
+        \end{align*}
+    \end{enumerate}
+\end{thm}
+
+次が成り立つ．
+\[
+    i^{-1}F\tens[]\omega_{M/X}
+    =\mres[F]{M}\tens[]\ori_{M/X}[-l].
+\]
+
+最後の結果を完全三角
+\[
+    \RG_M(\mu_{M}(F))\to
+    \Rder{\pi_{\ast}}\mu_{M}(F)\to
+    \Rder{\dot{\pi}_{\ast}\mu_{M}(F)\to+1}
+\]
+に適用することで，完全三角
+\[
+    \mres[F]{M}\tens[]\omega_{M/X}\to
+    \mres[\RG_M(F)]{M}\to
+    \Rder{\dot{\pi}_{\ast}\mu_{M}(F)\to+1}
+\]
+を得る．
+いま，\(f\colon Y\to X\)を多様体の射とし，
+\(N\)を\(Y\)の，余次元\(k\)の閉部分多様体で\(f(N)\subset M\)を
+みたすものとする．
+写像\(Tf\)は
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\section{\(\mhom\){\cite[\S 4.4]{KS90}}}
+
+
+
+
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    %\bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, \textit{Differential Topology}, Prentice-Hall, 1974.
+    \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+      \textit{Sheaves on Manifolds}, 
+      Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+    %\bibitem[Hat89]{Hat89} 服部晶夫, 多様体 増補版, 岩波全書 288, 岩波書店, 1989.
+    \bibitem[Sch04]{Sch04} Pierre Schapira, 
+      \textit{Sheaves: from Leray to Grothendieck and Sato}, 
+      S\'eminaires et Congres 9, Soc. Math. France, pp.173--181, 2004.
+    %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+\end{thebibliography}
+%===============================================
+  
+
+\end{document}
