@@ -532,7 +532,7 @@
 \newtheorem{CRL}[AXM]{系}
 \newtheorem{EG}[AXM]{例}
 \newtheorem*{EG*}{例}
-\newtheorem{RMK}[AXM]{注意}
+%\newtheorem{RMK}[AXM]{注意}
 \newtheorem{CNV}[AXM]{約束}
 \newtheorem{CMT}[AXM]{コメント}
 \newtheorem*{CMT*}{コメント}
@@ -552,6 +552,8 @@
 \newtheorem{mydfn}[mythm]{定義}
 \newtheorem{mylmm}[mythm]{補題}
 \newtheorem{myprp}[mythm]{命題}
+%\newtheorem{rmk}[mythm]{命題}
+\newtheorem{RMK}[mythm]{注意}
 
 
 \newtcolorbox{thmbox}{empty,% 一回全部消すよ〜
@@ -1146,7 +1148,7 @@ underlay={% 色塗って線引くよ〜
 \begin{prp}[{\cite[Prop.4.2.4]{KS90}}]
     \(G\in\Dompb(Y)\)とする．
     \begin{enumerate}[(i)]
-        \item 標準的な射による可換図式    \[    
+        \item 標準的な射による可換図式\[    
             \vcenter{\xymatrix@C=36pt@R=36pt{
             \Rder(T_{N}f)_{!}\nu_{N}(G)
             \ar[d]
@@ -1243,7 +1245,51 @@ underlay={% 色塗って線引くよ〜
     事実にムジュンする．
 \end{proof}
 
+\begin{prp}[{\cite[Prop.4.2.5]{KS90}}]
+    \(F\in\Dompb(X)\)とする．このとき，標準的な射\begin{align*}
+        \alpha\colon (T_{N}f)^{-1}\nu_{M}(F)\to\nu_{N}(f^{-1}F),\\
+        \beta\colon \nu_{N}(f^{!}F)\to(T_{N}f)^{!}\nu_{M}(F)
+    \end{align*}
+    で次の図式を可換にするものが存在する．
+    \[\vcenter{\xymatrix@C=56pt@R=46pt{
+        \omega_{T_{N}Y/T_{M}X}\tens[](T_{N}f)^{-1}\nu_{M}(F)
+        \ar[d]^{\gamma}
+        \ar[r]_{\omega_{Y/X}\tens[] \alpha}
+        %\ar@{}[dr]|\square
+        &
+        \nu_{N}(\omega_{Y/X}\tens[]{f^{-1}}F)
+        %\ar[r]
+        \ar[d]
+        \\
+        (T_{N}f)^{!}\nu_{N}(F)
+        %\ar@{}[dr]|\square
+        &
+        \nu_{N}({f^{!}}F)
+        \ar[l]_{\beta}
+    }}\]
+    ここで縦向きの矢印は(3.1.6)から導かれるものである．
+
+    \(T_{N}f\colon T_{N}Y\to T_{M}X\)が平滑となる開集合上では，
+    これらの射はすべて同型である．
+
+    とくに，\(f\colon Y\to X\)と\(\mres[f]{N}\colon N\to M\)が
+    平滑ならばこれらの射はすべて同型となる．
+\end{prp}
+
+
+
 \section{超局所化{\cite[\S 4.3]{KS90}}}
+
+\S1と同様に，\(M\)を\(X\)の，余次元\(l\)の閉部分多様体とする．
+\(T_{M}^{\ast}X\)で，\(M\)の\(X\)における余法束，
+すなわち写像\(M\times_{X}T^{\ast}X\to T^{\ast}M\)の核を表す．
+\(\pi\)で射影\(T^{\ast}X\to X\)あるいは
+その制限\(T_{M}^{\ast}X\to M\)を表す．
+\(i\colon M\to X\)を包含とするとき，
+\(i\circ \pi\)をたんに\(\pi\)とかくことがある．
+
+\(\dot{\pi}\)で\(\pi\)の\(\dot{T}^{\ast}X=T_{}^{\ast}X-X\)への
+制限を表す．
 
 \begin{dfn}[{\cite[Def 4.3.1]{KS90}}]
     \(F\in\Dompb(X)\)とする．\(\nu_{M}(F)\)のフーリエ佐藤変換
@@ -1310,30 +1356,245 @@ underlay={% 色塗って線引くよ〜
     \Rder{\dot{\pi}_{\ast}\mu_{M}(F)\to+1}
 \]
 に適用することで，完全三角
-\[
+\begin{equation}
     \mres[F]{M}\tens[]\omega_{M/X}\to
     \mres[\RG_M(F)]{M}\to
-    \Rder{\dot{\pi}_{\ast}\mu_{M}(F)\to+1}
-\]
+    \Rder{\dot{\pi}_{\ast}\mu_{M}(F)\to+1}    
+\end{equation}
 を得る．
 いま，\(f\colon Y\to X\)を多様体の射とし，
 \(N\)を\(Y\)の，余次元\(k\)の閉部分多様体で\(f(N)\subset M\)を
 みたすものとする．
-写像\(Tf\)は
+写像\(Tf\) (cf. 4.1.8) から写像
+\begin{equation}
+    T^{\ast}Y
+    \underset{{}^{t}f'}{\longleftarrow}
+    Y\times_{X}T^{\ast}X
+    \underset{f_{\pi}}{\longrightarrow}
+    T^{\ast}X
+\end{equation}
+が定まり，これらから
+\begin{equation}
+    T_{N}^{\ast}Y
+    \underset{{}^{t}f_{N}'}{\longleftarrow}
+    N\times_{M}T_{M}^{\ast}X
+    \underset{{f_{N}}_{\pi}}{\longrightarrow}
+    T_{M}^{\ast}X
+\end{equation}
+がひきおこされる．
+混乱の恐れのないときは，
+\({f_{N}}_{\pi}\)のかわりに\({f}_{\pi}\)とかき，
+\({}^{t}f_{N}'\)のかわりに\({}^{t}f'\)とかく．
+\begin{equation}
+    T^{\ast}_{Y}X
+    \coloneqq
+    \Ker({}^{t}f'\colon
+    Y\times_{X}T^{\ast}X
+    \to T^{\ast}Y)
+    ={}^{t}f'(T^{\ast}_{Y}Y)
+\end{equation}
+とおく．
+
+\begin{RMK}
+    文献によっては，\({}^{t}f'\)と\(f_{\pi}\)をそれぞれ
+    \(\rho_{f}\)と\(\bar{\omega}_{f}\)や，たんに\(\rho\)と\(\bar{\omega}\)で表すものもある．
+    ここではこれらの表記は用いない．
+\end{RMK}
+
+\begin{CMT}
+    最近は\({}^{t}f'\)を\(f_d\)とかくことが多い．（GKSとか．）
+\end{CMT}
+
+\subsection*{順像との関係}
 
 
+フーリエ・佐藤関手を命題4.2.4と命題4.2.5の射に適用する．
+
+\begin{prp}
+    \(G\in\Dompb(Y)\)とする．
+    このとき，標準的な射による可換図式    
+    \[    
+        \vcenter{\xymatrix@C=36pt@R=36pt{
+        \Rder{{f_{N}}_{\pi}}_{!}{{}^t{f'_{N}}^{-1}}\mu_{N}(G)
+        \ar[d]
+        \ar[r]
+        %\ar@{}[dr]|\square
+        &
+        \mu_{M}(\Rder{f_{!}}G)
+        %\ar[r]
+        \ar[d]
+        \\
+        \Rder{{f_{N}}_{\pi}}_{\ast}({{}^t{f'_{N}}^{!}}\mu_{N}(G)\tens[]\omega_{Y/X}\tens[]\omega_{N/M}^{\otimes{-1}})
+        %\ar@{}[dr]|\square
+        &
+        \mu_{M}(\Rder{f_{\ast}}G)
+        \ar[l]
+        }}
+    \]が存在する．
+    さらに，\(\supp(G)\to X\)と\(
+        C_N(\supp(G))\to T_{M}X
+    \)が固有かつ\(\supp(G)\cap f^{-1}(M)\subset N\)ならば，
+    以上の射はすべて同型である．
+    
+    とくに\(f^{-1}(M)=N\)かつ，
+    \(f\)が\(M\)に関して斉かつ\(\supp(G)\)上固有のとき，
+    以上の射はすべて同型である．
+\end{prp}
+
+\begin{proof}
+    \(H=\nu_{N}(G)\)とする．
+    命題3.7.13と命題3.7.14を\(f'=f_{\tau}\circ f'_{N}\)に用いることで
+    \begin{align*}
+        \textcolor{red}{AAAAAAAAAAAAAAAAAAAAAAAAA}
+    \end{align*}
+    を得る．このとき命題4.2.4と式(4.2.4)から主張が従う．
+\end{proof}
+
+\subsection*{逆像との関係}
 
 
+\begin{prp}[{\cite[Prop.4.3.5]{KS90}}]
+    \(F\in\Dompb(X)\)とする．
+    \begin{enumerate}[(i)]
+        \item 標準的な射で次の図式を可換にするものが存在する．
+        \[\vcenter{\xymatrix@C=56pt@R=46pt{
+            \Rder{{}^{t}{f'_{N}}_{!}}(\omega_{N/M}\tens[]{{f_{N}}_{\pi}^{-1}}\mu_{M}(F))
+            \ar[d]^{}
+            \ar[r]_{}
+            %\ar@{}[dr]|\square
+            &
+            \mu_{N}(\omega_{Y/X}\tens[]{f^{-1}}F)
+            %\ar[r]
+            \ar[d]
+            \\
+            \Rder{{}^{t}{f'_{N}}_{\ast}}{{f_{N}}^{!}_{\pi}}\mu_{M}(F)
+            %\ar@{}[dr]|\square
+            &
+            \mu_{N}({f^{!}}F)
+            \ar[l]_{\beta}
+        }}\]
+        ここで縦向きの矢印は(3.1.6)から導かれるものである．
+        \item \(f\colon Y\to X\)と\(\mres[f]{N}\colon N\to M\)が平滑ならばこれらの射はすべて同型となる．    
+        \item \(f\)が\(M\)に横断的かつ\(f^{-1}(M)=N\)ならば，
+        自然な射\[
+            \Rder{{}^{t}{f'_{N}}_{\ast}}{{f_{N}}_{\pi}}^{-1}\mu_{M}(F)
+            \to \mu_{N}(f^{-1}F)
+        \]が存在する．
+    \end{enumerate}
+\end{prp}
+
+\begin{proof}
+    \(H=\nu_{M}(F)\)とおく．命題3.7.13と命題3.7.14を用いよう．
+    \begin{align*}
+        \textcolor{red}{AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA}
+    \end{align*}
+    である．したがって，命題4.2.5から(i)と(ii)が従う．
+
+    \(f\)が\(M\)に横断的かつ\(f^{-1}(M)=N\)のとき，\(
+        {}^{t}f'_{N}\colon T_{N}^{\ast}Y
+        \to 
+        N\times_{M}T^{\ast}_{M}X
+    \)は同型であり，\(
+        \omega_{N/M}\cong\mres[\omega_{Y/X}]{N}
+    \)である．
+\end{proof}
+
+\(f\)と\(\mres[f]{N}\)が平滑ならば，
+\(Y\times_{X}T^{\ast}_{}X\)は\(T^{\ast}Y\)の部分束であり，
+\(f_{\pi}\)は同型\(
+    (Y\times_{X}T^{\ast}X)\cap T^{\ast}_{N}Y
+    \simar 
+    Y\times_{X}T^{\ast}_{M}X
+\)を引き起こす．
 
 
+\subsection*{テンソル積との関係}
 
+最後にテンソル積について調べる．
 
+\begin{prp}
+    命題4.2.6の状況で，次の自然な射が存在する．
+    \[
+        \mu_{M}(F)\letens[]\mu_{N}(G)
+        \to
+        \mu_{M\times N}\left(F\letens[]G\right).
+    \]
+\end{prp}
+\begin{proof}
+    命題4.2.6と命題3.7.15を適用すればよい．
+\end{proof}
 
+\begin{prp}
+    \(M\)を\(X\)の部分多様体とし\(
+        \gamma\colon T^{\ast}_{M}X\times_{M}T^{\ast}_{M}X
+        \to T^{\ast}_{M}X
+    \)を加法で定まる射とする．
+    このとき，任意の\(F,G\in\Dompb(X)\)に対し，
+    自然な射\begin{equation}
+        \Rder{\gamma_!}\left(
+            \mu_{M}(F)\letens[M]\mu_{N}(G)
+        \right)
+        \to
+        \mu_{M}\left(F\ltens[]G\right)\tens[]\omega_{M/X}
+    \end{equation}
+    が存在する．
+\end{prp}
 
-
-
-
-
+\begin{RMK}
+    命題4.3.4と4.3.5の射の関係は以下の通りである．
+    \begin{enumerate}[(a)]
+        \item \(\Dompb(Y)\)の任意の射\(\varphi\colon G\to f^{!}F\)に対し，次の図式は可換である．
+        \[    
+            \vcenter{\xymatrix@C=36pt@R=36pt{
+            \Rder{{f_{N}}_{\pi}}_{!}{{}^t{f'_{N}}^{-1}}\mu_{N}(G)
+            \ar[d]^{\varphi}
+            \ar[r]_{\alpha}
+            %\ar@{}[dr]|\square
+            &
+            \mu_{M}(\Rder{f_{!}}G)
+            %\ar[r]
+            \ar[d]^{\varphi}
+            \\
+            \Rder{{f_{N}}_{\pi}}_{!}{{}^t{f'_{N}}^{-1}}\mu_{N}(f^{!}F)
+            \ar[r]_{\beta}
+            %\ar@{}[dr]|\square
+            &
+            \mu_{M}(F)
+            }}
+        \]    
+        ここで\(\alpha\)は命題4.3.4の初めの横向きの矢印で，
+        \(\beta\)は命題4.3.5の二つ目の横向きの矢印で与えられる．
+        \item 同様に，
+        \(\Dompb(Y)\)の任意の射\(
+            \psi\colon F\to \Rder{f_{\ast}}G
+        \)に対し，次の図式は可換である．
+        \[\vcenter{\xymatrix@C=56pt@R=46pt{
+            \mu_{M}(F)
+            \ar[d]^{\psi}
+            \ar[r]_{\alpha'}
+            %\ar@{}[dr]|\square
+            &
+            \Rder{{f_{N}}_{\pi}}_{\ast}(
+                {{}^t{f'_{N}}^{!}}\mu_{N}(f^{-1}F)
+                \tens[]\omega_{Y/X}
+                \tens[]\omega_{N/M}^{\otimes{-1}}
+            )
+            %\ar[r]
+            \ar[d]^{\psi}
+            \\
+            \mu_{M}(\Rder{f_{\ast}}F)
+            \ar[r]_{\beta'}
+            %\ar@{}[dr]|\square
+            &
+            \Rder{{f_{N}}_{\pi}}_{\ast}(
+                {{}^t{f'_{N}}^{!}}\mu_{N}(G)
+                \tens[]\omega_{Y/X}
+                \tens[]\omega_{N/M}^{\otimes{-1}}
+            )
+        }}\]ここで\(\alpha'\)は命題4.3.5の初めの横向きの矢印で，
+        \(\beta'\)は命題4.3.4の二つ目の横向きの矢印で与えられる．
+    \end{enumerate}
+\end{RMK}
 %\section{\(\mhom\){\cite[\S 4.4]{KS90}}}
 
 

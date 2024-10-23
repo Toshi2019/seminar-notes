@@ -483,5 +483,8 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/ueus.fd
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm7.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm5.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlgothr-v.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlgothr-h.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT 20241023.aux
