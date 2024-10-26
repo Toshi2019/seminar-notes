@@ -785,7 +785,7 @@ underlay={% 色塗って線引くよ〜
 
 \(\ori_X\)も対合律をみたす．
 
-\begin{prp}[{\cite[命題3.3.4]{KS90}}]
+\begin{prp}[{\cite[命題3.3.4]{KS90}}]\label{334}
     \(f\colon Y\to X\)をファイバー次元が\(l\)の位相的しずめ込みとする．
     \begin{enumerate}[(i)]
         \item \(\omega_{Y/X}^\zz\in\Dompl(\zz_Y)\)と
@@ -801,8 +801,8 @@ underlay={% 色塗って線引くよ〜
         \]
         \item 次の自然な同型が成り立つ．
         \begin{align*}
-                \ori_{Y/X}\otimes \ori_{Y/X}\cong A_Y,\\
-                \HOM(\ori_{Y/X},A_Y)\cong A_Y.
+                \ori_{Y/X}\otimes \ori_{Y/X}&\cong A_Y,\\
+                \HOM(\ori_{Y/X},A_Y)&\cong \ori_{Y/X}.
         \end{align*}
         \item \(g\colon Z\to Y\)を連続写像で
         \(f\circ g\)がファイバー次元\(m\)の位相的しずめ込み
@@ -826,26 +826,55 @@ underlay={% 色塗って線引くよ〜
     \cong A_Y
 \]
 である．
-
+\begin{RMK}[{\cite[Remark 3.3.5]{KS90}}]
+    \(\vcenter{
+        \xymatrix@C=8pt@R=16pt{
+            Y
+            \ar[rd]_{p_{Y}}
+            \ar[rr]^{f}
+            %\ar@{}[dr]|\square
+            &&
+            X
+            \ar[ld]^{p_X}
+            %\ar[r]
+            \\
+            &
+            S
+            &
+        }
+    }\)を局所コンパクト空間の間の連続写像による可換図式とする．
+    \(p_X\)と\(p_Y\)はファイバー次元がそれぞれ\(m\)と\(n\)の
+    位相的しずめこみであると仮定する．
+    このとき\[
+        f^{!}A_{X}\cong
+        \ori_{Y/S}\tens[]f^{-1}\ori_{X/S}[n-m]
+    \]であり，次のようにおくのが自然である．
+    \begin{equation}
+        \ori_{Y/X}\coloneqq \ori_{Y/S}\tens[]f^{-1}\ori_{X/S}.
+    \end{equation}
+\end{RMK}
+\begin{proof}
+    命題\ref{334} (iii)より
+    \begin{align*}
+        f^{!}A_X
+        &\cong f^{!}p_{X}^{-1}A_{S}\\
+        &\cong f^{-1}p_{X}^{-1}A_{S}\tens[]\ori_{Y/S}\tens[]f^{-1}\ori_{Y/X}[n-m]\\
+        &\cong \ori_{Y/S}\tens[]f^{-1}\ori_{Y/X}[n-m]
+        %&\cong f^{!}(A_{X})\ttens[A_Y]p_{Y}^{-1}A_{S}\\
+        %&\cong f^{!}(A_{X})\ttens[A_Y]p_{Y}^{-1}A_{S}
+    \end{align*}
+    である．
+\end{proof}
 \paragraph{うめこみについて}
 以降，\(A=\cc\)とし\(\cc\)上の向きづけ層を考える．
 \(i\colon M\hookrightarrow X\)を閉埋め込みとし，
 \(a_M\colon M\to\{\pt\}\)と\(a_X\colon X\to\{\pt\}\)を
-一点への射とすると
-\begin{align*}
-    \ori_{M/X}[-n]
-    &\cong \omega_{M/X} \cong i^{!}\cc_X\\
-    &\cong i^{!}a_{X}^{-1}\cc\\
-    &\cong (a_{X}\circ i)^{-1}\cc\ttens[\cc_M]\ori_{M}\ttens[\cc_M]i^{-1}\ori_{X}[n-2n]\\
-    &\cong a_{M}^{-1}\cc\ttens[\cc_M]\ori_{M}\ttens[\cc_M]i^{-1}\ori_{X}[-n]\\
-    &\cong \cc_{M}\ttens[\cc_M]\ori_{M}\ttens[\cc_M]i^{-1}\ori_{X}[-n]\\
-    &\cong \ori_{M}\ttens[\cc_M]i^{-1}\ori_{X}[-n]
-\end{align*}
-が成り立つ．\(\omega_{M/X}\cong\ori_{M/X}[-n]\)なので，
-\begin{equation}\label{eq:rel-ori1}
-    \ori_{M/X}\cong \ori_{M}\ttens[\cc_M]i^{-1}\ori_{X}    
-\end{equation}
-である．\(X\)上の層\(\ori_X\)と制限\(
+一点への射とする．先の注意から
+\[
+    \ori_{M/X}\cong \ori_{M}\ttens[\cc_M]i^{-1}\ori_{X}
+\]
+が成り立つ．
+\(X\)上の層\(\ori_X\)と制限\(
     \mres[\ori_{X}]{M}=i^{-1}\ori_{X}
 \)を\(M\)上で同一視すると，上の式は
 \begin{equation}\label{eq:rel-ori2}
@@ -857,11 +886,11 @@ underlay={% 色塗って線引くよ〜
 \begin{equation}\label{eq:Bdefs}
     \RG_{M}(\cO_X)\ttens[]\ori_{M}[n]
     \cong 
-    \RHOM_{\cc_X}(\rmD'_{M}{\cc_X}_M,\cO_X).
+    \RHOM_{\cc_X}(\rmD'_{X}{\cc_X}_M,\cO_X).
 \end{equation}
 \begin{proof}
     まず\(\rmD_{X}'{\cc_X}_{M}\cong\ori_{M}[-n]\)より，右辺は\[
-        \RHOM_{\cc_X}(\rmD'_{M}{\cc_X}_M,\cO_X)
+        \RHOM_{\cc_X}(\rmD'_{X}{\cc_X}_M,\cO_X)
         \cong
         \RHOM_{\cc_X}(\ori_{M},\cO_X)[n]
     \]
@@ -917,6 +946,11 @@ underlay={% 色塗って線引くよ〜
     \bibitem[Sch04]{Sch04} Pierre Schapira, 
       \textit{Sheaves: from Leray to Grothendieck and Sato}, 
       S\'eminaires et Congres 9, Soc. Math. France, pp.173--181, 2004.
+    \bibitem[Sch17]{Sch17} Pierre Schapira, 
+      \textit{Microlocal Analysis and Beyond}, 
+      in New Spaces in Mathematics: 
+      Formal and Conceptual Reflections, 
+      Cambridge University Press pp.117--152 (2021).
     %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
 \end{thebibliography}
 %===============================================
