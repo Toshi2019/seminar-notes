@@ -46,4 +46,5 @@
 \contentsline {section}{\numberline {4.1}法変形}{65}{section.4.1}%
 \contentsline {section}{\numberline {4.2}特殊化}{69}{section.4.2}%
 \contentsline {section}{\numberline {4.3}超局所化}{73}{section.4.3}%
-\contentsline {chapter}{参考文献}{74}{chapter*.56}%
+\contentsline {chapter}{\numberline {第5章}層の超局所台}{74}{chapter.5}%
+\contentsline {chapter}{参考文献}{75}{chapter*.57}%

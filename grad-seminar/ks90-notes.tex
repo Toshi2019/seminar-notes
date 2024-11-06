@@ -379,7 +379,8 @@
 \newcommand{\CCat}{\Comp(\cat)}
 \newcommand{\KCat}{\Komp(\cat)}
 \newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
-\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+%\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\HOM}{\mathop{\mathcal{H}\hspace{-0.5pt}om}\nolimits}%内部Hom
 \newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
 
 \newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
@@ -4376,21 +4377,6 @@ c柔軟層の例は\ref{sec29}節で大量に与える．
 \clearpage
 \section{非特性変形補題}
 \begin{leftbar}
-\begin{PRP}[{\cite[Prop. 2.5.1]{KS90}}]\label{PRP2.5.1}
-    \(X\)を位相空間とし，\(Z\)を部分空間とする．
-    \(F\)を\(X\)上の層とし，自然な射
-    \[
-        \psi\colon\indlim[U\in I_Z]\Gamma(U;F)\to\Gamma(Z;F)
-    \]を考える．
-
-    (i) 
-    \(\psi\)は単射である．
-
-    (ii)
-    \(X\)がハウスドルフで\(Z\)がコンパクトならば，\(\psi\)は同型である．
-\end{PRP}
-\end{leftbar}
-\begin{leftbar}
     \begin{PRP}[{\cite[Prop. 1.12.4]{KS90}}]\label{PRP1.12.4}
         \[
             \phi_k\colon H^k(\indlim X)\to\prolim H^k(X_n)
@@ -5256,7 +5242,7 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 これらの関手の関手的性質を調べる．
 
 \setcounter{CNV}{-1}
-\begin{CNV}
+\begin{CNV}\label{cnv40}
     規約3.0はそのまま用いる．
     その上で，多様体とその間の射はすべて\(C^{\infty}\)級または実解析的であると仮定する．
 
@@ -6001,6 +5987,57 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 
 \section{超局所化}
 
+\chapter{層の超局所台}
+\section*{要約}
+多様体\(X\)において，
+\(\Dompb(X)\)の任意の対象\(F\)に対し，
+\(T^{\ast}X\)の錐状閉部分集合を自然に対応させることができる．
+この集合を\(F\)の超局所台といい，\(\muS(F)\)で表す．
+大雑把に言って，
+\(\muS(F)\)は\(X\)において\(F\)の「伝播しない」余方向を
+記述するものであり，
+後の章では，\(\muS(F)\)が\(T^{\ast}X\)の
+包合的部分集合であることが示される．
+
+この概念はまた，
+層の理論における種々の関手が交換するための条件を与える．
+例えば，\(f^{!}F\)が\(\omega_{Y/X}\tens[]f^{-1}F\)と
+同型となるのはいつか？
+あるいは\(f^{-1}\RHOM(F_1,F_2)\)が\(\RHOM(f^{-1}F,f^{-1}F)\)と
+同型になるのはいつか？
+
+ここではまず初めに\(\muS(F)\)の3つの定義が互いに同値であることを示し，
+超局所台を用いて，\(X\)の開集合\(\varOmega_0\subset\varOmega_1\)に対し，
+\(\RG(\varOmega_1;F)\)から
+\(\RG(\varOmega_0;F)\)への制限射が同型になるための規準を与える．
+閉凸固有錐\(\gamma\)から定まる\(\gamma\)位相を第III章で導入した．
+超局所台を調べる上ではこれが自然な道具となる．
+実際，\(X\)がアフィン空間で\(
+    \phi_{\gamma}\colon X\to X_{\gamma}
+\)が\(X\)の位相を緩める写像であるとき，\(
+    \phi_{\gamma}^{-1}\Rder{{\phi_{\gamma}}_{\ast}}
+\)は次の意味で切り落とし関手の役割を担う．\(
+    \muS(\phi_{\gamma}^{-1}\Rder{{\phi_{\gamma}}_{\ast}}F)
+\)は\(X\times\Int\gamma^{\circ a}\)に含まれ，射\(
+    \phi_{\gamma}^{-1}\Rder{{\phi_{\gamma}}_{\ast}}F\to F
+\)は「\(X\times\Int\gamma^{\circ a}\)上で同型」となる．
+本章では，この超局所的同型を定義し，次章で理論を展開する．
+
+超局所台の例をいくつか見たのち，
+テンソル積と\(\HOM\)，順像逆像，フーリエ佐藤変換といった，
+層の演算に関する超局所台の振る舞いを調べる．
+
+この章では，射はいつも固有であるか，
+超局所台に関して「非特性的」であると仮定する．
+第VI章ではこの制限は取り除く．
+この章と次章で示す結果は，
+解析的係数偏微分方程式論における古典的な結果の多くと非常に似通っている．
+第XI章では，いくつかの古典的な結果を，超局所台の理論から導出する方法を述べる．
+
+Kashiwara-Schapira[3]の説明にべったり従うことが多いが，
+証明のいくつかは単純化されている．
+
+規約\ref{cnv40}を引き続き用いる．
 
 
 

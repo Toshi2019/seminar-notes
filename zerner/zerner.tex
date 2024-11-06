@@ -17,7 +17,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[10pt, a4paper, dvipdfmx, draft, leqno]{jsarticle}
+\documentclass[10pt, a4paper, dvipdfmx, leqno]{jsarticle}
 
 % ------------------------
 % usepackage
@@ -433,7 +433,7 @@ LPDEを扱うための唯一の解析的な道具である．
 ここで\(\alpha=(\alpha_1,\dots,\alpha_n)\in\nn^n\)は多重指数，
 \(\lvert \alpha\rvert=\alpha_1+\dots+\alpha_n\)で，
 \(a_\alpha(z)\)は\(X\)上の正則関数，
-\(\partial_z^\alpha\)は微分\(\frac{\partial}{\partial z_i}\)を
+\(\partial_z^\alpha\)は微分\(\dfrac{\partial}{\partial z_i}\)を
 表す単項式である．
 
 \(Y\)が非特性的であるとは，
@@ -477,17 +477,17 @@ $Y$が$P$に関して非特性的ならばコーシー問題は$Y$の近傍で�
 これは伝播の研究において重要な役割を担う．
 
 これを述べるためには座標によらない議論をしなければならない．
-$P$の主要表象を\(\sigma(P)\)と書くがこれは
+$P$の主要表象\(\sigma(P)\)を
 \[
     \sigma(P)(z;\zeta)
-    =\sum_{\lvert \alpha\rvert=m}a_alpha(z)\zeta^\alpha
+    =\sum_{\lvert \alpha\rvert=m}a_\alpha(z)\zeta^\alpha
 \]
-で定義される．
+で定める．
 これは実は$X$の余接束$T^\ast X$上の関数になっている．
 $X$を下部の実多様体$X_\rr$と同一視すると，
 $(T^\ast X)_\rr$と$T^\ast(X_\rr)$の間を自然に同一視できる．
 $Y$が$P$に関して非特性的であることは，
-$\sigma(P)$が0切断を取り除いた$Y$の余法束で0にならないと言い換えられ，
+$\sigma(P)$が$Y$の余法束から0切断を取り除いたものの上で0にならないと言い換えられ，
 同様に実超曲面に対しても非特性的であるという概念を定義できる．
 
 \begin{PRP}[\cite{Zer71}]
@@ -500,7 +500,58 @@ $\sigma(P)$が0切断を取り除いた$Y$の余法束で0にならないと言�
     このとき\(f\)自体も境界\(S\)を通って解析接続できる．
 \end{PRP}
 
-証明は非常にシンプルである（\cite[Thm9.4.7]{Hor83}も参照）．
+証明は非常にシンプルである（\cite{Hor83}も参照\footnote{\cite[Theorem 9.4.7]{Hor83}あたり}）．
+古典的なCK定理を用いて，\(Pf=0\)と仮定してよい．
+このとき，境界に向かって閉じている複素超曲面に沿った
+斉次コーシー問題\(Pf=0\), \(\gamma_{Y}(f)=\gamma_{Y}(f)\)を
+解くことになる．
+正確なCK定理から，\(S\)に十分近い\(Y\)に対して「角度を持つ」，
+したがって\(S\)を横切る領域内で，
+解（一意性から\(f\)に他ならない）が正則になることがわかる．
+
+類似の主張から，
+方程式\(Pf=g\)は\(\Omega\)内で正則かつ
+各\(x\in\partial\Omega\)の近傍で正則な関数の空間で解けることが示される．
+そして，もう少し議論をすれば次が示せる．
+\begin{THM}
+    \(\partial\Omega\)が\(P\)に関して非特性的であるとする．
+    このとき各\(k\in\NN\)に対して\(P\)は\(H^{k}_{X\setminus\Omega}(\mathcal{O}_{X})\rvert_{\partial\Omega}\)上の同型をひきおこす．
+\end{THM}
+
+\subsection{超局所台}
+
+定理2.3の結論は，PDEも複素解析も忘れて，
+もっと一般の枠組みで定式化できそうである．
+
+\(X\)を\(C^{\infty}\)級\emph{実}多様体，\(k\)を体，
+\(F\)を\(X\)上の\(k\)ベクトル空間の有界な複体（正確には\(X\)上の
+層の有界導来圏\(D^{b}(k_X)\)の対象）とする．
+通常通り，\(T^{\ast}X\)で\(X\)の余接束を表す．
+
+\newcommand{\cotb}[1][]{T^{\ast}{#1}}
+\newcommand{\conm}[2][]{T_{#1}^{\hspace{0.7pt}\ast}{#2}}
+\newcommand{\norb}[2][]{T_{#1}{#2}}
+%\(\conm[M]{X},T^{\ast}_{M}X,\norb[M]{X}\)
+\begin{DFN}
+    \(F\)の超局所台\(SS(F)\)は次のように
+    定義される\(T^{\ast}X\)の閉錐状部分集合である．
+    \(U\)を\(\cotb[X]\)の開集合とする．
+    このとき\(U\cap SS(F)=\varnothing\)となるのは，
+    どんな\(x\in X\)と実\(C^{\infty}\)関数\(
+        \varphi\colon X\to \rr
+    \)で\(\varphi(x)=0\), \(d\varphi(x)\in U\)
+    となるものに対しても，\[
+        \left(R\varGamma_{\varphi\geqq0}(F)\right)_{x}=0
+    \]となるときである．
+\end{DFN}
+
+言い換えると，
+余法ベクトルがその超局所台に属さない閉半空間に台を持つような
+コホモロジーが\(F\)にはないということである．
+
+
+
+
 \section{\cite[9.4]{Hor83}の和訳}
 \subsection*{要約}
 9.4節は解析的微分方程式の解析解の存在に当てられる．
@@ -511,7 +562,31 @@ $\sigma(P)$が0切断を取り除いた$Y$の余法束で0にならないと言�
 
 \subsection{解析的コーシー問題}
 すでに補題9.1.4でラプラシアンに対する解析的コーシー問題を解いた．
-9.5節で行う定理8.6.1の超関数への拡張には，
+\begin{quotation}
+    \begin{LMM}
+        \(\cc^n\)上のすべての整関数\(\phi\)に対し，
+        \(\cc^{n+1}\)上の整関数\(\varPhi\)で
+        \begin{equation}
+            \sum_{j=1}^{N+1}
+            \frac{\partial^2\varPhi}{\partial z_{j}^2}=0,
+            \text{ かつ }
+            z_{n+1}=0 \text{ のとき } 
+            \varphi=0,~ \partial_{n+1}\varPhi=\phi
+        \end{equation}
+        となるものがただ一つ存在する．
+    
+        すべての\(R>1\)に対し定数\(C_R\)で
+        \begin{equation}
+            \lvert\varPhi(z,z_{n+1})\rvert
+            \leqq
+            C_R\lvert z_{n+1}\rvert
+            \sup_{\lvert \zeta-z\rvert< R\lvert z_{n+1}\rvert}
+            \lvert\varPhi(\zeta)\rvert
+        \end{equation}
+        となるものが存在する．
+    \end{LMM}    
+\end{quotation}
+定理8.6.1の超関数への拡張を9.5節で行うが，それには，
 解析的コーシー問題に対する，
 存在域についての正確な情報も含んだ形での存在定理が必要になる．
 この節ではそのような結果を示す．
@@ -519,12 +594,12 @@ $\sigma(P)$が0切断を取り除いた$Y$の余法束で0にならないと言�
 $\cc^n$の点を\(z=(z_1,\dots,z_n)\)で表し，
 \[
     \Omega_R=\{z;\lvert z_j\rvert<R,j=1,\dots,n\}
-\]を
-半径\(R\)中心0の多重円盤を表すとする．
+\]
+で半径が\(R\)で\(0\)を中心とするの多重円盤を表すとする．
 この節だけでの記法として，解析関数に作用する作用素\(
     (\partial/\partial z_1)^{\alpha_1}
     \cdots(\partial/\partial z_n)^{\alpha_n}
-\)を\(D^\alpha\)と表す．
+\)を\(D^\alpha\)で表す．
 まず，単独の微分方程式
 \begin{equation}
     D^\beta u=f\label{eq:single}
@@ -537,16 +612,17 @@ $\cc^n$の点を\(z=(z_1,\dots,z_n)\)で表し，
 
 \begin{LMM}
     \(\Omega_R\)で解析的な任意の\(f\)に対して，
-    \eqref{eq:single}の一意な解であって\(\Omega_R\)で解析的であり，
+    \eqref{eq:single}の一意な解であって\(\varOmega_R\)で
+    解析的であり，
     なおかつ\eqref{cond:single}をみたすものが存在する．
     \begin{equation}\label{eval1}
-        \sup_{\Omega_R}\lvert u\rvert
-        \leqq R^{\lvert\beta\rvert}\sup_{\Omega_R}\lvert f\rvert/\beta!
+        \sup_{\varOmega_R}\lvert u\rvert
+        \leqq R^{\lvert\beta\rvert}\sup_{\varOmega_R}\lvert f\rvert/\beta!
     \end{equation}
     が成り立つ．
 \end{LMM}
 
-\eqref{eq:single}を少し摂動したものに対して若干弱い存在定理が成り立つ．
+\eqref{eq:single}を少し摂動したものに対しては少し弱い存在定理が成り立つ．
 簡単のため\(R=1\)とする．
 
 \begin{THM}\label{thm:hor942}
@@ -580,6 +656,33 @@ $\cc^n$の点を\(z=(z_1,\dots,z_n)\)で表し，
     \lvert z_n\rvert<\delta R\}
 \]
 を導入する．
+
+\begin{THM}[Cauchy-Kovalevsky]
+    微分方程式
+    \begin{equation}\label{eq:hor946}
+        \sum_{\lvert{\alpha}\rvert}^{}a^{\alpha}D^{\alpha}u=f
+    \end{equation}
+    の係数は\(\varOmega_{R,\delta}\)で解析的とし，
+    \(D_n^{m}u\)の係数\(a^{\beta}\), 
+    \(\beta=(0,\dots,0,m)\)は\(1\)とする．
+    \begin{equation}\label{eq:hor947}
+        2(2^ne)^m\sum_{\alpha\ne\beta}^{}R^{m-\lvert\alpha\rvert}\delta^{m-\alpha_n}\lvert a^\alpha(z)\rvert\leqq1,\quad z\in\varOmega_{R,\delta}
+    \end{equation}
+    であり，\(f\)が\(\varOmega_{R,\delta}\)上有界かつ解析的ならば，
+    \eqref{eq:hor946}は\(\varOmega_{R/2,\delta}\)で一意な解析解でコーシー境界条件\begin{equation}
+        z_n=0,j<m\text{ のとき }D^{j}_{n}u=0
+    \end{equation}をみたすものをもつ．
+    \(u\)に対し次の評価式が成り立つ．
+    \begin{equation}
+        \sup_{\varOmega_{R/2,\delta}}\lvert u\rvert
+        \leqq 
+        2(R\delta)^{m}\sup_{\varOmega_{R,\delta}}\lvert{f}\rvert
+    \end{equation}
+\end{THM}
+
+
+
+
 \section{\cite{Zer71}の和訳}
 
 コーシー・コワレフスキーの定理から簡単に従う幾何学的な結果を明示する．

@@ -1,0 +1,874 @@
+%\documentclass[12pt]{article}
+\documentclass[uplatex,dvipdfmx,a4paper,10pt,draft]{jsarticle} 
+
+
+
+
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{bm}
+\usepackage{calligra}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage[mathcal]{eucal}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+
+\usetikzlibrary{cd}
+\usetikzlibrary{arrows.meta}
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+\usepackage[dvipdfmx]{hyperref}
+%\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+
+%\usepackage[mathscr]{euscript} % mathscr のフォントを変更
+
+%=================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\usepackage{tcolorbox}
+\tcbuselibrary{listings,breakable, skins, theorems}
+%\tcbuselibrary{breakable}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem{Fact*}{事実}
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{k}}
+\newcommand{\bk}{\mathbf{K}}
+
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+%\newcommand{\Ring}{{\bf Ring}}
+\newcommand{\Ab}{{\bf Ab}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\Modf}{\mathop{\mathrm{Mod}^\mathrm{f}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits} % 写像の集合
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits} % 射集合
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits} % 自己準同型の集合
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits} % 自己同型の集合
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits} % 射集合
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits} % 核
+\newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
+\newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
+\newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+%        \itshape
+         \bfseries
+%    #1\@addpunct{.}]\ignorespaces
+    {#1}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
+\renewcommand{\proofname}{証明.}
+
+
+
+%\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{section}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Op}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+%\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
+
+\newcommand{\cat}{\mathscr{C}}
+
+%筆記体
+\newcommand{\cA}{\mcal{A}}
+\newcommand{\cB}{\mcal{B}}
+\newcommand{\cC}{\mcal{C}}
+\newcommand{\cD}{\mcal{D}}
+\newcommand{\cE}{\mcal{E}}
+\newcommand{\cF}{\mcal{F}}
+\newcommand{\cG}{\mcal{G}}
+\newcommand{\cH}{\mcal{H}}
+\newcommand{\cI}{\mcal{I}}
+\newcommand{\cJ}{\mcal{J}}
+\newcommand{\cK}{\mcal{K}}
+\newcommand{\cL}{\mcal{L}}
+\newcommand{\cM}{\mcal{M}}
+\newcommand{\cN}{\mcal{N}}
+\newcommand{\cO}{\mcal{O}}
+\newcommand{\cP}{\mcal{P}}
+\newcommand{\cQ}{\mcal{Q}}
+\newcommand{\cR}{\mcal{R}}
+\newcommand{\cS}{\mcal{S}}
+\newcommand{\cT}{\mcal{T}}
+\newcommand{\cU}{\mcal{U}}
+\newcommand{\cV}{\mcal{V}}
+\newcommand{\cW}{\mcal{W}}
+\newcommand{\cX}{\mcal{X}}
+\newcommand{\cY}{\mcal{Y}}
+\newcommand{\cZ}{\mcal{Z}}
+
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+\newcommand{\scN}{\mathscr{N}}
+\newcommand{\scO}{\mathscr{O}}
+\newcommand{\scV}{\mathscr{V}}
+\newcommand{\scU}{\mathscr{U}}
+
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+%\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+%\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+%\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}%複体のホモトピー圏
+%\newcommand{\Comp}{\mathrm{C}}
+%\newcommand{\Komp}{\mathrm{K}}
+%\newcommand{\Domp}{\mathsf{D}}%複体のホモトピー圏
+
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathsf{K}}
+\newcommand{\Domp}{\mathsf{D}}
+\newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
+\newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
+\newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
+\newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
+\newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
+\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+\newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
+
+
+
+
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+%\DeclareMathOperator{\HOM}{\mathscr{H}\text{\kern -4.5pt {\calligra\large om}}\,}
+%\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\HOM}{\mathop{\mathcal{H}\hspace{-0.5pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
+\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+\newcommand{\mhom}{\mathop{\mu\hspace{-0pt}hom}\nolimits}
+\newcommand{\Rdf}{\mathrm{R}}
+\newcommand{\Ldf}{\mathrm{L}}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
+\newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
+\newcommand{\simra}{\mathrel{\overset{\sim}{\leftarrow}}}%同型左矢印
+\newcommand{\simrra}{\mathrel{\overset{\sim}{\longleftarrow}}}%同型左矢印
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\PSh}{\mathrm{PSh}}
+
+\newcommand{\rmD}{\mathrm{D}}
+
+\newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
+\newcommand{\ori}{\mathord{\mathrm{or}}}
+\newcommand{\Db}{\mathord{\mathscr{D}b}}
+
+\newcommand{\codim}{\mathop{\mathrm{codim}}\nolimits}
+
+
+
+\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
+\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
+
+
+\newcommand{\tens}[1][]{\mathbin{\otimes_{\raise1.5ex\hbox to-.1em{}{#1}}}}
+\newcommand{\ttens}[1][]{\mathbin{\mathop{\overset{\mathrm{}}{\tens}}_{#1}}}
+\newcommand{\etens}{\mathbin{\boxtimes}}
+\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
+\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+%\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
+\newcommand{\letens}[1][]{\mathbin{\mathop{\overset{\mathrm{L}}{\etens}}_{#1}}}
+\newcommand{\detens}{\underline{\etens}}
+\newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
+\newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
+
+\newcommand{\blk}{\mathord{\ \cdot\ }}
+\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
+
+
+
+
+%\newcommand{\hocolim}{{\mathrm{hocolim}}}
+%\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+%\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+%\newcommand{\Pro}{\mathrm{Pro}}
+%\newcommand{\Ind}{\mathrm{Ind}}
+%\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+%\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+\newcommand{\proolim}[1][]{\mathop{\text{\rm``{$\varprojlim$}''}}\limits_{#1}}
+\newcommand{\sproolim}[1][]{\smash{\mathop{\rm``{\varprojlim}''}\limits_{#1}}}
+\newcommand{\inddlim}[1][]{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}
+\newcommand{\sinddlim}[1][]{\smash{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}\,}
+\newcommand{\ooplus}{\mathop{\text{\rm``{$\oplus$}''}}\limits}
+\newcommand{\bbigsqcup}{\mathop{``\bigsqcup''}\limits}
+\newcommand{\bsqcup}{\mathop{``\sqcup''}\limits}
+\newcommand{\dsum}[1][]{\mathbin{\oplus_{#1}}}
+
+\newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
+
+
+
+
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}[section]
+\newtheorem{DFN}[AXM]{定義}
+\newtheorem{THM}[AXM]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[AXM]{命題}
+\newtheorem{LMM}[AXM]{補題}
+\newtheorem{CRL}[AXM]{系}
+\newtheorem{EG}[AXM]{例}
+\newtheorem*{EG*}{例}
+%\newtheorem{RMK}[AXM]{注意}
+\newtheorem{CNV}{規約}[section]
+\newtheorem*{CNV*}{規約}
+\newtheorem{CMT}[AXM]{コメント}
+\newtheorem*{CMT*}{コメント}
+\newtheorem{NTN}[AXM]{記号}
+\newtheorem{HPT}[AXM]{仮定}
+
+
+
+% 定理環境ここまで
+%====================================================
+
+%====================================================
+% 枠つき環境
+% 参考 1：https://note.com/totomin/n/n0b02d6539728
+% 参考 2：https://qiita.com/rityo_masu/items/5ef248024b294d72799a
+%
+\newtheorem{mythm}{定理}[section]
+\newtheorem{mydfn}[mythm]{定義}
+\newtheorem{mylmm}[mythm]{補題}
+\newtheorem{myprp}[mythm]{命題}
+%\newtheorem{rmk}[mythm]{命題}
+\newtheorem{RMK}[mythm]{注意}
+
+
+\newtcolorbox{thmbox}{empty,% 一回全部消すよ〜
+breakable,% 箱のページまたぎを許すよ〜
+underlay={% 色塗って線引くよ〜
+\fill[black!5] (frame.north west) rectangle (frame.south east);% 色塗ったよ〜
+\draw[line width=2pt] ([xshift=1pt]frame.north west)--([xshift=1pt]frame.south west);% 線引いたよ〜幅 2pt の線だから 1pt ずらしておこうね〜
+}}
+
+\newtcolorbox{prpbox}{empty,% 一回全部消すよ〜
+breakable,% 箱のページまたぎを許すよ〜
+underlay={% 色塗って線引くよ〜
+\fill[black!5] (frame.north west) rectangle (frame.south east);% 色塗ったよ〜
+\draw[line width=2pt] ([xshift=1pt]frame.north west)--([xshift=1pt]frame.south west);% 線引いたよ〜幅 2pt の線だから 1pt ずらしておこうね〜
+}}
+
+
+\newtcolorbox{dfnbox}{empty,% 一回全部消すよ〜
+breakable,% 箱のページまたぎを許すよ〜
+underlay={% 色塗って線引くよ〜
+%\fill[black!5] (frame.north west) rectangle (frame.south east);% 色塗ったよ〜
+\draw[line width=2pt] ([xshift=1pt]frame.north west)--([xshift=1pt]frame.south west);% 線引いたよ〜幅 2pt の線だから 1pt ずらしておこうね〜
+}}
+
+\newtcolorbox{lmmbox}{empty,% 一回全部消すよ〜
+breakable,% 箱のページまたぎを許すよ〜
+underlay={% 色塗って線引くよ〜
+\fill[black!5] (frame.north west) rectangle (frame.south east);% 色塗ったよ〜
+%\draw[line width=2pt] ([xshift=1pt]frame.north west)--([xshift=1pt]frame.south west);% 線引いたよ〜幅 2pt の線だから 1pt ずらしておこうね〜
+}}
+
+
+\newenvironment{thm}{\begin{thmbox}\begin{mythm}}{\end{mythm}\end{thmbox}}
+\newenvironment{dfn}{\begin{dfnbox}\begin{mydfn}}{\end{mydfn}\end{dfnbox}}
+\newenvironment{lmm}{\begin{lmmbox}\begin{mylmm}}{\end{mylmm}\end{lmmbox}}
+\newenvironment{prp}{\begin{prpbox}\begin{myprp}}{\end{myprp}\end{prpbox}}
+
+% 枠つき環境ここまで
+%=======================================================
+
+
+
+
+
+
+
+
+
+\newcommand{\Dlcon}{\mathop{\mathsf{D}^{+}_{\rr_{>0}}}\nolimits}
+%\newcommand{\Dlcon}{\mathop{\mathsf{D}^{+}_{\rr^+}}\nolimits}
+\newcommand{\Dbcon}{\mathop{\mathsf{D}^{\mathrm{b}}_{\rr^+}}\nolimits}
+
+\newcommand{\Int}[1][]{\mathop{\mathrm{Int}}\nolimits_{#1}}
+\newcommand{\Cl}[1][]{\mathop{\mathrm{Cl}}\nolimits_{#1}}
+\newcommand{\Bd}[1][]{\mathop{\mathrm{Bd}}\nolimits_{#1}}
+\newcommand{\Fr}[1][]{\mathop{\mathrm{Fr}}\nolimits_{#1}}
+
+
+
+\newcommand{\rrp}{\rr_{>0}}
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\title{ブラウンの表現定理とヴェルディエ双対}
+\author{toshi2019}
+\begin{document}
+\maketitle
+%\setcounter{chapter}{4}
+
+%\section*{はじめに}
+%\cite[\S7.5]{KS24b}のブラウンの表現定理の部分を勉強する．
+\section{前提知識}
+
+\begin{DFN}
+    \(\cat\)を圏とする．\(\cat\)の
+    \emph{生成対象系} (system of generators) とは，
+    \(\cat\)の対象の族\(\left(G_i\right)_{i\in I}\)で
+    \(I\)が小さな集合であり，射\(f\colon X\to Y\)に対し，
+    \(\Hom_{\cat}(G_i,X)\to\Hom_{\cat}(G_i,Y)\)が
+    どの\(i\in I\)についても同型となるならば
+    \(f\)も同型となることをいう．
+\end{DFN}
+
+
+\begin{DFN}
+    \emph{グロタンディーク圏} (Grothendieck category) とは，
+    アーベル圏であって，小さな極限と小さな余極限，
+    生成対象で小さなフィルター余極限が完全となるものをもつものをいう．
+\end{DFN}
+
+\section{ブラウンの表現定理}
+\begin{DFN}
+    \(\cD\)を三角圏で小さな直和を持つものとする．
+    \(\cD\)の\emph{\(t\)生成系} (system of 
+    \(t\)-generators) \(\cF\)とは，
+    \(\cD\)の対象の小さな族で以下の条件を満たすものをいう．
+    \begin{enumerate}[(i)]
+        \item \(X\in\cD\)が，
+        すべての\(C\in\cF\)に対し\(\Hom_{\cD}(C,X)\cong 0\)となるならば，\(X\cong 0\)である．
+        \item 任意の\emph{可算}集合\(I\)と任意\(\cD\)の射の
+        族\(\left(u_i\colon X_i\to Y_i\right)_{i\in I}\)に対し，
+        写像\(
+            \Hom_{\cD}(C,X_i)
+            \overset{u_i}{\longrightarrow}
+            \Hom_{\cD}(C,Y_i)
+        \)がどの\(i\in I\)とどの\(C\in\cF\)に対しても\(0\)になるならば，
+        写像\(
+            \Hom_{\cD}(C,\oplus_i X_i)
+            \overset{\oplus_i u_i}{\longrightarrow}
+            \Hom_{\cD}(C,\oplus_i Y_i)
+        \)がすべての\(C\in\cF\)に対し\(0\)になる．
+        %\(\xymatrix{
+        %        \Hom_{\cD}(C,\oplus_i X_i)
+        %        \ar[r]^{\oplus_i u_i}&
+        %        \Hom_{\cD}(C,\oplus_i Y_i)
+        %    }\)
+    \end{enumerate}
+\end{DFN}
+
+以下でブラウンの表現定理と呼ぶものは，実際にはその系である．
+\cite[Cor. 10.5.3]{KS06}も参照．
+
+\begin{THM}[ブラウンの表現定理]
+    \(\cD\)を三角圏で小さな直和と\(t\)生成系を持つものとする．
+    \(F\colon\cD\to\cD'\)を三角圏の間の三角関手とし，
+    \(F\)は小さな直和と交換すると仮定する．
+    このとき\(F\)の右随伴三角関手\(G\)が存在する．
+\end{THM}
+
+\begin{THM}[{\cite[Th. 14.3.1]{KS06}参照}]
+    \(\cC\)をグロタンディークアーベル圏とする．
+    \begin{enumerate}[(a)]
+        \item 圏\(\Domp(\cC)\)は小さな直和と\(t\)生成系をもつ．
+        \item \(\cD\)を三角圏，\(F\colon\Komp(\cC)\to\cD\)を
+        三角圏の間の関手とする．
+        このとき\(F\)は右局所化\(
+            \Rdf{F}\colon \Domp(\cC)\to\cD
+        \)をもつ．
+    \end{enumerate}
+\end{THM}
+
+\begin{THM}\label{757}
+    \(\cC\)と\(\cC'\)をグロタンディーク圏とし，
+    \(\rho\colon\cC\to\cC'\)を左完全関手とする．
+    次を仮定する．
+    \begin{enumerate}[(i)]
+        \item \(\rho\)のコホモロジー次元は有限である．\label{757-11}
+        \item \(\rho\)は小さな直和と交換する．\label{757-12}
+        \item \(\cC\)の入射的対象の小さな直和は\(\rho\)に対し非輪状である．\label{757-13}
+    \end{enumerate}
+    このとき
+    \begin{enumerate}[(a)]
+        \item 関手\(\Rdf{\rho}\colon\Domp(\cC)\to\Domp(\cC')\)は小さな直和と交換する．\label{757-21}
+        \item 関手\(\Rdf{\rho}\colon\Domp(\cC)\to\Domp(\cC')\)は右随伴\(\rho^{!}\colon\Domp(\cC')\to\Domp(\cC)\)をもつ．\label{757-22}
+        \item 関手\(\rho^{!}\)は関手\(\rho^{!}\colon\Dompl(\cC')\to\Dompl(\cC)\)をひきおこす．\label{757-23}
+    \end{enumerate}
+\end{THM}
+
+
+\section{ヴェルディエ双対}
+
+\subsection{右随伴の存在}
+
+\(f\colon X\to Y\)を局所コンパクト空間の射とし，\(\kk\)を体とする．
+\(
+    \Rdf{f_{!}}\colon \Mod(\kk_X)\to\Mod(\kk_Y)
+\)の右随伴\(f^{!}\)を
+例外逆像という．
+これの存在を証明するのにブラウンの表現定理を応用する．
+
+\begin{HPT}\label{1141}
+    局所コンパクト空間とその間の射はすべて，
+    c柔軟次元が有限であるとする．
+\end{HPT}
+
+\begin{PRP}\label{1115}
+    \begin{enumerate}[(i)]
+        \item \(f\colon X\to Y\)を局所コンパクト空間の射とし，
+        \(F\in\Mod(\kk_X)\)とする．\(Y\)の開集合\(V\)に対し\[
+            \Gamma(V;f_{!}F)
+            \cong
+            \indlim[Z]\Gamma_{Z}(f^{-1}(V);F)
+        \]が成り立つ．
+        ただし\(Z\)は\(f^{-1}(V)\)の閉集合で\(
+            \mres[f]{Z}\colon Z\to V
+        \)が固有射となるものの族を走る．
+        とくに\(
+            \Gamma_{c}(X;F)
+            \cong
+            \indlim[K]\Gamma_{K}(X;F)
+        \)が成り立つ．\label{1115-1}
+        ただし\(K\)は\(X\)のコンパクト部分集合の族を走る．
+        \item \(f\)が\(\supp(F)\)上固有ならば，
+        \(f_{!}F\simarr f_{\ast}F\)が成り立つ．
+        特に\(f\)が固有ならば\(f_{!}\simarr f_{\ast}\)である．\label{1115-2}
+        \item 関手\(f_{!}\)は左完全であり，
+        小さなフィルター帰納極限と交換する．\label{1115-3}
+        \item \(g\colon Y\to Z\)を局所コンパクト空間の間の
+        連続写像とする．
+        このとき\(g_{!}f_{!}\cong (g\circ f)_{!}\)である．\label{1115-4}
+        %\item \(i_{U}\colon U\hookrightarrow X\)を開埋め込みとする．このとき\label{1115-5}
+    \end{enumerate}
+\end{PRP}
+\begin{PRP}\label{1124}
+    c柔軟層の小さなフィルター帰納極限はc柔軟である．
+    特に，c柔軟層の小さな直和はc柔軟である．
+\end{PRP}
+
+\begin{THM}
+    \(f\colon X\to Y\)を局所コンパクト空間の間の連続写像とする．
+    このとき，関手\(
+        \Rdf{f_{!}}\colon
+        \Dompl(\kk_{X})\to\Dompl(\kk_{Y})
+    \)は右随伴をもつ．
+\end{THM}
+\begin{proof}
+    \(\Mod(\kk_X)\)はグロタンディーク圏である．
+    仮定\ref{1141}より定理\ref{757}の仮定\eqref{757-11}が成り立つ．
+    命題\ref{1115} \eqref{1115-3}より
+    \(f_!\)は左完全であり定理\ref{757}の仮定\eqref{757-12}をみたす．
+    命題\ref{1124}より定理\ref{757}の仮定\eqref{757-13}が成り立つ．
+    したがって定理\ref{757}より\(
+        \Rdf{f_{!}}\colon \Dompl(\kk_X)\to\Dompl(\kk_Y)
+    \)の右随伴関手\(
+        f^{!}\colon\Dompl(\kk_Y)\to\Dompl(\kk_X)
+    \)が存在する．
+\end{proof}
+
+\subsection{ヴェルディエ双対の性質}
+
+写像\(f\colon X\to Y\)があるとき，
+グラフを用いてその写像を分解することができる．
+\[
+    f\colon X\hookrightarrow X\times Y\twoheadrightarrow Y.
+\]
+ヴェルディエ双対の自然性から，
+分解した後の閉埋め込みと射影に関して計算ができればよい．
+
+\begin{PRP}
+    \(f\colon X\to Y\)を\(X\)から\(Y\)への閉埋め込みとし，
+    \(X\)と同型になる\(Y\)の閉部分集合を\(Z\)とする．
+    このとき\[
+        f^{!}(\blk)\cong f^{-1}\RG_{Z}(\blk).
+    \]
+\end{PRP}
+
+\begin{proof}
+    \(F\in\Dompb(\kk_X)\), \(G\in\Dompl(\kk_Y)\)とする．
+    \begin{align*}
+        \Hom_{\kk_X}(F,f^{!}G)
+        &\cong \Hom_{\kk_Y}(\Rdf{f_!}F,G)\\
+        &\cong \Hom_{\kk_Y}(\Rdf{f_!}F\tens[]\kk_{Z},G)\\
+        &\cong \Hom_{\kk_Y}(\Rdf{f_!}F,\RG_{Z}G)\\
+        &\cong \Hom_{\kk_Y}(f^{-1}\Rdf{f_!}F,f^{-1}\RG_{Z}G)\\
+        &\cong \Hom_{\kk_Y}(F,f^{-1}\RG_{Z}G)
+    \end{align*}
+    が\(F\in\Dompb(\kk_X)\)に関して自然に成り立つ．
+    よって米田の補題から結論が従う．
+\end{proof}
+
+
+
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    %\bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, \textit{Differential Topology}, Prentice-Hall, 1974.
+    \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+      \textit{Sheaves on Manifolds}, 
+      Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+    \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
+      \textit{Categories and Sheaves}, 
+      Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
+    \bibitem[KS24a]{KS24a} Masaki Kashiwara, Pierre Schapira, 
+      \textit{An Introduction to Categories and Homological Algebra}, 
+      2024.
+    \bibitem[KS24b]{KS24b} Masaki Kashiwara, Pierre Schapira, 
+      \textit{An Introduction to Sheaves on Grothendieck Topologies}, 
+      2024.
+%\bibitem[Hat89]{Hat89} 服部晶夫, 多様体 増補版, 岩波全書 288, 岩波書店, 1989.
+\end{thebibliography}
+%===============================================
+  
+
+\end{document}
