@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1730621338.0373 "ori-shv.dvi" "ori-shv.pdf" "ori-shv" 1730621339.20752 0
-  "ori-shv.dvi" 1730621337.87865 29800 ed46444595b59e9d9b55dbd0811bf400 "latex"
+["dvipdf"] 1731068321.5753 "ori-shv.dvi" "ori-shv.pdf" "ori-shv" 1731068322.57197 0
+  "ori-shv.dvi" 1731068321.41652 32196 2b4a1b8b6fe87e673ad443114d96878f "latex"
   (generated)
   "ori-shv.pdf"
   (rewritten before read)
-["latex"] 1730621335.96017 "/Users/giuseppe/seminar-notes/202410/ori-shv/ori-shv.tex" "ori-shv.dvi" "ori-shv" 1730621339.19848 0
-  "/Users/giuseppe/seminar-notes/202410/ori-shv/ori-shv.tex" 1730621333.04636 30433 f5f5c966ea8deb8be58b61531ed448fe ""
+["latex"] 1731068319.71335 "/Users/giuseppe/seminar-notes/202410/ori-shv/ori-shv.tex" "ori-shv.dvi" "ori-shv" 1731068322.56581 0
+  "/Users/giuseppe/seminar-notes/202410/ori-shv/ori-shv.tex" 1731068317.27256 31886 2c6b72dd3cae8d566a987e6de6cdfe70 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -261,8 +261,8 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ori-shv.aux" 1730621337.8771 1755 fdaa311e1d4b338a19b80b5b8316f646 "latex"
-  "ori-shv.tex" 1730621333.04636 30433 f5f5c966ea8deb8be58b61531ed448fe ""
+  "ori-shv.aux" 1731068321.41382 2073 52bf40a0508a8f1207c11dd08ef39a4d "latex"
+  "ori-shv.tex" 1731068317.27256 31886 2c6b72dd3cae8d566a987e6de6cdfe70 ""
   (generated)
   "ori-shv.aux"
   "ori-shv.dvi"
