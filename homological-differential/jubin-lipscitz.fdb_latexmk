@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1728553188.95793 "jubin-lipscitz.dvi" "jubin-lipscitz.pdf" "jubin-lipscitz" 1728553190.56517 0
-  "jubin-lipscitz.dvi" 1728553188.74693 11588 9a3ca5c4a11f080a411f599f30e9491d "latex"
+["dvipdf"] 1732281547.52938 "jubin-lipscitz.dvi" "jubin-lipscitz.pdf" "jubin-lipscitz" 1732281548.95077 0
+  "jubin-lipscitz.dvi" 1732281547.29486 12508 718e8b26842578582488862a6f593c53 "latex"
   (generated)
   "jubin-lipscitz.pdf"
   (rewritten before read)
-["latex"] 1728553185.23722 "/Users/giuseppe/seminar-notes/homological-differential/jubin-lipscitz.tex" "jubin-lipscitz.dvi" "jubin-lipscitz" 1728553190.55705 0
-  "/Users/giuseppe/seminar-notes/homological-differential/jubin-lipscitz.tex" 1728553172.58189 22064 5b395a015de032b75979f59391e0599d ""
+["latex"] 1732281544.99376 "/Users/giuseppe/seminar-notes/homological-differential/jubin-lipscitz.tex" "jubin-lipscitz.dvi" "jubin-lipscitz" 1732281548.94382 0
+  "/Users/giuseppe/seminar-notes/homological-differential/jubin-lipscitz.tex" 1732281542.45838 22340 5906c1bf9d66e45b94c950f2e6829303 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -253,9 +253,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "jubin-lipscitz.aux" 1728553188.74395 1276 f214ee76ebd37b445a26f130d426a2a0 "latex"
-  "jubin-lipscitz.out" 1728553188.74617 504 1ee5b4fb1555a25be4942a4376aea22d "latex"
-  "jubin-lipscitz.tex" 1728553172.58189 22064 5b395a015de032b75979f59391e0599d ""
+  "jubin-lipscitz.aux" 1732281547.29108 1276 f214ee76ebd37b445a26f130d426a2a0 "latex"
+  "jubin-lipscitz.out" 1732281547.29348 504 1ee5b4fb1555a25be4942a4376aea22d "latex"
+  "jubin-lipscitz.tex" 1732281542.45838 22340 5906c1bf9d66e45b94c950f2e6829303 ""
   (generated)
   "jubin-lipscitz.aux"
   "jubin-lipscitz.dvi"

@@ -464,6 +464,8 @@
 
 \newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
 
+\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+
 
 
 
@@ -538,6 +540,12 @@
 
 
 
+% 位相空間
+\newcommand{\Int}[1][]{\mathop{\mathrm{Int}}\nolimits_{#1}}
+\newcommand{\Cl}[1][]{\mathop{\mathrm{Cl}}\nolimits_{#1}}
+\newcommand{\Bd}[1][]{\mathop{\mathrm{Bd}}\nolimits_{#1}}
+\newcommand{\bd}{\mathord{\partial}}
+\newcommand{\Fr}[1][]{\mathop{\mathrm{Fr}}\nolimits_{#1}}
 
 
 % ----------------------------
@@ -720,7 +728,124 @@
 %\(\rr^+\)束は主束？
 
 
+\section{外向き余法ベクトル}
+\cite{GP74,Hat89}に外向き法ベクトルの記述があるので，それを参考に，
+外向き余法ベクトルについて述べる．
 
+\(X\)の境界\(\bd{X}\)を考える．
+\(\bd{X}\)の点\(x\)に対し，
+\(\varphi\colon U\to H^n\)を\(x\)の
+まわりの\(X\)の局所座標系とする．
+ただし，\(H^n\)は\(n\)次元上半空間\[
+  H^{n}\coloneqq\left\{
+    x_{1},\ldots,x_{n};x_{n}\geqq0
+  \right\}
+\]を表す．このとき，
+\(T_{x}\bd{X}\)は\(T_{x}X\)において余次元\(1\)の部分ベクトル空間
+である．\(T_{x}X\)のベクトル\(v\in T_{x}X\)で，
+接写像\(d_{x}\varphi\colon T_{x}U\to T_{\varphi(x)}H^n\)による
+像\(d_{x}\varphi(v)\)が\(\Int{H^n}\)に属するとき，
+\(v\)は\(x\in\bd{X}\)における内向きのベクトルであるという．
+\(-d_{x}\varphi(v)\)が\(\Int{H^n}\)に属するとき，
+\(v\)は\(x\in\bd{X}\)における外向きのベクトルであるという．
+
+標準双線形形式\(
+  \langle\blk,\blk\rangle\colon T_{x}X\times T_{x}^{\ast}X\to\rr
+\)を考える．
+%の\(T_{x}\bd{X}\)への
+%制限\(T_{x}\bd{X}\times T_{x}^{\ast}X\to\rr\)
+\(\xi\in T_{x}^{\ast}X\)が次の2つの条件をみたすとき，
+\(\xi\)は\(x\in\bd{X}\)における
+外向き余法ベクトルであるという．
+\begin{enumerate}
+  \item \(\xi\)の双対ベクトル\(v\in T_{x}X\)は\(x\in\bd{X}\)における外向きのベクトルである．
+  \item 任意の\(v\in T_{x}\bd{X}\)に対し\(\langle v,\xi\rangle=0\)である．
+\end{enumerate}
+
+
+ユークリッド空間内の境界つき多様体では，
+ユークリッド計量を用いて，\(x\in\bd{X}\)における単位余法ベクトルが定まる．
+
+\begin{EG}[{\cite[Ex.I.5.4.4]{Sch85}}]
+  \(B=\left\{
+      w\in\cc;\lvert{\Img{w}}\rvert<1
+    \right\}\subset\cc
+  \)に対し，
+  \(\left(T^{\ast}_{\bd{B}}\cc\right)^{\pm}\)を
+  それぞれ外向き余法束，内向き余法束と呼ぶ．
+  これをきちんと書き下してみる．
+  \(\bd{B}\)は\(\left\{(x,\pm1);x\in\rr\right\}\)とかける．
+  ここで，\(\cc\)と\(\rr\)を\(
+    x+iy\leftrightarrow (x,y)
+  \)で同一視している．
+  まず\(
+    \bd{B}\times_{\cc}T^{\ast}\cc
+    \cong\mres[T^{\ast}\cc]{\bd{B}}
+  \)が\[
+    \left((x,\pm1),(x,\pm1;\xi,\eta)\right)
+    \longleftrightarrow
+    \left(x,\pm1;\xi,\eta\right)
+  \]で定まる．
+  また\[
+    T^{\ast}\bd{B}
+    \cong
+    \left\{(x,\pm1;\xi,0);x\in\bd{B},\xi\in\rr\right\}
+  \]とかけるので，
+  \[
+    \bd{B}\pb[\cc]T^{\ast}\cc\to T^{\ast}\bd{B}
+  \]
+  の核は\[
+    (x,\pm1;\xi,\eta)\mapsto(x,\pm1;\xi,\eta)\mapsto(x,\pm1;\xi,0)
+  \]で\[
+    T^{\ast}_{\bd{B}}\cc=
+    \left\{(x,\pm1;0,\eta);x\in\bd{B},\eta\in\rr\right\}
+  \]となる．
+
+  さて，外向き余法束\(
+    \left(T^{\ast}_{\bd{B}}\cc\right)^{+}
+  \)の方は，\[
+    \left(T^{\ast}_{\bd{B}}\cc\right)^{+}
+    =
+    \left\{(x,\pm1;\zeta)~\middle|~x\in\bd{B},
+    \zeta=\begin{cases}
+      (0,\eta)&(\zeta\in T^{\ast}_{(x,1)}\bd{B})\\
+      (0,-\eta)&(\zeta\in T^{\ast}_{(x,-1)}\bd{B})
+    \end{cases}(\eta>0)\right\}
+  \]
+  とかけて，内向き余法束\(
+    \left(T^{\ast}_{\bd{B}}\cc\right)^{-}
+  \)の方は，\[
+    \left(T^{\ast}_{\bd{B}}\cc\right)^{-}=
+    \left\{(x,\pm1;\zeta)~\middle|~x\in\bd{B},
+    \zeta=\begin{cases}
+      (0,-\eta)&(\zeta\in T^{\ast}_{(x,1)}\bd{B})\\
+      (0,\eta)&(\zeta\in T^{\ast}_{(x,-1)}\bd{B})
+    \end{cases}(\eta>0)\right\}
+  \]
+  とかける．
+
+  \begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}[x=1cm,y=1cm]
+      \fill[black!20] (-4.9,1) rectangle (4.9,-1);
+      \draw[->,>=stealth,thick] (-5,0)--(5,0)node[right]{$\RR$}; %x軸
+      \draw[->,>=stealth,thick] (0,-3)--(0,3); %x軸
+      \draw[thick,dashed] (-4.9,1)--(4.9,1)node[above]{$\bd{B}^{+}$}; %
+      \draw[thick,dashed] (-4.9,-1)--(4.9,-1)node[below]{$\bd{B}^{-}$}; %
+
+      %\draw[thick] (-4,-0.2) node[left]{\(a\)};
+      \fill[black!0] (2.75,-0.25) rectangle (3.25,-0.75);
+      \draw(3,-0.5) node{\(B\)};
+
+      \draw[->,>=stealth,thick] (-3,1)--(-3,1.5)node[above]{\((-3,1;0,1/2)\)}; 
+      \draw[->,>=stealth,thick] (1,-1)--(1,-2)node[below]{\((1,-1;0,-1)\)}; 
+
+      %\draw[thick] (-3,0.1)--(-3,-0.1) node[below]{\(x\)};
+    \end{tikzpicture}
+    \caption{\(\bd{B}\)に対する外向き余法束}
+    \label{fig:conormal}
+  \end{figure}
+\end{EG}
 
 %===============================================
 % 参考文献スペース
@@ -734,6 +859,10 @@
     Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
   \bibitem[Hat89]{Hat89} 服部晶夫, 多様体 増補版, 岩波全書 288, 岩波書店, 1989.
   %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+  \bibitem[Sch85]{Sch85} Pierre Schapira, 
+    \textit{Microdifferential Systems in the Complex Domain}, 
+    Grundlehren der Mathematischen Wissenschaften, 269, 
+    Springer, 1985.
 \end{thebibliography}
 
 %===============================================

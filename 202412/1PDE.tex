@@ -1,10 +1,9 @@
-%=====================================
-%   hyperfunctions.tex
-%   超関数 toshi2019
-%=====================================
-\title{Liscitz連続性の超局所的特徴づけ}
-%\author{}
-\date{\today\footnote{2024/10/10かきはじめ}}
+%================================================
+%    sheaves on manifolds ノート
+%================================================
+\title{1階偏微分方程式}
+\author{大柴寿浩}
+\date{\today 更新}
 
 % -----------------------
 % preamble
@@ -21,8 +20,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-%\documentclass[10pt, a4paper, dvipdfmx,leqno]{jsarticle}
-\documentclass[uplatex,10pt, a4paper, dvipdfmx,leqno]{jsarticle} 
+\documentclass[9pt, b5paper, dvipdfmx, leqno, draft]{jsreport}
 
 % ------------------------
 % usepackage
@@ -51,15 +49,16 @@
 \usepackage{tikz}
 \usepackage{verbatim}
 \usepackage[all]{xy}
-
+\usepackage{url}
 \usetikzlibrary{cd}
-\usetikzlibrary{arrows.meta}
+
 
 
 % ================================
 % パッケージを追加する場合のスペース 
+%\usepackage{calligra}
 \usepackage[dvipdfmx]{hyperref}
-%\usepackage{xcolor}
+\usepackage{xcolor}
 \definecolor{darkgreen}{rgb}{0,0.45,0} 
 \definecolor{darkred}{rgb}{0.75,0,0}
 \definecolor{darkblue}{rgb}{0,0,0.6} 
@@ -70,11 +69,27 @@
     urlcolor=darkblue,
 }
 \usepackage{pxjahyper}
-
-%\usepackage[mathscr]{euscript} % mathscr のフォントを変更
+%\usepackage[mathcal]{euscript}
+\usepackage{layout}
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 0.7zw} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{red}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
 
 %=================================
 
+%============================================================
+% layout for a4 9pt
+%\setlength{\textwidth}{459pt}
+%\setlength{\marginparwidth}{105pt}
+%\setlength{\evensidemargin}{69pt}
+%============================================================
 
 % --------------------------
 % theoremstyle
@@ -106,6 +121,7 @@
 \newtheorem{Consideration}[Axiom]{考察}
 \newtheorem{Alert}[Axiom]{警告}
 \newtheorem{Fact}[Axiom]{事実}
+\newtheorem{com}[Axiom]{コメント}
 
 
 % 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
@@ -124,7 +140,9 @@
 \newtheorem*{Problem*}{問題}
 \newtheorem*{Consideration*}{考察}
 \newtheorem*{Alert*}{警告}
-\newtheorem{Fact*}{事実}
+\newtheorem*{Fact*}{事実}
+\newtheorem*{com*}{コメント}
+
 
 
 % 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
@@ -206,10 +224,7 @@
 \newcommand{\Set}{{\bf Set}}
 \newcommand{\Vect}{{\bf Vect}}
 \newcommand{\FDVect}{{\bf FDVect}}
-%\newcommand{\Ring}{{\bf Ring}}
-\newcommand{\Ab}{{\bf Ab}}
 \newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
-\newcommand{\Modf}{\mathop{\mathrm{Mod}^\mathrm{f}}\nolimits}
 \newcommand{\CGA}{{\bf CGA}}
 \newcommand{\GVect}{{\bf GVect}}
 \newcommand{\Lie}{{\bf Lie}}
@@ -218,15 +233,11 @@
 
 
 % 射の集合など
-\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits} % 写像の集合
-\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits} % 射集合
-\newcommand{\End}{\mathop{\mathrm{End}}\nolimits} % 自己準同型の集合
-\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits} % 自己同型の集合
-\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits} % 射集合
-\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits} % 核
-\newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
-\newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
-\newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits}
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits}
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits}
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits}
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits}
 
 % その他便利なコマンド
 \newcommand{\dip}{\displaystyle} % 本文中で数式モード
@@ -247,31 +258,7 @@
 
 % ================================
 % コマンドを追加する場合のスペース 
-%\newcommand{\OO}{\mcal{O}}
-
-
-
-
-\makeatletter
-\renewenvironment{proof}[1][\proofname]{\par
-  \pushQED{\qed}%
-  \normalfont \topsep6\p@\@plus6\p@\relax
-  \trivlist
-  \item[\hskip\labelsep
-%        \itshape
-         \bfseries
-%    #1\@addpunct{.}]\ignorespaces
-    {#1}]\ignorespaces
-}{%
-  \popQED\endtrivlist\@endpefalse
-}
-\makeatother
-
-\renewcommand{\proofname}{証明.}
-
-
-
-%\renewcommand\proofname{\bf 証明} % 証明
+\renewcommand\proofname{\bf 証明} % 証明
 \numberwithin{equation}{section}
 \newcommand{\cTop}{\textsf{Top}}
 %\newcommand{\cOpen}{\textsf{Open}}
@@ -279,6 +266,7 @@
 \newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
 \newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
 \newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\Int}{\mathop{\mathrm{Int}}\nolimits}
 \newcommand{\res}{\mathop{\rho}\nolimits}
 \newcommand{\A}{\mcal{A}}
 \newcommand{\B}{\mcal{B}}
@@ -292,14 +280,15 @@
 \newcommand{\OO}{\mcal{O}}
 \newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
 \newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
-%\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
 \newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\rk}{\mathop{\mathrm{rank}}\nolimits}
 \newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
 \newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
-\newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
 \newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
 \newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
 \newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Ext}{\mathop{\mathrm{Ext}}\nolimits}
 \newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
 
 \newcommand{\cat}{\mathscr{C}}
@@ -332,6 +321,8 @@
 \newcommand{\cY}{\mcal{Y}}
 \newcommand{\cZ}{\mcal{Z}}
 
+\newcommand{\rmD}{\mathrm{D}}
+
 
 \newcommand{\scA}{\mathscr{A}}
 \newcommand{\scB}{\mathscr{B}}
@@ -341,9 +332,9 @@
 \newcommand{\scF}{\mathscr{F}}
 \newcommand{\scN}{\mathscr{N}}
 \newcommand{\scO}{\mathscr{O}}
+\newcommand{\scR}{\mathscr{R}}
+\newcommand{\scS}{\mathscr{S}}
 \newcommand{\scV}{\mathscr{V}}
-\newcommand{\scU}{\mathscr{U}}
-
 
 \newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
 \newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
@@ -374,31 +365,22 @@
 
 \newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
 
-%\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
-%\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
-%\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}%複体のホモトピー圏
-%\newcommand{\Comp}{\mathrm{C}}
-%\newcommand{\Komp}{\mathrm{K}}
-%\newcommand{\Domp}{\mathsf{D}}%複体のホモトピー圏
-
 \newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
 \newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
-\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}
+\newcommand{\Domp}{\mathsf{D}}
 \newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
 \newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
 \newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
 \newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
 \newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
 \newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
-\newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
-
-
-
+\newcommand{\Dbcon}{\mathop{\mathsf{D}^\mathrm{b}_{\rr^+}}\nolimits}
 
 \newcommand{\CCat}{\Comp(\cat)}
 \newcommand{\KCat}{\Komp(\cat)}
 \newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
-\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+%\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\HOM}{\mathop{\mathcal{H}\hspace{-0.5pt}om}\nolimits}%内部Hom
 \newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
 
 \newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
@@ -406,10 +388,8 @@
 \newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
 \newcommand{\Rder}{\mathrm{R}}
 
-\newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
-\newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
-\newcommand{\simra}{\mathrel{\overset{\sim}{\leftarrow}}}%同型左矢印
-\newcommand{\simrra}{\mathrel{\overset{\sim}{\longleftarrow}}}%同型左矢印
+\newcommand{\simar}{\mathrel{\overset{\sim}{\longrightarrow}}}%内部Hom
+\newcommand{\simra}{\mathrel{\overset{\sim}{\longleftarrow}}}%内部Hom
 
 \newcommand{\hocolim}{{\mathrm{hocolim}}}
 \newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
@@ -422,54 +402,43 @@
 \newcommand{\Sh}{\mathrm{Sh}}
 \newcommand{\PSh}{\mathrm{PSh}}
 
-\newcommand{\rmD}{\mathrm{D}}
-
 \newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
 \newcommand{\ori}{\mathord{\mathrm{or}}}
 \newcommand{\Db}{\mathord{\mathscr{D}b}}
+\newcommand{\Conti}{\mathord{\mathscr{C}}}
 
-\newcommand{\codim}{\mathop{\mathrm{codim}}\nolimits}
-
-
-
-\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
-\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
-
+\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
+\newcommand{\blk}{\mathord{\ \cdot\ }}
 
 \newcommand{\tens}[1][]{\mathbin{\otimes_{\raise1.5ex\hbox to-.1em{}{#1}}}}
 \newcommand{\ttens}[1][]{\mathbin{\mathop{\overset{\mathrm{}}{\tens}}_{#1}}}
+
 \newcommand{\etens}{\mathbin{\boxtimes}}
-\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+%\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\ltens}[1][]{\mathbin{\tens}^\mathrm{L}_{#1}}
 \newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
-\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
-\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
+\newcommand{\lltens}[1][]{\mathbin{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+%\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
 \newcommand{\detens}{\underline{\etens}}
 \newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
 \newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
 
-\newcommand{\blk}{\mathord{\ \cdot\ }}
-\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
+\newcommand{\letens}[2][]{\mathbin{\mathop{\overset{\mathrm{L}}{\etens}_{#1}}_{#2\ \ }}}
 
+\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
+\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
+\newcommand{\hd}{\mathop{\mathrm{hd}}\nolimits}
 
-%\newcommand{\hocolim}{{\mathrm{hocolim}}}
-%\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
-%\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
-%\newcommand{\Pro}{\mathrm{Pro}}
-%\newcommand{\Ind}{\mathrm{Ind}}
-%\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
-%\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
-\newcommand{\proolim}[1][]{\mathop{\text{\rm``{$\varprojlim$}''}}\limits_{#1}}
-\newcommand{\sproolim}[1][]{\smash{\mathop{\rm``{\varprojlim}''}\limits_{#1}}}
-\newcommand{\inddlim}[1][]{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}
-\newcommand{\sinddlim}[1][]{\smash{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}\,}
-\newcommand{\ooplus}{\mathop{\text{\rm``{$\oplus$}''}}\limits}
-\newcommand{\bbigsqcup}{\mathop{``\bigsqcup''}\limits}
-\newcommand{\bsqcup}{\mathop{``\sqcup''}\limits}
-\newcommand{\dsum}[1][]{\mathbin{\oplus_{#1}}}
+\newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
+\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
 
-\newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
+% 数の集合
+\newcommand{\qnum}{\mathbf{Q}}
+\newcommand{\rnum}{\mathbf{R}}
+\newcommand{\rp}{\mathbf{R}_{>0}}
+\newcommand{\rnn}{\mathbf{R}_{\geqq0}}
 
-
+% =================================
 
 
 
@@ -488,50 +457,27 @@
     {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
 
 \theoremstyle{mystyle}
-\newtheorem{AXM}{公理}%[section]
+\newtheorem{AXM}{公理}[chapter]
 \newtheorem{DFN}[AXM]{定義}
 \newtheorem{THM}[AXM]{定理}
 \newtheorem*{THM*}{定理}
+\newtheorem{STT}{主張}[chapter]
+\newtheorem*{STT*}{主張}
 \newtheorem{PRP}[AXM]{命題}
 \newtheorem{LMM}[AXM]{補題}
+\newtheorem*{LMM*}{補題}
 \newtheorem{CRL}[AXM]{系}
 \newtheorem{EG}[AXM]{例}
-\newtheorem*{EG*}{例}
+\newtheorem{CNV}{規約}%[chapter]
+\newtheorem{NTT}[AXM]{記法}
 \newtheorem{RMK}[AXM]{注意}
-\newtheorem{CNV}[AXM]{約束}
-\newtheorem{CMT}[AXM]{コメント}
+\newtheorem{CMT}{コメント}%[chapter]
 \newtheorem*{CMT*}{コメント}
-\newtheorem{NTN}[AXM]{記号}
-
-
-
-%\newenvironment{thm}{\begin{mybox}\begin{THM}}{\end{THM}\end{mybox}}
-
+\newtheorem{EXC}{演習}%[chapter]
 
 
 % 定理環境ここまで
 %====================================================
-
-\usepackage{framed}
-\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
-\renewenvironment{leftbar}{%
-  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
-  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
-{\endMakeFramed}
-\newenvironment{redleftbar}{%
-  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
-  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
- {\endMakeFramed}
-
-
-
-\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
-
-% =================================
-
-
-
-
 
 % ---------------------------
 % new definition macro
@@ -558,130 +504,132 @@
 % Your main code must be written between 
 % begin document and end document.
 % ---------------------------
+
 \begin{document}
 \maketitle
-%\tableofcontents
-\begin{abstract}
-    \cite{J1}の紹介
-\end{abstract}
-\section{序論}
-\paragraph{設定}
-\(f\colon M\to N\)を\(C^\infty\)多様体間の\textbf{連続}写像とする．
-この\(f\)に対して
-\begin{description}
-  \item[Whitney cone] \(C_f\coloneqq C(\Gamma_f,\Gamma_f)\subset T(M\times N)\)
-  \item[conormal] \(\Lambda_f\coloneqq \muS(\kk_{\Gamma_{f}})\subset T^\ast(M\times N)\) 
-\end{description}
-とおく．
+%\frontmatter
+\layout
+\chapter*{はじめに}
+\cite{OK77}のノート．
+節や段落の区切りが分かりづらいので，整理して書き直す．
 
-\paragraph{Whitney coneとconormalの性質}
-\[\begin{cases*}
-  C_f\colon&closed symmetric cone,\\
-  \Lambda_f\colon&coisotropic closed symmetric cone.
-\end{cases*}\]
-また，\(f\)が\(C^1\)級なら
-\[\begin{cases}
-  C_f=T\Gamma_{f},\\
-  \Lambda_f=(T\Gamma_{f})^{\perp}=T^{\ast}_{\Gamma_{f}}(M\times N).
-\end{cases}\]
+\section*{記号}
+次の記号は断りなく使う．
+\begin{itemize}
+    \item 添字：
+    なんらかの族$(a_i)_{i\in I}$を$(a_i)_i$とか$(a_i)$と
+    略記することがある．
+    \item 近傍：位相空間\(X\)の点\(x\)や部分集合\(Z\)に対し，
+    その開近傍系をそれぞれ\(I_x\)や\(I_Z\)で表す．
+    これらは，包含関係の逆で有向順序集合をなす．
+    \item 平滑な射：しずめこみのことを\cite{KS90,Kas03}に倣って，
+    平滑 (smooth) な射とよぶ．
+    すなわち，多様体の間の射\(f\colon M\to N\)は，
+    任意の\(x\in M\)に対し，対応する接空間の射
+    \(T_{x}M\to T_{f(x)}N\)が全射のとき，平滑であるという．
+\end{itemize}
+\tableofcontents
+%\mainmatter
 
-\paragraph{主定理}
-\begin{THM}
-  次は同値．
-  \begin{enumerate}[(1)]
-    \item \(f\)はLipscitz.
-    \item \(C_f\cap(0_{M}\times TN)\subset 0_{MN}\).
-    \item \(\Lambda_f\cap(T^{\ast}M\times 0_N)\subset 0^{\ast}_{MN}\).
-  \end{enumerate}
-\end{THM}
 
-\paragraph{論文の構成}
-\begin{enumerate}[1節]\setcounter{enumi}{1}
-  \item \(\muS\)の復習
-  \item 部分集合の\(\muS\)の性質，cone, strict cone の性質
-  \item \(C_f\)の定義と性質．Liscitz, strict differentiability の定義，chain rule.
-  \item \(\Lambda_f\)の定義と性質．核の畳み込みを用いて\(\muS\)の性質を\(f\)に拡張．
-  \item 実数値関数のときを調べる．Vichery subdifferential との関係．
-  \item 主定理の証明
-  \item 部分多様体に拡張．locally Lipschitz, strict differentiable の判定．
-\end{enumerate}
-
-\section{背景知識}
-
-\subsection{記号と規約}
-多様体はパラコンパクト\(C^\infty\)とする．
-
-\subsubsection*{集合}
-\(p_i\colon X_1\times X_2\to X_i\)とか\(p_{ij}\colon X_{ijk}=X_i\times X_j\times X_k\to X_{ij}\)で射影を表す．
-
-\(R_i\subset X_1\times X_2\)に対して
+\chapter{微分幾何からの準備}
+\section{微分幾何における用語}
+\subsection*{基本的な概念\footnote{以降，項の名前は勝手につけたものである．}}
+\(m\)次元の実 Euclid 空間を\(\rnum^m\)と表す．
+\(\rnum^m\)の点は\(m\)個の実数の組であって，
+\(2\)点\(p=(p_1,\dots,p_m)\), \(q=(q_1,\dots,q_m)\)の距離は
 \[
-  R_1\circ R_2\coloneqq
-  p_{13}\left(p_{12}^{-1}(R_1)\cap p_{23}^{-1}(R_2)\right)
-\]
-とおく．
-\(a\)が\(X_2\)上の\textbf{対合} (involution) である
-とき\footnote{
-  写像\(a\colon X\to X\)が\(a\circ a=\id_X\)をみたすとき，
-  \(a\)は\(X\)上の対合であるという．
-}，\(p_{12^{a}}\coloneqq (\id_{X_1}\times a)\circ p_{12}\)など
-と定める．
+    \lvert p-q\rvert=\sqrt{
+        (p_1-q_1)^2+(p_2-q_2)^2+\dots+(p_m-q_m)^2
+    }
+\]で与えられる．
 
+\subsection*{接空間}
+\paragraph{ライプニッツの公式}
+\paragraph{接写像}
+\paragraph{接バンドル}
+\paragraph{ベクトル場の和}
+\subsection*{余接空間と外積代数}
+\paragraph{余接空間}
+\paragraph{外積代数}
+\paragraph{外積}
+\paragraph{微分形式}
+\paragraph{余接バンドル}
+\paragraph{座標変換}
+\paragraph{縮約}
+\paragraph{引き戻し}
+\subsection*{ベクトル場の括弧積}
+\paragraph{記法}
+\subsection*{微分形式の演算}
+\paragraph{演算の間の関係}
+\paragraph{Lie 微分と局所1パラメータ変換群}
+\subsection*{部分多様体}
+次に，部分多様体を定義し，部分多様体上にも，
+ベクトル場，微分形式などの概念や外微分などの演算が定義されること
+を述べよう．
+\begin{DFN}
+    \(\rnum^m\)の開集合\(M\)と\(M\)の部分集合\(N\)に対し，
+    \(N\)が\(M\)の\(n\)次元の（または
+    余次元\(m-n\)の）\textbf{部分多様体}であるとは，
+    \(N\)の各点\(p\)に対し，\(p\)の開近傍\(U\)と，
+    \((df_1)_{p},\dots,(df_{m-n})_{p}\)が1次独立となるような
+    関数\(f_1,\dots,f_{m-n}\in\cF(U)\)で，
+    \[
+        N\cap U=\left\{q\in U;f_{1}(q)=\dots=f_{m-n}(q)=0\right\}
+    \]をみたすものが存在することである．
+\end{DFN}
+\paragraph{局所座標系}
+\paragraph{関数の制限}
+\paragraph{ベクトル場と微分形式の表示}
+\subsection*{余法バンドル}
+\paragraph{部分多様体の部分多様体}
+\paragraph{余法バンドル}
+\paragraph{余法バンドルの次元}
+\subsection*{部分多様体の例}
+\paragraph{記号}
+\section{Frobenius の定理}
 
-\subsubsection*{位相空間}
-
-
-
-\subsubsection*{ベクトル空間}
-
-
-\subsubsection*{ベクトル束}
-
-
-\subsubsection*{多様体}
-\(f\colon M\to N\)を多様体の射とする．
-\(\Lambda_f\coloneqq T_{\Gamma_{f}}^{\ast}(M\times N)\)とおく．
-\[\Lambda\cong M\times_{N}T^{\ast}N\]が成り立つ．
-
-\(A\subset T^{\ast}M\), \(B\subset T^{\ast}N\)に対し，
-\begin{equation}
-  f_{\pi}f_{d}^{-1}(A)=A\overset{a}{\circ}\Lambda_f,\quad
-  f_{d}f_{\pi}^{-1}(B)=\Lambda_f\overset{a}{\circ}B
-\end{equation}
-が成り立つ．
-
-\(f\)が\textbf{平滑} (smooth) すなわち沈めこみとなることと
-\begin{equation}
-  \Lambda_{f}\cap(0^{\ast}_{M}\times T^{\ast}N)\subset0^{\ast}_{M\times N}
-\end{equation}
-となることは同値である．より一般に，閉錐\(B\subset T^{\ast}N\)に対して
-\begin{equation}
-  \Lambda_{f}\cap(0^{\ast}_{M}\times B)\subset0^{\ast}_{M\times N}
-\end{equation}
-となるとき，\(f\)は\(B\)に対して\textbf{非特性的} (noncharacteristic) であるという．
-\subsection{層}
-\subsection{核}
-\subsection{超局所台}
-
-
+%\chapter{aa}
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
-    \bibitem[J1]{J1} Benoit, Jubin, 
-        \textit{A Microlocal Characterization of Lipschitz Continuity}, 
-        \url{https://doi.org/10.4171/PRIMS/54-4-2}.
+    \bibitem[B+84]{B+84} Borel, 
+        \textit{Intersection Cohomology}, 
+        Progress in Mathematics, 50, Birkh\"auser, 1984.
+    \bibitem[Bou1]{Bou1} ブルバキ, 位相1, 東京図書, 1968.
+    \bibitem[EGA IV]{EGA IV} Grothendieck, EGA IV, Pub. IHES., 32 1967.
+    \bibitem[Fuk99]{Fuk99} 深谷賢治, シンプレクティック幾何学, 岩波講座 現代数学の展開 岩波書店, 1999.
+    \bibitem[G58]{G58} Grauert, 
+        \textit{On Levi's problem and the embedding of real analytic manifolds}, 
+        Ann. Math. 68, 460--472 (1958).
+    \bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
+        \textit{Differential Topology}, 
+        Prentice-Hall, 1974.
+    \bibitem[Kas03]{Kas03} 柏原正樹, 代数解析概論, 岩波書店, 2003.
     \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
         \textit{Sheaves on Manifolds}, 
         Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
-    \bibitem[Vic1]{Vic1} Nicolas Vichery, 
-    \textit{Homological Differential Calculus}, 
-    \url{https://doi.org/10.48550/arXiv.1310.4845}.
+    \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
+        \textit{Categories and Sheaves}, 
+        Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
+     \bibitem[OK77]{OK77} 大島利雄, 小松彦三郎, 1階偏微分方程式, 岩波書店, 1977.
+    \bibitem[R55]{R55} de Rham, 
+        \textit{Vari\'et\'es diff\'erentiables}, 
+        Hermann, Paris, 1955.
+    \bibitem[Sa59]{Sa59} Mikio Sato, 
+        \textit{Theory of Hyperfunctions}, 
+        1959--60.
+    \bibitem[S66]{S66} Schwartz, 
+        \textit{Th\'eorie de distributions}, 
+        Hermann, Paris, 1966.
+    \bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
+    \bibitem[Ike21]{Ike21} 池祐一, 超局所層理論入門, 2021.
+    \bibitem[Tak17]{Tak17} 竹内潔, \(\D\)加群, 共立出版, 2017.
+    %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
 \end{thebibliography}
 
 %===============================================
-
-
 
 
 \end{document}

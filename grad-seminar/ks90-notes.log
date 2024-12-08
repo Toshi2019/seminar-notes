@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  7 NOV 2024 14:39
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  15 NOV 2024 18:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -723,6 +723,7 @@ File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
+Package hyperref Info: Option `draft' set `true' on input line 4062.
 Package hyperref Info: Hyper figures OFF on input line 4179.
 Package hyperref Info: Link nesting OFF on input line 4184.
 Package hyperref Info: Hyper index ON on input line 4187.
@@ -904,11 +905,11 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 502
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 Package xypdf Info: Line width: 0.39998pt on input line 502.
-Package hyperref Info: Link coloring ON on input line 502.
- (./ks90-notes.out) (./ks90-notes.out)
-\@outlinefile=\write6
-\openout6 = `ks90-notes.out'.
 
+
+Package hyperref Warning: Draft mode on.
+
+Package hyperref Info: Link coloring ON on input line 502.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 (Font)              scaled to size 15.9785pt on input line 505.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
@@ -927,7 +928,7 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 7.39746pt on input line 505.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 5.5481pt on input line 505.
- [1
+[1
 
 ]
 One-sided document style.
@@ -963,8 +964,8 @@ LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
  [2
 
 ] (./ks90-notes.toc)
-\tf@toc=\write7
-\openout7 = `ks90-notes.toc'.
+\tf@toc=\write6
+\openout6 = `ks90-notes.toc'.
 
  [3
 
@@ -1159,23 +1160,35 @@ LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
 [74
 
 ]
+第11章
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 15.9785pt on input line 6046.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 23.0061pt on input line 6046.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 19.17792pt on input line 6046.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 15.9785pt on input line 6046.
+[75
+
+]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6087.
+(Font)              No change on input line 6109.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6093.
+(Font)              No change on input line 6115.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6096.
+(Font)              No change on input line 6118.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6099.
+(Font)              No change on input line 6121.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6102.
+(Font)              No change on input line 6124.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6105.
+(Font)              No change on input line 6127.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6108.
+(Font)              No change on input line 6130.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6111.
- [75
+(Font)              No change on input line 6133.
+ [76
 
 ] (./ks90-notes.aux)
  ***********
@@ -1183,16 +1196,14 @@ pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `ks90-notes.out' has not changed.
-(rerunfilecheck)             Checksum: 45EEA7F45C95BC5DC827F1A706F2D80C;2313.
  ) 
 Here is how much of TeX's memory you used:
- 30917 strings out of 474774
- 542574 string characters out of 5758801
- 1956032 words of memory out of 5000000
- 52702 multiletter control sequences out of 15000+600000
- 624591 words of font info for 204 fonts, out of 8000000 for 9000
+ 30936 strings out of 474774
+ 542967 string characters out of 5758801
+ 1955032 words of memory out of 5000000
+ 52726 multiletter control sequences out of 15000+600000
+ 633327 words of font info for 239 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  84i,29n,93p,3278b,1126s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on ks90-notes.dvi (76 pages, 456464 bytes).
+Output written on ks90-notes.dvi (77 pages, 393028 bytes).

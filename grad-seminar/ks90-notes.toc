@@ -47,4 +47,5 @@
 \contentsline {section}{\numberline {4.2}特殊化}{69}{section.4.2}%
 \contentsline {section}{\numberline {4.3}超局所化}{73}{section.4.3}%
 \contentsline {chapter}{\numberline {第5章}層の超局所台}{74}{chapter.5}%
-\contentsline {chapter}{参考文献}{75}{chapter*.57}%
+\contentsline {chapter}{\numberline {第11章}\(\mathcal {O}_X\)加群と\(\mathcal {D}_X\)加群への応用}{75}{chapter.11}%
+\contentsline {chapter}{参考文献}{76}{chapter*.58}%
