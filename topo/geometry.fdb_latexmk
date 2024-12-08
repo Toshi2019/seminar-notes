@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1733657322.59946 "geometry.dvi" "geometry.pdf" "geometry" 1733657323.60691 0
-  "geometry.dvi" 1733657322.47221 27104 af6e2fb4ae0b7b9a355145008ad4c196 "latex"
+["dvipdf"] 1733658137.42517 "geometry.dvi" "geometry.pdf" "geometry" 1733658138.60155 0
+  "geometry.dvi" 1733658137.29301 27124 3db82d86eb0537962853692d9a2be08c "latex"
   (generated)
   "geometry.pdf"
   (rewritten before read)
-["latex"] 1733657321.05386 "/Users/giuseppe/seminar-notes/topo/geometry.tex" "geometry.dvi" "geometry" 1733657323.60136 0
-  "/Users/giuseppe/seminar-notes/topo/geometry.tex" 1733657318.99459 29604 cba493d30492de9138d38e1176fcf206 ""
+["latex"] 1733658135.90527 "/Users/giuseppe/seminar-notes/topo/geometry.tex" "geometry.dvi" "geometry" 1733658138.59588 0
+  "/Users/giuseppe/seminar-notes/topo/geometry.tex" 1733658133.90948 29614 767eb31941fac55616643d148e4d3dd9 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -256,9 +256,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "geometry.aux" 1733657322.46824 1332 c3147a202100db103f3350ab889f588a "latex"
-  "geometry.out" 1733657322.47157 568 2d7a35c7674af5ca181e52f553269917 "latex"
-  "geometry.tex" 1733657318.99459 29604 cba493d30492de9138d38e1176fcf206 ""
+  "geometry.aux" 1733658137.28977 1332 c3147a202100db103f3350ab889f588a "latex"
+  "geometry.out" 1733658137.29229 568 2d7a35c7674af5ca181e52f553269917 "latex"
+  "geometry.tex" 1733658133.90948 29614 767eb31941fac55616643d148e4d3dd9 ""
   (generated)
   "geometry.aux"
   "geometry.dvi"
