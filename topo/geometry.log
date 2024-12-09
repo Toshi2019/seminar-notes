@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  8 DEC 2024 20:42
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  9 DEC 2024 18:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -933,22 +933,23 @@ Underfull \vbox (badness 10000) detected at line 641
 
 ]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 845.
+(Font)              scaled to size 8.32214pt on input line 853.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 845.
+(Font)              scaled to size 8.32214pt on input line 853.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 845.
+(Font)              scaled to size 8.32214pt on input line 853.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 845.
+(Font)              scaled to size 5.5481pt on input line 853.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 845.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 855.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 858.
+(Font)              scaled to size 8.32214pt on input line 853.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
 (Font)              No change on input line 863.
- [4] (./geometry.aux)
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 866.
+ [4]
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 871.
+ [5] (./geometry.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
@@ -958,12 +959,12 @@ Package rerunfilecheck Info: File `geometry.out' has not changed.
 (rerunfilecheck)             Checksum: 2D7A35C7674AF5CA181E52F553269917;568.
  ) 
 Here is how much of TeX's memory you used:
- 30245 strings out of 474774
- 530071 string characters out of 5758801
+ 30247 strings out of 474774
+ 530092 string characters out of 5758801
  1936032 words of memory out of 5000000
- 52049 multiletter control sequences out of 15000+600000
- 617389 words of font info for 170 fonts, out of 8000000 for 9000
+ 52050 multiletter control sequences out of 15000+600000
+ 617694 words of font info for 171 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  84i,17n,93p,3252b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on geometry.dvi (4 pages, 27124 bytes).
+Output written on geometry.dvi (5 pages, 28092 bytes).

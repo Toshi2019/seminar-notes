@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1733658137.42517 "geometry.dvi" "geometry.pdf" "geometry" 1733658138.60155 0
-  "geometry.dvi" 1733658137.29301 27124 3db82d86eb0537962853692d9a2be08c "latex"
+["dvipdf"] 1733735215.36091 "geometry.dvi" "geometry.pdf" "geometry" 1733735216.36602 0
+  "geometry.dvi" 1733735215.22796 28092 06eb6a4a8c49646b9868cddb29d38fd4 "latex"
   (generated)
   "geometry.pdf"
   (rewritten before read)
-["latex"] 1733658135.90527 "/Users/giuseppe/seminar-notes/topo/geometry.tex" "geometry.dvi" "geometry" 1733658138.59588 0
-  "/Users/giuseppe/seminar-notes/topo/geometry.tex" 1733658133.90948 29614 767eb31941fac55616643d148e4d3dd9 ""
+["latex"] 1733735213.80654 "/Users/giuseppe/seminar-notes/topo/geometry.tex" "geometry.dvi" "geometry" 1733735216.36074 0
+  "/Users/giuseppe/seminar-notes/topo/geometry.tex" 1733735211.76066 29947 0af3a45b2b571bd2d41e7a7d18688457 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -53,6 +53,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1136768653 1300 b62933e007d01cfd073f79b963c01526 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1136768653 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1136768653 1316 b636689f1933f24d1294acdf6041daaa ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss12.tfm" 1136768653 1324 37b971caf729d7edd9cbb9f9b0ea76eb ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
@@ -256,9 +257,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "geometry.aux" 1733658137.28977 1332 c3147a202100db103f3350ab889f588a "latex"
-  "geometry.out" 1733658137.29229 568 2d7a35c7674af5ca181e52f553269917 "latex"
-  "geometry.tex" 1733658133.90948 29614 767eb31941fac55616643d148e4d3dd9 ""
+  "geometry.aux" 1733735215.22601 1550 2eb39e505feaed6e90c046878b41550b "latex"
+  "geometry.out" 1733735215.2273 568 2d7a35c7674af5ca181e52f553269917 "latex"
+  "geometry.tex" 1733735211.76066 29947 0af3a45b2b571bd2d41e7a7d18688457 ""
   (generated)
   "geometry.aux"
   "geometry.dvi"

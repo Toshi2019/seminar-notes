@@ -731,37 +731,45 @@
 \section{外向き余法ベクトル}
 \cite{GP74,Hat89}に外向き法ベクトルの記述があるので，それを参考に，
 外向き余法ベクトルについて述べる．
+\(M\)を多様体，\(N\)を\(M\)の境界つき部分多様体，
+あるいは\(N\)の開部分集合で真の包含関係\(N\subsetneqq M\)をみたすものとする．
 
-\(X\)の境界\(\bd{X}\)を考える．
-\(\bd{X}\)の点\(x\)に対し，
+\paragraph{外向きベクトル}
+\(N\)の境界\(\bd{N}\)を考える．
+\(\bd{N}\)の点\(x\)に対し，
 \(\varphi\colon U\to H^n\)を\(x\)の
-まわりの\(X\)の局所座標系とする．
+まわりの\(N\)の局所座標系とする．
 ただし，\(H^n\)は\(n\)次元上半空間\[
   H^{n}\coloneqq\left\{
     x_{1},\ldots,x_{n};x_{n}\geqq0
   \right\}
 \]を表す．このとき，
-\(T_{x}\bd{X}\)は\(T_{x}X\)において余次元\(1\)の部分ベクトル空間
-である．\(T_{x}X\)のベクトル\(v\in T_{x}X\)で，
+\(T_{x}\bd{N}\)は\(T_{x}M\)において余次元\(1\)の部分ベクトル空間
+である．\(T_{x}M\)のベクトル\(v\in T_{x}M\)で，
 接写像\(d_{x}\varphi\colon T_{x}U\to T_{\varphi(x)}H^n\)による
 像\(d_{x}\varphi(v)\)が\(\Int{H^n}\)に属するとき，
-\(v\)は\(x\in\bd{X}\)における内向きのベクトルであるという．
+\(v\)は\(x\in\bd{M}\)における内向きのベクトルであるという．
 \(-d_{x}\varphi(v)\)が\(\Int{H^n}\)に属するとき，
-\(v\)は\(x\in\bd{X}\)における外向きのベクトルであるという．
+\(v\)は\(x\in\bd{M}\)における外向きのベクトルであるという．
 
-標準双線形形式\(
-  \langle\blk,\blk\rangle\colon T_{x}X\times T_{x}^{\ast}X\to\rr
-\)を考える．
+\paragraph{外向き余法ベクトル}
+\(
+  \langle\blk,\blk\rangle\colon 
+  T^{\ast}_{x}M\times T_{x}M\to\rr
+\)を標準双線形形式とする．
 %の\(T_{x}\bd{X}\)への
 %制限\(T_{x}\bd{X}\times T_{x}^{\ast}X\to\rr\)
-\(\xi\in T_{x}^{\ast}X\)が次の2つの条件をみたすとき，
-\(\xi\)は\(x\in\bd{X}\)における
-外向き余法ベクトルであるという．
-\begin{enumerate}
-  \item \(\xi\)の双対ベクトル\(v\in T_{x}X\)は\(x\in\bd{X}\)における外向きのベクトルである．
-  \item 任意の\(v\in T_{x}\bd{X}\)に対し\(\langle v,\xi\rangle=0\)である．
-\end{enumerate}
-
+\begin{leftbar}
+  \begin{DFN}
+    \(\xi\in T_{x}^{\ast}M\)が次の2つの条件をみたすとき，
+    \(\xi\)は\(x\in\bd{N}\)における\(N\)の
+    外向き余法ベクトルであるという．
+    \begin{enumerate}
+      \item 任意の\(v\in T_{x}\bd{N}\)に対し\(\langle \xi,v\rangle=0\)である．
+      \item 任意の外向きベクトル\(v\in T_{x}M\)に対し，\(\langle \xi,v\rangle>0\)である．
+    \end{enumerate}  
+  \end{DFN}    
+\end{leftbar}
 
 ユークリッド空間内の境界つき多様体では，
 ユークリッド計量を用いて，\(x\in\bd{X}\)における単位余法ベクトルが定まる．
