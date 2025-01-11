@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  11 JAN 2025 21:00
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  11 JAN 2025 21:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1159,7 +1159,7 @@ LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
 第5章
 [74
 
-] [75] [76]
+] [75]
 第11章
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 15.9785pt on input line 6101.
@@ -1169,7 +1169,7 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 19.17792pt on input line 6101.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 15.9785pt on input line 6101.
-[77
+[76
 
 ]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
@@ -1190,7 +1190,7 @@ LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
 (Font)              No change on input line 6188.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
 (Font)              No change on input line 6191.
- [78
+ [77
 
 ] (./ks90-notes.aux)
  ***********
@@ -1200,12 +1200,12 @@ L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 31149 strings out of 474774
- 547384 string characters out of 5758801
+ 31152 strings out of 474774
+ 547454 string characters out of 5758801
  1955032 words of memory out of 5000000
- 52939 multiletter control sequences out of 15000+600000
+ 52942 multiletter control sequences out of 15000+600000
  633327 words of font info for 239 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  84i,29n,93p,3278b,1126s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on ks90-notes.dvi (79 pages, 404960 bytes).
+Output written on ks90-notes.dvi (78 pages, 404668 bytes).

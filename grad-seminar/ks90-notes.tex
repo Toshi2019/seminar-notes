@@ -6021,14 +6021,14 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 超局所台を調べる上ではこれが自然な道具である．
 実際，\(X\)がアフィン空間で\(
     \phi_{\gamma}\colon X\to X_{\gamma}
-\)が\(X\)の位相を緩める写像であるとき，\(
+\)が\(X\)の位相を弱める写像であるとき，\(
     \phi_{\gamma}^{-1}\Rder{{\phi_{\gamma}}_{\ast}}
 \)は次の意味で切り落とし関手の役割を担う．\(
     \muS(\phi_{\gamma}^{-1}\Rder{{\phi_{\gamma}}_{\ast}}F)
-\)は\(X\times\Int\gamma^{\circ a}\)に含まれ，射\(
+\)が\(X\times\Int\gamma^{\circ a}\)に含まれ，射\(
     \phi_{\gamma}^{-1}\Rder{{\phi_{\gamma}}_{\ast}}F\to F
-\)は「\(X\times\Int\gamma^{\circ a}\)における同型」となる．
-本章では，この超局所的な同型を定義し，次章で理論を展開する．
+\)が「\(X\times\Int\gamma^{\circ a}\)における同型」となる．
+本章では，この超局所的な同型を定義し，次章でその理論を展開する．
 
 超局所台の例をいくつか見たのち，
 テンソル積と\(\HOM\)，順像逆像，フーリエ佐藤変換といった，
@@ -6041,8 +6041,8 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 解析的係数偏微分方程式論における古典的な結果の多くと非常に似通っている．
 第XI章では，いくつかの古典的な結果を，超局所台の理論から導出する方法を述べる．
 
-Kashiwara-Schapira[3]の説明にそっくり従うことが多いが，
-証明のいくつかは単純化されている．
+ここでは\cite{KS85}の理論展開にかなり忠実に従うが，
+実際には，証明を単純化したところもいくつかある．
 
 規約\ref{cnv40}を引き続き用いる．
 
@@ -6054,12 +6054,12 @@ Kashiwara-Schapira[3]の説明にそっくり従うことが多いが，
     \begin{figure}[htp]
         \centering
         \begin{tikzpicture}
-            \draw[->,>=stealth,semithick] (-1,0)--(4,0)node[above]{$x$}; %x軸
-            \draw[->,>=stealth,semithick] (0,-5)--(0,5)node[right]{$y$}; %y軸
+            \draw[->,>=stealth,semithick] (-1,0)--(2,0)node[right]{$x$}; %x軸
+            \draw[->,>=stealth,semithick] (0,-2)--(0,2)node[right]{$y$}; %y軸
             %\draw (0,0)node[above  left]{O}; %原点
             %\fill[gray!20!white] plot[domain=0:3](\x,{sqrt(\x^3)});
-            \draw[very thick,samples=100,domain=0:3] plot({\x},{sqrt(\x^3)}); 
-            \draw[very thick,dashed,samples=100,domain=0:3] plot({\x},{-sqrt(\x^3)}); 
+            \draw[very thick,samples=100,domain=0:1.5] plot({\x},{sqrt(\x^3)}); 
+            \draw[very thick,dashed,samples=100,domain=0:1.5] plot({\x},{-sqrt(\x^3)}); 
             %\draw (2*pi,0)node[below]{$2\pi$}; %点(2\pi,0)
             %\draw[dashed] (0,-1)node[left]{\(-1\)}--(1,-1)--(1,0)node[above]{$1$}; %点(1,-1)
             %\draw (2,0)node[above]{$2$}; %点(2,0)
