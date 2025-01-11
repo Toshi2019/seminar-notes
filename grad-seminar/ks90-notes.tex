@@ -430,7 +430,14 @@
 \newcommand{\hd}{\mathop{\mathrm{hd}}\nolimits}
 
 \newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
+\newcommand{\mtp}[1][]{{}^{t\!}{#1}}
+
 \newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+
+\newcommand{\cotb}[1][]{T^{\ast}{#1}}
+\newcommand{\conm}[2][]{T_{#1}^{\hspace{0.7pt}\ast}{#2}}
+\newcommand{\norb}[2][]{T_{#1}{#2}}
+
 
 % =================================
 
@@ -6010,8 +6017,8 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 超局所台を用いて，\(X\)の開集合\(\varOmega_0\subset\varOmega_1\)に対し，
 \(\RG(\varOmega_1;F)\)から
 \(\RG(\varOmega_0;F)\)への制限射が同型になるための規準を与える．
-閉凸固有錐\(\gamma\)から定まる\(\gamma\)位相を第III章で導入した．
-超局所台を調べる上ではこれが自然な道具となる．
+第III章で閉凸固有錐\(\gamma\)から定まる\(\gamma\)位相を導入したが，
+超局所台を調べる上ではこれが自然な道具である．
 実際，\(X\)がアフィン空間で\(
     \phi_{\gamma}\colon X\to X_{\gamma}
 \)が\(X\)の位相を緩める写像であるとき，\(
@@ -6020,8 +6027,8 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
     \muS(\phi_{\gamma}^{-1}\Rder{{\phi_{\gamma}}_{\ast}}F)
 \)は\(X\times\Int\gamma^{\circ a}\)に含まれ，射\(
     \phi_{\gamma}^{-1}\Rder{{\phi_{\gamma}}_{\ast}}F\to F
-\)は「\(X\times\Int\gamma^{\circ a}\)上で同型」となる．
-本章では，この超局所的同型を定義し，次章で理論を展開する．
+\)は「\(X\times\Int\gamma^{\circ a}\)における同型」となる．
+本章では，この超局所的な同型を定義し，次章で理論を展開する．
 
 超局所台の例をいくつか見たのち，
 テンソル積と\(\HOM\)，順像逆像，フーリエ佐藤変換といった，
@@ -6034,11 +6041,59 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 解析的係数偏微分方程式論における古典的な結果の多くと非常に似通っている．
 第XI章では，いくつかの古典的な結果を，超局所台の理論から導出する方法を述べる．
 
-Kashiwara-Schapira[3]の説明にべったり従うことが多いが，
+Kashiwara-Schapira[3]の説明にそっくり従うことが多いが，
 証明のいくつかは単純化されている．
 
 規約\ref{cnv40}を引き続き用いる．
 
+\section{同値条件}
+\section{伝播}
+\section{例：局所閉集合から定まる超局所台}
+
+\begin{EG}
+    \begin{figure}[htp]
+        \centering
+        \begin{tikzpicture}
+            \draw[->,>=stealth,semithick] (-1,0)--(4,0)node[above]{$x$}; %x軸
+            \draw[->,>=stealth,semithick] (0,-5)--(0,5)node[right]{$y$}; %y軸
+            %\draw (0,0)node[above  left]{O}; %原点
+            %\fill[gray!20!white] plot[domain=0:3](\x,{sqrt(\x^3)});
+            \draw[very thick,samples=100,domain=0:3] plot({\x},{sqrt(\x^3)}); 
+            \draw[very thick,dashed,samples=100,domain=0:3] plot({\x},{-sqrt(\x^3)}); 
+            %\draw (2*pi,0)node[below]{$2\pi$}; %点(2\pi,0)
+            %\draw[dashed] (0,-1)node[left]{\(-1\)}--(1,-1)--(1,0)node[above]{$1$}; %点(1,-1)
+            %\draw (2,0)node[above]{$2$}; %点(2,0)
+        \end{tikzpicture}
+        \caption{\(Z\)のグラフ}
+    \end{figure}        
+\end{EG}
+
+\section{超局所台の関手的性質}
+
+この節では，固有順像や非特性的の場合の逆像といった諸々の演算の下での
+超局所台の振る舞いを調べる．
+ここで得られる結果のいくつかは以降の章で一般化される．
+
+\(X\)と\(Y\)を多様体とする．
+これまで通り，\(X\times Y\)上で定義される
+第1射影と第2射影を\(q_1\)と\(q_2\)で，
+\(\cotb[X]\times \cotb[Y]\)上で定義される
+第1射影と第2射影を\(p_1\)と\(p_2\)で表す．
+\(f\)が\(Y\)から\(X\)への写像ならば，
+第\ref{chap4}章のように，\(\mtp[f]\)と\(f_\pi\)で
+以下の写像を表す．
+\[
+    \cotb[Y]
+    \underset{\mtp[f]}{\longleftarrow}
+    Y\pb[X]\cotb[X]
+    \underset{f_{\pi}}{\longrightarrow}
+    \cotb[X].
+\]
+
+\paragraph{テンソル積}
+\paragraph{Hom}
+\paragraph{固有順像}
+\paragraph{逆像}
 
 
 \setcounter{chapter}{10}
@@ -6117,6 +6172,9 @@ Thm11.3.7はKashiwara[3]ですでに得られていた．
     \bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
         \textit{Differential Topology}, 
         Prentice-Hall, 1974.
+    \bibitem[KS85]{KS85} Masaki Kashiwara, Pierre Schapira, 
+        \textit{Microlocal Study of Sheaves}, 
+        SAst\`erisque 128, 1985.
     \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
         \textit{Sheaves on Manifolds}, 
         Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
