@@ -424,6 +424,7 @@
 \newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
 
 \newcommand{\letens}[2][]{\mathbin{\mathop{\overset{\mathrm{L}}{\etens}_{#1}}_{#2\ \ }}}
+\newcommand{\lletens}[1][]{\mathbin{\mathop{\overset{\mathrm{L}}{\etens}_{#1}}}}
 
 \newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
 \newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
@@ -5994,129 +5995,7 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
 
 \section{超局所化}
 
-\chapter{層の超局所台}
-\section*{要約}
-多様体\(X\)において，
-\(\Dompb(X)\)の任意の対象\(F\)に対し，
-\(T^{\ast}X\)の錐状閉部分集合を自然に対応させることができる．
-この集合を\(F\)の超局所台といい，\(\muS(F)\)で表す．
-大雑把に言って，
-\(\muS(F)\)は\(X\)において\(F\)の「伝播しない」余方向を
-記述するものであり，
-後の章では，\(\muS(F)\)が\(T^{\ast}X\)の
-包合的部分集合であることが示される．
-
-この概念はまた，
-層の理論における種々の関手が交換するための条件を与える．
-例えば，\(f^{!}F\)が\(\omega_{Y/X}\tens[]f^{-1}F\)と
-同型となるのはいつか？
-あるいは\(f^{-1}\RHOM(F_1,F_2)\)が\(\RHOM(f^{-1}F,f^{-1}F)\)と
-同型になるのはいつか？
-
-ここではまず初めに\(\muS(F)\)の3つの定義が互いに同値であることを示し，
-超局所台を用いて，\(X\)の開集合\(\varOmega_0\subset\varOmega_1\)に対し，
-\(\RG(\varOmega_1;F)\)から
-\(\RG(\varOmega_0;F)\)への制限射が同型になるための規準を与える．
-第III章で閉凸固有錐\(\gamma\)から定まる\(\gamma\)位相を導入したが，
-超局所台を調べる上ではこれが自然な道具である．
-実際，\(X\)がアフィン空間で\(
-    \phi_{\gamma}\colon X\to X_{\gamma}
-\)が\(X\)の位相を弱める写像であるとき，\(
-    \phi_{\gamma}^{-1}\Rder{{\phi_{\gamma}}_{\ast}}
-\)は次の意味で切り落とし関手の役割を担う．\(
-    \muS(\phi_{\gamma}^{-1}\Rder{{\phi_{\gamma}}_{\ast}}F)
-\)が\(X\times\Int\gamma^{\circ a}\)に含まれ，射\(
-    \phi_{\gamma}^{-1}\Rder{{\phi_{\gamma}}_{\ast}}F\to F
-\)が「\(X\times\Int\gamma^{\circ a}\)における同型」となる．
-本章では，この超局所的な同型を定義し，次章でその理論を展開する．
-
-超局所台の例をいくつか見たのち，
-テンソル積と\(\HOM\)，順像逆像，フーリエ佐藤変換といった，
-層の演算に関する超局所台の振る舞いを調べる．
-
-この章では，射はいつも固有であるか，
-超局所台に関して「非特性的」であると仮定する．
-第VI章ではこの制限は取り除く．
-この章と次章で示す結果は，
-解析的係数偏微分方程式論における古典的な結果の多くと非常に似通っている．
-第XI章では，いくつかの古典的な結果を，超局所台の理論から導出する方法を述べる．
-
-ここでは\cite{KS85}の理論展開にかなり忠実に従うが，
-実際には，証明を単純化したところもいくつかある．
-
-規約\ref{cnv40}を引き続き用いる．
-
-\section{同値条件}
-\section{伝播}
-\section{例：局所閉集合から定まる超局所台}
-
-\begin{EG}
-    \begin{figure}[htp]
-        \centering
-        \begin{tikzpicture}
-            \draw[->,>=stealth,semithick] (-1,0)--(2,0)node[right]{$x$}; %x軸
-            \draw[->,>=stealth,semithick] (0,-2)--(0,2)node[right]{$y$}; %y軸
-            %\draw (0,0)node[above  left]{O}; %原点
-            %\fill[gray!20!white] plot[domain=0:3](\x,{sqrt(\x^3)});
-            \draw[very thick,samples=100,domain=0:1.5] plot({\x},{sqrt(\x^3)}); 
-            \draw[very thick,dashed,samples=100,domain=0:1.5] plot({\x},{-sqrt(\x^3)}); 
-            %\draw (2*pi,0)node[below]{$2\pi$}; %点(2\pi,0)
-            %\draw[dashed] (0,-1)node[left]{\(-1\)}--(1,-1)--(1,0)node[above]{$1$}; %点(1,-1)
-            %\draw (2,0)node[above]{$2$}; %点(2,0)
-        \end{tikzpicture}
-        \caption{\(Z\)のグラフ}
-    \end{figure}        
-\end{EG}
-
-\section{超局所台の関手的性質}
-
-この節では，固有順像や非特性的の場合の逆像といった諸々の演算の下での
-超局所台の振る舞いを調べる．
-ここで得られる結果のいくつかは以降の章で一般化される．
-
-\(X\)と\(Y\)を多様体とする．
-これまで通り，\(X\times Y\)上で定義される
-第1射影と第2射影を\(q_1\)と\(q_2\)で，
-\(\cotb[X]\times \cotb[Y]\)上で定義される
-第1射影と第2射影を\(p_1\)と\(p_2\)で表す．
-\(f\)が\(Y\)から\(X\)への写像ならば，
-第\ref{chap4}章のように，\(\mtp[f]\)と\(f_\pi\)で
-以下の写像を表す．
-\[
-    \cotb[Y]
-    \underset{\mtp[f]}{\longleftarrow}
-    Y\pb[X]\cotb[X]
-    \underset{f_{\pi}}{\longrightarrow}
-    \cotb[X].
-\]
-
-\paragraph{テンソル積}
-\paragraph{Hom}
-\paragraph{固有順像}
-\paragraph{逆像}
-
-
-
-
-\section{錐状層の超局所台}
-この節ではベクトル束上の層の超局所台について調べる．
-
-\(\tau\colon E\to Z\)を多様体\(Z\)上の
-実ベクトル束とする（III \S7参照）．
-\(\rr^{+}\)の\(E\)への作用写像を\(
-    \mu\colon \rr^{+}\times E\to E
-\)で表し，
-\(\mu\)の無限小作用を表す\(E\)上のベクトル場
-を\(\mathbf{e}\)で表す．
-すなわち\(E\)上の任意の関数\(\varphi\)に対し，\(
-    (\mathbf{e}(\varphi))(x)
-    =
-    \dfrac{\partial}{\partial{t}}\varphi(\mu(t,x))|_{t=1}
-\)が成り立つ．
-ベクトル場\(\mathbf{e}\)は
-\textbf{オイラーベクトル場} (the Euler vector field) と
-呼ばれることが多い．
-
+\include{ks90-5.tex}
 
 
 \setcounter{chapter}{10}

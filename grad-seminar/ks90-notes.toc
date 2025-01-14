@@ -47,14 +47,10 @@
 \contentsline {section}{\numberline {4.2}特殊化}{70}{section.4.2}%
 \contentsline {section}{\numberline {4.3}超局所化}{74}{section.4.3}%
 \contentsline {chapter}{\numberline {第5章}層の超局所台}{75}{chapter.5}%
-\contentsline {section}{\numberline {5.1}同値条件}{76}{section.5.1}%
+\contentsline {section}{\numberline {5.1}同値条件}{75}{section.5.1}%
 \contentsline {section}{\numberline {5.2}伝播}{76}{section.5.2}%
 \contentsline {section}{\numberline {5.3}例：局所閉集合から定まる超局所台}{76}{section.5.3}%
 \contentsline {section}{\numberline {5.4}超局所台の関手的性質}{76}{section.5.4}%
-\contentsline {paragraph}{テンソル積}{76}{section*.57}%
-\contentsline {paragraph}{Hom}{76}{section*.58}%
-\contentsline {paragraph}{固有順像}{76}{section*.59}%
-\contentsline {paragraph}{逆像}{76}{section*.60}%
-\contentsline {section}{\numberline {5.5}錐状層の超局所台}{76}{section.5.5}%
-\contentsline {chapter}{\numberline {第11章}\(\mathcal {O}_X\)加群と\(\mathcal {D}_X\)加群への応用}{78}{chapter.11}%
-\contentsline {chapter}{参考文献}{79}{chapter*.62}%
+\contentsline {section}{\numberline {5.5}錐状層の超局所台}{79}{section.5.5}%
+\contentsline {chapter}{\numberline {第11章}\(\mathcal {O}_X\)加群と\(\mathcal {D}_X\)加群への応用}{80}{chapter.11}%
+\contentsline {chapter}{参考文献}{81}{chapter*.66}%

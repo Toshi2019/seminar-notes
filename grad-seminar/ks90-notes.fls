@@ -364,6 +364,9 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-dvipdfmx.
 INPUT ./ks90-notes.aux
 INPUT ./ks90-notes.aux
 INPUT ks90-notes.aux
+INPUT ./ks90-5.aux
+INPUT ./ks90-5.aux
+INPUT ks90-5.aux
 OUTPUT ks90-notes.aux
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
@@ -511,6 +514,11 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy9.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT ./ks90-5.tex
+OUTPUT ks90-5.aux
+INPUT ./ks90-5.tex
+INPUT ./ks90-5.tex
+INPUT ks90-5.tex
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
@@ -547,3 +555,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT ks90-notes.aux
+INPUT ./ks90-5.aux
+INPUT ./ks90-5.aux
+INPUT ks90-5.aux
