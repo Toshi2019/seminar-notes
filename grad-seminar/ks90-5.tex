@@ -93,15 +93,19 @@
 \(\cotb[X]\times \cotb[Y]\)上で定義される
 第1射影と第2射影を\(p_1\)と\(p_2\)で表す．
 \(f\)が\(Y\)から\(X\)への写像ならば，
-第\ref{chap4}章のように，\(\mtp[f]\)と\(f_\pi\)で
+第\ref{chap4}章のように，\(\mpb[f]\)と\(f_\pi\)で
 以下の写像を表す．
 \[
     \cotb[Y]
-    \underset{\mtp[f]}{\longleftarrow}
+    \underset{\mpb[f]}{\longleftarrow}
     Y\pb[X]\cotb[X]
     \underset{f_{\pi}}{\longrightarrow}
     \cotb[X].
 \]
+
+
+
+
 
 \subsection*{テンソル積}
 
@@ -313,17 +317,79 @@
 \end{CMT}
 \subsection*{Hom}
 \subsection*{固有順像}
-\subsection*{逆像}
+\subsection*{平滑射の逆像}
+\begin{leftbar}
+\begin{PRP}\label{prp545}
+    \(f\colon Y\to X\)は平滑であるとする．
+    \begin{enumerate}[(i)]
+        \item \(F\in\Dompb(X)\)とする．このとき次が成り立つ．\[
+            \muS(f^{-1}F)=\mpb[f](f_{\pi}^{-1}(\muS(F))).
+        \]
+        \item \(G\in\Dompb(Y)\)であるとき，
+        次の条件\eqref{5452a}--\eqref{5452c}は互いに同値である．
+        \begin{enumerate}[(a)]
+            \item \(H^{j}(G)\)はすべて，
+            \(f\)のファイバー上で局所定数層である，\label{5452a}
+            \item \(Y\)上局所的に，\(G\cong f^{-1}F\)と
+            なる\(F\in\Dompb(X)\)が存在する，\label{5452b}
+            \item \(\muS(G)\subset \mpb[f](Y\times_X\cotb[X])\).\label{5452c}
+        \end{enumerate}
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
 
+\begin{proof}
+    (i) 
+    逆の包含関係を示すには，命題5.1.1の条件(1)を用いる．
+    \(\varphi\)が\(X\)上の\(C^1\)級関数で\(x\in X\)であるとき，
+    任意の\(y\in f^{-1}(x)\)に対し次が成り立つことに注意すればよい．
+    \[
+        \left(\RG_{\{\varphi\geqq0\}}(F)\right)_{x}
+        =
+        \left(\RG_{\{\varphi\circ f\geqq0\}}(f^{-1}F)\right)_{y}.
+    \]
+\end{proof}
 
+\begin{RMK}
+    命題\ref{prp545}の状況のとき，
+    \(V=\mpb[f](Y\times_{X}\cotb[X])\)とする．
+    これは\(\cotb[Y]\)の滑らかな包合的部分多様体である．
+    \(\muS(H^{j}(G))\subset \muS(G)\)は一般に成り立つとは
+    限らない（注意5.1.4参照）が，
+    命題\ref{prp545}から次が従う：\(
+        \muS(G)\subset V
+        \Leftrightarrow \text{任意の\(j\)に対し，}
+        \muS(H^{j}(G))\subset V.
+    \)
+\end{RMK}
 
+層理論における種々の演算の下での超局所台の振る舞いを表すために，
+新しい記法を導入する．\(\cotb[X]\)の錐\(A\)と\(B\)に対して\(A+B\)を
+次で定める．
+\begin{equation}
+    (A+B)\cap\pi^{-1}(x)\coloneqq
+    \left\{
+        a+b~;~ 
+        a\in A\cap \pi^{-1}(x),~ 
+        b\in B\cap \pi^{-1}(x)
+    \right\}.
+\end{equation}
+
+\begin{leftbar}
+\begin{LMM}
+    \(A\)と\(B\)が\(\cotb[X]\)の閉錐で\(
+        A\cap B^{a}\subset \cotz[X]
+    \)をみたすとき，
+    \(A+B\)も\(\cotb[X]\)の閉錐である．
+\end{LMM}
+\end{leftbar}
 
 \section{錐状層の超局所台}
 この節ではベクトル束上の層の超局所台について調べる．
 
 \(\tau\colon E\to Z\)を多様体\(Z\)上の
 実ベクトル束とする（III \S7参照）．
-\(\rr^{+}\)の\(E\)への作用写像を\(
+\(\rr^{+}\)の\(E\)への作用を表す写像を\(
     \mu\colon \rr^{+}\times E\to E
 \)で表し，
 \(\mu\)の無限小作用を表す\(E\)上のベクトル場

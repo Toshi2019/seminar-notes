@@ -1,0 +1,531 @@
+\documentclass[11pt,%pdflatex,
+dvipdfmx,cjk]{beamer}
+
+%\AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}
+
+\usepackage{amsmath,amssymb,amscd,graphicx}
+\usepackage{array}
+%\usepackage[pdflatex]{pict2e}
+\usepackage{amsthm,color,xcolor}
+\usepackage{bm}
+\usepackage{framed}
+\usepackage{arydshln}
+
+\usepackage{bxdpx-beamer}
+\usepackage{pxjahyper}
+\usepackage{minijs}
+\usepackage{mathtools}
+%\def\pdfliteral#1{\special{pdf:content #1}}
+%\def\languagename{hoge}
+
+%\usepackage[normal]{fixdif}
+%\resetdfont{\mathsf}
+\usepackage{comment}
+
+\newcommand{\rr}{\mathbf{R}}
+\def\inner<#1>{\langle #1 \rangle}
+
+\makeatletter
+\def\pgfutil@insertatbegincurrentpagefrombox#1{%
+  \edef\pgf@temp{\the\wd\pgfutil@abb}%
+  \global\setbox\pgfutil@abb\hbox{%
+    \unhbox\pgfutil@abb%
+    \hskip\dimexpr2in-2\hoffset-\pgf@temp\relax% changed
+    #1%
+    \hskip\dimexpr-2in-2\hoffset\relax% new
+  }%
+}
+\setbeamertemplate{footline}[frame number]
+
+\makeatother
+
+\usetheme{Frankfurt}
+\setbeamertemplate{navigation symbols}{}
+\title{Kepler problem}
+\author{工藤 堅太}
+\institute{立命館大学理工学部数理科学科4回}
+%\vspace{5mm}Based on a joint project \\
+%with Wolfram Bauer \& Abdellah Laaroussi (Leibniz Univ. Hannover)}
+\date{\footnotesize{立命館大学理工学部数理科学科幾何学系卒業研究発表会 \\2025年1月27日}}
+
+\begin{document}
+\begin{frame}\frametitle{}
+\titlepage
+\end{frame}
+
+
+\begin{frame}
+\frametitle{内容}
+\tableofcontents
+\end{frame}
+
+\section{導入}
+\begin{frame}
+\S 1. 導入
+\end{frame}
+
+\begin{frame}
+\frametitle{\(n\)次元Kepler問題}
+\(n\)次元Kepler問題：
+\[
+	\ddot{x} = - \frac{x}{\|x\|^{n}}, \qquad x \in \rr^{n} \setminus \{0\}.
+\]
+\(y = \dot{x}, H(x,y) = \dfrac{\|y\|^{2}}{2} - \dfrac{1}{\|x\|}\)とおくと
+\[
+	\left\{
+	\begin{alignedat}{2}   
+	\dot{x} &= y &&= \dfrac{\partial H}{\partial y}(x,y) \\
+	\dot{y} &= - \dfrac{x}{\|x\|^{3}} &&= - \dfrac{\partial H}{\partial x}(x,y). 
+	\end{alignedat}
+	\right.
+\]
+%このような形の方程式を\textbf{Hamilton関数}\(H\)が定める\textbf{Hamilton方程式}といい，
+%\([\partial H/\partial y, \partial H/\partial x]\)を
+%\(H\)が定める\textbf{Hamiltonベクトル場}という．
+\begin{block}{}
+\textbf{目標：}
+\(n\)次元Kepler問題の流れと\(\dot{\mathbf{S}}^{n}\)上の測地流が
+``同じ''であることを示す．
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{シンプレクティック多様体}
+\begin{block}{定義（シンプレクティック形式）}
+$M$：滑らかな多様体．$M$上の2形式$\omega \in \Omega^{2}(M)$が
+$M$上のシンプレクティック形式とは，次の2つ条件をみたすこと：
+\begin{itemize}
+\item 
+\(\omega\)は非退化 i.e. 各点\(p \in M\)で\(\omega_{p}: T_{p}M \times T_{p}M \to 
+T_{p}^{*}M\)が非退化．
+
+\item
+\(\omega\)は閉 i.e. \(\mathsf{d}\omega = 0\)．
+\end{itemize}
+\end{block}
+滑らかな多様体\(M\)と\(M\)上のシンプレクティック形式\(\omega\)の対\((M, \omega)\)を
+シンプレクティック多様体という．
+
+\begin{block}{定義（シンプレクティック同相写像）}
+$(M_{1}, \omega_{1}), (M_{2},\omega_{2})$：シンプレクティック多様体．微分同相写像
+$F\colon M_{1} \to M_{2}$がシンプレクティック同相写像とは，
+\[F^{*}\omega_{2} = \omega_{1}.\]
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Hamiltonベクトル場}
+\begin{block}{命題（Hamiltonベクトル場が一意存在）}
+\((M, \omega)\)：シンプレクティック多様体．\(\forall H \in \mathcal{C}^{\infty}(M),
+\exists! X \in \mathfrak{X}(M)\) s.t. 
+\[
+\iota_{X}\omega = - \mathsf{d}H.
+\]
+%ただし，\(\iota\)は
+\end{block}
+\(X\)をHamilton関数\(H\)が定めるHamiltonベクトル場といい，\(X_{H}\)と表す．
+\end{frame}
+
+\begin{frame}
+\frametitle{第1積分}
+\begin{block}{定義（第1積分）}
+\((M, \omega)\)：シンプレクティック多様体，
+\(H\colon M \to \mathbf{R}\)：\(M\)上のHamilton関数, 
+\((\varphi_{t}^{X_{H}})_{t \in \mathbf{R}}\)：$X_{H}$の流れ．
+滑らかな関数\(G: M \to \rr\)が\((\varphi_{t}^{X_{H}})_{t \in \mathbf{R}}\)の第1積分とは
+\[
+\frac{\mathsf{d}}{\mathsf{d}t}G(\varphi_{t}^{X_{H}}(x)) = 0, 
+\qquad \forall x \in M, t \in \mathbf{R}.
+\]
+をみたすこと．
+\end{block}
+\(c \in \mathbf{R}\)が\(G\)の正則値のとき，レベル集合\(G^{-1}(c)\)上に，
+力学系\(\varphi_{t}^{X_{H}}|_{G^{-1}(c)}\)が誘導される． %滑らかな場合
+
+\textbf{Remark:}\\
+Hamilton関数\(H\)は必ず\((\varphi_{t}^{X_{H}})_{t \in \mathbf{R}}\)の第1積分となる．
+\end{frame}
+
+\begin{comment}
+\begin{frame}
+\frametitle{In local coordinates}
+\(M\)：滑らかな多様体．\(M\)の上の余接束\(\pi\colon T^{*}M \to M\)上の自然な1形式
+\(\theta \in \Omega^{1}(T^{*}M)\)を\(\xi \in T^{*}M, v \in T_{\xi}(T^{*}M)\)に対して，
+\[
+\theta_{\xi}(u) = \xi(\mathsf{d}\pi_{\xi}(u)) 
+\]
+で定める．\(\theta\)を用いて，
+\(T^{*}M\)上の自然な2形式\(\omega \in \Omega(T^{*}M)\)を
+\(\omega = \mathsf{d}\theta\)
+で定めると，\(\omega\)は\(T^{*}M\)上のシンプレクティック形式となる．
+\
+この\(\omega\)のもとで，Hamilton関数\(H \colon T^{*}M \to \mathbf{R}\)が
+定めるHamilton方程式は\(T^{*}M\)の局所座標系\((q,p)\)を用いて，
+\[
+\begin{cases}
+\dot{q} &=  \dfrac{\partial H}{\partial p}(q,p) \\
+\dot{p} &=   - \dfrac{\partial H}{\partial q}(q,p)
+\end{cases}
+\]
+と表せる．
+\end{frame}
+\end{comment}
+
+\begin{frame}
+\frametitle{余接束上の自然なシンプレクティック形式}
+\(U \subset \rr^{n}\)：開集合．\(T^{*}U = U \times \rr^{n}\)上の
+自然なシンプレクティック形式\(\omega \in \Omega^{2}(T^{*}U)\)を
+\(U, \rr^{n}\)の標準座標\((q^{1}, \dots, q^{n}), (p_{1}, \dots, p_{n})\)を用いて
+次で定める：
+\[
+	\omega \coloneqq \sum_{i = 1}^{n} \mathsf{d}p^{i} \wedge \mathsf{d}q_{i}.
+\]
+この\(\omega\)のもとで，Hamilton関数\(H \colon T^{*}U \to \mathbf{R}\)が
+定めるHamilton方程式は
+\[
+\begin{cases}
+\dot{q} &=  \dfrac{\partial H}{\partial p}(q,p) \\
+\dot{p} &=   - \dfrac{\partial H}{\partial q}(q,p)
+\end{cases}
+\]
+と表せる．
+\end{frame}
+
+\section[Geodesics on homogeneous spaces]{Riemannian geodesic flows on homogeneous spaces}
+\begin{frame}
+\S 2. Riemannian geodesic flows on homogeneous spaces
+\end{frame}
+
+\begin{frame}
+\frametitle{\(n\)次元Kepler問題}
+n次元Kepler問題は\(T^{*}(\rr^{n} \setminus \{0\}) = 
+(\rr^{n} \setminus \{0\}) \times \rr^{n}\)上の
+Hamilton関数\(H\colon(\rr^{n} \setminus \{0\}) \times \rr^{n} \to \rr\)
+\[
+	H(q,p) = \frac{1}{2}\|p\|^{2} - \frac{1}{\|q\|}
+\]
+が定めるHamilton力学系
+\[
+\begin{cases}
+	\dot{q} &=  p \qquad \\
+	\dot{p} &= - \frac{q}{\|q\|^{3}} 
+\end{cases}
+\]
+と思える．
+\end{frame}
+
+\begin{frame}
+\frametitle{\(\mathbf{S}^{n}\)上の測地流}
+\(T^{*}\rr^{n+1} = \rr^{n + 1} \times \rr^{n + 1}\)の上の\\
+Hamilton関数\(\Phi:\rr^{n + 1} \times \rr^{n + 1} \to \rr\)
+\[
+	\Phi(\xi, \eta) = \frac{1}{2}(\|\xi\|^{2}\|\eta\|^{2} - \inner<\xi, \eta>)
+\]
+が定めるHamilton力学系
+\[
+\begin{cases}
+	\dot{\xi} &=  \|\xi\|^{2}\eta -  \inner<\xi, \eta>\xi \\
+	\dot{\eta} &= -\|\eta\|^{2}\xi + \inner<\xi, \eta>\eta
+\end{cases}		
+\]
+を考える．この力学系は次の関数を第1積分にもつ：
+\[
+	\|\xi\|^{2}, \|\eta\|^{2}, \inner<\xi, \eta>.
+\]
+\end{frame}
+
+\begin{frame}
+\frametitle{\(\mathbf{S}^{n}\)上の測地流}
+\(\Phi\)が定めるHamilton力学系は，\(\|\xi\|^{2}, \inner<\xi, \eta>\)を第1積分にもつことから
+\(T\mathbf{S}^{n} = \{(\xi,\eta) \in \rr^{n + 1} \times \rr^{n + 1} \mid 
+\|\xi\| = 1, \inner<\xi, \eta> = 0\}\)上のHamilton力学系
+\[
+\begin{cases}
+	\dot{\xi} &=  \eta \\ 
+	\dot{\eta} &= -\|\eta\|^{2}\xi
+\end{cases}	
+\]
+を誘導する．この力学系を\(\mathbf{S}^{n}\)上の\textbf{測地流}という．
+\(\|\eta\| = \lambda\)とおくと，この方程式の任意の解は
+\[
+	\xi(t) = \sin(\lambda t)a + \cos(\lambda t)b, \qquad \exists! a,b \in \rr^{n+1}
+\]
+と表せる．\(\inner<\xi(t), \xi(t)> = 1, \inner<\xi(t), \dot{\xi}(t)> = 0\)に注意すると，
+\(\|a\| =1, \|b\| =1, \inner<a,b> = 0\)であり，
+解軌道は\(\mathbf{S}^{n}\)上の大円となることがわかる．
+\end{frame}
+
+\begin{frame}
+\frametitle{位相同値}
+\begin{block}{Definition（位相同値写像）}
+	\(M,N\)：滑らかな多様体．
+	\((\varphi_{t})_{t \in \rr}, (\psi_{t})_{t \in \rr}\)：\(M, N\)上の力学系．
+	同相写像\(h\colon M \to N\)が\((\varphi_{t})_{t \in \rr}\)と\((\psi_{t})_{t \in \rr}\)
+	の間の\textbf{位相同値写像}であるとは，
+	ある連続写像\(s\colon \rr \times M \to \rr\)が存在して，
+	\begin{itemize}
+		\item
+		各点\(p \in M\)で\(s(\cdot, p)\colon \rr \to \rr\)は単調増加かつ全射．
+		
+		\item
+		\((h \circ \varphi_{s(t,p)})(p) = (\psi_{t} \circ h)(p)\ \forall t \in \rr, p \in M.\)
+	\end{itemize}
+	をみたすこと．
+\end{block}
+\((\varphi_{t})_{t \in \rr}\)と\((\psi_{t})_{t \in \rr}\)の間に位相同値写像が存在するとき，
+\((\varphi_{t})_{t \in \rr}\)は\((\psi_{t})_{t \in \rr}\)と\textbf{位相同値}であるという．
+
+\textbf{Remark:}\\
+位相同値写像を通して第1積分，平衡点，周期軌道などはうつり合う．
+\end{frame}
+
+\begin{frame}
+\begin{block}{Theorem（Moser）}
+負のエネルギー面\(H^{-1}(E)\)\((E < 0)\)に制限した\(n\)次元Kepler問題の流れは
+\(\dot{\mathbf{S}}^{n}\)上の測地流に微分同相写像
+\(u\colon T_{1}\dot{\mathbf{S}}^{n} \to H^{-1}(E)\)
+\[
+\begin{cases}
+	p_{j} &= \dfrac{\xi}{1 - \xi_{0}}\sqrt{-2E} \\
+	-q_{j} &= ((1 - \xi_{0})\eta_{j} + \eta_{0}\xi_{j})(-2E)^{-1}
+\end{cases}
+\]
+と時間変数の滑らかな変更\(\tau: \rr \times H^{-1}(E) \to \rr\)
+\[
+	\frac{\mathsf{d}t}{\mathsf{d}\tau}(\tau,(q,p)) = \|q\| \cdot (-2E)^{-\frac{3}{2}}
+\]
+により（微分）位相同値である．
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{証明の概略}
+
+\end{frame}
+
+\section[証明の詳細]{証明の詳細}
+\begin{frame}
+\S 3. 証明の詳細
+\end{frame}
+
+\begin{frame}
+\frametitle{立体射影}
+\(L^{+} \coloneqq \{(\xi_{0}, 0, \dots, 0) \mid \xi_{0} \geq 0\}, 
+\rr_{+}^{n+1} = \{(x_{0}, \dots ,x_{n}) \in \rr^{n+1} \mid x_{0} > 0\}\)．
+``立体射影""
+\(a: \rr^{n+1} \setminus L^{+} \to \rr_{+}^{n+1} \)
+\[
+\begin{cases}
+	x_{0} &= \|\xi\| \\
+	x_{j} &= \dfrac{\xi_{j}}{\|\xi\| - \xi_{0}}, \qquad j = 1, 2, \dots, n.
+\end{cases}
+\]
+を考える．\(a\)の逆写像は次で与えられる：
+\[
+\begin{cases}
+	\xi_{0} &= x_{0}\dfrac{\|x\|^{2} - 1}{\|x\|^{2} + 1} \\
+	\xi_{j} &= x_{0}\dfrac{2x_{j}}{\|x\|^{2} + 1}, \qquad j = 1, 2, \dots, n.
+\end{cases}
+\]
+\end{frame}
+
+\begin{frame}
+\frametitle{立体射影}
+図
+\end{frame}
+
+\begin{frame}
+\frametitle{立体射影}
+\begin{block}{命題（母関数を用いたシンプレクティック同相写像の構成）}
+	\(U, V \subset \rr^{n}\)：開集合．
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{立体射影}
+母関数\(W: \rr_{+}^{n+1} \times \rr^{n+1} \to \rr\)
+\[
+	W((x_{0,}x), \eta) = x_{0}\dfrac{\|x\|^{2} - 1}{\|x\|^{2} + 1}\eta_{0} + 
+			  x_{0}\dfrac{2x_{j}}{\|x\|^{2} + 1}(\sum_{j = 1}^{n}x_{j}\eta_{j})
+\]
+を用いて，立体射影\(a: \rr^{n+1} \setminus L^{+} \to \rr_{+}^{n+1}\)を
+シンプレクティック同相写像
+\(u: (\rr^{n+1} \setminus L^{+}) \times \rr^{n+1} \to \rr_{+}^{n+1} \times \rr^{n+1}\)
+\[
+\begin{cases}
+	x_{0} &= \|\xi\| \\
+	x_{j} &= \dfrac{\xi_{j}}{\|\xi\| - \xi_{0}} \\
+	y_{0} &=  \inner<\xi, \eta>\|\xi\|^{-1} \\
+	y_{j} &= (\|\xi\| - \xi_{0})\eta_{j} -(y_{0} - \eta_{0})\xi_{j}, \qquad j = 1, 2, \dots, n.
+\end{cases}
+\]
+にする．
+\end{frame}
+
+\begin{frame}
+\frametitle{立体射影}
+\begin{block}{命題（変換理論）}
+	\((M_{1}, \omega_{1}), (M_{2}, \omega_{2})\)：シンプレクティック多様体．
+	任意の微分同相写像\(u\colon M_{1} \to M_{2}\)について，
+	\(u\)がシンプレクティックであることと,
+	\[
+		u^{*}X_{H} = X_{u^{*}H}, \qquad \forall H \in \mathcal{C}^{\infty}(M)
+	\]
+\end{block}
+\(F \coloneqq \Phi \circ u^{-1}\)とおくと，
+\[
+	F((x_{0},x),(y_{0},y)) = \frac{1}{8}(\|x\|^{2} + 1)^{2}\|y\|^{2}
+\]
+であり，\((\varphi_{t}^{X_{\Phi}})_{t \in \rr}\)と\((\varphi_{t}^{X_{F}})_{t \in \rr}\)は位相同値．
+
+\textbf{Remark:}\\
+座標関数\(x_{0}, y_{0}\)は\((\varphi_{t}^{X_{F}})_{t \in \rr}\)の第1積分となっている．
+%\[
+%	\|\xi\|^{2} = x_{0}^{2}, \qquad \inner<\xi, \eta> = x_{0}y_{0}
+%\]
+%より，座標関数\(x_{0}, y_{0}\)は\((\varphi_{t}^{X_{F}})_{t \in \rr}\)の第1積分である．
+%\(F\)が定めるHamilton方程式は
+%\[
+%	\dfrac{\mathsf{d}x_{0}}{\mathsf{d}\tau} = 0,\
+%	\dfrac{\mathsf{d}x}{\mathsf{d}\tau} = \dfrac{\partial F}{\partial y}(x,y),\
+%	\dfrac{\mathsf{d}y_{0}}{\mathsf{d}\tau} = 0,\
+%	\dfrac{\mathsf{d}y}{\mathsf{d}\tau} = \dfrac{\partial F}{\partial y}(x,y).
+%\]
+\end{frame}
+
+\begin{frame}
+\frametitle{立体射影}
+\(\|\xi\|^{2}, \|\eta\|^{2}, \inner<\xi, \eta>\)は\((\varphi_{t}^{X_{\Phi}})_{t \in \rr}\)の
+第1積分であったので
+\[
+	T_{1}\dot{\mathbf{S}}^{n} = 
+ 	\{ (\xi, \eta) \in (\rr^{n+1} \setminus L^{+}) \times \rr^{n+1} \mid
+	\|\xi\| = 1, \|\eta\| = 1, \inner<\xi, \eta> = 0 \}
+\]
+上のHamilton関数\(\Phi|_{T_{1}\dot{\mathbf{S}}^{n}}(\xi, \eta) = 1/2\)が定める力学系
+\[
+\begin{cases}
+	\dot{\xi} &=  \eta \\ 
+	\dot{\eta} &= -\xi
+\end{cases}	
+\]
+が誘導され，微分同相写像
+\(u|_{T_{1}\mathbf{S}^{n}}: T_{1}\mathbf{S}^{n} \to \tilde{F}^{-1}(1/2)\)
+によって，Hamilton関数\(\tilde{F}(x,y) = \dfrac{1}{8}(\|x\|^{2} + 1)^{2}\|y\|^{2} \)
+が定めるエネルギー面\(\tilde{F}^{-1}(1/2)\)上の力学系と（微分）位相同値である．
+\end{frame}
+
+\begin{frame}
+\frametitle{Hamilton関数の変更}
+\begin{block}{命題（Hamilton関数の変更）}
+	\((M, \omega, H)\)：Hamilton力学系，\(c \in \rr\)：\(H\)の正則値．
+	滑らかな関数\(\psi\colon \rr \to \rr\)が\(\psi^{\prime}(c) = 1\) を
+	満たする．滑らかな関数\(K\colon M \to \rr\)を
+	\[
+		K \coloneqq \psi \circ H
+	\]
+	で定めたとき，
+	\[
+		X_{K} = X_{H}\qquad \text{on}\ H^{-1}(c).
+	\]
+\end{block}
+滑らかな関数\( \psi\colon \rr \to \rr\)を
+\(
+	\psi(\lambda) \coloneqq \sqrt{2 \lambda}
+\)
+で定めると，\(\psi\)は\(\psi^{\prime}(1/2) = 1\)を満たし，Hamilton関数\(\tilde{F}\)は
+Hamilton関数
+\[
+	(\psi \circ F)(x,y) = \frac{1}{2}(\|x\|^{2} + 1)\|y\|
+\]
+と\(F^{-1}(1/2) = (\psi \circ F)^{-1}(1)\)上で\(X_{F} = X_{\psi \circ F}\)となる．
+\end{frame}
+
+\begin{frame}
+\frametitle{時間変数の変更}
+%\begin{block}{命題}
+	\((M, \omega, H)\)：Hamilton力学系，\((\varphi_{t})_{t \in \rr}\)を\(X_{H}\)の流れ，
+	\(c \in \rr\)：\(H\)の正則値．滑らかな関数\(\lambda\colon M \to \rr_{>0}\)に
+	対して，滑らかな写像\(s\colon \rr \times M \to M\)を
+	\[
+		s(t,x) \coloneqq \int_{0}^{t} \lambda(\varphi_{\tau}(x)) \mathsf{d}\tau \quad
+		\text{or} \quad
+ 		\dfrac{\mathsf{d}s}{\mathsf{d}t}(t, x) = \lambda(x)
+	\]
+	で定めたとき，各点\(x \in M\)で\(s(\cdot, x)\colon \rr \to \rr\)は
+	単調増加かつ全射であるとする．\(M\)上の流れ\((\psi_{t})_{t \in \rr}\)を
+	\[
+		\psi_{s(t,x)}(x) = \varphi_{t}(x)
+	\]
+	で定めたとき，\(M\)上の新たなHamilton関数\(L\colon M \to \rr\)を
+	\[
+		L \coloneqq \lambda^{-1}(H - c)
+	\]
+	とおくと	
+	\[
+		X_{L} = \lambda^{-1}X_{H}\qquad \text{on}\ H^{-1}(c).
+	\]
+%\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{時間変数の変更}
+\[
+	\frac{\mathsf{d}t}{\mathsf{d}\tau}(\tau,(x,y)) = \|y\|
+\]
+と時間変数の変更を行なうとHamilton関数\(\psi \circ F\)が定めるHamilton力学系と
+Hamilton関数
+\[
+	\|y\|^{-1}((\psi \circ F)(x,y) -1) = \frac{1}{2}(\|x\|^{2} + 1) - \|y\|^{-1}
+\]
+が定めるHamilton力学系はエネルギー面\(F^{-1}(1/2)\)上で（微分）位相同値となる． 
+\end{frame}
+
+\begin{frame}
+最後にシンプレクティック変換\(\rr^{n} \times \rr^{n} \to \rr^{n} \times \rr^{n}\)
+\[
+	q = -y, \qquad p = x
+\]
+により\(n\)次元Kepker問題のHamiltonianであるHを得る：
+\[
+	\dfrac{1}{2}(\|p\|^{2} + 1) - \frac{1}{\|q\|} = H(q,p) + \dfrac{1}{2}
+\]
+\end{frame}
+
+\begin{frame}
+\frametitle{一般の負のエネルギーの場合}
+
+\end{frame}
+
+
+\appendix
+\section*{aa}
+\begin{frame}
+	\frametitle{今後の展望}
+	\begin{itemize}
+		\item 
+		\(n\)次元Kepler問題の可積分性
+	
+		\item
+		特異点
+	
+		\item
+		\(\mathsf{SO}(n+1)\)対称性
+	\end{itemize}
+	\end{frame}
+	
+	%\section{References}
+	\begin{frame}
+	\frametitle{参考}
+	{\footnotesize
+	\begin{thebibliography}{999999}
+	\beamertemplatetextbibitems
+	\bibitem
+		[K]{Kawazoe_2024}
+		 Kawazoe, 
+		 Vector fields on spheres, 
+		 Ann. Math., \textbf{75}(3), 603-632, 1962. 
+	\end{thebibliography}
+	}
+	\end{frame}
+\end{document}

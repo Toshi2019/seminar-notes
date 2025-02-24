@@ -431,13 +431,17 @@
 \newcommand{\hd}{\mathop{\mathrm{hd}}\nolimits}
 
 \newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
-\newcommand{\mtp}[1][]{{}^{t\!}{#1}}
+\newcommand{\mtp}[1][]{{}^{t\!}{#1}} % transpose of the morphism
+\newcommand{\mpb}[1][]{{#1}_{d}} % pull-back of the morphism
+%\newcommand{\mpb}[1][]{{}^{t\!}{#1}'} % pull-back of the morphism
 
 \newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
 
 \newcommand{\cotb}[1][]{T^{\ast}{#1}}
 \newcommand{\conm}[2][]{T_{#1}^{\hspace{0.7pt}\ast}{#2}}
 \newcommand{\norb}[2][]{T_{#1}{#2}}
+
+\newcommand{\cotz}[1][]{T^{\ast}_{#1}{#1}}
 
 
 % =================================
@@ -5458,7 +5462,7 @@ Martineauと柏原による\(H^j_Z(\scO_X)\)が消滅するための規準があ
     \ar[rd]_-{\mtan[f]}
     \ar[r]^-{f'}
     &
-    Y\times TX
+    Y\pb[X] TX
     \ar@{}[dr]|\square
     \ar[d]_-{f_{\tau}}
     \ar[r]^-{\pr_1}
