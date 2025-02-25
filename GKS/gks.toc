@@ -1,0 +1,26 @@
+\contentsline {section}{\numberline {1}柏原--Schapira{\cite {KS90}}による層の超局所理論}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}幾何的諸概念}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}超局所台{\cite [5.1,6.5節]{KS90}}}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}局所化{\cite [6.1節]{KS90}}}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}関手の演算{\cite [5.4節]{KS90}}}{3}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}モースの補題とモース不等式{\cite [5.4節]{KS90}}}{4}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}核{\cite [3.6節]{KS90}}}{6}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}局所有界圏と層のはりあわせ}{7}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}量子化接触変換{\cite [7.2節]{KS90}}}{7}{subsection.1.8}%
+\contentsline {subsection}{\numberline {1.9}関手\(\mu hom\) {\cite [4.4,7.2節]{KS90}}}{7}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.10}単純層{\cite [7.5節]{KS90}}}{7}{subsection.1.10}%
+\contentsline {section}{\numberline {2}余法線の対角集合への変形}{7}{section.2}%
+\contentsline {section}{\numberline {3}同次ハミルトンイソトピーの量子化}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}量子化の一意性と台}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}量子化の存在：``コンパクト''の場合}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}量子化の存在：一般の場合}{7}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}超局所台の変形}{7}{subsection.3.4}%
+\contentsline {section}{\numberline {4}分離不能性問題への応用}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}分離不能性：同次の場合}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}分離不能性：モース不等式}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}分離不能性：非負ハミルトンイソトピー}{7}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}分離不能性：シンプレクティックの場合}{7}{subsection.4.4}%
+\contentsline {section}{\numberline {付録A}ハミルトンイソトピー}{7}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}シンプレクティック同型の族}{7}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}錐形ラグランジュ部分多様体の族}{7}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}変数の追加}{7}{subsection.A.3}%

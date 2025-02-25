@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1740405741.10982 "gks.dvi" "gks.pdf" "gks" 1740405742.11031 0
-  "gks.dvi" 1740405740.976 24088 ee49a1bd8962c10974e3723343e678f2 "latex"
+["dvipdf"] 1740491771.27472 "gks.dvi" "gks.pdf" "gks" 1740491772.71013 0
+  "gks.dvi" 1740491771.11112 62636 782ff8746a24a5a4b5b212d3699cfaf1 "latex"
   (generated)
   "gks.pdf"
   (rewritten before read)
-["latex"] 1740405739.58196 "/Users/giuseppe/seminar-notes/GKS/gks.tex" "gks.dvi" "gks" 1740405742.10492 0
-  "/Users/giuseppe/seminar-notes/GKS/gks.tex" 1740405737.578 27217 b987f8c27b47056e1dbaac98f8f49a52 ""
+["latex"] 1740491769.30897 "/Users/giuseppe/seminar-notes/GKS/gks.tex" "gks.dvi" "gks" 1740491772.70355 0
+  "/Users/giuseppe/seminar-notes/GKS/gks.tex" 1740491765.18525 38583 32c57c3d62f672dcefe3689bc3c22336 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -251,12 +251,14 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "gks.aux" 1740405740.97257 4149 16fdbad049918f7f7c0004ad43a5c933 "latex"
-  "gks.out" 1740405740.97537 4087 68483bd8df0d896930d362c04d7bb837 "latex"
-  "gks.tex" 1740405737.578 27217 b987f8c27b47056e1dbaac98f8f49a52 ""
+  "gks.aux" 1740491771.10718 5843 b2d357999ff63c103a74b7944fb75f98 "latex"
+  "gks.out" 1740491771.11041 4087 ab5095ff09fe8e5745cbf377f54b0b62 "latex"
+  "gks.tex" 1740491765.18525 38583 32c57c3d62f672dcefe3689bc3c22336 ""
+  "gks.toc" 1740491771.11098 2658 ad31408af84476fe13721457a500dd52 "latex"
   (generated)
   "gks.aux"
   "gks.dvi"
   "gks.log"
   "gks.out"
+  "gks.toc"
   (rewritten before read)

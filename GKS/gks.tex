@@ -18,7 +18,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[10pt, a4paper, dvipdfmx]{jsarticle}
+\documentclass[9pt, a4paper, dvipdfmx]{jsarticle}
 
 % ------------------------
 % usepackage
@@ -69,6 +69,7 @@
 
 %\usepackage[mathscr]{euscript} % mathscr のフォントを変更
 
+%\usepackage{mmasym}
 
 %=================================
 
@@ -553,6 +554,7 @@
 %\newcommand{\mpb}[1][]{{}^{t\!}{#1}'} % pull-back of the morphism
 \newcommand{\mpb}[1][]{{#1}_{\pi}} % pull-back of the morphism
 \newcommand{\mdiff}[1][]{{#1}_{d}} % pull-back of the morphism
+\newcommand{\mptan}[1][]{{#1}_{\tau}} % pull-back of the morphism
 
 
 %\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
@@ -572,6 +574,7 @@
 \newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
 %\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
 
+\newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
 
 % ----------------------------
 % documenet 
@@ -587,7 +590,7 @@
 \begin{document}
 \maketitle
 %\tableofcontents
-
+\tableofcontents
 \section*{はじめに}
 \cite{GKS12}のまとめノート．ほぼ和訳？
 \subsection*{注意}
@@ -650,15 +653,69 @@ ArXiv版とDuke版で節の番号がズレている．
 ここでは実多様体\(M\)として\(C^\infty\)級のものを考える．
 \subsection{幾何的諸概念}
 いつもの
+
+\begin{equation}
+    \vcenter{\xymatrix@C=36pt@R=36pt{
+    TM
+    \ar[d]^-{\tau_M}
+    \ar[r]^-{f'}
+    &
+    M\pb[N] TN
+    %\ar@{}[dr]|\square
+    \ar[d]_-{}
+    \ar[r]^-{\mptan[f]}
+    &
+    \cotb[N]
+    \ar[d]^-{\tau_N}
+    \\
+    M
+    \ar@{=}[r]
+    &
+    M
+    \ar[r]^-{f}
+    %\ar@{}[dr]|\square
+    &
+    N.
+  }}
+\end{equation}
+
+\begin{equation}
+    \vcenter{\xymatrix@C=36pt@R=36pt{
+    \cotb[M]
+    \ar[d]^-{\pi_M}
+    &
+    M\pb[N] \cotb[N]
+    %\ar@{}[dr]|\square
+    \ar[d]_-{}
+    \ar[r]^-{\mpb[f]}
+    \ar[l]_-{\mdiff[f]}
+    &
+    \cotb[N]
+    \ar[d]^-{\pi_N}
+    \\
+    M
+    \ar@{=}[r]
+    &
+    M
+    \ar[r]^-{f}
+    %\ar@{}[dr]|\square
+    &
+    N.
+  }}
+\end{equation}
+
+\begin{equation}
+    a_M\colon \cotb[M]\to\cotb[M],\quad(x;\xi)\mapsto(x;-\xi).
+\end{equation}
 \subsection{超局所台{\cite[5.1,6.5節]{KS90}}}
 これもいつもの
-\begin{DFN}
+\begin{DFN}\label{def11}
     \(\muS\)の定義
 \end{DFN}
-\begin{EG}
+\begin{EG}\label{eg12}
     \(\muS\)の例
 \end{EG}
-\begin{THM}
+\begin{THM}\label{thm13}
     包合性定理
 \end{THM}
 \subsection{局所化{\cite[6.1節]{KS90}}}
@@ -689,24 +746,35 @@ ArXiv版とDuke版で節の番号がズレている．
 \(p_i\)を\(\cotb[(M\times N)]\cong\cotb[M]\times \cotb[N]\)から
 の射影とする．
 
-\begin{DFN}
+\begin{DFN}\label{def14}
     非特性の定義
 \end{DFN}
 
 \(f\)が非特性的であることの\(\mdiff[f]\)による特徴づけ
 
-\begin{THM}[{\cite[5.4節]{KS90}}参照]
+\begin{THM}[{\cite[5.4節]{KS90}}参照]\label{thm15}
     \(f\colon M\to N\)を多様体の射とし，
     \(F\in\Dompb(\kk_M)\)，\(G\in\Dompb(\kk_N)\)とする．
     \begin{enumerate}[(i)]
-        \item \(f\)が\(\supp(F)\)上固有とする．このとき\(\muS(\Rder{f_{!}})\subset\mpb[f]\mdiff[f]^{-1}\muS(F)\).
-        \item \(f\)が\(\muS(G)\)上非特性的であるとする．このとき\(\muS(f^{-1}G)\subset\mdiff[f]\mpb[f]\muS(G)\).
+        \item \(f\)が\(\supp(F)\)上固有とする．
+        このとき，\(
+            \muS(\Rder{f_{!}})
+            \subset
+            \mpb[f]\mdiff[f]^{-1}\muS(F)
+        \)である.\label{item15-1}
+        \item \(f\)が\(\muS(G)\)上非特性的であるとする．
+        このとき，\(
+            \muS(f^{-1}G)\subset\mdiff[f]\mpb[f]\muS(G)
+        \)である.\label{item15-2}
         \item \(f\)が平滑であるとする．
-        このとき\(\muS(F)\times M\mathbin{\times_{N}} \cotb[N]\)となるのは，
-        どの\(j\in\zz\)に対しても，層\(H^j(F)\)が\(f\)のファイバー上で局所定数層となるときである．
+        このとき，\(
+            \muS(F)\subset M\mathbin{\times_{N}} \cotb[N]
+        \)となることと，
+        すべての\(j\in\zz\)に対し層\(H^j(F)\)が\(f\)の
+        ファイバー上で局所定数層となることは同値である．\label{item15-3}
     \end{enumerate}
 \end{THM}
-\begin{CRL}
+\begin{CRL}\label{cor16}
     \(I\)を可縮な多様体とし，\(p\colon M\times I\to M\)を射影とする．
     \(F\in\Dompb(\kk_{M\times I})\)が\(
         \muS(F)\subset\cotb[M]\times\cotz[I]
@@ -715,24 +783,309 @@ ArXiv版とDuke版で節の番号がズレている．
 \begin{proof}
     かく．
 \end{proof}
-\begin{CRL}
+\begin{CRL}\label{cor17}
     \(I\)を\(\rr\)の開区間とし，
     \(q\colon M\times I\to I\)を射影とする．
     \(F\in\Dompb(\kk_{M\times I})\)が\(
-        \muS(F)\cap \cotz[M]\times\cotb[I]\subset\cotz[M\times I]
-    \)をみたし\(q\)が\(\supp(F)\)上固有とする．
+        \muS(F)\cap (\cotz[M]\times\cotb[I])
+        \subset
+        \cotz[(M\times I)]
+    \)をみたし\(q\)が\(\supp(F)\)上固有であるとする．
     このとき，\(F_a\coloneqq \mres[F]{\{t=a\}}\)とおくと，
-    任意の\(s,~t\in I\)に対し，\(
+    任意の\(s,t\in I\)に対し，\(
         \RG(M;F_s)\cong \RG(M;F_t)
     \)が成り立つ．．
 \end{CRL}
 \begin{proof}
-    かく．
+    次のカルテシアン図式を考える．
+    \[
+        \vcenter{\xymatrix@C=36pt@R=36pt{
+        M\times\{s\}
+        \ar[r]^-{a_M}
+        \ar@{^{(}->}[d]^-{\iota_s}
+        %\ar@{^{(}->}[r]_-{s_Y}&
+        &
+        \{s\}
+        \ar@{^{(}->}[d]^-{\iota_s}\\
+        M\times I
+        \ar[r]^-{q}
+        &
+        I.
+    }}\]
+    \(q\)が固有なので\(\Rder{q_!}F\cong\Rder{q_{\ast}}F\)である．
+    また，\(\mres[q]{M\times\{s\}}=a_M\)なので，\(a_M\)も固有である．
+    したがって，
+    \begin{align*}
+        \RG(M;F_s)
+        &\cong\Rder{{a_M}_{\ast}}\iota^{-1}F\\
+        &\cong\Rder{{a_M}_{!}}\iota_{s}^{-1}F\\
+        &\cong\iota_{s}^{-1}\Rder{{q}_{!}}F\\
+        &\cong\iota_{s}^{-1}\Rder{{q}_{\ast}}F\\
+        &\cong(\Rder{{q}_{\ast}}F)_{s}
+    \end{align*}
+    である．
+    定理\ref{thm15}~\eqref{item15-2}から，\(
+        \muS(\Rder{q_{\ast}}F)
+        \subset 
+        \mpb[q]\mdiff[q]^{-1}\muS(F)
+    \)であり，
+    仮定から
+    \begin{align*}
+        \mpb[q]\mdiff[q]^{-1}\muS(F)
+        &=\mpb[q]((\cotz[M]\times\cotb[I])\cap\muS(F))\\
+        &\subset \mpb[q](\cotz[(M\times I)])\\
+        &= \cotz[I]
+    \end{align*}
+    である．
+    よって，\(\muS(\Rder{q_{\ast}}F)\subset\cotz[I]\)となる．
+    このとき\(V\in\Dompb(\kk)\)で\(\Rder{q_{\ast}}F\cong V_I\)となるものが存在する．
+    \(t\)についても\(\Rder{q_{\ast}}F\cong V_I\)となるので，
+    求める結果を得る．
 \end{proof}
+
+
+
+
 
 \subsection{モースの補題とモース不等式{\cite[5.4節]{KS90}}}
 
+この節では\(C^1\)級関数\(\psi\colon M\to\rr\)を考える．
+\begin{equation}\label{eq14}
+    \Lambda_{\psi}=\left\{(x;d\psi(x))\right\}\subset\cotb[M]
+\end{equation}
+とおく．
+以下の命題は超局所モースの補題（\cite[系5.4.19]{KS90}参照）の
+特別な場合であり定理\ref{thm15}~\eqref{item15-2}から従う．
+古典的な理論は定数層\(F=\kk_M\)に対応する．
+\begin{PRP}\label{prp18}
+    \(F\in\Dompb(\kk_M)\)とし，
+    \(\psi\colon M\to\rr\)を\(C^1\)級関数で，
+    \(\supp(F)\)上固有なものとする．
+    \(a<b\)を実数とする．
+    \(a\leqq \psi(x)<b\)に対し\(d\psi(x)\notin\muS(F)\)である
+    とする．
+    \(t\in\rr\)に対し，\(M_t=\psi^{-1}(]-\infty,t[)\)とおく．
+    このとき，制限射\(\RG(M_b;F)\to\RG(M_a;F)\)は同型である．
+\end{PRP}
+\begin{proof}
+    \(\psi\)が固有なので\(
+        \Rder{\psi_{!}}F\cong\Rder{\psi_{\ast}}F
+    \)である．いま，
+    \begin{align*}
+        \RG(M_a;F)&\cong\RG({\left]-\infty,a\right[}\mathrel{;}\Rder{\psi_{\ast}}F),\\
+        \RG(M_b;F)&\cong\RG({\left]-\infty,b\right[}\mathrel{;}\Rder{\psi_{\ast}}F)        
+    \end{align*}
+    である．定理\ref{thm15}~\eqref{item15-2}より，
+    \[
+        \muS(\Rder{\psi_{\ast}}F)
+        \subset
+        \mpb[\psi]\mdiff[\psi]^{-1}\muS(F)
+    \]
+    なので，仮定の\(d\psi(x)\notin\muS(F)\)から，
+    \(a\leqq\psi(x)<b\)に対し，
+    \[
+        \left(\RG_{[a,b[}\Rder{\psi_{\ast}}F\right)_{\psi(x)}=0
+    \]
+    となる．
+\end{proof}
+\begin{CRL}\label{cor19}
+    \(F\in\Dompb(\kk_M)\)とし
+    \(\psi\colon M\to\rr\)を\(C^1\)級関数とする．
+    \(\Lambda_\psi\)を\eqref{eq14}で定めたものとする．
+    次の条件が成り立つとする．
+    \begin{enumerate}[(i)]
+        \item \(\supp(F)\)はコンパクトである．
+        \item \(\RG(M;F)\ne0\).
+    \end{enumerate}
+    このとき，\(\Lambda_{\psi}\cap\muS(F)\ne\varnothing\)である．
+\end{CRL}
+
+この節の終わりまでと\ref{ssec44}節では，\(\kk\)を体とする．
+古典的なモース不等式は
+層に拡張される（\cite{ST92}と\cite[命題5.4.20]{KS90}参照）．
+そこでの結果を簡単に復習する．
+
+各コホモロジーが有限次元である\(\kk\)ベクトル空間の有界複体\(E\)に対し，
+\[
+    b_j(E)=\dim H^j(E),\quad
+    b_{l}^{\ast}(E)=(-1)^{l}\sum_{j\leqq l}^{}(-1)^{j}b_j(E)
+\]
+とおく．
+\(C^1\)級関数\(\psi\colon M\to\rr\)を考え\(\Lambda_\psi\)を
+上と同様に定める．
+\(\psi\)がなめらかとは仮定していないことに注意．
+\(F\in\Dompb(\kk_M)\)とする．
+\begin{equation}\label{eq15}
+    \text{
+        集合\(\Lambda_{\psi}\cap\muS(F)\)は有限で，
+        \(\{p_1,\dots,p_N\}のようにかける\)
+    }
+\end{equation}
+とする．
+\begin{equation}\label{eq16}
+    x_i=\pi(p_i),\quad
+    V_i\coloneqq\left(
+        \RG_{\{\psi(x)\geqq\psi(x_i)\}}(F)
+    \right)_{x_i}
+\end{equation}
+とおき，次を仮定する．
+\begin{equation}\label{eq17}
+    \text{すべての\(i\in\{1,\dots,N\}\)と\(j\in\zz\)に対し，
+    空間\(H^{j}(V_i)\)は有限次元である．}
+\end{equation}
+\[
+    b_j(F)=b_j(\RG(M;F)),\quad
+    b_{j}^{\ast}(F)=b_{j}^{\ast}(\RG(M;F))
+\]
+とおく．
+\begin{THM}
+    \(F\in\Dompb(\kk_M)\)とし，\(\supp(F)\)はコンパクトとする．
+    さらに\eqref{eq15}と\eqref{eq17}を仮定する．
+    このとき，任意の\(l\)に対し\begin{equation}
+        b_{l}^{\ast}(F)\leqq
+        \sum_{i=1}^{N}b_{l}^{\ast}(V_i)\label{eq18}
+    \end{equation}
+    が成り立つ．
+\end{THM}
+\eqref{eq18}から，任意の\(j\)に対し
+\begin{equation}
+    b_{l}^{\ast}(F)\leqq
+    \sum_{i=1}^{N}b_{l}^{\ast}(V_i)\label{eq18}
+\end{equation}
+が成り立つことがただちに従う．
 \subsection{核{\cite[3.6節]{KS90}}}
+
+\(M_i\) (\(i=1,2,3\)) を多様体とする．
+\(
+    M_{ij}\coloneqq M_i\times M_j
+\) (\(1\leqq i,j\leqq 3\)), \(
+M_{123}=M_1\times M_2\times M_3\)と略記する．
+\(q_i\)で射影\(M_{ij}\to M_i\)または射影\(M_{123}\to M_i\)を表し，
+\(q_{ij}\)で射影\(M_{123}\to M_{ij}\)を表す．
+同様に，
+\(p_i\)で射影\(M_{ij}\to M_i\)または射影\(
+    \cotb[M]_{123}\to \cotb[M]_i
+\)を表し，
+\(p_{ij}\)で射影\(\cotb[M]_{123}\to \cotb[M]_{ij}\)を表す．
+また\(\cotb[M_2]\)上の対蹠写像と\(p_{12}\)を合成した
+写像\(p_{12^a}\)も導入する．
+
+\(\Lambda_1\subset \cotb[M_{12}]\), 
+\(\Lambda_2\subset \cotb[M_{23}]\)とする．
+\begin{equation}\label{eq110}
+    \Lambda_1\circ \Lambda_2
+    \coloneqq
+    p_{13}(
+        p_{12^a}^{-1}\Lambda_1\cap p_{23}^{-1}\Lambda_2
+    )
+\end{equation}
+とおく．
+核のたたみこみ演算を考える：
+\begin{align*}
+    \conv[M_2]\colon 
+    \Dompb(\kk_{M_{12}})\times\Dompb(\kk_{M_{23}})
+    &\to\Dompb(\kk_{M_{13}})\\
+    (K_1,K_2)&\mapsto K_1\conv[M_2]K_2\coloneqq
+    \Rder{{q_{13}}_{!}}(q_{12}^{-1}K_{1}\ltens[]q_{23}^{-1}K_{2}).
+\end{align*}
+\(\Lambda_i=\muS(K_i)\subset\cotb[M_{i,i+1}]\)とし，
+次を仮定する．
+\begin{equation}\label{eq111}
+    \left\{
+        \parbox{60ex}{
+            (i) $q_{13}$は$q_{12}^{-1}\supp(K_1)\cap q_{23}^{-1}\supp(K_2)$上で固有であり,
+            \\%[2ex]
+            (ii) 
+            $%\ba[t]{l}
+            p_{12^a}^{-1}\Lambda_1\cap p_{23}^{-1}\Lambda_2
+            \cap (T^{\ast}_{M_1}M_1\times T^{\ast}M_2\times T^{\ast}_{M_3}M_3)\\%[1ex]
+            \hspace*{10ex} 
+            \subset T^{\ast}_{M_1\times M_2\times M_3}(M_1\times M_2\times M_3).$
+    }\right.        
+\end{equation}
+定理\ref{thm15}から，仮定\eqref{eq111}のもとで次が成り立つ．
+\begin{equation}
+    \muS(K_1\conv[M_2]K_2)\subset \Lambda_1\circ\Lambda_2.
+\end{equation}
+混同の恐れがないときは\(\conv[M_2]\)のかわりに\(\conv[]\)とかく．
+
+核のたたみこみの相対版も用いる．
+多様体\(I\)と\(K_1\in\Dompb(\kk_{M_{12}\times I})\), 
+\(K_2\in\Dompb(\kk_{M_{23}\times I})\)に対し，
+\begin{equation}
+    K_1\mathbin{\mres[\circ ]{I}}K_2\coloneqq
+    \Rder{{q_{13I}}_{!}}(q_{12I}^{-1}K_{1}\ltens[]q_{23I}^{-1}K_{2})
+\end{equation}
+とおく．ただし\(q_{ijI}\)は射影\(M_{123}\times I\to M_{ij}\times I\)である，
+上述の結果は相対的な場合にも成り立つ．
+すなわち，次の条件を仮定する．
+\begin{equation}\label{eq114}
+    \left\{
+        \parbox{60ex}{
+            (i) \(\supp(K_1)\times_{M_{2}\times I}\supp(K_2)\to M_{13}\times I\)は固有であり，
+            \\%[2ex]
+            (ii) 
+            $p_{12^{a}I^{a}}^{-1}\Lambda_1\cap p_{23I}^{-1}\Lambda_2
+            \cap (T^{\ast}_{M_1}M_1\times T^{\ast}M_2\times T^{\ast}_{M_3}M_3)\times\cotb[I]\\%[1ex]
+            \hspace*{10ex} 
+            \subset T^{\ast}_{M_1\times M_2\times M_3\times I}(M_1\times M_2\times M_3\times I).$
+    }\right.        
+\end{equation}
+ただし\[
+    p_{12^{a}I^{a}}\colon
+    \cotb[M_1]\times\cotb[M_2]\times\cotb[M_3]\times \cotb[I]
+    \to\cotb[M_1]\times\cotb[M_2]\times \cotb[I]
+\]は\[
+    p_{12^{a}I^{a}}(v_1,v_2,v_3,u)=(v_1,-v_2,-u)
+\]で与えられる．
+このとき次が成り立つ．
+\begin{equation}
+    \muS(K_1\mres[\circ]{I}K_2)
+    \subset 
+    \Lambda_1\mres[\circ]{I}\Lambda_2
+    \coloneqq
+    r_{13}(r_{12^a}^{-1}\Lambda_1\cap r_{23}^{-1}\Lambda_2).
+\end{equation}
+ただし，図式
+\[\vcenter{\xymatrix@C=16pt@R=36pt{
+    &
+    {
+        \cotb[M_1]\times \cotb[M_2]
+        \times \cotb[M_3]\times 
+        (\cotb[I]\pb[I]\cotb[I])
+    }
+    \ar[dl]_-{r_{12^a}}
+    \ar[d]_-{r_{13}}
+    \ar[dr]^-{r_{23}}\\
+    {\cotb[M_1]\times \cotb[M_2]\times \cotb[I]}
+    &
+    {\cotb[M_1]\times \cotb[M_3]\times \cotb[I]}
+    &
+    {\cotb[M_2]\times \cotb[M_3]\times \cotb[I]}
+    }}
+\]
+において，
+\begin{itemize}
+    \item \(r_{12^a}\)は\(
+        p_{12^a}\colon 
+        \cotb[M_1]\times \cotb[M_2]\times \cotb[M_3]
+        \to
+        \cotb[M_1]\times \cotb[M_2]
+    \)と第1射影\(\cotb[I]\times_{I}\cotb[I]\to\cotb[I]\)で与えられ，
+    \item \(r_{23}\)は\(
+        p_{23}\colon 
+        \cotb[M_1]\times \cotb[M_2]\times \cotb[M_3]
+        \to
+        \cotb[M_2]\times \cotb[M_3]
+    \)と第2射影\(\cotb[I]\times_{I}\cotb[I]\to\cotb[I]\)で与えられ，
+    \item \(r_{13}\)は\(
+        p_{13}\colon 
+        \cotb[M_1]\times \cotb[M_2]\times \cotb[M_3]
+        \to
+        \cotb[M_1]\times \cotb[M_3]
+    \)と加法の写像\(\cotb[I]\times_{I}\cotb[I]\to\cotb[I]\)で与えられる．
+\end{itemize}
+
 
 \subsection{局所有界圏と層のはりあわせ}
 
@@ -744,7 +1097,7 @@ ArXiv版とDuke版で節の番号がズレている．
 
 \section{余法線の対角集合への変形}
 
-\section{斉次ハミルトンイソトピーの量子化}
+\section{同次ハミルトンイソトピーの量子化}
 
 \subsection{量子化の一意性と台}
 
@@ -762,7 +1115,7 @@ ArXiv版とDuke版で節の番号がズレている．
 
 \subsection{分離不能性：非負ハミルトンイソトピー}
 
-\subsection{分離不能性：シンプレクティックの場合}
+\subsection{分離不能性：シンプレクティックの場合}\label{ssec44}
 
 \appendix
 
@@ -799,6 +1152,9 @@ ArXiv版とDuke版で節の番号がズレている．
     \textit{Microdifferential Systems in the Complex Domain}, 
     Grundlehren der Mathematischen Wissenschaften, 269, 
     Springer, 1985.
+    \bibitem[ST92]{ST92} Pierre Schapira, Nobuyuki Tose, 
+    \textit{Morse Inequalities for \(\rr\)-constructible Sheaves}, 
+    Adv. Math. 93, pp.1--8, 1992. 
 \end{thebibliography}
 
 %===============================================
