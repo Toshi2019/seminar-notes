@@ -95,7 +95,7 @@
 \headcommand {\beamer@framepages {41}{41}}
 \headcommand {\beamer@sectionpages {32}{41}}
 \headcommand {\beamer@subsectionpages {32}{41}}
-\headcommand {\sectionentry {4}{モース理論}{42}{モース理論}{0}}
+\headcommand {\sectionentry {4}{層のモース理論}{42}{層のモース理論}{0}}
 \headcommand {\slideentry {4}{0}{1}{42/42}{}{0}}
 \headcommand {\beamer@framepages {42}{42}}
 \headcommand {\slideentry {4}{0}{2}{43/43}{}{0}}
@@ -104,14 +104,20 @@
 \headcommand {\beamer@framepages {44}{44}}
 \headcommand {\slideentry {4}{0}{4}{45/45}{}{0}}
 \headcommand {\beamer@framepages {45}{45}}
+\headcommand {\gdef \insertmainframenumber {41}}
+\headcommand {\partentry {\translate {Appendix}}{1}}
+\headcommand {\beamer@partpages {1}{45}}
 \headcommand {\beamer@sectionpages {42}{45}}
 \headcommand {\beamer@subsectionpages {42}{45}}
-\headcommand {\sectionentry {5}{References}{46}{References}{0}}
-\headcommand {\slideentry {5}{0}{1}{46/46}{}{0}}
+\headcommand {\beamer@appendixpages {46}}
+\headcommand {\beamer@sectionpages {46}{45}}
+\headcommand {\beamer@subsectionpages {46}{45}}
+\headcommand {\sectionentry {5}{参考文献}{46}{参考文献}{1}}
+\headcommand {\slideentry {5}{0}{1}{46/46}{}{1}}
 \headcommand {\beamer@framepages {46}{46}}
-\headcommand {\slideentry {5}{0}{2}{47/47}{}{0}}
+\headcommand {\slideentry {5}{0}{2}{47/47}{}{1}}
 \headcommand {\beamer@framepages {47}{47}}
-\headcommand {\beamer@partpages {1}{47}}
+\headcommand {\beamer@partpages {46}{47}}
 \headcommand {\beamer@subsectionpages {46}{47}}
 \headcommand {\beamer@sectionpages {46}{47}}
 \headcommand {\beamer@documentpages {47}}

@@ -1060,7 +1060,7 @@
     いったん，古典的な微分方程式の問題で説明する．
     \begin{itemize}
         \item 開集合\(\varOmega\subset \rr^n\)に対し\(\cotn[\varOmega]\coloneqq \cotb[\varOmega]-\cotz[\varOmega]\cong \varOmega\times(\rr^n-\{0\})\to \varOmega\)
-        \item ``超関数''\(u\)に対し\(\singsupp(u)\coloneqq\left\{x\in\varOmega;\text{\(u(x)\)は\(x\)で解析的でない}\right\}\)
+        \item ``超関数''\(u\)に対し特異台\(\singsupp(u)\coloneqq\left\{x\in\varOmega;\text{\(u(x)\)は\(x\)で解析的でない}\right\}\)
         \item 微分作用素\(P\)に対し\(\Char(P)\coloneqq\{(x;\xi)\in\cotn[\varOmega];\sigma(P)(x;\xi)=0\}\)（\(\sigma(P)\)は\(P\)の"主要表象"）
         \item \(u\)の特異性スペクトル：\(\SingSpec(u)\subset\cotn[\varOmega]\)は\(
             \pi(\SingSpec(u))=\singsupp(u)
@@ -1068,28 +1068,34 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{``超局所''?}
-    \begin{enumerate}[(i)]
-    \item \((x,y)\)平面上のラプラス作用素\[
-        \Delta=\partial^2_x+\partial^2_y
-    \]
-    の主要表象は\(\sigma(\Delta)=\xi_1^2+\xi_2^2\).
-    特性多様体は\(\Char(\Delta)=\{\xi_1^2+\xi_2^2\}=\varnothing\).
-    \item \((t,x,y)\)空間上の
-    拡散作用素\[
-        P=\partial_t-\Delta
-    \]
-    の主要表象は\(\sigma(P)=-\xi_2^2-\xi_3^2\). 
-    \item \((t,x,y)\)空間上の
-    ダランベール作用素\[
-        \Box=\partial^2_t-\Delta
-    \]
-    の主要表象は\(\sigma(\Box)=\xi_1^2-\xi_2^2-\xi_3^2\). 
-    \end{enumerate}
+\begin{frame}\frametitle{簡単な例}
+    \begin{exampleblock}{例：特異台・特異性スペクトル・主要表象・特性多様体}
+        \begin{enumerate}[(i)]
+            \item デルタ関数\(\delta=\begin{cases}
+                \infty&(x=0)\\
+                0&(x\ne0)
+            \end{cases}\)の特異台は\[
+                \singsupp(\delta)=\{0\}.
+            \]
+            特異性スペクトルは\[
+                \SingSpec(\delta)=\{0\}\times(\rr-\{0\}).
+            \]
+            \item \((x,y)\)平面上のラプラス作用素\(
+                \Delta=\partial^2_x+\partial^2_y
+            \)の主要表象は\[
+                \sigma(\Delta)=\xi_1^2+\xi_2^2.
+            \]
+            特性多様体は\[
+                \Char(\Delta)
+                =\{(x_1,x_2;\xi_1,\xi_2);\xi_1^2+\xi_2^2\}
+                =\varnothing.
+            \]
+        \end{enumerate}    
+    \end{exampleblock}
 \end{frame}
 
 \begin{frame}\frametitle{超局所解析における定理} 
-    \begin{THM}[佐藤の基本定理]
+    \begin{THM}[佐藤の基本定理{\cite{Sato69,Sato70}}]
         \(f\)：既知関数，
         \(P\)：実解析的係数微分作用素とする．
         \(u\)が微分方程式\(Pu=f\)の解のとき
@@ -1152,7 +1158,23 @@
 
 \begin{frame}
     \frametitle{
-        超局所台の例：カスプのグラフに台を持つ定数層の場合}
+        超局所台の例：カスプのグラフに台を持つ定数層の場合
+    }
+    \begin{figure}[htp]
+        \centering
+        \begin{tikzpicture}
+            \draw[->,>=stealth,semithick] (-1,0)--(2,0)node[right]{$x$}; %x軸
+            \draw[->,>=stealth,semithick] (0,-2)--(0,2)node[right]{$y$}; %y軸
+            %\draw (0,0)node[above  left]{O}; %原点
+            %\fill[gray!20!white] plot[domain=0:3](\x,{sqrt(\x^3)});
+            \draw[very thick,samples=100,domain=0:1.5] plot({\x},{sqrt(\x^3)}); 
+            \draw[very thick,dashed,samples=100,domain=0:1.5] plot({\x},{-sqrt(\x^3)}); 
+            %\draw (2*pi,0)node[below]{$2\pi$}; %点(2\pi,0)
+            %\draw[dashed] (0,-1)node[left]{\(-1\)}--(1,-1)--(1,0)node[above]{$1$}; %点(1,-1)
+            %\draw (2,0)node[above]{$2$}; %点(2,0)
+        \end{tikzpicture}
+        \caption{\(Z\)のグラフ}
+    \end{figure}
 \end{frame}
 
 
@@ -1214,20 +1236,14 @@
                 \subset
                 \mpb[f]\mdiff[f]^{-1}\muS(F)
             \)である.\label{item15-1}
-            \item \(f\)が\(\muS(G)\)上非特性的ならば，\(
-                \muS(f^{-1}G)\subset\mdiff[f]\mpb[f]\muS(G)
+            \item \(f\)がしずめこみならば，\(
+                \muS(f^{-1}G)=\mdiff[f]\mpb[f]\muS(G)
             \)である.\label{item15-2}
-            \item \(f\)が平滑であるとする．
-            このとき，\(
-                \muS(F)\subset M\mathbin{\times_{N}} \cotb[N]
-            \)となることと，
-            すべての\(j\in\zz\)に対し層\(H^j(F)\)が\(f\)の
-            ファイバー上で局所定数層となることは同値である．\label{item15-3}
         \end{enumerate}
     \end{THM}
 \end{frame}
 
-\section{モース理論}
+\section{層のモース理論}
 
 
 \begin{frame}
@@ -1281,30 +1297,45 @@
     \end{proof}
 \end{frame}
 
+\appendix
+\section*{参考文献}
 
-\section*{References}
-
-\begin{frame}[allowframebreaks]{References}
+\begin{frame}[allowframebreaks]{参考文献}
     \begin{thebibliography}{90}\beamertemplatetextbibitems
         \bibitem[GKS12]{GKS12} Stephane Guillermou, 
         Masaki Kashiwara, Pierre Schapira, 
         \textit{Sheaf Quantization of Hamiltonian Isotopies 
         and Applications to Nondisplaceability Problems}, 
-        Duke Math. J. 161(2), 201--245, (1 February 2012).
-        \bibitem[GS16]{GS16} Stephane Guillermou, Pierre Schapira, 
-        \textit{Construction of sheaves on the subanalytic site}, 
-        Astérisque, Soc. Math. France, 383 1--60 (2016)
+        Duke Math. J. 161(2), 201--245, 2012.
+        %\bibitem[GS16]{GS16} Stephane Guillermou, Pierre Schapira, 
+        %\textit{Construction of sheaves on the subanalytic site}, 
+        %Astérisque, Soc. Math. France, 383 1--60 (2016)
+        \bibitem[Ike24]{Ike24} 池祐一, 層理論と層のモース理論, 
+        新潟大学 集中講義, 
+        \url{https://sites.google.com/view/yuichi-ike}, 2016.
         %\bibitem[Jub13]{Jub13} Benoit Jubin, 
         %\textit{A Microlocal Characterization of Lipschitz Continuity}, 
         %\url{https://doi.org/10.4171/PRIMS/54-4-2}.
         \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
         \textit{Sheaves on Manifolds}, Springer, 1990.
-        \bibitem[Ler45]{Ler45} Jean Leray, 
-        \textit{Sur la forme des espaces topologiquest sur
-        les points fixes de représentations}, J. Math. Pures Appl. 24 (1945), 95--167.
-        \bibitem[SKK73]{SKK73} M. Sato, T. Kawai, M. Kashiwara, 
-        \textit{Microfunctions and pseudodifferential equations}, 
-        LNM 287, 265--529, Springer-Verlag, 1973.
+        %\bibitem[Ler45]{Ler45} Jean Leray, 
+        %\textit{Sur la forme des espaces topologiquest sur
+        %les points fixes de représentations}, J. Math. Pures Appl. 24 (1945), 95--167.
+        \bibitem[Sato69]{Sato69} Mikio Sato, 
+        \textit{Hyperfuncitons and 
+        Partial Differential equations}, 
+        Proc. Int. Conf. on Functional Analysis, Tokyo, 1969.
+        \bibitem[Sato70]{Sato70} Mikio Sato, 
+        \textit{Regularity of Hyperfunciton Solutions of 
+        Partial Differential equations}, 
+        Actes, Congres intern. Math., 
+        Tome 2, pp.785--794, 1970.
+        \bibitem[Sch16]{Sch16} Pierre Schapira, 
+        \textit{Short Review on Microlocal Sheaf Theory}, 
+        \url{https://webusers.imj-prg.fr/~pierre.schapira/LectNotes/}, 2016.
+        %\bibitem[SKK73]{SKK73} M. Sato, T. Kawai, M. Kashiwara, 
+        %\textit{Microfunctions and pseudodifferential equations}, 
+        %LNM 287, 265--529, Springer-Verlag, 1973.
     \end{thebibliography}
 \end{frame}
 
