@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  1 MAR 2025 12:54
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  1 MAR 2025 14:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1215,11 +1215,7 @@ LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
 
 ] [37
 
-]
-
-LaTeX Warning: Command \SS invalid in math mode on input line 1165.
-
-[38
+] [38
 
 ] [39
 
@@ -1249,21 +1245,21 @@ LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\translate ' on input line 1317.
+(hyperref)                removing `\translate ' on input line 1331.
 
 [47
 
 ]
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1357.
+(Font)              No change on input line 1371.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1357.
+(Font)              No change on input line 1371.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1357.
+(Font)              No change on input line 1371.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1357.
+(Font)              No change on input line 1371.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1357.
+(Font)              No change on input line 1371.
  [48
 
 ] Excluding 'comment' comment.
@@ -1286,12 +1282,12 @@ Package rerunfilecheck Info: File `20250301-rits.out' has not changed.
 (rerunfilecheck)             Checksum: 7B64EDDFC11C2AE671CE53D4997775BD;753.
  ) 
 Here is how much of TeX's memory you used:
- 34200 strings out of 474774
- 639093 string characters out of 5758801
+ 34198 strings out of 474774
+ 639077 string characters out of 5758801
  1937032 words of memory out of 5000000
- 55843 multiletter control sequences out of 15000+600000
+ 55841 multiletter control sequences out of 15000+600000
  616451 words of font info for 157 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  128i,21n,123p,3291b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 20250301-rits.dvi (48 pages, 176212 bytes).
+Output written on 20250301-rits.dvi (48 pages, 176800 bytes).

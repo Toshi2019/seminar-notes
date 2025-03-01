@@ -1153,12 +1153,12 @@
     %\(\Dompb(\kk_X)\ni F\mapsto \SS(F)\subset T^{\ast}X\)
     
     \begin{Definition}[層の超局所台]
-        \((x_0;\xi_0)\notin \SS(F)\)となるのは，
+        \(p=(x_0;\xi_0)\notin \muS(F)\)となるのは，
         \(U\in I_{p}\)で，任意の\(x_1\in X\)と
         \(x_1\)の近傍で定義された，\(
             d\varphi(x_1)\in U
         \)となる\(\varphi\)に対し，\[
-            \left(\RG_{\{\varphi<\varphi(x_0)\}}(F)\right)_{x_1}=0
+            \left(\RG_{\{\varphi\geqq\varphi(x_0)\}}(F)\right)_{x_1}=0
         \]
         となるものが存在するときであるとする．
     \end{Definition}
@@ -1243,18 +1243,32 @@
     \begin{THM}[{\cite[5.4節]{KS90}}参照]\label{thm15}
         \(f\colon M\to N\)を多様体の射とし，
         \(F\in\Dompb(\kk_M)\)，\(G\in\Dompb(\kk_N)\)とする．
-        \begin{enumerate}[(i)]
-            \item \(f\)が\(\supp(F)\)上固有ならば，
-            \(
-                \muS(\Rder{f_{!}})
-                \subset
-                \mpb[f]\mdiff[f]^{-1}\muS(F)
-            \)である.\label{item15-1}
-            \item \(f\)がしずめこみならば，\(
-                \muS(f^{-1}G)=\mdiff[f]\mpb[f]\muS(G)
-            \)である.\label{item15-2}
-        \end{enumerate}
+        \(f\)が\(\supp(F)\)上固有ならば，
+        \(
+            \muS(\Rder{f_{\ast}})
+            \subset
+            \mpb[f]\mdiff[f]^{-1}\muS(F)
+        \)である.\label{item15-1}
     \end{THM}
+    \begin{proof}[証明. ]
+        \(y\in N\)と\(C^1\)級関数\(
+            \varphi\colon N\to \rr
+        \)を\(\varphi(y)=0\)かつ\(x\in f^{-1}(y)\)に対し，\(
+            d(\varphi\circ f)(x)\notin \muS(F)
+        \)となるものとする．このとき，
+        \[
+            \RG_{\{\varphi\circ f\geqq0\}}(F)|_{f^{-1}(y)}=0
+        \]
+        である．したがって，
+        \begin{align*}
+            \RG_{\{\varphi\geqq0\}}(\Rder{f_{\ast}}F)_{y}
+            &\cong
+            \left(\Rder{f_{\ast}}\RG_{\{\varphi\circ f\geqq0\}}(F)\right)_{y}\\
+            &\cong
+            \RG(f^{-1}(y);\RG_{\{\varphi\circ f\geqq0\}}(F))=0
+        \end{align*}
+        である．
+    \end{proof}
 \end{frame}
 
 \section{層のモース理論}
