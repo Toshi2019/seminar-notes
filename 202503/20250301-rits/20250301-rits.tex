@@ -587,12 +587,12 @@
 
     \begin{definition}[前層]
         \(\kk\)加群の前層\(F\)とは\(\kk\)加群の族と\(\kk\)加群の射の族の組\[\left(
-        \left(F(U)\right)_{U\in\Op(X)},
+        \left(F(U)\right)_{U\in\Op_{X}},
         \left(\rho_{VU}\colon F(U)\to F(V)\right)_{(V\hookrightarrow U)}
-    \right)\]で次をみたすもののこと
+    \right)\]で次をみたすもののこと．
     \begin{enumerate}
         %\renewcommand{\labelenumi}{({\arabic{enumi}})}
-        \item $\rho_{UU} = \id_{F(U)}$ 
+        \item $\rho_{UU} = \id_{F(U)}$. 
         \item $W \subset V \subset U$ ならば, 
         $\rho_{WU} = \rho_{WV} \circ \rho_{VU}$.\label{enum:res}
     \end{enumerate}
@@ -607,7 +607,7 @@
         \)とは，
         \(\kk\)加群の射の族\[
             (\phi_{U}\colon F(U)
-            \to G(U))_{U\in\Op(X)}
+            \to G(U))_{U\in\Op_{X}}
         \]
         で次を可換にするもののこと
         \[\vcenter{\xymatrix@C=26pt@R=26pt{
@@ -664,7 +664,7 @@
         \(F\)：\(X\)上の\(\kk\)加群の前層．
         
         \(F\)が\textbf{層} (sheaf) であるとは，
-        \(\forall U\in\Op(X)\)と
+        \(\forall U\in\Op_{X}\)と
         その開被覆\(\left(U_i\right)_{i\in I}\)に対して，
         次の条件が成り立つこと．
         \begin{enumerate}[(S1)]
@@ -698,7 +698,7 @@
 
     \begin{DFN}[切断関手]
         %\(F\in\Sh(X)\), 
-        \(U\in\Op(X)\)：fixed
+        \(U\in\Op_{X}\)：fixed
         \[
             \Gamma(U;\blk)\colon \Sh(X)\to \Ab;\quad F\mapsto
             \Gamma(U;F)=F(U)
@@ -731,7 +731,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{前層の例}
+    \frametitle{層の例}
     \begin{EG}
         \(E\to X\)を\(C^{\infty}\)ベクトル束とする．
         \[
@@ -919,12 +919,12 @@
 
 \begin{frame}
     \frametitle{層係数コホモロジー}
-    コホモロジーを計算するときには，``良い層''\(\mathscr{I}^i\)たちで分解して
+    コホモロジーを計算するときには，``良い層''\(I^i\)たちで分解して
     \[\vcenter{\xymatrix@C=22pt@R=26pt{
         \text{もとの層}F
         \ar@{~>}[d]^-{\text{分解}}
         \\ 
-        \text{層の複体\(\mathscr{I}^\bullet\)}
+        \text{層の複体\({I}^\bullet\)}
         \ar@{~>}[d]^-{H^i}
         \\        
         \text{コホモロジー}H^i(X;F)
@@ -1043,6 +1043,20 @@
         \(Z\subset M\)を閉集合とする．このとき，つぎは完全三角．
         \[
             \RG_{Z}(F)\to F\to \RG_{M-Z}(F)\to+1
+        \]
+    \end{exampleblock}
+\end{frame}
+\begin{frame}
+    \frametitle{局所コホモロジーと順像の公式}
+    %\(f\colon M\to N\)を多様体の射とする．
+    %このとき，
+    \begin{exampleblock}{順像と局所コホモロジー}
+        \(f\colon M\to N\)を多様体の射とし，
+        \(B\subset N\)を部分集合とする．このとき，
+        \[
+            \RG_{B}(\Rder{f_{\ast}}F)
+            \cong 
+            \Rder{f_{\ast}}\RG_{f^{-1}(B)}(F).
         \]
     \end{exampleblock}
 \end{frame}
@@ -1255,7 +1269,7 @@
     とする．
     \begin{THM}
         \(\psi\colon M\to \rr\)を\(a\leqq\psi(x)< b\)で
-        臨界値をとらない関数とする．
+        臨界値をとらない\(C^\infty\)関数とする．
         このとき，\[H^j(M_a;\rr)\cong H^j(M_b;\rr)\]
     \end{THM}
 \end{frame}
@@ -1274,10 +1288,8 @@
 
 \begin{frame}
     \frametitle{主張の証明}
-    \begin{proof}
-        \(\psi\)が固有なので\(
-            \Rder{\psi_{!}}F\cong\Rder{\psi_{\ast}}F
-        \)である．いま，
+    \begin{proof}[\textbf{証明. }]
+        いま，
         \begin{align*}
             \RG(M_a;F)&\cong\RG({\left]-\infty,a\right[}\mathrel{;}\Rder{\psi_{\ast}}F),\\
             \RG(M_b;F)&\cong\RG({\left]-\infty,b\right[}\mathrel{;}\Rder{\psi_{\ast}}F)        
@@ -1288,12 +1300,17 @@
             \subset
             \mpb[\psi]\mdiff[\psi]^{-1}\muS(F)
         \]
-        なので，仮定の\(d\psi(x)\notin\muS(F)\)から，
-        \(a\leqq\psi(x)<b\)に対し，
+        なので，\(a\leqq\psi(x)<b\)に対し，
+        仮定の\(d\psi(x)\notin\muS(F)\)から，
         \[
             \left(\RG_{[a,b[}\Rder{\psi_{\ast}}F\right)_{\psi(x)}=0
         \]
-        となる．
+        となる．よって，切除三角から
+        \[\RG({\left]-\infty,a\right[}\mathrel{;}\Rder{\psi_{\ast}}F)
+        \cong
+        \RG({\left]-\infty,b\right[}\mathrel{;}\Rder{\psi_{\ast}}F)
+        \]
+        である．
     \end{proof}
 \end{frame}
 

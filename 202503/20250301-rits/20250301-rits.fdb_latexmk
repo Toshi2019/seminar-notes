@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1740724586.71789 "20250301-rits.dvi" "20250301-rits.pdf" "20250301-rits" 1740724587.98251 0
-  "20250301-rits.dvi" 1740724586.54564 172836 404067b0ef22217eca99313ccb9df37b "latex"
+["dvipdf"] 1740801262.36882 "20250301-rits.dvi" "20250301-rits.pdf" "20250301-rits" 1740801263.72053 0
+  "20250301-rits.dvi" 1740801262.16683 176212 88998f81b68a4e9aa77289db9e06e6c4 "latex"
   (generated)
   "20250301-rits.pdf"
   (rewritten before read)
-["latex"] 1740724583.07806 "/Users/giuseppe/seminar-notes/202503/20250301-rits/20250301-rits.tex" "20250301-rits.dvi" "20250301-rits" 1740724587.97484 0
-  "/Users/giuseppe/seminar-notes/202503/20250301-rits/20250301-rits.tex" 1740724577.84244 44821 04b8b7d529f0efd8ae1524610ea4dc27 ""
+["latex"] 1740801257.84201 "/Users/giuseppe/seminar-notes/202503/20250301-rits/20250301-rits.tex" "20250301-rits.dvi" "20250301-rits" 1740801263.71157 0
+  "/Users/giuseppe/seminar-notes/202503/20250301-rits/20250301-rits.tex" 1740801252.46039 45438 dbf20a06d046e7a88da2dd61d706dba0 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcss1000.tfm" 1136768653 1536 293044035fd171bb1d18cf655049b101 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -311,11 +311,11 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "20250301-rits.aux" 1740724586.53879 12023 2229aa7bd1a3221abb6cb8ae2dd822ea "latex"
-  "20250301-rits.nav" 1740724586.54538 6025 217418487a05d1cce9ff1db7ca99e3a1 "latex"
-  "20250301-rits.out" 1740724586.54474 753 7b64eddfc11c2ae671ce53d4997775bd "latex"
-  "20250301-rits.tex" 1740724577.84244 44821 04b8b7d529f0efd8ae1524610ea4dc27 ""
-  "20250301-rits.toc" 1740724586.54549 325 239bddfbe24ff5e188e509f9dd31510e "latex"
+  "20250301-rits.aux" 1740801262.16032 12194 7dbdd8c4d87422774767c27daf1ac5ae "latex"
+  "20250301-rits.nav" 1740801262.16652 6118 eefae483a11623d00ae436f35985ec33 "latex"
+  "20250301-rits.out" 1740801262.16591 753 7b64eddfc11c2ae671ce53d4997775bd "latex"
+  "20250301-rits.tex" 1740801252.46039 45438 dbf20a06d046e7a88da2dd61d706dba0 ""
+  "20250301-rits.toc" 1740801262.16665 325 1c55e859f627af02e68f09e9f7926cbf "latex"
   (generated)
   "20250301-rits.aux"
   "20250301-rits.dvi"

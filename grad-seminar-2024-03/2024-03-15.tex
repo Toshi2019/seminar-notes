@@ -736,12 +736,12 @@
 
 \clearpage
 \(X\)を位相空間とする．
-\(\Op(X)\coloneqq\left\{\text{\(X\)の開集合}\right\}\)とおく．
-\(\Op(X)\)に包含で順序構造を入れ，自然に圏とみなす．
+\(\Op_{X}\coloneqq\left\{\text{\(X\)の開集合}\right\}\)とおく．
+\(\Op_{X}\)に包含で順序構造を入れ，自然に圏とみなす．
 \begin{DFN}[前層]
     \(X\)を位相空間とする．
-    \(\Op(X)\)から圏\(\mathscr{C}\)への反変関手
-    \(\mathscr{F}\colon\Op(X)^{\op}\to\mathscr{C}\)を
+    \(\Op_{X}\)から圏\(\mathscr{C}\)への反変関手
+    \(\mathscr{F}\colon\Op_{X}^{\op}\to\mathscr{C}\)を
     \(X\)上の\(\mathscr{C}\)に値を取る\textbf{前層} (presheaf) という．
     包含\(V\hookrightarrow U\)の
     行き先\(\mathscr{F}(V\hookrightarrow U)\colon \mathscr{F}(U)\to\mathscr{F}(V)\)を
@@ -750,8 +750,8 @@
     \(X\)上の\(\mathscr{C}\)に値を取る前層の圏を
     関手圏\(
         \PSh(X,\mathscr{C})
-        =\Op(X)^{\wedge}
-        =\Fct(\Op(X)^{\op},\mathscr{C})
+        =\Op_{X}^{\wedge}
+        =\Fct(\Op_{X}^{\op},\mathscr{C})
     \)として定める．
     値に取る圏\(\mathscr{C}\)が明らかなときは，
     たんに\(X\)上の前層ともいう．
@@ -759,10 +759,10 @@
 
 \begin{DFN}[層]\label{def:sheaf}
     \(X\)を位相空間とする．
-    \(\mathscr{F}\colon\Op(X)^{\op}\to\cat\)を
+    \(\mathscr{F}\colon\Op_{X}^{\op}\to\cat\)を
     \(X\)上の前層とする．
     \(\mathscr{F}\)が\textbf{層} (sheaf) であるとは，
-    任意の開集合\(U\in\Op(X)\)と
+    任意の開集合\(U\in\Op_{X}\)と
     その開被覆\(\left(U_i\right)_{i\in I}\)に対して
     次の条件をみたすことをいう．
     \begin{enumerate}[(S1)]

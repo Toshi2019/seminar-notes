@@ -530,9 +530,9 @@
     \frametitle{設定と記号}
     \begin{itemize}
         \item \(X\)：位相空間
-        \item \(\Op(X)\)：開集合のなす順序集合
+        \item \(\Op_{X}\)：開集合のなす順序集合
         \item \(I_P\)：\(P\in X\)の開近傍のなす有向順序集合
-        \item \(U\in \Op(X)\)：開集合
+        \item \(U\in \Op_{X}\)：開集合
         \item \(C^0(U)\)：\(U\)上の連続関数環
         \item \((U_i)_{i\in I}\)：\(U\)の被覆．
     \end{itemize}
@@ -568,7 +568,7 @@
 
     \begin{definition}[前層]
         \(\kk\)加群の前層\(\mathscr{F}\)とは\(\kk\)加群の族と\(\kk\)加群の射の族の組\[\left(
-        \left(\mathscr{F}(U)\right)_{U\in\Op(X)},
+        \left(\mathscr{F}(U)\right)_{U\in\Op_{X}},
         \left(\rho_{VU}\colon\mathscr{F}(U)\to\mathscr{F}(V)\right)_{(V\hookrightarrow U)}
     \right)\]で次をみたすもののこと
     \begin{enumerate}
@@ -586,7 +586,7 @@
         \(\kk\)加群の前層の射\(\mathscr{F}\to\mathscr{G}\)とは
         \(\kk\)加群の射の族\[
             (\phi_{U}\colon \mathscr{F}(U)
-            \to \mathscr{G}(U))_{U\in\Op(X)}
+            \to \mathscr{G}(U))_{U\in\Op_{X}}
         \]
         で次を可換にするもののこと
         \[\vcenter{\xymatrix@C=26pt@R=26pt{
@@ -643,7 +643,7 @@
         \(\mathscr{F}\)：\(X\)上の\(\kk\)加群の前層．
         
         \(\mathscr{F}\)が\textbf{層} (sheaf) であるとは，
-        \(\forall U\in\Op(X)\)と
+        \(\forall U\in\Op_{X}\)と
         その開被覆\(\left(U_i\right)_{i\in I}\)に対して
         \begin{enumerate}[(S1)]
             \setcounter{enumi}{-1}
@@ -676,7 +676,7 @@
 
     \begin{DFN}[切断関手]
         %\(F\in\Sh(X)\), 
-        \(U\in\Op(X)\)：fixed
+        \(U\in\Op_{X}\)：fixed
         \[
             \Gamma(U;\blk)\colon \Sh(X)\to \Ab;\quad F\mapsto
             \Gamma(U;F)=F(U)

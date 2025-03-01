@@ -1425,25 +1425,25 @@ $\cat$の三角とは射の列
 
 \section{前層}
 
-\(X\)を位相空間とする．\(\Op(X)\)で\(X\)の開集合を表す．
-\(\Op(X)\)には包含関係によって順序が定まる．
+\(X\)を位相空間とする．\(\Op_{X}\)で\(X\)の開集合を表す．
+\(\Op_{X}\)には包含関係によって順序が定まる．
 \begin{quote}
     順序関係が定まること：
-    \(U\in\Op(X)\)に対し\(U\subset U\)が成り立つ．
+    \(U\in\Op_{X}\)に対し\(U\subset U\)が成り立つ．
     \(U\subset V\), \(V\subset W\)を\(X\)の開集合とする．
     このとき，\(x\in U\)とすると，\(x\in V\)が成り立ち，
     \(x\in W\)となる．
     \(U\subset V\), \(V\subset U\)とすると\(U=V\)である．
 \end{quote}
-これを次のように圏とみなし，\(\Op(X)\)とかく\footnote{
+これを次のように圏とみなし，\(\Op_{X}\)とかく\footnote{
     原著\cite{KS90}では順序集合の方を\(\mathrm{OP}(X)\)，
     圏とみなしたものを\(\mathfrak{OP}(X)\)と表しているが，
     ここでは同じ記号を用いる．
 } (cf. I \S1)．
 \begin{equation}
     \begin{cases}
-        \Ob(\Op(X))\coloneqq\Op(X)\\
-        \Hom_{\Op(X)}(V,U)\coloneqq\begin{cases}
+        \Ob(\Op_{X})\coloneqq\Op_{X}\\
+        \Hom_{\Op_{X}}(V,U)\coloneqq\begin{cases}
             \{\pt\}\quad&\text{\(V\subset U\)のとき，}\\
             \varnothing\quad&\text{そうでないとき．}
         \end{cases}
@@ -1455,12 +1455,12 @@ $\cat$の三角とは射の列
 \begin{DFN}[前層]
     \(\cat\)を圏とする．
     \(\cat\)に値をとる\(X\)上の\textbf{前層} (presheaf) \(F\)とは，
-    \(\Op(X)\)から\(\cat\)への反変関手であり，
+    \(\Op_{X}\)から\(\cat\)への反変関手であり，
     \textbf{前層の射} (morphism of presheaves) とは，
     上記の関手の間の射である．
 \end{DFN}
 
-言い換えると，\(X\)上の前層とは\(\Op(X)\)で添字づけられた
+言い換えると，\(X\)上の前層とは\(\Op_{X}\)で添字づけられた
 射影系ということである．
 
 本書ではアーベル群の前層（と層）のみを考える．
