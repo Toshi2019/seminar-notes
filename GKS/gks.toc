@@ -22,5 +22,5 @@
 \contentsline {subsection}{\numberline {4.4}分離不能性：シンプレクティックの場合}{7}{subsection.4.4}%
 \contentsline {section}{\numberline {付録A}ハミルトンイソトピー}{7}{appendix.A}%
 \contentsline {subsection}{\numberline {A.1}シンプレクティック同型の族}{7}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}錐形ラグランジュ部分多様体の族}{7}{subsection.A.2}%
-\contentsline {subsection}{\numberline {A.3}変数の追加}{7}{subsection.A.3}%
+\contentsline {subsection}{\numberline {A.2}錐形ラグランジュ部分多様体の族}{8}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}変数の追加}{8}{subsection.A.3}%

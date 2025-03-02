@@ -380,7 +380,7 @@
 
 \newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
 \newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
-\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}
+\newcommand{\Domp}{\mathord{\mathsf{D}}}%\nolimits}
 \newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
 \newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
 \newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
@@ -388,6 +388,7 @@
 \newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
 \newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
 \newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
+\newcommand{\Domplb}{\mathop{\mathsf{D}^\mathrm{lb}}\nolimits}
 
 
 
@@ -652,7 +653,13 @@ ArXiv版とDuke版で節の番号がズレている．
 \section{柏原--Schapira{\cite{KS90}}による層の超局所理論}
 ここでは実多様体\(M\)として\(C^\infty\)級のものを考える．
 \subsection{幾何的諸概念}
-いつもの
+本論文において，\(C^1\)級写像\(
+    f\colon M\to N
+\)が\textbf{平滑} (smooth) であるとは，
+その微分\(
+    d_{x}f\colon T_{x}M\to T_{f(x)}N
+\)が任意の\(x\in M\)に対して全射であることをいう．
+
 
 \begin{equation}
     \vcenter{\xymatrix@C=36pt@R=36pt{
@@ -678,7 +685,7 @@ ArXiv版とDuke版で節の番号がズレている．
     N.
   }}
 \end{equation}
-
+双対的に，次の図式を得る．
 \begin{equation}
     \vcenter{\xymatrix@C=36pt@R=36pt{
     \cotb[M]
@@ -707,6 +714,19 @@ ArXiv版とDuke版で節の番号がズレている．
 \begin{equation}
     a_M\colon \cotb[M]\to\cotb[M],\quad(x;\xi)\mapsto(x;-\xi).
 \end{equation}
+
+同次シンプレクティック多様体\(\cotb[M]\)を考える．
+すなわち，\(\cotb[M]\)の局所同次シンプレクティック座標\((x;\xi)\)に
+おけるリウヴィル\(1\)形式は\[
+    \alpha_M=\langle{\xi},dx\rangle
+\]で与えられる．
+
+
+
+
+
+
+
 \subsection{超局所台{\cite[5.1,6.5節]{KS90}}}
 これもいつもの
 \begin{DFN}\label{def11}
@@ -1088,6 +1108,55 @@ M_{123}=M_1\times M_2\times M_3\)と略記する．
 
 
 \subsection{局所有界圏と層のはりあわせ}
+
+\textbf{準界} (prestack) \(
+    U\mapsto \Domp(\kk_U)
+\)（\(U\)は\(M\)の開集合）は\textbf{界} (stack) ではないが，
+以下の古典的な結果があるので用いる．
+\begin{LMM}
+    \(U_1\)と\(U_2\)を\(M\)の開集合とし，
+    \(U_{12}\coloneqq U_1\cap U_2\)とおく．
+    \(F_{i}\in\Domp(\kk_{U_i})\) (\(i=1,2\)) とし，
+    同型\(
+        \varphi_{12}\colon 
+        \mres[F_{1}]{U_{12}}\cong \mres[F_{2}]{U_{12}}
+    \)が存在するとする．
+    このとき，\(F\in\Domp(\kk_{U_1\cup U_2})\)と同型\(
+        \varphi_{i}\colon \mres[F]{U_{i}}\cong F_{i}
+    \) (\(i=1,2\)) で\(
+        \varphi_{12}=
+        \mres[\varphi_{2}]{U_{12}}
+        \circ
+        \mres[\varphi_{1}]{U_{12}}^{-1}
+    \)をみたすものが存在する．
+    しかも，そのような組\(
+        (F,\varphi_1,\varphi_2)
+    \)は（一意には決まらない）同型の違いを除けば1つしかない．
+\end{LMM}
+\begin{proof}
+    かく．
+\end{proof}
+\begin{DFN}
+    \(F\in\Domp(\kk_M)\)が\textbf{局所有界} (locally bounded) であるとは，
+    任意の相対コンパクト開集合\(U\subset M\)に対し\(\mres[F]{U}\in\Dompb(\kk_U)\)となることをいう．
+    局所有界な対象からなる\(\Domp(\kk_M)\)の充満部分圏を\(\Domplb(\kk_M)\)で表す．
+\end{DFN}
+
+\(\Dompb(\kk_M)\)に対して定義された局所的な概念は，
+\(\Domplb(\kk_M)\)の対象に拡張される．
+とくに超局所台も\(\Domplb(\kk_M)\)の対象に対して定まる．
+グロタンディークの演算のうち有界性を保つものは，
+順像は場合によっては除いて，局所有界性も保つ．
+ところが，
+\(F\in\Domplb(\kk_M)\)と多様体の射\(
+    f\colon M\to N
+\)で\(\supp(F)\)上固有なものに対して，
+\(
+    \Rder{f_{\ast}}F\cong\Rder{f_{!}}F\in\Domplb(\kk_M)
+\)が成り立つので，
+この状況でも定理\ref{thm15}が成り立つ．
+
+
 
 \subsection{量子化接触変換{\cite[7.2節]{KS90}}}
 

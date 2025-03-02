@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1740491771.27472 "gks.dvi" "gks.pdf" "gks" 1740491772.71013 0
-  "gks.dvi" 1740491771.11112 62636 782ff8746a24a5a4b5b212d3699cfaf1 "latex"
+["dvipdf"] 1740924604.70355 "gks.dvi" "gks.pdf" "gks" 1740924606.38608 0
+  "gks.dvi" 1740924604.56873 67056 604c99b0a461ead6991a4a8ea93dcd24 "latex"
   (generated)
   "gks.pdf"
   (rewritten before read)
-["latex"] 1740491769.30897 "/Users/giuseppe/seminar-notes/GKS/gks.tex" "gks.dvi" "gks" 1740491772.70355 0
-  "/Users/giuseppe/seminar-notes/GKS/gks.tex" 1740491765.18525 38583 32c57c3d62f672dcefe3689bc3c22336 ""
+["latex"] 1740924602.71396 "/Users/giuseppe/seminar-notes/GKS/gks.tex" "gks.dvi" "gks" 1740924606.37323 0
+  "/Users/giuseppe/seminar-notes/GKS/gks.tex" 1740924596.49482 41112 0dd6ae194031afb44a54eb2515d6f36d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -251,10 +251,10 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "gks.aux" 1740491771.10718 5843 b2d357999ff63c103a74b7944fb75f98 "latex"
-  "gks.out" 1740491771.11041 4087 ab5095ff09fe8e5745cbf377f54b0b62 "latex"
-  "gks.tex" 1740491765.18525 38583 32c57c3d62f672dcefe3689bc3c22336 ""
-  "gks.toc" 1740491771.11098 2658 ad31408af84476fe13721457a500dd52 "latex"
+  "gks.aux" 1740924604.56576 5843 885dc53502a986f7092846ea20958c8f "latex"
+  "gks.out" 1740924604.56787 4087 ab5095ff09fe8e5745cbf377f54b0b62 "latex"
+  "gks.tex" 1740924596.49482 41112 0dd6ae194031afb44a54eb2515d6f36d ""
+  "gks.toc" 1740924604.56845 2658 8610d024ea352696775890305fd7dc56 "latex"
   (generated)
   "gks.aux"
   "gks.dvi"
