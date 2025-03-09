@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1741521662.28954 "truncated-ss.dvi" "truncated-ss.pdf" "truncated-ss" 1741521663.04844 0
-  "truncated-ss.dvi" 1741521662.16781 5856 6700c601316b84e8d59cfeef7606eb7e "latex"
+["dvipdf"] 1741522002.48966 "truncated-ss.dvi" "truncated-ss.pdf" "truncated-ss" 1741522003.24038 0
+  "truncated-ss.dvi" 1741522002.36029 5964 2cd007c488cd4cfb6750178d9b2a7a52 "latex"
   (generated)
   "truncated-ss.pdf"
   (rewritten before read)
-["latex"] 1741521660.85329 "/Users/giuseppe/seminar-notes/202503/truncated-ss/truncated-ss.tex" "truncated-ss.dvi" "truncated-ss" 1741521663.04199 0
-  "/Users/giuseppe/seminar-notes/202503/truncated-ss/truncated-ss.tex" 1741521659.0005 21666 aeb35d2badde4e95c28894785aa41caf ""
+["latex"] 1741522001.0469 "/Users/giuseppe/seminar-notes/202503/truncated-ss/truncated-ss.tex" "truncated-ss.dvi" "truncated-ss" 1741522003.23512 0
+  "/Users/giuseppe/seminar-notes/202503/truncated-ss/truncated-ss.tex" 1741521999.23482 21744 7a5e567a9801205cc83993d71cfeb5d9 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -246,9 +246,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "truncated-ss.aux" 1741521662.16606 436 2fd2e49b0cd05db25ae17214b8ad85dc "latex"
-  "truncated-ss.out" 1741521662.16717 210 5346492ec9d575c4157d922014494f20 "latex"
-  "truncated-ss.tex" 1741521659.0005 21666 aeb35d2badde4e95c28894785aa41caf ""
+  "truncated-ss.aux" 1741522002.35865 436 2fd2e49b0cd05db25ae17214b8ad85dc "latex"
+  "truncated-ss.out" 1741522002.3596 210 5346492ec9d575c4157d922014494f20 "latex"
+  "truncated-ss.tex" 1741521999.23482 21744 7a5e567a9801205cc83993d71cfeb5d9 ""
   (generated)
   "truncated-ss.aux"
   "truncated-ss.dvi"
