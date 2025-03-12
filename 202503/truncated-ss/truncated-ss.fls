@@ -443,8 +443,8 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlgoth
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 OUTPUT truncated-ss.dvi
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT truncated-ss.aux
 INPUT ./truncated-ss.out
 INPUT ./truncated-ss.out
