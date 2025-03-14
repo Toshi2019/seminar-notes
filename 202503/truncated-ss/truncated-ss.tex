@@ -647,21 +647,23 @@ Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KMS03}.
   \), we have\[
     \left(H^{j}\RG_{[a,b[}\Rder{\psi}_{\ast}F\right)_{\psi(x)}=0
   \]for each \(j\leqq k\). 
-  Therefore, By the long exact sequence
+  Therefore, letting \(d\in\zz\) be the minimum number 
+  that \[H^{d}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)\ne0,\] 
+  by the long exact sequence
   \begin{align*}
     0&\to 
-    H^{0}\RG_{[a,b[}(\Rder{\psi}_{\ast}F)
+    H^{d}\RG_{[a,b[}(\Rder{\psi}_{\ast}F)
     \to
-    H^{0}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F)
+    H^{d}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F)
     \to
-    H^{0}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)\\
+    H^{d}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)\\
     &\to 
-    H^{1}\RG_{[a,b[}(\Rder{\psi}_{\ast}F)
+    H^{d+1}\RG_{[a,b[}(\Rder{\psi}_{\ast}F)
     \to
-    H^{1}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F)
+    H^{d+1}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F)
     \to
-    H^{1}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)\\
-    &\to\dots\\
+    H^{d+1}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)\\
+    &\to\cdots\\
     &\to 
     H^{k}\RG_{[a,b[}(\Rder{\psi}_{\ast}F)
     \to
@@ -669,7 +671,7 @@ Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KMS03}.
     \to
     H^{k}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)\\
     &\to
-    H^{k+1}\RG_{[a,b[}(\Rder{\psi}_{\ast}F)\to\dots,
+    H^{k+1}\RG_{[a,b[}(\Rder{\psi}_{\ast}F)\to\cdots,
   \end{align*}
   we have isomorphisms\begin{equation}\label{eq:t-morse-lemma}
     H^{j}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F)
@@ -685,7 +687,7 @@ Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KMS03}.
   by applying to the equality \eqref{eq:t-morse-lemma} 
   the functor \(
     \Gamma({]-\infty,b[}\mathrel{;}\blk)
-  \) and by calculate as follows:
+  \) and calculating as follows:
   \begin{align*}
     \Gamma({]-\infty,b[}\mathrel{;}H^{j}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F))
     &\cong
