@@ -1,8 +1,9 @@
 %================================================
-%   Pierre Deligne
-%   "Equations Différentielles à Points Singuliers Réguliers"
-%   日本語訳
+%    代数解析概論 ノート
 %================================================
+\title{\(D\)加群ノート}
+\author{Toshi2019}
+\date{\today 更新\footnote{2025/04/05作成開始}}
 
 % -----------------------
 % preamble
@@ -19,7 +20,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[10pt, b5paper, dvipdfmx, leqno]{jsbook}
+\documentclass[9pt, a4paper, dvipdfmx, leqno, draft]{jsreport}
 
 % ------------------------
 % usepackage
@@ -68,9 +69,27 @@
     urlcolor=darkblue,
 }
 \usepackage{pxjahyper}
+%\usepackage[mathcal]{euscript}
 \usepackage{layout}
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 0.7zw} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{red}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
 %=================================
 
+%============================================================
+% layout for a4 9pt
+%\setlength{\textwidth}{459pt}
+%\setlength{\marginparwidth}{105pt}
+%\setlength{\evensidemargin}{69pt}
+%============================================================
 
 % --------------------------
 % theoremstyle
@@ -240,43 +259,39 @@
 % ================================
 % コマンドを追加する場合のスペース 
 \renewcommand\proofname{\bf 証明} % 証明
-\numberwithin{equation}{subsection}
+\numberwithin{equation}{section}
 \newcommand{\cTop}{\textsf{Top}}
 %\newcommand{\cOpen}{\textsf{Open}}
-\newcommand{\Op}{\mathop{\textsf{Open}}\nolimits}
+\newcommand{\Op}{\mathop{\textsf{Op}}\nolimits}
 \newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
 \newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
 \newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\Int}{\mathop{\mathrm{Int}}\nolimits}
 \newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
 \newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
 \newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
-\newcommand{\Sh}{\mathop{\textsf{Sh}}\nolimits}
-\newcommand{\PSh}{\mathop{\textsf{PSh}}\nolimits}
 \newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
 \newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\rk}{\mathop{\mathrm{rank}}\nolimits}
 \newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
 \newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
 \newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
 \newcommand{\colim}{\mathop{\mathrm{colim}}}
-\newcommand{\ori}{\mathop{\textsf{or}}\nolimits}
+\newcommand{\Ext}{\mathop{\mathrm{Ext}}\nolimits}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
 
-
-\newcommand{\cat}{\mathcal{C}}%一般の圏の記号
-\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}%複体の圏
-\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}%複体のホモトピー圏
-\newcommand{\CCat}{\Comp(\cat)}%圏Cの複体の圏
-\newcommand{\KCat}{\Komp(\cat)}%圏Cの複体のホモトピー圏
-\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
-\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
-\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
-\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
-
-\newcommand{\limf}{\mathop{\text{``}\hspace{-0.7pt}\varinjlim\hspace{-1.5pt}\text{''}}}
-\newcommand{\sumf}{\mathop{\text{``}\hspace{-0.7pt}\bigoplus\hspace{-1.5pt}\text{''}}}
-
-\newcommand{\hh}{\mathop{\mathrm{h}}\nolimits}
-\newcommand{\Ind}{\mathop{\mathrm{Ind}}}
-
+\newcommand{\cat}{\mathscr{C}}
 
 %筆記体
 \newcommand{\cA}{\mcal{A}}
@@ -306,34 +321,20 @@
 \newcommand{\cY}{\mcal{Y}}
 \newcommand{\cZ}{\mcal{Z}}
 
-%スクリプト体
+\newcommand{\rmD}{\mathrm{D}}
+
+
 \newcommand{\scA}{\mathscr{A}}
 \newcommand{\scB}{\mathscr{B}}
 \newcommand{\scC}{\mathscr{C}}
 \newcommand{\scD}{\mathscr{D}}
 \newcommand{\scE}{\mathscr{E}}
 \newcommand{\scF}{\mathscr{F}}
-\newcommand{\scG}{\mathscr{G}}
-\newcommand{\scH}{\mathscr{H}}
-\newcommand{\scI}{\mathscr{I}}
-\newcommand{\scJ}{\mathscr{J}}
-\newcommand{\scK}{\mathscr{K}}
-\newcommand{\scL}{\mathscr{L}}
-\newcommand{\scM}{\mathscr{M}}
 \newcommand{\scN}{\mathscr{N}}
 \newcommand{\scO}{\mathscr{O}}
-\newcommand{\scP}{\mathscr{P}}
-\newcommand{\scQ}{\mathscr{Q}}
 \newcommand{\scR}{\mathscr{R}}
 \newcommand{\scS}{\mathscr{S}}
-\newcommand{\scT}{\mathscr{T}}
-\newcommand{\scU}{\mathscr{U}}
 \newcommand{\scV}{\mathscr{V}}
-\newcommand{\scW}{\mathscr{W}}
-\newcommand{\scX}{\mathscr{X}}
-\newcommand{\scY}{\mathscr{Y}}
-\newcommand{\scZ}{\mathscr{Z}}
-
 
 \newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
 \newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
@@ -364,8 +365,100 @@
 
 \newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
 
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
+\newcommand{\Domp}{\mathsf{D}}
+\newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
+\newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
+\newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
+\newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
+\newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
+\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+\newcommand{\Dbcon}{\mathop{\mathsf{D}^\mathrm{b}_{\rr^+}}\nolimits}
+
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+%\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\HOM}{\mathop{\mathcal{H}\hspace{-0.5pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
+\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+\newcommand{\Rder}{\mathrm{R}}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\longrightarrow}}}%内部Hom
+\newcommand{\simra}{\mathrel{\overset{\sim}{\longleftarrow}}}%内部Hom
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\PSh}{\mathrm{PSh}}
+
+\newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
+\newcommand{\ori}{\mathord{\mathrm{or}}}
+\newcommand{\Db}{\mathord{\mathscr{D}b}}
+\newcommand{\Conti}{\mathord{\mathscr{C}}}
+
+\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
+\newcommand{\blk}{\mathord{\ \cdot\ }}
+
+\newcommand{\tens}[1][]{\mathbin{\otimes_{\raise1.5ex\hbox to-.1em{}{#1}}}}
+\newcommand{\ttens}[1][]{\mathbin{\mathop{\overset{\mathrm{}}{\tens}}_{#1}}}
+
+\newcommand{\etens}{\mathbin{\boxtimes}}
+%\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\ltens}[1][]{\mathbin{\tens}^\mathrm{L}_{#1}}
+\newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
+\newcommand{\lltens}[1][]{\mathbin{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+%\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
+\newcommand{\detens}{\underline{\etens}}
+\newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
+\newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
+
+\newcommand{\letens}[2][]{\mathbin{\mathop{\overset{\mathrm{L}}{\etens}_{#1}}_{#2\ \ }}}
+\newcommand{\lletens}[1][]{\mathbin{\mathop{\overset{\mathrm{L}}{\etens}_{#1}}}}
+
+\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
+\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
+\newcommand{\hd}{\mathop{\mathrm{hd}}\nolimits}
+
+\newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
+\newcommand{\mtp}[1][]{{}^{t\!}{#1}} % transpose of the morphism
+\newcommand{\mpb}[1][]{{#1}_{d}} % pull-back of the morphism
+%\newcommand{\mpb}[1][]{{}^{t\!}{#1}'} % pull-back of the morphism
+
+\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+
+\newcommand{\cotb}[1][]{T^{\ast}{#1}}
+\newcommand{\conm}[2][]{T_{#1}^{\hspace{0.7pt}\ast}{#2}}
+\newcommand{\norb}[2][]{T_{#1}{#2}}
+
+\newcommand{\cotz}[1][]{T^{\ast}_{#1}{#1}}
+
+
+% 複素多様体上の層
+\newcommand{\funHol}{\mathcal{O}}
+\newcommand{\vecHol}{\varTheta}
+\newcommand{\formHol}{\varOmega}
+\newcommand{\diffHol}{\mathcal{D}}
+
+\newcommand{\nnum}{\mathbf{N}}
+\newcommand{\znum}{\mathbf{Z}}
+\newcommand{\qnum}{\mathbf{Q}}
+\newcommand{\rnum}{\mathbf{R}}
+\newcommand{\cnum}{\mathbf{C}}
+
 
 % =================================
+
 
 
 %================================================
@@ -387,19 +480,23 @@
 \newtheorem{DFN}[Axiom]{定義}
 \newtheorem{THM}[Axiom]{定理}
 \newtheorem*{THM*}{定理}
+\newtheorem{STT}{主張}[chapter]
+\newtheorem*{STT*}{主張}
 \newtheorem{PRP}[Axiom]{命題}
 \newtheorem{LMM}[Axiom]{補題}
+\newtheorem*{LMM*}{補題}
 \newtheorem{CRL}[Axiom]{系}
 \newtheorem{EG}[Axiom]{例}
-\newtheorem{CNV}[Axiom]{規約}
+\newtheorem{CNV}{規約}[chapter]
+\newtheorem{NTT}[Axiom]{記法}
+\newtheorem{RMK}[Axiom]{注意}
+\newtheorem{CMT}{コメント}[chapter]
+\newtheorem*{CMT*}{コメント}
+\newtheorem{EXC}{演習}[chapter]
 
 
 % 定理環境ここまで
 %====================================================
-
-%レイアウト
-%\setlength{\oddsidemargin}{-10pt}
-%\setlength{\evensidemargin}{10pt}
 
 % ---------------------------
 % new definition macro
@@ -412,7 +509,6 @@
 
 % ================================
 % マクロを追加する場合のスペース 
-\def\ind<#1>{\mathop{\text{``}\hspace{-0.7pt}#1\limits\hspace{-1.5pt}\text{''}}}
 
 %=================================
 
@@ -428,71 +524,119 @@
 % begin document and end document.
 % ---------------------------
 
-\title{確定特異点をもつ微分方程式}
-\author{ピエール・ドリーニュ}
-%\date{}
 \begin{document}
 \maketitle
-\frontmatter
+%\frontmatter
+%\layout
+\chapter*{はじめに}
+2025年2月から始めた\cite{Kas08}のセミナーのノート．
+
+\section*{記号}
+次の記号は断りなく使う．
+\begin{itemize}
+    \item 添字：
+    なんらかの族$(a_i)_{i\in I}$を$(a_i)_i$とか$(a_i)$と
+    略記することがある．
+    \item 近傍：位相空間\(X\)の点\(x\)や部分集合\(Z\)に対し，
+    その開近傍系をそれぞれ\(I_x\)や\(I_Z\)で表す．
+    これらは，包含関係の逆で有向順序集合をなす．
+    \item 非負整数の集合を\(\znum_{\geqq0}\)で表す．
+\end{itemize}
 \tableofcontents
-\layout
-\mainmatter
-\setcounter{chapter}{-1}
-\chapter{序}
-\(X\)が（非特異）複素解析多様体であるとき，
-以下の概念は同値である．
-\begin{enumerate}[a)]\setlength{\leftskip}{24pt}
-    \item \(X\)上の複素ベクトル空間の局所系；
-    \item 可積分接続をもつ\(X\)上のベクトル束．    
-\end{enumerate}
+\chapter*{序論}
 
-2つ目の概念は体\(k\)（ここでは標数0と仮定する）上の
-非特異代数多様体の場合には明らかに適用できる．
-しかし，一般の可積分接続をもつ代数的ベクトル束は
-病的な性質を持つ (cf. II 6.19). 
-すなわち，無限での「正則性」の条件を課さなければ，
-筋の通った理論にならないのである．
-Griffiths [8] の定理によると，「ガウス・マニン接続」(cf. \ref{sec27}) に
-対してはこの条件は自動的にみたされる．
-１次元では，これは微分方程式における確定特異点の概念と密接な関わりがある．
+\chapter{\(D\)加群の簡単な性質}\label{chap1}
+\section{\(D\)加群}\label{sec11}
+\(X\)を\(n\)次元の複素多様体とする．
+\(X\)上の正則関数のなす層を\(\funHol_X\)で表す．
 
-\chapter*{記号と用語}
+\(\cnum_X\)加群の射\(P\colon\funHol_X\to\funHol_X\)で，
+局所的に\[
+    P(x)=\sum_{\alpha\in\znum_{\geqq0}^{n}}^{}
+    a_{\alpha}(x)\partial^{\alpha}
+\]とかけるものを（正則）微分作用素という．
 
-
-以下の定義を用いる．
-\begin{enumerate}[(0.1)]
-    \item \textbf{解析空間}：解析空間は複素数上で局所有限次元であるとする．\(\sigma\)コンパクトであることも仮定するが，分離的であるとは限らないとする．
-    \item \textbf{多価関数}：
-    \item \textbf{うめこみ}：
-    \item \textbf{平滑}：
-    \item \textbf{局所パラコンパクト}：
-    \item \textbf{複素代数多様体}：
-    \item （複素）\textbf{解析多様体}：
-    \item \textbf{被覆}：
-\end{enumerate}
+\(X\)上の正則関数の層\(\funHol_X\)と
+正則ベクトル場の層\(\vecHol_X\)の生成する
+\(\HOM_{\cnum_{X}}(\funHol_X,\funHol_X)\)の部分環を\(\diffHol_X\)で表し，
+（正則な）\textbf{微分作用素} (differential operator) の層とよぶ．
 
 
 
-\renewcommand{\thechapter}{\Roman{chapter}}
 
-\chapter{辞書}\label{chap1}
-\section{局所系と基本群}\label{sec11}
-\section{可積分接続と局所系}\label{sec12}
-\section{1階偏微分方程式の言葉への翻訳}\label{sec13}
-\section{\(n\)階微分方程式}\label{sec14}
-\section{\(2\)階微分方程式}\label{sec15}
-\section{有限 determination の multiform 関数}\label{sec16}
-\chapter{確定特異点型接続}\label{chap2}
-\section{1次元における正則性}\label{sec21}
-\section{増大度の条件}\label{sec22}
-\section{対数型極}\label{sec23}
-\section{\(n\)次元における正則性}\label{sec24}
-\section{存在定理}\label{sec25}
-\section{比較定理}\label{sec26}
-\section{正則性定理}\label{sec27}
 
-\chapter{応用}\label{chap3}
-\section{Nilsson級関数}\label{sec31}
-\section{（Brieskornによる）モノドロミー定理}\label{sec32}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{特性多様体}\label{chap2}
+\chapter{\(D\)加群の構成法}\label{chap3}
+\chapter{\(D\)加群の関手的性質}\label{chap4}
+\chapter{確定特異点型ホロノミー系}\label{chap5}
+
+
+
+
+
+%\mainmatter
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    \bibitem[B+84]{B+84} Borel, 
+        \textit{Intersection Cohomology}, 
+        Progress in Mathematics, 50, Birkh\"auser, 1984.
+    \bibitem[Bou1]{Bou1} ブルバキ, 位相1, 東京図書, 1968.
+    \bibitem[EGA IV]{EGA IV} Grothendieck, EGA IV, Pub. IHES., 32 1967.
+    \bibitem[Fuk99]{Fuk99} 深谷賢治, シンプレクティック幾何学, 岩波講座 現代数学の展開 岩波書店, 1999.
+    \bibitem[G58]{G58} Grauert, 
+        \textit{On Levi's problem and the embedding of real analytic manifolds}, 
+        Ann. Math. 68, 460--472 (1958).
+    \bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
+        \textit{Differential Topology}, 
+        Prentice-Hall, 1974.
+    \bibitem[Kas08]{Kas08} 柏原正樹, 
+        代数解析概論, 岩波書店, 2008.
+    \bibitem[KS85]{KS85} Masaki Kashiwara, Pierre Schapira, 
+        \textit{Microlocal Study of Sheaves}, 
+        SAst\`erisque 128, 1985.
+    \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+        \textit{Sheaves on Manifolds}, 
+        Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+    \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
+        \textit{Categories and Sheaves}, 
+        Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
+    \bibitem[R55]{R55} de Rham, 
+        \textit{Vari\'et\'es diff\'erentiables}, 
+        Hermann, Paris, 1955.
+    \bibitem[Sa59]{Sa59} Mikio Sato, 
+        \textit{Theory of Hyperfunctions}, 
+        1959--60.
+    \bibitem[S66]{S66} Schwartz, 
+        \textit{Th\'eorie de distributions}, 
+        Hermann, Paris, 1966.
+    \bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
+    \bibitem[Ike21]{Ike21} 池祐一, 超局所層理論概説, 2021.
+    \bibitem[Tak17]{Tak17} 竹内潔, \(\D\)加群, 共立出版, 2017.
+    %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+\end{thebibliography}
+
+%===============================================
+
 
 \end{document}

@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  2 MAR 2025 23:10
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  24 MAR 2025 16:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -977,36 +977,36 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 1161.
 
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 1163.
+(Font)              scaled to size 7.39746pt on input line 1165.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 1163.
+(Font)              scaled to size 5.5481pt on input line 1165.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1163.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 1163.
+(hyperref)                removing `math shift' on input line 1165.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 1163.
+(hyperref)                removing `\mu' on input line 1165.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 1165.
 
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 1167.
+
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1210.
+(Font)              No change on input line 1212.
 [7]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1213.
+(Font)              No change on input line 1215.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1216.
+(Font)              No change on input line 1218.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1221.
+(Font)              No change on input line 1223.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1225.
+(Font)              No change on input line 1227.
  [8] (./gks.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
@@ -1029,4 +1029,4 @@ Here is how much of TeX's memory you used:
  934 hyphenation exceptions out of 8191
  84i,16n,93p,3246b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on gks.dvi (8 pages, 67056 bytes).
+Output written on gks.dvi (8 pages, 67080 bytes).

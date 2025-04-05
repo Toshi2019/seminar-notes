@@ -384,21 +384,110 @@
 \end{LMM}
 \end{leftbar}
 
+\clearpage
 \section{錐状層の超局所台}
+\newcommand{\eu}{\mathbf{e}}
+\newcommand{\rrp}{\rr^{+}}
+
 この節ではベクトル束上の層の超局所台について調べる．
 
 \(\tau\colon E\to Z\)を多様体\(Z\)上の
 実ベクトル束とする（III \S7参照）．
-\(\rr^{+}\)の\(E\)への作用を表す写像を\(
-    \mu\colon \rr^{+}\times E\to E
+\(\rrp\)の\(E\)への作用を表す写像を\(
+    \mu\colon \rrp\times E\to E
 \)で表し，
 \(\mu\)の無限小作用を表す\(E\)上のベクトル場
-を\(\mathbf{e}\)で表す．
+を\(\eu\)で表す．
 すなわち\(E\)上の任意の関数\(\varphi\)に対し，\(
-    (\mathbf{e}(\varphi))(x)
+    (\eu(\varphi))(x)
     =
     \dfrac{\partial}{\partial{t}}\varphi(\mu(t,x))|_{t=1}
 \)が成り立つ．
-ベクトル場\(\mathbf{e}\)は
+ベクトル場\(\eu\)は
 \textbf{オイラーベクトル場} (the Euler vector field) と
 呼ばれることが多い．
+写像\(\mu\)から写像\(
+    \mpb[\mu]\colon
+    \rrp\times\cotb[E]\to\cotb[\rrp]\times\cotb[E]
+\)が定まる\footnote{
+    ここで，\(
+        \mpb[\mu]\colon(\rrp\times E)\times_{E}\cotb[E]
+        \to
+        \cotb[\rrp]\times\cotb[E]
+    \)の源\((\rrp\times E)\times_{E}\cotb[E]\)と\(
+        \rrp\times\cotb[E]
+    \)を同型\[
+        \left(
+            \left(t,\left(x;v\right)\right),
+            \left(\left(x;v\right);\xi\right)
+        \right)
+        \leftrightarrow
+        \left(
+            t,
+            \left(\left(x;v\right);\xi\right)
+        \right)
+    \]によって同一視している．
+}．\(\mpb[\mu]\)の\(1\in\rrp\)への制限を考え，射影\(
+    \cotb[\rrp]\times\cotb[E]
+    \to
+    \cotb[\rrp]\cong\rrp\times\rr\to\rr
+\)と合成することにより，写像\begin{equation}
+    \theta_{E}\colon\cotb[E]\to\rr
+\end{equation}を得る．
+この写像は\(\eu\)の主要表象に他ならない．
+
+\((z,x)\)を（\(Z\)上局所的な）座標系で，
+\((z)\)が\(Z\)の座標で\((x)\)が線形座標であるものとする．
+\((z,x;\zeta,\xi)\)で対応する\(\cotb[E]\)の座標を表す．
+このとき，
+\begin{equation}
+    \begin{dcases}
+        \eu=\left\langle{x,\dfrac{\partial}{\partial{x}}}\right\rangle=\sum_{j}x_{j}\dfrac{\partial}{\partial{x_{j}}},\\
+        \theta_{E}=\left\langle{x,\xi}\right\rangle,\\
+        \alpha_{E}=\left\langle{\zeta,dz}\right\rangle+\left\langle{\xi,dx}\right\rangle
+    \end{dcases}
+\end{equation}
+である．
+ただし，\(\alpha_{E}\)は\(\cotb[E]\)の標準\(1\)形式である
+（A\S2参照）．
+
+\(\cotb[(E/Z)]\)で\(Z\)上の\(E\)の相対余接束を表していた．
+これは\(E\)上のベクトル束の完全列
+\begin{equation}
+    0\to E\pb[Z]\cotb[Z]\to\cotb[E]\to\cotb[(E/Z)]\to0
+\end{equation}
+で定義される．
+任意の\(z\in Z\)に対し，
+\(\cotb[(E/Z)]\)の\(z\)上のファイバー\(\cotb[(E/Z)]_{z}\)は
+\(E\)の\(z\)上のファイバー\(E_{z}\)の余接束\(\cotb[(E_{z})]\)と
+同一視できる．
+他方で，\(\cotb[(E_{z})]\)は\(E_{z}\times E^{\ast}_{z}\)と
+同型である．
+したがって，各\(z\)に対し，
+\(\cotb[(E/Z)]_{z}\)から\(E^{\ast}_{z}\)への写像が定まる．
+これから写像\begin{equation}
+    \cotb[(E/Z)]\to E^{\ast}
+\end{equation}がえられる．このとき\(Z\)上の射
+\begin{equation}
+    \psi_{E}\colon\cotb[E]\to E^{\ast}
+\end{equation}
+を\(\cotb[E]\to \cotb[(E/Z)]\to E^{\ast}\)の合成として定める．
+
+\begin{leftbar}
+\begin{PRP}
+    \begin{enumerate}[(i)]
+        \item 写像\(\varPhi\colon \cotb[E]\to\cotb[E]\)で，
+        \(
+            \alpha_{E}-d\theta_{E}
+            =\varPhi_{E}^{\ast}(\alpha_{E^{\ast}})
+        \)であり\(
+            \cotb[E]\underset{\varPhi_{E}}{\rightarrow}
+            \cotb[E^{\ast}]\underset{\alpha}{\rightarrow}
+            E^{\ast}
+        \)の合成が\(\psi_{E}\)となるものがただひとつ存在する．
+        \item \(\theta_{E^{\ast}}\circ\varPhi_{E}=-\theta_E\)である．
+        \item \(\varPhi_{E^{\ast}}\circ \varPhi_{E}=-a^{\ast}\)である．ただし，\(a^{\ast}\)は\(E\)上の対蹠写像からひきおこされる\(\cotb[E]\)の自己同型である．
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
+

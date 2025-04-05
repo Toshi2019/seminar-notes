@@ -622,13 +622,13 @@ Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KMS03}.
   \(\psi\colon M\to \rr\) be a real-valued function of 
   class \(C^1\), 
   proper on \(\supp(F)\). 
-  let \(a<b\) be real numbers.
+  Let \(a<b\) be real numbers.
   We assume \(d\psi(x)\notin \muS[k](F)\) for \(
     a\leqq \psi(x)<b
   \). For \(t\in \rr\), we set \(
     M_t\coloneqq\psi^{-1}\left(]-\infty,t[\right)
   \). 
-  Then, restriction morphisms\[
+  Then, the restriction morphisms\[
     H^{j}(M_{b};F)\to H^{j}(M_{a};F)
   \]
   are isomorphic for each \(j\leqq k\).
@@ -720,6 +720,36 @@ Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KMS03}.
     H^{j}(M_{a}\mathrel{;}F).
   \end{align*}
 \end{proof}
+
+\section{Truncated Morse Inequalities}
+The main theorem of \cite{ST92} is the following: 
+we assume
+\begin{align}\label{eq:ST92-H1}
+  \text{\(\psi^{-1}(]-\infty,t[)\cap \supp(F)\) is compact for any \(t\in\rr\)}, \tag{H.1}\\
+  \text{there is a finite family \(\left\{K_{j}\right\}_{1\leqq j\leqq N}\)of disjoint compact}\notag\\
+  \text{subsets in \(X\) and real numbers \(\left\{s_{j}\right\}_{1\leqq j\leqq N}\) such that}\notag\\
+  \pi(\Lambda_{\psi}\cap \Lambda)=\bigcup_{j}K_{j},
+  \quad
+  \mres[\psi]{K_{j}}=s_j,\tag{H.2}\label{eq:ST92-H2}\\
+  \text{\(V_{j}\coloneqq
+  \RG(K_{j};\RG_{\left\{\psi\geqq s_{j}\right\}}(F))\) belongs to \(\Dompb(\Modf(\kk))\).}\tag{H.3}\label{eq:ST92-H3}
+\end{align}
+
+Set 
+\begin{equation}
+  n_{l}\coloneqq \sum_{j}\dim H^{l}(V_j).  \label{eq:ST92-12}
+\end{equation}
+Then 
+\begin{Theorem+}[Generalized Morse Inequalities {\cite[Theorem~1.1]{ST92}}]
+  Assume \eqref{eq:ST92-H1}, \eqref{eq:ST92-H2}, and \eqref{eq:ST92-H3}. 
+  Then
+  \begin{enumerate}[(i)]
+    \item \(\RG(X;F)\in\Dompb(\Modf(\kk))\),
+    \item setting \(b_{l}(X,F)= b_{l}(\RG(X;F))\), we have the inequalities\[
+      b_{l}^{\ast}(X,F)\leqq n_{l}^{\ast}
+    \] where \(n_{l}\) is given by \eqref{eq:ST92-12}.
+  \end{enumerate}
+\end{Theorem+}
 
 %===============================================
 % 参考文献スペース
