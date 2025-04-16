@@ -473,8 +473,9 @@
 \end{equation}
 を\(\cotb[E]\to \cotb[(E/Z)]\to E^{\ast}\)の合成として定める．
 
+
 \begin{leftbar}
-\begin{PRP}
+\begin{PRP}\label{prp551}
     \begin{enumerate}[(i)]
         \item 写像\(\varPhi\colon \cotb[E]\to\cotb[E]\)で，
         \(
@@ -490,4 +491,101 @@
     \end{enumerate}
 \end{PRP}
 \end{leftbar}
+    
+\begin{proof}
+    \begin{equation}
+        \varPhi_{E}\colon (z,x;\zeta,\xi)\mapsto(z,\xi;\zeta,-x)
+    \end{equation}
+\end{proof}
 
+\begin{RMK}\label{rmk552}
+    \(\varPhi_{E}\)はシンプレクティック変換だが
+    斉次シンプレクティック変換ではない．
+\end{RMK}
+
+\begin{equation}
+    S_{E}=\theta_{E}^{-1}(0)
+\end{equation}
+
+\begin{equation}
+    \begin{dcases}
+        (z,x;\zeta,\xi)\mapsto (z,x;\lambda\zeta,\lambda\xi),& \lambda\in\rrp,\\
+        (z,x;\zeta,\xi)\mapsto (z,\mu x;\zeta,\mu^{-1}\xi),& \mu\in\rrp.
+    \end{dcases}
+\end{equation}
+
+\begin{leftbar}
+\begin{PRP}\label{prp553}
+    \begin{enumerate}[(i)]
+        \item \(\Dbconic(E)\)
+        \item \(F\in\Dbconic(E)\)のとき，\(\muS(F)\)は2重錐状
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
+    
+\begin{equation}
+    \vcenter{\xymatrix{
+        \cotb[E]
+        &
+        E\pb[Z]\cotb[Z]
+        \ar@{_{(}->}[l]-^{\mdiff[\tau]}
+        &
+        \cotb[Z]\\
+        \ar@{_{(}->}[u]-^{\mdiff[\dot{\tau}]}
+        \cotb[{\dot{E}}]
+        &
+        \ar@{_{(}->}[u]-^{\mdiff[\dot{\tau}]}
+        \ar@{_{(}->}[l]-^{\mdiff[\dot{\tau}]}
+        \dot{E}\pb[Z]\cotb[Z]
+        &
+        \ar@{_{(}->}[u]-^{\mdiff[\dot{\tau}]}
+        \cotb[Z].
+    }}
+\end{equation}
+
+\begin{equation}
+    \cotb[Z]\hookrightarrow
+    E\pb[Z]\cotb[Z]
+    \underset{\mdiff[\tau]}{\hookrightarrow}
+    \cotb[E].
+\end{equation}
+
+
+
+\begin{equation}
+    \mpb[\tau]\mdiff[\tau]^{-1}(A)=\cotb[Z]\cap A.
+\end{equation}
+
+\begin{leftbar}
+\begin{PRP}
+    \(F\in\Dbconic(E)\)とする．このとき，次がなりたつ．
+    \begin{enumerate}[(i)]
+        \item \(\muS(\Rder{\tau_{\ast}}(F))\subset \cotb[Z]\cap\muS(F)\),
+        \item \(\muS(\Rder{\tau_{!}}(F))\subset \cotb[Z]\cap\muS(F)\),
+        \item \(\muS(\Rder{\dot{\tau}_{\ast}}(F))\subset \mpb[\dot{\tau}]\mdiff[\dot{\tau}]^{-1}(\muS(F))\),
+        \item \(\muS(\Rder{\dot{\tau}_{!}}(F))\subset \mpb[\dot{\tau}]\mdiff[\dot{\tau}]^{-1}(\muS(F))\).
+    \end{enumerate}
+\end{PRP}
+\end{leftbar}
+
+
+\begin{leftbar}
+\begin{THM}
+    \(F\in\Dbconic(E)\)とする．
+    \(\cotb[E]\)と\(\cotb[E^{\ast}]\)を\(\varPhi_{E}\)で
+    同一視することにより，
+    次がなりたつ．
+    \[
+        \muS(F)=\muS(F^{\wedge}).
+    \]
+\end{THM}
+\end{leftbar}
+
+\begin{proof}
+    \begin{align}
+        x_{\circ}\ne0,
+        \quad
+        \xi_{\circ}\ne0,\label{eq:5512}\\
+        \RG_{Z}(F)=0.\label{eq:5513}    
+    \end{align}
+\end{proof}

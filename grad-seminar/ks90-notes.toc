@@ -52,5 +52,5 @@
 \contentsline {section}{\numberline {5.3}例：局所閉集合から定まる超局所台}{76}{section.5.3}%
 \contentsline {section}{\numberline {5.4}超局所台の関手的性質}{76}{section.5.4}%
 \contentsline {section}{\numberline {5.5}錐状層の超局所台}{80}{section.5.5}%
-\contentsline {chapter}{\numberline {第11章}\(\mathcal {O}_X\)加群と\(\mathcal {D}_X\)加群への応用}{82}{chapter.11}%
-\contentsline {chapter}{参考文献}{83}{chapter*.66}%
+\contentsline {chapter}{\numberline {第11章}\(\mathcal {O}_X\)加群と\(\mathcal {D}_X\)加群への応用}{83}{chapter.11}%
+\contentsline {chapter}{参考文献}{84}{chapter*.66}%

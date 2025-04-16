@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1743306578.41281 "ks90-notes.dvi" "ks90-notes.pdf" "ks90-notes" 1743306580.19974 0
-  "ks90-notes.dvi" 1743306578.2097 426596 aca703475d1e7708d6ff3412a38a27ee "latex"
+["dvipdf"] 1744724437.16917 "ks90-notes.dvi" "ks90-notes.pdf" "ks90-notes" 1744724439.01659 0
+  "ks90-notes.dvi" 1744724437.00215 431700 43d5826ae1c0d7a4277c5e8bf6fcb9b6 "latex"
   (generated)
   "ks90-notes.pdf"
   (rewritten before read)
-["latex"] 1743306574.9911 "/Users/giuseppe/seminar-notes/grad-seminar/ks90-notes.tex" "ks90-notes.dvi" "ks90-notes" 1743306580.19352 0
-  "/Users/giuseppe/seminar-notes/grad-seminar/ks90-notes.tex" 1740798165.7815 222206 a5f50c579ff524215c089f45ff717cc4 ""
+["latex"] 1744724432.61331 "/Users/giuseppe/seminar-notes/grad-seminar/ks90-notes.tex" "ks90-notes.dvi" "ks90-notes" 1744724439.00983 0
+  "/Users/giuseppe/seminar-notes/grad-seminar/ks90-notes.tex" 1744724421.09671 222343 2af4210d2f67f0cddd7192e9a4cf4455 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -266,11 +266,11 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ks90-5.aux" 1743306578.18235 2604 91c3b3929d1ac5395d44c8c13c7de9ac "latex"
-  "ks90-5.tex" 1743306565.97488 17543 0d4f809cb76ab752a9b1b8a7204a9de1 ""
-  "ks90-notes.aux" 1743306578.20118 15138 dc867eba40c246396b5d22514adf3d4e "latex"
-  "ks90-notes.tex" 1740798165.7815 222206 a5f50c579ff524215c089f45ff717cc4 ""
-  "ks90-notes.toc" 1743306578.20956 4602 aa7857de5579a1234ae9cdb4dbe3fae3 "latex"
+  "ks90-5.aux" 1744724436.97887 2905 36b2fe43854c9102bf4f24aa707c3c4d "latex"
+  "ks90-5.tex" 1744724201.81682 20016 e9f3481992aba47fd714c9a8ba57587c ""
+  "ks90-notes.aux" 1744724436.99667 15138 9556847894fd119468cbb278aafa6044 "latex"
+  "ks90-notes.tex" 1744724421.09671 222343 2af4210d2f67f0cddd7192e9a4cf4455 ""
+  "ks90-notes.toc" 1744724437.00188 4602 1dac98b35e92b3e436818e9890c647b6 "latex"
   (generated)
   "ks90-5.aux"
   "ks90-notes.aux"

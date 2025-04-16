@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  30 MAR 2025 12:49
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  15 APR 2025 22:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -846,9 +846,9 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \c@CMT=\count385
 \c@EXC=\count386
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 514.
+(Font)              scaled to size 9.24683pt on input line 518.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 514.
+(Font)              scaled to size 9.24683pt on input line 518.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-dvipdfmx.def
 File: l3backend-dvipdfmx.def 2024-02-20 L3 backend support: dvipdfmx
 \g__graphics_track_int=\count387
@@ -859,108 +859,108 @@ File: l3backend-dvipdfmx.def 2024-02-20 L3 backend support: dvipdfmx
 ) (./ks90-notes.aux (./ks90-5.aux))
 \openout1 = `ks90-notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 514.
-LaTeX Font Info:    ... okay on input line 514.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 514.
-LaTeX Font Info:    ... okay on input line 514.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 514.
-LaTeX Font Info:    ... okay on input line 514.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 514.
-LaTeX Font Info:    ... okay on input line 514.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 514.
-LaTeX Font Info:    ... okay on input line 514.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 514.
-LaTeX Font Info:    ... okay on input line 514.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 514.
-LaTeX Font Info:    ... okay on input line 514.
-LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 514.
-LaTeX Font Info:    ... okay on input line 514.
-LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 514.
-LaTeX Font Info:    ... okay on input line 514.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 514.
-LaTeX Font Info:    ... okay on input line 514.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 514.
-LaTeX Font Info:    ... okay on input line 514.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 518.
+LaTeX Font Info:    ... okay on input line 518.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 518.
+LaTeX Font Info:    ... okay on input line 518.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 518.
+LaTeX Font Info:    ... okay on input line 518.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 518.
+LaTeX Font Info:    ... okay on input line 518.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 518.
+LaTeX Font Info:    ... okay on input line 518.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 518.
+LaTeX Font Info:    ... okay on input line 518.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 518.
+LaTeX Font Info:    ... okay on input line 518.
+LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 518.
+LaTeX Font Info:    ... okay on input line 518.
+LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 518.
+LaTeX Font Info:    ... okay on input line 518.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 518.
+LaTeX Font Info:    ... okay on input line 518.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 518.
+LaTeX Font Info:    ... okay on input line 518.
 \c@lstlisting=\count391
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 514.
+(Font)              scaled to size 6.47278pt on input line 518.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 514.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 514.
+(Font)              scaled to size 4.62341pt on input line 518.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 518.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 514.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 518.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 514.
+(Font)              scaled to size 9.24683pt on input line 518.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 514.
+(Font)              scaled to size 6.47278pt on input line 518.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 514.
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 514.
+(Font)              scaled to size 4.62341pt on input line 518.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 518.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Package xypdf Info: Line width: 0.39998pt on input line 514.
+Package xypdf Info: Line width: 0.39998pt on input line 518.
 
 
 Package hyperref Warning: Draft mode on.
 
-Package hyperref Info: Link coloring ON on input line 514.
+Package hyperref Info: Link coloring ON on input line 518.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 517.
+(Font)              scaled to size 15.9785pt on input line 521.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 517.
+(Font)              scaled to size 15.9785pt on input line 521.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 517.
+(Font)              scaled to size 11.09619pt on input line 521.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 517.
+(Font)              scaled to size 11.09619pt on input line 521.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 517.
+(Font)              scaled to size 7.39746pt on input line 521.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 517.
+(Font)              scaled to size 5.5481pt on input line 521.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 517.
+(Font)              scaled to size 11.09619pt on input line 521.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 517.
+(Font)              scaled to size 7.39746pt on input line 521.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 517.
+(Font)              scaled to size 5.5481pt on input line 521.
 [1
 
 ]
 One-sided document style.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 518.
+(Font)              scaled to size 7.39746pt on input line 522.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 518.
+(Font)              scaled to size 4.62341pt on input line 522.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 518.
+(Font)              scaled to size 7.39746pt on input line 522.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 518.
+(Font)              scaled to size 7.39746pt on input line 522.
 [1]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 23.0061pt on input line 518.
+(Font)              scaled to size 23.0061pt on input line 522.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 23.0061pt on input line 518.
+(Font)              scaled to size 23.0061pt on input line 522.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 23.0061pt on input line 518.
+(Font)              scaled to size 23.0061pt on input line 522.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 23.0061pt on input line 518.
+(Font)              scaled to size 23.0061pt on input line 522.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 521.
+(Font)              scaled to size 13.31541pt on input line 525.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 521.
+(Font)              scaled to size 13.31541pt on input line 525.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 521.
+(Font)              scaled to size 13.31541pt on input line 525.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 521.
+(Font)              scaled to size 13.31541pt on input line 525.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 531.
+(Font)              scaled to size 9.24683pt on input line 535.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 531.
+(Font)              scaled to size 9.24683pt on input line 535.
  [2
 
 ] (./ks90-notes.toc [3
@@ -972,25 +972,25 @@ LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
  [4]
 第1章
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 19.17792pt on input line 533.
+(Font)              scaled to size 19.17792pt on input line 537.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 19.17792pt on input line 533.
+(Font)              scaled to size 19.17792pt on input line 537.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 19.17792pt on input line 533.
+(Font)              scaled to size 19.17792pt on input line 537.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 19.17792pt on input line 533.
+(Font)              scaled to size 19.17792pt on input line 537.
 LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 540.
+(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 544.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 540.
+(Font)              scaled to size 9.24683pt on input line 544.
 LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 540.
+(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 544.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 540.
+(Font)              scaled to size 9.24683pt on input line 544.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 575.
+(Font)              scaled to size 6.47278pt on input line 579.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 575.
+(Font)              scaled to size 4.62341pt on input line 579.
 <xymatrix 4x2
 
 Package xypdf Warning: The produced DVI file is NOT PORTABLE. Convert it with
@@ -999,42 +999,42 @@ displayed correctly.
 
 346>
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 617.
+(Font)              scaled to size 6.47278pt on input line 621.
  [5
 
 ]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 621.
+(Font)              No change on input line 625.
  <xymatrix 4x3 562>
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 663.
+(Font)              No change on input line 667.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 723.
+(Font)              No change on input line 727.
  <xymatrix 4x3 562> [6]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 867.
+(Font)              No change on input line 871.
  <xymatrix 5x2 354> [7]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 942.
+(Font)              No change on input line 946.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 969.
+(Font)              No change on input line 973.
  [8]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 993.
+(Font)              No change on input line 997.
  [9] [10] <xymatrix 4x2 474> [11] <xymatrix 2x2 194> [12] [13]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1353.
+(Font)              No change on input line 1357.
  [14]
 第2章
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 1411.
+(Font)              scaled to size 11.09619pt on input line 1415.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 1411.
+(Font)              scaled to size 11.09619pt on input line 1415.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 1442.
+(Font)              scaled to size 5.5481pt on input line 1446.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 1442.
-LaTeX Font Info:    Trying to load font information for U+euf on input line 1442.
+(Font)              scaled to size 5.5481pt on input line 1446.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 1446.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [15
@@ -1042,119 +1042,119 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 
 ] <xymatrix 2x2 194>
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1510.
+(Font)              No change on input line 1514.
  [16] [17]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1670.
+(Font)              No change on input line 1674.
  [18] <xymatrix 2x2 194>
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1804.
+(Font)              No change on input line 1808.
  [19]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 1834.
+(Font)              scaled to size 8.32214pt on input line 1838.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 1834.
+(Font)              scaled to size 8.32214pt on input line 1838.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 1834.
+(Font)              scaled to size 8.32214pt on input line 1838.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 1834.
+(Font)              scaled to size 8.32214pt on input line 1838.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1903.
+(Font)              No change on input line 1907.
  [20]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1957.
+(Font)              No change on input line 1961.
  [21] [22] [23] [24]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2221.
+(Font)              No change on input line 2225.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2233.
+(Font)              No change on input line 2237.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2275.
+(Font)              No change on input line 2279.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2290.
+(Font)              No change on input line 2294.
  [25]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2341.
+(Font)              No change on input line 2345.
  [26]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2382.
+(Font)              No change on input line 2386.
  [27]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2477.
+(Font)              No change on input line 2481.
  [28] <xymatrix 2x2 194> [29]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2613.
+(Font)              No change on input line 2617.
  [30] [31]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2706.
+(Font)              No change on input line 2710.
  [32] [33]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2903.
+(Font)              No change on input line 2907.
  [34] [35]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 3047.
+(Font)              No change on input line 3051.
  [36] <xymatrix 4x2 474> [37] <xymatrix 5x2 614> [38]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 3277.
+(Font)              No change on input line 3281.
  [39] [40] [41] [42] [43]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 3694.
+(Font)              No change on input line 3698.
  [44]
 LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <8> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 3754.
+(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 3758.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 3754.
+(Font)              scaled to size 7.39746pt on input line 3758.
 LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <8> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 3754.
+(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 3758.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 3754.
+(Font)              scaled to size 7.39746pt on input line 3758.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 3811.
+(Font)              No change on input line 3815.
  [45] [46] <xymatrix 2x2 235> [47]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 3989.
+(Font)              No change on input line 3993.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 4009.
+(Font)              No change on input line 4013.
  <xymatrix 2x1 54> <xymatrix 2x2 194> <xymatrix 2x1 54> <xymatrix 2x2 194> [48] [49] [50]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 4220.
+(Font)              No change on input line 4224.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 4245.
+(Font)              No change on input line 4249.
  [51]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 4345.
+(Font)              No change on input line 4349.
  [52] [53]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 4430.
+(Font)              No change on input line 4434.
  [54
 
 ] [55] [56] [57]
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 4687.
+(Font)              No change on input line 4691.
  [58] [59] [60] [61] [62]
 第3章
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 5090.
+(Font)              No change on input line 5094.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 5112.
+(Font)              No change on input line 5116.
 [63
 
 ] [64]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 5238.
+(Font)              No change on input line 5242.
  [65]
 第4章
 <xymatrix 3x2 286> [66
 
 ]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 5384.
+(Font)              No change on input line 5388.
  [67] <xymatrix 2x2 188> <xymatrix 3x2 331> [68] <xymatrix 4x2 597> <xymatrix 2x2 194> [69]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 5681.
+(Font)              No change on input line 5685.
  [70]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 5753.
+(Font)              No change on input line 5757.
  [71] [72] <xymatrix 5x2 446> <xymatrix 4x2 340> [73] [74]
 \openout2 = `ks90-5.aux'.
 
@@ -1171,40 +1171,46 @@ LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
 (Font)              No change on input line 342.
  [79] [80
 
-]) [81]
+]
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 496.
+ <xymatrix 3x2 241> [81]
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 585.
+) [82]
 第11章
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 6007.
+(Font)              scaled to size 15.9785pt on input line 6011.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 23.0061pt on input line 6007.
+(Font)              scaled to size 23.0061pt on input line 6011.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 19.17792pt on input line 6007.
+(Font)              scaled to size 19.17792pt on input line 6011.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 6007.
-[82
+(Font)              scaled to size 15.9785pt on input line 6011.
+[83
 
 
 
 ]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6070.
+(Font)              No change on input line 6074.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6076.
+(Font)              No change on input line 6080.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6079.
+(Font)              No change on input line 6083.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6082.
+(Font)              No change on input line 6086.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6085.
+(Font)              No change on input line 6089.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6088.
+(Font)              No change on input line 6092.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6091.
+(Font)              No change on input line 6095.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6094.
+(Font)              No change on input line 6098.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 6097.
- [83
+(Font)              No change on input line 6101.
+ [84
 
 ] (./ks90-notes.aux (./ks90-5.aux))
  ***********
@@ -1214,12 +1220,12 @@ L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 31203 strings out of 474774
- 548125 string characters out of 5758801
+ 31211 strings out of 474774
+ 548185 string characters out of 5758801
  1955032 words of memory out of 5000000
- 52986 multiletter control sequences out of 15000+600000
+ 52994 multiletter control sequences out of 15000+600000
  633327 words of font info for 239 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  84i,29n,93p,3278b,1126s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on ks90-notes.dvi (84 pages, 426596 bytes).
+Output written on ks90-notes.dvi (85 pages, 431700 bytes).

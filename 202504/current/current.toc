@@ -1,0 +1,3 @@
+\contentsline {paragraph}{\cite {Hor63,Hor89}の場合}{1}{section*.4}%
+\contentsline {paragraph}{\cite {Hor85}の場合}{1}{section*.5}%
+\contentsline {section}{\numberline {1}多様体上の分布}{2}{section.1}%

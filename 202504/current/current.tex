@@ -1,6 +1,7 @@
 %=====================================
-%   geometry.tex
-%   幾何学まとめノート toshi2019
+%   semiclassical.tex
+%   Semiclassical Analysis 
+%   toshi2019
 %=====================================
 
 % -----------------------
@@ -69,6 +70,7 @@
 
 %\usepackage[mathscr]{euscript} % mathscr のフォントを変更
 
+%\usepackage{mmasym}
 
 %=================================
 
@@ -167,7 +169,7 @@
 \newcommand{\rr}{\mathbf{R}}
 \newcommand{\cc}{\mathbf{C}}
 \newcommand{\pp}{\mathbf{P}}
-\newcommand{\kk}{\mathbf{K}}
+\newcommand{\kk}{\mathbf{k}}
 
 % 特殊な写像の記号
 \newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
@@ -379,7 +381,7 @@
 
 \newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
 \newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
-\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}
+\newcommand{\Domp}{\mathord{\mathsf{D}}}%\nolimits}
 \newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
 \newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
 \newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
@@ -387,6 +389,7 @@
 \newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
 \newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
 \newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
+\newcommand{\Domplb}{\mathop{\mathsf{D}^\mathrm{lb}}\nolimits}
 
 
 
@@ -485,7 +488,7 @@
     {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
 
 \theoremstyle{mystyle}
-\newtheorem{AXM}{公理}%[section]
+\newtheorem{AXM}{公理}[section]
 \newtheorem{DFN}[AXM]{定義}
 \newtheorem{THM}[AXM]{定理}
 \newtheorem*{THM*}{定理}
@@ -548,6 +551,37 @@
 \newcommand{\Fr}[1][]{\mathop{\mathrm{Fr}}\nolimits_{#1}}
 
 
+\newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
+\newcommand{\mtp}[1][]{{}^{t\!}{#1}} % transpose of the morphism
+%\newcommand{\mpb}[1][]{{}^{t\!}{#1}'} % pull-back of the morphism
+\newcommand{\mpb}[1][]{{#1}_{\pi}} % pull-back of the morphism
+\newcommand{\mdiff}[1][]{{#1}_{d}} % pull-back of the morphism
+\newcommand{\mptan}[1][]{{#1}_{\tau}} % pull-back of the morphism
+
+
+%\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+
+\newcommand{\cotb}[1][]{T^{\ast}{#1}}
+\newcommand{\conm}[2][]{T_{#1}^{\hspace{0.7pt}\ast}{#2}}
+\newcommand{\norb}[2][]{T_{#1}{#2}}
+
+\newcommand{\cotz}[1][]{T^{\ast}_{#1}{#1}}
+
+\newcommand{\cotn}[1][]{\dot{T}^{\ast}{#1}}
+
+
+\newcommand{\muhom}{\mu hom}
+\newcommand{\muHom}[1][]{\mathrm{Hom}^\mu_{\raise1.5ex\hbox to.1em{}#1}}
+
+\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+%\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+
+\newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
+
+\newcommand{\torus}{\mathbf{T}}
+
+
+
 % ----------------------------
 % documenet 
 % ----------------------------
@@ -556,401 +590,148 @@
 % begin document and end document.
 % ---------------------------
 
-\title{幾何学まとめノート}
-%\author{}
-\date{\today\footnote{2024/03/29作成開始}}
+\title{カレントと密度}
+\author{Toshi2019}
+\date{\today\footnote{2025/04/01作成開始}}
 \begin{document}
 \maketitle
-%\tableofcontents
+\tableofcontents
+\section*{はじめに}
+カレントと密度についてのまとめノート．
+\section*{凡例}
+\begin{itemize}
+    \item トーラス：\(n\)次元トーラスを\(\torus^n\)で表す．
+\end{itemize}
 
-\section{多様体}
-\begin{leftbar}
-\begin{DFN}[{\cite[\S\S 2.9.4]{KS90}}]
-  \(n\geqq 0\)を整数とする．
-  \(\scC_{\rr^n}\)を\(\rr^n\)上の複素数値連続関数の層とする．
-  \(n\)次元\textbf{位相多様体} (topological manifold) \(M\)とは，
-  無限遠で可算な局所コンパクト空間\(M\)と環の層\(\scC_M\)の
-  組\((M,\scC_M)\)で，
-  \((M,\scC_M)\)が\((\rr^n,\scC_{\rr^n})\)と\(\cc\)環付き空間
-  として同型であるものをいう．
+\paragraph{\cite{Hor63,Hor89}の場合}
+
+\begin{quotation}
+    \(\mathscr{D}'(\varOmega)\)を，無限回微分可能な
+    密度 (density) で台がコンパクトであるものからなる空間の上の
+    連続な線形形式の空間としても定義できる．
+    ここでいう密度とは，\(C^\infty(\varOmega)\)内の台がコンパクトな
+    関数からなる空間\(C_0^\infty(\varOmega)\)上の
+    線形形式\(L\)で，任意の座標系\(\varkappa\)に対し，
+    関数\(L^{\varkappa}\in C^\infty(\tilde{\varOmega}_\varkappa)\)
+    で    \[
+        L(\varphi)= \int L^\varkappa(\varphi\circ\varkappa^{-1})dx
+        \quad \text{if} \quad \varphi\in C_0^\infty(\varOmega).
+    \]
+    をみたすものが存在するもののことである．
+
+    For details we refer to DE RHAM [1]\footnote{de Rham, ``Vari\'et\'es diff\'erentiables'' のこと．} 
+    where a density is called odd form of degree \(n\) 
+    and a distribution is an even current of degree 0.
+    \footnote{\cite[p.28]{Hor63}}
+\end{quotation}
+\cite[p.145]{Hor89}でも密度の定義が登場する．
+
+\paragraph{\cite{Hor85}の場合}
+この2つには密度の平方根は現れていない．
+4巻本の第3巻\cite[18章]{Hor85}に説明が出てくる．
+\begin{quotation}
+    In Section 6.4 we defined the density bundle \(\varOmega\) 
+    on \(X\): a section of \(\varOmega\) expressed 
+    in local coordinates \(x_1,\dots,x_n\) is a function \(u\) 
+    such that the measure \(u|dx|\) is independent of 
+    how they are chosen, \(|dx|\) denoting the Lebesgue measure 
+    in the local coordinates. 
+    For the representation \(u'\) in the local coordinates \(x'\) 
+    we therefore have
+    \[u' |dx'|=u|dx|.\]
+    We can define the powers \(\varOmega^a\) 
+    of \(\varOmega\) for any \(a\in\cc\) by just changing the
+    transformation law to
+    \[u' |dx'|^a=u|dx|^a.\]
+    or, more formally, we take the transition functions
+    \[
+        g_{\kappa\kappa'}=\lvert
+            \det(\kappa\circ\kappa'^{-1})'
+        \rvert^a\circ\kappa'
+        \quad
+        \text{in}
+        X_{\kappa}\cap X_{\kappa'}
+    \]
+    if \(\kappa\) and \(\kappa'\) are 
+    arbitrary local coordinates 
+    with coordinate patches \(X_{\kappa}\) and \(X_{\kappa}\). 
+    We shall now work out the transformation law 
+    for the second term in the symbol 
+    of a polyhomogeneous operator acting on half densities, 
+    that is, sections of \(\varOmega^{\frac{1}{2}}\). \footnote{\cite[p.92]{Hor85}}
+\end{quotation}
+
+
+\section{多様体上の分布}
+\begin{DFN}[{\cite[Def.~1.8.1]{Hor63}}]
+    \(n\)次元多様体とは，
+    各点が\(\rr^n\)のある開集合と同相な近傍をもつ位相空間のことである．
+    多様体\(\varOmega\)の\(C^\infty\)構造とは，
+    開集合\(
+        \varOmega_{\varkappa}\subset\varOmega
+    \)から開集合\(
+        \widetilde{\varOmega}_{\varkappa}\subset\rr^n
+    \)への，座標系とよばれる同相写像\(\varkappa\)の族\(\scF\)で，
+    以下をみたすものをいう．
+    \begin{enumerate}[i)]
+        \item \(\varkappa,\varkappa'\in\scF\)のとき，写像\begin{equation}
+            \varkappa'\varkappa^{-1}
+            \colon
+            \varkappa(
+                \varOmega_{\varkappa}\cap\varOmega_{\varkappa'}
+            )
+            \to
+            \varkappa'(\varOmega_{\varkappa}\cap\varOmega_{\varkappa'})
+        \end{equation}
+        は無限回微分可能である．
+        \item \[\bigcup_{\varkappa\in\scF}\varOmega_{\varkappa}=\varOmega.\]
+        \item \(\varkappa_{0}\)が開集合\(
+            \varOmega_{0}\subset\varOmega
+        \)から\(\rr^n\)の開集合への同相写像で，
+        どの\(\varkappa\in\scF\)に対しても，写像\[
+            \varkappa\varkappa_{0}^{-1}
+            \colon
+            \varkappa_{0}(\varOmega_{0}\cap\varOmega_{\varkappa})
+            \to
+            \varkappa(\varOmega_{0}\cap\varOmega_{\varkappa})
+        \]とその逆写像がどちらも無限回微分可能であるとき，
+        \(\varkappa_0\in\scF\)となる．
+    \end{enumerate}
 \end{DFN}
-\end{leftbar}
-\(M\)が無限遠で可算な局所コンパクト空間であり，
-各点\(x\in M\)に対して，\(x\)の開近傍\(U\)で
-\(\rr^n\)の開集合\(V\)と同相なものが存在するとき，
-\(M\)は位相多様体となる．
+多様体に\(C^\infty\)構造を合わせたものを，\(C^\infty\)多様体とよぶ．
+集合\(\varOmega_{\varkappa}\)は\textbf{座標片}\footnote{
+    試験的な訳語．
+} (cordinate patch) とよぶ．
+\(x\in\varOmega_{\varkappa}\)でのデカルト座標\(\varkappa{x}\)を\(
+    \varOmega_{\varkappa}
+\)における\textbf{局所座標} (local coordinate) とよぶ．
 
-\begin{EG}
-  \(a<b\)を実数とする．
-  \(\rr\)の閉区間\([a,b]\)は無限遠で可算な局所コンパクト空間であるが，
-  \(a,b\)で\(\rr\)の開集合
-  と同相な近傍をもたない．
-  したがって，
-  \([a,b]\)は局所コンパクト空間であるが位相多様体にならない空間の例である．
-\end{EG}
-
-
-\section{リーマン計量}
-
-\begin{leftbar}
-\begin{DFN}
-  \(M\)を\(C^{\infty}\)多様体とする．
-  \(M\)の各点\(p\in M\)における接空間\(T_{p}M\)に正定値内積
-  \[
-    g_{p}\colon T_{p}M\times T_{p}M\to \rr
-  \]
-  が与えられ，それらが\(p\)について\(C^{\infty}\)級のとき，
-  \(g=(g_p)_{p\in M}\)を\(M\)上の\textbf{リーマン計量} (Riemannian metric) という．
+\begin{DFN}[{\cite[Def.~1.8.2]{Hor63}}]
+    \(\varOmega\)を\(C^\infty\)多様体とする．
+    \(\varOmega\)において定義された関数\(u\)が
+    \(C^{k}(\varOmega)\)あるいは\(
+        L^{\mathrm{loc}}_{p}(\varOmega)
+    \)に属するとは，
+    全ての座標系において，
+    \(x\in\widetilde{\varOmega}_{\varkappa}\)に対して
+    \[(u\circ \varkappa^{-1})(x)=u(\varkappa^{-1}x)\]を
+    対応させることで定まる合成関数\(u\circ \varkappa^{-1}\)が
+    \(C^{k}(\widetilde{\varOmega}_{\varkappa})\)
+    あるいは\(L^{\mathrm{loc}}_{p}(\widetilde{\varOmega}_{\varkappa})\)に
+    属することをいう．
 \end{DFN}
-\end{leftbar}
-
-
-
-
-
-
-
-\section{ベクトル束}
-\begin{leftbar}
-\begin{DFN}[{\cite[\S 3.1 (p.80)]{Hat89}}]
-  \(E\)と\(X\)を位相空間とし，
-  \(\pi\colon E\to X\)を連続写像とする．
-  \((E,\pi,X)\)が
-  階数\(r\)の実\textbf{ベクトル束} (vector bundle) であるとは，
-  各点\(x\in X\)に対し，\(\pi^{-1}(x)\)が\(r\)次元実線形空間となり，
-  各点\(x\in X\)に対し，開近傍\(U\subset X\)と同相写像\(
-    \varphi\colon \pi^{-1}(U)\simar U\times \rr^r
-  \)で\(\pr_1\circ\varphi=\pi\)となり，
-  各\(y\in U\)に対し\(
-    \mres[\varphi]{\pi^{-1}(y)}\colon 
-    \pi^{-1}(y)\to \{y\}\times\rr^r\cong \rr^n
-  \)が線形となるものが存在することをいう．
-  \[\vcenter{\xymatrix@C=36pt@R=36pt{
-    \pi^{-1}(U)
-    \ar[dr]_-{\pi}
-    \ar[r]^-{\varphi}
-    %\ar@{}[dr]|\square
-    &
-    U\times \rr^r
-    \ar[d]^-{\pr_1}
-    \\
-    &
-    U
-  }}\]
-\end{DFN}  
-\end{leftbar}
-
-\begin{leftbar}
-\begin{DFN}[{\cite[Def.3.3.1]{KS90}}]
-  \(Y\)と\(X\)を局所コンパクト空間とし，
-  \(\tau\colon Y\to X\)を連続写像とする．
-  \(\tau\)がファイバー次元\(l\)の\textbf{位相的しずめこみ} (topological submersion) であるとは，
-  各点\(y\in Y\)に対して\(y\)の開近傍\(V\)で，\(U=\tau(V)\)が\(X\)の開集合であり，
-  同相写像\(h\colon U\times \rr^l\simar V\)で\(\mres[\tau]{V}\circ h=\pr_1\)となるものが存在することをいう．
-  \[\vcenter{\xymatrix@C=36pt@R=36pt{
-    U\times \rr^l
-    \ar[dr]_-{\pr_1}
-    \ar[r]^-{h}
-    %\ar@{}[dr]|\square
-    &
-    V
-    \ar[d]^-{\mres[\tau]{V}}
-    \\
-    &
-    U
-  }}\]
-\end{DFN} 
-\end{leftbar}
-  
-\begin{EG}\label{bdl-is-subm}
-  階数\(r\)のベクトル束\(\pi\colon E\to X\)はファイバー次元\(r\)の
-  位相的沈めこみである．
-  実際，
-  各点\(y\in E\)に対し，\(\pi(y)\)の開近傍\(U\)と同相写像\(
-      \varphi\colon \pi^{-1}(U)\simar U\times \rr^r
-  \)で\(\pr_1\circ\varphi=\pi\)となるものが存在する．
-  この\(U\)と\(\varphi\)に対して，
-  \(\varphi\)の逆写像を\(
-    h\colon U\times \rr^r \to \pi^{-1}(U)
-  \)とおき，\(V= \pi^{-1}(U)\)とおくと，
-  \(\pi(V)=U\)は\(X\)の開集合であり，
-  \(h\)は\(
-    \mres[\pi]{V}\circ h
-    =\mres[\pi]{V}\circ \varphi^{-1}
-    =\pr_1
-  \)をみたす．    
-\end{EG}
-
-局所コンパクト空間上のベクトル束で位相多様体とならないものの例を挙げる．
-
-\begin{EG}\label{ceg:bdl-mfd}
-  \(a<b\)を実数とし，\(X=[a,b]\)とする．
-  \(E=X\times\rr\)とおき，\(\pi\colon E\to X\)を\(\pi(t,s)=t\)で
-  定める．これは階数\(1\)の実ベクトル束である．
-  \((a,s)\in E\)に対し，\(\rr^2\)の開集合\[
-    U_{r}(a,s)\coloneqq\{(x,y)\in\rr^2;\lVert{(x,y)-(a,s)}\rVert<r\}
-  \]は\((a,s)\)を含み，\(
-    U'_{r}(a,s)\coloneqq E\cap U_{r}(a,s)
-  \)とおくと，\(U'_{r}(a,s)\)は\(E\)における\((a,s)\)の開近傍である．
-  しかし，\(U'_{r}(a,s)={[a,a+r[}\times {\left]s-r,s+r\right[}\)は\(\rr^2\)の開集合と同相ではない．
-  したがって\(E\)は位相多様体にはならない．
-\end{EG}
-
-例\ref{bdl-is-subm},\ref{ceg:bdl-mfd}から，位相的沈め込みの源が
-位相多様体とは限らないこともわかる．
-ベクトル束に多様体の構造を入れるには底空間が位相多様体でなければならない．
-ベクトル束の局所座標を取る際に，底空間の局所座標を用いるからである．
-
-\section{（余）接束の基本図式}
-ここでは多様体は\(C^\infty\)級または\(C^\omega\)級とする．
-
-\(f\colon Y\to X\)を多様体の射とする．
-\(\tau\colon TX\to X\)等を接束とすると，
-ベクトル束の引き戻し
-\[\xymatrix{
-  Y\pb[X]TX
-  \ar[r]^-{f_{\tau}}
-  \ar[d]^-{\tau}
-  \ar@{}[dr]|\square
-  &
-  TX
-  \ar[d]^-{\tau}
-  \\
-  Y\ar[r]^-{f}&X
-}\]
-が定まる．\(f\)の微分を\(df\colon TY\to TX\)で表すとき，
-図式
-\[\xymatrix{
-  TY
-  \ar@/^1pc/[rrd]^-{df}
-  \ar@/_1pc/[rdd]_-{\tau}\\
-  &Y\pb[X]TX
-  \ar[r]^-{f_{\tau}}
-  \ar[d]^-{\tau}
-  \ar@{}[dr]|\square
-  &
-  TX
-  \ar[d]^-{\tau}
-  \\
-  &Y\ar[r]^-{f}&X
-}\]
-は可換である．
-したがって，引き戻しの普遍性から
-射\(f'\colon TY\to Y\mathbin{\times_{X}}TX\)がひきおこされ，
-\(df\)は\(df=f_{\tau}\circ f'\)と分解される．
-\[\xymatrix{
-  TY
-  \ar@/^2pc/[rr]^-{df}
-  \ar[r]^-{f'}
-  \ar[rd]_-{\tau}
-  &Y\pb[X]TX
-  \ar[r]^-{f_{\tau}}
-  \ar[d]^-{\tau}
-  \ar@{}[dr]|\square
-  &
-  TX
-  \ar[d]^-{\tau}
-  \\
-  &Y\ar[r]^-{f}&X
-}\]
-この図式を，ここだけの用語で，接束の基本図式とよぶことにする．
-
-\(\pi\colon T^{\ast}X\to X\)等を余接束とする．
-先と同様にベクトル束の引き戻し
-\[\xymatrix{
-  Y\pb[X]T^{\ast}X
-  \ar[r]^-{f_{\pi}}
-  \ar[d]^-{\pi}
-  \ar@{}[dr]|\square
-  &
-  T^{\ast}X
-  \ar[d]^-{\pi}
-  \\
-  Y\ar[r]^-{f}&X
-}\]
-が定まる．
-他方で，\(Y\)上の束の射\(
-  f'\colon TY\to Y\mathbin{\times_{X}}TX
-\)の双対射\(
-  f_{d}\coloneqq {}^{t\!}f'\colon Y\mathbin{\times_{X}}T^{\ast}X\to T^{\ast}Y
-\)が定まる．これにより，図式
-\[\xymatrix{
-  T^{\ast}Y
-  %\ar@/^2pc/[rr]^-{df}
-  \ar[rd]_-{\pi}
-  &
-  Y\pb[X]T^{\ast}X
-  \ar[l]_-{f_{d}}
-  \ar[r]^-{f_{\pi}}
-  \ar[d]^-{\pi}
-  \ar@{}[dr]|\square
-  &
-  T^{\ast}X
-  \ar[d]^-{\pi}
-  \\
-  &Y\ar[r]^-{f}&X
-}\]
-を得る．
-この図式を，ここだけの用語で，余接束の基本図式とよぶことにする．
-
-\section{リー群}
-\begin{EG}
-  乗法群\(\rr^{+}\)（\(\rr_{>0}\)ともかく）はリー群である．
-\end{EG}
-
-\clearpage
-\section{ファイバー束}
-\begin{leftbar}
-\begin{DFN}
-  \(G\)を位相群で空間\(F\)に左から効果的に作用するものとする．
-  空間の間の全射\(\pi\colon E\to B\)が\(F\)をファイバーとし\(G\)を構造群とする\textbf{ファイバー束} (fiber bundle) であるとは，
-  \(B\)が開被覆\(\{U_{\alpha}\}\)でファイバーを保つ同相写像\[
-    \phi_{\alpha}\colon
-    \mres[E]{U_{\alpha}}\simar U_{\alpha}\times F
-  \]をもち，変換関数が\(G\)に値をとる連続写像であることをいう．
-  \[
-    g_{\alpha\beta}(x)=\phi_{\alpha}\mres[\phi_{\beta}^{-1}]{\{x\}\times F}\in G
-  \]
-\end{DFN}
-\end{leftbar}
-
-\(G\)が効果的に作用するとは，
-\(F\)全体で\(g\cdot y=y\)となるならば\(g=1\)となることをいう．
-
-%\(\rr^+\)束は主束？
-
-
-\section{外向き余法ベクトル}
-\cite{GP74,Hat89}に外向き法ベクトルの記述があるので，それを参考に，
-外向き余法ベクトルについて述べる．
-\(M\)を多様体，\(N\)を\(M\)の境界つき部分多様体，
-あるいは\(N\)の開部分集合で真の包含関係\(N\subsetneqq M\)をみたすものとする．
-
-\paragraph{外向きベクトル}
-\(N\)の境界\(\bd{N}\)を考える．
-\(\bd{N}\)の点\(x\)に対し，
-\(\varphi\colon U\to H^n\)を\(x\)の
-まわりの\(N\)の局所座標系とする．
-ただし，\(H^n\)は\(n\)次元上半空間\[
-  H^{n}\coloneqq\left\{
-    x_{1},\ldots,x_{n};x_{n}\geqq0
-  \right\}
-\]を表す．このとき，
-\(T_{x}\bd{N}\)は\(T_{x}M\)において余次元\(1\)の部分ベクトル空間
-である．\(T_{x}M\)のベクトル\(v\in T_{x}M\)で，
-接写像\(d_{x}\varphi\colon T_{x}U\to T_{\varphi(x)}H^n\)による
-像\(d_{x}\varphi(v)\)が\(\Int{H^n}\)に属するとき，
-\(v\)は\(x\in\bd{M}\)における内向きのベクトルであるという．
-\(-d_{x}\varphi(v)\)が\(\Int{H^n}\)に属するとき，
-\(v\)は\(x\in\bd{M}\)における外向きのベクトルであるという．
-
-\paragraph{外向き余法ベクトル}
-\(
-  \langle\blk,\blk\rangle\colon 
-  T^{\ast}_{x}M\times T_{x}M\to\rr
-\)を標準双線形形式とする．
-%の\(T_{x}\bd{X}\)への
-%制限\(T_{x}\bd{X}\times T_{x}^{\ast}X\to\rr\)
-\begin{leftbar}
-  \begin{DFN}
-    \(\xi\in T_{x}^{\ast}M\)が次の2つの条件をみたすとき，
-    \(\xi\)は\(x\in\bd{N}\)における\(N\)の
-    外向き余法ベクトルであるという．
-    \begin{enumerate}
-      \item 任意の\(v\in T_{x}\bd{N}\)に対し\(\langle \xi,v\rangle=0\)である．
-      \item 任意の外向きベクトル\(v\in T_{x}M\)に対し，\(\langle \xi,v\rangle>0\)である．
-    \end{enumerate}  
-  \end{DFN}    
-\end{leftbar}
-
-ユークリッド空間内の境界つき多様体では，
-ユークリッド計量を用いて，\(x\in\bd{X}\)における単位余法ベクトルが定まる．
-
-\begin{EG}[{\cite[Ex.I.5.4.4]{Sch85}}]
-  \(B=\left\{
-      w\in\cc;\lvert{\Img{w}}\rvert<1
-    \right\}\subset\cc
-  \)に対し，
-  \(\left(T^{\ast}_{\bd{B}}\cc\right)^{\pm}\)を
-  それぞれ\(B\)の外向き余法束，内向き余法束と呼ぶ．
-  これをきちんと書き下してみる．
-  \(\bd{B}\)は\(\left\{(x,\pm1);x\in\rr\right\}\)とかける．
-  ここで，\(\cc\)と\(\rr^2\)を\(
-    x+iy\leftrightarrow (x,y)
-  \)で同一視している．
-  まず\(
-    \bd{B}\times_{\cc}T^{\ast}\cc
-    \cong\mres[T^{\ast}\cc]{\bd{B}}
-  \)が\[
-    \left((x,\pm1),(x,\pm1;\xi,\eta)\right)
-    \longleftrightarrow
-    \left(x,\pm1;\xi,\eta\right)
-  \]で定まる．
-  また\[
-    T^{\ast}\bd{B}
-    \cong
-    \left\{(x,\pm1;\xi,0);x\in\bd{B},\xi\in\rr\right\}
-  \]とかけるので，
-  \[
-    \bd{B}\pb[\cc]T^{\ast}\cc\to T^{\ast}\bd{B}
-  \]
-  の核は\[
-    (x,\pm1;\xi,\eta)\mapsto(x,\pm1;\xi,\eta)\mapsto(x,\pm1;\xi,0)
-  \]で\[
-    T^{\ast}_{\bd{B}}\cc=
-    \left\{(x,\pm1;0,\eta);x\in\bd{B},\eta\in\rr\right\}
-  \]となる．
-
-  さて，外向き余法束\(
-    \left(T^{\ast}_{\bd{B}}\cc\right)^{+}
-  \)の方は，\[
-    \left(T^{\ast}_{\bd{B}}\cc\right)^{+}
-    =
-    \left\{(x,\pm1;\zeta)~\middle|~x\in\bd{B},
-    \zeta=\begin{cases}
-      (0,\eta)&(\zeta\in T^{\ast}_{(x,1)}\bd{B})\\
-      (0,-\eta)&(\zeta\in T^{\ast}_{(x,-1)}\bd{B})
-    \end{cases}(\eta>0)\right\}
-  \]
-  とかけて，内向き余法束\(
-    \left(T^{\ast}_{\bd{B}}\cc\right)^{-}
-  \)の方は，\[
-    \left(T^{\ast}_{\bd{B}}\cc\right)^{-}=
-    \left\{(x,\pm1;\zeta)~\middle|~x\in\bd{B},
-    \zeta=\begin{cases}
-      (0,-\eta)&(\zeta\in T^{\ast}_{(x,1)}\bd{B})\\
-      (0,\eta)&(\zeta\in T^{\ast}_{(x,-1)}\bd{B})
-    \end{cases}(\eta>0)\right\}
-  \]
-  とかける．
-
-  \begin{figure}[htb]
-    \centering
-    \begin{tikzpicture}[x=1cm,y=1cm]
-      \fill[black!20] (-4.9,1) rectangle (4.9,-1);
-      \draw[->,>=stealth,thick] (-5,0)--(5,0)node[right]{$\RR$}; %x軸
-      \draw[->,>=stealth,thick] (0,-3)--(0,3); %x軸
-      \draw[thick,dashed] (-4.9,1)--(4.9,1)node[above]{$\bd{B}^{+}$}; %
-      \draw[thick,dashed] (-4.9,-1)--(4.9,-1)node[below]{$\bd{B}^{-}$}; %
-
-      %\draw[thick] (-4,-0.2) node[left]{\(a\)};
-      \fill[black!0] (2.75,-0.25) rectangle (3.25,-0.75);
-      \draw(3,-0.5) node{\(B\)};
-
-      \draw[->,>=stealth,thick] (-3,1)--(-3,1.5)node[above]{\((-3,1;0,1/2)\)}; 
-      \draw[->,>=stealth,thick] (1,-1)--(1,-2)node[below]{\((1,-1;0,-1)\)}; 
-
-      %\draw[thick] (-3,0.1)--(-3,-0.1) node[below]{\(x\)};
-    \end{tikzpicture}
-    \caption{\(\bd{B}\)に対する外向き余法束}
-    \label{fig:conormal}
-  \end{figure}
-\end{EG}
 
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
+  \bibitem[dR]{dR} 
+  de Rham, \textit{Vari\'et\'es diff\'erentiables}, Hermann, 1953.
+  和訳：ド・ラーム, 微分多様体, 東京図書, 1974.
+  \bibitem[GKS12]{GKS12} St\'ephane Guillermou, 
+  Masaki Kashiwara, Pierre Schapira, 
+  \textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
+  Duke. Math. J. 161, No. 2, pp.201--245, 2012.  
   \bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
     \textit{Differential Topology}, 
     Prentice-Hall, 1974.
@@ -959,10 +740,30 @@
     Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
   \bibitem[Hat89]{Hat89} 服部晶夫, 多様体 増補版, 岩波全書 288, 岩波書店, 1989.
   %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+  \bibitem[Hor63]{Hor63} Lars H\"ormander, 
+  \textit{Linear Pertial Differential Operators}, Fourth Printing, 
+  Grundlehren der Mathematischen Wissenschaften, 116, Springer, 1963.
+  \bibitem[Hor71]{Hor71} Lars H\"ormander, 
+  \textit{Fourier Integral Operators I}, 
+  Acta Math. 127, 79--183, (1971).
+  \bibitem[Hor89]{Hor89} Lars H\"ormander, 
+  \textit{The Analysis of Linear Pertial Differential Operators I}, Second Edition,
+  Grundlehren der Mathematischen Wissenschaften, 256, Springer, 1989.
+  \bibitem[Hor85]{Hor85} Lars H\"ormander, 
+  \textit{The Analysis of Linear Pertial Differential Operators III}, 
+  Grundlehren der Mathematischen Wissenschaften, 274, Springer, 1985.
   \bibitem[Sch85]{Sch85} Pierre Schapira, 
     \textit{Microdifferential Systems in the Complex Domain}, 
     Grundlehren der Mathematischen Wissenschaften, 269, 
     Springer, 1985.
+    \bibitem[ST92]{ST92} Pierre Schapira, Nobuyuki Tose, 
+    \textit{Morse Inequalities for \(\rr\)-constructible Sheaves}, 
+    Adv. Math. 93, pp.1--8, 1992. 
+    \bibitem[Zwo12]{Zwo12} Maciej Zworski,
+    \textit{Semiclsaaical Analysis}, 
+    Graduate Studies in Mathematics, 138, 
+    American Mathematical Society, 
+    2012. 
 \end{thebibliography}
 
 %===============================================
