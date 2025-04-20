@@ -1,0 +1,246 @@
+\documentclass[11pt,a4paper,uplatex,dvipdfmx]{ujarticle} 		% for uplatex
+%\documentclass[11pt,a4j,dvipdfmx]{jarticle} 					% for platex
+\input{pieces/form00_header} % pieces
+\input{pieces/kakenhi7} % pieces
+\input{pieces/form01_dcpd_header} % pieces
+\input{pieces/hook3} % pieces
+%#Name: dc
+\input{pieces/form03_dcpd_headers} % pieces
+\input{pieces/form04_dc_header} % pieces
+% ===== Global definitions for the Kakenhi form ======================
+%　基本情報
+%
+%------ 研究課題名  -------------------------------------------
+\newcommand{\研究課題名}{打ち切り超局所台を用いた層理論の研究}
+
+%----- 研究機関名と研究代表者の氏名-----------------------
+\newcommand{\研究機関名}{北海道大学}
+\newcommand{\研究代表者氏名}{大柴寿浩}
+\newcommand{\me}{\underline{\underline{T.~Oshiba}}} 
+\input{pieces/inst_general_images} % pieces
+% user07_header
+% ===== my favorite packages ====================================
+% ここに、自分の使いたいパッケージを宣言して下さい。
+\usepackage{wrapfig}
+%\usepackage{amssymb}
+%\usepackage{mb}
+%\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{lineno}
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.90,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+
+% ===== my personal definitions ==================================
+% ここに、自分のよく使う記号などを定義して下さい。
+\newcommand{\klpionn}{K_L \to \pi^0 \nu \overline{\nu}}
+\newcommand{\kppipnn}{K^+ \to \pi^+ \nu \overline{\nu}}
+
+% ----- 業績リスト用 -------------
+\newcommand{\paper}[6]{%
+	% paper{title}{authors}{journal}{vol}{pages}{year}
+	\item ``#1'', #2, #3 {\bf #4}, #5 (#6).			% お好みに合わせて変えてください。
+}
+
+\newcommand{\etal}{\textit{et al.\ }}
+\newcommand{\ca}[1]{*#1}	% corresponding author;   \ca{\yukawa}  みたいにして使う
+\newcommand{\invitedtalk}{招待講演}
+
+\newcommand{\yukawa}{H.~Yukawa}					% no underline
+%\newcommand{\yukawa}{\underline{\underline{H.~Yukawa}}}	% with 2 underlines
+\newcommand{\tomonaga}{S.~Tomonaga}
+
+\newcommand{\prl}{Phys.\ Rev.\ Lett.\ }		% よく使う雑誌も定義すると楽
+
+% ===== 欄外メモ ==================
+\newcommand{\memo}[1]{\marginpar{#1}}
+%\renewcommand{\memo}[1]{}	% 全てのメモを表示させないようにするには、行頭の"%"を消す
+
+%\input{../../sample/simple/contents}	% skip
+\input{pieces/hook5} % pieces
+
+\begin{document}
+\input{pieces/hook7} % pieces
+%#Split: 01_background  
+%#PieceName: p01_background
+\input{pieces/p01_background_00}
+\section{研究の概要と位置づけ}
+%　　　　＜＜最大　1ページ＞＞
+
+%s03_abst_background
+\noindent
+\underline{\textbf{研究課題名：\研究課題名}}
+%begin 研究科題名及び研究の概要 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+%研究課題名：打ち切り超局所台を用いた層理論の研究
+%\textbf{【研究の概要】}
+\paragraph{【研究の概要】}
+多様体\(M\)上の層の複体\(F\)に対して，
+\textcolor{darkred}{\textbf{超局所台}}\(\mathrm{SS}(F)\)という，
+余接束\(T^{\ast}M\)の部分集合が定義される．
+さらに，超局所台を精密化した，\textcolor{darkred}{\textbf{打ち切り超局所台}}\(
+	\mathrm{SS}_{k}(F)
+\)が各整数\(k\)に対して定義される．
+%ここで一般に\(\mathrm{SS}_{k}(F)\subset\mathrm{SS}(F)\)がなりたつ．
+この打ち切り超局所台に関して，
+以下の2つを目標に研究を行う．
+%具体的には，
+
+第1に，\textcolor{darkred}{\textbf{打ち切り超局所台の関手的性質を調べる}}．
+打ち切り超局所台の関手的性質として基本的なもの，
+例えば，順像・逆像・外部テンソル積での振る舞いは，
+\cite{KMS03}で調べられている．
+ところが，例えばFourier--Sato 変換に関する
+振る舞いは調べられていないなど，
+%打ち切り超局所台の関手的性質については，
+明らかになっていない部分も多い．
+そのような関手的性質を調べるのが目標の一つである．
+
+第2に，打ち切り超局所台を用いて，
+\textcolor{darkred}{\textbf{層係数Morse理論を精密化}}することを目指す．
+\cite{ST92}において，Morse理論は層係数に一般化された．
+そこでは，普通のMorse理論での，関数の臨界点にあたる条件が，
+超局所台を用いて述べられる条件に置き換わる．
+その条件を打ち切り超局所台を用いたものに取り替えることで，
+得られる結果も精密化できることが期待される．
+その意味で，層係数Morse理論を精密化するのが，もう一つの目標である．
+
+%end 研究科題名及び研究の概要 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+%begin 研究目的や背景などの概要 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+%\textbf{【当該分野の状況や課題等の背景】}
+\paragraph{【当該分野の状況や課題等の背景】}
+多様体\(M\)上の層の複体\(F\)に対して，
+超局所台\(\mathrm{SS}(F)\)が定義される．
+超局所台は余接束\(T^{\ast}M\)の標準的なシンプレクティック構造に関する
+包合的閉部分集合である．
+超局所台は，代数解析・シンプレクティック幾何・特異点論など，
+様々な分野で用いられる対象である．
+
+柏原--Fernandes--Schapiraは微分方程式の研究を通じて，
+超局所台を精密化した打ち切り超局所台を定義し，
+いくつかの公式を示した．
+これに関しては十分に調べられているとは言い難い．
+例えば，超局所Morseの補題は，
+打ち切り超局所台を用いて精密化することができるが，それは論文になっていない．
+%end 研究目的や背景などの概要 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+%begin 本研究の着想に至った経緯など ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+%\textbf{【本研究計画の着想に至った背景】}
+\paragraph{【本研究計画の着想に至った背景】}
+%end 本研究の着想に至った経緯など ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+%begin 参考文献 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+%\vspace{11pt}
+\begin{thebibliography}{99}
+	{\small
+	\bibitem[KMS03]{KMS03} M.~Kashiwara, T.~M.~Fernandes, 
+	P.~Schapira, 
+	\textit{Truncated Microsupprt and Holomorphic Solutions 
+	of \(D\)-modules}, 
+	Ann. Scient. \'Ec. Norm. Sup., s\'erie 4, tome 36, 
+	pp.583--399, 2003.
+	\vspace{-6pt}	
+	\bibitem[KS90]{KS90} M. Kashiwara, P. Schapira, \emph{Sheaves on manifolds}, Grundl. math. Wiss., vol. 292, Springer, 1990.
+	\vspace{-6pt}
+	\bibitem[GKS12]{GKS12} S. Guillermou, M. Kashiwara, P. Schapira, \emph{Sheaf quantization of Hamiltonian isotopies and applications to nondisplaceability problems}, Duke Math. J. 161 (2012), 201--245.
+	\vspace{-6pt}
+	\bibitem[Nad09]{Nad09} D. Nadler, \emph{Microlocal branes are constructible sheaves}, Selecta Math. 15 (2009), 563--619.
+	\vspace{-6pt}
+	\bibitem[NZ09]{NZ09} D. Nadler, E. Zaslow, \emph{Constructible sheaves and the Fukaya category}, J. Amer. Math. Soc. 22 (2009), 233--286.
+	\vspace{-6pt}
+	\bibitem[ST92]{ST92} P.~ Schapira, N.~ Tose, 
+    \textit{Morse Inequalities for \(\mathbf{R}\)-constructible Sheaves}, 
+    Adv. Math. 93, pp.1--8, 1992. 
+	\bibitem[Tam18]{Tam18} D. Tamarkin, \emph{Microlocal condition for non-displaceability}, Springer Proc. Math. Stat., vol. 269, Springer, 2018, 99--223.
+	\vspace{-6pt}
+	}
+\end{thebibliography}
+%end 参考文献 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+
+\input{pieces/p01_background_01}
+
+%#Split: 02_purpose_plan  
+%#PieceName: p02_purpose_plan
+\input{pieces/p02_purpose_plan_00}
+\section{【２】研究計画（２）研究目的・内容等}
+%　　　　＜＜最大　2ページ＞＞
+
+%s02_purpose_plan_dcpd
+\JSPSInstructions		% <-- 留意事項。これは消すか、コメントアウトしてください。
+%begin 研究目的と研究計画shorter ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+\textbf{\\　　　　　＊＊＊　以下は、あくまで例です。真似しないでください。　＊＊＊\\
+　　　　　＊＊＊　本文はもちろん、節の切り方や論理の組み方は　　　＊＊＊\\
+　　　　　＊＊＊　ご自分の気に入ったスタイルで書いてください。　　＊＊＊}
+
+	象の卵の研究計画は．．．
+
+	\vspace{1cm}
+	\begin{thebibliography}{99}
+		\bibitem{teramura} 寺村輝夫、「ぼくは王様 - ぞうのたまごのたまごやき」.
+	\end{thebibliography}
+%end 研究目的と研究計画shorter ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+\input{pieces/p02_purpose_plan_01}
+
+%#Split: 03_rights  
+%#PieceName: p03_rights
+\input{pieces/p03_rights_00}
+\section{人権の保護及び法令等の遵守への対応}
+%　　　　＜＜最大　1ページ＞＞
+
+% s09_rights
+%begin 人権の保護及び法令等の遵守への対応 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+	該当しない．
+
+	%象の卵のES細胞の培養、象のクローンの生成などは行わない。
+
+	%\LaTeX の便利な機能については、\texttt{egg\_***.tex} や\texttt{sample\_pdf/egg\_***.pdf}をご覧ください。
+%end 人権の保護及び法令等の遵守への対応 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+\input{pieces/p03_rights_01}
+
+%#Split: 04_abilities  
+%#PieceName: p04_abilities
+\input{pieces/p04_abilities_00}
+\section{【４】研究遂行力の自己分析}
+%　　　　＜＜最大　2ページ＞＞
+
+% s14_abilities
+%\SelfReviewInstructions\\% <-- 留意事項：これは消すか、コメントアウトしてください。
+\noindent
+\textbf{(1) 研究に関する自身の強み}\\
+%\PapersInstructions\\ %<-- 留意事項：これは消すか、コメントアウトしてください。
+%begin 自己分析 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+\begin{itemize}
+	\item 文献調査が得意
+	\item プレゼンテーション能力
+	\item 新しい理論を積極的に勉強する
+\end{itemize}
+	\paragraph{分野を問わず広く学ぶ意欲がある}
+	申請者は数学に限らず、物理学や語学、言語哲学などの人文系の学問にも
+	広く関心を持って自主的に勉強してきた。
+
+	\paragraph{文献調査能力}
+	申請者は
+
+	\paragraph{プレゼンテーション能力}
+	申請者はプレゼンテーション能力に長けている。
+
+%end 自己分析 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+\vspace{5mm}
+\noindent
+\textbf{(2) 今後研究者として更なる発展のため必要と考えている要素}\\
+%begin 今後必要な要素 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+\begin{itemize}
+	\item 共同研究者を増やす。
+	\item 基礎的な知識を身につける。
+\end{itemize}
+%end 今後必要な要素 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+\input{pieces/p04_abilities_01}
+
+%#Split: 99_tail
+\input{pieces/hook9} % pieces
+\end{document}
+
