@@ -22,6 +22,12 @@
 % ===== my favorite packages ====================================
 % ここに、自分の使いたいパッケージを宣言して下さい。
 \usepackage{wrapfig}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+
 %\usepackage{amssymb}
 %\usepackage{mb}
 %\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
@@ -109,24 +115,42 @@
 %begin 研究目的や背景などの概要 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 %\textbf{【当該分野の状況や課題等の背景】}
 \paragraph{【当該分野の状況や課題等の背景】}
-多様体\(M\)上の層の複体\(F\)に対して，
-超局所台\(\mathrm{SS}(F)\)が定義される．
-超局所台は余接束\(T^{\ast}M\)の標準的なシンプレクティック構造に関する
-包合的閉部分集合である．
-超局所台は，代数解析・シンプレクティック幾何・特異点論など，
-様々な分野で用いられる対象である．
+超局所台の理論は，\cite{Nad09,NZ09}や\cite{Tam18}を皮切りに，
+シンプレクティック幾何の問題への応用されるようになった．
+とりわけ\cite{GKS12}では，層係数Morse理論を効果的に用いて，
+シンプレクティック幾何における重要な問題である
+Arnoldの分離不能性定理の新しい証明を与えた．
 
-柏原--Fernandes--Schapiraは微分方程式の研究を通じて，
+他方，柏原--Fernandes--Schapira\cite{KMS03}は，
+\(D\)加群の解の伝播の研究を通じて，
 超局所台を精密化した打ち切り超局所台を定義し，
-いくつかの公式を示した．
-これに関しては十分に調べられているとは言い難い．
-例えば，超局所Morseの補題は，
-打ち切り超局所台を用いて精密化することができるが，それは論文になっていない．
+いくつかの性質が成り立つことを示した．
+例えば，層の外部テンソル積に関する超局所台の振る舞いについては，
+打ち切り超局所台を用いることで，より細かい情報が得られることが示された．
+しかし，関手的性質を始め，
+その一般的な性質は調べ尽くされているとは言い難い．
+それにも関わらず，2010年代以降に大きな発展は
+見られず，\textcolor{darkred}{\textbf{ほとんど手付かず}}の状態にあると言ってよい．
+
+%これに関しては十分に調べられているとは言い難い．
+%例えば，超局所Morseの補題は，
+%打ち切り超局所台を用いて精密化することができるが，それは論文になっていない．
+
 %end 研究目的や背景などの概要 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
 %begin 本研究の着想に至った経緯など ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 %\textbf{【本研究計画の着想に至った背景】}
 \paragraph{【本研究計画の着想に至った背景】}
+
+以上で述べた状況の中で，超局所Morseの補題と呼ばれる，
+超局所台を用いて定式化される主張が，
+打ち切り超局所台を用いると精密化できることに気づいた．
+これを援用して，\textcolor{darkred}{
+	\textbf{層の超局所理論における種々の命題が，
+	打ち切り超局所台により改良できる}
+}のではないかと思い至った．
+また，それを研究する過程でも，
+\textcolor{darkred}{\textbf{打ち切り超局所台に関する一般論の構築が必要}}であると考えるに至った．
 %end 本研究の着想に至った経緯など ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
 %begin 参考文献 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -151,6 +175,7 @@
 	\bibitem[ST92]{ST92} P.~ Schapira, N.~ Tose, 
     \textit{Morse Inequalities for \(\mathbf{R}\)-constructible Sheaves}, 
     Adv. Math. 93, pp.1--8, 1992. 
+	\vspace{-10pt}
 	\bibitem[Tam18]{Tam18} D. Tamarkin, \emph{Microlocal condition for non-displaceability}, Springer Proc. Math. Stat., vol. 269, Springer, 2018, 99--223.
 	\vspace{-6pt}
 	}
