@@ -1,6 +1,6 @@
 \contentsline {section}{\numberline {1}（余）接束の基本図式}{1}{section.1}%
 \contentsline {section}{\numberline {2}余接束のシンプレクティック構造}{2}{section.2}%
 \contentsline {section}{\numberline {3}錐状層の超局所台 (pp.241--245)}{3}{section.3}%
-\contentsline {subparagraph}{Step~1}{6}{section*.5}%
-\contentsline {subparagraph}{Step~2}{6}{section*.6}%
-\contentsline {subparagraph}{Step~3}{7}{section*.7}%
+\contentsline {subparagraph}{Step~1}{6}{section*.6}%
+\contentsline {subparagraph}{Step~2}{7}{section*.7}%
+\contentsline {subparagraph}{Step~3}{8}{section*.8}%

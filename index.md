@@ -44,6 +44,7 @@ Poincaré-Verdier双対性[(pdf)](grad-seminar/PV-duality.pdf)
 
 [2025年03月分](202503/2025-03.md)
 
+[2025年04月分](202504/2025-04.md)
 
 ## 自主ゼミ
 

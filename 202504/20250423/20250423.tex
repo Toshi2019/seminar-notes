@@ -591,7 +591,7 @@
 % begin document and end document.
 % ---------------------------
 
-\title{ゼミノート（4月16日分）}
+\title{ゼミノート（4月23日分）}
 \author{Toshi2019}
 \date{\today}
 \begin{document}
@@ -810,14 +810,14 @@
 ベクトル場\(\eu\)は
 \textbf{オイラーベクトル場} (the Euler vector field) と
 呼ばれることが多い．
-\begin{CMT}
+\begin{CMT*}
     \(\eu\)を作用素とみる．
     \(\varphi\in C^{\infty}(E)\)に対し，\(
         \varphi\circ \mu\in C^{\infty}(\rrp \times E)
     \)としてから，\(t=1\)での偏微分\[
         \ev_{t=1}\left(\frac{\partial}{\partial t}(\varphi\circ \mu)\right)
     \]を対応させることで，\(\eu(\varphi)\)が定まる．
-\end{CMT}
+\end{CMT*}
 写像\(\mu\)から写像\(
     \mdiff[\mu]\colon
     \rrp\times\cotb[E]\to\cotb[\rrp]\times\cotb[E]
@@ -829,7 +829,7 @@
     \theta_{E}\colon\cotb[E]\to\rr
 \end{equation}を得る．
 この写像は\(\eu\)の主要表象に他ならない．
-\begin{CMT}
+\begin{CMT*}
     \(\mu\colon \rrp\times E\to E\)に関する余接束の基本図式を考える．
     \[\vcenter{\xymatrix{
         \cotb[(\rrp\times E)]
@@ -897,7 +897,7 @@
         \{1\}\times \cotb[E]\to
         \cotb[\rrp]\times\cotb[E]
     \)を考える．
-\end{CMT}
+\end{CMT*}
 
 \((z,x)\)を（\(Z\)上局所的な）座標系で，
 \((z)\)が\(Z\)の座標で\((x)\)が線形座標であるものとする．
@@ -1030,6 +1030,23 @@
 \end{PRP}
 \end{leftbar}
 
+\subsection*{フーリエ・佐藤変換の超局所台}
+
+\(F\in\Dbconic(E)\)に対し，
+\[
+    F^{\wedge}\coloneqq
+    \Rder{{p_{2}}_{\ast}}\RG_{P}(p_1^{-1}F)
+\]
+と定めた．ただし\(p_1\)と\(p_2\)はそれぞれ
+\(E\mathbin{\times_{Z}}E^{\ast}\)から，第1・第2成分への射影であり，
+\[
+    P=\left\{
+        (z,x,y)\in E\mathbin{\times_{Z}}E^{\ast}
+        \mathrel{;}
+        \left\langle{x,y}\right\rangle
+    \right\}
+\]
+である．
 
 \begin{leftbar}
 \begin{THM}
@@ -1044,6 +1061,29 @@
 \end{leftbar}
 
 \begin{proof}    
+    \(F^{\wedge\wedge}=F\)なので，
+    \(\muS(F^{\wedge})\subset\muS(F)\)
+    を示せば，
+    \[
+        \muS(F)
+        =\muS(F^{\wedge\wedge})
+        \subset\muS(F^{\wedge\wedge\wedge})
+        =\muS(F^{\wedge})
+    \]も従う．
+    \(\cotb[E]\)の点を局所座標を用いて
+    \(
+        (z_{\circ},x_{\circ};\zeta_{\circ},\xi_{\circ})
+    \)と表し，\(
+        (z_{\circ},x_{\circ};\zeta_{\circ},\xi_{\circ})
+        \notin 
+        \muS(F)
+    \)とする．
+    このとき，
+    \(
+        (z_{\circ},\xi_{\circ};\zeta_{\circ},-x_{\circ})
+        \notin 
+        \muS(F^{\wedge})
+    \)を示せばよい．3段階に分けて示す．
     \subparagraph{Step~1}%\label{prf:555-1} 
     まず，
     \begin{align}
@@ -1052,8 +1092,94 @@
         \xi_{\circ}\ne0,\label{eq:5512}\\
         \RG_{Z}(F)=0.\label{eq:5513}    
     \end{align}
-    を仮定して考える．
-    
+    の2つを仮定して考える．次の記号を準備する．
+    \begin{itemize}
+        \item \(j\colon \dot{E}\hookrightarrow E\)を閉埋め込みとする．
+        \item \(\tilde{j}\colon \dot{E}\mathbin{\times_{Z}} E^{\ast}\hookrightarrow E\mathbin{\times_{Z}} E^{\ast}\)を\(j\)から定まる閉埋め込みとする．
+        \item \(\dot{p}_{2}\colon \dot{E}\mathbin{\times_{Z}} E^{\ast}\to E^{\ast}\)を射影とする．
+    \end{itemize}
+    \eqref{eq:5513}より，
+    \begin{align*}
+        \RG_{P}(p_1^{-1}F)
+        &\cong \RG_{P}(p_1^{-1}\Rder{j_{\ast}}j^{-1}F)\\
+        &\cong \RG_{P}(\Rder{\tilde{j}_{\ast}}\tilde{j}^{-1}p_1^{-1}F)\\
+        &\cong \Rder{\tilde{j}_{\ast}}\tilde{j}^{-1}\RG_{P}(p_1^{-1}F)
+    \end{align*}
+    が成り立つ．
+    したがって，\[
+        F^{\wedge}
+        =
+        \Rder{{\dot{p_{2}}_{\ast}}}\tilde{j}^{-1}\RG_{P}(p_1^{-1}F)    
+    \]
+    となる．
+    %\begin{redleftbar}
+    \begin{CMT*}
+        \begin{enumerate}[(i)]
+            \item 
+            1つ目の同型は，\eqref{eq:5513}から従う．
+            \item         
+            2つ目の同型は，
+            \(j\)と\(\tilde{j}\)がどちらも固有射であることから，
+            カルテシアン図式
+            \[\vcenter{\xymatrix@C=36pt@R=36pt{
+                \dot{E}\pb[Z] E^{\ast}
+                \ar[d]_-{\dot{p}_{1}}
+                \ar@{^{(}->}[r]_-{\tilde{j}}
+                \ar@{}[dr]|\square
+                &
+                E\pb[Z] E^{\ast}
+                \ar[d]^-{\mres[\dot{p}_{1}]{E\pb[Z] E^{\ast}}}\\
+                \dot{E}
+                \ar@{^{(}->}[r]^-{j}
+                &
+                E
+            }}\]における
+            固有基底変換を用いて
+            \begin{align*}
+                p_1^{-1}\Rder{j_{\ast}}j^{-1}F
+                &\underset{\text{B.C.}}{\cong} 
+                \Rder{\tilde{j}_{\ast}}(\mres[p_1]{\dot{E}\mathbin{\times_{Z}} E^{\ast}})^{-1}j^{-1}F\\
+                &\underset{\text{可換図式}}{\cong} 
+                \Rder{\tilde{j}_{\ast}}\tilde{j}^{-1}p_1^{-1}F
+            \end{align*}
+            のように示される．
+            \item     
+            3つ目の同型は，
+            局所コホモロジー関手\(\RG_{P}\)と
+            \(
+                \Rder{\tilde{j}_{\ast}}\tilde{j}^{-1}
+                =
+                \RG_{\dot{E}\mathbin{\times_{Z}} E^{\ast}}
+            \)が交換することから従う．
+        \end{enumerate}
+    \end{CMT*}
+    %\end{redleftbar}
+    \bigskip
+    さて，
+    \(
+        (z_{\circ},\xi_{\circ};\zeta_{\circ},-x_{\circ})
+        \in 
+        \muS(F^{\wedge})
+    \)だったとしてムジュンを導く．
+    \(p_2\)に\cite[Prop.5.5.4.(iii)]{KS90}を用いると，
+    \[
+        \muS(\Rder{\dot{p_{2}}_{\ast}}\tilde{j}^{-1}\RG_{P}(p_{1}^{-1}F))
+        \subset
+        \mpb[\dot{p_{2}}]\mdiff[\dot{p_{2}}]^{-1}\muS(\tilde{j}^{-1}\RG_{P}(p_{1}^{-1}F)),
+    \]
+    すなわち，仮定から，\(x_1\in \dot{E}\)で
+    \[
+        (z_{\circ},x_1,\xi_{\circ};\zeta_{\circ},0,-x_{\circ})
+        \in 
+        \tilde{j}^{-1}\RG_{P}(p_{1}^{-1}F)
+        =
+        \mres[\RG_{P}(p_{1}^{-1}F)]{\dot{E}\mathbin{\times_{Z}} E^{\ast}}
+    \]
+    となるものが存在する\footnote{
+        \(x_1\in \dot{E}\)となるのは，\(\tilde{j}\)で制限しているからで，
+        \(x_1\)のファイバーが\(0\)になるのは，\(\mpb[\dot{p_{2}}]\mdiff[\dot{p_{2}}]^{-1}\)の部分から来ている．
+    }．
+
     \subparagraph{Step~2}%\label{prf:555-2} 
     次に\eqref{eq:5513}を取り除き，\eqref{eq:5512}のみ仮定する．
     完全三角\[
@@ -1122,7 +1248,7 @@
         Z\times\left\{0\right\}^{\ast}
         \ar[rd]
         &&
-        E
+        E^{\ast}
         \ar[ll]_-{\mtp[i]=\pi}
         \ar[ld]^-{\pi}\\
         &
@@ -1145,7 +1271,13 @@
         \pi^{-1}(i^{!}F)
     \end{align*}
     となる．
-    よって，\cite[Prop.5.4.5 (ii)]{KS90}から，
+    よって，\((z,y;\zeta,\eta)\in\cotb[E^{\ast}]\)に対し\(
+        \pi^{-1}i^{!}F
+    \)の茎の同型\[
+        (\pi^{-1}i^{!}F)_{(z,y;\zeta,\eta)}
+        \cong
+        (i^{!}F)_{(z,y)}
+    \]が成り立つことと\cite[Prop.5.4.5 (ii)]{KS90}から，
     \[
         \muS(\pi^{-1}i^{!}F)
         \subset
@@ -1159,6 +1291,28 @@
     \)である．
     \subparagraph{Step~3}%\label{prf:555-3} 
     最後に\eqref{eq:5512}も取り除いた一般の場合を考える．
+
+    \(\rr^{2}\)上の層\(A_{\rr\times\left\{0\right\}}\)を考える．
+    \begin{CMT*}
+        \begin{itemize}
+            \item \(E\times \rr^2\)は\(Z\)上のベクトル束になる
+            と思う．ねじれとかの議論は要らないのか．
+            \item このあとの，
+            \(F\etens A_{\rr\times\left\{0\right\}}\)は
+            \(\Dbconic(E\times \rr^2)\)の対象となる．
+            したがって，そのフーリエ・佐藤変換は
+            \(\Dbconic(E^{\ast}\times (\rr^2)^{\ast})\)の
+            対象となる．
+        \end{itemize}        
+    \end{CMT*}
+    \cite[Prop.3.7.15]{KS90}から
+    \begin{equation}
+        (F\etens A_{\rr\times\left\{0\right\}})^{\wedge}
+        \cong
+        F^{\wedge}\etens A_{\left\{0\right\}\times\rr}[-1]
+    \end{equation}
+    である．
+
 \end{proof}
 
 

@@ -1,10 +1,10 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  21 APR 2025 18:50
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  23 APR 2025 02:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/giuseppe/seminar-notes/202504/20250416/20250416.tex
-(/Users/giuseppe/seminar-notes/202504/20250416/20250416.tex
+**/Users/giuseppe/seminar-notes/202504/20250423/20250423.tex
+(/Users/giuseppe/seminar-notes/202504/20250423/20250423.tex
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -820,8 +820,8 @@ File: l3backend-dvipdfmx.def 2024-02-20 L3 backend support: dvipdfmx
 \g__pdf_backend_object_int=\count353
 \g__pdf_backend_annotation_int=\count354
 \g__pdf_backend_link_int=\count355
-) (./20250416.aux)
-\openout1 = `20250416.aux'.
+) (./20250423.aux)
+\openout1 = `20250423.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 597.
 LaTeX Font Info:    ... okay on input line 597.
@@ -870,9 +870,9 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 Package xypdf Info: Line width: 0.39998pt on input line 597.
 Package hyperref Info: Link coloring ON on input line 597.
- (./20250416.out) (./20250416.out)
+ (./20250423.out) (./20250423.out)
 \@outlinefile=\write6
-\openout6 = `20250416.out'.
+\openout6 = `20250423.out'.
 
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 (Font)              scaled to size 15.9785pt on input line 599.
@@ -904,9 +904,9 @@ LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 599.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 599.
- (./20250416.toc)
+ (./20250423.toc)
 \tf@toc=\write7
-\openout7 = `20250416.toc'.
+\openout7 = `20250423.toc'.
 
  <xymatrix 2x2
 
@@ -935,45 +935,59 @@ LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 6.47278pt on input line 800.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 4.62341pt on input line 800.
- [3] <xymatrix 3x2 290> [4] <xymatrix 3x2 241> [5] <xymatrix 2x2 174> <xymatrix 2x2 174> <xymatrix 3x2 148> <xymatrix 3x2 148> <xymatrix 2x2 174> <xymatrix 2x2 174> <xymatrix 3x2 148> <xymatrix 3x2 148> [6]
+ [3] <xymatrix 3x2 290> [4] <xymatrix 3x2 241> [5] [6] <xymatrix 2x2 235>
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 1144.
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 4.62341pt on input line 1144.
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 7.39746pt on input line 1181.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 7.39746pt on input line 1181.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 5.5481pt on input line 1181.
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 5.5481pt on input line 1181.
+ <xymatrix 2x2 174> <xymatrix 2x2 174> <xymatrix 3x2 148> <xymatrix 3x2 148> <xymatrix 2x2 174> <xymatrix 2x2 174> <xymatrix 3x2 148> <xymatrix 3x2 148> [7]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1191.
+(Font)              No change on input line 1345.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1195.
+(Font)              No change on input line 1349.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1198.
+(Font)              No change on input line 1352.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1201.
+(Font)              No change on input line 1355.
+ [8]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1206.
+(Font)              No change on input line 1360.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1209.
+(Font)              No change on input line 1363.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1212.
+(Font)              No change on input line 1366.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1215.
+(Font)              No change on input line 1369.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1218.
+(Font)              No change on input line 1372.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1222.
+(Font)              No change on input line 1376.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1225.
- [7] (./20250416.aux)
+(Font)              No change on input line 1379.
+ [9] (./20250423.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `20250416.out' has not changed.
+Package rerunfilecheck Info: File `20250423.out' has not changed.
 (rerunfilecheck)             Checksum: 71210D4902623F2D893C1507E9E8764B;524.
  ) 
 Here is how much of TeX's memory you used:
- 30240 strings out of 474774
- 529143 string characters out of 5758801
- 1947032 words of memory out of 5000000
- 52045 multiletter control sequences out of 15000+600000
- 614487 words of font info for 157 fonts, out of 8000000 for 9000
+ 30252 strings out of 474774
+ 529341 string characters out of 5758801
+ 1946032 words of memory out of 5000000
+ 52057 multiletter control sequences out of 15000+600000
+ 615959 words of font info for 165 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  84i,21n,93p,3263b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 20250416.dvi (7 pages, 43360 bytes).
+Output written on 20250423.dvi (9 pages, 53428 bytes).
