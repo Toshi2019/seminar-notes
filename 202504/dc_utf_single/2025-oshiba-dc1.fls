@@ -127,6 +127,8 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/tools/enumerate.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/tools/enumerate.sty
 INPUT ./pieces/hook5.tex
 INPUT ./pieces/hook5.tex
 INPUT ./pieces/hook5.tex
@@ -220,11 +222,11 @@ INPUT ./subject_headers/dc_header_02.pdf
 INPUT ./subject_headers/dc_header_02.pdf
 INPUT ./subject_headers/dc_header_02.pdf
 INPUT subject_headers/dc_header_02.xbb
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
-INPUT ./subject_headers/inst_general.pdf
-INPUT ./subject_headers/inst_general.pdf
-INPUT ./subject_headers/inst_general.pdf
-INPUT subject_headers/inst_general.xbb
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcbx1200.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-v.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm
 INPUT ./pieces/p02_purpose_plan_01.tex
 INPUT ./pieces/p02_purpose_plan_01.tex
 INPUT ./pieces/p02_purpose_plan_01.tex

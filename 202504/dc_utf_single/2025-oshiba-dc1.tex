@@ -11,7 +11,7 @@
 %　基本情報
 %
 %------ 研究課題名  -------------------------------------------
-\newcommand{\研究課題名}{打ち切り超局所台を用いた層理論の研究}
+\newcommand{\研究課題名}{打ち切り超局所台の関手的性質の研究とMorse理論への応用}
 
 %----- 研究機関名と研究代表者の氏名-----------------------
 \newcommand{\研究機関名}{北海道大学}
@@ -37,11 +37,16 @@
 \definecolor{darkgreen}{rgb}{0,0.45,0} 
 \definecolor{darkred}{rgb}{0.90,0,0}
 \definecolor{darkblue}{rgb}{0,0,0.6} 
+\usepackage{enumerate}
 
 % ===== my personal definitions ==================================
 % ここに、自分のよく使う記号などを定義して下さい。
 \newcommand{\klpionn}{K_L \to \pi^0 \nu \overline{\nu}}
 \newcommand{\kppipnn}{K^+ \to \pi^+ \nu \overline{\nu}}
+\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}
+
+\newcommand{\HOM}{\mathop{\mathcal{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
 
 % ----- 業績リスト用 -------------
 \newcommand{\paper}[6]{%
@@ -80,11 +85,14 @@
 %begin 研究科題名及び研究の概要 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 %研究課題名：打ち切り超局所台を用いた層理論の研究
 %\textbf{【研究の概要】}
+\vspace{-10pt}
 \paragraph{【研究の概要】}
-多様体\(M\)上の層の複体\(F\)に対して，
+多様体
+%\(M\)
+上の層の複体\(F\)に対して，
 \textcolor{darkred}{\textbf{超局所台}}\(\mathrm{SS}(F)\)という，
 余接束\(T^{\ast}M\)の部分集合が定義される．
-さらに，超局所台を精密化した，\textcolor{darkred}{\textbf{打ち切り超局所台}}\(
+さらに，それを精密化した\textcolor{darkred}{\textbf{打ち切り超局所台}}\(
 	\mathrm{SS}_{k}(F)
 \)が各整数\(k\)に対して定義される．
 %ここで一般に\(\mathrm{SS}_{k}(F)\subset\mathrm{SS}(F)\)がなりたつ．
@@ -93,38 +101,72 @@
 %具体的には，
 
 第1に，\textcolor{darkred}{\textbf{打ち切り超局所台の関手的性質を調べる}}．
-打ち切り超局所台の関手的性質として基本的なもの，
-例えば，順像・逆像・外部テンソル積での振る舞いは，
+打ち切り超局所台の関手的性質として基本的なもの%，
+%例えば，順像・逆像・外部テンソル積での振る舞い
+は，
 \cite{KMS03}で調べられている．
-ところが，例えばFourier--Sato 変換に関する
-振る舞いは調べられていないなど，
+ところが，例えばFourier--Sato変換に
+%関する振る舞い
+関して
+は調べられていないなど，
 %打ち切り超局所台の関手的性質については，
 明らかになっていない部分も多い．
 そのような関手的性質を調べるのが目標の一つである．
 
 第2に，打ち切り超局所台を用いて，
-\textcolor{darkred}{\textbf{層係数Morse理論を精密化}}することを目指す．
+\textcolor{darkred}{\textbf{層係数Morse理論を精密化}}する．
+%ことを目指す．
 \cite{ST92}において，Morse理論は層係数に一般化された．
-そこでは，普通のMorse理論での，関数の臨界点にあたる条件が，
-超局所台を用いて述べられる条件に置き換わる．
+そこでは，
+%普通のMorse理論での，
+関数の臨界点にあたる条件が，
+超局所台を用いた
+%て述べられる
+条件に置き換わる．
 その条件を打ち切り超局所台を用いたものに取り替えることで，
-得られる結果も精密化できることが期待される．
-その意味で，層係数Morse理論を精密化するのが，もう一つの目標である．
+%得られる結果も精密化できることが期待される．
+%その意味で，
+層係数Morse理論を精密化するのがもう一つの目標である．
 
+%超局所層理論の，
+%特異点論・シンプレクティック幾何・\(D\)加群論を含む様々な分野への
+%応用が盛んになっている．
+本研究の完成時には，
+%それら
+層理論を様々な分野に応用するにあたって，
+%ための
+\textcolor{darkred}{
+	\textbf{適用条件の確認がより簡明になる}
+}とともに，
+\textcolor{darkred}{
+	\textbf{コホモロジーのより詳細な情報が得られる}
+}ことが期待される．
 %end 研究科題名及び研究の概要 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+\vspace{-10pt}
 %begin 研究目的や背景などの概要 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 %\textbf{【当該分野の状況や課題等の背景】}
 \paragraph{【当該分野の状況や課題等の背景】}
-超局所台の理論は，\cite{Nad09,NZ09}や\cite{Tam18}を皮切りに，
-シンプレクティック幾何の問題への応用されるようになった．
+超局所台は，層\(F\)を係数とするコホモロジーが，
+各点の周りで，
+\textcolor{darkred}{\textbf{どの方向に拡張できないかを記述}}する．
+その理論は超局所層理論と呼ばれ，
+近年，\cite{Nad09,NZ09}や\cite{Tam18}に代表されるように，
+シンプレクティック幾何への応用が盛んになってきた．
 とりわけ\cite{GKS12}では，層係数Morse理論を効果的に用いて，
 シンプレクティック幾何における重要な問題である
 Arnoldの分離不能性定理の新しい証明を与えた．
+その他にも，\(D\)加群論・特異点論など，様々な分野に応用されている．
 
 他方，柏原--Fernandes--Schapira\cite{KMS03}は，
 \(D\)加群の解の伝播の研究を通じて，
-超局所台を精密化した打ち切り超局所台を定義し，
-いくつかの性質が成り立つことを示した．
+打ち切り超局所台を定義した．
+打ち切り超局所台は\(F\)係数コホモロジーのうち，\textcolor{darkred}{
+	\textbf{固定した次数\(k\)以下のものが拡張できない方向を記述}
+}する．
+この意味で，打ち切り超局所台は超局所台の
+精密化である．
+\cite{KMS03}では，打ち切り超局所台に関する
+いくつかの性質が成り立つことが示されている．
 例えば，層の外部テンソル積に関する超局所台の振る舞いについては，
 打ち切り超局所台を用いることで，より細かい情報が得られることが示された．
 しかし，関手的性質を始め，
@@ -137,16 +179,16 @@ Arnoldの分離不能性定理の新しい証明を与えた．
 %打ち切り超局所台を用いて精密化することができるが，それは論文になっていない．
 
 %end 研究目的や背景などの概要 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-
+\vspace{-10pt}
 %begin 本研究の着想に至った経緯など ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 %\textbf{【本研究計画の着想に至った背景】}
 \paragraph{【本研究計画の着想に至った背景】}
-
 以上で述べた状況の中で，超局所Morseの補題と呼ばれる，
 超局所台を用いて定式化される主張が，
-打ち切り超局所台を用いると精密化できることに気づいた．
+打ち切り超局所台を用いるとコホモロジーの次数に関する情報も
+含む形に精密化できることに気づいた．
 これを援用して，\textcolor{darkred}{
-	\textbf{層の超局所理論における種々の命題が，
+	\textbf{超局所層理論における種々の命題が，
 	打ち切り超局所台により改良できる}
 }のではないかと思い至った．
 また，それを研究する過程でも，
@@ -190,20 +232,62 @@ Arnoldの分離不能性定理の新しい証明を与えた．
 \input{pieces/p02_purpose_plan_00}
 \section{【２】研究計画（２）研究目的・内容等}
 %　　　　＜＜最大　2ページ＞＞
-
 %s02_purpose_plan_dcpd
-\JSPSInstructions		% <-- 留意事項。これは消すか、コメントアウトしてください。
+%\JSPSInstructions		% <-- 留意事項。これは消すか、コメントアウトしてください。
 %begin 研究目的と研究計画shorter ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-\textbf{\\　　　　　＊＊＊　以下は、あくまで例です。真似しないでください。　＊＊＊\\
-　　　　　＊＊＊　本文はもちろん、節の切り方や論理の組み方は　　　＊＊＊\\
-　　　　　＊＊＊　ご自分の気に入ったスタイルで書いてください。　　＊＊＊}
+\subsection*{\ctext{1} 研究目的・研究方法・研究内容}
+\paragraph{【研究目的】}
+本研究の目的は，打ち切り超局所台の一般理論の拡充と，
+それによる層係数Morse理論の精密化を図ることである．
+\paragraph{【研究方法・研究内容】}
+以下のとおり行う．
+\begin{enumerate}[(1)]
+	\item \textbf{打ち切り超局所台の関手的性質を調べる．}\\
+	%先行研究\cite{KMS03a,KMS03b}での
+	%所謂Grothendieckの六則演算のうち，
+	%打ち切り超局所台の順像・逆像・テンソル積と，
+	%法錐に関する性質が述べられている．
+	%ところが，
+	%内部Hom関手\(\RHOM\)については
+	超局所台は，
+	打ち切り超局所台の関手的性質のいくつかは，
+	普通の超局所台の関手的性質と同じように証明される．
+	各次数のコホモロジーの延長可能性を超局所台を用いて
+	%\cite{KS90}における超局所台の関手的性質の証明の仕方に
+	%沿っている．
+	そこで，
+	\item \textbf{層係数Morse理論を精密化する．}
+	\item \textbf{具体的な多様体での適用例を計算する．}
+\end{enumerate}
 
-	象の卵の研究計画は．．．
+%\paragraph*{\ctext{1} 研究目的，研究方法，研究内容}
+\subsection*{\ctext{2} どのような計画で，何を，どこまで明らかにしようとするのか}
 
-	\vspace{1cm}
+\vspace{1cm}
 	\begin{thebibliography}{99}
-		\bibitem{teramura} 寺村輝夫、「ぼくは王様 - ぞうのたまごのたまごやき」.
-	\end{thebibliography}
+		{\small
+		\bibitem[KMS03a]{KMS03a} M.~Kashiwara, T.~M.~Fernandes, 
+		P.~Schapira, 
+		\textit{Truncated Microsupprt and Holomorphic Solutions 
+		of \(D\)-modules}, 
+		Ann. Scient. \'Ec. Norm. Sup., s\'erie 4, tome 36, 
+		pp.583--399, 2003.
+		\vspace{-6pt}	
+		\bibitem[KMS03b]{KMS03b} M.~Kashiwara, T.~M.~Fernandes, 
+		P.~Schapira, 
+		\textit{Involutivity of Truncated Microsupprts}, 
+		Bull. Soc. math. France, 131 (2), 2003, 
+		pp.259--266.
+		\vspace{-6pt}	
+		\bibitem[KS90]{KS90} M. Kashiwara, P. Schapira, \emph{Sheaves on manifolds}, Grundl. math. Wiss., vol. 292, Springer, 1990.
+		\vspace{-6pt}
+		\bibitem[ST92]{ST92} P.~ Schapira, N.~ Tose, 
+		\textit{Morse Inequalities for \(\mathbf{R}\)-constructible Sheaves}, 
+		Adv. Math. 93, pp.1--8, 1992. 
+		%\vspace{-10pt}
+		}
+\end{thebibliography}
+	
 %end 研究目的と研究計画shorter ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 \input{pieces/p02_purpose_plan_01}
 

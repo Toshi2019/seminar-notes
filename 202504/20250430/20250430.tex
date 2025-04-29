@@ -1,6 +1,6 @@
 %=====================================
-%   semiclassical.tex
-%   Semiclassical Analysis 
+%   20250430.tex
+%   20250430 
 %   toshi2019
 %=====================================
 
@@ -19,7 +19,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[9pt, a4paper, dvipdfmx]{jsarticle}
+\documentclass[leqno, 10pt, a4paper, dvipdfmx]{jsarticle}
 
 % ------------------------
 % usepackage
@@ -41,7 +41,6 @@
 \usepackage{listings}
 \usepackage{mathrsfs}
 \usepackage{mathtools}
-\usepackage{okumacro}
 \usepackage{otf}
 \usepackage{pifont}
 \usepackage{proof}
@@ -389,6 +388,7 @@
 \newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
 \newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
 \newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+\newcommand{\Dbconic}{\mathop{\mathsf{D}^\mathrm{b}_{\rrp}}\nolimits}
 \newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
 \newcommand{\Domplb}{\mathop{\mathsf{D}^\mathrm{lb}}\nolimits}
 
@@ -496,7 +496,7 @@
 \newtheorem{PRP}[AXM]{命題}
 \newtheorem{LMM}[AXM]{補題}
 \newtheorem{CRL}[AXM]{系}
-\newtheorem{EG}{例}
+\newtheorem{EG}[AXM]{例}
 \newtheorem*{EG*}{例}
 \newtheorem{RMK}[AXM]{注意}
 \newtheorem{CNV}[AXM]{約束}
@@ -580,11 +580,8 @@
 \newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
 
 \newcommand{\torus}{\mathbf{T}}
-\newcommand{\Dbt}{\mathcal{S}'}
-\newcommand{\rdfun}{\mathcal{S}}
-\newcommand{\LCTVS}{\mathsf{LCTVS}}
 
-\newcommand{\sgn}{\mathop{\mathrm{sgn}}\nolimits}
+
 
 % ----------------------------
 % documenet 
@@ -594,108 +591,52 @@
 % begin document and end document.
 % ---------------------------
 
-\title{Semiclassical Analysis}
+\title{ゼミノート（4月30日分）}
 \author{Toshi2019}
-\date{\today\footnote{2025/04/01作成開始}}
+\date{\today}
 \begin{document}
 \maketitle
 \tableofcontents
-\section*{はじめに}
-\cite{Zwo12}のまとめノート．
-\section*{凡例}
-\begin{itemize}
-    \item トーラス：\(n\)次元トーラスを\(\torus^n\)で表す．
-\end{itemize}
+\section{圏\(\Dompb(X;\varOmega)\)}
+%\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
 
-
-\section{\(\Dbt\)上のフーリエ変換}
-双対空間
+\(V\)を\(\cotb[X]\)の部分集合とする．
+\(\Dompb(X)\)の充満部分圏\(\mucat[V]{X}\)を次で定める．
+\begin{equation}
+    \Ob(\mucat[V]{X})\coloneqq
+    \left\{F\in\Ob(\Dompb(X));\muS(F)\subset V\right\}
+\end{equation}
+\(\mucat[V]{X}\)は，
+\(\mres[{[1]}]{\mucat[V]{X}}\)をシフト関手，
 \[
-  \Dbt\coloneqq\Hom_{\LCTVS}(\rdfun,\cc)
+    \left\{F\to G\to H\to F[1]\mathrel{;}\text{d.t. in \(\Dompb(X)\)}, F,G,H\in\mucat[V]{X}\right\}
 \]
-上にフーリエ変換を拡張する．
-すると，多くの重要な，しかし滑らかでない表示のフーリエ変換
-を調べることができる．
+を完全三角の族として，三角圏になる．
 
-\begin{DFN}
-  \begin{enumerate}[(i)]
-    \item \(\Dbt\colon=\Dbt(\rr^n)\)で
-    \textbf{\ruby{緩増加}{かんぞうか}分布} (tempered 
-    distribution) の空間を表す．
-    すなわち，\(u\colon \rdfun\to\cc\)が線形で，
-    \(\rdfun\)において\(\varphi_{j}\to\varphi\)ならば\(
-      u(\varphi_{j})\to U(\varphi)
-    \)となるとき，\(u\in\Dbt\)である．
-    \item すべての\(\varphi\in\rdfun\)に対し\(
-      u_{j}(\varphi)\to u(\varphi)
-    \)のとき，\[
-      u_j\to u \quad\text{in \(\Dbt\)}
-    \]とかく．
-  \end{enumerate}
-\end{DFN}
-\begin{DFN}
-  \(u\in\Dbt\)のとき，\[
-    D^{\alpha}u, x^{\alpha}u, \cF u\in\Dbt
-  \]を\(\varphi\in\rdfun\)に対し\begin{align}
-    %\vcenter{
-      D^{\alpha}u(\varphi)&\coloneqq (-1)^{\lvert\alpha\rvert}u(D^{\alpha}\varphi)\\
-      (x^{\alpha}u)(\varphi)&\coloneqq u(x^{\alpha}\varphi)\\
-      (\cF u)(\varphi)&\coloneqq u(\cF \varphi)
-    %}
-  \end{align}とおくことで定める．
-\end{DFN}
 
-\begin{EG}[ディラック測度]
-  定義から，\[
-    \hat{\delta}_{0}(\varphi)
-    =
-    \delta_{0}(\hat{\varphi})
-    =
-    \hat{\varphi}(0)
-    =
-    \int_{\rr^n}^{}{e^{-i\langle{x,0}\rangle}\varphi(x)}~dx
-    =
-    \int_{\rr^n}^{}{\varphi}~dx
-  \]これを次のように解釈する．
-  \[
-    \hat{\delta}_{0}
-    \equiv
-    1.
-  \]
-\end{EG}
 
-\subsubsection*{例2：虚2次形式の指数関数}
-\begin{DFN}
-    実対称正則行列\(Q\)の\textbf{符号数} (signature) を
-    \begin{equation}
-      \sgn{Q}
-      \coloneqq
-      \text{\(Q\)の正の固有値の数}-
-      \text{\(Q\)の負の固有値の数}
-    \end{equation}
-    で定める．
-\end{DFN}
-\begin{THM}[虚指数関数の変換]
-  \(Q\)を\(n\times n\)実対称正則行列とする．
-  このとき，
-  \begin{equation}
-    \cF\left(e^{\frac{i}{2}\langle{Qx,x}\rangle}\right)
-    =
-    \frac{
-      (2\pi)^{n/2}
-      e^{\frac{i\pi}{4}\sgn(Q)}
-    }{
-      {\lvert{\det{Q}}\rvert}^{1/2}
-    }
-    e^{-\frac{i}{2}\langle{Q^{-1}\xi,\xi}\rangle}
-  \end{equation}である．
-\end{THM}
 
-\section{準古典フーリエ変換}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
+  \bibitem[dR]{dR} 
+  de Rham, \textit{Vari\'et\'es diff\'erentiables}, Hermann, 1953.
+  和訳：ド・ラーム, 微分多様体, 東京図書, 1974.
   \bibitem[GKS12]{GKS12} St\'ephane Guillermou, 
   Masaki Kashiwara, Pierre Schapira, 
   \textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
@@ -708,6 +649,18 @@
     Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
   \bibitem[Hat89]{Hat89} 服部晶夫, 多様体 増補版, 岩波全書 288, 岩波書店, 1989.
   %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+  \bibitem[Hor63]{Hor63} Lars H\"ormander, 
+  \textit{Linear Pertial Differential Operators}, Fourth Printing, 
+  Grundlehren der Mathematischen Wissenschaften, 116, Springer, 1963.
+  \bibitem[Hor71]{Hor71} Lars H\"ormander, 
+  \textit{Fourier Integral Operators I}, 
+  Acta Math. 127, 79--183, (1971).
+  \bibitem[Hor89]{Hor89} Lars H\"ormander, 
+  \textit{The Analysis of Linear Pertial Differential Operators I}, Second Edition,
+  Grundlehren der Mathematischen Wissenschaften, 256, Springer, 1989.
+  \bibitem[Hor85]{Hor85} Lars H\"ormander, 
+  \textit{The Analysis of Linear Pertial Differential Operators III}, 
+  Grundlehren der Mathematischen Wissenschaften, 274, Springer, 1985.
   \bibitem[Sch85]{Sch85} Pierre Schapira, 
     \textit{Microdifferential Systems in the Complex Domain}, 
     Grundlehren der Mathematischen Wissenschaften, 269, 

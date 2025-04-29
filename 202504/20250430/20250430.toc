@@ -1,0 +1,1 @@
+\contentsline {section}{\numberline {1}圏\(\mathop {\mathsf {D}^\mathrm {b}}\nolimits (X;\varOmega )\)}{1}{section.1}%

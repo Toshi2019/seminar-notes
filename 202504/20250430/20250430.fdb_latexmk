@@ -1,17 +1,14 @@
 # Fdb version 4
-["dvipdf"] 1745840691.25444 "semiclassical.dvi" "semiclassical.pdf" "semiclassical" 1745840692.91076 0
-  "semiclassical.dvi" 1745840691.11619 10360 e95ce93b602df2119a984773508f2c55 "latex"
+["dvipdf"] 1745842012.36746 "20250430.dvi" "20250430.pdf" "20250430" 1745842013.46173 0
+  "20250430.dvi" 1745842012.23267 7232 6f6bcb522c2cd05d093837187c3a442b "latex"
   (generated)
-  "semiclassical.pdf"
+  "20250430.pdf"
   (rewritten before read)
-["latex"] 1745840689.60375 "/Users/giuseppe/seminar-notes/202504/semiclssical/semiclassical.tex" "semiclassical.dvi" "semiclassical" 1745840692.89332 0
-  "/Users/giuseppe/seminar-notes/202504/semiclssical/semiclassical.tex" 1745840686.4493 23636 6e29b952df2072e95ecdcdbfb3e2824c ""
+["latex"] 1745842010.81105 "/Users/giuseppe/seminar-notes/202504/20250430/20250430.tex" "20250430.dvi" "20250430" 1745842013.45604 0
+  "/Users/giuseppe/seminar-notes/202504/20250430/20250430.tex" 1745842008.71225 22379 4e87162ff8542ad0c924dcca5bc33fa6 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1136768653 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm0800.tfm" 1136768653 1536 05df9db6aeccc4eea94fec15c9024f79 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -183,6 +180,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/atbegshi-ltx.sty" 1705352648 3045 273c666a54e60b9f730964f431a56c1b ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/atveryend-ltx.sty" 1705352648 2462 6bc53756156dbd71c1ad550d30a3b93f ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty" 1705352648 5319 2b738d02ce36ada6dcdd9534940db0ee ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/base/leqno.clo" 1705352648 1958 fd4c49bb58706659140a05db86f351f5 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/bxjatoucs/bxjatoucs.sty" 1571867428 9159 ebd68ea70b64dbc04bdc806c9afa9ea1 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/fancybox/fancybox.sty" 1274111957 27261 5ae6156674330dc345adb79b6e5d8966 ""
@@ -244,7 +242,6 @@
   "/usr/local/texlive/2024/texmf-dist/tex/platex/japanese-otf/otf.sty" 1696882932 25045 fef8e5aee9fb88085e6d18e1b447c2b7 ""
   "/usr/local/texlive/2024/texmf-dist/tex/platex/jsclasses/jsarticle.cls" 1677186565 61387 1c16fa09f9aa344f6b7ed4a7e2c399b2 ""
   "/usr/local/texlive/2024/texmf-dist/tex/platex/jsclasses/jslogo.sty" 1601931076 5585 8e4615c54073c390d14154b29cee89cb ""
-  "/usr/local/texlive/2024/texmf-dist/tex/platex/jsclasses/okumacro.sty" 1625175385 14728 d831cad8c90ed6e34900de3dab7fecb4 ""
   "/usr/local/texlive/2024/texmf-dist/tex/platex/pxjahyper/pxjahyper-ajm.def" 1677704611 24620 2c8150454d133dea44b6ee3e24f728d5 ""
   "/usr/local/texlive/2024/texmf-dist/tex/platex/pxjahyper/pxjahyper-enc.sty" 1677704611 3306 d83802fcf53efd41181daaeea54c0111 ""
   "/usr/local/texlive/2024/texmf-dist/tex/platex/pxjahyper/pxjahyper-uni.def" 1677704611 2847 e2db6afefc89086cc759491532d66ab4 ""
@@ -252,14 +249,14 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "semiclassical.aux" 1745840691.11309 563 cff51f4ffc98a417d18dfd1d66decec4 "latex"
-  "semiclassical.out" 1745840691.11543 286 83a2ab711bfcc408ef919d0478277b1a "latex"
-  "semiclassical.tex" 1745840686.4493 23636 6e29b952df2072e95ecdcdbfb3e2824c ""
-  "semiclassical.toc" 1745840691.11605 180 0ddedbfc123f7d0206d5f5f8e3f98a10 "latex"
+  "20250430.aux" 1745842012.22927 556 a5992f527c9b4e8dd3a2b40c57a297c2 "latex"
+  "20250430.out" 1745842012.23166 141 8a62820c66f5b8f7f29b52e0905eeec7 "latex"
+  "20250430.tex" 1745842008.71225 22379 4e87162ff8542ad0c924dcca5bc33fa6 ""
+  "20250430.toc" 1745842012.23252 120 a77e9a38f11abaa6337542e1ad3ac528 "latex"
   (generated)
-  "semiclassical.aux"
-  "semiclassical.dvi"
-  "semiclassical.log"
-  "semiclassical.out"
-  "semiclassical.toc"
+  "20250430.aux"
+  "20250430.dvi"
+  "20250430.log"
+  "20250430.out"
+  "20250430.toc"
   (rewritten before read)

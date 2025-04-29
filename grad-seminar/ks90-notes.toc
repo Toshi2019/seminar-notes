@@ -52,5 +52,13 @@
 \contentsline {section}{\numberline {5.3}例：局所閉集合から定まる超局所台}{76}{section.5.3}%
 \contentsline {section}{\numberline {5.4}超局所台の関手的性質}{76}{section.5.4}%
 \contentsline {section}{\numberline {5.5}錐状層の超局所台}{80}{section.5.5}%
-\contentsline {chapter}{\numberline {第11章}\(\mathcal {O}_X\)加群と\(\mathcal {D}_X\)加群への応用}{83}{chapter.11}%
-\contentsline {chapter}{参考文献}{84}{chapter*.66}%
+\contentsline {chapter}{\numberline {第6章}超局所台と超局所化}{83}{chapter.6}%
+\contentsline {section}{\numberline {6.1}圏\(\mathop {\mathsf {D}^\mathrm {b}}\nolimits (X;\varOmega )\)}{83}{section.6.1}%
+\contentsline {section}{\numberline {6.2}余接束内の法錐}{83}{section.6.2}%
+\contentsline {section}{\numberline {6.3}順像}{83}{section.6.3}%
+\contentsline {section}{\numberline {6.4}超局所化}{83}{section.6.4}%
+\contentsline {section}{\numberline {6.5}包合性と伝播}{83}{section.6.5}%
+\contentsline {section}{\numberline {6.6}包合的多様体の近傍における層}{83}{section.6.6}%
+\contentsline {section}{\numberline {6.7}超局所化と逆像}{83}{section.6.7}%
+\contentsline {chapter}{\numberline {第11章}\(\mathcal {O}_X\)加群と\(\mathcal {D}_X\)加群への応用}{84}{chapter.11}%
+\contentsline {chapter}{参考文献}{85}{chapter*.67}%

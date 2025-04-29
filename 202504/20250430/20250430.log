@@ -1,15 +1,18 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  28 APR 2025 20:44
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  28 APR 2025 21:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/giuseppe/seminar-notes/202504/semiclssical/semiclassical.tex
-(/Users/giuseppe/seminar-notes/202504/semiclssical/semiclassical.tex
+**/Users/giuseppe/seminar-notes/202504/20250430/20250430.tex
+(/Users/giuseppe/seminar-notes/202504/20250430/20250430.tex
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/platex/jsclasses/jsarticle.cls
 Document Class: jsarticle 2023/02/23 jsclasses (okumura, texjporg)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/leqno.clo
+File: leqno.clo 2016/12/29 v1.2b Standard LaTeX option (left equation numbers)
+)
 Class jsarticle Info: Autodetected engine: upLaTeX on input line 217.
 \jsc@mpt=\dimen156
 \jsc@mmm=\dimen157
@@ -42,7 +45,7 @@ LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
 \jsc@tocl@width=\dimen159
 \@lnumwidth=\dimen160
 \bibindent=\dimen161
-(/usr/local/texlive/2024/texmf-dist/tex/platex/jsclasses/jslogo.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/platex/jsclasses/jslogo.sty
 Package: jslogo 2019/07/25 okumura, texjporg
 LaTeX Info: Redefining \TeX on input line 82.
 LaTeX Info: Redefining \LaTeX on input line 135.
@@ -302,10 +305,6 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \l_MT_below_shortintertext_sep=\dimen197
 \xmathstrut@box=\box86
 \xmathstrut@dim=\dimen198
-) (/usr/local/texlive/2024/texmf-dist/tex/platex/jsclasses/okumacro.sty
-Package: okumacro 2021/07/01 okumura, texjporg
-LaTeX Info: Redefining \yen on input line 120.
-\EXAMPLEWIDTH=\dimen199
 ) (/usr/local/texlive/2024/texmf-dist/tex/platex/japanese-otf/otf.sty
 Package: otf 2023/10/09 TeX JP org, v1.7b8 psitau, u0.30 ttk
 LaTeX Font Info:    Redeclaring symbol font `mincho' on input line 345.
@@ -339,25 +338,25 @@ LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 )) (/usr/local/texlive/2024/texmf-dist/tex/latex/lkproof/proof.sty
-\inferLineSkip=\dimen256
-\inferLabelSkip=\dimen257
-\@LeftOffset=\dimen258
-\@RightOffset=\dimen259
-\@SavedLeftOffset=\dimen260
-\UpperWidth=\dimen261
-\LowerWidth=\dimen262
-\LowerHeight=\dimen263
-\UpperLeftOffset=\dimen264
-\UpperRightOffset=\dimen265
-\UpperCenter=\dimen266
-\LowerCenter=\dimen267
-\UpperAdjust=\dimen268
-\RuleAdjust=\dimen269
-\LowerAdjust=\dimen270
-\RuleWidth=\dimen271
-\HLabelAdjust=\dimen272
-\VLabelAdjust=\dimen273
-\WidthAdjust=\dimen274
+\inferLineSkip=\dimen199
+\inferLabelSkip=\dimen256
+\@LeftOffset=\dimen257
+\@RightOffset=\dimen258
+\@SavedLeftOffset=\dimen259
+\UpperWidth=\dimen260
+\LowerWidth=\dimen261
+\LowerHeight=\dimen262
+\UpperLeftOffset=\dimen263
+\UpperRightOffset=\dimen264
+\UpperCenter=\dimen265
+\LowerCenter=\dimen266
+\UpperAdjust=\dimen267
+\RuleAdjust=\dimen268
+\LowerAdjust=\dimen269
+\RuleWidth=\dimen270
+\HLabelAdjust=\dimen271
+\VLabelAdjust=\dimen272
+\WidthAdjust=\dimen273
 \@UpperPart=\box87
 \@LowerPart=\box88
 \@LabelPart=\box89
@@ -366,9 +365,9 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip63
 \subfigcapskip=\skip64
-\subfigcaptopadj=\dimen275
+\subfigcaptopadj=\dimen274
 \subfigbottomskip=\skip65
-\subfigcapmargin=\dimen276
+\subfigcapmargin=\dimen275
 \subfiglabelskip=\skip66
 \c@subfigure=\count297
 \c@lofdepth=\count298
@@ -383,8 +382,8 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@bottom=\skip68
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks42
-\pgfutil@tempdima=\dimen277
-\pgfutil@tempdimb=\dimen278
+\pgfutil@tempdima=\dimen276
+\pgfutil@tempdimb=\dimen277
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box91
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/pgf.revision.tex)
@@ -399,16 +398,16 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks45
 ))
-\pgf@x=\dimen279
-\pgf@y=\dimen280
-\pgf@xa=\dimen281
-\pgf@ya=\dimen282
-\pgf@xb=\dimen283
-\pgf@yb=\dimen284
-\pgf@xc=\dimen285
-\pgf@yc=\dimen286
-\pgf@xd=\dimen287
-\pgf@yd=\dimen288
+\pgf@x=\dimen278
+\pgf@y=\dimen279
+\pgf@xa=\dimen280
+\pgf@ya=\dimen281
+\pgf@xb=\dimen282
+\pgf@yb=\dimen283
+\pgf@xc=\dimen284
+\pgf@yc=\dimen285
+\pgf@xd=\dimen286
+\pgf@yd=\dimen287
 \w@pgf@writea=\write4
 \r@pgf@reada=\read3
 \c@pgf@counta=\count301
@@ -454,7 +453,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen289
+\pgfmath@dimen=\dimen288
 \pgfmath@count=\count309
 \pgfmath@box=\box92
 \pgfmath@toks=\toks49
@@ -464,28 +463,28 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 \c@pgfmathroundto@lastzeros=\count310
 )) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen290
-\pgf@picmaxx=\dimen291
-\pgf@picminy=\dimen292
-\pgf@picmaxy=\dimen293
-\pgf@pathminx=\dimen294
-\pgf@pathmaxx=\dimen295
-\pgf@pathminy=\dimen296
-\pgf@pathmaxy=\dimen297
-\pgf@xx=\dimen298
-\pgf@xy=\dimen299
-\pgf@yx=\dimen300
-\pgf@yy=\dimen301
-\pgf@zx=\dimen302
-\pgf@zy=\dimen303
+\pgf@picminx=\dimen289
+\pgf@picmaxx=\dimen290
+\pgf@picminy=\dimen291
+\pgf@picmaxy=\dimen292
+\pgf@pathminx=\dimen293
+\pgf@pathmaxx=\dimen294
+\pgf@pathminy=\dimen295
+\pgf@pathmaxy=\dimen296
+\pgf@xx=\dimen297
+\pgf@xy=\dimen298
+\pgf@yx=\dimen299
+\pgf@yy=\dimen300
+\pgf@zx=\dimen301
+\pgf@zy=\dimen302
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen304
-\pgf@path@lasty=\dimen305
+\pgf@path@lastx=\dimen303
+\pgf@path@lasty=\dimen304
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen306
-\pgf@shorten@start@additional=\dimen307
+\pgf@shorten@end@additional=\dimen305
+\pgf@shorten@start@additional=\dimen306
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box93
@@ -494,12 +493,12 @@ File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@picture@serial@count=\count311
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen308
+\pgflinewidth=\dimen307
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen309
-\pgf@pt@y=\dimen310
-\pgf@pt@temp=\dimen311
+\pgf@pt@x=\dimen308
+\pgf@pt@y=\dimen309
+\pgf@pt@temp=\dimen310
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
@@ -508,10 +507,10 @@ File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen312
+\pgfarrowsep=\dimen311
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen313
+\pgf@max=\dimen312
 \pgf@sys@shading@range@num=\count312
 \pgf@shadingcount=\count313
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
@@ -534,14 +533,14 @@ File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen314
-\pgf@nodesepend=\dimen315
+\pgf@nodesepstart=\dimen313
+\pgf@nodesepend=\dimen314
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 )) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen316
-\pgffor@skip=\dimen317
+\pgffor@iter=\dimen315
+\pgffor@skip=\dimen316
 \pgffor@stack=\toks52
 \pgffor@toks=\toks53
 )) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
@@ -549,16 +548,16 @@ Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@plot@mark@count=\count314
-\pgfplotmarksize=\dimen318
+\pgfplotmarksize=\dimen317
 )
-\tikz@lastx=\dimen319
-\tikz@lasty=\dimen320
-\tikz@lastxsaved=\dimen321
-\tikz@lastysaved=\dimen322
-\tikz@lastmovetox=\dimen323
-\tikz@lastmovetoy=\dimen324
-\tikzleveldistance=\dimen325
-\tikzsiblingdistance=\dimen326
+\tikz@lastx=\dimen318
+\tikz@lasty=\dimen319
+\tikz@lastxsaved=\dimen320
+\tikz@lastysaved=\dimen321
+\tikz@lastmovetox=\dimen322
+\tikz@lastmovetoy=\dimen323
+\tikzleveldistance=\dimen324
+\tikzsiblingdistance=\dimen325
 \tikz@figbox=\box98
 \tikz@figbox@bg=\box99
 \tikz@tempbox=\box100
@@ -588,45 +587,45 @@ Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
  Xy-pic is free software: see the User's Guide for details.
 
 Loading kernel: messages; fonts; allocations: state,
-\X@c=\dimen327
-\Y@c=\dimen328
-\U@c=\dimen329
-\D@c=\dimen330
-\L@c=\dimen331
-\R@c=\dimen332
+\X@c=\dimen326
+\Y@c=\dimen327
+\U@c=\dimen328
+\D@c=\dimen329
+\L@c=\dimen330
+\R@c=\dimen331
 \Edge@c=\toks56
-\X@p=\dimen333
-\Y@p=\dimen334
-\U@p=\dimen335
-\D@p=\dimen336
-\L@p=\dimen337
-\R@p=\dimen338
+\X@p=\dimen332
+\Y@p=\dimen333
+\U@p=\dimen334
+\D@p=\dimen335
+\L@p=\dimen336
+\R@p=\dimen337
 \Edge@p=\toks57
-\X@origin=\dimen339
-\Y@origin=\dimen340
-\X@xbase=\dimen341
-\Y@xbase=\dimen342
-\X@ybase=\dimen343
-\Y@ybase=\dimen344
-\X@min=\dimen345
-\Y@min=\dimen346
-\X@max=\dimen347
-\Y@max=\dimen348
+\X@origin=\dimen338
+\Y@origin=\dimen339
+\X@xbase=\dimen340
+\Y@xbase=\dimen341
+\X@ybase=\dimen342
+\Y@ybase=\dimen343
+\X@min=\dimen344
+\Y@min=\dimen345
+\X@max=\dimen346
+\Y@max=\dimen347
 \lastobjectbox@=\box102
 \zerodotbox@=\box103
-\almostz@=\dimen349
+\almostz@=\dimen348
  direction,
-\d@X=\dimen350
-\d@Y=\dimen351
+\d@X=\dimen349
+\d@Y=\dimen350
 \K@=\count323
 \KK@=\count324
 \Direction=\count325
-\K@dXdY=\dimen352
-\K@dYdX=\dimen353
+\K@dXdY=\dimen351
+\K@dYdX=\dimen352
 \xyread@=\read5
 \xywrite@=\write5
 \csp@=\count326
-\quotPTK@=\dimen354
+\quotPTK@=\dimen353
  utility macros; pictures: \xy, positions,
 \swaptoks@@=\toks58
 \connectobjectbox@@=\box104
@@ -642,14 +641,14 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
 \crv@cnt@=\count327
 \crvpts@=\toks60
 \splinebox@=\box105
-\splineval@=\dimen355
-\splinedepth@=\dimen356
-\splinetol@=\dimen357
-\splinelength@=\dimen358
+\splineval@=\dimen354
+\splinedepth@=\dimen355
+\splinetol@=\dimen356
+\splinelength@=\dimen357
  circles,
-\L@=\dimen359
+\L@=\dimen358
  loaded) Xy-pic pdf driver: `curve' extension support (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xypdf-cu.tex loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xyframe.tex  Xy-pic option: Frame and Bracket extension v.3.14 loaded) Xy-pic pdf driver: `frame' extension support (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xypdf-fr.tex loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xycmtip.tex  Xy-pic option: Computer Modern tip extension v.3.7 (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xytips.tex  Xy-pic option: More Tips extension v.3.11 loaded) loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xyline.tex  Xy-pic option: Line styles extension v.3.10
-\xylinethick@=\dimen360
+\xylinethick@=\dimen359
  loaded) Xy-pic pdf driver: `line' extension support (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xypdf-li.tex loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xyrotate.tex  Xy-pic option: Rotate and Scale extension v.3.8 loaded) Xy-pic pdf driver: `rotate' extension support (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xypdf-ro.tex loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xycolor.tex  Xy-pic option: Colour extension v.3.11 loaded) Xy-pic pdf driver: `color' extension support (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xypdf-co.tex loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xymatrix.tex  Xy-pic option: Matrix feature v.3.14
 \Row=\count328
 \Col=\count329
@@ -664,10 +663,10 @@ File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen361
-\pgfarrowlength=\dimen362
-\pgfarrowwidth=\dimen363
-\pgfarrowlinewidth=\dimen364
+\pgfarrowinset=\dimen360
+\pgfarrowlength=\dimen361
+\pgfarrowwidth=\dimen362
+\pgfarrowlinewidth=\dimen363
 )) (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
  (/usr/local/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
@@ -704,7 +703,7 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count334
 )
-\@linkdim=\dimen365
+\@linkdim=\dimen364
 \Hy@linkcounter=\count335
 \Hy@pagecounter=\count336
  (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/pd1enc.def
@@ -733,15 +732,15 @@ Package hyperref Info: Bookmarks ON on input line 4446.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4784.
-\XeTeXLinkMargin=\dimen366
+\XeTeXLinkMargin=\dimen365
  (/usr/local/texlive/2024/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/usr/local/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count339
-\Field@Width=\dimen367
-\Fld@charsize=\dimen368
+\Field@Width=\dimen366
+\Fld@charsize=\dimen367
 Package hyperref Info: Hyper figures OFF on input line 6063.
 Package hyperref Info: Link nesting OFF on input line 6068.
 Package hyperref Info: Hyper index ON on input line 6071.
@@ -781,7 +780,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 LaTeX Warning: Package "xcolor" has already been loaded: ignoring load-time
 (LaTeX)        option "dvipdfmx".
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 69.
+Package hyperref Info: Option `colorlinks' set `true' on input line 68.
 (/usr/local/texlive/2024/texmf-dist/tex/platex/pxjahyper/pxjahyper.sty
 Package: pxjahyper 2023/03/01 v1.3
  (/usr/local/texlive/2024/texmf-dist/tex/platex/pxjahyper/pxjahyper-enc.sty
@@ -802,180 +801,193 @@ Package pxjahyper Info: The setup for hyperref 'unicode' is applied.
 \c@Axiom+=\count349
 \c@Alert+=\count350
 \c@AXM=\count351
-\c@EG=\count352
  (/usr/local/texlive/2024/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip70
-\fb@frw=\dimen369
-\fb@frh=\dimen370
-\FrameRule=\dimen371
-\FrameSep=\dimen372
+\fb@frw=\dimen368
+\fb@frh=\dimen369
+\FrameRule=\dimen370
+\FrameSep=\dimen371
 )
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 600.
+(Font)              scaled to size 9.24683pt on input line 597.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 600.
+(Font)              scaled to size 9.24683pt on input line 597.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-dvipdfmx.def
 File: l3backend-dvipdfmx.def 2024-02-20 L3 backend support: dvipdfmx
-\g__graphics_track_int=\count353
+\g__graphics_track_int=\count352
 \l__pdf_internal_box=\box107
-\g__pdf_backend_object_int=\count354
-\g__pdf_backend_annotation_int=\count355
-\g__pdf_backend_link_int=\count356
-) (./semiclassical.aux)
-\openout1 = `semiclassical.aux'.
+\g__pdf_backend_object_int=\count353
+\g__pdf_backend_annotation_int=\count354
+\g__pdf_backend_link_int=\count355
+) (./20250430.aux)
+\openout1 = `20250430.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 600.
-LaTeX Font Info:    ... okay on input line 600.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 600.
-LaTeX Font Info:    ... okay on input line 600.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 600.
-LaTeX Font Info:    ... okay on input line 600.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 600.
-LaTeX Font Info:    ... okay on input line 600.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 600.
-LaTeX Font Info:    ... okay on input line 600.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 600.
-LaTeX Font Info:    ... okay on input line 600.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 600.
-LaTeX Font Info:    ... okay on input line 600.
-LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 600.
-LaTeX Font Info:    ... okay on input line 600.
-LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 600.
-LaTeX Font Info:    ... okay on input line 600.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 600.
-LaTeX Font Info:    ... okay on input line 600.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 600.
-LaTeX Font Info:    ... okay on input line 600.
-\c@lstlisting=\count357
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 597.
+LaTeX Font Info:    ... okay on input line 597.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 597.
+LaTeX Font Info:    ... okay on input line 597.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 597.
+LaTeX Font Info:    ... okay on input line 597.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 597.
+LaTeX Font Info:    ... okay on input line 597.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 597.
+LaTeX Font Info:    ... okay on input line 597.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 597.
+LaTeX Font Info:    ... okay on input line 597.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 597.
+LaTeX Font Info:    ... okay on input line 597.
+LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 597.
+LaTeX Font Info:    ... okay on input line 597.
+LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 597.
+LaTeX Font Info:    ... okay on input line 597.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 597.
+LaTeX Font Info:    ... okay on input line 597.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 597.
+LaTeX Font Info:    ... okay on input line 597.
+\c@lstlisting=\count356
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 600.
+(Font)              scaled to size 6.47278pt on input line 597.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 600.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 600.
+(Font)              scaled to size 4.62341pt on input line 597.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 597.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 600.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 597.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 600.
+(Font)              scaled to size 9.24683pt on input line 597.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 600.
+(Font)              scaled to size 6.47278pt on input line 597.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 600.
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 600.
+(Font)              scaled to size 4.62341pt on input line 597.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 597.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Package xypdf Info: Line width: 0.39998pt on input line 600.
-Package hyperref Info: Link coloring ON on input line 600.
- (./semiclassical.out) (./semiclassical.out)
+Package xypdf Info: Line width: 0.39998pt on input line 597.
+Package hyperref Info: Link coloring ON on input line 597.
+ (./20250430.out) (./20250430.out)
 \@outlinefile=\write6
-\openout6 = `semiclassical.out'.
+\openout6 = `20250430.out'.
 
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 602.
+(Font)              scaled to size 15.9785pt on input line 599.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 602.
+(Font)              scaled to size 15.9785pt on input line 599.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 602.
+(Font)              scaled to size 11.09619pt on input line 599.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 602.
+(Font)              scaled to size 11.09619pt on input line 599.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 602.
+(Font)              scaled to size 7.39746pt on input line 599.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 602.
+(Font)              scaled to size 5.5481pt on input line 599.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 602.
+(Font)              scaled to size 11.09619pt on input line 599.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 602.
+(Font)              scaled to size 7.39746pt on input line 599.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 602.
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 602.
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 602.
+(Font)              scaled to size 5.5481pt on input line 599.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 602.
+(Font)              scaled to size 9.24683pt on input line 599.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 602.
+(Font)              scaled to size 9.24683pt on input line 599.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 602.
+(Font)              scaled to size 13.31541pt on input line 599.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 602.
+(Font)              scaled to size 13.31541pt on input line 599.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 602.
+(Font)              scaled to size 13.31541pt on input line 599.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 602.
- (./semiclassical.toc)
+(Font)              scaled to size 13.31541pt on input line 599.
+ (./20250430.toc)
 \tf@toc=\write7
-\openout7 = `semiclassical.toc'.
+\openout7 = `20250430.toc'.
 
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 607.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 607.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 611.
+(Font)              scaled to size 13.31541pt on input line 600.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 611.
+(hyperref)                removing `math shift' on input line 600.
 
-LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 621.
-LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 621.
-LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 621.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 621.
-LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <5> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 623.
-LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 623.
-LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <5> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 623.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 623.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 600.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 600.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 600.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\DualLang@Mfontsw' on input line 600.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\nolimits' on input line 600.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\varOmega' on input line 600.
+
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 632.
+(Font)              scaled to size 6.47278pt on input line 606.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 632.
+(Font)              scaled to size 4.62341pt on input line 606.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 638.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 642.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 645.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 648.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 653.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 656.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 659.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 662.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 665.
 [1
 
 ]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 701.
+(Font)              No change on input line 669.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 669.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 4.62341pt on input line 669.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 704.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 707.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 712.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 716.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 719.
- [2] (./semiclassical.aux)
+(Font)              No change on input line 672.
+ [2] (./20250430.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `semiclassical.out' has not changed.
-(rerunfilecheck)             Checksum: 83A2AB711BFCC408EF919D0478277B1A;286.
+Package rerunfilecheck Info: File `20250430.out' has not changed.
+(rerunfilecheck)             Checksum: 8A62820C66F5B8F7F29B52E0905EEEC7;141.
  ) 
 Here is how much of TeX's memory you used:
- 30312 strings out of 474774
- 530031 string characters out of 5758801
- 1935032 words of memory out of 5000000
- 52115 multiletter control sequences out of 15000+600000
- 617663 words of font info for 171 fonts, out of 8000000 for 9000
+ 30174 strings out of 474774
+ 528084 string characters out of 5758801
+ 1934032 words of memory out of 5000000
+ 51980 multiletter control sequences out of 15000+600000
+ 616285 words of font info for 165 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 84i,8n,93p,3272b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,9n,93p,3263b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on semiclassical.dvi (2 pages, 10360 bytes).
+Output written on 20250430.dvi (2 pages, 7232 bytes).
