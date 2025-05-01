@@ -789,7 +789,36 @@
     \(\alpha_t\)は体積形式（特に非退化）なので，
     各\(0\leqq t\leqq 1\)に対し，ベクトル場
     \(X_t\)で\(i_{X_{t}}\alpha_t=-\gamma\)をみたすもの
-    が存在する\footnote{音楽同型みたいなやつ？}．
+    が存在する\footnote{
+        局所的に\(
+            -\gamma=
+            \sum_{j=1}^{m}c_{j}(x)
+            dx_1\wedge\dots\wedge 
+            \widehat{dx_{j}}
+            \wedge\dots\wedge dx_{m-1}
+        \), \(
+            \alpha_t=a(x)dx_1\wedge\dots\wedge dx_{m}
+        \), \(
+            X_t
+            =\sum_{j=1}^{m}
+            v^{j}(x)\frac{\partial}{\partial x_j}
+        \)と表す．このとき，\(i_{X_{t}}\alpha_t=-\gamma\)は
+        \(
+            i_{X_{t}}\alpha_t
+            =
+            \sum_{j=1}^{m}
+            (-1)^{j-1}v^{j}(x)a(x)
+            dx_1\wedge\dots\wedge 
+            \widehat{dx_{j}}
+            \wedge\dots\wedge dx_{m-1}
+            =\sum_{j=1}^{m}c_{j}(x)
+            dx_1\wedge\dots\wedge 
+            \widehat{dx_{j}}
+            \wedge\dots\wedge dx_{m-1}
+        \)となる．
+        したがって，\(v^{j}(x)=(-1)^{j-1}c_{j}/a(x)\)とおけばよい．
+        もちろん\(\alpha_t\)が体積形式なので\(a(x)\)は0にならない．
+    }．
     この\((X_t)\)に対し，\(\varphi^t\)を\(X_t\)の定める流れで
     \(\varphi^0=\id\)をみたすものとする．
     \(M\)はコンパクトなのですべての\(t\)に対し\(\varphi^t\)が存在する．
