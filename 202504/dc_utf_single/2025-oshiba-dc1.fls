@@ -113,6 +113,8 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/booktabs/booktabs.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lineno/lineno.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lineno/lineno.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
