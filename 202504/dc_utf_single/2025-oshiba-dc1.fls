@@ -229,6 +229,14 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcbx1200.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-v.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm
+INPUT ./figs/dc1-image1.png
+INPUT ./figs/dc1-image1.png
+INPUT ./figs/dc1-image1.png
+INPUT extractbb -B cropbox -O figs/dc1-image1.png
+INPUT ./figs/dc1-image2.png
+INPUT ./figs/dc1-image2.png
+INPUT ./figs/dc1-image2.png
+INPUT extractbb -B cropbox -O figs/dc1-image2.png
 INPUT ./pieces/p02_purpose_plan_01.tex
 INPUT ./pieces/p02_purpose_plan_01.tex
 INPUT ./pieces/p02_purpose_plan_01.tex
