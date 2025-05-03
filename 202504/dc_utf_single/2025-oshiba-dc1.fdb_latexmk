@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1746187828.25778 "2025-oshiba-dc1.dvi" "2025-oshiba-dc1.pdf" "2025-oshiba-dc1" 1746187829.28269 0
-  "2025-oshiba-dc1.dvi" 1746187828.17175 21804 07087d7d95e8ccbf6244a80348b1897b "latex"
+["dvipdf"] 1746279287.05025 "2025-oshiba-dc1.dvi" "2025-oshiba-dc1.pdf" "2025-oshiba-dc1" 1746279288.47964 0
+  "2025-oshiba-dc1.dvi" 1746279286.9674 21744 bb6d8d2d2a8966e91e4929228b0d62db "latex"
   (generated)
   "2025-oshiba-dc1.pdf"
   (rewritten before read)
-["latex"] 1746187827.14014 "/Users/giuseppe/seminar-notes/202504/dc_utf_single/2025-oshiba-dc1.tex" "2025-oshiba-dc1.dvi" "2025-oshiba-dc1" 1746187829.28019 0
-  "/Users/giuseppe/seminar-notes/202504/dc_utf_single/2025-oshiba-dc1.tex" 1746187825.60295 21354 e6c07021b9d984bf1f53a9aed5dd669a ""
+["latex"] 1746279285.88003 "/Users/giuseppe/seminar-notes/202504/dc_utf_single/2025-oshiba-dc1.tex" "2025-oshiba-dc1.dvi" "2025-oshiba-dc1" 1746279288.47621 0
+  "/Users/giuseppe/seminar-notes/202504/dc_utf_single/2025-oshiba-dc1.tex" 1746279283.99118 21451 4ceb8199d62c13cf3e2f6f1cda3d2782 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcbx1200.tfm" 1136768653 1536 c09172c8f235393e6235bb4758357c41 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -87,8 +87,8 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "2025-oshiba-dc1.aux" 1746187828.16856 2452 fb82a43e5b16217c0b80ec8c3eecf788 "latex"
-  "2025-oshiba-dc1.tex" 1746187825.60295 21354 e6c07021b9d984bf1f53a9aed5dd669a ""
+  "2025-oshiba-dc1.aux" 1746279286.96464 2452 fb82a43e5b16217c0b80ec8c3eecf788 "latex"
+  "2025-oshiba-dc1.tex" 1746279283.99118 21451 4ceb8199d62c13cf3e2f6f1cda3d2782 ""
   "figs/dc1-image1.png" 1746187549.59369 68503 240054c719217a0875a096b61d6921b8 ""
   "figs/dc1-image2.png" 1746187549.60472 67119 f2f43649cfc41019dad932b5ad867782 ""
   "pieces/form00_header.tex" 1745149192.42417 2443 898eaa7c178a66c648960fb6dcbf9b36 ""
