@@ -233,10 +233,10 @@ INPUT ./figs/dc1-image1.png
 INPUT ./figs/dc1-image1.png
 INPUT ./figs/dc1-image1.png
 INPUT extractbb -B cropbox -O figs/dc1-image1.png
-INPUT ./figs/dc1-image2.png
-INPUT ./figs/dc1-image2.png
-INPUT ./figs/dc1-image2.png
-INPUT extractbb -B cropbox -O figs/dc1-image2.png
+INPUT ./figs/dc1-image2-1.png
+INPUT ./figs/dc1-image2-1.png
+INPUT ./figs/dc1-image2-1.png
+INPUT extractbb -B cropbox -O figs/dc1-image2-1.png
 INPUT ./pieces/p02_purpose_plan_01.tex
 INPUT ./pieces/p02_purpose_plan_01.tex
 INPUT ./pieces/p02_purpose_plan_01.tex
