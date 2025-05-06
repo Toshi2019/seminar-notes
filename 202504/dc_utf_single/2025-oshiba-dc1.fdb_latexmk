@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1746291974.10678 "2025-oshiba-dc1.dvi" "2025-oshiba-dc1.pdf" "2025-oshiba-dc1" 1746291977.06796 0
-  "2025-oshiba-dc1.dvi" 1746291973.95078 23680 1f5dc319db566b6cde48f9a846b28192 "latex"
+["dvipdf"] 1746513293.49224 "2025-oshiba-dc1.dvi" "2025-oshiba-dc1.pdf" "2025-oshiba-dc1" 1746513294.82643 0
+  "2025-oshiba-dc1.dvi" 1746513293.39233 25488 85d4f0cbf2504f72d54d2ba9f469080c "latex"
   (generated)
   "2025-oshiba-dc1.pdf"
   (rewritten before read)
-["latex"] 1746291971.60949 "/Users/giuseppe/seminar-notes/202504/dc_utf_single/2025-oshiba-dc1.tex" "2025-oshiba-dc1.dvi" "2025-oshiba-dc1" 1746291977.06228 0
-  "/Users/giuseppe/seminar-notes/202504/dc_utf_single/2025-oshiba-dc1.tex" 1746291966.45912 24554 c917d1fe44de4caa9ecf52a0cf59ed94 ""
+["latex"] 1746513292.3257 "/Users/giuseppe/seminar-notes/202504/dc_utf_single/2025-oshiba-dc1.tex" "2025-oshiba-dc1.dvi" "2025-oshiba-dc1" 1746513294.82391 0
+  "/Users/giuseppe/seminar-notes/202504/dc_utf_single/2025-oshiba-dc1.tex" 1746513290.52518 26600 33562b68259c72745fe6dc081cb08ec0 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcbx1200.tfm" 1136768653 1536 c09172c8f235393e6235bb4758357c41 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -87,8 +87,8 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "2025-oshiba-dc1.aux" 1746291973.94731 2190 803497027a379b7a26c9599a5aa69a5b "latex"
-  "2025-oshiba-dc1.tex" 1746291966.45912 24554 c917d1fe44de4caa9ecf52a0cf59ed94 ""
+  "2025-oshiba-dc1.aux" 1746513293.38956 2151 0dd68514ddb26a518a27544ee96fd189 "latex"
+  "2025-oshiba-dc1.tex" 1746513290.52518 26600 33562b68259c72745fe6dc081cb08ec0 ""
   "figs/dc1-image1.png" 1746187549.59369 68503 240054c719217a0875a096b61d6921b8 ""
   "figs/dc1-image2-1.png" 1746285926.16499 74609 aeb2434ccc2eb8dc68982c3043d9c2a0 ""
   "pieces/form00_header.tex" 1745149192.42417 2443 898eaa7c178a66c648960fb6dcbf9b36 ""
