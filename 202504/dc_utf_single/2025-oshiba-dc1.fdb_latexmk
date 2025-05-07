@@ -1,14 +1,13 @@
 # Fdb version 4
-["dvipdf"] 1746604590.01787 "2025-oshiba-dc1.dvi" "2025-oshiba-dc1.pdf" "2025-oshiba-dc1" 1746604592.0537 0
-  "2025-oshiba-dc1.dvi" 1746604589.81131 28660 6e4b3ab880168b003ce4ae5761ac30c2 "latex"
+["dvipdf"] 1746612774.06154 "2025-oshiba-dc1.dvi" "2025-oshiba-dc1.pdf" "2025-oshiba-dc1" 1746612775.40967 0
+  "2025-oshiba-dc1.dvi" 1746612773.97672 33972 b62d000e4fb910530e46745281ce4a7f "latex"
   (generated)
   "2025-oshiba-dc1.pdf"
   (rewritten before read)
-["latex"] 1746604586.83079 "/Users/giuseppe/seminar-notes/202504/dc_utf_single/2025-oshiba-dc1.tex" "2025-oshiba-dc1.dvi" "2025-oshiba-dc1" 1746604592.04996 0
-  "/Users/giuseppe/seminar-notes/202504/dc_utf_single/2025-oshiba-dc1.tex" 1746604578.52655 28991 2ae819e47729b0aa58c6852d2ecb8892 ""
+["latex"] 1746612772.75155 "/Users/giuseppe/seminar-notes/202504/dc_utf_single/2025-oshiba-dc1.tex" "2025-oshiba-dc1.dvi" "2025-oshiba-dc1" 1746612775.40503 0
+  "/Users/giuseppe/seminar-notes/202504/dc_utf_single/2025-oshiba-dc1.tex" 1746612770.76868 32528 01e06487ab26b3d36896dc507208a5e6 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcbx1200.tfm" 1136768653 1536 c09172c8f235393e6235bb4758357c41 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -87,8 +86,8 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "2025-oshiba-dc1.aux" 1746604589.80832 2514 9dbfdf373e912fd480e70b526046a6b2 "latex"
-  "2025-oshiba-dc1.tex" 1746604578.52655 28991 2ae819e47729b0aa58c6852d2ecb8892 ""
+  "2025-oshiba-dc1.aux" 1746612773.97436 1869 d4a9eedbd9113ec89fd927436c2c3e0a "latex"
+  "2025-oshiba-dc1.tex" 1746612770.76868 32528 01e06487ab26b3d36896dc507208a5e6 ""
   "figs/dc1-image1.png" 1746187549.59369 68503 240054c719217a0875a096b61d6921b8 ""
   "figs/dc1-image2-1.png" 1746285926.16499 74609 aeb2434ccc2eb8dc68982c3043d9c2a0 ""
   "pieces/form00_header.tex" 1745149192.42417 2443 898eaa7c178a66c648960fb6dcbf9b36 ""
