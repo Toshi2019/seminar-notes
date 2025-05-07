@@ -780,9 +780,9 @@
     \item 一般に
     %\vspace{-2\baselineskip}
     \begin{align*}
-      \vspace{-2\baselineskip}
+      %\vspace{-2\baselineskip}
       \Rder{\pi_{\ast}}\muhom(G\to F)&\cong\RHOM(G,f^{!}F),\\
-      \vspace{-2\baselineskip}
+      %\vspace{-2\baselineskip}
       \Rder{\pi_{\ast}}\muhom(F\leftarrow G)&\cong\RHOM(f^{-1}F,G).
     \end{align*}
     \(Y=X\)で\(f\)が恒等射の場合はとくに\[
@@ -808,6 +808,7 @@
 \end{PRP}
 \end{leftbar}
 \begin{proof}
+  (i) 
   定理4.3.2から\begin{align*}
     \Rder{\pi_{\ast}}\mu_{\diag[]}\RHOM(\tilde{q}_2^{-1}G,\tilde{q}_1^{!}F)
     &\underset{(1)}{\cong}
@@ -822,7 +823,7 @@
   である．ただし，それぞれの同型の根拠は次のとおり．
   \begin{enumerate}[(1)]
     \item 定理4.3.2 (iv) の同型\(
-      \mres[\mu_M(F)]{M}\cong \mres[\RG_{M}(F)]{M}
+      \mres[\mu_M(F)]{M}\cong i^{!}F
     \)と同一視\(Y\cong\diag[]\)から従う．
     詳しくは以下のようになる．
     \(i\colon \diag[]\hookrightarrow X\times Y\)を閉うめこみ，
@@ -842,7 +843,8 @@
     である．
     \item \(\RG_{\diag[]}\)に関する公式(2.6.9)
     \item \(\tilde{q}_2\)に関する順像逆像随伴
-    \item これも同一視からくる．詳しくは図式\[\vcenter{\xymatrix{
+    \item これも同一視からくる．詳しくかくと，
+    図式\[\vcenter{\xymatrix{
       &
       X\times Y
       \ar[ld]_-{\tilde{q}_1}
@@ -863,7 +865,7 @@
     \end{align*}
     のようになる．
   \end{enumerate}
-  \(\pi=\pi\circ a\)に注意すれば同様に\begin{align*}
+  2つ目の式は，\(\pi=\pi\circ a\)に注意すれば同様に\begin{align*}
     \Rder{\pi_{\ast}}(\mu_{\diag[]}\RHOM(\tilde{q}_1^{-1}F,\tilde{q}_{2}^{!}G))^{a}
     &\underset{}{\cong}
     \Rder{\pi_{\ast}}\mu_{\diag[]}\RHOM(\tilde{q}_1^{-1}F,\tilde{q}_{2}^{!}G)\\
@@ -877,9 +879,193 @@
     \RHOM(f^{-1}F,G)
   \end{align*}
   である．
+
+  \(Y=X\)で\(f=\id_X\)のときは，
+  \begin{align*}
+    \Rder{\pi_{\ast}}\muhom(G,F)
+    &=\Rder{\pi_{\ast}}\muhom(G\to F)\\
+    &\cong\RHOM(G,\id_{X}^{!}F)\\
+    &=\RHOM(G,F)
+  \end{align*}である．
+
+  (ii) 
+  命題3.4.4.を用いる．
+  \begin{PRP}[{\cite[Prop.3.4.4.]{KS90}}]
+    \(X\)と\(Y\)を有限c柔軟次元局所コンパクト（ハウスドルフ）空間とし，
+    \(q_1\)と\(q_2\)をそれぞれ\(X\times Y\)から\(X\)と\(Y\)への射影とする．
+    \(F\in\Dompb(A_X)\), \(G\in\Dompb(A_Y)\)とし，\(F\)はコホモロジー構成可能層とする．
+    このとき，
+    \[
+      \rmD{F}\letens G\to \RHOM(q_1^{-1}F,q_2^{!}G)
+    \]は同型である．
+    \(X\)が\(C^0\)多様体ならば，\[
+      \rmD'{F}\letens G\to \RHOM(q_1^{-1}F,q_2^{!}G)
+    \]も同型である．
+  \end{PRP}
+  これより，
+  \begin{align*}
+    \Rder{\pi_{!}}\mu_{\diag}\RHOM(\tilde{q}_2^{-1}G,\tilde{q}_1^{!}F)
+    &\cong
+    \Rder{\pi_{!}}\mu_{\diag}(\rmD'G\letens F)\\
+    &\cong
+    i^{-1}(\rmD'G\letens F)\tens[] \omega_{\diag/{X\times Y}}\\
+    &\cong
+    i^{-1}\tilde{q}_2^{-1}\rmD'G\tens i^{-1}\tilde{q}_1^{-1}F\tens[] \omega_{\diag/{X\times Y}}\\
+    &\cong
+    \varphi^{-1}\rmD'G\tens f^{-1}F\tens[] \omega_{\diag/{X\times Y}}\\
+    &\cong
+    \rmD'G\tens f^{-1}F\tens[] \omega_{\diag/{X\times Y}}
+  \end{align*}
 \end{proof}
 
+関手\(\muhom\)は佐藤超局所化の関手を一般化したものである．
 
+\begin{leftbar}
+\begin{PRP}
+  \(Y\)を\(X\)の閉部分多様体とし，
+  \(j\)をうめこみ\(\conm[Y]{X}\to \cotb[X]\)とする．
+  \(F\in\Dompb(X)\)とすると，次の同型が存在する．
+  \[
+    \muhom(A_Y,F)\cong j_{\ast}\mu_{Y}F.
+  \]
+\end{PRP}
+\end{leftbar}
+\begin{proof}
+  \(f\)をうめこみ\(Y\hookrightarrow X\)とする．このとき図式\[
+  \vcenter{\xymatrix{
+      X\times Y
+      %\ar[ld]_-{\tilde{q}_1}
+      \ar@{^{(}->}[r]^-{f_2}
+      \ar[d]^-{\tilde{q}_1}
+      &
+      X\times X
+      \ar[ld]^-{q_1}
+      \\
+      X
+      %\ar[l]^-{f}
+      %\ar[u]_-{i}
+      %&Y
+  }}\]を考えて，
+  \begin{align*}
+    \mu_{\diag[X]}\RHOM(q_2^{-1}A_{Y},q_1^!F)
+    &\cong
+    \mu_{\diag[X]}(\RG_{X\times Y}(q_1^!F))\\
+    &\cong
+    \mu_{\diag[X]}(\Rder{{f_2}_{\ast}}{f_2}^{!}q_1^!F)\\
+    &\cong
+    \mu_{\diag[X]}(\Rder{{f_2}_{\ast}}\tilde{q}_{1}^{!}F)
+  \end{align*}
+  である．
+  \(\conm[{\diag[]}]{(X\times Y)}\)を
+  \(
+    Y\tpb[X]\conm[{\diag[X]}]{(X\times X)}
+  \)と同一視する\footnote{
+    同型\(\cotb[X]\cong\conm[{\diag[X]}]{(X\times X)}\)に引き戻し\(Y\tpb[X](\blk)\)を適用すると
+    \(
+      Y\tpb[X]\cotb[X]
+      \cong 
+      Y\tpb[X]\conm[{\diag[X]}]{(X\times X)}
+    \)となる．これと\(
+      Y\tpb[X]\cotb[X]
+      \cong 
+      \conm[{\diag[]}]{(X\times Y)}
+    \)から同型を得る．
+  }．座標でかくと\[    
+    \vcenter{\xymatrix@C=26pt@R=10pt{
+      \conm[{\diag[]}]{(X\times Y)}
+      %\ar[d]_-{\tilde{f'}}
+      \ar[r]^-{\sim}
+      %\ar@{}[dr]|\square
+      &
+      Y\dpb[X]\conm[{\diag[X]}]{(X\times X)}
+      %\ar[d]^-{f}
+      \\
+      \left(f(y),y;\xi,-f^{\ast}\xi\right)
+      \ar@{}[u]|{\rotatebox{90}{\(\in\)}}
+      \ar@{{|}->}[r]_-{}
+      %\ar@{}[dr]|\square
+      &
+      \ar@{}[u]|{\rotatebox{90}{\(\in\)}}
+      \left(y,f(y),f(y);\xi,-\xi\right)
+    }}
+  \]である．
+
+  命題4.3.4から次が成り立つ．
+  \[
+    \mu_{\diag[X]}(\Rder{{f_2}_{\ast}}\tilde{q}_{1}^{!}F)
+    \cong
+    \mu_{\diag[]}(\tilde{q}_{1}^{!}F).
+  \]
+  \begin{PRP}[{\cite[Prop.4.3.4]{KS90}}]
+    \(G\in\Dompb(Y)\)とする．
+    このとき，標準的な射による可換図式    
+    \[    
+        \vcenter{\xymatrix@C=36pt@R=36pt{
+        \Rder{{f_{N}}_{\pi}}_{!}{{}^t{f'_{N}}^{-1}}\mu_{N}(G)
+        \ar[d]
+        \ar[r]
+        %\ar@{}[dr]|\square
+        &
+        \mu_{M}(\Rder{f_{!}}G)
+        %\ar[r]
+        \ar[d]
+        \\
+        \Rder{{f_{N}}_{\pi}}_{\ast}({{}^t{f'_{N}}^{!}}\mu_{N}(G)\tens[]\omega_{Y/X}\tens[]\omega_{N/M}^{\otimes{-1}})
+        %\ar@{}[dr]|\square
+        &
+        \mu_{M}(\Rder{f_{\ast}}G)
+        \ar[l]
+        }}
+    \]が存在する．
+    さらに，\(\supp(G)\to X\)と\(
+        C_N(\supp(G))\to T_{M}X
+    \)が固有かつ\(\supp(G)\cap f^{-1}(M)\subset N\)ならば，
+    以上の射はすべて同型である．
+    
+    とくに\(f^{-1}(M)=N\)かつ，
+    \(f\)が\(M\)に関して斉かつ\(\supp(G)\)上固有のとき，
+    以上の射はすべて同型である．
+  \end{PRP}
+  \(f_2\)は\(\diag[X]\)に対して横断的なので特に斉交叉である．
+  また\(f_2\)は閉うめこみなので固有的である．
+  \(f_2^{-1}(\diag[X])=\diag[]\)も明らか．
+  よって，命題4.3.5.
+  \begin{PRP}[{\cite[Prop.4.3.5]{KS90}}]
+    \(F\in\Dompb(X)\)とする．
+    \begin{enumerate}[(i)]
+        \item 標準的な射で次の図式を可換にするものが存在する．
+        \[\vcenter{\xymatrix@C=56pt@R=46pt{
+            \Rder{{}^{t}{f'_{N}}_{!}}(\omega_{N/M}\tens[]{{f_{N}}_{\pi}^{-1}}\mu_{M}(F))
+            \ar[d]^{}
+            \ar[r]_{}
+            %\ar@{}[dr]|\square
+            &
+            \mu_{N}(\omega_{Y/X}\tens[]{f^{-1}}F)
+            %\ar[r]
+            \ar[d]
+            \\
+            \Rder{{}^{t}{f'_{N}}_{\ast}}{{f_{N}}^{!}_{\pi}}\mu_{M}(F)
+            %\ar@{}[dr]|\square
+            &
+            \mu_{N}({f^{!}}F)
+            \ar[l]_{\beta}
+        }}\]
+        ここで縦向きの矢印は(3.1.6)から導かれるものである．
+        \item \(f\colon Y\to X\)と\(\mres[f]{N}\colon N\to M\)が平滑ならばこれらの射はすべて同型となる．    
+        \item \(f\)が\(M\)に横断的かつ\(f^{-1}(M)=N\)ならば，
+        自然な射\[
+            \Rder{{}^{t}{f'_{N}}_{\ast}}{{f_{N}}_{\pi}}^{-1}\mu_{M}(F)
+            \to \mu_{N}(f^{-1}F)
+        \]が存在する．
+    \end{enumerate}
+  \end{PRP}
+  より，\[
+    \mu_{\diag[]}(\tilde{q}_{1}^{!}F)
+    \cong
+    j_{\ast}\mu_{Y}(F)
+  \]
+  となる．
+\end{proof}
 
 
 %===============================================

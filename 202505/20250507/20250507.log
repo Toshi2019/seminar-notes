@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  7 MAY 2025 00:34
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  7 MAY 2025 13:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -938,37 +938,42 @@ LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 
 ] <xymatrix 2x2 188> [2]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 841.
+(Font)              scaled to size 6.47278pt on input line 842.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 841.
- <xymatrix 3x2 246> [3]
+(Font)              scaled to size 4.62341pt on input line 842.
+ <xymatrix 3x2 246> [3] [4] <xymatrix 2x2 146>
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 7.39746pt on input line 973.
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 5.5481pt on input line 973.
+ <xymatrix 2x2 188> <xymatrix 2x2 154> <xymatrix 2x2 175> [5]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 890.
+(Font)              No change on input line 1076.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 894.
+(Font)              No change on input line 1080.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 897.
+(Font)              No change on input line 1083.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 900.
+(Font)              No change on input line 1086.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 905.
+(Font)              No change on input line 1091.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 908.
+(Font)              No change on input line 1094.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 911.
+(Font)              No change on input line 1097.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 914.
+(Font)              No change on input line 1100.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 917.
+(Font)              No change on input line 1103.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 921.
+(Font)              No change on input line 1107.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 921.
+(Font)              scaled to size 6.47278pt on input line 1107.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 921.
+(Font)              scaled to size 4.62341pt on input line 1107.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 924.
- [4] [5] (./20250507.aux)
+(Font)              No change on input line 1110.
+ [6] [7] (./20250507.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
@@ -978,12 +983,12 @@ Package rerunfilecheck Info: File `20250507.out' has not changed.
 (rerunfilecheck)             Checksum: 4C3B8F011884B0499948B8EFC2552CA1;128.
  ) 
 Here is how much of TeX's memory you used:
- 30231 strings out of 474774
- 529056 string characters out of 5758801
+ 30236 strings out of 474774
+ 529128 string characters out of 5758801
  1949032 words of memory out of 5000000
- 52036 multiletter control sequences out of 15000+600000
- 616620 words of font info for 166 fonts, out of 8000000 for 9000
+ 52041 multiletter control sequences out of 15000+600000
+ 617464 words of font info for 170 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 84i,17n,93p,3263b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,17n,93p,3263b,1149s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 20250507.dvi (5 pages, 26872 bytes).
+Output written on 20250507.dvi (7 pages, 39620 bytes).
