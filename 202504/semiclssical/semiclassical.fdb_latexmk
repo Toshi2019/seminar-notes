@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1747044206.21335 "semiclassical.dvi" "semiclassical.pdf" "semiclassical" 1747044207.85658 0
-  "semiclassical.dvi" 1747044206.01858 17840 1b4f12b10dd1f61a44b78ddd33cd9d90 "latex"
+["dvipdf"] 1747046657.91227 "semiclassical.dvi" "semiclassical.pdf" "semiclassical" 1747046659.06375 0
+  "semiclassical.dvi" 1747046657.74473 17720 4b1af86d2f31d09eb42a2c44c7113de5 "latex"
   (generated)
   "semiclassical.pdf"
   (rewritten before read)
-["latex"] 1747044204.1352 "/Users/giuseppe/seminar-notes/202504/semiclssical/semiclassical.tex" "semiclassical.dvi" "semiclassical" 1747044207.84858 0
-  "/Users/giuseppe/seminar-notes/202504/semiclssical/semiclassical.tex" 1747044200.9883 28417 5083de9f273f89504546e71f868a9789 ""
+["latex"] 1747046656.19287 "/Users/giuseppe/seminar-notes/202504/semiclssical/semiclassical.tex" "semiclassical.dvi" "semiclassical" 1747046659.05719 0
+  "/Users/giuseppe/seminar-notes/202504/semiclssical/semiclassical.tex" 1747046653.78851 28413 bbef64cc4577ea6ae55d0af1844b0293 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -48,7 +48,6 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1136768653 1316 b636689f1933f24d1294acdf6041daaa ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss12.tfm" 1136768653 1324 37b971caf729d7edd9cbb9f9b0ea76eb ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss8.tfm" 1136768653 1296 d77f431d10d47c8ea2cc18cf45346274 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
@@ -251,10 +250,10 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "semiclassical.aux" 1747044206.01686 290 4a751972f7ac29537d3b554648065592 "latex"
-  "semiclassical.out" 1747044206.01784 171 7e431fec1edcd2baec7008db9da1c850 "latex"
-  "semiclassical.tex" 1747044200.9883 28417 5083de9f273f89504546e71f868a9789 ""
-  "semiclassical.toc" 1747044206.01845 97 aaaa951fff1e68e84061b659928368ca "latex"
+  "semiclassical.aux" 1747046657.74159 290 4a751972f7ac29537d3b554648065592 "latex"
+  "semiclassical.out" 1747046657.74405 171 7e431fec1edcd2baec7008db9da1c850 "latex"
+  "semiclassical.tex" 1747046653.78851 28413 bbef64cc4577ea6ae55d0af1844b0293 ""
+  "semiclassical.toc" 1747046657.74461 97 aaaa951fff1e68e84061b659928368ca "latex"
   (generated)
   "semiclassical.aux"
   "semiclassical.dvi"

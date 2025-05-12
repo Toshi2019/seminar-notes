@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  12 MAY 2025 19:03
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  12 MAY 2025 19:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -921,10 +921,6 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 612.
 
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 615.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 615.
 LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <10> not available
 (Font)              Font shape `JT2/hgt/m/n' tried instead on input line 622.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
@@ -933,6 +929,10 @@ LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <10> not available
 (Font)              Font shape `JY2/hgt/m/n' tried instead on input line 622.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 9.24683pt on input line 622.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 623.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 4.62341pt on input line 623.
 LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <5> not available
 (Font)              Font shape `JT2/hgt/m/n' tried instead on input line 624.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
@@ -960,12 +960,12 @@ Package rerunfilecheck Info: File `semiclassical.out' has not changed.
 (rerunfilecheck)             Checksum: 7E431FEC1EDCD2BAEC7008DB9DA1C850;171.
  ) 
 Here is how much of TeX's memory you used:
- 30308 strings out of 474774
- 530085 string characters out of 5758801
+ 30305 strings out of 474774
+ 530052 string characters out of 5758801
  1936032 words of memory out of 5000000
- 52112 multiletter control sequences out of 15000+600000
- 617328 words of font info for 170 fonts, out of 8000000 for 9000
+ 52110 multiletter control sequences out of 15000+600000
+ 616728 words of font info for 168 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  84i,13n,93p,3272b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on semiclassical.dvi (4 pages, 17840 bytes).
+Output written on semiclassical.dvi (4 pages, 17720 bytes).

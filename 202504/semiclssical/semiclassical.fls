@@ -469,8 +469,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlgothr-h.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlgothr-h.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlgothr-v.tfm
