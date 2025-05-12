@@ -1,0 +1,2 @@
+\contentsline {section}{\numberline {1}関手\(\mu hom\)}{1}{section.1}%
+\contentsline {section}{\numberline {付録A}ノート中で用いる主張}{5}{appendix.A}%

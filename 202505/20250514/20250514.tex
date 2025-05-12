@@ -1,25 +1,15 @@
 %=====================================
-%   semiclassical.tex
-%   Semiclassical Analysis 
+%   20250514.tex
+%   20250514 
 %   toshi2019
 %=====================================
-
-% -----------------------
-% preamble
-% -----------------------
-% ここから本文 (\begin{document}) までの
-% ソースコードに変更を加えた場合は
-% 編集者まで連絡してください. 
-% Don't change preamble code yourself. 
-% If you add something
-% (usepackage, newtheorem, newcommand, renewcommand),
-% please tell it 
-% to the editor of institutional paper of RUMS.
-
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[12pt, a4paper, dvipdfmx]{jsarticle}
+\documentclass[leqno, 10pt, a4paper, dvipdfmx]{jsarticle}
+\title{ゼミノート（05月14日分）}
+\author{Toshi2019}
+\date{\today}
 
 % ------------------------
 % usepackage
@@ -41,7 +31,6 @@
 \usepackage{listings}
 \usepackage{mathrsfs}
 \usepackage{mathtools}
-\usepackage{okumacro}
 \usepackage{otf}
 \usepackage{pifont}
 \usepackage{proof}
@@ -389,6 +378,7 @@
 \newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
 \newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
 \newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+\newcommand{\Dbconic}{\mathop{\mathsf{D}^\mathrm{b}_{\rrp}}\nolimits}
 \newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
 \newcommand{\Domplb}{\mathop{\mathsf{D}^\mathrm{lb}}\nolimits}
 
@@ -440,7 +430,7 @@
 \newcommand{\etens}{\mathbin{\boxtimes}}
 \newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
 \newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
-\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+\newcommand{\lltens}[1][]{\mathbin{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}}
 \newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
 \newcommand{\detens}{\underline{\etens}}
 \newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
@@ -469,6 +459,8 @@
 \newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
 
 \newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+\newcommand{\dpb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+\newcommand{\tpb}[1][]{\mathbin{\mathop{\times}\nolimits_{#1}}}
 
 
 
@@ -496,7 +488,7 @@
 \newtheorem{PRP}[AXM]{命題}
 \newtheorem{LMM}[AXM]{補題}
 \newtheorem{CRL}[AXM]{系}
-\newtheorem{EG}{例}
+\newtheorem{EG}[AXM]{例}
 \newtheorem*{EG*}{例}
 \newtheorem{RMK}[AXM]{注意}
 \newtheorem{CNV}[AXM]{約束}
@@ -580,12 +572,9 @@
 \newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
 
 \newcommand{\torus}{\mathbf{T}}
-\newcommand{\Dbt}{\mathcal{S}'}
-\newcommand{\rdfun}{\mathcal{S}}
-\newcommand{\LCTVS}{\mathsf{LCTVS}}
 
-\newcommand{\sgn}{\mathop{\mathrm{sgn}}\nolimits}
-\newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}
+\newcommand{\diag}[1][]{\Delta_{#1}}
+
 
 % ----------------------------
 % documenet 
@@ -595,325 +584,522 @@
 % begin document and end document.
 % ---------------------------
 
-\title{Semiclassical Analysis}
-\author{Toshi2019}
-\date{\today\footnote{2025/04/01作成開始}}
 \begin{document}
 \maketitle
 \tableofcontents
-%\section*{はじめに}
-%\cite{Zwo12}のまとめノート．
-%\section*{凡例}
-%\begin{itemize}
-%    \item トーラス：\(n\)次元トーラスを\(\torus^n\)で表す．
-%\end{itemize}
+\section{関手\(\muhom\)}
+%\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+\(f\)を\(Y\)から\(X\)への射とする．
+\(\diag[f]\subset X\times Y\)を\(f\)のグラフとする．
+\(\diag[X]\)と\(\diag[Y]\)で
+それぞれ\(X\times X\)と
+\(Y\times Y\)の対角集合を表す．
+\(Y\mathbin{\times_{X}}\cotb[X]\)と\(T^{\ast}_{\diag[f]}(X\times Y)\)を
+射影\(\cotb[(X\times Y)]\to(\cotb[X])\times Y\)で同一視する．
+同様に\(\cotb[X]\)と\(T^{\ast}_{\diag[X]}(X\times X)\)，
+\(\cotb[Y]\)と\(T^{\ast}_{\diag[Y]}(Y\times Y)\)を
+それぞれ第1射影で同一視する．
+混同の恐れがないときは\(\diag[f]\)を\(\diag\)とかく．
+すると，次の写像を得る（式 (4.3.3) 参照）．
+\begin{equation}\label{eq:4.4.1}
+  \vcenter{\xymatrix@C=36pt@R=36pt{
+    T^{\ast}_{\diag[Y]}(Y\times Y)
+    \ar[d]^-{\rotatebox{90}{\(\sim\)}}
+    &
+    T^{\ast}_{\diag[f]}(X\times Y)
+    \ar[d]^-{\rotatebox{90}{\(\sim\)}}
+    \ar[l]
+    \ar[r]
+    &
+    T^{\ast}_{\diag[X]}(X\times X)
+    \ar[d]^-{\rotatebox{90}{\(\sim\)}}
+    \\
+    \cotb[Y]
+    &
+    Y\pb[X]\cotb[X]
+    \ar[l]^-{\mdiff[f]}
+    \ar[r]_-{\mpb[f]}
+    &
+    \cotb[X].
+  }}
+\end{equation}
+次の公式をよく用いる．
+\begin{equation}\label{eq:4.4.2}
+  \omega_{{Y\mathbin{\times_{X}}\cotb[X]}\mathbin{/}\cotb[Y]}
+  \tens[]
+  \omega_{{Y\mathbin{\times_{X}}\cotb[X]}\mathbin{/}\cotb[X]}
+  \cong
+  A_{Y\mathbin{\times_{X}}\cotb[X]}
+\end{equation}
+\begin{proof}
+  \(
+    \omega_{{Y\mathbin{\times_{X}}\cotb[X]}\mathbin{/}\cotb[Y]}
+    \tens[]
+    \omega_{{Y\mathbin{\times_{X}}\cotb[X]}\mathbin{/}\cotb[X]}
+  \)は\(A_{Y\mathbin{\times_{X}}\cotb[X]}\)加群の複体なので射
+  \[
+    A_{Y\mathbin{\times_{X}}\cotb[X]}
+    \to
+    \omega_{{Y\mathbin{\times_{X}}\cotb[X]}\mathbin{/}\cotb[Y]}
+    \tens[]
+    \omega_{{Y\mathbin{\times_{X}}\cotb[X]}\mathbin{/}\cotb[X]}
+  \]
+  が存在する．したがって茎ごとに同型であることを示せばよい．
+  \((y,f(x);\xi)\)を\(Y\mathbin{\times_{X}}\cotb[X]\)の点とする．
+  \begin{align*}
+    \left(
+      \mdiff[f]^{!}A_{\cotb[Y]}\tens[]\mpb[f]^{!}A_{\cotb[X]}
+    \right)_{(y,f(x);\xi)}
+    &=\left(
+      \mdiff[f]^{-1}A_{\cotb[Y]}\tens[]\mpb[f]^{-1}A_{\cotb[X]}
+    \right)_{(y,f(x);\xi)}\\
+    &=\left(\mdiff[f]^{-1}A_{\cotb[Y]}\right)_{(y,f(x);\xi)}
+    \tens[]\left(\mpb[f]^{-1}A_{\cotb[X]}
+    \right)_{(y,f(x);\xi)}\\
+    &=\left(A_{\cotb[Y]}\right)_{(y;f^{\ast}\xi)}
+    \tens[]\left(\mpb[f]^{-1}A_{\cotb[X]}
+    \right)_{(y;f^{\ast}\xi)}\\
+    &=A\\
+    &=\left(A_{Y\mathbin{\times_{X}}\cotb[X]}\right)_{(y,f(x);\xi)}
+  \end{align*}
+  である．
+\end{proof}
+\(f_1\colon Y\times Y\to X\times Y\)で写像\(f\times \id_Y\)を表し，
+\(f_1\colon X\times Y\to X\times X\)で写像\(\id_X\times f\)を表す．
+これにより以下の可換図式を得る．
+ただし右側の四角はカルテシアンであり\(f_2\)は\(\diag[X]\)に対して横断的である．
+\begin{equation}\label{eq:4.4.3}
+  \vcenter{\xymatrix@C=36pt@R=36pt{
+    Y\times Y
+    \ar[r]_-{f_1}
+    &
+    X\times Y
+    \ar@{}[rd]|\square
+    %\ar[d]^-{\rotatebox{90}{\(\sim\)}}
+    \ar[r]_-{f_2}
+    &
+    X\times X
+    %\ar[d]^-{\rotatebox{90}{\(\sim\)}}
+    \\
+    \diag[Y]  
+    \ar@{^{(}->}[u]^-{}
+    \ar[r]^-{{\sim}}
+    &
+    \diag[]
+    \ar@{^{(}->}[u]^-{}
+    %\ar[l]^-{\mdiff[f]}
+    \ar[r]_-{f}
+    &
+    \diag[X].
+    \ar@{^{(}->}[u]^-{}
+  }}
+\end{equation}
+\begin{proof}
+  カルテシアンであることは閉うめこみから従う．
 
-
-\section{\(\Dbt\)上のフーリエ変換}
-双対空間
-\[
-  \Dbt\coloneqq\Hom_{\LCTVS}(\rdfun,\cc)
-\]
-上にフーリエ変換を拡張する．
-すると，多くの重要な，しかし滑らかでない表示のフーリエ変換
-を調べることができる．
-
+  \(f_2\)が\(\diag[X]\)に対して横断的であることを示す．
+  \(\mres[{\mdiff[f_2]}]{(X\times Y)\pb[X\times X]T^{\ast}_{\diag[X]}(X\times X)}\)が単射であればよい．
+  %この写像は局所的に\[
+  %  (f(y),y;\xi,0)\mapsto (f(y),y;\xi,0)
+  %\]とかけるので完了．
+  まず，\(\mdiff[f_2]\)は
+  \[    
+    \vcenter{\xymatrix@C=26pt@R=10pt{
+      (X\times Y)\pb[X\times X]T^{\ast}(X\times X)
+      %\ar[d]_-{\tilde{f'}}
+      \ar[r]^-{\mdiff[f_2]}
+      %\ar@{}[dr]|\square
+      &
+      T^{\ast}(X\times Y)
+      %\ar[d]^-{f}
+      \\
+      \left(\left(f(y),y\right),(f(y),f(y);\xi_1,\xi_2)\right)
+      \ar@{}[u]|{\rotatebox{90}{\(\in\)}}
+      \ar@{{|}->}[r]_-{}
+      %\ar@{}[dr]|\square
+      &
+      \ar@{}[u]|{\rotatebox{90}{\(\in\)}}
+      \left(f(y),y;f_{2}^{\ast}(\xi_1,\xi_2)\right)
+    }}
+  \]であり，
+  \[
+    f_2^{\ast}(\xi_1,\xi_2)
+    =
+    (\id_X\times f)^{\ast}(\xi_1,\xi_2)
+    =(\xi_1,f^{\ast}\xi_2)
+  \]であるから，\(T^{\ast}_{\diag[X]}(X\times X)\)の点が局所的に
+  \((x,x;\xi,-\xi)\)とかけることに注意すると，
+  \[
+    \mres[{\mdiff[f_2]}]{(X\times Y)\pb[X\times X]T^{\ast}_{\diag[X]}(X\times X)}
+    \left(\left(f(y),y\right),(f(y),f(y);\xi,-\xi)\right)
+    =(f(y),y;\xi,-f^{\ast}\xi)
+  \]
+  とかける．\((f(y),y;\xi,-\xi)\)に対し，\((f(y),y;\xi,-f^{\ast}\xi)=(f(y),y;0,0)\)となるとすると，
+  \(\xi=0,-f^{\ast}\xi=0\)より，\(\xi=-\xi=0\)となるので単射である．
+\end{proof}
+次の記号を定める．
+\begin{itemize}
+  \item \(q_j\)：\(X\times X\)上の第\(j\)射影
+  \item \(\tilde{q}_{j}\)：\(X\times Y\)上の第\(j\)射影
+  \item \(q'_j\)：\(Y\times Y\)上の第\(j\)射影
+\end{itemize}
 \begin{DFN}
+  \(G\in\Dompb(Y)\), \(F\in\Dompb(X)\)に対し，次のようにおく．
   \begin{enumerate}[(i)]
-    \item \(\Dbt\colon=\Dbt(\rr^n)\)で
-    \textbf{\ruby{緩増加}{かんぞうか}分布} (tempered 
-    distribution) の空間を表す．
-    すなわち，\(u\colon \rdfun\to\cc\)が線形で，
-    \(\rdfun\)において\(\varphi_{j}\to\varphi\)ならば\(
-      u(\varphi_{j})\to U(\varphi)
-    \)となるとき，\(u\in\Dbt\)である．
-    \item すべての\(\varphi\in\rdfun\)に対し\(
-      u_{j}(\varphi)\to u(\varphi)
-    \)のとき，\[
-      u_j\to u \quad\text{in \(\Dbt\)}
-    \]とかく．
+    \item \(\muhom(G\to F)\coloneqq\mu_{\diag[]}\RHOM_{A_{X\times Y}}(\tilde{q}_2^{-1}G,\tilde{q}_1^{!}F)\)
+    \item \(\muhom(F\leftarrow G)\coloneqq\left(\mu_{\diag[]}\RHOM_{A_{X\times Y}}(\tilde{q}_2^{-1}G,\tilde{q}_1^{!}F)\right)^{a}\)
+    \item \(Y\to X\)で\(f\)が恒等射のとき，\[
+      \muhom(G,F)
+      \coloneqq\muhom(G\to F)
+      =\mu_{\diag[X]}\RHOM_{A_{X\times X}}({q}_2^{-1}G,{q}_1^{!}F)
+    \]
   \end{enumerate}
 \end{DFN}
-\begin{DFN}
-  \(u\in\Dbt\)のとき，\[
-    D^{\alpha}u, x^{\alpha}u, \cF u\in\Dbt
-  \]を\(\varphi\in\rdfun\)に対し\begin{align}
-    %\vcenter{
-      D^{\alpha}u(\varphi)&\coloneqq (-1)^{\lvert\alpha\rvert}u(D^{\alpha}\varphi)\\
-      (x^{\alpha}u)(\varphi)&\coloneqq u(x^{\alpha}\varphi)\\
-      (\cF u)(\varphi)&\coloneqq u(\cF \varphi)
-    %}
-  \end{align}とおくことで定める．
-\end{DFN}
+(ii)の右辺の\((\blk)^{a}\)は\(Y\tpb[X]\cotb[X]\)上の
+対蹠写像による逆像を表す．
 
-\begin{EG}[ディラック測度]
-  定義から，\[
-    \hat{\delta}_{0}(\varphi)
-    =
-    \delta_{0}(\hat{\varphi})
-    =
-    \hat{\varphi}(0)
-    =
-    \int_{\rr^n}^{}{e^{-i\langle{x,0}\rangle}\varphi(x)}~dx
-    =
-    \int_{\rr^n}^{}{\varphi}~dx
-  \]これを次のように解釈する．
-  \[
-    \hat{\delta}_{0}
-    \equiv
-    1.
-  \]
-\end{EG}
+\(\pi\)で\(T^{\ast}_{\diag[]}(X\times Y)\)から\(\diag[]\cong Y\)への射影を表す．
 
-\subsubsection*{例2：虚2次形式の指数関数}
-\begin{DFN}
-    実対称正則行列\(Q\)の\textbf{符号数} (signature) を
-    \begin{equation}
-      \sgn{Q}
-      \coloneqq
-      \text{\(Q\)の正の固有値の数}-
-      \text{\(Q\)の負の固有値の数}
-    \end{equation}
-    で定める．
-\end{DFN}
 \begin{leftbar}
-\begin{THM}[虚指数関数の変換]
-  \(Q\)を\(n\times n\)実対称正則行列とする．
-  このとき，
-  \begin{equation}
-    \cF\left(e^{\frac{i}{2}\langle{Qx,x}\rangle}\right)
-    =
-    \frac{
-      (2\pi)^{n/2}
-      e^{\frac{i\pi}{4}\sgn(Q)}
-    }{
-      {\lvert{\det{Q}}\rvert}^{1/2}
-    }
-    e^{-\frac{i}{2}\langle{Q^{-1}\xi,\xi}\rangle}
-  \end{equation}が成り立つ．
-\end{THM}\end{leftbar}
-既出の式\[
-  \cF\left(e^{-\frac{1}{2}\langle{Qx,x}\rangle}\right)
-    =
-    \frac{
-      (2\pi)^{n/2}
-      %e^{\frac{i\pi}{4}\sgn(Q)}
-    }{
-      {%\lvert{
-        (\det{Q})}
-      %\rvert}
-      ^{1/2}
-    }
-    e^{-\frac{1}{2}\langle{Q^{-1}\xi,\xi}\rangle}
-\]
-と見比べると，位相の変換項\(e^{\frac{i\pi}{4}\sgn(Q)}\)がついている．
-これは，複素指数関数から来ている．
+\begin{PRP}
+  次の標準的な同型が存在する．
+  \begin{enumerate}[(i)]
+    \item 一般に
+    %\vspace{-2\baselineskip}
+    \begin{align*}
+      %\vspace{-2\baselineskip}
+      \Rder{\pi_{\ast}}\muhom(G\to F)&\cong\RHOM(G,f^{!}F),\\
+      %\vspace{-2\baselineskip}
+      \Rder{\pi_{\ast}}\muhom(F\leftarrow G)&\cong\RHOM(f^{-1}F,G).
+    \end{align*}
+    \(Y=X\)で\(f\)が恒等射の場合はとくに\[
+      \Rder{\pi_{\ast}}\muhom(G, F)\cong\RHOM(G,F)
+    \]
+    となる．
+    \item \(G\)がコホモロジー構成可能層と仮定する．このとき次が成り立つ．\[
+      \Rder{\pi_{!}}\muhom(G\to F)
+      \cong
+      \RHOM(G,A_Y)\lltens[]f^{-1}F\tens[]\omega_{Y/X}.
+    \]
+    \(F\)がコホモロジー構成可能層のときは
+    \[
+      \Rder{\pi_{!}}\muhom(F\leftarrow G)
+      \cong
+      f^{-1}\RHOM(f^{-1}F,A_X)\lltens[]G.
+    \]が成り立つ．
+    \(Y=X\)で\(f\)が恒等射の場合はとくに\[
+      \Rder{\pi_{!}}\muhom(G, F)\cong\RHOM(G,A_X)\lltens[]F
+    \]
+    となる．
+  \end{enumerate}
+\end{PRP}
+\end{leftbar}
 \begin{proof}
-  1. 
-  \(\epsilon>0\)を実数とし，
-  \(Q_{\epsilon}\coloneqq Q+\epsilon I\)とおく．（後で\(\epsilon\to0\)の極限をとる）
-  このとき，
-  \begin{align*}
-    \cF\left(
-      e^{\frac{i}{2}\langle{Q_{\epsilon}x,x}\rangle}
-    \right)
-    &=
-    \int_{\rr^{n}}
-      e^{\frac{i}{2}\langle{Q_{\epsilon}x,x}\rangle}
-      e^{-i\langle{x,\xi}\rangle}
-    dx\\
-    &=
-    \int_{\rr^{n}}
-      e^{
-        \frac{i}{2}\langle{Q_{\epsilon}x,x}\rangle
-        -i\langle{x,\xi}\rangle
-      }
-    dx\\
-    &=
-    \int_{\rr^{n}}
-      e^{
-        \frac{i}{2}\langle{Q_{\epsilon}(x-Q_{\epsilon}^{-1}\xi),x-Q_{\epsilon}^{-1}\xi}\rangle
-      }e^{-\frac{i}{2}\langle{Q_{\epsilon}^{-1}\xi,\xi}\rangle
-      }
-    dx\\
-    &=
-    e^{-\frac{i}{2}\langle{Q_{\epsilon}^{-1}\xi,\xi}\rangle}
-    \int_{\rr^{n}}
-      e^{
-        \frac{i}{2}\langle{Q_{\epsilon}(x-Q_{\epsilon}^{-1}\xi),x-Q_{\epsilon}^{-1}\xi}\rangle
-      }
-    dx\\
-    &=
-    e^{-\frac{i}{2}\langle{Q_{\epsilon}^{-1}\xi,\xi}\rangle}
-    \int_{\rr^{n}}
-      e^{
-        \frac{i}{2}\langle{Q_{\epsilon}y,y}\rangle
-      }
-    dy\quad\text{（\(y\coloneqq x-Q_{\epsilon}^{-1}\xi\)と変換）}
+  (i) 
+  定理4.3.2から\begin{align*}
+    \Rder{\pi_{\ast}}\mu_{\diag[]}\RHOM(\tilde{q}_2^{-1}G,\tilde{q}_1^{!}F)
+    &\underset{(1)}{\cong}
+    \Rder{{\tilde{q_2}}_{\ast}}\RG_{\diag[]}\RHOM(\tilde{q}_2^{-1}G,\tilde{q}_1^{!}F)\\
+    &\underset{(2)}{\cong}
+    \Rder{{\tilde{q_2}}_{\ast}}\RHOM(\tilde{q}_2^{-1}G,\RG_{\diag[]}\tilde{q}_1^{!}F)\\
+    &\underset{(3)}{\cong}
+    \RHOM(G,\Rder{{\tilde{q_2}}_{\ast}}\RG_{\diag[]}\tilde{q}_1^{!}F)\\
+    &\underset{(4)}{\cong}
+    \RHOM(G,f^{!}F)
   \end{align*}
-  積分を計算したい．
-  \(Q\)を直交変換で\(\diag(\lambda_1,\dots,\lambda_n)\)とする（実対称性）．
-  ただし
-  \(\lambda_1,\dots,\lambda_r>0\)，
-  \(\lambda_{r+1},\dots,\lambda_n<0\)であるとする（非退化性）．
-  このとき，
-  \begin{align*}
-    \int_{\rr^{n}}
-      e^{
-        \frac{i}{2}\langle{Q_{\epsilon}y,y}\rangle
-      }
-    dy
-    =\int_{\rr^{n}}
-      e^{
-        \sum_{k=1}^{n}\frac{1}{2}(i\lambda_{k}-\epsilon)w^2_k
-      }
-    dw
-    =\prod_{k=1}^{n}\int_{\rr}
-      e^{
-        \frac{1}{2}(i\lambda_{k}-\epsilon)w^2
-      }
-    dw_{}
+  である．ただし，それぞれの同型の根拠は次のとおり．
+  \begin{enumerate}[(1)]
+    \item 定理4.3.2 (iv) の同型\(
+      \mres[\mu_M(F)]{M}\cong i^{!}F
+    \)と同一視\(Y\cong\diag[]\)から従う．
+    詳しくは以下のようになる．
+    \(i\colon \diag[]\hookrightarrow X\times Y\)を閉うめこみ，
+    \(\varphi\colon\diag[]\to Y\)を射影，
+    \(\psi\colon Y\to \diag[]\)をその逆写像とする．
+    このとき，\begin{align*}
+      \Rder{\pi_{\ast}}\mu_{\diag[]}
+      &\cong
+      i^{!}&&\text{（ここに定理4.3.2）}\\
+      &\cong
+      \Rder{\varphi_{\ast}}i^{!}&&\text{（同一視からくる同型）}\\
+      &\cong
+      \Rder{\tilde{q_2}_{\ast}}\Rder{i_{\ast}}i^{!}&&\text{（図式の可換性）}\\
+      &\cong
+      \Rder{\tilde{q_2}_{\ast}}\RG_{\diag[]}&&\text{（\(\RG_{\diag[]}\)の書き換え）}
+    \end{align*}
+    である．
+    \item \(\RG_{\diag[]}\)に関する公式(2.6.9)
+    \item \(\tilde{q}_2\)に関する順像逆像随伴
+    \item これも同一視からくる．詳しくかくと，
+    図式\[\vcenter{\xymatrix{
+      &
+      X\times Y
+      \ar[ld]_-{\tilde{q}_1}
+      \ar[rd]^-{\tilde{q}_2}&\\
+      X&
+      \diag[]
+      \ar[l]^-{f}
+      \ar[u]_-{i}
+      \ar[r]_-{\varphi}
+      &Y
+    }}\]を用いて，
+    \begin{align*}
+      f^{!}F
+      &\cong i^{!}\tilde{q_1}^{!}F&&\text{（図式の可換性）}\\
+      &\cong \Rder{\varphi_{\ast}}i^{!}\tilde{q_1}^{!}F&&\text{（同一視からくる同型）}\\
+      &\cong \Rder{\tilde{q_2}_{\ast}}\Rder{i_{\ast}}i^{!}\tilde{q_1}^{!}F&&\text{（図式の可換性）}\\
+      &\cong \Rder{\tilde{q_2}_{\ast}}\RG_{\diag[]}\tilde{q_1}^{!}F&&\text{（\(\RG_{\diag[]}\)の書き換え）}
+    \end{align*}
+    のようになる．
+  \end{enumerate}
+  2つ目の式は，\(\pi=\pi\circ a\)に注意すれば同様に\begin{align*}
+    \Rder{\pi_{\ast}}(\mu_{\diag[]}\RHOM(\tilde{q}_1^{-1}F,\tilde{q}_{2}^{!}G))^{a}
+    &\underset{}{\cong}
+    \Rder{\pi_{\ast}}\mu_{\diag[]}\RHOM(\tilde{q}_1^{-1}F,\tilde{q}_{2}^{!}G)\\
+    &\underset{}{\cong}
+    \Rder{{\tilde{q_2}}_{\ast}}\RG_{\diag[]}\RHOM(\tilde{q}_{1}^{-1}F,\tilde{q}_2^{!}G)\\
+    &\underset{(2.6.9)}{\cong}
+    \Rder{{\tilde{q_2}}_{\ast}}\RHOM((\tilde{q}_1^{-1}F)_{\diag[]},\tilde{q}_2^{!}G)\\
+    &\underset{(V.D.)}{\cong}
+    \RHOM(\Rder{{\tilde{q_2}}_{!}}(\tilde{q}_1^{-1}F)_{\diag[]},G)\\
+    &\underset{}{\cong}
+    \RHOM(f^{-1}F,G)
   \end{align*}
-  とかける．
+  である．
 
-  2. 
-  逐次積分の各因子を計算する．
-  \(1\leqq k\leqq r\)のときと\(r+1\leqq k\leqq n\)で場合分け．
-  \(1\leqq k\leqq r\)のとき，\(\lambda_k>0\)なので，
-  \(z=(\epsilon-i\lambda_k)^{1/2}w\)とおき，
-  \(\Img(\epsilon-i\lambda_k)^{1/2}<0\)となる分枝をとる．
-  このとき，
-  \[
-    \int_{\rr}
-    e^{
-      \frac{1}{2}(i\lambda_{k}-\epsilon)w^2
-    }
-    dw
-    =
-    \frac{1}{(\epsilon-i\lambda_{k})^{1/2}}
-    \int_{\Gamma_k}
-    e^{
-      \frac{1}{2}z^2
-    }
-    dz
-  \]とかける．(積分経路は図の通り)（微妙ポイント）
-
-  いま\(\Gamma_k\)上\[
-    \exp\left(-\frac{1}{2}z^{2}\right)
-    =
-    \exp\left((y^2-x^2)/2-ixy\right)
-  \]で\(x^2>y^2\)なので，\(\Gamma_k\)を実軸に変形できる．（微妙）
-
-  よって，\[
-    \int_{\Gamma_k}e^{-\frac{1}{2}z^{2}}dz
-    =
-    \int_{-\infty}^{\infty}e^{-\frac{1}{2}x^{2}}dx
-    =\sqrt{2\pi}
-  \]である．したがって
-  \[
-    \prod_{k=1}^{r}
-    \int_{-\infty}^{\infty}
-    e^{
-      \frac{1}{2}(i\lambda_{k}-\epsilon)w^2
-    }
-    dw
-    =
-    (2\pi)^{r/2}
-    \prod_{k=1}^{r}
-    \frac{1}{(\epsilon-i\lambda_{k})^{1/2}}
-  \]が成り立つ．
-  また，\(1\leqq k\leqq r\)に対し，\[
-    \lim_{\epsilon\to+0}
-    \frac{1}{(\epsilon-i\lambda_{k})^{1/2}}
-    =\frac{1}{(0-i\lambda_{k})^{1/2}}
-    =\frac{1}{(-i)^{1/2}\lambda_{k}^{1/2}}
-    =\frac{e^{i{\pi/4}}}{\lambda_{k}^{1/2}}
-  \]である．
-  実際，分枝を\((-i)^{1/2}=e^{-i{\pi/4}}\)となるように
-  とっていた（\(\Img(-i)^{1/2}<0\)）．
-
-  3. 
-  \(r+1\leqq k\leqq n\)のとき，2.と同様に計算する．
-  \(z=(\epsilon-i\lambda_{k})^{1/2}w\)とおく．
-  ただし，今度は
-  \(\Img(\epsilon-i\lambda_k)^{1/2}>0\)となる分枝をとる．
-  このとき，
-  \[
-    \prod_{k=r+1}^{n}
-    \int_{-\infty}^{\infty}
-    e^{
-      \frac{1}{2}(i\lambda_{k}-\epsilon)w^2
-    }
-    dw
-    =
-    (2\pi)^{\frac{n-r}{2}}
-    \prod_{k=r+1}^{n}
-    \frac{1}{(\epsilon-i\lambda_{k})^{1/2}}
-  \]が成り立つ．
-  また，\(r+1\leqq k\leqq n\)に対し
-  \[
-    \lim_{\epsilon\to+0}
-    \frac{1}{(\epsilon-i\lambda_{k})^{1/2}}
-    =\frac{1}{(-i\lambda_{k})^{1/2}}
-    %=\frac{1}{(-i)^{1/2}\lambda_{k}^{1/2}}
-    =\frac{e^{-i\frac{\pi}{4}}}{{\lvert\lambda_{k}\rvert}^{1/2}}
-  \]である．
-  実際，今度は分枝を\(i^{1/2}=e^{i{\pi/4}}\)となるように
-  とっていた（\(\Img i^{1/2}>0\)）．
-
-  4. 
-  以上の計算を合わせる．
+  \(Y=X\)で\(f=\id_X\)のときは，
   \begin{align*}
-    \cF\left(
-      e^{\frac{i}{2}\langle{Qx,x}\rangle}
-    \right)
-    &=
-    \lim_{\epsilon\to+0}
-    \cF\left(
-      e^{\frac{i}{2}\langle{Q_{\epsilon}x,x}\rangle}
-    \right)\\
-    &=
-    e^{-\frac{i}{2}\langle{Q^{-1}\xi,\xi}\rangle}
-    (2\pi)^{\frac{n}{2}}
-    \prod_{k=1}^{r}
-    \frac{e^{i\frac{\pi}{4}}}{\lambda_{k}^{1/2}}
-    \prod_{k=r+1}^{n}
-    \frac{e^{-i\frac{\pi}{4}}}{{\lvert\lambda_{k}\rvert}^{1/2}}\\
-    &=
-    e^{-\frac{i}{2}\langle{Q^{-1}\xi,\xi}\rangle}
-    (2\pi)^{\frac{n}{2}}
-    \frac{
-      e^{ri\frac{\pi}{4}}e^{-(n-r)i\frac{\pi}{4}}
-    }{
-      {\lvert\lambda_{1}\dots\lambda_{n}\rvert}^{1/2}
-    }\\
-    &=
-    e^{-\frac{i}{2}\langle{Q^{-1}\xi,\xi}\rangle}
-    (2\pi)^{\frac{n}{2}}
-    \frac{
-      e^{r-(n-r)i\frac{\pi}{4}}
-    }{
-      {\lvert\lambda_{1}\dots\lambda_{n}\rvert}^{1/2}
-    }\\
-    &=
-    e^{-\frac{i}{2}\langle{Q^{-1}\xi,\xi}\rangle}
-    (2\pi)^{\frac{n}{2}}
-    \frac{
-      e^{i\frac{\pi}{4}\sgn{Q}}
-    }{
-      {\lvert\det{Q}\rvert}^{1/2}
-    }.
+    \Rder{\pi_{\ast}}\muhom(G,F)
+    &=\Rder{\pi_{\ast}}\muhom(G\to F)\\
+    &\cong\RHOM(G,\id_{X}^{!}F)\\
+    &=\RHOM(G,F)
+  \end{align*}である．
+
+  (ii) 
+  命題3.4.4.を用いる．
+  \begin{PRP}[{\cite[Prop.3.4.4.]{KS90}}]
+    \(X\)と\(Y\)を有限c柔軟次元局所コンパクト（ハウスドルフ）空間とし，
+    \(q_1\)と\(q_2\)をそれぞれ\(X\times Y\)から\(X\)と\(Y\)への射影とする．
+    \(F\in\Dompb(A_X)\), \(G\in\Dompb(A_Y)\)とし，\(F\)はコホモロジー構成可能層とする．
+    このとき，
+    \[
+      \rmD{F}\letens G\to \RHOM(q_1^{-1}F,q_2^{!}G)
+    \]は同型である．
+    \(X\)が\(C^0\)多様体ならば，\[
+      \rmD'{F}\letens G\to \RHOM(q_1^{-1}F,q_2^{!}G)
+    \]も同型である．
+  \end{PRP}
+  これより，
+  \begin{align*}
+    \Rder{\pi_{!}}\mu_{\diag}\RHOM(\tilde{q}_2^{-1}G,\tilde{q}_1^{!}F)
+    &\cong
+    \Rder{\pi_{!}}\mu_{\diag}(\rmD'G\letens F)\\
+    &\cong
+    i^{-1}(\rmD'G\letens F)\tens[] \omega_{\diag/{X\times Y}}\\
+    &\cong
+    i^{-1}\tilde{q}_2^{-1}\rmD'G\tens i^{-1}\tilde{q}_1^{-1}F\tens[] \omega_{\diag/{X\times Y}}\\
+    &\cong
+    \varphi^{-1}\rmD'G\tens f^{-1}F\tens[] \omega_{\diag/{X\times Y}}\\
+    &\cong
+    \rmD'G\tens f^{-1}F\tens[] \omega_{\diag/{X\times Y}}
   \end{align*}
 \end{proof}
 
+関手\(\muhom\)は佐藤超局所化の関手を一般化したものである．
 
-%\section{準古典フーリエ変換}
+\begin{leftbar}
+\begin{PRP}
+  \(Y\)を\(X\)の閉部分多様体とし，
+  \(j\)をうめこみ\(\conm[Y]{X}\to \cotb[X]\)とする．
+  \(F\in\Dompb(X)\)とすると，次の同型が存在する．
+  \[
+    \muhom(A_Y,F)\cong j_{\ast}\mu_{Y}F.
+  \]
+\end{PRP}
+\end{leftbar}
+\begin{proof}
+  \(f\)をうめこみ\(Y\hookrightarrow X\)とする．このとき図式\[
+  \vcenter{\xymatrix{
+      X\times Y
+      %\ar[ld]_-{\tilde{q}_1}
+      \ar@{^{(}->}[r]^-{f_2}
+      \ar[d]^-{\tilde{q}_1}
+      &
+      X\times X
+      \ar[ld]^-{q_1}
+      \\
+      X
+      %\ar[l]^-{f}
+      %\ar[u]_-{i}
+      %&Y
+  }}\]を考えて，
+  \begin{align*}
+    \mu_{\diag[X]}\RHOM(q_2^{-1}A_{Y},q_1^!F)
+    &\cong
+    \mu_{\diag[X]}(\RG_{X\times Y}(q_1^!F))\\
+    &\cong
+    \mu_{\diag[X]}(\Rder{{f_2}_{\ast}}{f_2}^{!}q_1^!F)\\
+    &\cong
+    \mu_{\diag[X]}(\Rder{{f_2}_{\ast}}\tilde{q}_{1}^{!}F)
+  \end{align*}
+  である．
+  \(\conm[{\diag[]}]{(X\times Y)}\)を
+  \(
+    Y\tpb[X]\conm[{\diag[X]}]{(X\times X)}
+  \)と同一視する\footnote{
+    同型\(\cotb[X]\cong\conm[{\diag[X]}]{(X\times X)}\)に引き戻し\(Y\tpb[X](\blk)\)を適用すると
+    \(
+      Y\tpb[X]\cotb[X]
+      \cong 
+      Y\tpb[X]\conm[{\diag[X]}]{(X\times X)}
+    \)となる．これと\(
+      Y\tpb[X]\cotb[X]
+      \cong 
+      \conm[{\diag[]}]{(X\times Y)}
+    \)から同型を得る．
+  }．座標でかくと\[    
+    \vcenter{\xymatrix@C=26pt@R=10pt{
+      \conm[{\diag[]}]{(X\times Y)}
+      %\ar[d]_-{\tilde{f'}}
+      \ar[r]^-{\sim}
+      %\ar@{}[dr]|\square
+      &
+      Y\dpb[X]\conm[{\diag[X]}]{(X\times X)}
+      %\ar[d]^-{f}
+      \\
+      \left(f(y),y;\xi,-f^{\ast}\xi\right)
+      \ar@{}[u]|{\rotatebox{90}{\(\in\)}}
+      \ar@{{|}->}[r]_-{}
+      %\ar@{}[dr]|\square
+      &
+      \ar@{}[u]|{\rotatebox{90}{\(\in\)}}
+      \left(y,f(y),f(y);\xi,-\xi\right)
+    }}
+  \]である．
 
-%aaa
+  \(f_2\)は\(\diag[X]\)に対して横断的なので特に鮮明である．
+  また\(f_2\)は閉うめこみなので固有的である．
+  \(f_2^{-1}(\diag[X])=\diag[]\)も明らか．
+  したがって命題\ref{prp4.3.4}から次が成り立つ．
+  \[
+    \mu_{\diag[X]}(\Rder{{f_2}_{\ast}}\tilde{q}_{1}^{!}F)
+    \cong
+    \mu_{\diag[]}(\tilde{q}_{1}^{!}F).
+  \]
+  よって，命題\ref{prp4.3.5}
+  より，\[
+    \mu_{\diag[]}(\tilde{q}_{1}^{!}F)
+    \cong
+    j_{\ast}\mu_{Y}(F)
+  \]
+  となる．
+\end{proof}
+
+\appendix
+\section{ノート中で用いる主張}
+\begin{leftbar}
+\begin{PRP}[{\cite[Prop.4.3.4]{KS90}}]\label{prp4.3.4}
+  \(G\in\Dompb(Y)\)とする．
+  このとき，標準的な射による可換図式    
+  \[    
+      \vcenter{\xymatrix@C=36pt@R=36pt{
+      \Rder{{\mpb[f_{N}]}_{!}}{\mdiff[f_{N}]^{-1}}\mu_{N}(G)
+      \ar[d]
+      \ar[r]
+      %\ar@{}[dr]|\square
+      &
+      \mu_{M}(\Rder{f_{!}}G)
+      %\ar[r]
+      \ar[d]
+      \\
+      \Rder{{\mpb[f_{N}]}_{\ast}}({\mdiff[f_{N}]^{!}}\mu_{N}(G)\tens[]\omega_{Y/X}\tens[]\omega_{N/M}^{\otimes{-1}})
+      %\ar@{}[dr]|\square
+      &
+      \mu_{M}(\Rder{f_{\ast}}G)
+      \ar[l]
+      }}
+  \]が存在する．
+  さらに，\(\supp(G)\to X\)と\(
+      C_N(\supp(G))\to T_{M}X
+  \)が固有かつ\(\supp(G)\cap f^{-1}(M)\subset N\)ならば，
+  以上の射はすべて同型である．
+  
+  とくに\(f^{-1}(M)=N\)かつ，
+  \(f\)が\(M\)に関して鮮明\footnotemark[2] (clean) かつ\(\supp(G)\)上固有のとき，
+  以上の射はすべて同型である．
+\end{PRP}
+\end{leftbar}
+\footnotetext[2]{試験的な訳語}
+\begin{leftbar}
+\begin{PRP}[{\cite[Prop.4.3.5]{KS90}}]\label{prp4.3.5}
+  \(F\in\Dompb(X)\)とする．
+  \begin{enumerate}[(i)]
+      \item 標準的な射で次の図式を可換にするものが存在する．
+      \[\vcenter{\xymatrix@C=56pt@R=46pt{
+          \Rder{{\mdiff[f_N]}_{!}}(\omega_{N/M}\tens[]{\mpb[f_N]^{-1}}\mu_{M}(F))
+          \ar[d]^{}
+          \ar[r]_{}
+          %\ar@{}[dr]|\square
+          &
+          \mu_{N}(\omega_{Y/X}\tens[]{f^{-1}}F)
+          %\ar[r]
+          \ar[d]
+          \\
+          \Rder{{\mdiff[f_N]}_{\ast}}{\mpb[f_N]^{!}}\mu_{M}(F)
+          %\ar@{}[dr]|\square
+          &
+          \mu_{N}({f^{!}}F)
+          \ar[l]_{\beta}
+      }}\]
+      ここで縦向きの矢印は(3.1.6)から導かれるものである．
+      \item \(f\colon Y\to X\)と\(\mres[f]{N}\colon N\to M\)が平滑ならばこれらの射はすべて同型となる．    
+      \item \(f\)が\(M\)に横断的かつ\(f^{-1}(M)=N\)ならば，
+      自然な射\[
+          \Rder{{\mdiff[f_N]}_{\ast}}\mpb[f_N]^{-1}\mu_{M}(F)
+          \to \mu_{N}(f^{-1}F)
+      \]が存在する．
+  \end{enumerate}
+\end{PRP}
+\end{leftbar}
+
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
+  \bibitem[dR]{dR} 
+  de Rham, \textit{Vari\'et\'es diff\'erentiables}, Hermann, 1953.
+  和訳：ド・ラーム, 微分多様体, 東京図書, 1974.
+  \bibitem[GKS12]{GKS12} St\'ephane Guillermou, 
+  Masaki Kashiwara, Pierre Schapira, 
+  \textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
+  Duke. Math. J. 161, No. 2, pp.201--245, 2012.  
+  \bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
+    \textit{Differential Topology}, 
+    Prentice-Hall, 1974.
+  \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Sheaves on Manifolds}, 
+    Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+  \bibitem[Hat89]{Hat89} 服部晶夫, 多様体 増補版, 岩波全書 288, 岩波書店, 1989.
+  %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+  \bibitem[Hor63]{Hor63} Lars H\"ormander, 
+  \textit{Linear Pertial Differential Operators}, Fourth Printing, 
+  Grundlehren der Mathematischen Wissenschaften, 116, Springer, 1963.
+  \bibitem[Hor71]{Hor71} Lars H\"ormander, 
+  \textit{Fourier Integral Operators I}, 
+  Acta Math. 127, 79--183, (1971).
+  \bibitem[Hor89]{Hor89} Lars H\"ormander, 
+  \textit{The Analysis of Linear Pertial Differential Operators I}, Second Edition,
+  Grundlehren der Mathematischen Wissenschaften, 256, Springer, 1989.
+  \bibitem[Hor85]{Hor85} Lars H\"ormander, 
+  \textit{The Analysis of Linear Pertial Differential Operators III}, 
+  Grundlehren der Mathematischen Wissenschaften, 274, Springer, 1985.
+  \bibitem[Sch85]{Sch85} Pierre Schapira, 
+    \textit{Microdifferential Systems in the Complex Domain}, 
+    Grundlehren der Mathematischen Wissenschaften, 269, 
+    Springer, 1985.
+    \bibitem[ST92]{ST92} Pierre Schapira, Nobuyuki Tose, 
+    \textit{Morse Inequalities for \(\rr\)-constructible Sheaves}, 
+    Adv. Math. 93, pp.1--8, 1992. 
     \bibitem[Zwo12]{Zwo12} Maciej Zworski,
     \textit{Semiclsaaical Analysis}, 
     Graduate Studies in Mathematics, 138, 
