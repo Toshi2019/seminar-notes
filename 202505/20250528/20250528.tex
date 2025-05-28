@@ -872,7 +872,7 @@
   \item \(\tilde{q}_{j}\)：\(X\times Y\)上の第\(j\)射影
   \item \(q'_j\)：\(Y\times Y\)上の第\(j\)射影
 \end{itemize}
-\begin{DFN}
+\begin{DFN}\label{dfn4.4.1}
   \(G\in\Dompb(Y)\), \(F\in\Dompb(X)\)に対し，次のようにおく．
   \begin{enumerate}[(i)]
     \item \(\muhom(G\to F)\coloneqq\mu_{\diag[]}\RHOM_{A_{X\times Y}}(\tilde{q}_2^{-1}G,\tilde{q}_1^{!}F)\)
@@ -890,7 +890,7 @@
 \(\pi\)で\(T^{\ast}_{\diag[]}(X\times Y)\)から\(\diag[]\cong Y\)への射影を表す．
 
 \begin{leftbar}
-\begin{PRP}
+\begin{PRP}\label{prp4.4.2}
   次の標準的な同型が存在する．
   \begin{enumerate}[(i)]
     \item 一般に
@@ -1024,7 +1024,7 @@
 関手\(\muhom\)は佐藤超局所化の関手を一般化したものである．
 
 \begin{leftbar}
-\begin{PRP}
+\begin{PRP}[{\cite[Prop.4.4.3]{KS90}}]\label{prp4.4.3}
   \(Y\)を\(X\)の閉部分多様体とし，
   \(j\)をうめこみ\(\conm[Y]{X}\to \cotb[X]\)とする．
   \(F\in\Dompb(X)\)とすると，次の同型が存在する．
@@ -1185,14 +1185,104 @@
   となる．
 \end{proof}
 
+\paragraph{ \(\muhom(G,F)\)の茎}
+
+\(\gamma\)位相を使えば，\(\muhom(G,F)\)の茎を記述することができる．
+
+\begin{leftbar}
+\begin{PRP}[{\cite[Prop.4.4.4]{KS90}}]\label{prp4.4.4}
+  \(X\)がベクトル空間であるとする．
+  \(F\)と\(G\)を\(\Dompb(X)\)の対象とし，\((x_{\circ},\xi_{\circ})\in\cotb[X]\)とする．
+  このとき，
+  \[
+    H^{j}(\muhom(G,F))_{(x_{\circ},\xi_{\circ})}
+    \cong
+    \indlim[U,\gamma]H^{j}(\RG(U;\RHOM(\phi_{\gamma}^{-1}\Rder{{\phi_{\gamma}}_{\ast}}G_{U},F)))
+  \]
+  となる．
+  ただし，\(U\)は\(x_{\circ}\)の開近傍を走り，
+  \(\gamma\)は\(X\)の閉凸固有錐で\(
+    \gamma\subset\left\{
+      v\in X;\inner<v,\xi_{\circ}><0
+    \right\}\cup\{0\}
+  \)をみたすもの全体を走る．
+\end{PRP}
+\end{leftbar}
+
+\(\phi_{\gamma}\)は\(X\)に通常の位相を入れた空間から
+\(X\)に\(\gamma\)位相を入れた空間\(X_{\gamma}\)への
+自然な写像\(X\to X_{\gamma}\)を表す．
+
+\clearpage
+\paragraph{ \(\muhom\)の関手的性質}
+
+今度は\(\muhom\)の関手的性質をいくつか記述する．
+
+\begin{leftbar}
+\begin{PRP}[{\cite[Prop.4.4.5]{KS90}}]\label{prp.4.4.5}
+  定義\ref{dfn4.4.1}の状況のもとで，
+  次の自然な射による可換図式が成り立つ．
+  \begin{align}
+    \vcenter{\xymatrix{
+      \Rder{{\mdiff[f]}_{!}}\muhom(G\to F)
+      \ar[r]
+      \ar[d]
+      &
+      \muhom(G,f^{-1}F\tens[]\omega_{Y/X})
+      \ar[d]
+      \\
+      \Rder{{\mdiff[f]}_{\ast}}\muhom(G\to F)
+      &
+      \muhom(G,f^{-1}F),
+      \ar[l]
+    }}\tag{i}\\
+    \vcenter{\xymatrix{
+      \Rder{{\mdiff[f]}_{!}}\muhom(F\leftarrow G)
+      \ar[r]
+      \ar[d]
+      &
+      \muhom(f^{!}F,G\tens[]\omega_{Y/X})
+      \ar[d]
+      \\
+      \Rder{{\mdiff[f]}_{\ast}}\muhom(F\leftarrow G)
+      &
+      \muhom(f^{-1}F,G),
+      \ar[l]
+    }}\tag{ii}\\
+    \vcenter{\xymatrix{
+      \Rder{{\mpb[f]}_{!}}\muhom(G\to F)
+      \ar[r]
+      \ar[d]
+      &
+      \muhom(\Rder{f_{\ast}}G,F)
+      \ar[d]
+      \\
+      \Rder{{\mpb[f]}_{\ast}}\muhom(G\to F)
+      &
+      \muhom(\Rder{f_{!}}G,F),
+      \ar[l]
+    }}\tag{iii}\\
+    \vcenter{\xymatrix{
+      \Rder{{\mpb[f]}_{!}}\muhom(F\leftarrow G)
+      \ar[r]
+      \ar[d]
+      &
+      \muhom(F,\Rder{f_{!}}G)
+      \ar[d]
+      \\
+      \Rder{{\mpb[f]}_{\ast}}\muhom(F\leftarrow G)
+      &
+      \muhom(F,\Rder{f_{\ast}}G).
+      \ar[l]
+    }}\tag{iv}
+  \end{align}
+  \(f\)が平滑ならば，(i)と(ii)の射はすべて同型となる．
+  \(f\)が\(\supp{G}\)上固有ならば，(iii)と(iv)の射はすべて同型となる．
+\end{PRP}
+\end{leftbar}
 
 
-
-
-
-
-
-
+\clearpage
 % ======================================================
 % appendix
 % ======================================================
@@ -1245,7 +1335,9 @@
   以上の射はすべて同型である．
 \end{PRP}
 \end{leftbar}
+
 \footnotetext[2]{試験的な訳語}
+
 \begin{leftbar}
 \begin{PRP}[{\cite[Prop.4.3.5]{KS90}}]\label{prp4.3.5}
   \(F\in\Dompb(X)\)とする．

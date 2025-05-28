@@ -1,3 +1,5 @@
 \contentsline {section}{\numberline {1}前回の同一視について}{1}{section.1}%
 \contentsline {section}{\numberline {2}関手\(\mu hom\)}{2}{section.2}%
-\contentsline {section}{\numberline {付録A}ノート中で用いる主張}{7}{appendix.A}%
+\contentsline {paragraph}{ \(\mu hom(G,F)\)の茎}{7}{section*.4}%
+\contentsline {paragraph}{ \(\mu hom\)の関手的性質}{8}{section*.5}%
+\contentsline {section}{\numberline {付録A}ノート中で用いる主張}{9}{appendix.A}%

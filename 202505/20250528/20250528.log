@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  26 MAY 2025 18:51
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  28 MAY 2025 12:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -946,41 +946,44 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\mu' on input line 718.
 
-<xymatrix 3x2 314> [2] <xymatrix 3x2 375> <xymatrix 2x2 188> [3] [4] <xymatrix 3x2 246> [5] <xymatrix 2x2 146> <xymatrix 2x2 188> <xymatrix 3x2 290> <xymatrix 3x2 290> [6]
+<xymatrix 3x2 314> [2] <xymatrix 3x2 375> <xymatrix 2x2 188> [3] [4] <xymatrix 3x2 246> [5] <xymatrix 2x2 146> <xymatrix 2x2 188> <xymatrix 3x2 290> <xymatrix 3x2 290> [6] [7] <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> [8
+
+]
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 1208.
+(Font)              scaled to size 6.47278pt on input line 1298.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 1208.
- <xymatrix 2x2 154> [7]
+(Font)              scaled to size 4.62341pt on input line 1298.
+ <xymatrix 2x2 154>
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 1248.
+(Font)              scaled to size 7.39746pt on input line 1339.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 1248.
- <xymatrix 2x2 175>
+(Font)              scaled to size 5.5481pt on input line 1339.
+ <xymatrix 2x2 175> [9
+
+]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1300.
+(Font)              No change on input line 1392.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1304.
+(Font)              No change on input line 1396.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1307.
+(Font)              No change on input line 1399.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1310.
+(Font)              No change on input line 1402.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1315.
+(Font)              No change on input line 1407.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1318.
+(Font)              No change on input line 1410.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1321.
+(Font)              No change on input line 1413.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1324.
- [8]
+(Font)              No change on input line 1416.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1327.
+(Font)              No change on input line 1419.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1331.
+(Font)              No change on input line 1423.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1334.
- [9] (./20250528.aux)
+(Font)              No change on input line 1426.
+ [10] (./20250528.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
@@ -990,12 +993,12 @@ Package rerunfilecheck Info: File `20250528.out' has not changed.
 (rerunfilecheck)             Checksum: EEFA83ADAE53766AB159389A1D1C8CF0;375.
  ) 
 Here is how much of TeX's memory you used:
- 30244 strings out of 474774
- 529236 string characters out of 5758801
+ 30251 strings out of 474774
+ 529341 string characters out of 5758801
  1951032 words of memory out of 5000000
- 52049 multiletter control sequences out of 15000+600000
+ 52056 multiletter control sequences out of 15000+600000
  617848 words of font info for 172 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 84i,18n,93p,3263b,1097s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,24n,93p,3263b,1097s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 20250528.dvi (9 pages, 53744 bytes).
+Output written on 20250528.dvi (10 pages, 60040 bytes).
