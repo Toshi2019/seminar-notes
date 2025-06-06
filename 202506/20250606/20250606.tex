@@ -1,0 +1,1071 @@
+%=====================================
+%   20250606.tex
+%   20250606 
+%   toshi2019
+%=====================================
+
+% -----------------------
+% preamble
+% -----------------------
+% ここから本文 (\begin{document}) までの
+% ソースコードに変更を加えた場合は
+% 編集者まで連絡してください. 
+% Don't change preamble code yourself. 
+% If you add something
+% (usepackage, newtheorem, newcommand, renewcommand),
+% please tell it 
+% to the editor of institutional paper of RUMS.
+
+% ------------------------
+% documentclass
+% ------------------------
+\documentclass[leqno, 10pt, a4paper, dvipdfmx]{jsarticle}
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+
+\usetikzlibrary{cd}
+\usetikzlibrary{arrows.meta}
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+
+%\usepackage[mathscr]{euscript} % mathscr のフォントを変更
+
+%\usepackage{mmasym}
+
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem{Fact*}{事実}
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{k}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+%\newcommand{\Ring}{{\bf Ring}}
+\newcommand{\Ab}{{\bf Ab}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\Modf}{\mathop{\mathrm{Mod}^\mathrm{f}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits} % 写像の集合
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits} % 射集合
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits} % 自己準同型の集合
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits} % 自己同型の集合
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits} % 射集合
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits} % 核
+\newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
+\newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
+\newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+%\newcommand{\OO}{\mcal{O}}
+
+
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+%        \itshape
+         \bfseries
+%    #1\@addpunct{.}]\ignorespaces
+    {#1}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
+\renewcommand{\proofname}{証明.}
+
+
+
+%\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{section}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Op}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+%\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
+
+\newcommand{\cat}{\mathscr{C}}
+
+%フラクトゥール
+\newcommand{\frA}{\mathfrak{A}}
+\newcommand{\frX}{\mathfrak{X}}
+
+%筆記体
+\newcommand{\cA}{\mcal{A}}
+\newcommand{\cB}{\mcal{B}}
+\newcommand{\cC}{\mcal{C}}
+\newcommand{\cD}{\mcal{D}}
+\newcommand{\cE}{\mcal{E}}
+\newcommand{\cF}{\mcal{F}}
+\newcommand{\cG}{\mcal{G}}
+\newcommand{\cH}{\mcal{H}}
+\newcommand{\cI}{\mcal{I}}
+\newcommand{\cJ}{\mcal{J}}
+\newcommand{\cK}{\mcal{K}}
+\newcommand{\cL}{\mcal{L}}
+\newcommand{\cM}{\mcal{M}}
+\newcommand{\cN}{\mcal{N}}
+\newcommand{\cO}{\mcal{O}}
+\newcommand{\cP}{\mcal{P}}
+\newcommand{\cQ}{\mcal{Q}}
+\newcommand{\cR}{\mcal{R}}
+\newcommand{\cS}{\mcal{S}}
+\newcommand{\cT}{\mcal{T}}
+\newcommand{\cU}{\mcal{U}}
+\newcommand{\cV}{\mcal{V}}
+\newcommand{\cW}{\mcal{W}}
+\newcommand{\cX}{\mcal{X}}
+\newcommand{\cY}{\mcal{Y}}
+\newcommand{\cZ}{\mcal{Z}}
+
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+\newcommand{\scN}{\mathscr{N}}
+\newcommand{\scO}{\mathscr{O}}
+\newcommand{\scV}{\mathscr{V}}
+\newcommand{\scU}{\mathscr{U}}
+\newcommand{\scX}{\mathscr{X}}
+
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+%\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+%\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+%\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}%複体のホモトピー圏
+%\newcommand{\Comp}{\mathrm{C}}
+%\newcommand{\Komp}{\mathrm{K}}
+%\newcommand{\Domp}{\mathsf{D}}%複体のホモトピー圏
+
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
+\newcommand{\Domp}{\mathord{\mathsf{D}}}%\nolimits}
+\newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
+\newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
+\newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
+\newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
+\newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
+\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+\newcommand{\Dbconic}{\mathop{\mathsf{D}^\mathrm{b}_{\rrp}}\nolimits}
+\newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
+\newcommand{\Domplb}{\mathop{\mathsf{D}^\mathrm{lb}}\nolimits}
+
+
+
+
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
+\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+\newcommand{\Rder}{\mathrm{R}}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
+\newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
+\newcommand{\simra}{\mathrel{\overset{\sim}{\leftarrow}}}%同型左矢印
+\newcommand{\simrra}{\mathrel{\overset{\sim}{\longleftarrow}}}%同型左矢印
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\PSh}{\mathrm{PSh}}
+
+\newcommand{\rmD}{\mathrm{D}}
+
+\newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
+\newcommand{\ori}{\mathord{\mathrm{or}}}
+\newcommand{\Db}{\mathord{\mathscr{D}b}}
+
+\newcommand{\codim}{\mathop{\mathrm{codim}}\nolimits}
+
+
+
+\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
+\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
+
+
+\newcommand{\tens}[1][]{\mathbin{\otimes_{\raise1.5ex\hbox to-.1em{}{#1}}}}
+\newcommand{\etens}{\mathbin{\boxtimes}}
+\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
+\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
+\newcommand{\detens}{\underline{\etens}}
+\newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
+\newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
+
+\newcommand{\blk}{\mathord{\ \cdot\ }}
+\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
+
+
+%\newcommand{\hocolim}{{\mathrm{hocolim}}}
+%\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+%\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+%\newcommand{\Pro}{\mathrm{Pro}}
+%\newcommand{\Ind}{\mathrm{Ind}}
+%\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+%\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+\newcommand{\proolim}[1][]{\mathop{\text{\rm``{$\varprojlim$}''}}\limits_{#1}}
+\newcommand{\sproolim}[1][]{\smash{\mathop{\rm``{\varprojlim}''}\limits_{#1}}}
+\newcommand{\inddlim}[1][]{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}
+\newcommand{\sinddlim}[1][]{\smash{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}\,}
+\newcommand{\ooplus}{\mathop{\text{\rm``{$\oplus$}''}}\limits}
+\newcommand{\bbigsqcup}{\mathop{``\bigsqcup''}\limits}
+\newcommand{\bsqcup}{\mathop{``\sqcup''}\limits}
+\newcommand{\dsum}[1][]{\mathbin{\oplus_{#1}}}
+
+\newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
+
+\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+
+
+
+
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}[section]
+\newtheorem{DFN}[AXM]{定義}
+\newtheorem{THM}[AXM]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[AXM]{命題}
+\newtheorem{LMM}[AXM]{補題}
+\newtheorem{CRL}[AXM]{系}
+\newtheorem{EG}[AXM]{例}
+\newtheorem*{EG*}{例}
+\newtheorem{Qn}[AXM]{問い}
+\newtheorem*{Qn*}{問い}
+\newtheorem{RMK}[AXM]{注意}
+\newtheorem{CNV}[AXM]{約束}
+\newtheorem{CMT}[AXM]{コメント}
+\newtheorem*{CMT*}{コメント}
+\newtheorem{NTN}[AXM]{記号}
+\newtheorem{STT}[AXM]{主張}
+\newtheorem*{STT*}{主張}
+\newtheorem{FACT}[AXM]{事実}
+\newtheorem*{FACT*}{事実}
+% 定理環境ここまで
+%====================================================
+
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+
+
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+
+% =================================
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+\newcommand{\acstr}[2][]{\mathcal{J_{#2}}}
+%\newcommand{\acstr}[2][]{\mathcal{J(#1,#2)}}
+
+%=================================
+
+
+
+% 位相空間
+\newcommand{\Int}[1][]{\mathop{\mathrm{Int}}\nolimits_{#1}}
+\newcommand{\Cl}[1][]{\mathop{\mathrm{Cl}}\nolimits_{#1}}
+\newcommand{\Bd}[1][]{\mathop{\mathrm{Bd}}\nolimits_{#1}}
+\newcommand{\bd}{\mathord{\partial}}
+\newcommand{\Fr}[1][]{\mathop{\mathrm{Fr}}\nolimits_{#1}}
+
+
+\newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
+\newcommand{\mtp}[1][]{{}^{t\!}{#1}} % transpose of the morphism
+%\newcommand{\mpb}[1][]{{}^{t\!}{#1}'} % pull-back of the morphism
+\newcommand{\mpb}[1][]{{#1}_{\pi}} % pull-back of the morphism
+\newcommand{\mdiff}[1][]{{#1}_{d}} % pull-back of the morphism
+\newcommand{\mptan}[1][]{{#1}_{\tau}} % pull-back of the morphism
+
+
+%\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+
+\newcommand{\cotb}[1][]{T^{\ast}{#1}}
+\newcommand{\conm}[2][]{T_{#1}^{\hspace{0.7pt}\ast}{#2}}
+\newcommand{\norb}[2][]{T_{#1}{#2}}
+
+\newcommand{\cotz}[1][]{T^{\ast}_{#1}{#1}}
+
+\newcommand{\cotn}[1][]{\dot{T}^{\ast}{#1}}
+
+
+\newcommand{\muhom}{\mu hom}
+\newcommand{\muHom}[1][]{\mathrm{Hom}^\mu_{\raise1.5ex\hbox to.1em{}#1}}
+
+\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+%\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+
+\newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
+
+\newcommand{\torus}{\mathbf{T}}
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+\title{ゼミノート（6月6日分）}
+\author{Toshi2019}
+\date{\today}
+\begin{document}
+\maketitle
+\tableofcontents
+\section{ハミルトンベクトル場とシンプレクティック多様体}
+\subsection*{付加構造}
+\(M\)上の概複素構造とは，接束\(TM\)の自己準同型\footnote{
+    \(\tau\colon E\to X\)と
+    \(\tau'\colon E'\to X\)を\(X\)上のベクトル束とする．
+    このとき，連続写像\(f\colon E\to E'\)が
+    \(X\)上のベクトル束の射であるとは，
+    \(\tau'\circ f=\tau\)かつ，
+    \(\im(\mres[f]{{E}_{x}})\subset {E'}_{f(x)}\)が
+    成り立つことをいう．
+}\(J\colon TM\to TM\)で
+\(J^2=-\id_{TM}\)をみたすものをいう．
+\(J_x\colon T_{x}M\to T_{x}M\)も\(J\)で表すことがある．
+
+\begin{PRP}
+    \((M,\omega)\)をシンプレクティック多様体とする．
+    このとき，\(M\)上の概複素構造\(J\)と
+    \(M\)上のリーマン計量\(\inner<\cdot,\cdot>\)で，
+    \(u,v\in T_{x}M\)に対し\begin{equation}
+        \omega_{x}(u,Jv)=\inner<u,v>_{x}\label{eq:1.34}
+    \end{equation}
+    をみたすものが存在する．
+    双線形形式の対称性から，
+    \begin{equation}
+        \omega_{x}(Ju,Jv)=\omega_{x}(u,v)\label{eq:1.35}
+    \end{equation}
+    が成り立つ．
+    すなわち，\(J\)はシンプレクティックベクトル空間\(
+        (T_{x}M,\omega_x)
+    \)のシンプレクティック写像である．
+    さらに，
+    \begin{equation}
+        J^{\ast}=J^{-1}=-J\label{eq:1.36}
+    \end{equation}
+    である．ただし\(J^{\ast}\)は内積空間\(
+        T_{x}M,\inner<\cdot,\cdot>_{x}
+    \)における\(J\)の随伴作用素である．
+\end{PRP}
+
+\begin{proof}
+    
+\end{proof}
+
+\(M\)上の概複素構造\(J\)が\eqref{eq:1.34}をみたすとき，
+\(\omega\)と\textbf{整合的} (compatible with \(\omega\)) である
+という\footnote{
+    \cite[4.1]{MS17}では，\(
+        \inner<u,v>_{x}\coloneqq \omega_{x}(u,Jv)
+    \)が\(M\)上のリーマン計量を定めるとき，
+    \(\omega\)と整合的であるとしている．
+}．
+
+\(\omega\)と整合的な概複素構造は一意ではない．
+\(\acstr[M]{\omega}\)で\(\omega\)と両立する概複素構造からなる集合を表す．
+このとき，\(\acstr[M]{\omega}\)は可縮である．
+
+\begin{proof}
+    任意の\(J\in\acstr[M]{\omega}\)に対し，リーマン計量\(g_J\)で
+    \[
+        \omega(u,Jv)=g_J(u,v)
+    \]をみたすものがただひとつ存在する．
+    命題の証明では，\(g\)に対し
+    概複素構造\(J=J_{g}\)と計量\(g_J\)で\(J_{g_J}=J\)を
+    みたすものを構成した．
+    そこで，\(M\)上の計量\(g^{\ast}\)を固定して，
+    \(\acstr[M]{\omega}\)における縮小写像を，
+    \(0\leqq t\leqq 1\)と\(J\in\acstr[M]{\omega}\)に対し，
+    \[
+        (t,J)\mapsto J_{(1-t)g_{J}+tg^{\ast}}
+    \]
+    を対応させることで定める．
+    よって，\(\id_{\acstr[M]{\omega}}\)は定値写像\(
+        J_{g^{\ast}}\colon J\mapsto J_{g^{\ast}}
+    \)とホモトピックである．
+\end{proof}
+
+\begin{CMT}
+    服部p.126系5.3でリーマン計量の間のホモトピーの存在について言及している．
+\end{CMT}
+
+\subsection*{全体積}
+ダルブーの定理から，シンプレクティック多様体は，局所的にはすべて同型で，
+次元以外に，シンプレクティック不変量は存在しない．
+他方，全体積 (total volume) は自明な大域的不変量である．
+\begin{proof}
+    \(u\colon (M_1,\omega_1) \to (M_2,\omega_2)\)を
+    \(M_1\)から\(M_2\)へのシンプレクティック微分同相とする．
+    このとき，\(u^{\ast}\omega_2=\omega_1\)から，
+    \(\varOmega_1=\omega_1^n\), \(\varOmega_2=\omega_2^n\)に対し
+    \begin{equation}
+        u^{\ast}\varOmega_2=\varOmega_1\label{eq:1.38}
+    \end{equation}
+    が成り立つ．微分同相\(u\colon M_1\to M_2\)が向きを保つことから
+    \[
+        \int_{M_1}^{}u^{\ast}\varOmega_{2}=
+        \int_{M_2}^{}u^{\ast}\varOmega_{2}
+    \]が成り立ち，\eqref{eq:1.38}から，
+    \[
+        \int_{M_1}^{}\varOmega_{1}=
+        \int_{M_2}^{}u^{\ast}\varOmega_{2}
+    \]
+    である．
+    したがって，\(\varOmega_{1}\)と\(\varOmega_{2}\)の
+    全体積は一致する．\footnote{
+        ここで，全体積は\(\varOmega_1\)から定まる
+        リーマン計量による体積であろう．
+    }
+\end{proof}
+\subsubsection*{曲面の場合}
+\(M\)が曲面，すなわち，コンパクトかつ連結な有向2次元多様体の場合を考える．
+向きは体積形式（面積形式）\(\omega\)で与えられる．
+これは曲面上の\(3\)形式が消滅することから閉形式である．
+したがって，\((M,\omega)\)はシンプレクティック多様体である．
+
+いま，\((M_1,\omega_1)\)と\((M_2,\omega_2)\)を
+上の定義によるシンプレクティック曲面とし，\(u\colon M_1\to M_2\)を
+シンプレクティック微分同相\(u^{\ast}\omega_2=\omega_1\)とする．
+これは，2次元においては保体積微分同相と同じことである．
+（\(\omega\)が体積形式なので．）よって\begin{equation}
+    \int_{M_1}^{}\varOmega_{1}=
+    \int_{M_2}^{}u^{\ast}\varOmega_{2}
+\end{equation}
+であり，体積が一致する．
+ここでの目標は，この逆を示すことである．
+すなわち，
+2つのコンパクト連結有向曲面\((M_1,\omega_1)\), \((M_2,\omega_2)\)が
+微分同相（オイラー標数が一致するとき成り立つ）であり，
+全体積も一致するとき，微分同相\(u\colon M_1\to M_2\)で
+\(u^{\ast}\omega_2=\omega_1\)をみたすものが存在することを示す．
+これによって，コンパクト連結2次元シンプレクティック多様体が
+オイラー標数と全体積で分類できる．
+もっと一般に，保体積微分同相写像に対する次の主張を示す．
+
+\begin{THM}[Moser]
+    \(M\)をコンパクト連結有向多様体で境界のないものとする．
+    \(\alpha\)と\(\beta\)を体積形式で全体積が一致する，すなわち
+    \begin{equation}
+        \int_{M}^{}\alpha=
+        \int_{M}^{}\beta\label{eq:1.40}
+    \end{equation}
+    であるものとする．
+    このとき，微分同相写像\(u\colon M\to M\)で\(
+        u^{\ast}\beta=\alpha
+    \)をみたすものが存在する．
+\end{THM}
+
+\begin{proof}
+    \(\alpha\)と\(\beta\)を繋ぐ体積形式\(\alpha_t\)を
+    \[
+        \alpha_t=(1-t)\alpha+t\beta
+    \]で定める．
+    \subparagraph*{\(\alpha_t\)が体積形式であること：}
+    \(\alpha\)と\(\beta\)を
+    局所的に\(\alpha=a(x)dx_1\wedge\dots\wedge dx_m\), 
+    \(\beta=b(x)dx_1\wedge\dots\wedge dx_m\)と表す．
+    このとき，
+    \(a,b\)はいたるところ\(0\)にならない\(C^\infty\)級関数で，
+    仮定\eqref{eq:1.40}から符号が同じである．
+    したがって，\(\alpha_t\)は至るところ\(0\)にならない\(m\)形式である．
+
+    微分同相写像\(\varphi^{t}\)の族\((\varphi^t)\)で
+    \(0\leqq t\leqq 1\)に対し\begin{equation}
+        (\varphi^t)^{\ast}\alpha_{t}=\alpha,
+        \quad
+        \varphi^0=\id\label{eq:1.41}
+    \end{equation}をみたすものを構成する．
+    この\((\varphi^t)\)に対し，
+    \(u\coloneqq \varphi^1\)とおくことで，
+    \(u^{\ast}\beta=\alpha\)が得られる．
+    次の事実を用いる．
+    \begin{FACT*}
+        \(M\)を境界の無い\(m\)次元コンパクト連結有向多様体とすると，
+        \[H^{m}_{\mathrm{dR}}(M)\cong\rr\]である．この同型は
+        \(\eta\mapsto\int_{M}^{}\eta\)で与えられる．
+    \end{FACT*}
+    いま，仮定\eqref{eq:1.40}から\(
+        \int_{M}^{}(\beta-\alpha)=0\in\rr
+    \)であるから，
+    上の事実より，\(
+        \beta-\alpha=0\in H^{m}_{\mathrm{dR}}(M)
+    \)である．
+    したがって，\(m-1\)次微分形式\(\gamma\)で\(
+        \beta-\alpha=d\gamma
+    \)をみたすものが存在する．
+    \(\alpha_t\)は体積形式（特に非退化）なので，
+    各\(0\leqq t\leqq 1\)に対し，ベクトル場
+    \(X_t\)で\(i_{X_{t}}\alpha_t=-\gamma\)をみたすもの
+    が存在する\footnote{
+        局所的に\(
+            -\gamma=
+            \sum_{j=1}^{m}c_{j}(x)
+            dx_1\wedge\dots\wedge 
+            \widehat{dx_{j}}
+            \wedge\dots\wedge dx_{m-1}
+        \), \(
+            \alpha_t=a(x)dx_1\wedge\dots\wedge dx_{m}
+        \), \(
+            X_t
+            =\sum_{j=1}^{m}
+            v^{j}(x)\frac{\partial}{\partial x_j}
+        \)と表す．このとき，\(i_{X_{t}}\alpha_t=-\gamma\)は
+        \(
+            i_{X_{t}}\alpha_t
+            =
+            \sum_{j=1}^{m}
+            (-1)^{j-1}v^{j}(x)a(x)
+            dx_1\wedge\dots\wedge 
+            \widehat{dx_{j}}
+            \wedge\dots\wedge dx_{m-1}
+            =\sum_{j=1}^{m}c_{j}(x)
+            dx_1\wedge\dots\wedge 
+            \widehat{dx_{j}}
+            \wedge\dots\wedge dx_{m-1}
+        \)となる．
+        したがって，\(v^{j}(x)=(-1)^{j-1}c_{j}/a(x)\)とおけばよい．
+        もちろん\(\alpha_t\)が体積形式なので\(a(x)\)は0にならない．
+    }．
+    この\((X_t)\)に対し，\(\varphi^t\)を\(X_t\)の定める流れで
+    \(\varphi^0=\id\)をみたすものとする．
+    \(M\)はコンパクトなのですべての\(t\)に対し\(\varphi^t\)が存在する．
+    \(d\alpha_t=0\)なので，
+    \begin{align*}
+        \frac{d}{dt}(\varphi^{t})^{\ast}\alpha_t
+        &=(\varphi^{t})^{\ast}(L_{X_t}\alpha_t+\frac{d}{dt}\alpha_t)\\
+        &=(\varphi^{t})^{\ast}(d(i_{X_t}\alpha_t+i_{X_t}(d\alpha_t))+\beta-\alpha)\\
+        &=(\varphi^{t})^{\ast}(d(i_{X_t}\alpha_t)+\beta-\alpha)
+    \end{align*}
+    である．\(X_t\)の定め方から，
+    \(
+        d(i_{X_t}\alpha_t)+\beta-\alpha
+        =
+        d(i_{X_t}\alpha_t+\gamma)=0
+    \)であるから，
+    \[
+        \frac{d}{dt}(\varphi^{t})^{\ast}\alpha_t=0
+    \]となる．
+    よって，\eqref{eq:1.41}が成り立つ．
+\end{proof}
+
+ここまでの話をまとめると，
+\begin{itemize}
+    \item シンプレクティック微分同相写像は保体積微分同相写像であり，全体積が（自明な）大域的不変量となる．
+    \item 全体積は保体積微分同相写像に関する完全不変量である．
+\end{itemize}
+この先，
+\begin{itemize}
+    \item 全体積以外のシンプレクティック不変量であって，
+    シンプレクティック微分同相が
+    保体積微分同相とは異なる性質を持つということがわかるようなものが作りたい．
+\end{itemize}
+\subsection*{グロモフ幅}
+\((M,\omega)\)の\textbf{グロモフ幅} (Gromov width) を
+\[
+    D(M,\omega)\coloneqq
+    \sup\left\{
+        \pi r^2;
+        \text{シンプレクティックうめこみ\(\varphi\colon(B(r),\omega_{0})\to(M,\omega)\)が存在する．}
+    \right\}
+\]で定める．
+\begin{STT*}
+    グロモフ幅はシンプレクティック不変量である．
+\end{STT*}
+まず次の単調性を示す：
+シンプレクティックうめこみ
+\(\psi\colon(M,\omega)\hookrightarrow (N,\tau)\)が存在するとき，
+\begin{equation}
+    D(M,\omega)\leqq D(N,\tau).
+\end{equation}
+シンプレクティックうめこみの合成は
+シンプレクティックうめこみなので，
+\begin{align*}
+    \left\{
+        \pi r^2;
+        \text{シンプレクティックうめこみ\(\varphi\colon(B(r),\omega_{0})\to(M,\omega)\)が存在する．}
+    \right\}\\
+    \subset
+    \left\{
+        \pi r^2;
+        \text{シンプレクティックうめこみ\(\psi\varphi\colon(B(r),\omega_{0})\to(N,\tau)\)が存在する．}
+    \right\}
+\end{align*}
+が成り立つ．したがって，\(\sup\)をとれば，
+\[
+    D(M,\omega)\leqq D(N,\tau)
+\]
+である．
+
+\(f\colon(M,\omega)\rightarrow (N,\tau)\)が
+シンプレクティック微分同相写像のときは，これと
+逆写像
+\(f^{-1}\colon(N,\tau)\to (M,\omega)\)
+に単調性を用いて，
+\[
+    D(N,\tau)\leqq D(M,\omega)
+\]となる．
+
+\section{エネルギー曲面上の周期軌道 (\cite[\S1.4]{HZ94})}
+
+\subsection*{回帰定理の後}
+
+\begin{itemize}
+    \item 回帰定理 → \(S\)上での周期的な現象は？
+    \item 希望：\begin{quote}
+        ハミルトン系を摂動したら，
+        回帰点の中には無限回戻ってくるだけでなく，
+        無限に近くに戻ってくるものがある．それによって周回軌道をなす
+    \end{quote}これが所謂「閉問題」．
+\end{itemize}
+
+\paragraph{閉補題}1983:「genericにはコンパクト正則エネルギー曲面上で稠密に周期軌道がある」
+
+\begin{Qn*}
+    \((\rr^{2n},\omega_{0})\)内のコンパクト正則エネルギー曲面\(S\)は，
+    ハミルトンベクトル場\(X_H\)の周期解をもつか？
+\end{Qn*}
+
+\begin{description}
+    \item[1950] Seifert: \(S^3\)上の任意の0にならないベクトル場は閉軌道を持つか？
+    \item[1974] Schweitzer: \(S^3\)上の\(C^1\)級ベクトル場で閉軌道を持たないものを構成．
+    \item[1993] Kupenberg: \(S^3\)上の\(C^\infty\)級ベクトル場で閉軌道を持たないものを構成．
+\end{description}
+
+\(\dim>3\)のときは，
+\begin{description}
+    \item[1966] Wilson: 持たないものがある．
+\end{description}
+
+「保体積\(C^\infty\)級ベクトル場で周期解を持たないものはあるか？」
+という問いも考えられそう．
+
+しかし，Hofer: \(S^3\)上の任意の滑らかなReebベクトル場は周期解を持つ．
+
+\begin{DFN}
+    \(X\in\frX(S^3)\)がReebベクトル場とは，
+    \(\lambda\in\Omega^1(S^3)\)で次をみたすものが存在すること：
+    \begin{enumerate}[(i)]
+        \item \(\lambda\wedge d\lambda\)が体積形式を定める．
+        \item \(i_{X}d\lambda=0\)かつ\(i_{X}\lambda=1.\)
+    \end{enumerate}
+\end{DFN}
+
+\subsection*{周期解がハミルトニアンに依らないこと}
+
+上の問いは\(S\)を表すハミルトニアンの取り方に依らない．
+これは超曲面とシンプレクティック構造にしか依存しない．
+
+\begin{proof}
+    \(F\)を\(S\)を定める別の関数で
+    \[
+        S=
+        \left\{x; H(x)=c\right\}
+        =
+        \left\{x; F(x)=c'\right\}
+    \]
+    かつ\(S\)上で\(dH(x)\ne0\), \(dF(x)\ne0\)をみたすもの
+    とする．
+    このとき，\[
+        \Ker{dF(x)}=\Ker{dH(x)}
+    \]であり，
+    次元定理から\(\Img{dF(x)}=\Img{dH(x)}=\rr\)となるので，
+    至る所\(0\)にならない滑らかな関数\(\rho\)で，任意の\(x\in S\)に対し\[
+        dF(x)=\rho(x)dH(x)
+    \]となるものが存在する．
+    よって，\(X_H\)と\(X_F\)は\(S\)上で同じ軌道をもち，
+    一般にはパラメータだけ異なる．
+    より正確には，
+    \(\varphi^t\)を\(S\)での\(X_H\)の流れとするとき，
+    \(S\)での\(X_F\)の流れ\(\psi^t\)は\[
+        \psi^s(x)=\varphi^{t}(x),\quad
+        t=t(s,x),
+        \quad
+        x\in S
+    \]で与えられる．ただし，
+    \(t\)はパラメータ\(x\in S\)に依存する微分方程式\[
+        \frac{dt}{ds}=\rho\left(\varphi^t(x)\right),\quad
+        t(0,x)=0
+    \]で定める．
+    よってとくに\(X_H\)は\(X_F\)と同じ周期軌道をもつ．
+\end{proof}
+
+\begin{EG*}
+    \(X_H\)がエネルギー曲面\[
+        S=\left\{x\in\rr^{2n}; 
+        \frac{1}{2}\lvert x\rvert^2=R>0
+        \right\}
+    \]を持つとすると\(X_H\)の\(S\)での解はすべて周期解である．
+    実際，
+    ハミルトニアン\(F\)を\(F(x)= \frac{1}{2}\lvert x\rvert^2\)で
+    定めると，正則エネルギー曲面として\(S\)を
+    \[
+        S=\left\{x\in\rr^{2n}; 
+        F(x)=R
+        \right\}
+    \]とかける．
+    \[
+        X_F
+        =J\nabla F(x)
+        =J
+        \begin{bmatrix}
+            x_1\\
+            \vdots\\
+            x_n
+        \end{bmatrix}
+        =Jx
+    \]
+    なので，その流れ\(\psi^s(x)\)は
+    \[
+        \psi^s(x)=
+        e^{sJ}x
+        =(\cos{s})x+(\sin{s})Jx
+    \]
+    であり，周期的である．
+\end{EG*}
+
+\subsection*{抽象的な定式化}
+\(S\subset \rr^{2n}\)を超曲面とする．
+\(T_xS\)は\((2n-1)\)次元なので，
+\(\mres[\omega_{0}]{T_{x}S}\)は退化し，
+\(\rank(\mres[\omega_{0}]{T_{x}S})=2n-2\)となる．
+よって，\(\omega_0\)と\(S\)から，直線束
+\[
+    \cL_S
+    =
+    \left\{
+        (x;\xi)\in TS;
+        \omega_0(\xi,v)=0\ (\forall v\in T_xS)
+    \right\}
+\]が定まる．
+\(S\)が\(X_H\)に関する正則なエネルギー曲面のとき，
+任意の\(v\in T_xS\)に対し，
+\[
+    \omega_0(X_{H}(x),v)=-dH(x)v=0
+\]
+となる．
+したがって，\(x\in S\)に対し\(X_H(x)\in\cL_S(x)\)である．
+
+
+\section{凸エネルギー曲面上の周期軌道の存在 (\cite[\S1.5]{HZ94})}
+
+
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    \bibitem[HZ94]{HZ94} 
+    Helmut Hofer, Eduard Zehnder
+    \textit{Symplectic Invariants and Hamiltonian Dynamics}, 
+    Birkh\"auser Advanced Texts Basler Lehrb\"ucher, Birkh\"auser Basel, 1994.
+    \bibitem[MS17]{MS17} McDuff, Dusa, 
+    and Dietmar Salamon, 
+    Introduction to Symplectic Topology, 
+    3rd edn (Oxford, 2017).
+    %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+\end{thebibliography}
+
+%===============================================
+
+
+
+\end{document}
