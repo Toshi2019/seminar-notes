@@ -1148,11 +1148,69 @@
                 =\alpha f(x)
             \]が成立する．
         \end{quotation}
-        岩波数学辞典の偏微分方程式や，テラカンの演習問題にも載っていた．
+        \(\alpha=1\)のときが，いまの場合になる．
+
+        他の本でいうと，
+        岩波数学辞典の偏微分方程式の項や，
+        テラカンの演習問題にも載っていた．
     }\(\inner<F_x,x>=F\)を微分すると
-    \[
-        \inner<F_{xx},x>+\inner<F_{x},1>=F_{x}
-    \]から
+    \begin{align*}
+        \nabla\inner<F_x,x>
+        &=\nabla\left(
+            \sum_{i=1}^{2n}
+            x_i\dfrac{\partial f}{\partial x_{i}}
+        \right)\\
+        &=\begin{bmatrix*}[c]\displaystyle
+            \dfrac{\partial}{\partial x_{1}}\left(\sum_{i=1}^{2n}x_i\dfrac{\partial f}{\partial x_{i}}\right)\\
+            \vdots\\
+            \displaystyle
+            \dfrac{\partial}{\partial x_{2n}}\left(\sum_{i=1}^{2n}x_i\dfrac{\partial f}{\partial x_{i}}\right)
+        \end{bmatrix*}
+        =\begin{bmatrix*}[c]\displaystyle
+            \dfrac{\partial f}{\partial x_{1}}
+            +
+            \sum_{i=1}^{2n}
+            x_i\dfrac{\partial^2f}{\partial x_{1}\partial x_{i}}\\
+            \vdots\\
+            \displaystyle
+            \dfrac{\partial f}{\partial x_{2n}}
+            +
+            \sum_{i=1}^{2n}
+            x_i\dfrac{\partial^2f}{\partial x_{2n}\partial x_{i}}
+        \end{bmatrix*}\\
+        &=\begin{bmatrix*}[c]\displaystyle
+            \dfrac{\partial f}{\partial x_{1}}\\
+            \vdots\\
+            \displaystyle
+            \dfrac{\partial f}{\partial x_{2n}}
+        \end{bmatrix*}
+        +
+        \begin{bmatrix*}[c]\displaystyle
+            \sum_{i=1}^{2n}
+            x_i\dfrac{\partial^2f}{\partial x_{1}\partial x_{i}}\\
+            \vdots\\
+            \displaystyle
+            \sum_{i=1}^{2n}
+            x_i\dfrac{\partial^2f}{\partial x_{2n}\partial x_{i}}
+        \end{bmatrix*}\\
+        &=F_x+\begin{bmatrix*}[c]\displaystyle
+            \dfrac{\partial^2f}{\partial x_{1}\partial x_{1}}
+            &\cdots&
+            \dfrac{\partial^2f}{\partial x_{1}\partial x_{2n}}\\
+            \vdots&\ddots&\vdots\\
+            \displaystyle
+            \dfrac{\partial^2f}{\partial x_{2n}\partial x_{1}}
+            &\cdots&
+            \dfrac{\partial^2f}{\partial x_{2n}\partial x_{2n}}
+        \end{bmatrix*}
+        \begin{bmatrix*}[c]\displaystyle
+            x_1\\
+            \vdots\\
+            x_{2n}
+        \end{bmatrix*}\\
+        &=F_x+F_{xx}x=F_x
+    \end{align*}
+    より
     \(F_{xx}x=0\)
     となってしまう．
     そこで，凸性の仮定より\(
