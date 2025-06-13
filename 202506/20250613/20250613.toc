@@ -1,4 +1,4 @@
 \contentsline {section}{\numberline {1}ハミルトンベクトル場とシンプレクティック多様体}{1}{section.1}%
 \contentsline {section}{\numberline {2}エネルギー曲面上の周期軌道 (\cite [\S 1.4]{HZ94})}{5}{section.2}%
 \contentsline {paragraph}{閉補題}{5}{section*.8}%
-\contentsline {section}{\numberline {3}凸エネルギー曲面上の周期軌道の存在 (\cite [\S 1.5]{HZ94})}{7}{section.3}%
+\contentsline {section}{\numberline {3}凸エネルギー曲面上の周期軌道の存在 (\cite [\S 1.5]{HZ94})}{6}{section.3}%

@@ -526,7 +526,7 @@
 \newenvironment{redleftbar}{%
   \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
   \MakeFramed {\advance\hsize-\width \FrameRestore}}%
- {\endMakeFramed}
+{\endMakeFramed}
 
 
 
@@ -1048,12 +1048,13 @@
 \section{凸エネルギー曲面上の周期軌道の存在 (\cite[\S1.5]{HZ94})}
 
 ここでの目標は変分法における直接法を説明すること．
-
+\begin{leftbar}
 \begin{THM}[{\cite[Thm 5]{HZ94}}]
     \(S\)を\((\rr^{2n},\omega_0)\)の超曲面で
     \(\rr^{2n}\)のコンパクトな狭義の凸領域の\(C^2\)境界であるものとする．
     このとき，\(S\)上には閉軌道が存在する．
 \end{THM}
+\end{leftbar}
 
 特に任意のハミルトンベクトル場\(X_H\)で\(S\)を正則エネルギー曲面と
 するものは，\(S\)上に周期解を持つことがわかる．
@@ -1097,28 +1098,56 @@
         したがって，\(L\)は\(S\)と\(t_0v\)でのみ交わる．
     \end{proof}}
     \end{redleftbar}
-
     \(\rr^{2n}\)上の関数\(F\)を，\(x\ne0\)に対しては，
     \(\xi=\lambda^{-1}x\in S\)となる\(\lambda\)を対応させ，
     \(x=0\)に対し\(0\)を対応させることで定める．
     このとき\[
         S\coloneqq\left\{x; F(x)=1\right\}
     \]と表せる．
-    \(S\)を狭義凸関数\footnote{
+    \(S\)を\textbf{狭義凸関数} (strictly convex function)，
+    すなわち%\footnote{
         ヘッセ行列\(H_{xx}(x)\)が各点\(x\ne0\)で正定値となる関数
-    }\(H\)の等位集合\[
+    %}
+    \(H\)の等位集合\[
         \left\{x;H(x)=1\right\}
     \]として表したい．
-    いま，\(F\)は\(1\)次同次関数である．実際\(F(x)=\lambda\)とする．
-    \(\mu>0\)に対し，\(
-        \xi=\lambda^{-1}x=(\lambda\mu)^{-1}(\mu x)
-    \)であるから，\(F(\mu x)=\lambda\mu=\mu F(x)\)である．
+    いま，関数\(F\)は\textbf{\(1\)次同次}\footnote{
+        一般に，関数\(f\)が\(m\)次同次関数であるとは，
+        実数\(\lambda\)に対し\(
+            f(\lambda x)=\lambda^m f(x)
+        \)が成り立つこと．
+        \(\lambda>0\)のときのみ成り立つ場合，
+        関数\(f\)は\textbf{半同次} (positively 
+        homogeneous) \(m\)次関数であるという．（和訳は\cite[注5.1]{福80}に倣った．）
+        いま，関数\(F\)は\(x=0\)を除き\(F(x)>0\)なので
+        特に半同次\(1\)次関数である．
+        （本だとたんに同次であると言っている．）
+    } (homogeneous 
+    of degree \(1\)) である．
+    %\begin{quote}
+    \begin{redleftbar}
+        \(\left.\because\right)\) \(F(x)=\lambda\)とする．
+        \(\mu>0\)に対し，\(
+            \xi=\lambda^{-1}x=(\lambda\mu)^{-1}(\mu x)
+        \)であるから，\(F(\mu x)=\lambda\mu=\mu F(x)\)である．    
+    \end{redleftbar}    
+    %\end{quote}
+    \noindent
     したがって，明らかに\(F\)は狭義凸にならない．
     実際，オイラーの公式\footnote{
-        なぜオイラーの公式？
-    }\(\inner<F_x,x>=F\)を微分することで\(F_{xx}x=0\)
+        なぜオイラーの公式？由来がわからない．
+    }\(\inner<F_x,x>=F\)を微分すると
+    \[
+        \inner<F_{xx},x>+\inner<F_{x},1>=F_{x}
+    \]から
+    \(F_{xx}x=0\)
     となってしまう．
-    そこで，凸性の仮定から\(\mres[F_{xx}]{TS}>0\)となるので，
+    そこで，凸性の仮定より\(
+        \mres[F_{xx}]{TS}>0
+    \)となる%\footnote{
+        %\(\)
+    %}
+    ことから，
     関数\(H\)を\[H(x)=\left(F(x)\right)^2\]とおくと，
     \(H\)が狭義凸となるのは，\(S\)が狭義凸のときであることがわかる．
     以上で，任意の狭義凸エネルギー曲面\(S\)で原点を内部に含むものは
@@ -1148,7 +1177,7 @@
     and Dietmar Salamon, 
     Introduction to Symplectic Topology, 
     3rd edn (Oxford, 2017).
-    %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+    \bibitem[福80]{福80} 福原満洲雄, 常微分方程式 (第2版), 岩波書店, 1980.
 \end{thebibliography}
 
 %===============================================
