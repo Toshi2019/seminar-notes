@@ -1,10 +1,10 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  13 JUN 2025 19:11
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  16 JUN 2025 04:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/giuseppe/seminar-notes/202506/20250613/20250613.tex
-(/Users/giuseppe/seminar-notes/202506/20250613/20250613.tex
+**/Users/giuseppe/seminar-notes/D-mod/finiteness/finiteness.tex
+(/Users/giuseppe/seminar-notes/D-mod/finiteness/finiteness.tex
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -820,8 +820,8 @@ File: l3backend-dvipdfmx.def 2024-02-20 L3 backend support: dvipdfmx
 \g__pdf_backend_object_int=\count353
 \g__pdf_backend_annotation_int=\count354
 \g__pdf_backend_link_int=\count355
-) (./20250613.aux)
-\openout1 = `20250613.aux'.
+) (./finiteness.aux)
+\openout1 = `finiteness.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 608.
 LaTeX Font Info:    ... okay on input line 608.
@@ -870,24 +870,26 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 Package xypdf Info: Line width: 0.39998pt on input line 608.
 Package hyperref Info: Link coloring ON on input line 608.
- (./20250613.out) (./20250613.out)
+ (./finiteness.out) (./finiteness.out)
 \@outlinefile=\write6
-\openout6 = `20250613.out'.
+\openout6 = `finiteness.out'.
 
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 (Font)              scaled to size 15.9785pt on input line 610.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
 (Font)              scaled to size 15.9785pt on input line 610.
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 610.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 610.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 15.9785pt on input line 610.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 610.
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 (Font)              scaled to size 11.09619pt on input line 610.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
 (Font)              scaled to size 7.39746pt on input line 610.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
 (Font)              scaled to size 5.5481pt on input line 610.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 610.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 7.39746pt on input line 610.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
@@ -904,101 +906,28 @@ LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 610.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 610.
- (./20250613.toc
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 2.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmss.fd
-File: ts1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-))
+ (./finiteness.toc)
 \tf@toc=\write7
-\openout7 = `20250613.toc'.
+\openout7 = `finiteness.toc'.
 
-LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 612.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 612.
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 613.
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 621.
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 621.
-LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 626.
-LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 626.
-LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 626.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 626.
  [1
 
-] [2]
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 783.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 783.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 827.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 827.
- [3]
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 867.
- [4]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 907.
-
-LaTeX Font Info:    Trying to load font information for U+euf on input line 944.
-(/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [5]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 1048.
-
-[6]
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 1078.
-LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 1078.
-LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <9> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 1079.
-LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 1079.
-LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <9> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 1079.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 1079.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 1080.
-LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <8> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 1125.
-LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 1125.
-LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <8> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 1125.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 1125.
- [7]
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1246.
- [8] [9] (./20250613.aux)
+] (./finiteness.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `20250613.out' has not changed.
-(rerunfilecheck)             Checksum: E9A7C09341654C6008D6CE6279441977;761.
+Package rerunfilecheck Info: File `finiteness.out' has not changed.
+(rerunfilecheck)             Checksum: 2245DA24AEA2116E8F4C1DB610D9B15B;236.
  ) 
 Here is how much of TeX's memory you used:
- 30312 strings out of 474774
- 531004 string characters out of 5758801
- 1945032 words of memory out of 5000000
- 52100 multiletter control sequences out of 15000+600000
- 620417 words of font info for 185 fonts, out of 8000000 for 9000
+ 30168 strings out of 474774
+ 527928 string characters out of 5758801
+ 1924032 words of memory out of 5000000
+ 51976 multiletter control sequences out of 15000+600000
+ 614711 words of font info for 158 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 84i,17n,93p,3263b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,6n,93p,3266b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 20250613.dvi (9 pages, 47424 bytes).
+Output written on finiteness.dvi (1 page, 2636 bytes).

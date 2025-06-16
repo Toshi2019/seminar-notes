@@ -1,0 +1,3 @@
+\contentsline {section}{\numberline {1}前回の同一視について}{1}{section.1}%
+\contentsline {section}{\numberline {2}関手\(\mu hom\)}{2}{section.2}%
+\contentsline {section}{\numberline {付録A}ノート中で用いる主張}{10}{appendix.A}%
