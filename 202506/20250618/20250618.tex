@@ -388,7 +388,8 @@
 \newcommand{\CCat}{\Comp(\cat)}
 \newcommand{\KCat}{\Komp(\cat)}
 \newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
-\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+%\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\HOM}{\mathop{\mathcal{H}\hspace{-0pt}om}\nolimits}%内部Hom
 \newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
 
 \newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
@@ -432,6 +433,7 @@
 \newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
 \newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
 \newcommand{\lltens}[1][]{\mathbin{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}}
+\newcommand{\lletens}[1][]{\mathbin{{\mathop{\boxtimes}\limits^{\mathrm{L}}_{#1}}}}
 \newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
 \newcommand{\detens}{\underline{\etens}}
 \newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
@@ -575,7 +577,8 @@
 \newcommand{\torus}{\mathbf{T}}
 
 \newcommand{\diag}[1][]{\Delta_{#1}}
-
+%  \[\mu_{\Delta_{Y}}\mathrm{R}\mathcal{H}om(G,F)\]
+\newcommand{\micro}[1]{\mu_{#1}\hspace{-2pt}}
 
 % ----------------------------
 % documenet 
@@ -588,132 +591,6 @@
 \begin{document}
 \maketitle
 \tableofcontents
-
-\section{前回の同一視について}
-前回，次の図式の射の構成について議論した．
-\begin{equation}%\label{eq:4.4.1}
-  \vcenter{\xymatrix@C=36pt@R=36pt{
-    T^{\ast}_{\diag[Y]}(Y\times Y)
-    \ar[d]^-{\rotatebox{90}{\(\sim\)}}
-    &
-    T^{\ast}_{\diag[f]}(X\times Y)
-    \ar[d]^-{\rotatebox{90}{\(\sim\)}}
-    \ar[l]
-    \ar[r]
-    &
-    T^{\ast}_{\diag[X]}(X\times X)
-    \ar[d]^-{\rotatebox{90}{\(\sim\)}}
-    \\
-    \cotb[Y]
-    &
-    Y\pb[X]\cotb[X]
-    \ar[l]^-{\mdiff[f]}
-    \ar[r]_-{\mpb[f]}
-    &
-    \cotb[X].
-  }}\tag{4.4.1}
-\end{equation}
-これは，図式
-\begin{equation}%\label{eq:4.4.3}
-  \vcenter{\xymatrix@C=36pt@R=36pt{
-    Y\times Y
-    \ar[r]_-{f_1}
-    &
-    X\times Y
-    \ar@{}[rd]|\square
-    %\ar[d]^-{\rotatebox{90}{\(\sim\)}}
-    \ar[r]_-{f_2}
-    &
-    X\times X
-    %\ar[d]^-{\rotatebox{90}{\(\sim\)}}
-    \\
-    \diag[Y]  
-    \ar@{^{(}->}[u]^-{}
-    \ar[r]^-{{\sim}}
-    &
-    \diag[]
-    \ar@{^{(}->}[u]^-{}
-    %\ar[l]^-{\mdiff[f]}
-    \ar[r]_-{f}
-    &
-    \diag[X].
-    \ar@{^{(}->}[u]^-{}
-  }}\tag{4.4.3}
-\end{equation}
-の\(f_2\)が\(\diag[X]\)に対して横断的であることを示す際に，
-\(\mres[f_2]{\diag}\colon\diag[]\to\diag[X]\)の基本図式
-\[
-  \vcenter{\xymatrix@C=36pt@R=36pt{
-  T^{\ast}_{\diag[]}(X\times Y)
-  \ar[dr]^-{}
-  &
-  \diag[]\dpb[{\diag[X]}]T^{\ast}_{\diag[X]}(X\times X)
-  \ar[d]^-{}
-  \ar[l]_-{\mdiff[{f_2}_{\diag[]}]}
-  \ar[r]^-{\mpb[{f_2}_{\diag[]}]}
-  &
-  T^{\ast}_{\diag[X]}(X\times X)
-  \ar[d]^-{}
-  \\
-  %\cotb[Y]
-  &
-  \diag[]
-  %\ar[l]^-{}
-  \ar[r]_-{\mres[{f_2}]{\diag[]}}
-  &
-  \diag[X]
-}}\]
-の\(\mdiff[{f_2}_{\diag[]}]\)が同型であることから
-従うことをコメントされた際の議論である．
-
-\begin{proof}[{\(\mdiff[{f_2}_{\diag[]}]\)が同型であることの証明．}]
-  単射であることは前回やった．
-  したがって，\(\diag[]\)上のベクトル束の階数が
-  一致することを言えばよい\footnote{
-    これは，ベクトル束の射が底空間の点を保つことから，
-    ファイバーごとに全射・単射を議論すれば良いことによる．
-  }．
-  \begin{align*}
-    \rank{\conm[{\diag[]}]{(X\times Y)}}
-    &=\codim{\diag[]}\\
-    &=(\dim{X}+\dim{Y})-\dim{Y}\\
-    &=\dim{X}
-  \end{align*}であり，\begin{align*}
-    \rank{\diag[]\dpb[{\diag[X]}]\conm[{\diag[X]}]{(X\times X)}}
-    &=\rank{\conm[{\diag[X]}]{(X\times X)}}\quad \text{（引き戻しはファイバーを保つ）}\\
-    &=\codim{\diag[]}\\
-    &=(\dim{X}+\dim{X})-\dim{X}\\
-    &=\dim{X}
-  \end{align*}
-  である．
-\end{proof}
-さらに，\(f_1\)の\(\diag[Y]\)への制限
-\(\mres[f_1]{\diag[Y]}\colon\diag[Y]\to\diag[]\)の基本図式
-を考える．
-\[
-  \vcenter{\xymatrix@C=36pt@R=36pt{
-  T^{\ast}_{\diag[Y]}(Y\times Y)
-  \ar[dr]^-{}
-  &
-  \diag[Y]\dpb[{\diag[]}]T^{\ast}_{\diag[]}(X\times Y)
-  \ar[d]^-{}
-  \ar[l]_-{\mdiff[{f_1}_{\diag[Y]}]}
-  \ar[r]^-{\mpb[{f_1}_{\diag[Y]}]}_{\sim}
-  &
-  T^{\ast}_{\diag[]}(X\times Y)
-  \ar[d]^-{}
-  \\
-  %\cotb[Y]
-  &
-  \diag[Y]
-  %\ar[l]^-{}
-  \ar[r]_-{\mres[{f_1}]{\diag[Y]}}^-{\sim}
-  &
-  \diag[]
-}}\]
-ここで，\(\mres[{f_1}]{{\diag[Y]}}\)は同型なので，
-引き戻しの関手性から，\(\mpb[{f_1}_{\diag[Y]}]\)も同型である．
-
 
 \section{関手\(\muhom\)}
 %\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
@@ -872,15 +749,30 @@
   \item \(\tilde{q}_{j}\)：\(X\times Y\)上の第\(j\)射影
   \item \(q'_j\)：\(Y\times Y\)上の第\(j\)射影
 \end{itemize}
+
 \begin{DFN}\label{dfn4.4.1}
   \(G\in\Dompb(Y)\), \(F\in\Dompb(X)\)に対し，次のようにおく．
   \begin{enumerate}[(i)]
-    \item \(\muhom(G\to F)\coloneqq\mu_{\diag[]}\RHOM_{A_{X\times Y}}(\tilde{q}_2^{-1}G,\tilde{q}_1^{!}F)\)
-    \item \(\muhom(F\leftarrow G)\coloneqq\left(\mu_{\diag[]}\RHOM_{A_{X\times Y}}(\tilde{q}_2^{-1}G,\tilde{q}_1^{!}F)\right)^{a}\)
+    \item \(
+      \muhom(G\to F)
+      \coloneqq
+      \micro{\diag[]}\RHOM_{
+        %A_{X\times Y}
+        }(\tilde{q}_2^{-1}G,\tilde{q}_1^{!}F)\)
+    \item \(
+      \muhom(F\leftarrow G)
+      \coloneqq
+      \left(
+        \micro{\diag[]}\RHOM_{
+          %A_{X\times Y}
+        }(\tilde{q}_2^{-1}G,\tilde{q}_1^{!}F)
+      \right)^{a}\)
     \item \(Y\to X\)で\(f\)が恒等射のとき，\[
       \muhom(G,F)
       \coloneqq\muhom(G\to F)
-      =\mu_{\diag[X]}\RHOM_{A_{X\times X}}({q}_2^{-1}G,{q}_1^{!}F)
+      =\micro{\diag[X]}\RHOM_{
+        %A_{X\times X}
+      }({q}_2^{-1}G,{q}_1^{!}F)
     \]
   \end{enumerate}
 \end{DFN}
@@ -926,7 +818,7 @@
 \begin{proof}
   (i) 
   定理4.3.2から\begin{align*}
-    \Rder{\pi_{\ast}}\mu_{\diag[]}\RHOM(\tilde{q}_2^{-1}G,\tilde{q}_1^{!}F)
+    \Rder{\pi_{\ast}}\micro{\diag[]}\RHOM(\tilde{q}_2^{-1}G,\tilde{q}_1^{!}F)
     &\underset{(1)}{\cong}
     \Rder{{\tilde{q_2}}_{\ast}}\RG_{\diag[]}\RHOM(\tilde{q}_2^{-1}G,\tilde{q}_1^{!}F)\\
     &\underset{(2)}{\cong}
@@ -981,12 +873,19 @@
     \end{align*}
     のようになる．
   \end{enumerate}
-  2つ目の式は，\(\pi=\pi\circ a\)に注意すれば同様に\begin{align*}
-    \Rder{\pi_{\ast}}(\mu_{\diag[]}\RHOM(\tilde{q}_1^{-1}F,\tilde{q}_{2}^{!}G))^{a}
+  2つ目の式は，\(\pi=\pi\circ a\)に注意すれば同様に
+  \begin{align*}
+    \Rder{\pi_{\ast}}(
+      \micro{\diag[]}\RHOM(
+        \tilde{q}_1^{-1}F,\tilde{q}_{2}^{!}G
+      )
+    )^{a}
     &\underset{}{\cong}
-    \Rder{\pi_{\ast}}\mu_{\diag[]}\RHOM(\tilde{q}_1^{-1}F,\tilde{q}_{2}^{!}G)\\
+    \Rder{\pi_{\ast}}\micro{\diag[]}\RHOM(
+      \tilde{q}_1^{-1}F,\tilde{q}_{2}^{!}G
+    )\\
     &\underset{}{\cong}
-    \Rder{{\tilde{q_2}}_{\ast}}\RG_{\diag[]}\RHOM(\tilde{q}_{1}^{-1}F,\tilde{q}_2^{!}G)\\
+    \Rder{{\tilde{q_2}}_{\ast}}\RG_{\diag}\RHOM(\tilde{q}_{1}^{-1}F,\tilde{q}_2^{!}G)\\
     &\underset{(2.6.9)}{\cong}
     \Rder{{\tilde{q_2}}_{\ast}}\RHOM((\tilde{q}_1^{-1}F)_{\diag[]},\tilde{q}_2^{!}G)\\
     &\underset{(V.D.)}{\cong}
@@ -1213,15 +1112,15 @@
 \(X\)に\(\gamma\)位相を入れた空間\(X_{\gamma}\)への
 自然な写像\(X\to X_{\gamma}\)を表す．
 
-\clearpage
+%\clearpage
 \subsection*{ \(\muhom\)の関手的性質}
 
 今度は\(\muhom\)の関手的性質をいくつか記述する．
 
 \begin{leftbar}
 \begin{PRP}[{\cite[Prop.4.4.5]{KS90}}]\label{prp.4.4.5}
-  定義\ref{dfn4.4.1}の状況のもとで，
-  次の自然な射による可換図式が成り立つ．
+  定義\ref{dfn4.4.1}の状況のとき，
+  自然な射からなる以下の可換図式が得られる．
   \begin{align}
     \vcenter{\xymatrix{
       \Rder{{\mdiff[f]}_{!}}\muhom(G\to F)
@@ -1233,9 +1132,9 @@
       \\
       \Rder{{\mdiff[f]}_{\ast}}\muhom(G\to F)
       &
-      \muhom(G,f^{-1}F),
+      \muhom(G,f^{!}F),
       \ar[l]
-    }}\tag{i}\\
+    }}\tag{i}\label{eq:4.4.5-1}\\
     \vcenter{\xymatrix{
       \Rder{{\mdiff[f]}_{!}}\muhom(F\leftarrow G)
       \ar[r]
@@ -1248,7 +1147,7 @@
       &
       \muhom(f^{-1}F,G),
       \ar[l]
-    }}\tag{ii}\\
+    }}\tag{ii}\label{eq:4.4.5-2}\\
     \vcenter{\xymatrix{
       \Rder{{\mpb[f]}_{!}}\muhom(G\to F)
       \ar[r]
@@ -1261,7 +1160,7 @@
       &
       \muhom(\Rder{f_{!}}G,F),
       \ar[l]
-    }}\tag{iii}\\
+    }}\tag{iii}\label{eq:4.4.5-3}\\
     \vcenter{\xymatrix{
       \Rder{{\mpb[f]}_{!}}\muhom(F\leftarrow G)
       \ar[r]
@@ -1274,12 +1173,225 @@
       &
       \muhom(F,\Rder{f_{\ast}}G).
       \ar[l]
-    }}\tag{iv}
+    }}\tag{iv}\label{eq:4.4.5-4}
   \end{align}
-  \(f\)が平滑ならば，(i)と(ii)の射はすべて同型となる．
-  \(f\)が\(\supp{G}\)上固有ならば，(iii)と(iv)の射はすべて同型となる．
+  \(f\)が平滑ならば，
+  \eqref{eq:4.4.5-1}と\eqref{eq:4.4.5-2}の射はすべて同型となる．
+  \(f\)が\(\supp{G}\)上固有ならば，
+  \eqref{eq:4.4.5-3}と\eqref{eq:4.4.5-4}の射はすべて同型となる．
 \end{PRP}
-\end{leftbar}
+\end{leftbar}    
+
+証明の前に，以降では随伴でひきおこされる射も
+よく用いることに注意しておく．
+例えば，命題\ref{prp4.3.5} (\ref{prp4.3.5.1}) の上辺の射
+\[
+  \Rder{{\mdiff[f_N]}_{!}}(
+    \omega_{N/M}\tens[]{\mpb[f_N]^{-1}}\mu_{M}(F)
+  )
+  \to
+  \mu_{N}(\omega_{Y/X}\tens[]{f^{-1}}F)     
+\]
+を随伴\((\Rder{{\mdiff[f_N]}_{!}},\mdiff[f_N]^{!})\)でうつした
+\[
+  \omega_{N/M}\tens[]{\mpb[f_N]^{-1}}\mu_{M}(F)
+  \to
+  \mdiff[f_N]^{!}\mu_{N}(\omega_{Y/X}\tens[]{f^{-1}}F)
+\]
+もよく用いる．
+また，II\S6の射も頻繁に用いる．
+
+\begin{proof}
+  この節の最初の記法をここでも用いる．
+  すなわち，以下の図式によって種々の射を同一視する．
+  \[
+  \vcenter{\xymatrix@C=36pt@R=36pt{
+    \cotb[Y]
+    &
+    &
+    Y\dpb[X]\cotb[X]
+    \ar[ll]_-{\mdiff[f]}
+    \\
+    T^{\ast}_{\diag[Y]}(Y\times Y)
+    \ar[dr]^-{}
+    \ar[u]^-{\rotatebox{90}{\(\sim\)}}
+    &
+    \diag[Y]\dpb[{\diag[]}]T^{\ast}_{\diag[]}(X\times Y)
+    \ar[d]^-{}
+    \ar[l]_-{\mdiff[{f_1}_{\diag[Y]}]}
+    \ar[r]^-{\mpb[{f_1}_{\diag[Y]}]}_-{\sim}
+    &
+    T^{\ast}_{\diag[]}(X\times Y)
+    \ar[d]^-{}
+    \ar[u]_-{\rotatebox{90}{\(\sim\)}}
+    \\
+    %\cotb[Y]
+    &
+    \diag[Y]
+    %\ar[l]^-{}
+    \ar[r]_-{\mres[f_1]{\diag[Y]}}^-{\sim}
+    &
+    \diag[]
+  }}\]
+  \[
+  \vcenter{\xymatrix@C=36pt@R=36pt{
+    Y\dpb[X]\cotb[X]
+    \ar[rr]^-{\mpb[f]}
+    &
+    &
+    \cotb[X]
+    \\
+    T^{\ast}_{\diag[]}(X\times Y)
+    \ar[dr]^-{}
+    \ar[u]^-{\rotatebox{90}{\(\sim\)}}
+    &
+    \diag[]\dpb[{\diag[X]}]T^{\ast}_{\diag[X]}(X\times X)
+    \ar[d]^-{}
+    \ar[l]_-{\mdiff[{f_2}_{\diag[]}]}^-{\sim}
+    \ar[r]^-{\mpb[{f_2}_{\diag[]}]}
+    &
+    T^{\ast}_{\diag[X]}(X\times X)
+    \ar[d]^-{}
+    \ar[u]_-{\rotatebox{90}{\(\sim\)}}
+    \\
+    %\cotb[Y]
+    &
+    \diag[]
+    %\ar[l]^-{}
+    \ar[r]_-{\mres[f_2]{\diag[]}}%^-{\sim}
+    &
+    \diag[X]
+  }}\]
+
+  このとき，以下の自然な射が得られる．
+  \begin{align}
+    %(i,a)
+    &\muhom(G\to F)\tag{i,a}\label{eq:4.4.5-1a}\\
+    =&
+    \mu_{\diag[]}
+    \RHOM(\widetilde{q_2}^{-1}G,\widetilde{q_1}^{!}F)&\text{（定義）}
+    \notag\\
+    \to&
+    \mu_{\diag[]}
+    \RHOM(
+      \widetilde{q_2}^{-1}G,
+      \Rder{{f_1}_{\ast}}f_{1}^{-1}\widetilde{q_1}^{!}F
+    )&(\id\to \Rder{{f_1}_{\ast}}f_{1}^{-1})\notag\\
+    \cong&
+    \mu_{\diag[]}
+    \Rder{{f_1}_{\ast}}\RHOM(
+      f_{1}^{-1}\widetilde{q_2}^{-1}G,
+      f_{1}^{-1}\widetilde{q_1}^{!}F
+    )&(f_1^{-1}\dashv \Rder{{f_1}_{\ast}})\notag\\
+    \cong&
+    \mu_{\diag[]}
+    \Rder{{f_1}_{\ast}}\RHOM(
+      {q'_2}^{-1}G,
+      {q'_1}^{!}f^{-1}F
+    )&\text{（図式の可換性）}\notag\\
+    \cong&
+    \omega_{\diag[Y]/\diag[]}
+    \tens[]
+    (\mpb[{f_1}_{\diag[Y]}])^{-1}\mu_{\diag[]}
+    \Rder{{f_1}_{\ast}}\RHOM(
+      {q'_2}^{-1}G,
+      {q'_1}^{!}f^{-1}F
+    )&\text{
+      （\(\mres[f_1]{\diag[Y]}, \mpb[{f_1}_{\diag[Y]}]\): 同型）
+    }\notag\\
+    \to&
+    \mdiff[{f_1}_{\diag[Y]}]^{!}\mu_{\diag[Y]}\left(
+      \omega_{Y\times Y/X\times Y}
+      \tens[]
+      f_1^{-1}\Rder{{f_1}_{\ast}}\RHOM(
+        {q'_2}^{-1}G,
+        {q'_1}^{!}f^{-1}F
+      )
+    \right)&\text{
+      （命題\ref{prp4.3.5}上辺に随伴）
+    }\notag\\
+    \to&
+    \mdiff[{f_1}_{\diag[Y]}]^{!}\mu_{\diag[Y]}\left(
+      \omega_{Y\times Y/X\times Y}
+      \tens[]
+      \RHOM(
+        {q'_2}^{-1}G,
+        {q'_1}^{!}f^{-1}F
+      )
+    \right)&(f_{1}^{-1}\Rder{{f_1}_{\ast}}\to \id)\notag\\
+    \cong&
+    \mdiff[{f_1}_{\diag[Y]}]^{!}\mu_{\diag[Y]}
+    \RHOM(
+      {q'_2}^{-1}G,
+      {q'_1}^{!}f_{1}^{-1}F
+      \tens[]
+      \omega_{Y/X}    
+    )\notag\\
+    \cong&
+    \mdiff[f]^{!}\mu_{\diag[Y]}
+    \RHOM(
+      {q'_2}^{-1}G,
+      {q'_1}^{!}f_{1}^{-1}F
+      \tens[]
+      \omega_{Y/X}
+    )&\text{(\(\mdiff[f]\cong\mdiff[{f_1}_{\diag[Y]}]\))}\notag
+  \end{align}
+  これに\(\Rder{{\mdiff[f]}_{!}}\)を施すことで上辺の射
+  \begin{align*}
+    \Rder{{\mdiff[f]}_{!}}\muhom(G\to F)
+    &\to
+    \Rder{{\mdiff[f]}_{!}}
+    \mdiff[f]^{!}\micro{\diag[Y]}
+    \RHOM(
+      {q'_2}^{-1}G,
+      {q'_1}^{!}f_{1}^{-1}F
+      \tens[]
+      \omega_{Y/X}
+    )\\
+    &\to
+    \muhom(G,f_{1}^{-1}F\tens[]\omega_{Y/X})
+  \end{align*}
+  が得られる．
+  \begin{align}
+    %(i,b)
+    &\muhom(G,f^{!}F)\tag{i,b}\label{eq:4.4.5-1b}\\
+    =&
+    \micro{\diag[Y]}
+    \RHOM({q'_2}^{-1}G,{q'_1}^{!}f^{!}F)&\text{（定義）}
+    \notag\\
+    \cong&
+    \micro{\diag[Y]}
+    \RHOM(
+      f_{1}^{-1}\widetilde{q_2}^{-1}G,
+      f_{1}^{!}\widetilde{q_1}^{!}F
+    )&\text{（図式の可換性）}
+    \notag\\
+    \cong&
+    \micro{\diag[Y]}
+    f_1^{!}\RHOM(
+      \widetilde{q_2}^{-1}G,
+      \widetilde{q_1}^{!}F
+    )&\text{（命題3.1.13）}
+    \notag\\
+    \to&
+    \Rder{{\mdiff[{f_1}_{\diag[Y]}]}_{\ast}}
+    \mpb[{f_1}_{\diag[Y]}]^{!}\micro{\diag[]}
+    \RHOM(
+      \widetilde{q_2}^{-1}G,
+      \widetilde{q_1}^{!}F
+    )&\text{（命題\ref{prp4.3.5}下辺）}
+    \notag\\
+    \cong&
+    \Rder{{\mdiff[f]}_{\ast}}
+    \micro{\diag[]}
+    \RHOM(
+      \widetilde{q_2}^{-1}G,
+      \widetilde{q_1}^{!}F
+    )&\text{（同一視）}
+    \notag
+  \end{align}
+  \(f\)が平滑ならば，矢印の部分は同型になる．
+\end{proof}
 
 \begin{leftbar}
 \begin{PRP}[{\cite[Prop.4.4.6]{KS90}}]\label{prp.4.4.6}
@@ -1397,6 +1509,125 @@
     \cotb[X]\times\cotb[Y].
 \end{equation}
 
+\begin{leftbar}
+\begin{PRP}[{\cite[Prop.4.4.8]{KS90}}]
+  \(F_1\)と\(F_2\)を\(\Dompb(X)\)の対象とし
+  \(G_1\)と\(G_2\)を\(\Dompb(Y)\)の対象とする．
+  次の標準的な射が存在する．
+  \begin{align}
+    \tag{i}
+    \Rder{{\mdiff[j]}_{!}}\left(
+      \muhom(F_2,F_1)\lletens[S]\muhom(G_2,G_1)
+    \right)&\\
+    \to
+    \muhom&\left(
+      F_2\lletens[S]G_2,F_1\lletens[S]G_1
+    \right),\notag\\
+    \tag{ii}
+    \Rder{{\mdiff[j]}_{!}}\left(
+      \muhom(F_2,F_1)^{a}\lletens[S]\muhom(G_2,G_1)
+    \right)&\\
+    \to
+    \muhom&(
+      \RHOM(q_{1}^{-1}F_1,q_{2}^{-1}G_2),
+      \RHOM(q_{1}^{-1}F_2,q_{2}^{-1}G_1)
+    )\notag.
+  \end{align}
+\end{PRP}
+\end{leftbar}
+
+\subsection*{\(\muhom\)の合成}
+関手\(\muhom\)を合成する．
+
+\(g\colon Z\to Y\)と\(f\colon Y\to X\)を多様体の射とし，
+\(h=f\circ g\)とする．
+\(q_i\), \(q'_i\), \(q''_i\) \((i=1,2)\)をそれぞれ
+\(Z\times Y\), \(X\times Z\), \(Y\times Z\)の第\(i\)射影とし，
+\(q_{ij}\)を\(X\times Y\times Z\)の第\((i,j)\)射影とする．
+\(\widetilde{q}_{ij}\)で\(X\times Y\times Y\times Z\)の
+第\((i,j)\)射影を表し，
+\(p_{ij}\)と\(\widetilde{p}_{ij}\)でそれぞれ
+\(\cotb[X]\times\cotb[Y]\times\cotb[Z]\)と
+\(\cotb[X]\times\cotb[Y]\times\cotb[Y]\times\cotb[Z]\)の
+第\((i,j)\)射影を表す．
+\(r_{ij}\)で\(\widetilde{p}_{ij}\)の\(
+  \diag[Y]\tpb[Y\times Y]\cotb[(X\times Y\times Y\times Z)]
+\)への制限を表す．
+最後に\(j\)で対角うめこみ\(
+  X\times Y\times Z
+  \hookrightarrow 
+  X\times Y\times Y\times Z
+\)を表す．\(\mdiff[j]\)は同型
+\begin{equation}
+  \diag[Y]\dpb[Y\times Y]
+  \conm[{\diag[f]\times\diag[g]}]{(X\times Y\times Y\times Z)}
+  \overunderset{\sim}{{\mdiff[j]}}{\longrightarrow}
+  \conm[{\diag[f]\tpb[Y]\diag[g]}]{(X\times Y\times Z)}
+\end{equation}
+をひきおこし，
+\(\mpb[{q_{13}}]\)は同型
+\begin{equation}
+  \left(
+    \diag[f]
+    \dpb[Y]
+    \diag[g]
+  \right)\dpb[{\diag[h]}]
+  \conm[{\diag[h]}]{(X\times Z)}
+  \overunderset{\sim}{{\mpb[{q_{13}}]}}{\longrightarrow}
+  \conm[{\diag[h]}]{(X\times Z)}
+\end{equation}
+をひきおこす．
+これによって次の可換図式を得る．
+
+\begin{equation}
+  \vcenter{\xymatrix@C=36pt@R=36pt{
+    &
+    &
+    \conm[{\diag[f]}]{(X\times Y)}
+    \cong
+    Y\dpb[X]\cotb[X]
+    \\
+    \diag[Y]\dpb[Y\times Y]
+    \conm[{\diag[f]\times\diag[g]}]{(X\times Y\times Y\times Z)}
+    \ar[urr]^-{r_{12}}
+    \ar[drr]_-{r_{34}}
+    \ar[r]_-{\mpb[j]}^-{\sim}
+    &
+    \conm[{\diag[f]\tpb[Y]\diag[g]}]{(X\times Y\times Z)}
+    &
+    \conm[{\diag[h]}]{(X\times Z)}
+    \cong
+    Z\dpb[X]\cotb[X]
+    \ar@{_{(}->}[l]^-{\mdiff[{q_{13}}]}
+    %T^{\ast}_{\diag[X]}(X\times X)
+    \ar[d]^-{\mdiff[f]}
+    \ar[u]_-{\mpb[g]}
+    \\
+    %\cotb[Y]
+    &
+    %\diag[]
+    %\ar[l]^-{}
+    %\ar[r]_-{\mres[f_2]{\diag[]}}%^-{\sim}
+    &
+    \conm[{\diag[g]}]{(Y\times Z)}
+    \cong
+    Z\dpb[Y]\cotb[Y].
+  }}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1463,7 +1694,7 @@
 \begin{PRP}[{\cite[Prop.4.3.5]{KS90}}]\label{prp4.3.5}
   \(F\in\Dompb(X)\)とする．
   \begin{enumerate}[(i)]
-      \item 標準的な射で次の図式を可換にするものが存在する．
+      \item 標準的な射で次の図式を可換にするものが存在する．\label{prp4.3.5.1}
       \[\vcenter{\xymatrix@C=56pt@R=46pt{
           \Rder{{\mdiff[f_N]}_{!}}(\omega_{N/M}\tens[]{\mpb[f_N]^{-1}}\mu_{M}(F))
           \ar[d]^{}
@@ -1481,8 +1712,11 @@
           \ar[l]_{\beta}
       }}\]
       ここで縦向きの矢印は(3.1.6)から導かれるものである．
-      \item \(f\colon Y\to X\)と\(\mres[f]{N}\colon N\to M\)が平滑ならばこれらの射はすべて同型となる．    
-      \item \(f\)が\(M\)に横断的かつ\(f^{-1}(M)=N\)ならば，
+      \item \label{prp4.3.5.2}
+      \(f\colon Y\to X\)と\(\mres[f]{N}\colon N\to M\)が
+      平滑ならば，これらの射はすべて同型となる．    
+      \item \label{prp4.3.5.3}
+      \(f\)が\(M\)に横断的かつ\(f^{-1}(M)=N\)ならば，
       自然な射\[
           \Rder{{\mdiff[f_N]}_{\ast}}\mpb[f_N]^{-1}\mu_{M}(F)
           \to \mu_{N}(f^{-1}F)
