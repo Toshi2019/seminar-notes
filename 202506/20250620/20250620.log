@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  20 JUN 2025 18:33
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  20 JUN 2025 18:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -980,7 +980,7 @@ LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 (Font)              scaled to size 4.62341pt on input line 941.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 963.
+(Font)              No change on input line 994.
  [5] (./20250620.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
@@ -999,4 +999,4 @@ Here is how much of TeX's memory you used:
  934 hyphenation exceptions out of 8191
  84i,17n,93p,3263b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 20250620.dvi (5 pages, 27096 bytes).
+Output written on 20250620.dvi (5 pages, 28680 bytes).
