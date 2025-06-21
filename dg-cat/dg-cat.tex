@@ -1,24 +1,15 @@
 %=====================================
-%   local-system.tex
-%   局所系と局所定数層（とモノドロミー）
+%   20250528.tex
+%   20250528 
+%   toshi2019
 %=====================================
-
-% -----------------------
-% preamble
-% -----------------------
-% ここから本文 (\begin{document}) までの
-% ソースコードに変更を加えた場合は
-% 編集者まで連絡してください. 
-% Don't change preamble code yourself. 
-% If you add something
-% (usepackage, newtheorem, newcommand, renewcommand),
-% please tell it 
-% to the editor of institutional paper of RUMS.
-
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[11pt, a4paper, leqno, dvipdfmx]{jsarticle}
+\documentclass[leqno, 10pt, a4paper, dvipdfmx]{jsarticle}
+\title{dg圏ノート}
+\author{Toshi2019}
+\date{\today}
 
 % ------------------------
 % usepackage
@@ -49,7 +40,7 @@
 \usepackage[all]{xy}
 
 \usetikzlibrary{cd}
-
+\usetikzlibrary{arrows.meta}
 
 
 % ================================
@@ -66,7 +57,11 @@
     urlcolor=darkblue,
 }
 \usepackage{pxjahyper}
-\usepackage[mathcal]{eucal}
+
+%\usepackage[mathscr]{euscript} % mathscr のフォントを変更
+
+%\usepackage{mmasym}
+
 %=================================
 
 
@@ -164,7 +159,7 @@
 \newcommand{\rr}{\mathbf{R}}
 \newcommand{\cc}{\mathbf{C}}
 \newcommand{\pp}{\mathbf{P}}
-\newcommand{\kk}{\mathbf{K}}
+\newcommand{\kk}{\mathbf{k}}
 
 % 特殊な写像の記号
 \newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
@@ -203,10 +198,14 @@
 %\newcommand{\Ring}{{\bf Ring}}
 \newcommand{\Ab}{{\bf Ab}}
 \newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\Modf}{\mathop{\mathrm{Mod}^\mathrm{f}}\nolimits}
 \newcommand{\CGA}{{\bf CGA}}
 \newcommand{\GVect}{{\bf GVect}}
 \newcommand{\Lie}{{\bf Lie}}
 \newcommand{\dLie}{{\bf Liec}}
+
+\newcommand{\cat}[1][]{\mathcal{#1}}
+
 
 
 
@@ -244,15 +243,33 @@
 
 
 
-\renewcommand\proofname{\bf 証明} % 証明
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+%        \itshape
+         \bfseries
+%    #1\@addpunct{.}]\ignorespaces
+    {#1}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
+\renewcommand{\proofname}{証明.}
+
+
+
+%\renewcommand\proofname{\bf 証明} % 証明
 \numberwithin{equation}{section}
 \newcommand{\cTop}{\textsf{Top}}
 %\newcommand{\cOpen}{\textsf{Open}}
-\newcommand{\Op}{\mathop{\mathsf{Open}}\nolimits}
-\newcommand{\Cl}{\mathop{\mathrm{Cl}}\nolimits}
-\newcommand{\Ob}{\mathop{\mathrm{Ob}}\nolimits}
-\newcommand{\id}{\mathord{\mathrm{id}}\nolimits}
-\newcommand{\pt}{\mathord{\mathrm{pt}}\nolimits}
+\newcommand{\Op}{\mathop{\textsf{Op}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
 \newcommand{\res}{\mathop{\rho}\nolimits}
 \newcommand{\A}{\mcal{A}}
 \newcommand{\B}{\mcal{B}}
@@ -276,7 +293,35 @@
 \newcommand{\colim}{\mathop{\mathrm{colim}}}
 \newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
 
-\newcommand{\cat}{\mathscr{C}}
+
+%筆記体
+\newcommand{\cA}{\mcal{A}}
+\newcommand{\cB}{\mcal{B}}
+\newcommand{\cC}{\mcal{C}}
+\newcommand{\cD}{\mcal{D}}
+\newcommand{\cE}{\mcal{E}}
+\newcommand{\cF}{\mcal{F}}
+\newcommand{\cG}{\mcal{G}}
+\newcommand{\cH}{\mcal{H}}
+\newcommand{\cI}{\mcal{I}}
+\newcommand{\cJ}{\mcal{J}}
+\newcommand{\cK}{\mcal{K}}
+\newcommand{\cL}{\mcal{L}}
+\newcommand{\cM}{\mcal{M}}
+\newcommand{\cN}{\mcal{N}}
+\newcommand{\cO}{\mcal{O}}
+\newcommand{\cP}{\mcal{P}}
+\newcommand{\cQ}{\mcal{Q}}
+\newcommand{\cR}{\mcal{R}}
+\newcommand{\cS}{\mcal{S}}
+\newcommand{\cT}{\mcal{T}}
+\newcommand{\cU}{\mcal{U}}
+\newcommand{\cV}{\mcal{V}}
+\newcommand{\cW}{\mcal{W}}
+\newcommand{\cX}{\mcal{X}}
+\newcommand{\cY}{\mcal{Y}}
+\newcommand{\cZ}{\mcal{Z}}
+
 
 \newcommand{\scA}{\mathscr{A}}
 \newcommand{\scB}{\mathscr{B}}
@@ -287,6 +332,7 @@
 \newcommand{\scN}{\mathscr{N}}
 \newcommand{\scO}{\mathscr{O}}
 \newcommand{\scV}{\mathscr{V}}
+\newcommand{\scU}{\mathscr{U}}
 
 
 \newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
@@ -325,23 +371,27 @@
 %\newcommand{\Komp}{\mathrm{K}}
 %\newcommand{\Domp}{\mathsf{D}}%複体のホモトピー圏
 
-\newcommand{\Comp}{\mathop{\mathsf{C}}\nolimits}
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
 \newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
-\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}
+\newcommand{\Domp}{\mathord{\mathsf{D}}}%\nolimits}
 \newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
 \newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
 \newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
 \newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
 \newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
 \newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+\newcommand{\Dbconic}{\mathop{\mathsf{D}^\mathrm{b}_{\rrp}}\nolimits}
+\newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
+\newcommand{\Domplb}{\mathop{\mathsf{D}^\mathrm{lb}}\nolimits}
 
 
+%\newcommand{\cat}{\mathscr{C}}
 
-
-\newcommand{\CCat}{\Comp(\cat)}
-\newcommand{\KCat}{\Komp(\cat)}
-\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
-\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+%\newcommand{\CCat}{\Comp(\cat)}
+%\newcommand{\KCat}{\Komp(\cat)}
+%\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+%\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\HOM}{\mathop{\mathcal{H}\hspace{-0pt}om}\nolimits}%内部Hom
 \newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
 
 \newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
@@ -365,7 +415,8 @@
 \newcommand{\Sh}{\mathrm{Sh}}
 \newcommand{\PSh}{\mathrm{PSh}}
 
-\newcommand{\rmD}{\mathrm{D}}
+\newcommand{\rmD}{\mathsf{D}}
+\newcommand{\vD}{\mathbf{D}}
 
 \newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
 \newcommand{\ori}{\mathord{\mathrm{or}}}
@@ -378,13 +429,43 @@
 \newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
 \newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
 
-\newcommand{\Cov}{\mathop{\mathsf{Cov}}\nolimits}
-\newcommand{\Inv}{\mathop{\mathrm{Inv}}\nolimits}
+
+\newcommand{\tens}[1][]{\mathbin{\otimes_{\raise1.5ex\hbox to-.1em{}{#1}}}}
+\newcommand{\etens}{\mathbin{\boxtimes}}
+\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
+\newcommand{\lltens}[1][]{\mathbin{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}}
+\newcommand{\lletens}[1][]{\mathbin{{\mathop{\boxtimes}\limits^{\mathrm{L}}_{#1}}}}
+\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
+\newcommand{\detens}{\underline{\etens}}
+\newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
+\newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
+
+\newcommand{\blk}{\mathord{\ \cdot\ }}
+\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
 
 
+%\newcommand{\hocolim}{{\mathrm{hocolim}}}
+%\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+%\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+%\newcommand{\Pro}{\mathrm{Pro}}
+%\newcommand{\Ind}{\mathrm{Ind}}
+%\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+%\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+\newcommand{\proolim}[1][]{\mathop{\text{\rm``{$\varprojlim$}''}}\limits_{#1}}
+\newcommand{\sproolim}[1][]{\smash{\mathop{\rm``{\varprojlim}''}\limits_{#1}}}
+\newcommand{\inddlim}[1][]{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}
+\newcommand{\sinddlim}[1][]{\smash{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}\,}
+\newcommand{\ooplus}{\mathop{\text{\rm``{$\oplus$}''}}\limits}
+\newcommand{\bbigsqcup}{\mathop{``\bigsqcup''}\limits}
+\newcommand{\bsqcup}{\mathop{``\sqcup''}\limits}
+\newcommand{\dsum}[1][]{\mathbin{\oplus_{#1}}}
 
+\newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
 
-
+\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+\newcommand{\dpb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+\newcommand{\tpb}[1][]{\mathbin{\mathop{\times}\nolimits_{#1}}}
 
 
 
@@ -417,6 +498,7 @@
 \newtheorem{RMK}[AXM]{注意}
 \newtheorem{CNV}[AXM]{約束}
 \newtheorem{CMT}[AXM]{コメント}
+\newtheorem*{CMT*}{コメント}
 \newtheorem{NTN}[AXM]{記号}
 
 % 定理環境ここまで
@@ -433,6 +515,9 @@
   \MakeFramed {\advance\hsize-\width \FrameRestore}}%
  {\endMakeFramed}
 
+
+
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
 
 % =================================
 
@@ -456,7 +541,46 @@
 
 
 
+% 位相空間
+\newcommand{\Int}[1][]{\mathop{\mathrm{Int}}\nolimits_{#1}}
+\newcommand{\Cl}[1][]{\mathop{\mathrm{Cl}}\nolimits_{#1}}
+\newcommand{\Bd}[1][]{\mathop{\mathrm{Bd}}\nolimits_{#1}}
+\newcommand{\bd}{\mathord{\partial}}
+\newcommand{\Fr}[1][]{\mathop{\mathrm{Fr}}\nolimits_{#1}}
 
+
+\newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
+\newcommand{\mtp}[1][]{{}^{t\!}{#1}} % transpose of the morphism
+%\newcommand{\mpb}[1][]{{}^{t\!}{#1}'} % pull-back of the morphism
+\newcommand{\mpb}[1][]{{#1}_{\pi}} % pull-back of the morphism
+\newcommand{\mdiff}[1][]{{#1}_{d}} % pull-back of the morphism
+\newcommand{\mptan}[1][]{{#1}_{\tau}} % pull-back of the morphism
+
+
+%\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+
+\newcommand{\cotb}[1][]{T^{\ast}{#1}}
+\newcommand{\conm}[2][]{T_{#1}^{\hspace{0.7pt}\ast}{#2}}
+\newcommand{\norb}[2][]{T_{#1}{#2}}
+
+\newcommand{\cotz}[1][]{T^{\ast}_{#1}{#1}}
+
+\newcommand{\cotn}[1][]{\dot{T}^{\ast}{#1}}
+
+
+\newcommand{\muhom}{\mu hom}
+\newcommand{\muHom}[1][]{\mathrm{Hom}^\mu_{\raise1.5ex\hbox to.1em{}#1}}
+
+\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+%\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+
+\newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
+
+\newcommand{\torus}{\mathbf{T}}
+
+\newcommand{\diag}[1][]{\Delta_{#1}}
+%  \[\mu_{\Delta_{Y}}\mathrm{R}\mathcal{H}om(G,F)\]
+\newcommand{\micro}[1]{\mu_{#1}\hspace{-2pt}}
 
 % ----------------------------
 % documenet 
@@ -466,357 +590,105 @@
 % begin document and end document.
 % ---------------------------
 
-\title{局所系と局所定数層}
-\author{toshi2019}
-\date{}
 \begin{document}
 \maketitle
-
-\begin{abstract}
-    局所系と局所定数層が同じことを説明する．
-    余裕があればモノドロミーについて述べる．
-\end{abstract}
-\section*{記号と用語}
-\begin{itemize}
-    \item 単位閉区間\([0,1]\)を\(I\)とかく．
-    \item 位相空間\(X\)の部分集合\(A\)に対し，閉包を\(\Cl{A}\)とかく．
-    \item 位相空間\(X\)の点\(x\), \(y\)に対し，
-    \(x\)を始点，\(y\)を終点とする\(X\)内の道のホモトピー類の集合を
-    \(\varOmega(X;x,y)\)とかく．
-    \(X\)が明らかな場合は\(\varOmega(x,y)\)ともかく．
-    \item 開集合\(U\)の開被覆の族を\(\Cov(U)\)とかく．
-\end{itemize}
+\tableofcontents
 
 
 
-\section{局所系}
 
-\subsection{亜群}
 
-\(X\)を弧状連結な位相空間とする．
-このとき，\(X\)上の\textbf{基本亜群} (fundamental groupoid) 
-\(\varPi(X)\)を次で定める．
-\begin{description}\setlength{\leftskip}{2zw}
-    \item[対象] \(x\)の各点．
-    \item[射] \(x, y\in X\)に対し，\(x\)から\(y\)への道\(l\colon I\to X\)たちのホモトピー類．
-    \item[合成] 道の結合．
+
+\section{定義}
+次の記号を用いる．
+\begin{description}
+    \item[環] \(k\)は可換環，特に\(\zz\)か体を表す．
+    \item[テンソル積] \(\tens[]\)で\(k\)上のテンソル積を表す．
+    \item[\(k\)代数] \(k\)代数とは，\(k\)加群\(A\)に\(k\)線形かつ結合的な積\(A\tens[]A\to A\)を合わせたもので両側単位元\(1\in A\)をもつものをいう．
+    \item[\(k\)圏] \(k\)圏\(\cat[A]\)とは，「多対象版\(k\)代数」のことである．
+    すなわち次のデータの組のことである．\begin{itemize}
+        \item 対象のクラス\(\Ob(\cat[A])\)
+        \item \(\cat[A]\)の任意の対象\(X,Y\)に対して定まる
+        \(k\)加群\(\Hom_{\cat[A]}(X,Y)\)
+        \item \(k\)線形かつ結合的な合成写像\[
+            \Hom_{\cat[A]}(Y,Z)\tens[]\Hom_{\cat[A]}(X,Y)
+            \to\Hom_{\cat[A]}(X,Z),
+            \ (f,g)\mapsto fg
+        \]で単位射\(1_X\in \Hom_{\cat[A]}(X,X)\)をもつもの
+    \end{itemize}
+    例えば，\(k\)代数は対象がひとつの\(k\)圏とみなせる．
+    \(k\)代数\(A\)上の右加群の圏\(\Mod(A^{\op})\)は多数の対象をもつ
+    \(k\)圏の例である．
+    この圏は\(k\)線形圏，
+    すなわち\(k\)圏ですべての有限直和を含むものの例でもある．
 \end{description}
-次のように書いてもよい．
-\begin{align*}
-    \Ob(\varPi(X))&\coloneqq X,\\
-    \Hom_{\varPi(X)}(x,y)&\coloneqq \varOmega(x,y),\\
-    [l']\circ [l]&\coloneqq [l\cdot l'] \quad (l\in \varOmega(x,y), l'\in \varOmega(y,z)). 
-\end{align*}
-\(\varPi(X)\)の射はすべて同型なので\(\varPi(X)\)は亜群である．
 
-\subsection{局所系}
-\(X\)を弧状連結な位相空間とする．
-亜群\(\varPi(X)\)上の共変換手\(
-    F\colon \varPi(X)\to \cat
-\)を\(X\)上の\(\cat\)に値をとる局所系という．
+\begin{DFN}
+    \begin{enumerate}[(i)]
+        \item \textbf{次数（つき）\(k\)加群} (graded \(k\)-module) は
+        \(k\)加群\(V\)に，整数によって添字づけられた分解\[
+            V=\bigoplus_{p\in\zz}V^{p}
+        \]をあわせたものをいう．
+        \item \(V\)に対し\(V[1]\)を\(
+            V[1]^{p}=V^{p+1}
+        \) \((p\in \zz)\)とおくことで定める．
+        \item \(n\)次の次数\(k\)加群の射\(f\colon V\to V'\)とは
+        \(k\)線形射ですべての\(p\in\zz\)に対し\(f(V^{p})\subset V^{p+n}\)をみたすものをいう．
+        \item \(V\tens[]W\)を第\(n\)成分を\[
+            (V\tens[]W)^{n}=\bigoplus_{p+q=n}V^p\tens[]W^q
+        \]とおくことで定める．
+    \end{enumerate}
 
-\section{局所定数層}
-
-\(X\)上の\(\cat\)に値をとる層\(F\)
-が\textbf{局所定数層} (locally constant sheaf) であるとは，
-\(X\)の開被覆\((U_i)_i\)で，各開集合\(U_i\)ごとに，
-\(F\rvert_{U_i}\)が定数層と同型となるものが存在することをいう．
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{{\cite{Sp66}}から}
-
-
-
-
-
-\subsection{{\cite[Chap 1]{Sp66}}}
-\cite[Chap 1]{Sp66}のExercise Fが局所系に関するものである．
-
-
-
-
-
-
-
-\subsubsection*{F 局所系\footnote{
-    Steenrod, Homology with local coefficients, 
-    Ann Math., 44, pp. 610--627, 1943 参照．
-}}
-
-\subparagraph{1} 空間\(X\)上の局所系とは，\(X\)の基本亜群から
-別の圏への共変関手である．任意の圏\(\mathcal{C}\)に対し，
-\(\mathcal{C}\)に値をとる\(X\)上の局所系の圏が定まることを示せ．
-（2つの局所系がこの圏の対象として同値であるとき，
-それらが同値であるという．）
-
-\subparagraph{2}
-\(f\colon X\to Y\)を写像とする．
-\(f\)は\(\mathcal{C}\)に値をとる\(Y\)上の局所系の圏から
-\(\mathcal{C}\)に値をとる\(X\)上の局所系の圏への関手
-をひきおこすことを示せ．
-
-\subparagraph{3}
-\(A\)が圏\(\mathcal{C}\)の対象であるとき，
-\(\Aut{A}\)を\(\mathcal{C}\)における\(A\)の自己同値のなす群とする．
-\(\varphi\colon A\approx B\)が\(\mathcal{C}\)における同値とであるとき，
-\(
-    \mathop{\overline{\varphi}}(\alpha)
-    =\varphi\circ\alpha\varphi^{-1}
-\)で定義される射\(
-    \mathop{\overline{\varphi}}\colon\Aut{A}\to\Aut{B}
-\)は群の同型であることを示せ．
-
-\subparagraph{4}
-\(\Gamma\)を\(X\)上の局所系とし\(x_0\in X\)とする．
-このとき，\(\Gamma\)は準同型
-\[
-    \mathop{\bar{\Gamma}_{x_0}}\colon \pi(X,x_0)\to\Aut{\Gamma(x_0)}
-\]
-をひきおこすことを示せ．
-
-\subparagraph{5}
-\(X\)が弧状連結であるとき，
-\(X\)上の\(\mathcal{C}\)に値をとる局所系\(\Gamma\), \(\Gamma'\)が同値であるためには，
-同値\(\varphi\colon \Gamma(x_0)\to\Gamma'(x_0)\)で，
-\(\Aut{\Gamma'(x_0)}\)において
-\(\bar{\varphi}\circ\bar{\Gamma}_{x_0}\)が
-\(\bar{\Gamma'}_{x_0}\)と共役となるものが存在する
-ことが必要十分であることを示せ．
-
-\subparagraph{6}
-\(X\)が弧状連結であるとき，
-\(A\in\mathcal{C}\)と準同型\(\alpha\colon\pi(X,x_0)\to\Aut{A}\)に対して，
-\(X\)上の\(\mathcal{C}\)に値をとる局所系\(\Gamma\)で，
-\(\Gamma(x_0)=A\)と\(\bar{\Gamma}_{x_0}=\alpha\)を
-みたすものが存在することを示せ．
-
-
-\subsection{{\cite[Chap 6]{Sp66}}}
-
-局所系と層の関係については\cite[Chap 6]{Sp66}のExercise Fに書いてある．
-
-\subsubsection*{F 局所系と層}
-
-以下の一連の演習問題では，\(X\)はパラコンパクトハウスドルフであるとする．
-
-\subparagraph{1}
-\(\Gamma\)が\(X\)上の局所系であるとき，
-\(\bar{\Gamma}\)を，開集合\(V\subset X\)に対し，
-\[\mathop{\bar{\Gamma}}(V)\coloneqq\left\{
-    f\colon X\to \Gamma(X);\text{
-        \(V\)内の任意の道\(\omega\)に対して，
-        \(f(\omega(1))
-        =\Gamma(\omega)\left(f\left(\omega(0)\right)\right)\)
-    }
-\right\}\]で定まる\(X\)上の前層とする．
-\(\bar{\Gamma}\)は\(X\)上の層であり，
-\(\Gamma\)に\(\bar{\Gamma}\)を対応させる操作は，
-局所系から層への自然変換であることを示せ．
-
-
-\subparagraph{2}
-\(X\)上の前層\(\Gamma\)が局所定数層であるとは，
-\(X\)の開被覆\(\mathscr{U}=\{U\}\)で
-\(U\in\mathscr{U}\)かつ\(x\in U\)のとき，
-\(\Gamma(U)\approx\indlim[V\ni x]\left\{\Gamma(V)\right\}\)が
-成りたつことをいう．
-\(U\in\mathscr{U}\)で\(U'\)が\(U\)の連結開集合のとき，
-合成
-\[
-    \Gamma(U)\to\Gamma(U')\to\hat{\Gamma}(U')
-\]
-が同型射になることを示せ．\footnote{
-    \(\hat{\Gamma}\)は前層\(\Gamma\)の完備化と呼ばれ，
-    次のように定義される．
-    \[
-        \Gamma(\mathscr{U})\coloneqq\left\{(s_U)_U\in\prod_{U\in\mathscr{U}}^{}\Gamma(U);
-            \text{各\(U, V\in\mathscr{U}\)に対し，
-            \(s_U\rvert_{U\cap V}
-            =s_V\rvert_{U\cap V}\)}\right\}
-    \]とおくとき，
-    \[
-        \hat{\Gamma}(W)\coloneqq 
-        \indlim[\mathscr{U}\in\Cov(W)]\Gamma(\mathscr{U}).
-    \]要するに層化．
-    \cite[p.78]{Sp66}
-    }
-\(\Gamma\)が局所定数層で，
-\(U'\)が\(U\in\mathscr{U}\)の連結開集合であるとき，
-\(\Gamma(U)\approx\Gamma(U')\)となることを示せ．
-
-
-\subparagraph{3}
-\(X\)が局所弧状連結で\(\Gamma'\)が\(X\)上の局所定数層であるとき，
-\(X\)上の局所系\(\Gamma\)で\(\bar{\Gamma}\approx\Gamma'\)と
-なるものが存在することを示せ．
-
-\subparagraph{4}
-\(X\)が局所弧状連結かつ半局所1連結\footnote{
-    空間\(X\)が\textbf{半局所1連結} (semilocally 1-connected) で
-    あるとは，
-    各点\(x_0\in X\)に対し近傍\(N\)で\(
-        \pi(N,x_0)\to\pi(X,x_0)
-    \)が自明となることをいう．
-    \cite[p.78]{Sp66}
-}であるとき，
-\(X\)上の局所系の同値類と
-\(X\)上の局所定数層の同値類と
-の間に一対一対応が存在することを示せ．
-
-\clearpage
-\section{局所定数層の分類{\cite[IV.9]{Iv}}}
-
-同変\(k\)層を導入する．
-\(k\)を可換環とし，\(X\)を位相空間で群\(G\)が右から作用するもの
-とするとき，層\(E\)に対する\(G\)作用とは，\(k\)層の射
-\(a_\sigma\colon E\to \sigma_{\ast}E\)で次をみたすものの族
-\((a_\sigma)_{\sigma\in G}\)のことである．
-\begin{equation}
-    a_{\sigma\tau}=\tau_{\ast}a_\sigma\circ a_{\tau}. \quad(\sigma,\tau\in G)\label{Iv91}
-\end{equation}
-\(G\)作用をもつ層を\(G\)同変層\(E\)という．
-\(k\)層の射で任意の\(\sigma\in G\)に対し
-次の図式が可換になるものを
-\(G\)同変層の射\(h\colon E\to F\)という．
-\[
-    \vcenter{\xymatrix@C=26pt@R=26pt{
-        E
-        \ar[r]^-{}
-        \ar[d]^-{h}
-        &
-        \sigma_\ast E
-        \ar[d]^-{\sigma_\ast h} 
-        \\
-        F \ar[r]^-{}
-        &
-        \sigma_\ast F.
-    }}
-\]
-\(X\)上の\(G\)同変層の圏を\(\Sh^G(X,k)\)とかく．
-以下で\(B=X/G\)とおき，\(f\colon X\to B\)で射影を表す．
-ここで，関手を2つ導入する．
-\begin{equation}
-    \vcenter{\xymatrix@C=26pt@R=26pt{
-        \Sh^G(X,k)
-        \ar@<-0.5ex>[r]_-{\Inv^G}
-        &
-        \Sh(B,k)
-        \ar@<-0.5ex>[l]_-{f^\ast}.
-    }}\label{Iv92}
-\end{equation}
-まず，\(X\)上の\(k\)層\(E\)への\(G\)作用は，随伴を考えることで，
-\(a^{\sigma}\colon\sigma^\ast E\to E\)という同型によって表すことも
-できることに注意する．
-したがって，\(B\)上の層\(F\)に対し，
-標準的な同型\[
-    \sigma^\ast f^\ast F\to f^\ast F\quad (\sigma\in G)
-\]によって\(f^\ast F\)への\(G\)作用が定まる．
-いま，\(E\)を\(X\)上の\(G\)同変層とする．
-\(B\)の開集合\(V\)での\(\Inv^G E\)の切断について述べるために，
-式\eqref{Iv91}から，\(\Gamma(f^{-1}(V),E)\)への左\(G\)作用が
-定まることに注意する．
-このとき，
-\[
-    \Gamma(V;\Inv^G E)\coloneqq 
-    \Gamma(f^{-1}(V),E)^G
-\]
-とおく．ただし，\(\Gamma(f^{-1}(V),E)^G\)は
-\(E\)の\(f^{-1}(V)\)における\(G\)不変な切断のなす集合である．
-\(f^\ast\)は\(\Inv^G\)の左随伴関手である．
-すなわち，任意の\(F\in\Sh(B,k)\), \(E\in\Sh^G(X,k)\)に対し
-\begin{equation}
-    \Hom_F(f^\ast{F},E)\cong \Hom(F,\Inv^G{E})
-\end{equation}
-である．
-証明は読者に任せる．
-\(G\)作用をもつ\(k\)加群\(N\)に対し，
-\(N\)上の\(G\)作用を対応させることができる．
-\(\sigma\in G\)と\(X\)の開集合\(U\)に対し，
-次の写像を対応させる．
-\begin{equation}
-    \Hom(U,N)\to \Hom(\sigma(U),N);
-    \quad 
-    \varphi\to \sigma_N\circ \varphi\circ\sigma.\label{94}
-\end{equation}
-
-\begin{LMM}\(X\)が連結なら，
-    関手\(E\to \Gamma(X,E)\)は\(X\)上の\(G\)同変層で
-    下部\(k\)層が定数層であるものの圏と，
-    左\(G\)作用をもつ\(k\)加群の圏の同値を与える．
-\end{LMM}
-
-\begin{proof}
-    逆関手は\eqref{94}で与えられる．
-\end{proof}
-
-\begin{LMM}
-    各点\(b\in B\)に対し，
-    開近傍\(V\)で\(f^{-1}(V)\to V\)が
-    \(\pr\colon V\times G\to V\)と
-    \(G\)同変に同型であるとする．
-    このとき，\(f^\ast\)と\(\Inv^G\)は\(B\)上の
-    局所定数層の圏と\(G\)同変層で
-    下部\(k\)層が定数層であるものの圏の間の圏同値をひきおこす．
-\end{LMM}
-
-
-\section{2025/06/21のメモ}
-多分次のようになっている．
-\[\xymatrix{
-    \left\{\text{局所定数層}\right\}
-    \ar[r]^-{\sim}
-    &
-    \left\{\text{局所系}\right\}
-    \ar[r]^-{\sim}
-    &
-    \left\{\text{モノドロミー表現}\right\}\\
-    \left\{\text{局所自由層}\right\}
-    %\ar@{^{(}->}[u]
-    \ar[r]^-{\sim}
-    &
-    \left\{\text{ベクトル束}\right\}
-    &
-}
-\]
-%局所定数層のうちには自由でないものもある．
+\end{DFN}
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
-    \bibitem[B+84]{B+84} Borel, 
-    \textit{Intersection Cohomology}, 
-    Progress in Mathematics, 50, Birkh\"auser, 1984.
-    \bibitem[Iv]{Iv} Iversen, Cohomology of Sheaves.
-\bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+  \bibitem[dR]{dR} 
+  de Rham, \textit{Vari\'et\'es diff\'erentiables}, Hermann, 1953.
+  和訳：ド・ラーム, 微分多様体, 東京図書, 1974.
+  \bibitem[GKS12]{GKS12} St\'ephane Guillermou, 
+  Masaki Kashiwara, Pierre Schapira, 
+  \textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
+  Duke. Math. J. 161, No. 2, pp.201--245, 2012.  
+  \bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
+    \textit{Differential Topology}, 
+    Prentice-Hall, 1974.
+  \bibitem[Kel06]{Kel06} Keller, \textit{On Differential Graded Categories}, 2006.
+    \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
     \textit{Sheaves on Manifolds}, 
     Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
-\bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
-    \textit{Categories and Sheaves}, 
-    Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
-\bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
-\bibitem[Sp66]{Sp66} Spanier: Algebraic Topology. McGraw-Hill, 1966.
+  \bibitem[Hat89]{Hat89} 服部晶夫, 多様体 増補版, 岩波全書 288, 岩波書店, 1989.
+  %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+  \bibitem[Hor63]{Hor63} Lars H\"ormander, 
+  \textit{Linear Pertial Differential Operators}, Fourth Printing, 
+  Grundlehren der Mathematischen Wissenschaften, 116, Springer, 1963.
+  \bibitem[Hor71]{Hor71} Lars H\"ormander, 
+  \textit{Fourier Integral Operators I}, 
+  Acta Math. 127, 79--183, (1971).
+  \bibitem[Hor89]{Hor89} Lars H\"ormander, 
+  \textit{The Analysis of Linear Pertial Differential Operators I}, Second Edition,
+  Grundlehren der Mathematischen Wissenschaften, 256, Springer, 1989.
+  \bibitem[Hor85]{Hor85} Lars H\"ormander, 
+  \textit{The Analysis of Linear Pertial Differential Operators III}, 
+  Grundlehren der Mathematischen Wissenschaften, 274, Springer, 1985.
+  \bibitem[Sch85]{Sch85} Pierre Schapira, 
+    \textit{Microdifferential Systems in the Complex Domain}, 
+    Grundlehren der Mathematischen Wissenschaften, 269, 
+    Springer, 1985.
+    \bibitem[ST92]{ST92} Pierre Schapira, Nobuyuki Tose, 
+    \textit{Morse Inequalities for \(\rr\)-constructible Sheaves}, 
+    Adv. Math. 93, pp.1--8, 1992. 
+    \bibitem[Zwo12]{Zwo12} Maciej Zworski,
+    \textit{Semiclsaaical Analysis}, 
+    Graduate Studies in Mathematics, 138, 
+    American Mathematical Society, 
+    2012. 
 \end{thebibliography}
 
 %===============================================
+
+
 
 
 \end{document}
