@@ -6,7 +6,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[leqno, 10pt, a4paper, dvipdfmx]{jsarticle}
+\documentclass[leqno, 8pt, a4paper, dvipdfmx]{jsarticle}
 \title{ゼミノート（06月25日分）}
 \author{Toshi2019}
 \date{\today}
@@ -578,7 +578,7 @@
 
 \newcommand{\diag}[1][]{\Delta_{#1}}
 %  \[\mu_{\Delta_{Y}}\mathrm{R}\mathcal{H}om(G,F)\]
-\newcommand{\micro}[1]{\mu_{#1}\hspace{-2pt}}
+\newcommand{\micro}[1]{\mu_{#1}\hspace{-0pt}}
 
 % ----------------------------
 % documenet 
@@ -1642,9 +1642,252 @@
   }}
 \end{equation}
 
+\begin{CMT}
+  ここで\(\mpb[g]\)と書いてある射は\(
+    g\colon Z\to Y
+  \)に\((\blk)\tpb[X]\cotb[X]\)を適用したものである．
+  \(\mdiff[f]\)の方は，\(f\colon Y\to X\)に\(Z\tpb[Y](\blk)
+  \)を適用したものである．
+\end{CMT}
 
+\begin{leftbar}
+\begin{PRP}[{\cite[Prop.4.4.9]{KS90}}]
+  \(F\in\Dompb(X)\), \(G\in\Dompb(Y)\), 
+  \(H\in\Dompb(Z)\)とする．
+  次の標準的な射が定まる．
+  \[
+    \mdiff[f]^{-1}\muhom(H\to G)
+    \lltens[]
+    \mpb[g]^{-1}\muhom(G\to F)
+    \to
+    \muhom(H\to F).
+  \]
+\end{PRP}
+\end{leftbar}
 
+\begin{proof}
+  次のように記号を定める．
+  \begin{align*}
+    K_1&\coloneqq \RHOM(q_{2}^{-1}G,q_{1}^{!}F),\\
+    K_2&\coloneqq \RHOM({q_{2}''}^{-1}H,{q_{1}''}^{!}G),\\
+    L&\coloneqq 
+    \mpb[g]^{-1}\micro{\diag[f]}(K_1)
+    \lltens[]
+    \mdiff[f]^{-1}\micro{\diag[g]}(K_2)
+  \end{align*}
+  このとき，
+  \begin{align*}
+    L&\simar 
+    \mdiff[{q_{13}}]^{-1}{\mdiff[j]}_{\ast}r_{12}^{-1}\micro{\diag[f]}(K_1)
+    \lltens[]
+    \mdiff[{q_{13}}]^{-1}{\mdiff[j]}_{\ast}r_{34}^{-1}\micro{\diag[g]}(K_2)\\
+    &\simar 
+    \mdiff[{q_{13}}]^{-1}{\mdiff[j]}_{\ast}\left(r_{12}^{-1}\micro{\diag[f]}(K_1)
+    \lltens[]
+    r_{34}^{-1}\micro{\diag[g]}(K_2)\right)&&\text{（(2.6.22)が同型．(2.6.18)）}\\
+    &\cong
+    \mdiff[{q_{13}}]^{-1}{\mdiff[j]}_{\ast}
+    \left(
+      \mpb[j]^{-1}\tilde{p}_{12}^{-1}\micro{\diag[f]}(K_1)
+      \lltens[]
+      \mpb[j]^{-1}\tilde{p}_{34}^{-1}\micro{\diag[g]}(K_2)
+    \right)
+    &&\text{（図式の可換性）}\\
+    &\simar
+    \mdiff[{q_{13}}]^{-1}{\mdiff[j]}_{\ast}\mpb[j]^{-1}
+    \left(
+      \tilde{p}_{12}^{-1}\micro{\diag[f]}(K_1)
+      \lltens[]
+      \tilde{p}_{34}^{-1}\micro{\diag[g]}(K_2)
+    \right)
+    &&\text{（(2.6.18)）}\\
+    &\to
+    \mdiff[{q_{13}}]^{-1}{\mdiff[j]}_{\ast}\mpb[j]^{-1}
+    \micro{\diag[f]\times\diag[g]}\left(
+      \tilde{q}_{12}^{-1}K_1\lltens[]\tilde{q}_{34}^{-1}K_2
+    \right)
+    &&\text{（命題\ref{prp4.3.6}）}\\
+    &\to
+    \mdiff[{q_{13}}]^{-1}
+    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
+      j^{-1}\left(
+        \tilde{q}_{12}^{-1}K_1\lltens[]\tilde{q}_{34}^{-1}K_2
+      \right)
+    \right)
+    &&\text{（命題\ref{prp4.3.5} \eqref{prp4.3.5.3}）}\\
+    &\simar
+    \mdiff[{q_{13}}]^{-1}
+    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
+      j^{-1}\tilde{q}_{12}^{-1}K_1
+      \lltens[]
+      j^{-1}\tilde{q}_{34}^{-1}K_2
+    \right)
+    &&\text{（(2.6.18)）}\\
+    &\simar
+    \mdiff[{q_{13}}]^{-1}
+    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
+      q_{12}^{-1}K_1
+      \lltens[]
+      q_{23}^{-1}K_2
+    \right)
+    &&\text{（図式の可換性）}\\
+    &=
+    \mdiff[{q_{13}}]^{-1}
+    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
+      q_{12}^{-1}\RHOM(q_{2}^{-1}G,q_{1}^{!}F)
+      \lltens[]
+      q_{23}^{-1}\RHOM({q_{2}''}^{-1}H,{q_{1}''}^{!}G)
+    \right)
+    &&\text{（戻した）}\\
+    &\to
+    \mdiff[{q_{13}}]^{-1}
+    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
+      q_{12}^{!}\RHOM(q_{2}^{-1}G,q_{1}^{!}F)
+      \lltens[]\omega_{X\times Y\times Z/X\times Y}^{\otimes-1}
+      \lltens[]
+      q_{23}^{-1}\RHOM({q_{2}''}^{-1}H,{q_{1}''}^{!}G)
+    \right)
+    &&\text{（(3.1.6)に逆をかけた）}\\
+    &\to
+    \mdiff[{q_{13}}]^{-1}
+    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
+      \RHOM(q_{12}^{-1}q_{2}^{-1}G,q_{12}^{!}q_{1}^{!}F)
+      \lltens[]\omega_{X\times Y\times Z/X\times Y}^{\otimes-1}
+      \lltens[]
+      \RHOM(q_{23}^{-1}{q_{2}''}^{-1}H,q_{23}^{-1}{q_{1}''}^{!}G)
+    \right)
+    &&\text{（(2.6.27)と命題3.1.13）}\\
+    &\to
+    \mdiff[{q_{13}}]^{-1}
+    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
+      \RHOM(q_{12}^{-1}q_{2}^{-1}G,q_{13}^{!}{q'_{1}}^{!}F)
+      \lltens[]\omega_{X\times Y\times Z/X\times Y}^{\otimes-1}
+      \lltens[]
+      \RHOM(q_{13}^{-1}{q_{2}'}^{-1}H,q_{23}^{-1}({q_{1}''}^{-1}G\lltens[]\omega_{Y\times Z/Y}))
+    \right)
+    &&\text{（）}\\
+    &\simar
+    \mdiff[{q_{13}}]^{-1}
+    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
+      \RHOM(q_{12}^{-1}q_{2}^{-1}G,q_{13}^{!}{q'_{1}}^{!}F)
+      \lltens[]
+      \omega_{X\times Y\times Z/X\times Y}^{\otimes-1}
+      \lltens[]
+      \RHOM(q_{13}^{-1}{q_{2}'}^{-1}H,q_{23}^{-1}{q_{1}''}^{-1}G\lltens[]q_{23}^{-1}\omega_{Y\times Z/Y})
+    \right)
+    &&\text{（）}\\
+    &\simar
+    \mdiff[{q_{13}}]^{-1}
+    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
+      \RHOM(q_{12}^{-1}q_{2}^{-1}G,q_{13}^{!}{q'_{1}}^{!}F)
+      \lltens[]
+      \RHOM(
+        q_{13}^{-1}{q_{2}'}^{-1}H,
+        q_{12}^{-1}{q_{2}}^{-1}G
+      )
+    \right)
+    \lltens[]
+    \omega_{X\times Y\times Z/X\times Y}^{\otimes-1}
+    \lltens[]q_{23}^{-1}\omega_{Y\times Z/Y}
+    &&\text{（）}\\
+    &\to
+    \mdiff[{q_{13}}]^{-1}
+    \micro{\diag[f]\dpb[Y]\diag[g]}\left(      
+      \RHOM(
+        q_{13}^{-1}{q_{2}'}^{-1}H,
+        q_{12}^{-1}{q_{2}}^{-1}G
+        \lltens[]
+        \RHOM(q_{12}^{-1}q_{2}^{-1}G,q_{13}^{!}{q'_{1}}^{!}F)
+      )
+    \right)
+    \lltens[]
+    \omega_{X\times Y\times Z/X\times Y}^{\otimes-1}
+    \lltens[]q_{23}^{-1}\omega_{Y\times Z/Y}
+    &&\text{（(2.2.11)）}\\
+    &\to
+    \mdiff[{q_{13}}]^{-1}
+    \micro{\diag[f]\dpb[Y]\diag[g]}\left(      
+      \RHOM(
+        q_{13}^{-1}{q_{2}'}^{-1}H,
+        q_{13}^{!}{q'_{1}}^{!}F)
+    \right)
+    \lltens[]
+    \omega_{X\times Y\times Z/X\times Y}^{\otimes-1}
+    \lltens[]q_{23}^{-1}\omega_{Y\times Z/Y}
+    &&\text{（(2.2.10)）}\\
+    &\to
+    \mdiff[{q_{13}}]^{-1}
+    \micro{\diag[f]\dpb[Y]\diag[g]}\left(      
+      \RHOM(
+        q_{13}^{-1}{q_{2}'}^{-1}H,
+        q_{13}^{!}{q'_{1}}^{!}F)
+    \right)
+    &&\text{（向きづけ層を潰した）}\\
+    &\cong
+    \Rder{{\mdiff[{q_{13}}]}_{!}}\mdiff[{q_{13}}]^{-1}
+    \micro{\diag[f]\dpb[Y]\diag[g]}\left(      
+      \RHOM(
+        q_{13}^{-1}{q_{2}'}^{-1}H,
+        q_{13}^{!}{q'_{1}}^{!}F)
+    \right)
+    &&\text{（同一視を書いた）}\\
+    &\to
+    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
+      \Rder{{q_{13}}_{!}}      
+      \RHOM(
+        q_{13}^{-1}{q_{2}'}^{-1}H,
+        q_{13}^{!}{q'_{1}}^{!}F)
+    \right)
+    &&\text{（命題\ref{prp4.3.4}上辺）}\\
+    &\to
+    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
+      \RHOM(
+        \Rder{{q_{13}}_{!}}q_{13}^{-1}{q_{2}'}^{-1}H,
+        \Rder{{q_{13}}_{!}}q_{13}^{!}{q'_{1}}^{!}F)
+    \right)
+    &&\text{（(2.6.26)）}\\
+    &\to
+    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
+      \RHOM({q_{2}'}^{-1}H,{q'_{1}}^{!}F)
+    \right)
+    &&\text{（随伴）}\\
+    &=
+    \muhom(H\to F)
+  \end{align*}
+\end{proof}
 
+\begin{leftbar}
+\begin{CRL}[{\cite[Cor.4.4.10]{KS90}}]
+  \(F_1,F_2,F_3\in\Dompb(X)\)とする．
+  このとき次の標準的な射が定まる．
+  \[
+    \muhom(F_1, F_2)
+    \lltens[]
+    \muhom(F_2, F_3)
+    \to
+    \muhom(F_1, F_3).
+  \]
+\end{CRL}
+\end{leftbar}
+
+\begin{leftbar}
+\begin{PRP}[{\cite[Prop.4.4.11]{KS90}}]
+  \(K_1, F_1\in\Dompb(X\times Y)\), 
+  \(F_2,K_2\in\Dompb(Y\times Z)\)
+  に対し，次の標準的な射が定まる．
+  \begin{equation}
+    \Rder{{p_{13^{a}}}_{!}}
+    \left(
+      p_{12^{a}}^{-1}\muhom(K_1,F_1)
+      \lltens[]
+      p_{23^{a}}^{-1}\muhom(K_2,F_2)
+    \right)
+    \to
+    \muhom(K_1\circ K_2,F_1\circ F_2),
+  \end{equation}
+  ただし，\(K_1\circ K_2,F_1\circ F_2\)は核の合成である．
+\end{PRP}
+\end{leftbar}
 
 
 
@@ -1752,6 +1995,11 @@
 \end{PRP}
 \end{leftbar}
 
+\begin{leftbar}
+\begin{PRP}[{\cite[Prop.4.3.6.]{KS90}}]\label{prp4.3.6}
+  外部テンソル積
+\end{PRP}
+\end{leftbar}
 
 
 
