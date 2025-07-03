@@ -6,7 +6,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[leqno, 8pt, a4paper, dvipdfmx]{jsarticle}
+\documentclass[leqno, 10pt, a4paper, dvipdfmx]{jsarticle}
 \title{ゼミノート（06月25日分）}
 \author{Toshi2019}
 \date{\today}
@@ -1731,79 +1731,6 @@
       q_{23}^{-1}K_2
     \right)
     &&\text{（図式の可換性）}\\
-    &=
-    \mdiff[{q_{13}}]^{-1}
-    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
-      q_{12}^{-1}\RHOM(q_{2}^{-1}G,q_{1}^{!}F)
-      \lltens[]
-      q_{23}^{-1}\RHOM({q_{2}''}^{-1}H,{q_{1}''}^{!}G)
-    \right)
-    &&\text{（戻した）}\\
-    &\to
-    \mdiff[{q_{13}}]^{-1}
-    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
-      q_{12}^{!}\RHOM(q_{2}^{-1}G,q_{1}^{!}F)
-      \lltens[]\omega_{X\times Y\times Z/X\times Y}^{\otimes-1}
-      \lltens[]
-      q_{23}^{-1}\RHOM({q_{2}''}^{-1}H,{q_{1}''}^{!}G)
-    \right)
-    &&\text{（(3.1.6)に逆をかけた）}\\
-    &\to
-    \mdiff[{q_{13}}]^{-1}
-    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
-      \RHOM(q_{12}^{-1}q_{2}^{-1}G,q_{12}^{!}q_{1}^{!}F)
-      \lltens[]\omega_{X\times Y\times Z/X\times Y}^{\otimes-1}
-      \lltens[]
-      \RHOM(q_{23}^{-1}{q_{2}''}^{-1}H,q_{23}^{-1}{q_{1}''}^{!}G)
-    \right)
-    &&\text{（(2.6.27)と命題3.1.13）}\\
-    &\to
-    \mdiff[{q_{13}}]^{-1}
-    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
-      \RHOM(q_{12}^{-1}q_{2}^{-1}G,q_{13}^{!}{q'_{1}}^{!}F)
-      \lltens[]\omega_{X\times Y\times Z/X\times Y}^{\otimes-1}
-      \lltens[]
-      \RHOM(q_{13}^{-1}{q_{2}'}^{-1}H,q_{23}^{-1}({q_{1}''}^{-1}G\lltens[]\omega_{Y\times Z/Y}))
-    \right)
-    &&\text{（）}\\
-    &\simar
-    \mdiff[{q_{13}}]^{-1}
-    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
-      \RHOM(q_{12}^{-1}q_{2}^{-1}G,q_{13}^{!}{q'_{1}}^{!}F)
-      \lltens[]
-      \omega_{X\times Y\times Z/X\times Y}^{\otimes-1}
-      \lltens[]
-      \RHOM(q_{13}^{-1}{q_{2}'}^{-1}H,q_{23}^{-1}{q_{1}''}^{-1}G\lltens[]q_{23}^{-1}\omega_{Y\times Z/Y})
-    \right)
-    &&\text{（）}\\
-    &\simar
-    \mdiff[{q_{13}}]^{-1}
-    \micro{\diag[f]\dpb[Y]\diag[g]}\left(
-      \RHOM(q_{12}^{-1}q_{2}^{-1}G,q_{13}^{!}{q'_{1}}^{!}F)
-      \lltens[]
-      \RHOM(
-        q_{13}^{-1}{q_{2}'}^{-1}H,
-        q_{12}^{-1}{q_{2}}^{-1}G
-      )
-    \right)
-    \lltens[]
-    \omega_{X\times Y\times Z/X\times Y}^{\otimes-1}
-    \lltens[]q_{23}^{-1}\omega_{Y\times Z/Y}
-    &&\text{（）}\\
-    &\to
-    \mdiff[{q_{13}}]^{-1}
-    \micro{\diag[f]\dpb[Y]\diag[g]}\left(      
-      \RHOM(
-        q_{13}^{-1}{q_{2}'}^{-1}H,
-        q_{12}^{-1}{q_{2}}^{-1}G
-        \lltens[]
-        \RHOM(q_{12}^{-1}q_{2}^{-1}G,q_{13}^{!}{q'_{1}}^{!}F)
-      )
-    \right)
-    \lltens[]
-    \omega_{X\times Y\times Z/X\times Y}^{\otimes-1}
-    \lltens[]q_{23}^{-1}\omega_{Y\times Z/Y}
-    &&\text{（(2.2.11)）}\\
     &\to
     \mdiff[{q_{13}}]^{-1}
     \micro{\diag[f]\dpb[Y]\diag[g]}\left(      
@@ -1811,18 +1738,7 @@
         q_{13}^{-1}{q_{2}'}^{-1}H,
         q_{13}^{!}{q'_{1}}^{!}F)
     \right)
-    \lltens[]
-    \omega_{X\times Y\times Z/X\times Y}^{\otimes-1}
-    \lltens[]q_{23}^{-1}\omega_{Y\times Z/Y}
-    &&\text{（(2.2.10)）}\\
-    &\to
-    \mdiff[{q_{13}}]^{-1}
-    \micro{\diag[f]\dpb[Y]\diag[g]}\left(      
-      \RHOM(
-        q_{13}^{-1}{q_{2}'}^{-1}H,
-        q_{13}^{!}{q'_{1}}^{!}F)
-    \right)
-    &&\text{（向きづけ層を潰した）}\\
+    &&\text{（後述）}\tag{\(\natural\)}\label{4.4.9.hom}\\
     &\cong
     \Rder{{\mdiff[{q_{13}}]}_{!}}\mdiff[{q_{13}}]^{-1}
     \micro{\diag[f]\dpb[Y]\diag[g]}\left(      
@@ -1830,7 +1746,7 @@
         q_{13}^{-1}{q_{2}'}^{-1}H,
         q_{13}^{!}{q'_{1}}^{!}F)
     \right)
-    &&\text{（同一視を書いた）}\\
+    &&\text{（同一視から）}\\
     &\to
     \micro{\diag[f]\dpb[Y]\diag[g]}\left(
       \Rder{{q_{13}}_{!}}      
@@ -1850,10 +1766,117 @@
     \micro{\diag[f]\dpb[Y]\diag[g]}\left(
       \RHOM({q_{2}'}^{-1}H,{q'_{1}}^{!}F)
     \right)
-    &&\text{（随伴）}\\
+    &&\text{（随伴の単位・余単位）}\\
     &=
     \muhom(H\to F)
   \end{align*}
+  となり，主張が示される．
+
+  \eqref{4.4.9.hom}の部分について説明する．
+  \(
+    \omega_{1}
+    \coloneqq
+    \omega_{X\times Y\times Z/X\times Y}
+  \)とおく．
+  自然な射\[
+    q_{12}^{-1}K_1
+    \lltens[]
+    \omega_{1}
+    \to q_{12}^{!}K_1
+  \]の両辺に\(
+    \omega_{1}^{\otimes-1}
+  \)をかけると射
+  \(
+    q_{12}^{-1}K_1
+    \to q_{12}^{!}K_1
+    \lltens[]
+    \omega_{1}^{\otimes-1}
+  \)が定まる．次に
+  \(\omega_{2}\coloneqq \omega_{Y\times Z/Y}\)
+  とおく．このとき，
+  \(
+    q_{23}^{-1}\omega_2\lltens[]\omega_1
+    \cong 
+    A_{X\times Y\times Z}
+  \)が成り立つ．
+  最後に
+  \begin{align*}
+    \RHOM(F,G)\lltens[]F&\to G, 
+    \tag{{\cite[(2.2.10)]{KS90}}}\\
+    \RHOM(F,G)\lltens[]H&\to \RHOM(F,G\lltens[]H), 
+    \tag{{\cite[(2.2.11)]{KS90}}}
+  \end{align*}
+  から，自然な射
+  \begin{align*}
+    %\vcenter{
+      \RHOM(F,G)\lltens[]\RHOM(G,H)
+      &\to \RHOM(F,G\lltens[]\RHOM(G,H)) \\
+      &\to \RHOM(F,H)
+    %}    
+    \tag{\(\natural\natural\)}\label{4.4.9.contraction}
+  \end{align*}
+  が定まる．以上の3つの準備のもとで，
+  以下の射が得られる．
+  \begin{align*}
+    &q_{12}^{-1}K_1
+      \lltens[]
+      q_{23}^{-1}K_2
+    &&\text{}\\
+    \to&
+      q_{12}^{!}K_1
+      \lltens[]\omega_{1}^{\otimes-1}
+      \lltens[]
+      q_{23}^{-1}K_2
+    &&\text{}\\
+    \to&
+      \RHOM(q_{12}^{-1}q_{2}^{-1}G,q_{12}^{!}q_{1}^{!}F)
+      \lltens[]\omega_{1}^{\otimes-1}
+      \lltens[]
+      \RHOM(q_{23}^{-1}{q_{2}''}^{-1}H,q_{23}^{-1}{q_{1}''}^{!}G)
+    &&%\text{（(2.6.27)と命題3.1.13）}
+    \\
+    \to&
+      \RHOM(q_{12}^{-1}q_{2}^{-1}G,q_{13}^{!}{q'_{1}}^{!}F)
+      \lltens[]\omega_{1}^{\otimes-1}
+      \lltens[]
+      \RHOM(q_{13}^{-1}{q_{2}'}^{-1}H,q_{23}^{-1}({q_{1}''}^{-1}G\lltens[]\omega_{2}))
+    &&\text{}\\
+    \simar&
+      \RHOM(q_{12}^{-1}q_{2}^{-1}G,q_{13}^{!}{q'_{1}}^{!}F)
+      \lltens[]
+      \omega_{1}^{\otimes-1}
+      \lltens[]
+      \RHOM(q_{13}^{-1}{q_{2}'}^{-1}H,q_{23}^{-1}{q_{1}''}^{-1}G\lltens[]q_{23}^{-1}\omega_{2})
+    &&\text{}\\
+    \simar&
+      \RHOM(q_{12}^{-1}q_{2}^{-1}G,q_{13}^{!}{q'_{1}}^{!}F)
+      \lltens[]
+      \RHOM(
+        q_{13}^{-1}{q_{2}'}^{-1}H,
+        q_{12}^{-1}q_{2}^{-1}G
+      )
+    \lltens[]
+    \omega_{1}^{\otimes-1}
+    \lltens[]q_{23}^{-1}\omega_{2}
+    &&\text{}\\
+    \cong&
+      \RHOM(q_{12}^{-1}q_{2}^{-1}G,q_{13}^{!}{q'_{1}}^{!}F)
+      \lltens[]
+      \RHOM(
+        q_{13}^{-1}{q_{2}'}^{-1}H,
+        q_{12}^{-1}q_{2}^{-1}G
+      )
+    &&\text{}\\
+    \underset{\eqref{4.4.9.contraction}}{\to}&
+      \RHOM(
+        q_{13}^{-1}{q_{2}'}^{-1}H,
+        q_{13}^{!}{q'_{1}}^{!}F)
+    &&\text{}
+  \end{align*}
+  したがって，以上の射の合成に関手\(
+    \mdiff[{q_{13}}]^{-1}
+    \micro{\diag[f]\dpb[Y]\diag[g]}(\blk)
+  \)を適用することで\eqref{4.4.9.hom}が定まる．
 \end{proof}
 
 \begin{leftbar}

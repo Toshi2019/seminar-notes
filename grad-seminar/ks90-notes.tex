@@ -1200,8 +1200,8 @@ $\cat$の三角とは射の列
 
 \begin{Definition}
     三角圏$\cat$は次のデータ\eqref{eq:tricat}, \eqref{eq:family-dt}と
-    規則(TR\ref{TR0})--(TR\ref{TR5})からなる．\ref{des:data}
-    \begin{description}
+    規則(TR\ref{TR0})--(TR\ref{TR5})からなる．
+    \begin{description}%\label{des:data}
         \item[データ] \begin{align}
             %\renewcommand{\labelenumi}{(\ref{ssec:tricat}.{\arabic{enumi}})}
             \text{加法圏}\cat\text{と自己関手}T\colon\cat\to\cat\text{の組},\label{eq:tricat}\\
@@ -1225,11 +1225,11 @@ $\cat$の三角とは射の列
                     Y\overset{g}{\to} 
                     Z\overset{h}{\to} T(X)$が
                     特三角であることと$Y\overset{g}{\longrightarrow}
-                    Z\overset{h}{\longrightarrow} T(X)\overset{-T(f)}{\longrightarrow} T(Y)$が
+                    Z\overset{h}{\longrightarrow} T(X)\overset{-T(f)}{\longrightarrow} TY$が
                     特三角であることは同値である．\label{TR3}
                 \item ２つの特三角$X\overset{f}{\to}
                 Y\to Z\to T(X)$, $X'\overset{f'}{\to}
-                Y'\to Z'\to T(X')$に対し，可換図式
+                Y'\to Z'\to TX'$に対し，可換図式
                 \begin{equation*}
                     \vcenter{\xymatrix
                     @C=26pt@R=26pt
@@ -1247,7 +1247,7 @@ $\cat$の三角とは射の列
                 \item（八面体公理）．３つの特三角
                 \begin{align*}
                     X\overset{f}{\to}Y\to Z'\to T(X), \\
-                    Y\overset{g}{\to}Z\to X'\to T(Y),\\
+                    Y\overset{g}{\to}Z\to X'\to TY,\\
                     X\overset{g\circ f}{\longrightarrow}
                     Z\to Y'\to T(X)
                 \end{align*}

@@ -1,0 +1,1246 @@
+%=====================================
+%   20250703.tex
+%   20250703 
+%   toshi2019
+%=====================================
+
+% -----------------------
+% preamble
+% -----------------------
+% ここから本文 (\begin{document}) までの
+% ソースコードに変更を加えた場合は
+% 編集者まで連絡してください. 
+% Don't change preamble code yourself. 
+% If you add something
+% (usepackage, newtheorem, newcommand, renewcommand),
+% please tell it 
+% to the editor of institutional paper of RUMS.
+
+% ------------------------
+% documentclass
+% ------------------------
+\documentclass[leqno, 10pt, a4paper, dvipdfmx]{jsarticle}
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+
+\usetikzlibrary{cd}
+\usetikzlibrary{arrows.meta}
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+
+%\usepackage[mathscr]{euscript} % mathscr のフォントを変更
+
+%\usepackage{mmasym}
+
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem{Fact*}{事実}
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{k}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+%\newcommand{\Ring}{{\bf Ring}}
+\newcommand{\Ab}{{\bf Ab}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\Modf}{\mathop{\mathrm{Mod}^\mathrm{f}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits} % 写像の集合
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits} % 射集合
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits} % 自己準同型の集合
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits} % 自己同型の集合
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits} % 射集合
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits} % 核
+\newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
+\newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
+\newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+%\newcommand{\OO}{\mcal{O}}
+
+
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+%        \itshape
+         \bfseries
+%    #1\@addpunct{.}]\ignorespaces
+    {#1}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
+\renewcommand{\proofname}{証明.}
+
+
+
+%\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{section}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Op}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+%\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
+
+\newcommand{\cat}{\mathscr{C}}
+
+%フラクトゥール
+\newcommand{\frA}{\mathfrak{A}}
+\newcommand{\frX}{\mathfrak{X}}
+
+%筆記体
+\newcommand{\cA}{\mcal{A}}
+\newcommand{\cB}{\mcal{B}}
+\newcommand{\cC}{\mcal{C}}
+\newcommand{\cD}{\mcal{D}}
+\newcommand{\cE}{\mcal{E}}
+\newcommand{\cF}{\mcal{F}}
+\newcommand{\cG}{\mcal{G}}
+\newcommand{\cH}{\mcal{H}}
+\newcommand{\cI}{\mcal{I}}
+\newcommand{\cJ}{\mcal{J}}
+\newcommand{\cK}{\mcal{K}}
+\newcommand{\cL}{\mcal{L}}
+\newcommand{\cM}{\mcal{M}}
+\newcommand{\cN}{\mcal{N}}
+\newcommand{\cO}{\mcal{O}}
+\newcommand{\cP}{\mcal{P}}
+\newcommand{\cQ}{\mcal{Q}}
+\newcommand{\cR}{\mcal{R}}
+\newcommand{\cS}{\mcal{S}}
+\newcommand{\cT}{\mcal{T}}
+\newcommand{\cU}{\mcal{U}}
+\newcommand{\cV}{\mcal{V}}
+\newcommand{\cW}{\mcal{W}}
+\newcommand{\cX}{\mcal{X}}
+\newcommand{\cY}{\mcal{Y}}
+\newcommand{\cZ}{\mcal{Z}}
+
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+\newcommand{\scN}{\mathscr{N}}
+\newcommand{\scO}{\mathscr{O}}
+\newcommand{\scV}{\mathscr{V}}
+\newcommand{\scU}{\mathscr{U}}
+\newcommand{\scX}{\mathscr{X}}
+
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+%\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+%\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+%\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}%複体のホモトピー圏
+%\newcommand{\Comp}{\mathrm{C}}
+%\newcommand{\Komp}{\mathrm{K}}
+%\newcommand{\Domp}{\mathsf{D}}%複体のホモトピー圏
+
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
+\newcommand{\Domp}{\mathord{\mathsf{D}}}%\nolimits}
+\newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
+\newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
+\newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
+\newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
+\newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
+\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+\newcommand{\Dbconic}{\mathop{\mathsf{D}^\mathrm{b}_{\rrp}}\nolimits}
+\newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
+\newcommand{\Domplb}{\mathop{\mathsf{D}^\mathrm{lb}}\nolimits}
+
+
+
+
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
+\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+\newcommand{\Rder}{\mathrm{R}}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
+\newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
+\newcommand{\simra}{\mathrel{\overset{\sim}{\leftarrow}}}%同型左矢印
+\newcommand{\simrra}{\mathrel{\overset{\sim}{\longleftarrow}}}%同型左矢印
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\PSh}{\mathrm{PSh}}
+
+\newcommand{\rmD}{\mathrm{D}}
+
+\newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
+\newcommand{\ori}{\mathord{\mathrm{or}}}
+\newcommand{\Db}{\mathord{\mathscr{D}b}}
+
+\newcommand{\codim}{\mathop{\mathrm{codim}}\nolimits}
+
+
+
+\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
+\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
+
+
+\newcommand{\tens}[1][]{\mathbin{\otimes_{\raise1.5ex\hbox to-.1em{}{#1}}}}
+\newcommand{\etens}{\mathbin{\boxtimes}}
+\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
+\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
+\newcommand{\detens}{\underline{\etens}}
+\newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
+\newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
+
+\newcommand{\blk}{\mathord{\ \cdot\ }}
+\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
+
+
+%\newcommand{\hocolim}{{\mathrm{hocolim}}}
+%\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+%\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+%\newcommand{\Pro}{\mathrm{Pro}}
+%\newcommand{\Ind}{\mathrm{Ind}}
+%\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+%\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+\newcommand{\proolim}[1][]{\mathop{\text{\rm``{$\varprojlim$}''}}\limits_{#1}}
+\newcommand{\sproolim}[1][]{\smash{\mathop{\rm``{\varprojlim}''}\limits_{#1}}}
+\newcommand{\inddlim}[1][]{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}
+\newcommand{\sinddlim}[1][]{\smash{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}\,}
+\newcommand{\ooplus}{\mathop{\text{\rm``{$\oplus$}''}}\limits}
+\newcommand{\bbigsqcup}{\mathop{``\bigsqcup''}\limits}
+\newcommand{\bsqcup}{\mathop{``\sqcup''}\limits}
+\newcommand{\dsum}[1][]{\mathbin{\oplus_{#1}}}
+
+\newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
+
+\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+
+
+
+
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}[section]
+\newtheorem{DFN}[AXM]{定義}
+\newtheorem*{DFN*}{定義}
+\newtheorem{THM}[AXM]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[AXM]{命題}
+\newtheorem{LMM}[AXM]{補題}
+\newtheorem{CRL}[AXM]{系}
+\newtheorem{EG}[AXM]{例}
+\newtheorem*{EG*}{例}
+\newtheorem{Qn}[AXM]{問い}
+\newtheorem*{Qn*}{問い}
+\newtheorem{RMK}[AXM]{注意}
+\newtheorem{CNV}[AXM]{約束}
+\newtheorem{CMT}[AXM]{コメント}
+\newtheorem*{CMT*}{コメント}
+\newtheorem{NTN}[AXM]{記号}
+\newtheorem{STT}[AXM]{主張}
+\newtheorem*{STT*}{主張}
+\newtheorem{FACT}[AXM]{事実}
+\newtheorem*{FACT*}{事実}
+% 定理環境ここまで
+%====================================================
+
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+
+
+
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+
+% =================================
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+\newcommand{\acstr}[2][]{\mathcal{J_{#2}}}
+%\newcommand{\acstr}[2][]{\mathcal{J(#1,#2)}}
+
+%=================================
+
+
+
+% 位相空間
+\newcommand{\Int}[1][]{\mathop{\mathrm{Int}}\nolimits_{#1}}
+\newcommand{\Cl}[1][]{\mathop{\mathrm{Cl}}\nolimits_{#1}}
+\newcommand{\Bd}[1][]{\mathop{\mathrm{Bd}}\nolimits_{#1}}
+\newcommand{\bd}{\mathord{\partial}}
+\newcommand{\Fr}[1][]{\mathop{\mathrm{Fr}}\nolimits_{#1}}
+
+
+\newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
+\newcommand{\mtp}[1][]{{}^{t\!}{#1}} % transpose of the morphism
+%\newcommand{\mpb}[1][]{{}^{t\!}{#1}'} % pull-back of the morphism
+\newcommand{\mpb}[1][]{{#1}_{\pi}} % pull-back of the morphism
+\newcommand{\mdiff}[1][]{{#1}_{d}} % pull-back of the morphism
+\newcommand{\mptan}[1][]{{#1}_{\tau}} % pull-back of the morphism
+
+
+%\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+
+\newcommand{\cotb}[1][]{T^{\ast}{#1}}
+\newcommand{\conm}[2][]{T_{#1}^{\hspace{0.7pt}\ast}{#2}}
+\newcommand{\norb}[2][]{T_{#1}{#2}}
+
+\newcommand{\cotz}[1][]{T^{\ast}_{#1}{#1}}
+
+\newcommand{\cotn}[1][]{\dot{T}^{\ast}{#1}}
+
+
+\newcommand{\muhom}{\mu hom}
+\newcommand{\muHom}[1][]{\mathrm{Hom}^\mu_{\raise1.5ex\hbox to.1em{}#1}}
+
+\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+%\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+
+\newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
+
+\newcommand{\torus}{\mathbf{T}}
+
+\newcommand{\const}{\mathrm{const.}}
+\newcommand{\norm}[1][]{\left\lVert{#1}\right\rVert}
+\newcommand{\abs}[1][]{\left\lvert{#1}\right\rvert}
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+\title{ゼミノート（7月3日分）}
+\author{Toshi2019}
+\date{\today}
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{エネルギー曲面上の周期軌道 (\cite[\S1.4]{HZ94})}
+
+\subsection*{回帰定理の後}
+
+\begin{itemize}
+    \item 回帰定理 → \(S\)上での周期的な現象は？
+    \item 希望：\begin{quote}
+        ハミルトン系を摂動したら，
+        回帰点の中には無限回戻ってくるだけでなく，
+        無限に近くに戻ってくるものがある．それによって周回軌道をなす
+    \end{quote}これが所謂「閉問題」．
+\end{itemize}
+
+\paragraph{閉補題}1983:「genericにはコンパクト正則エネルギー曲面上で稠密に周期軌道がある」
+
+\begin{Qn*}
+    \((\rr^{2n},\omega_{0})\)内のコンパクト正則エネルギー曲面\(S\)は，
+    ハミルトンベクトル場\(X_H\)の周期解をもつか？
+\end{Qn*}
+
+\begin{description}
+    \item[1950] Seifert: \(S^3\)上の任意の0にならないベクトル場は閉軌道を持つか？
+    \item[1974] Schweitzer: \(S^3\)上の\(C^1\)級ベクトル場で閉軌道を持たないものを構成．
+    \item[1993] Kupenberg: \(S^3\)上の\(C^\infty\)級ベクトル場で閉軌道を持たないものを構成．
+\end{description}
+
+\(\dim>3\)のときは，
+\begin{description}
+    \item[1966] Wilson: 持たないものがある．
+\end{description}
+
+「保体積\(C^\infty\)級ベクトル場で周期解を持たないものはあるか？」
+という問いも考えられそう．
+
+しかし，Hofer: \(S^3\)上の任意の滑らかなReebベクトル場は周期解を持つ．
+
+\begin{DFN}
+    \(X\in\frX(S^3)\)がReebベクトル場とは，
+    \(\lambda\in\Omega^1(S^3)\)で次をみたすものが存在すること：
+    \begin{enumerate}[(i)]
+        \item \(\lambda\wedge d\lambda\)が体積形式を定める．
+        \item \(i_{X}d\lambda=0\)かつ\(i_{X}\lambda=1.\)
+    \end{enumerate}
+\end{DFN}
+
+\subsection*{周期解がハミルトニアンに依らないこと}
+
+上の問いは\(S\)を表すハミルトニアンの取り方に依らない．
+これは超曲面とシンプレクティック構造にしか依存しない．
+
+\begin{proof}
+    \(F\)を\(S\)を定める別の関数で
+    \[
+        S=
+        \left\{x; H(x)=c\right\}
+        =
+        \left\{x; F(x)=c'\right\}
+    \]
+    かつ\(S\)上で\(dH(x)\ne0\), \(dF(x)\ne0\)をみたすもの
+    とする．
+    このとき，\[
+        \Ker{dF(x)}=\Ker{dH(x)}
+    \]であり，
+    次元定理から\(\Img{dF(x)}=\Img{dH(x)}=\rr\)となるので，
+    至る所\(0\)にならない滑らかな関数\(\rho\)で，任意の\(x\in S\)に対し\[
+        dF(x)=\rho(x)dH(x)
+    \]となるものが存在する．
+    よって，\(X_H\)と\(X_F\)は\(S\)上で同じ軌道をもち，
+    一般にはパラメータだけ異なる．
+    より正確には，
+    \(\varphi^t\)を\(S\)での\(X_H\)の流れとするとき，
+    \(S\)での\(X_F\)の流れ\(\psi^t\)は\[
+        \psi^s(x)=\varphi^{t}(x),\quad
+        t=t(s,x),
+        \quad
+        x\in S
+    \]で与えられる．ただし，
+    \(t\)はパラメータ\(x\in S\)に依存する微分方程式\[
+        \frac{dt}{ds}=\rho\left(\varphi^t(x)\right),\quad
+        t(0,x)=0
+    \]で定める．
+    よってとくに\(X_H\)は\(X_F\)と同じ周期軌道をもつ．
+\end{proof}
+
+\begin{EG*}
+    \(X_H\)がエネルギー曲面\[
+        S=\left\{x\in\rr^{2n}; 
+        \frac{1}{2}\lvert x\rvert^2=R>0
+        \right\}
+    \]を持つとすると\(X_H\)の\(S\)での解はすべて周期解である．
+    実際，
+    ハミルトニアン\(F\)を\(F(x)= \frac{1}{2}\lvert x\rvert^2\)で
+    定めると，正則エネルギー曲面として\(S\)を
+    \[
+        S=\left\{x\in\rr^{2n}; 
+        F(x)=R
+        \right\}
+    \]とかける．
+    \[
+        X_F
+        =J\nabla F(x)
+        =J
+        \begin{bmatrix}
+            x_1\\
+            \vdots\\
+            x_n
+        \end{bmatrix}
+        =Jx
+    \]
+    なので，その流れ\(\psi^s(x)\)は
+    \[
+        \psi^s(x)=
+        e^{sJ}x
+        =(\cos{s})x+(\sin{s})Jx
+    \]
+    であり，周期的である．
+\end{EG*}
+
+\subsection*{抽象的な定式化}
+\(S\subset \rr^{2n}\)を超曲面とする．
+\(T_xS\)は\((2n-1)\)次元なので，
+\(\mres[\omega_{0}]{T_{x}S}\)は退化し，
+\(\rank(\mres[\omega_{0}]{T_{x}S})=2n-2\)となる．
+よって，\(\omega_0\)と\(S\)から，直線束
+\[
+    \cL_S
+    =
+    \left\{
+        (x;\xi)\in TS;
+        \omega_0(\xi,v)=0\ (\forall v\in T_xS)
+    \right\}
+\]が定まる．
+\(S\)が\(X_H\)に関する正則なエネルギー曲面のとき，
+任意の\(v\in T_xS\)に対し，
+\[
+    \omega_0(X_{H}(x),v)=-dH(x)v=0
+\]
+となる．
+したがって，\(x\in S\)に対し\(X_H(x)\in\cL_S(x)\)である．
+
+
+\section{凸エネルギー曲面上の周期軌道の存在 (\cite[\S1.5]{HZ94})}
+
+ここでの目標は変分法における直接法を説明すること．
+\begin{leftbar}
+\begin{THM}[{\cite[Thm 5]{HZ94}}]
+    \(S\)を\((\rr^{2n},\omega_0)\)の超曲面で
+    \(\rr^{2n}\)のコンパクトな狭義の凸領域の\(C^2\)境界であるものとする．
+    このとき，\(S\)上には閉軌道が存在する．
+\end{THM}
+\end{leftbar}
+
+特に任意のハミルトンベクトル場\(X_H\)で\(S\)を正則エネルギー曲面と
+するものは，\(S\)上に周期解を持つことがわかる．
+\begin{CMT}
+    ここでいう狭義の凸集合とは，次をみたす集合\(C\)のことである．
+    任意の2点\(x\ne y\in C\)に対し，
+    \(t\in[0,1]\)で\((1-t)x+ty\in C\)かつ
+    \(t\in{]0,1[}\)で\((1-t)x+ty\in\Int[]C\).
+
+    例えば正方形の対辺に半円盤を付け足した領域は\(\rr^2\)の凸領域であるが，狭義の凸領域ではない．
+\end{CMT}
+
+\begin{proof}
+    \(S=\Bd[]C\)とする．\(C\)は原点を内部に含むとしてよい．
+    このとき，原点を始点とする任意の半直線は\(S\)と
+    1点で交わる．
+    したがって，任意の\(x\ne0\)に対し，
+    実数\(\lambda>0\)で\(
+        \xi\coloneqq \lambda^{-1}x\in S
+    \)となるものがただ1つ存在する．
+    \begin{redleftbar}\small{
+    \begin{proof}[1点で交わることの証明．]
+        \(L\)を原点を始点とする半直線とする．
+        \(v\in\rr^{2n}\)で\[
+            L=\left\{tv;t\in[0,\infty[\right\}
+        \]となるものが存在する．
+        この\(v\)に対し\[
+            A\coloneqq
+            \left\{
+                t\in{\left[0,\infty\right[} 
+                \mathrel{;}
+                tv\in C
+            \right\}
+        \]とおく．\(0\in A\ne\varnothing\)であり，
+        \(C\)がコンパクトなので有界である．
+        したがって，\(t_0=\sup A\)は実数である．
+        \(C\)が閉凸集合なので\(t_0v\in S\)であり
+        \(A=[0,t_0]\)とかける．
+        したがって，\(0\leqq t<t_0\)なら，\(t\in\Int[]C\)であり，
+        \(t>t_0\)なら\(t\notin A\)であり，\(tv\notin S\)である．
+        したがって，\(L\)は\(S\)と\(t_0v\)でのみ交わる．
+    \end{proof}}
+    \end{redleftbar}
+    \(\rr^{2n}\)上の関数\(F\)を，\(x\ne0\)に対しては，
+    \(\xi=\lambda^{-1}x\in S\)となる\(\lambda\)を対応させ，
+    \(x=0\)に対し\(0\)を対応させることで定める．
+    このとき\[
+        S\coloneqq\left\{x; F(x)=1\right\}
+    \]と表せる．
+    \(S\)を\textbf{狭義凸関数} (strictly convex function)，
+    すなわち%\footnote{
+        ヘッセ行列\(H_{xx}(x)\)が各点\(x\ne0\)で正定値となる関数
+    %}
+    \(H\)の等位集合\[
+        \left\{x;H(x)=1\right\}
+    \]として表したい．
+    いま，関数\(F\)は\textbf{\(1\)次同次}\footnote{
+        一般に，関数\(f\)が\(m\)次同次関数であるとは，
+        実数\(\lambda\)に対し\(
+            f(\lambda x)=\lambda^m f(x)
+        \)が成り立つこと．
+        \(\lambda>0\)のときのみ成り立つ場合，
+        関数\(f\)は\textbf{半同次} (positively 
+        homogeneous) \(m\)次関数であるという．（和訳は\cite[注5.1]{福80}に倣った．）
+        いま，関数\(F\)は\(x=0\)を除き\(F(x)>0\)なので
+        特に半同次\(1\)次関数である．
+        （本だとたんに同次であると言っている．）
+    } (homogeneous 
+    of degree \(1\)) である．
+    %\begin{quote}
+    \begin{redleftbar}
+        \(\left.\because\right)\) \(F(x)=\lambda\)とする．
+        \(\mu>0\)に対し，\(
+            \xi=\lambda^{-1}x=(\lambda\mu)^{-1}(\mu x)
+        \)であるから，\(F(\mu x)=\lambda\mu=\mu F(x)\)である．    
+    \end{redleftbar}    
+    %\end{quote}
+    \noindent
+    したがって，明らかに\(F\)は狭義凸にならない．
+    実際，オイラーの公式\footnote{
+        『岩波数学入門辞典』の「オイラーの恒等式」の項に以下の記述があった：
+        \begin{quotation}
+            以下の等式はオイラーの恒等式と呼ばれる．
+
+            (1) 
+            \(\alpha\)を実数として，
+            \(f(x_1,\cdots,x_n)\)が\(\alpha\)次斉次式（
+            すなわち\(f(rx)=r^{\alpha}f(x), r>0\)
+            ）であるとき\[
+                \sum_{i=1}^{n}x_i\dfrac{\partial f}{\partial x_{i}}
+                =\alpha f(x)
+            \]が成立する．
+        \end{quotation}
+        \(\alpha=1\)のときが，いまの場合になる．
+
+        他の本でいうと，
+        岩波数学辞典の偏微分方程式の項や，
+        テラカンの演習問題にも載っていた．
+    }\(\inner<F_x,x>=F\)を微分すると
+    \begin{align*}
+        \nabla\inner<F_x,x>
+        &=\nabla\left(
+            \sum_{i=1}^{2n}
+            x_i\dfrac{\partial f}{\partial x_{i}}
+        \right)\\
+        &=\begin{bmatrix*}[c]\displaystyle
+            \dfrac{\partial}{\partial x_{1}}\left(\sum_{i=1}^{2n}x_i\dfrac{\partial f}{\partial x_{i}}\right)\\
+            \vdots\\
+            \displaystyle
+            \dfrac{\partial}{\partial x_{2n}}\left(\sum_{i=1}^{2n}x_i\dfrac{\partial f}{\partial x_{i}}\right)
+        \end{bmatrix*}
+        =\begin{bmatrix*}[c]\displaystyle
+            \dfrac{\partial f}{\partial x_{1}}
+            +
+            \sum_{i=1}^{2n}
+            x_i\dfrac{\partial^2f}{\partial x_{1}\partial x_{i}}\\
+            \vdots\\
+            \displaystyle
+            \dfrac{\partial f}{\partial x_{2n}}
+            +
+            \sum_{i=1}^{2n}
+            x_i\dfrac{\partial^2f}{\partial x_{2n}\partial x_{i}}
+        \end{bmatrix*}\\
+        &=\begin{bmatrix*}[c]\displaystyle
+            \dfrac{\partial f}{\partial x_{1}}\\
+            \vdots\\
+            \displaystyle
+            \dfrac{\partial f}{\partial x_{2n}}
+        \end{bmatrix*}
+        +
+        \begin{bmatrix*}[c]\displaystyle
+            \sum_{i=1}^{2n}
+            x_i\dfrac{\partial^2f}{\partial x_{1}\partial x_{i}}\\
+            \vdots\\
+            \displaystyle
+            \sum_{i=1}^{2n}
+            x_i\dfrac{\partial^2f}{\partial x_{2n}\partial x_{i}}
+        \end{bmatrix*}\\
+        &=F_x+\begin{bmatrix*}[c]\displaystyle
+            \dfrac{\partial^2f}{\partial x_{1}\partial x_{1}}
+            &\cdots&
+            \dfrac{\partial^2f}{\partial x_{1}\partial x_{2n}}\\
+            \vdots&\ddots&\vdots\\
+            \displaystyle
+            \dfrac{\partial^2f}{\partial x_{2n}\partial x_{1}}
+            &\cdots&
+            \dfrac{\partial^2f}{\partial x_{2n}\partial x_{2n}}
+        \end{bmatrix*}
+        \begin{bmatrix*}[c]\displaystyle
+            x_1\\
+            \vdots\\
+            x_{2n}
+        \end{bmatrix*}\\
+        &=F_x+F_{xx}x\\
+        &=\nabla F=F_x
+    \end{align*}
+    より
+    \(F_{xx}x=0\)
+    となってしまう．
+    そこで，凸性の仮定より\(
+        \mres[F_{xx}]{TS}>0
+    \)となる\footnote{
+        謎．以下の質問があった（がちゃんと目を通せていない．）
+        \url{
+            https://math.stackexchange.com/questions/1427093/how-do-i-prove-this-hessian-is-positive-definite
+        }
+    }
+    ことから，
+    関数\(H\)を\[H(x)=\left(F(x)\right)^2\]とおくと，
+    \(H\)が狭義凸となるのは，\(S\)が狭義凸のときであることがわかる．
+    以上で，任意の狭義凸エネルギー曲面\(S\)で原点を内部に含むものは
+    関数\(H\colon\rr^{2n}\to \rr\)で
+    \begin{align}
+        \begin{dcases*}
+            \text{(i)}\quad H\in C^2(\rr^{2n}\setminus\{0\}),&\(H(0)=0\)\\
+            \text{(ii)}\quad H_{xx}>0 &\(x\ne0\)のとき\\
+            \text{(iii)}\quad H(\rho x)=\rho^2 H(x),&（\(\rho\geqq0\)に対し）
+        \end{dcases*}
+    \end{align}
+    をみたすものを用いて
+    \begin{equation}
+        S=\left\{x\mid H(x)=1\right\}
+    \end{equation}と表せることが示せた．
+
+    前節での議論から，
+    この特殊なハミルトンベクトル場\(X_H\)が，このエネルギー曲面\(S\)上で
+    周期解を持つことが示せればよい．
+    すなわち，\(S\)上に
+    \[
+        \dot{x}=J\nabla H(x)
+    \]
+    の周期解が存在することを示す．
+
+    周期を正規化することで，方程式
+    \begin{equation}
+        \dot{x}=\lambda J\nabla H(x) \quad \text{for some \(\lambda\ne0\)}
+    \end{equation}
+    の周期\(2\pi\)の解を\(S\)上で見つければよい．
+    例えば，変分原理
+    \[
+        \min\int_{0}^{2\pi}H(x(t))dt 
+        \quad
+        \text{under}
+        \quad
+        \frac{1}{2}
+        \int_{0}^{2\pi}\inner<Jx,\dot{x}>=1,
+    \]
+    ただし，\(x(t)\)は\(2\pi\)周期のもの，
+    は上の方程式をオイラー方程式にもつ．
+    しかし，\(H(x)=\frac{1}{2}\lvert{x}\rvert^2\)の場合ですら，
+    上界も下界も持たないことが簡単にわかる．\footnote{わからない}
+    そこで，別の変分原理で同じ微分方程式を持つが下界を持つものを用いる．
+    \(H\)のルジャンドル変換を構成するが，
+    物理でよく用いるルジャンドル変換とは異なり，
+    全ての変数を変換する．
+    ルジャンドル変換によって\(H(x)\)に関連づけられる関数\(G(y)\)を
+    \[
+        G(y)=\max_{\xi\in\rr^{2n}}\left(
+            \inner<\xi,y>-H(\xi)
+        \right)
+        =\inner<x,y>-H(x)
+    \]
+    によって定めることができる．
+    実際，\(y=\nabla H(x)\)で定まる点\(x\in\rr^2\)が
+    ただひとつの最大値を与える．
+    なぜならば，
+    \(H_{xx}(x)\)が\(y\ne0\)で正定値かつ\(H\)が
+    定数\(c>1\)を用いて
+    \begin{equation}
+        \frac{1}{c}\lvert{y}\rvert^{2}
+        \leqq
+        H(y)
+        \leqq
+        c\lvert{y}\rvert^{2},\quad y\in\rr^2
+    \end{equation}
+    となるようにできるからである．
+    この評価は
+    \(H\)が同次関数であることからすぐに従う．
+    \begin{redleftbar}
+        (\(\because\)) 
+        \(\inner<\xi,y>-H(\xi)\)の最大値問題．
+        \(\inner<\xi,y>-H(\xi)\)のヘッセ行列は\(-H_{xx}<0\)なので
+        \(\nabla(\inner<\xi,y>-H(\xi))=0\)となる点で極大値をとる．
+        \(
+            \nabla(\inner<\xi,y>-H(\xi))
+            =y-\nabla H(\xi)
+        \)なので\(y=\nabla H(\xi)\)で極大値を取る．
+    \end{redleftbar}
+    まとめると，
+    \begin{equation}
+        G(y)+H(x)=\inner<x,y>
+    \end{equation}
+    が\begin{equation}
+        y=\nabla H(x)\quad\text{と}\quad x=\nabla G(y)
+    \end{equation}
+    に対して成り立つ．
+
+    明らかに\(G(0)=0\)かつ\(
+        G\in C^{2}(\rr^2-\left\{0\right\})
+    \)であり，\(G\)は\(2\)次半同次関数である．
+    \(x\ne0\)に対し\(H_{xx}(x)\cdot G_{yy}(y)=\mathbf{1}\)であるから，
+    \(G\)は\(y\ne0\)ならば狭義凸であり，\(G\)は\(H\)と同じ条件をみたす：
+    \begin{align*}
+        \text{(i)}&& H(0)&=0,&&G\in C^2(\rr^{2n}\setminus\{0\})\\
+        \text{(ii)}&& H_{xx}&>0 &&\text{\(y\ne0\)のとき}\\
+        \text{(iii)}&& H(\rho x)&=\rho^2 G(y),&&\text{（\(\rho\geqq0\)に対し）}
+    \end{align*}
+    では，\(2\pi\)周期関数\(z\)に対する別の新しい変分原理を見てみる．
+    \begin{equation}\label{eq:1.62}
+        \min\int_{0}^{2\pi}G(\dot{z})dt
+        \quad
+        \text{under}
+        \quad
+        \frac{1}{2}\int_{0}^{2\pi}\inner<Jz,\dot{z}>=1.
+    \end{equation}
+    これを標準的な変分法の直接法で解いてみよう．
+    正確にいうと，
+    周期関数\(z(t)=z(t+2\pi)\)で平均値が\(0\)であるものからなる
+    関数空間\(\cF\)を次のように定める．
+    \[
+        \cF
+        \coloneqq
+        \left\{z\in H_{1}(S^{1})~\middle|~ \frac{1}{2\pi}\int_{0}^{2\pi}z(t)dt=0\right\}
+    \]
+    ただし，\(H_{1}(S^{1})\)は絶対連続な\(2\pi\)周期関数で，
+    導関数が2乗可積分である，すなわち\(L_{2}(S^{1})\)に属すものからなる
+    ヒルベルト空間を表す．
+    ここで\(z\)と\(z+\const\)はどちらも\eqref{eq:1.62}の解であるから，
+    平均値に関する条件によって定数が固定される．
+    \(\cF\)の部分集合\(\cA\)を
+    \[
+        \cA\coloneqq
+        \left\{
+            z\in\cF;\frac{1}{2}\int_{0}^{2\pi}\inner<Jz,\dot{z}>=1
+        \right\}
+    \]で定める．
+    \(c\A\)上の汎函数
+    \[
+        I(z)=\int_{0}^{2\pi}G\left(\dot{z}(t)\right)dt
+    \]が以下の条件をみたすことを，標準的な手続き\footnote{
+        これが直接法らしい．
+        Wikipedia の記事もある．
+    }に則って確かめよう．
+    \begin{enumerate}[(i)]
+        \item \label{item:thm5.1}\(I\)は\(\cA\)上で下に有界である．
+        \item \label{item:thm5.2}\(I\)は\(\cA\)で最小値をとる．
+        すなわち\(z_{\ast}\in\cA\)で\[
+            \int_{0}^{2\pi}G(\dot{z}_{\ast})dt
+            =\inf_{z\in\cA}\int_{0}^{2\pi}G(\dot{z})dt
+            \eqqcolon\mu>0
+        \]をみたすものが存在する．
+        \item \label{item:thm5.3}\(\alpha\ne0\)と\(\beta\)を定数とするとき，
+        \(z_{\ast}\)はオイラー方程式\[
+            \nabla G(\dot{z}_{\ast})=\alpha Jz_{\ast}+\beta
+        \]の\(L^2(S^1)\)における解である．
+        \item \label{item:thm5.4}\(z_{\ast}\)は\(C^2\)級であり，
+        各点で\[
+            \dot{z}_{\ast}=\nabla H(\alpha Jz_{\ast}+\beta)
+        \]をみたす．
+        さらに\(x(t)=c(\alpha Jz_{\ast}(t+\beta))\)は
+        適当な\(c\)に対し\(S\)上での\(\dot{x}=J\nabla H(x)\)の
+        求めるべき解である．
+    \end{enumerate}
+
+    \subparagraph{\eqref{item:thm5.1}の確認：}
+    いくつかの評価を行う．\(\cF\)に属すどの\(z\)も平均値は\(0\)なので，
+    ポアンカレの不等式
+    \[
+        \norm[z]\leqq\norm[\dot{z}]\quad(z\in\cF)
+    \]が成り立つ．ただし\(\norm[\blk]\)は\(L_2\)ノルムとする．
+    これはフーリエ級数から従う．
+    \begin{redleftbar}
+        \begin{THM}
+            \(\varOmega\)を\(\rr^{N}\)の有界領域とするとき，
+            \[
+                \norm[z]
+                \leqq
+                c_{\varOmega}\norm[\dot{z}]
+            \]
+            となる\(c_{\varOmega}\)が存在する．
+        \end{THM}
+        \(e_k\)を\(\rr^{2n}\)の標準基底とする．
+        \[
+            z=\sum_{k=1}^{2n}\left(
+                \sum_{j=0}^{m} a_{jk}\cos{jt}+b_{jk}\sin{jt}
+            \right)
+        \]
+        と展開する．
+    \end{redleftbar}
+    \(z\in\cA\)に対し，次が成り立つ．
+    \begin{equation}\label{eq:1.63}
+        2=\int_{0}^{2\pi}\inner<Jz,\dot{z}>
+        \leqq
+        \norm[z] 
+        \norm[\dot{z}]
+        \leqq
+        \norm[\dot{z}]^2,\quad (z\in\cA).
+    \end{equation}
+    関数\(G\)が狭義凸かつ\(2\)次半同次なので，
+    定数\(K\geqq1\)で\(y\in\rr^{2n}\)に対し\[
+        \frac{1}{K}\abs[y]^2
+        \leqq
+        G(y)
+        \leqq
+        K\abs[y]^2
+    \]をみたすものが存在する．
+    したがって，\eqref{eq:1.63}から，\(z\in\cA\)で
+    \begin{equation}\label{eq:1.64}
+        \int_{0}^{2\pi}G(\dot{z})dt
+        \geqq
+        \frac{1}{K}\norm[z]^2
+        \leqq
+        \frac{2}{K}>0
+    \end{equation}
+    となるものが存在する．
+    すなわち，汎函数は正定数，とくに\(\mu>0\)によって下に有界である．
+    \subparagraph{\eqref{item:thm5.2}の確認：}
+    最小化列\(z_j\in\cA\)で\begin{equation}\label{eq:1.65}
+        \lim_{j\to\infty}\int_{0}^{2\pi}G(\dot{z}_j)dt=\mu
+    \end{equation}をみたすものを取る．
+    \subparagraph{\eqref{item:thm5.3}の確認：}
+    \subparagraph{\eqref{item:thm5.4}の確認：}
+\end{proof}
+
+\section{関数解析}
+
+\cite{藤黒伊91}を参考に復習．
+
+\subsection*{空間\(L^2(\varOmega)\)}
+ここで扱う空間はコンパクトっぽいので，積分はリーマン積分で良さそうな気がする．
+
+\(\varOmega\)を\(\rr^{2n}\)の開集合とする．
+可測関数\(u\colon \varOmega\to \rr\)で
+\[
+    \int_{K}^{}\abs[u(x)]^{2} dx<\infty
+\]
+となるもののなす集合を\(L^2(\varOmega)\)で表す．本だと\(L_2\)と書いているが．
+
+\(L^2(\varOmega)\)のノルム\(\norm[\blk]=\norm[\blk]_{L^2(\varOmega)}\)を
+\(u\in L^2(\varOmega)\)に対し
+\[
+    \norm[u]=\left(\int_{\varOmega}^{}\abs[u(x)]^{2}dx\right)^{1/2}
+\]
+とおくことで定める．
+
+\begin{DFN*}
+    完備な内積空間をヒルベルト空間という．
+\end{DFN*}
+
+\(L^2\)内積を
+\[
+    (u,v)_{L^2(\varOmega)}=\int_{\varOmega}^{}u(x)\overline{v(x)}dx
+\]で定める．
+
+\subsection*{空間\(H^1(\varOmega)\)}
+
+\begin{DFN*}[{\cite[定義2.6]{藤黒伊91}}]
+    関数\(u\)が\(H^1(\varOmega)\)に属するとは，
+    \(u\)およびその一般化された偏導関数\(\partial u/\partial x_j\)が
+    全て\(L^2(\varOmega)\)に属すること．
+    \[
+        H^1(\varOmega)
+        \coloneqq
+        \left\{
+            u\in L^2(\varOmega);
+            \frac{\partial u}{\partial x_j}\in L^2(\Omega)
+        \right\}.
+    \]
+\end{DFN*}
+
+\begin{THM}[{\cite[定理2.9]{藤黒伊91}}]
+    \(H^1(\varOmega)\)は
+    \[
+        \norm[u]_{H^1(\varOmega)}
+        \coloneqq
+        \left(
+            \norm[u]_{L^2(\varOmega)}^{2}+
+            \sum
+            \norm[\frac{\partial u}{\partial x_j}]_{L^2(\varOmega)}^{2}
+        \right)^{1/2}
+    \]
+    をノルムとしてバナッハ空間である．
+\end{THM}
+\begin{EG*}[{\cite[例3.8]{藤黒伊91}}]
+    \(H^1(\varOmega)\)は
+    \[
+        (u,v)_{H^1(\varOmega)}
+        \coloneqq
+        (u,v)_{L^2(\varOmega)}
+        +\sum(
+            \frac{\partial u}{\partial x_j},
+            \frac{\partial v}{\partial x_j}
+        )_{L^2(\varOmega)}
+    \]
+    を内積としてヒルベルト空間である．    
+\end{EG*}
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    \bibitem[藤黒伊91]{藤黒伊91} 藤田宏, 黒田成俊, 伊藤清三, 
+    関数解析, 岩波基礎数学選書, 岩波書店, 1991.
+    \bibitem[HZ94]{HZ94} 
+    Helmut Hofer, Eduard Zehnder
+    \textit{Symplectic Invariants and Hamiltonian Dynamics}, 
+    Birkh\"auser Advanced Texts Basler Lehrb\"ucher, Birkh\"auser Basel, 1994.
+    \bibitem[MS17]{MS17} McDuff, Dusa, 
+    and Dietmar Salamon, 
+    Introduction to Symplectic Topology, 
+    3rd edn (Oxford, 2017).
+    \bibitem[福80]{福80} 福原満洲雄, 常微分方程式 (第2版), 岩波書店, 1980.
+\end{thebibliography}
+
+%===============================================
+
+
+
+\end{document}

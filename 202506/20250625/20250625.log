@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  26 JUN 2025 10:39
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  26 JUN 2025 17:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -933,7 +933,9 @@ Package xypdf Warning: The produced DVI file is NOT PORTABLE. Convert it with
 dvipdfm(x) to the PDF format but do not expect the DVI file itself to be
 displayed correctly.
 
-314>
+314> [1
+
+]
 LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <10> not available
 (Font)              Font shape `JT2/hgt/m/n' tried instead on input line 667.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
@@ -942,14 +944,12 @@ LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <10> not available
 (Font)              Font shape `JY2/hgt/m/n' tried instead on input line 667.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 9.24683pt on input line 667.
- [1
-
-] <xymatrix 3x2 375> <xymatrix 2x2 188> [2]
+ <xymatrix 3x2 375> <xymatrix 2x2 188> [2] [3]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 (Font)              scaled to size 6.47278pt on input line 877.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 (Font)              scaled to size 4.62341pt on input line 877.
- <xymatrix 3x2 246> [3] <xymatrix 2x2 146>
+ <xymatrix 3x2 246> [4] <xymatrix 2x2 146>
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 (Font)              scaled to size 7.39746pt on input line 1002.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
@@ -958,42 +958,32 @@ LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 5.5481pt on input line 1002.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 (Font)              scaled to size 5.5481pt on input line 1002.
- <xymatrix 2x2 188> [4] <xymatrix 3x2 290> <xymatrix 3x2 290> [5] <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 3x3 454> <xymatrix 3x3 444> [6] <xymatrix 3x3 174> [7] <xymatrix 3x3 174> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> [8] <xymatrix 3x3 312>
-Overfull \hbox (78.0221pt too wide) detected at line 1856
-[]
- []
-
-[9]
-Overfull \vbox (1.77478pt too high) detected at line 1890
- []
-
-[10] [11] <xymatrix 2x2 154> <xymatrix 2x2 175>
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2022.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2026.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2029.
- [12
+ <xymatrix 2x2 188> <xymatrix 3x2 290> [5] <xymatrix 3x2 290> [6] <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 3x3 454> [7] <xymatrix 3x3 444> [8] <xymatrix 3x3 174> <xymatrix 3x3 174> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> <xymatrix 2x2 154> [9] [10] <xymatrix 3x3 312> [11] [12] [13] <xymatrix 2x2 154> <xymatrix 2x2 175> [14
 
 ]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2032.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2037.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2040.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2043.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2046.
+(Font)              No change on input line 2045.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
 (Font)              No change on input line 2049.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2053.
+(Font)              No change on input line 2052.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2056.
- [13] (./20250625.aux)
+(Font)              No change on input line 2055.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 2060.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 2063.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 2066.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 2069.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 2072.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 2076.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 2079.
+ [15] (./20250625.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
@@ -1003,12 +993,12 @@ Package rerunfilecheck Info: File `20250625.out' has not changed.
 (rerunfilecheck)             Checksum: 7703F819912AC812D22786E6FB6025F0;311.
  ) 
 Here is how much of TeX's memory you used:
- 30280 strings out of 474774
- 529665 string characters out of 5758801
- 1973032 words of memory out of 5000000
- 52085 multiletter control sequences out of 15000+600000
+ 30283 strings out of 474774
+ 529718 string characters out of 5758801
+ 1963032 words of memory out of 5000000
+ 52088 multiletter control sequences out of 15000+600000
  618469 words of font info for 175 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 84i,24n,93p,3263b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,24n,93p,3263b,1049s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 20250625.dvi (13 pages, 97684 bytes).
+Output written on 20250625.dvi (15 pages, 99140 bytes).
