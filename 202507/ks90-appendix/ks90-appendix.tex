@@ -1,25 +1,15 @@
 %=====================================
-%   semiclassical.tex
-%   Semiclassical Analysis 
+%   20250528.tex
+%   20250528 
 %   toshi2019
 %=====================================
-
-% -----------------------
-% preamble
-% -----------------------
-% ここから本文 (\begin{document}) までの
-% ソースコードに変更を加えた場合は
-% 編集者まで連絡してください. 
-% Don't change preamble code yourself. 
-% If you add something
-% (usepackage, newtheorem, newcommand, renewcommand),
-% please tell it 
-% to the editor of institutional paper of RUMS.
-
 % ------------------------
 % documentclass
 % ------------------------
 \documentclass[leqno, 10pt, a4paper, dvipdfmx]{jsarticle}
+\title{シンプレクティック幾何}
+\author{Toshi2019}
+\date{\today}
 
 % ------------------------
 % usepackage
@@ -51,7 +41,7 @@
 
 \usetikzlibrary{cd}
 \usetikzlibrary{arrows.meta}
-
+\usetikzlibrary{calc}
 
 % ================================
 % パッケージを追加する場合のスペース 
@@ -398,7 +388,8 @@
 \newcommand{\CCat}{\Comp(\cat)}
 \newcommand{\KCat}{\Komp(\cat)}
 \newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
-\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+%\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\HOM}{\mathop{\mathcal{H}\hspace{-0pt}om}\nolimits}%内部Hom
 \newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
 
 \newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
@@ -422,7 +413,8 @@
 \newcommand{\Sh}{\mathrm{Sh}}
 \newcommand{\PSh}{\mathrm{PSh}}
 
-\newcommand{\rmD}{\mathrm{D}}
+\newcommand{\rmD}{\mathsf{D}}
+\newcommand{\vD}{\mathbf{D}}
 
 \newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
 \newcommand{\ori}{\mathord{\mathrm{or}}}
@@ -440,7 +432,8 @@
 \newcommand{\etens}{\mathbin{\boxtimes}}
 \newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
 \newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
-\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+\newcommand{\lltens}[1][]{\mathbin{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}}
+\newcommand{\lletens}[1][]{\mathbin{{\mathop{\boxtimes}\limits^{\mathrm{L}}_{#1}}}}
 \newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
 \newcommand{\detens}{\underline{\etens}}
 \newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
@@ -469,6 +462,8 @@
 \newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
 
 \newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+\newcommand{\dpb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+\newcommand{\tpb}[1][]{\mathbin{\mathop{\times}\nolimits_{#1}}}
 
 
 
@@ -569,6 +564,7 @@
 \newcommand{\cotz}[1][]{T^{\ast}_{#1}{#1}}
 
 \newcommand{\cotn}[1][]{\dot{T}^{\ast}{#1}}
+\newcommand{\tann}[1][]{\dot{T}{#1}}
 
 
 \newcommand{\muhom}{\mu hom}
@@ -581,7 +577,18 @@
 
 \newcommand{\torus}{\mathbf{T}}
 
+\newcommand{\diag}[1][]{\Delta_{#1}}
+%  \[\mu_{\Delta_{Y}}\mathrm{R}\mathcal{H}om(G,F)\]
+\newcommand{\micro}[1]{\mu_{#1}\hspace{-2pt}}
 
+
+\newcommand{\GL}{\mathop{\mathrm{GL}}\nolimits}
+\newcommand{\Sp}{\mathop{\mathrm{Sp}}\nolimits}
+%\newcommand{\Sp}{\mathord{\mathrm{Sp}}}
+
+
+\newcommand{\eu}{\mathbf{e}}
+\newcommand{\rrp}{\rr^{+}}
 
 % ----------------------------
 % documenet 
@@ -591,17 +598,128 @@
 % begin document and end document.
 % ---------------------------
 
-\title{ゼミノート（4月23日分）}
-\author{Toshi2019}
-\date{\today}
 \begin{document}
 \maketitle
-\tableofcontents
 
-\section{（余）接束の基本図式}
-ここでは多様体は\(C^\infty\)級または\(C^\omega\)級とする．
+\section*{要約}
+シンプレクティック幾何の基本的な道具のうち，
+本書を通して用いるものをまとめた．
+\ref{sec:A.1}節と\ref{sec:A.2}節では
+シンプレクティックベクトル空間と
+斉次シンプレクティック多様体に関する基本的な概念について述べる．
+結果はすべてよく知られたものであり概ね初等的である．
+したがって，証明のいくつかは省略し，
+\cite{Ar78,Dui73,AM78}と特に\cite{Hor85}を参考文献に挙げる．
 
-\(f\colon Y\to X\)を多様体の射とする．
+\ref{sec:A.3}節ではラグランジュ平面の3つ組の慣性指数を導入する．
+ここでの議論の仕方は\cite{LV80}のものと近い．
+読者の便宜のためにすべての証明を与えた．
+また，7章で用いる性質を演習問題としてまとめた．
+
+\section{シンプレクティックベクトル空間}\label{sec:A.1}
+
+本節と次の節では実係数のシンプレクティック空間を扱うが，
+複素係数の場合でも理論は同様である．
+
+\(E\)を有限次元実ベクトル空間とする．
+\(E\)上の\textbf{シンプレクティック形式} (symplectic form) \(\sigma\)とは，
+\(E\)上の非退化交代双線形形式，
+すなわち次をみたす双線形形式\(
+    \sigma\colon E\times E\to\rr
+\)のことである．
+\begin{description}
+    \item[非退化性] \(\sigma(u,v)=0\)が任意の\(v\in E\)について成り立てば\(u=0\)となる．
+    \item[交代性] 任意の\(u,v\in E\)に対し\(\sigma(u,v)=-\sigma(v,u)\)がなりたつ．
+\end{description}
+ベクトル空間\(E\)とシンプレクティック形式\(\sigma\)の組を
+\textbf{シンプレクティックベクトル空間} (symplectic vector space) という．
+\(E\)がシンプレクティックのとき，\(\dim E\)は偶数となる．
+
+\((E_{1},\sigma_{1})\)と\((E_{2},\sigma_{2})\)をシンプレクティックベクトル空間とする．
+線型写像\(u\colon E_{1}\to E_{2}\)が\(
+    u^{\ast}\sigma_{2}=\sigma_{1}
+\)をみたすとき，
+\(u\)を\textbf{シンプレクティック線形写像} (symplectic linear map) という．
+\(u\)がシンプレクティック線形写像ならば，\(u\)は単射である．
+
+シンプレクティックベクトル空間\(E\)のシンプレクティック同形からなる群を
+\(\Sp(E)\)で表す．
+\(\Sp(E)\)は\(E\)の線形同型からなる群\(\GL(E)\)の閉部分群である．
+
+\begin{EG}
+    \(V\)を有限次元実ベクトル空間とし，\(V^{\ast}\)を\(V\)の
+    双対空間とする．ベクトル空間\(E=V\oplus V^{\ast}\)上の
+    双線形形式\(\sigma\)を
+    \((x;\xi)\)と\((x';\xi')\)に対し
+    \begin{equation}\label{eq:A.1.1}
+        \sigma((x;\xi),(x';\xi'))
+        =\inner<x',\xi>-\inner<x,\xi'>
+    \end{equation}
+    で定める．
+    このとき\(\sigma\)は\(E\)のシンプレクティック構造を定める．
+    この\(\sigma\)を\(E\)上の自然なシンプレクティック形式という．
+\end{EG}
+
+\(E=V\oplus V^{\ast}\)で\(u\)を\(V\)の線形同型とする．
+このとき写像\(\begin{pmatrix}
+    u&0\\0&{}^{t}u^{-1}
+\end{pmatrix}\)は\(E\)のシンプレクティック同型である．
+
+\((E,\sigma)\)をシンプレクティックベクトル空間とする．
+このとき\(\sigma\)が非退化であることから，
+\(E^\ast\)から\(E\)への線形同型\(H\)が次で定まる．
+\begin{equation}\label{eq:A.1.2}
+    \inner<\theta,v>
+    =
+    \sigma(v,H(\theta)).
+    \quad (v\in E, \theta\in E^{\ast})
+\end{equation}
+この同型\(H\)を\textbf{ハミルトン同型} (Hamiltonian isomorphism) という．
+\(\theta\in E^{\ast}\)に対し，
+\(H(\theta)\)を\(H_{\theta}\)とかいて
+\(\theta\)のハミルトンベクトルとよぶことも多い．
+
+
+
+
+
+
+
+\section{斉次シンプレクティック多様体}\label{sec:A.2}
+
+ここで考察する多様体とその間の射はすべて実\(C^{\infty}\)または
+実解析的なものとする．
+ことわりのない限り，多様体上の実関数は\(C^{\infty}\)級
+または実解析的なものとするが
+ここで述べる結果のほとんどは，
+適当に修正することで複素解析多様体に対してもなりたつ．
+
+\(X\)を多様体とする．
+\(X\)の接束を\(\tau\colon TX\to X\)で表し，
+余接束を\(\pi\colon \cotb[X]\to X\)で表す．
+\(TX\)と\(\cotb[X]\)から零切断を除いたファイバー束を
+それぞれ\(\tann[X]\)と\(\cotn[X]\)で表し，
+\(\tau\)と\(\pi\)の\(\tann[X]\)と\(\cotn[X]\)への制限を
+それぞれ\(\dot{\tau}\)と\(\dot{\pi}\)で表す．
+\(X\)の部分多様体\(M\)に対し，
+\(M\)の\(X\)における法束\(\norb[M]{X}\)と余法束\(\conm[M]{X}\)を
+\(M\)上のベクトル束の完全列を用いてそれぞれ次で定める．
+\begin{equation}\label{eq:A.2.1}
+    \begin{dcases}
+        0\to TM\to M\dpb[X]TX\to\norb[M]{X}\to0,\\
+        0\to\conm[M]{X}\to M\dpb[X]\cotb[X]\to\cotb[M]\to0.
+    \end{dcases}    
+\end{equation}
+\(Y\to X\)を多様体の射とする．
+\(f\)に対し次の射が定まる．
+\begin{equation}\label{eq:A.2.2}
+    \begin{dcases}
+        TY\underset{f'}{\longrightarrow}Y\dpb[X]TX\underset{f_{\tau}}{\longrightarrow}TX,\\
+        \cotb[Y]\underset{\mdiff[f]}{\longleftarrow}Y\dpb[X]\cotb[X]\underset{\mpb[f]}{\longrightarrow}\cotb[X].
+    \end{dcases}
+\end{equation}
+これは以下のように定まる．
+\subsection*{接束・余接束の基本図式}
 \(\tau\colon TX\to X\)等を接束とすると，
 ベクトル束の引き戻し
 \[\xymatrix{
@@ -635,8 +753,7 @@
 したがって，引き戻しの普遍性から
 射\(f'\colon TY\to Y\mathbin{\times_{X}}TX\)がひきおこされ，
 \(df\)は\(df=f_{\tau}\circ f'\)と分解される．
-\begin{equation}\vcenter{
-\xymatrix{
+\[\xymatrix{
   TY
   \ar@/^2pc/[rr]^-{df}
   \ar[r]^-{f'}
@@ -650,7 +767,7 @@
   \ar[d]^-{\tau}
   \\
   &Y\ar[r]^-{f}&X
-}}\end{equation}
+}\]
 この図式を，ここだけの用語で，接束の基本図式とよぶことにする．
 
 \(\pi\colon T^{\ast}X\to X\)等を余接束とする．
@@ -670,17 +787,9 @@
 他方で，\(Y\)上の束の射\(
   f'\colon TY\to Y\mathbin{\times_{X}}TX
 \)の双対射\(
-  {}^{t\!}f'\colon \left(Y\mathbin{\times_{X}}TX\right)^{\ast}\to T^{\ast}Y
-\)が定まる．
-\(\left(Y\mathbin{\times_{X}}TX\right)^{\ast}\)
-は
-\(Y\mathbin{\times_{X}}T^{\ast}X\)と同型なので，
-射\(
-  f_{d}\colon Y\mathbin{\times_{X}}T^{\ast}X\to T^{\ast}Y
-\)が定まる．
-これにより，図式
-\begin{equation}\label{eq:cot}
-\vcenter{\xymatrix{
+  f_{d}\coloneqq {}^{t\!}f'\colon Y\mathbin{\times_{X}}T^{\ast}X\to T^{\ast}Y
+\)が定まる．これにより，図式
+\[\xymatrix{
   T^{\ast}Y
   %\ar@/^2pc/[rr]^-{df}
   \ar[rd]_-{\pi}
@@ -695,15 +804,18 @@
   \ar[d]^-{\pi}
   \\
   &Y\ar[r]^-{f}&X
-}}\end{equation}
+}\]
 を得る．
 この図式を，ここだけの用語で，余接束の基本図式とよぶことにする．
 
-\section{余接束のシンプレクティック構造}
+%\section{余接束のシンプレクティック構造}
 \subsection*{標準1形式}
 
-\eqref{eq:cot}を\(\pi\colon \cotb[X]\to X\)に適用する．
-\begin{equation}\label{eq:cotcot}
+\eqref{eq:A.2.2}を射影\(\pi\colon \cotb[X]\to X\)に適用すると
+写像\(
+    \mdiff[\pi]\colon\cotb[X]\tpb[X]\cotb[X]\to\cotb[{\cotb[X]}]
+\)を得る．
+\begin{equation*}%\label{eq:cotcot}
     \vcenter{\xymatrix{
       T^{\ast}\cotb[X]
       %\ar@/^2pc/[rr]^-{df}
@@ -719,8 +831,8 @@
       \ar[d]^-{\pi}
       \\
       &\cotb[X]\ar[r]^-{\pi}&X
-}}\end{equation}
-\(\cotb[X]\mathbin{\times_{X}}\cotb[X]\)の対角集合を\(
+}}\end{equation*}
+\(\cotb[X]\tpb[X]\cotb[X]\)の対角集合を\(
     \varDelta
 \)とする．\(\varDelta\)と\(\cotb[X]\)を同一視した上で，
 \(\pi_{d}\)を\(\varDelta\)に制限することで
@@ -733,7 +845,7 @@
 \]    
 が得られる．
 これを\(\cotb[X]\)の\textbf{標準1形式} (canonical 1-form) といい，
-\(\alpha_X\)で表す．
+\(\alpha_X\)で，あるいは混同する恐れのないときは\(\alpha\)で表す．
 
 \subsection*{標準1形式の座標表示}
 
@@ -789,530 +901,166 @@
 \]
 となる．
 
-\section{錐状層の超局所台 (pp.241--245)}
-\newcommand{\eu}{\mathbf{e}}
-\newcommand{\rrp}{\rr^{+}}
+\subsection*{部分多様体}
 
-この節ではベクトル束上の層の超局所台について調べる．
+\(\cotb[X]\)の部分多様体\(V\)が\textbf{等方的} (isotropic), 
+\textbf{ラグランジュ} (Lagarangian), \textbf{包合的} (involutive) 
+であるとは，
+各点\(p\)に対し，接空間\(T_{p}V\)がそれぞれ\(T_{p}\cotb[X]\)の
+等方的，ラグランジュ，包合的部分空間であることをいう．
 
-\(\tau\colon E\to Z\)を多様体\(Z\)上の
-実ベクトル束とする（III \S7参照）．
-\(\rrp\)の\(E\)への作用を表す写像を\(
-    \mu\colon \rrp\times E\to E
-\)で表し，
-\(\mu\)の無限小作用を表す\(E\)上のベクトル場
-を\(\eu\)で表す．
-すなわち\(E\)上の任意の関数\(\varphi\)に対し，\(
-    (\eu(\varphi))(x)
-    =
-    \dfrac{\partial}{\partial{t}}\varphi(\mu(t,x))|_{t=1}
-\)が成り立つ．
-ベクトル場\(\eu\)は
-\textbf{オイラーベクトル場} (the Euler vector field) と
-呼ばれることが多い．
+\subsection*{ハミルトンベクトル場}
+
+\(f\)を\(\cotb[X]\)の開集合\(U\)で定義された実関数とする．
+ハミルトン同型\(
+    H\colon \cotb[{\cotb[X]}]\cong T\cotb[X]
+\)による\(df\)の像\(H(df)\)を
+\(f\)の\textbf{ハミルトンベクトル場} (Hamiltonian vector field) といい，
+\(H_f\)で表す．
+すなわち，\(H_f\)は次をみたすベクトル場である．
+\[
+    \iota_{H_f}\omega=-df
+\]
 \begin{CMT*}
-    \(\eu\)を作用素とみる．
-    \(\varphi\in C^{\infty}(E)\)に対し，\(
-        \varphi\circ \mu\in C^{\infty}(\rrp \times E)
-    \)としてから，\(t=1\)での偏微分\[
-        \ev_{t=1}\left(\frac{\partial}{\partial t}(\varphi\circ \mu)\right)
-    \]を対応させることで，\(\eu(\varphi)\)が定まる．
-\end{CMT*}
-写像\(\mu\)から写像\(
-    \mdiff[\mu]\colon
-    \rrp\times\cotb[E]\to\cotb[\rrp]\times\cotb[E]
-\)が定まる．\(\mdiff[\mu]\)の\(1\in\rrp\)への制限を考え，射影\(
-    \cotb[\rrp]\times\cotb[E]
-    \to
-    \cotb[\rrp]\cong\rrp\times\rr\to\rr
-\)と合成することにより，写像\begin{equation}
-    \theta_{E}\colon\cotb[E]\to\rr
-\end{equation}を得る．
-この写像は\(\eu\)の主要表象に他ならない．
-\begin{CMT*}
-    \(\mu\colon \rrp\times E\to E\)に関する余接束の基本図式を考える．
-    \[\vcenter{\xymatrix{
-        \cotb[(\rrp\times E)]
-        \ar[rd]_-{\pi}
-        &
-        (\rrp\times E)\pb[E]\cotb[E]
-        \ar[l]_-{\mdiff[\mu]}
-        \ar[r]^-{\mpb[\mu]}
-        \ar[d]^-{\pi}
-        &
-        \cotb[E]
-        \ar[d]^-{\pi}
-        \\
-        &
-        \rrp\times E
-        \ar[r]^-{\mu}
-        &
-        E
-    }}\]
-    \(\rrp\times \cotb[E]\)から
-    \(\rrp\times E\)と\(\cotb[E]\)への射を
-    \begin{align*}
-        \id_{\rrp}\times\pi&\colon
-        \rrp\times \cotb[E] \to\rrp\times E,\\
-        \widetilde{\mu}&\colon
-        \rrp\times \cotb[E] \to \cotb[E];
-        \quad 
-        (t,x;\mu^{\ast}\xi)\mapsto(\mu(t,x);\xi)
-    \end{align*}
-    で定めると，\(\rrp\times \cotb[E]\)も引き戻しの普遍性をみたすので，
+    \eqref{eq:A.1.2}から
+    各ベクトル場\(v\)に対し
+    \[    
+        \inner<df,v>
+        =\omega(v,H_f)
+        =-\omega(H_f,v)
+    \]
+    となることから，
     \[
-        (\rrp\times E)\pb[E]\cotb[E]
-        \cong
-        \rrp\times \cotb[E]
-    \]が成り立つ．
-    この同型は，\[
-        (\id_{\rrp}\times\pi,\widetilde{\mu})\colon
-        \rrp\times \cotb[E]
-        \to
-        (\rrp\times E)\pb[E]\cotb[E];\quad
-        \left(t,\left(x;\xi\right)\right)
-        \mapsto
-        ((t,x),(\mu(t,x);\xi))
-    \]と\[
-        (\id_{\rrp}\times\pi,\widetilde{\mu})\colon
-        (\rrp\times E)\pb[E]\cotb[E]
-        \to
-        \rrp\times \cotb[E]
-        ;\quad
-        \left(t,\left(x;\xi\right)\right)
-        \mapsto
-        ((t,x),(\mu(t,x);\xi))
-    \]とで与えられる．
-    
-    \(
-        \mdiff[\mu]\colon
-        \rrp\times \cotb[E]
-        \cong
-        (\rrp\times E)\times_{E}\cotb[E]
-        \to
-        \cotb[\rrp]\times\cotb[E]
-    \)の\(t=1\in\rrp\)への制限\(
-        \mres[{\mdiff[\mu]}]{\{t=1\}}
-        \colon
-        \{1\}\times \cotb[E]\to
-        \cotb[\rrp]\times\cotb[E]
-    \)を考える．
+        -\inner<df,v>
+        =\omega(H_f,v)
+        =\iota_{H_f}\omega(v)
+    \]
+    が従う．
 \end{CMT*}
 
-\((z,x)\)を（\(Z\)上局所的な）座標系で，
-\((z)\)が\(Z\)の座標で\((x)\)が線形座標であるものとする．
-\((z,x;\zeta,\xi)\)で対応する\(\cotb[E]\)の座標を表す．
-このとき，
+\subsection*{ポアソン括弧}
+
+関数\(f\)と\(g\)の\textbf{ポアソン括弧} (Poisson bracket) を
+\begin{equation}\label{eq:A.2.3}
+    \{f,g\}=H_f(g)=\omega(H_f,H_g)
+\end{equation}
+で定める．
+次の関係がなりたつ．
 \begin{equation}
     \begin{dcases}
-        \eu=\left\langle{x,\dfrac{\partial}{\partial{x}}}\right\rangle=\sum_{j}x_{j}\dfrac{\partial}{\partial{x_{j}}},\\
-        \theta_{E}=\left\langle{x,\xi}\right\rangle,\\
-        \alpha_{E}=\left\langle{\zeta,dz}\right\rangle+\left\langle{\xi,dx}\right\rangle
+        \{f,g\}=-\{g,f\},\\
+        \{f,hg\}=h\{g,f\}+g\{f,h\},\\
+        \{\{f,g\},h\}+\{\{g,h\},f\}+\{\{h,f\},g\}=0.
     \end{dcases}
 \end{equation}
-である．
-ただし，\(\alpha_{E}\)は\(\cotb[E]\)の標準\(1\)形式である
-（A\S2参照）．
-
-\(\cotb[(E/Z)]\)で\(Z\)上の\(E\)の相対余接束を表していた．
-これは\(E\)上のベクトル束の完全列
-\begin{equation}
-    0\to E\pb[Z]\cotb[Z]\to\cotb[E]\to\cotb[(E/Z)]\to0
-\end{equation}
-で定義される．
-任意の\(z\in Z\)に対し，
-\(\cotb[(E/Z)]\)の\(z\)上のファイバー\(\cotb[(E/Z)]_{z}\)は
-\(E\)の\(z\)上のファイバー\(E_{z}\)の余接束\(\cotb[(E_{z})]\)と
-同一視できる．
-他方で，\(\cotb[(E_{z})]\)は\(E_{z}\times E^{\ast}_{z}\)と
-同型である．
-したがって，各\(z\)に対し，
-\(\cotb[(E/Z)]_{z}\)から\(E^{\ast}_{z}\)への写像が定まる．
-これから写像\begin{equation}
-    \cotb[(E/Z)]\to E^{\ast}
-\end{equation}がえられる．このとき\(Z\)上の射
-\begin{equation}
-    \psi_{E}\colon\cotb[E]\to E^{\ast}
-\end{equation}
-を\(\cotb[E]\to \cotb[(E/Z)]\to E^{\ast}\)の合成として定める．
-
-\begin{leftbar}
-\begin{PRP}\label{prp551}
-    \begin{enumerate}[(i)]
-        \item 写像\(\varPhi\colon \cotb[E]\to\cotb[E]\)で，
-        \(
-            \alpha_{E}-d\theta_{E}
-            =\varPhi_{E}^{\ast}(\alpha_{E^{\ast}})
-        \)であり\(
-            \cotb[E]\underset{\varPhi_{E}}{\rightarrow}
-            \cotb[E^{\ast}]\underset{\alpha}{\rightarrow}
-            E^{\ast}
-        \)の合成が\(\psi_{E}\)となるものがただひとつ存在する．
-        \item \(\theta_{E^{\ast}}\circ\varPhi_{E}=-\theta_E\)である．
-        \item \(\varPhi_{E^{\ast}}\circ \varPhi_{E}=-a^{\ast}\)である．ただし，\(a^{\ast}\)は\(E\)上の対蹠写像からひきおこされる\(\cotb[E]\)の自己同型である．
-    \end{enumerate}
-\end{PRP}
-\end{leftbar}
-
 \begin{proof}
-    \begin{equation}
-        \varPhi_{E}\colon (z,x;\zeta,\xi)\mapsto(z,\xi;\zeta,-x)
-    \end{equation}
+    1つ目の等式：    
+    \[
+        \{f,g\}=\omega(H_f,H_g)=-\omega(H_g,H_f)=-\{g,f\}.
+    \]
+    2つ目の等式：    
+    \begin{align*}
+        h\{g,f\}+g\{f,h\}
+        &=h\omega(H_g,H_f)+g\omega(H_f,H_h)\\
+        &=h\omega(H_g,H_f)-g\omega(H_h,H_f)\\
+        &=\omega(hH_g,H_f)+\omega(-gH_h,H_f)\\
+        &=\omega(hH_g-gH_h,H_f)\\
+        &=\omega(H_f,H_{hg})\\
+        &=\{f,hg\}.
+    \end{align*}
+    3つ目の等式：
+    \begin{align*}
+        &\{\{f,g\},h\}+\{\{g,h\},f\}+\{\{h,f\},g\}\\
+        =&\omega(H_{\omega(H_f,H_g)},H_h)
+    \end{align*}
 \end{proof}
-
-\begin{RMK}\label{rmk552}
-    \(\varPhi_{E}\)はシンプレクティック変換だが
-    斉次シンプレクティック変換ではない．
-\end{RMK}
+とくに\([H_f,H_g]=H{\{f,g\}}\)である．
+ただし，\([u,v]=uv-vu\)はベクトル場の交換子を表す．
 
 \begin{equation}
-    S_{E}=\theta_{E}^{-1}(0)
+    H_f=\sum_{j=1}^{n}\left(
+        \frac{\partial f}{\partial\xi_j}
+        \frac{\partial }{\partial x_j}
+        -
+        \frac{\partial f}{\partial x_j}
+        \frac{\partial }{\partial\xi_j}
+    \right)
 \end{equation}
 
+\begin{EG}
+    \(Z\)を\(X\)の部分多様体とする．
+    \(Z\tpb[X]\cotb[X]\)は\(\cotb[X]\)の包合的部分多様体であり，
+    \(\conm[Z]{X}\)は\(\cotb[X]\)のラグランジュ部分多様体である．
+    \(Z=X\)の極端な場合を考えるとラグランジュ部分多様体として
+    \(\cotb[X]\)の零切断\(\conm[X]{X}\)を得る．
+\end{EG}
+
+\(\cotb[X]\)上の1形式\(\alpha\)は
+シンプレクティック多様体の構造よりも豊かな構造をひきおこす．
+以下，\(\cotb[X]\)における
+この\textbf{斉次シンプレクティック構造} (homogeneous 
+symplectic structure) について述べる．
+
+\(H(\alpha)\)をハミルトン同形による\(\alpha\)の像とする．
+\((x;\xi)\)をシンプレクティック座標とすると，
 \begin{equation}
-    \begin{dcases}
-        (z,x;\zeta,\xi)\mapsto (z,x;\lambda\zeta,\lambda\xi),& \lambda\in\rrp,\\
-        (z,x;\zeta,\xi)\mapsto (z,\mu x;\zeta,\mu^{-1}\xi),& \mu\in\rrp.
-    \end{dcases}
+    \alpha=\sum_{j}^{}\xi_{j}dx_{j},
+    \quad
+    H(\alpha)=-\sum_{j}^{}\xi_{j}\frac{\partial}{\partial \xi_{j}},
 \end{equation}
+である．したがって，\(-H(\alpha)\)は
+ベクトル束\(\cotb[X]\)上の
+ 放射状ベクトル場 (radial vector field) （すなわち，
+\(\cotb[X]\)への\(\rrp\)作用の無限小生成元）に他ならない．
+このベクトル場を\textbf{オイラーベクトル場} (Euler vector field) ともいう．
 
-\begin{leftbar}
-\begin{PRP}\label{prp553}
-    \begin{enumerate}[(i)]
-        \item \(\Dbconic(E)\)
-        \item \(F\in\Dbconic(E)\)のとき，\(\muS(F)\)は2重錐状
-    \end{enumerate}
-\end{PRP}
-\end{leftbar}
-    
-\begin{equation}
-    \vcenter{\xymatrix{
-        \cotb[E]
-        &
-        E\pb[Z]\cotb[Z]
-        \ar@{_{(}->}[l]-^{\mdiff[\tau]}
-        &
-        \cotb[Z]\\
-        \ar@{_{(}->}[u]-^{\mdiff[\dot{\tau}]}
-        \cotb[{\dot{E}}]
-        &
-        \ar@{_{(}->}[u]-^{\mdiff[\dot{\tau}]}
-        \ar@{_{(}->}[l]-^{\mdiff[\dot{\tau}]}
-        \dot{E}\pb[Z]\cotb[Z]
-        &
-        \ar@{_{(}->}[u]-^{\mdiff[\dot{\tau}]}
-        \cotb[Z].
-    }}
-\end{equation}
-
-\begin{equation}
-    \cotb[Z]\hookrightarrow
-    E\pb[Z]\cotb[Z]
-    \underset{\mdiff[\tau]}{\hookrightarrow}
-    \cotb[E].
-\end{equation}
-
-
-
-\begin{equation}
-    \mpb[\tau]\mdiff[\tau]^{-1}(A)=\cotb[Z]\cap A.
-\end{equation}
-
-\begin{leftbar}
-\begin{PRP}
-    \(F\in\Dbconic(E)\)とする．このとき，次がなりたつ．
-    \begin{enumerate}[(i)]
-        \item \(\muS(\Rder{\tau_{\ast}}(F))\subset \cotb[Z]\cap\muS(F)\),
-        \item \(\muS(\Rder{\tau_{!}}(F))\subset \cotb[Z]\cap\muS(F)\),
-        \item \(\muS(\Rder{\dot{\tau}_{\ast}}(F))\subset \mpb[\dot{\tau}]\mdiff[\dot{\tau}]^{-1}(\muS(F))\),
-        \item \(\muS(\Rder{\dot{\tau}_{!}}(F))\subset \mpb[\dot{\tau}]\mdiff[\dot{\tau}]^{-1}(\muS(F))\).
-    \end{enumerate}
-\end{PRP}
-\end{leftbar}
-
-\subsection*{フーリエ・佐藤変換の超局所台}
-
-\(F\in\Dbconic(E)\)に対し，
+\(\cotb[X]\)の部分集合\(S\)が\textbf{錐的} (conic) であるとは，
+\(S\)が\(\rrp\)不変であることをいう．
+\(S\)が\textbf{局所錐的} (locally conic) であるとは，
+\(S\)が局所的に\(\rrp\)不変であることをいう．
+すなわち任意の\(\rrp\)軌道との共通部分がその軌道の中で開集合であるとき
+\(S\)は局所錐的である\footnote{
+    開いたアニュラスとかか．
+}．
+\(\cotb[X]\)の開集合\(U\)で定義された関数\(f\)が斉次であるとは
+\(f\)がある\(k\in\cc\)に対して微分方程式
 \[
-    F^{\wedge}\coloneqq
-    \Rder{{p_{2}}_{\ast}}\RG_{P}(p_1^{-1}F)
-\]
-と定めた．ただし\(p_1\)と\(p_2\)はそれぞれ
-\(E\mathbin{\times_{Z}}E^{\ast}\)から，第1・第2成分への射影であり，
-\[
-    P=\left\{
-        (z,x,y)\in E\mathbin{\times_{Z}}E^{\ast}
-        \mathrel{;}
-        \left\langle{x,y}\right\rangle
-    \right\}
-\]
-である．
-
-\begin{leftbar}
-\begin{THM}
-    \(F\in\Dbconic(E)\)とする．
-    \(\cotb[E]\)と\(\cotb[E^{\ast}]\)を\(\varPhi_{E}\)で
-    同一視することにより，
-    次がなりたつ．
+    H(\alpha)f=kf
+\]をみたすことをいう．
+\begin{CMT*}
+    \(X=\rr^2\)で\(U=\rr^2\times\rr^2\)のとき
     \[
-        \muS(F)=\muS(F^{\wedge}).
+        \left(
+            -\xi_1\frac{\partial}{\partial \xi_{1}}
+            -\xi_2\frac{\partial}{\partial \xi_{2}}
+        \right)f=kf
     \]
-\end{THM}
-\end{leftbar}
-
-\begin{proof}    
-    \(F^{\wedge\wedge}=F\)なので，
-    \(\muS(F^{\wedge})\subset\muS(F)\)
-    を示せば，
-    \[
-        \muS(F)
-        =\muS(F^{\wedge\wedge})
-        \subset\muS(F^{\wedge\wedge\wedge})
-        =\muS(F^{\wedge})
-    \]も従う．
-    \(\cotb[E]\)の点を局所座標を用いて
-    \(
-        (z_{\circ},x_{\circ};\zeta_{\circ},\xi_{\circ})
-    \)と表し，\(
-        (z_{\circ},x_{\circ};\zeta_{\circ},\xi_{\circ})
-        \notin 
-        \muS(F)
-    \)とする．
-    このとき，
-    \(
-        (z_{\circ},\xi_{\circ};\zeta_{\circ},-x_{\circ})
-        \notin 
-        \muS(F^{\wedge})
-    \)を示せばよい．3段階に分けて示す．
-    \subparagraph{Step~1}%\label{prf:555-1} 
-    まず，
-    \begin{align}
-        x_{\circ}\ne0,
-        \quad
-        \xi_{\circ}\ne0,\label{eq:5512}\\
-        \RG_{Z}(F)=0.\label{eq:5513}    
-    \end{align}
-    の2つを仮定して考える．次の記号を準備する．
-    \begin{itemize}
-        \item \(j\colon \dot{E}\hookrightarrow E\)を閉埋め込みとする．
-        \item \(\tilde{j}\colon \dot{E}\mathbin{\times_{Z}} E^{\ast}\hookrightarrow E\mathbin{\times_{Z}} E^{\ast}\)を\(j\)から定まる閉埋め込みとする．
-        \item \(\dot{p}_{2}\colon \dot{E}\mathbin{\times_{Z}} E^{\ast}\to E^{\ast}\)を射影とする．
-    \end{itemize}
-    \eqref{eq:5513}より，
+    という方程式になる．
+    \(f(x,\xi)=\left|\xi\right|^2=\xi_{1}^{2}+\xi_{2}^{2}\)とすると，
     \begin{align*}
-        \RG_{P}(p_1^{-1}F)
-        &\cong \RG_{P}(p_1^{-1}\Rder{j_{\ast}}j^{-1}F)\\
-        &\cong \RG_{P}(\Rder{\tilde{j}_{\ast}}\tilde{j}^{-1}p_1^{-1}F)\\
-        &\cong \Rder{\tilde{j}_{\ast}}\tilde{j}^{-1}\RG_{P}(p_1^{-1}F)
+        \left(
+            -\xi_1\frac{\partial}{\partial \xi_{1}}
+            -\xi_2\frac{\partial}{\partial \xi_{2}}
+        \right)f
+        &=\left(
+            -\xi_1\frac{\partial \left|\xi\right|^2}{\partial \xi_{1}}
+            -\xi_2\frac{\partial \left|\xi\right|^2}{\partial \xi_{2}}
+        \right)\\
+        &=-\xi_1\cdot 2\xi_1-\xi_2\cdot 2\xi_2\\
+        &=-2(\xi_1^2+\xi_2^2)=-2 \left|\xi\right|^2
     \end{align*}
-    が成り立つ．
-    したがって，\[
-        F^{\wedge}
-        =
-        \Rder{{\dot{p_{2}}_{\ast}}}\tilde{j}^{-1}\RG_{P}(p_1^{-1}F)    
-    \]
-    となる．
-    %\begin{redleftbar}
-    \begin{CMT*}
-        \begin{enumerate}[(i)]
-            \item 
-            1つ目の同型は，\eqref{eq:5513}から従う．
-            \item         
-            2つ目の同型は，
-            \(j\)と\(\tilde{j}\)がどちらも固有射であることから，
-            カルテシアン図式
-            \[\vcenter{\xymatrix@C=36pt@R=36pt{
-                \dot{E}\pb[Z] E^{\ast}
-                \ar[d]_-{\dot{p}_{1}}
-                \ar@{^{(}->}[r]_-{\tilde{j}}
-                \ar@{}[dr]|\square
-                &
-                E\pb[Z] E^{\ast}
-                \ar[d]^-{\mres[\dot{p}_{1}]{E\pb[Z] E^{\ast}}}\\
-                \dot{E}
-                \ar@{^{(}->}[r]^-{j}
-                &
-                E
-            }}\]における
-            固有基底変換を用いて
-            \begin{align*}
-                p_1^{-1}\Rder{j_{\ast}}j^{-1}F
-                &\underset{\text{B.C.}}{\cong} 
-                \Rder{\tilde{j}_{\ast}}(\mres[p_1]{\dot{E}\mathbin{\times_{Z}} E^{\ast}})^{-1}j^{-1}F\\
-                &\underset{\text{可換図式}}{\cong} 
-                \Rder{\tilde{j}_{\ast}}\tilde{j}^{-1}p_1^{-1}F
-            \end{align*}
-            のように示される．
-            \item     
-            3つ目の同型は，
-            局所コホモロジー関手\(\RG_{P}\)と
-            \(
-                \Rder{\tilde{j}_{\ast}}\tilde{j}^{-1}
-                =
-                \RG_{\dot{E}\mathbin{\times_{Z}} E^{\ast}}
-            \)が交換することから従う．
-        \end{enumerate}
-    \end{CMT*}
-    %\end{redleftbar}
-    \bigskip
-    さて，
-    \(
-        (z_{\circ},\xi_{\circ};\zeta_{\circ},-x_{\circ})
-        \in 
-        \muS(F^{\wedge})
-    \)だったとしてムジュンを導く．
-    \(p_2\)に\cite[Prop.5.5.4.(iii)]{KS90}を用いると，
-    \[
-        \muS(\Rder{\dot{p_{2}}_{\ast}}\tilde{j}^{-1}\RG_{P}(p_{1}^{-1}F))
-        \subset
-        \mpb[\dot{p_{2}}]\mdiff[\dot{p_{2}}]^{-1}\muS(\tilde{j}^{-1}\RG_{P}(p_{1}^{-1}F)),
-    \]
-    すなわち，仮定から，\(x_1\in \dot{E}\)で
-    \[
-        (z_{\circ},x_1,\xi_{\circ};\zeta_{\circ},0,-x_{\circ})
-        \in 
-        \tilde{j}^{-1}\RG_{P}(p_{1}^{-1}F)
-        =
-        \mres[\RG_{P}(p_{1}^{-1}F)]{\dot{E}\mathbin{\times_{Z}} E^{\ast}}
-    \]
-    となるものが存在する\footnote{
-        \(x_1\in \dot{E}\)となるのは，\(\tilde{j}\)で制限しているからで，
-        \(x_1\)のファイバーが\(0\)になるのは，\(\mpb[\dot{p_{2}}]\mdiff[\dot{p_{2}}]^{-1}\)の部分から来ている．
-    }．
+    であり，\(k=-2\)に関して微分方程式をみたす．
+    したがって\(f\)は斉次関数である．
+\end{CMT*}
 
-    \subparagraph{Step~2}%\label{prf:555-2} 
-    次に\eqref{eq:5513}を取り除き，\eqref{eq:5512}のみ仮定する．
-    完全三角\[
-        \RG_{Z}(F)\to F \to \Rder{j_{\ast}}j^{-1}F\to+1
-    \]を考える．\(\Rder{j_{\ast}}j^{-1}F\)は
-    \eqref{eq:5513}をみたすので，Step~1の結果から，
-    \((z_{\circ},\xi_{\circ};\zeta_{\circ},-x_{\circ})
-    \notin
-    \muS((\Rder{j_{\ast}}j^{-1}F)^{\wedge})\)である．
-    三角不等式\[
-        \muS(F^{\wedge})            
-        \subset
-        \muS(\RG_{Z}(F)^{\wedge})            
-        \cup
-        \muS((\Rder{j_{\ast}}j^{-1}F)^{\wedge})
-    \]より，\(
-        (z_{\circ},\xi_{\circ};\zeta_{\circ},-x_{\circ})
-        \notin
-        \muS(\RG_{Z}(F)^{\wedge})
-    \)を示せば，結果が従う．
+部分多様体\(V\)が局所錐状となるのは，
+\(H(\alpha)\)が\(V\)に接しているときであり，
+\(V\)が局所的に斉次方程式\footnote{
+    斉次関数\(=0\)という方程式のことだと思う．
+}で定義されるときである．
 
-    \(
-        (z_{\circ},\xi_{\circ};\zeta_{\circ},-x_{\circ})
-        \notin
-        \muS(\RG_{Z}(F)^{\wedge})
-    \)を示すために，\(i\colon Z\hookrightarrow E\)を閉埋め込みとする．
-    次の図式を考える．
-    \begin{align*}
-        \vcenter{\xymatrix{
-        Z\times\left\{0\right\}
-        \ar@{^{(}->}[r]_-{i_{\tau}}
-        \ar[d]
-        &
-        E\times\left\{0\right\}
-        \ar[d]\\
-        Z
-        \ar@{^{(}->}[r]_-{i}
-        &
-        E
-    }},&\quad
-    \vcenter{\xymatrix{
-        Z\times\left\{0\right\}^{\ast}
-        \ar@{^{(}->}[r]_-{i_{\tau}}
-        \ar[d]
-        &
-        E\times\left\{0\right\}^{\ast}
-        \ar[d]\\
-        Z
-        \ar@{^{(}->}[r]_-{i}
-        &
-        E
-    }}\\
-    \vcenter{\xymatrix{
-        Z\times\left\{0\right\}
-        \ar@{^{(}->}[rr]_-{i_{\tau}}
-        \ar[rd]
-        &&
-        E
-        \ar[ld]^-{\tau}\\
-        &
-        Z
-        %\ar@{^{(}->}[r]_-{i}
-        &
-    }},&\quad
-    \vcenter{\xymatrix{
-        Z\times\left\{0\right\}^{\ast}
-        \ar[rd]
-        &&
-        E^{\ast}
-        \ar[ll]_-{\mtp[i]=\pi}
-        \ar[ld]^-{\pi}\\
-        &
-        Z
-        %\ar@{^{(}->}[r]_-{i}
-        &
-    }}        
-    \end{align*}
-    このとき，\cite[Prop.3.7.13,(i)]{KS90}と
-    \cite[Prop.3.7.14,(i)]{KS90}から，
-    \begin{align*}
-        (i_{!}i^{!}F)^{\wedge}
-        &\cong
-        {\mtp[i]}^{-1}((i^{!}F)^{\wedge})\\
-        &\cong
-        \pi^{-1}((i^{!}F)^{\wedge})\\
-        &\cong
-        \pi^{-1}((i^{!}F))\\
-        &\cong
-        \pi^{-1}(i^{!}F)
-    \end{align*}
-    となる．
-    よって，\((z,y;\zeta,\eta)\in\cotb[E^{\ast}]\)に対し\(
-        \pi^{-1}i^{!}F
-    \)の茎の同型\[
-        (\pi^{-1}i^{!}F)_{(z,y;\zeta,\eta)}
-        \cong
-        (i^{!}F)_{(z,y)}
-    \]が成り立つことと\cite[Prop.5.4.5 (ii)]{KS90}から，
-    \[
-        \muS(\pi^{-1}i^{!}F)
-        \subset
-        \left\{(z,y;\zeta,\eta)\mathrel{;}\eta=0\right\}
-    \]
-    となるので，
-    特に\(
-        (z_{\circ},\xi_{\circ};\zeta_{\circ},-x_{\circ})
-        \notin
-        \muS(\pi^{-1}i^{!}F)
-    \)である．
-    \subparagraph{Step~3}%\label{prf:555-3} 
-    最後に\eqref{eq:5512}も取り除いた一般の場合を考える．
 
-    \(\rr^{2}\)上の層\(A_{\rr\times\left\{0\right\}}\)を考える．
-    \begin{CMT*}
-        \begin{itemize}
-            \item \(E\times \rr^2\)は\(Z\)上のベクトル束になる
-            と思う．ねじれとかの議論は要らないのか．
-            \item このあとの，
-            \(F\etens A_{\rr\times\left\{0\right\}}\)は
-            \(\Dbconic(E\times \rr^2)\)の対象となる．
-            したがって，そのフーリエ・佐藤変換は
-            \(\Dbconic(E^{\ast}\times (\rr^2)^{\ast})\)の
-            対象となる．
-        \end{itemize}        
-    \end{CMT*}
-    \cite[Prop.3.7.15]{KS90}から
-    \begin{equation}
-        (F\etens A_{\rr\times\left\{0\right\}})^{\wedge}
-        \cong
-        F^{\wedge}\etens A_{\left\{0\right\}\times\rr}[-1]
-    \end{equation}
-    である．
-\end{proof}
+\section{慣性指数}\label{sec:A.3}
 
 
 
@@ -1328,57 +1076,16 @@
 
 
 
-
-
-
-
-
-
-
-
+%\section{aa}
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
-  \bibitem[dR]{dR} 
-  de Rham, \textit{Vari\'et\'es diff\'erentiables}, Hermann, 1953.
-  和訳：ド・ラーム, 微分多様体, 東京図書, 1974.
-  \bibitem[GKS12]{GKS12} St\'ephane Guillermou, 
-  Masaki Kashiwara, Pierre Schapira, 
-  \textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
-  Duke. Math. J. 161, No. 2, pp.201--245, 2012.  
-  \bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
-    \textit{Differential Topology}, 
-    Prentice-Hall, 1974.
-  \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
-    \textit{Sheaves on Manifolds}, 
-    Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
-  \bibitem[Hat89]{Hat89} 服部晶夫, 多様体 増補版, 岩波全書 288, 岩波書店, 1989.
-  %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
-  \bibitem[Hor63]{Hor63} Lars H\"ormander, 
-  \textit{Linear Pertial Differential Operators}, Fourth Printing, 
-  Grundlehren der Mathematischen Wissenschaften, 116, Springer, 1963.
-  \bibitem[Hor71]{Hor71} Lars H\"ormander, 
-  \textit{Fourier Integral Operators I}, 
-  Acta Math. 127, 79--183, (1971).
-  \bibitem[Hor89]{Hor89} Lars H\"ormander, 
-  \textit{The Analysis of Linear Pertial Differential Operators I}, Second Edition,
-  Grundlehren der Mathematischen Wissenschaften, 256, Springer, 1989.
-  \bibitem[Hor85]{Hor85} Lars H\"ormander, 
-  \textit{The Analysis of Linear Pertial Differential Operators III}, 
-  Grundlehren der Mathematischen Wissenschaften, 274, Springer, 1985.
-  \bibitem[Sch85]{Sch85} Pierre Schapira, 
-    \textit{Microdifferential Systems in the Complex Domain}, 
-    Grundlehren der Mathematischen Wissenschaften, 269, 
-    Springer, 1985.
-    \bibitem[ST92]{ST92} Pierre Schapira, Nobuyuki Tose, 
-    \textit{Morse Inequalities for \(\rr\)-constructible Sheaves}, 
-    Adv. Math. 93, pp.1--8, 1992. 
-    \bibitem[Zwo12]{Zwo12} Maciej Zworski,
-    \textit{Semiclsaaical Analysis}, 
-    Graduate Studies in Mathematics, 138, 
-    American Mathematical Society, 
-    2012. 
+    \bibitem[Ar78]{Ar78} Arnold
+    \bibitem[AM78]{AM78} Abraham, Marsden
+    \bibitem[Dui73]{Dui73} Duistermaat
+    \bibitem[Hor85]{Hor85} H\"ormander
+    \bibitem[LV80]{LV80} Lion, Vergne
 \end{thebibliography}
 
 %===============================================
