@@ -641,6 +641,54 @@
 \begin{proof}
     \(p_X\in \conm[X]{X}\)のとき，
     \(f\)は\(F\)に関して非特性的であり，命題5.4.13から結論がしたがう．
+    \begin{CMT}
+        まず，\(p\in \conm[X]{X}\)の近傍\(\varOmega\)で\eqref{item:6.1.9-1}の仮定がなりたつとする．
+        \(\varOmega_X\coloneqq \mpb[f](\varOmega)\)は\(p_X\)を含む．
+        \(U_X\coloneqq \pi(\varOmega_X)\)で\(F\)の台を切って\(p_X\)で同型な射\(F'\to F\)をつくる．
+        
+        この準備のもとで\(f\)が\(F\)に関して非特性的であること，すなわち，
+        \[
+            \mpb[f]^{-1}(\muS(F))\cap\conm[Y]{X}\subset Y\dpb[X]\conm[X]{X}
+        \]であることを示す．
+        \(q\in \mpb[f]^{-1}(\muS(F))\cap\conm[Y]{X}\)とする．
+        次の3つの場合を考える．
+        \begin{enumerate}[(1)]
+            \item \(q\in \pi^{-1}\Int[]U_X\),
+            \item \(q\in Y\dpb[X]\cotb[X]-\pi^{-1}\Cl[]U_X\),
+            \item \(q\in \pi^{-1}\Bd[]U_X\).
+        \end{enumerate}
+        
+        (1)のとき，\(q\)は\(Y\tpb[X]\conm[X]{X}\)の点である．
+        
+        (2)のとき，\(q\)は\(\supp(F)\)に含まれない．
+        
+        (3)のとき，\(U'_X\Subset U_X\)となる\(\pi(p_X)\)の近傍を取り直して\(F'\)の台をさらに切ることで(2)の場合に帰着できる．
+
+        以上より\(f\)は\(F\)に関して非特性的である．
+
+        さて，命題5.4.13:
+        \begin{quote}
+            \begin{enumerate}[(i)]
+                \item \(\muS(f^{-1}F)\subset \mdiff[f]\mpb[f]^{-1}\muS(F)\),
+                \item \(f^{-1}F\tens[]\omega_{Y/X}\simar f^{!}F\).
+            \end{enumerate}
+        \end{quote}
+        から，\(p_X\)上の同型\(F'\to F\)に対し，
+        \(f^{-1}F'\to f^{-1}F\)は\(p_Y\)上の同型である．
+        したがって，\[
+            \Hom_{\Dompb(Y;p_Y)}(f^{-1}F,\blk)
+            \to
+            \Hom_{\Dompb(Y;p_Y)}(f^{-1}F',\blk)
+        \]は全単射である．これから
+        \[
+            \Hom_{\Dompb(Y;p_Y)}(f^{-1}F,\blk)
+            \simarr
+            \prolim[F'\to F]\Hom_{\Dompb(Y;p_Y)}(f^{-1}F',\blk)
+        \]
+        がなりたつので，
+        \(f^{-1}F\)は\(\muinv[f]F\)を表現する対象である．
+        よって，\(\muinv[f]F\cong f^{-1}F\in \Dompb(Y;p_Y)\)である．
+    \end{CMT}
 
     \(p_X\in\cotn[X]\)であるとする．
     まず\(\muinv[f]\)に関する結論を示す．
