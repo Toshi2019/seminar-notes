@@ -1,13 +1,13 @@
 %=====================================
-%   20250528.tex
-%   20250528 
+%   20250723.tex
+%   20250723 
 %   toshi2019
 %=====================================
 % ------------------------
 % documentclass
 % ------------------------
 \documentclass[leqno, 10pt, a4paper, dvipdfmx]{jsarticle}
-\title{シンプレクティック幾何}
+\title{ゼミノート（07月23日分）}
 \author{Toshi2019}
 \date{\today}
 
@@ -546,6 +546,8 @@
 \newcommand{\bd}{\mathord{\partial}}
 \newcommand{\Fr}[1][]{\mathop{\mathrm{Fr}}\nolimits_{#1}}
 
+\newcommand{\dom}[1][]{\mathop{\mathrm{dom}}\nolimits_{#1}}
+
 
 \newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
 \newcommand{\mtp}[1][]{{}^{t\!}{#1}} % transpose of the morphism
@@ -564,7 +566,6 @@
 \newcommand{\cotz}[1][]{T^{\ast}_{#1}{#1}}
 
 \newcommand{\cotn}[1][]{\dot{T}^{\ast}{#1}}
-\newcommand{\tann}[1][]{\dot{T}{#1}}
 
 
 \newcommand{\muhom}{\mu hom}
@@ -581,15 +582,6 @@
 %  \[\mu_{\Delta_{Y}}\mathrm{R}\mathcal{H}om(G,F)\]
 \newcommand{\micro}[1]{\mu_{#1}\hspace{-2pt}}
 
-
-\newcommand{\GL}{\mathop{\mathrm{GL}}\nolimits}
-\newcommand{\Sp}{\mathop{\mathrm{Sp}}\nolimits}
-%\newcommand{\Sp}{\mathord{\mathrm{Sp}}}
-
-
-\newcommand{\eu}{\mathbf{e}}
-\newcommand{\rrp}{\rr^{+}}
-
 % ----------------------------
 % documenet 
 % ----------------------------
@@ -600,483 +592,427 @@
 
 \begin{document}
 \maketitle
+\tableofcontents
+\section{圏\(\Dompb(X;\varOmega)\)}
 
-\section*{要約}
-シンプレクティック幾何の基本的な道具のうち，
-本書を通して用いるものをまとめた．
-\ref{sec:A.1}節と\ref{sec:A.2}節では
-シンプレクティックベクトル空間と
-斉次シンプレクティック多様体に関する基本的な概念について述べる．
-結果はすべてよく知られたものであり概ね初等的である．
-したがって，証明のいくつかは省略し，
-\cite{Ar78,Dui73,AM78}と特に\cite{Hor85}を参考文献に挙げる．
-
-\ref{sec:A.3}節ではラグランジュ平面の3つ組の慣性指数を導入する．
-ここでの議論の仕方は\cite{LV80}のものと近い．
-読者の便宜のためにすべての証明を与えた．
-また，7章で用いる性質を演習問題としてまとめた．
-
-\section{シンプレクティックベクトル空間}\label{sec:A.1}
-
-本節と次の節では実係数のシンプレクティック空間を扱うが，
-複素係数の場合でも理論は同様である．
-
-\(E\)を有限次元実ベクトル空間とする．
-\(E\)上の\textbf{シンプレクティック形式} (symplectic form) \(\sigma\)とは，
-\(E\)上の非退化交代双線形形式，
-すなわち次をみたす双線形形式\(
-    \sigma\colon E\times E\to\rr
-\)のことである．
-\begin{description}
-    \item[非退化性] \(\sigma(u,v)=0\)が任意の\(v\in E\)について成り立てば\(u=0\)となる．
-    \item[交代性] 任意の\(u,v\in E\)に対し\(\sigma(u,v)=-\sigma(v,u)\)がなりたつ．
-\end{description}
-ベクトル空間\(E\)とシンプレクティック形式\(\sigma\)の組を
-\textbf{シンプレクティックベクトル空間} (symplectic vector space) という．
-\(E\)がシンプレクティックのとき，\(\dim E\)は偶数となる．
-
-\((E_{1},\sigma_{1})\)と\((E_{2},\sigma_{2})\)をシンプレクティックベクトル空間とする．
-線型写像\(u\colon E_{1}\to E_{2}\)が\(
-    u^{\ast}\sigma_{2}=\sigma_{1}
-\)をみたすとき，
-\(u\)を\textbf{シンプレクティック線形写像} (symplectic linear map) という．
-\(u\)がシンプレクティック線形写像ならば，\(u\)は単射である．
-
-シンプレクティックベクトル空間\(E\)のシンプレクティック同形からなる群を
-\(\Sp(E)\)で表す．
-\(\Sp(E)\)は\(E\)の線形同型からなる群\(\GL(E)\)の閉部分群である．
-
-\begin{EG}
-    \(V\)を有限次元実ベクトル空間とし，\(V^{\ast}\)を\(V\)の
-    双対空間とする．ベクトル空間\(E=V\oplus V^{\ast}\)上の
-    双線形形式\(\sigma\)を
-    \((x;\xi)\)と\((x';\xi')\)に対し
-    \begin{equation}\label{eq:A.1.1}
-        \sigma((x;\xi),(x';\xi'))
-        =\inner<x',\xi>-\inner<x,\xi'>
-    \end{equation}
-    で定める．
-    このとき\(\sigma\)は\(E\)のシンプレクティック構造を定める．
-    この\(\sigma\)を\(E\)上の自然なシンプレクティック形式という．
-\end{EG}
-
-\(E=V\oplus V^{\ast}\)で\(u\)を\(V\)の線形同型とする．
-このとき写像\(\begin{pmatrix}
-    u&0\\0&{}^{t}u^{-1}
-\end{pmatrix}\)は\(E\)のシンプレクティック同型である．
-
-\((E,\sigma)\)をシンプレクティックベクトル空間とする．
-このとき\(\sigma\)が非退化であることから，
-\(E^\ast\)から\(E\)への線形同型\(H\)が次で定まる．
-\begin{equation}\label{eq:A.1.2}
-    \inner<\theta,v>
-    =
-    \sigma(v,H(\theta)).
-    \quad (v\in E, \theta\in E^{\ast})
+\(V\)を\(\cotb[X]\)の部分集合とする．
+\(\Dompb(X)\)の充満部分圏\(\mucat[V]{X}\)を次で定める．
+\begin{equation}\label{eq:6.1.1}
+    \Ob(\mucat[V]{X})\coloneqq
+    \left\{F\in\Ob(\Dompb(X));\muS(F)\subset V\right\}
 \end{equation}
-この同型\(H\)を\textbf{ハミルトン同型} (Hamiltonian isomorphism) という．
-\(\theta\in E^{\ast}\)に対し，
-\(H(\theta)\)を\(H_{\theta}\)とかいて
-\(\theta\)のハミルトンベクトルとよぶことも多い．
-
-
-
-
-
-
-
-\section{斉次シンプレクティック多様体}\label{sec:A.2}
-
-ここで考察する多様体とその間の射はすべて実\(C^{\infty}\)または
-実解析的なものとする．
-ことわりのない限り，多様体上の実関数は\(C^{\infty}\)級
-または実解析的なものとするが
-ここで述べる結果のほとんどは，
-適当に修正することで複素解析多様体に対してもなりたつ．
-
-\(X\)を多様体とする．
-\(X\)の接束を\(\tau\colon TX\to X\)で表し，
-余接束を\(\pi\colon \cotb[X]\to X\)で表す．
-\(TX\)と\(\cotb[X]\)から零切断を除いたファイバー束を
-それぞれ\(\tann[X]\)と\(\cotn[X]\)で表し，
-\(\tau\)と\(\pi\)の\(\tann[X]\)と\(\cotn[X]\)への制限を
-それぞれ\(\dot{\tau}\)と\(\dot{\pi}\)で表す．
-\(X\)の部分多様体\(M\)に対し，
-\(M\)の\(X\)における法束\(\norb[M]{X}\)と余法束\(\conm[M]{X}\)を
-\(M\)上のベクトル束の完全列を用いてそれぞれ次で定める．
-\begin{equation}\label{eq:A.2.1}
-    \begin{dcases}
-        0\to TM\to M\dpb[X]TX\to\norb[M]{X}\to0,\\
-        0\to\conm[M]{X}\to M\dpb[X]\cotb[X]\to\cotb[M]\to0.
-    \end{dcases}    
-\end{equation}
-\(Y\to X\)を多様体の射とする．
-\(f\)に対し次の射が定まる．
-\begin{equation}\label{eq:A.2.2}
-    \begin{dcases}
-        TY\underset{f'}{\longrightarrow}Y\dpb[X]TX\underset{f_{\tau}}{\longrightarrow}TX,\\
-        \cotb[Y]\underset{\mdiff[f]}{\longleftarrow}Y\dpb[X]\cotb[X]\underset{\mpb[f]}{\longrightarrow}\cotb[X].
-    \end{dcases}
-\end{equation}
-これは以下のように定まる．
-\subsection*{接束・余接束の基本図式}
-\(\tau\colon TX\to X\)等を接束とすると，
-ベクトル束の引き戻し
-\[\xymatrix{
-  Y\pb[X]TX
-  \ar[r]^-{f_{\tau}}
-  \ar[d]^-{\tau}
-  \ar@{}[dr]|\square
-  &
-  TX
-  \ar[d]^-{\tau}
-  \\
-  Y\ar[r]^-{f}&X
-}\]
-が定まる．\(f\)の微分を\(df\colon TY\to TX\)で表すとき，
-図式
-\[\xymatrix{
-  TY
-  \ar@/^1pc/[rrd]^-{df}
-  \ar@/_1pc/[rdd]_-{\tau}\\
-  &Y\pb[X]TX
-  \ar[r]^-{f_{\tau}}
-  \ar[d]^-{\tau}
-  \ar@{}[dr]|\square
-  &
-  TX
-  \ar[d]^-{\tau}
-  \\
-  &Y\ar[r]^-{f}&X
-}\]
-は可換である．
-したがって，引き戻しの普遍性から
-射\(f'\colon TY\to Y\mathbin{\times_{X}}TX\)がひきおこされ，
-\(df\)は\(df=f_{\tau}\circ f'\)と分解される．
-\[\xymatrix{
-  TY
-  \ar@/^2pc/[rr]^-{df}
-  \ar[r]^-{f'}
-  \ar[rd]_-{\tau}
-  &Y\pb[X]TX
-  \ar[r]^-{f_{\tau}}
-  \ar[d]^-{\tau}
-  \ar@{}[dr]|\square
-  &
-  TX
-  \ar[d]^-{\tau}
-  \\
-  &Y\ar[r]^-{f}&X
-}\]
-この図式を，ここだけの用語で，接束の基本図式とよぶことにする．
-
-\(\pi\colon T^{\ast}X\to X\)等を余接束とする．
-先と同様にベクトル束の引き戻し
-\[\xymatrix{
-  Y\pb[X]T^{\ast}X
-  \ar[r]^-{f_{\pi}}
-  \ar[d]^-{\pi}
-  \ar@{}[dr]|\square
-  &
-  T^{\ast}X
-  \ar[d]^-{\pi}
-  \\
-  Y\ar[r]^-{f}&X
-}\]
-が定まる．
-他方で，\(Y\)上の束の射\(
-  f'\colon TY\to Y\mathbin{\times_{X}}TX
-\)の双対射\(
-  f_{d}\coloneqq {}^{t\!}f'\colon Y\mathbin{\times_{X}}T^{\ast}X\to T^{\ast}Y
-\)が定まる．これにより，図式
-\[\xymatrix{
-  T^{\ast}Y
-  %\ar@/^2pc/[rr]^-{df}
-  \ar[rd]_-{\pi}
-  &
-  Y\pb[X]T^{\ast}X
-  \ar[l]_-{f_{d}}
-  \ar[r]^-{f_{\pi}}
-  \ar[d]^-{\pi}
-  \ar@{}[dr]|\square
-  &
-  T^{\ast}X
-  \ar[d]^-{\pi}
-  \\
-  &Y\ar[r]^-{f}&X
-}\]
-を得る．
-この図式を，ここだけの用語で，余接束の基本図式とよぶことにする．
-
-%\section{余接束のシンプレクティック構造}
-\subsection*{標準1形式}
-
-\eqref{eq:A.2.2}を射影\(\pi\colon \cotb[X]\to X\)に適用すると
-写像\(
-    \mdiff[\pi]\colon\cotb[X]\tpb[X]\cotb[X]\to\cotb[{\cotb[X]}]
-\)を得る．
-\begin{equation*}%\label{eq:cotcot}
-    \vcenter{\xymatrix{
-      T^{\ast}\cotb[X]
-      %\ar@/^2pc/[rr]^-{df}
-      \ar[rd]_-{\pi}
-      &
-      \cotb[X]\pb[X]\cotb[X]
-      \ar[l]_-{\pi_{d}}
-      \ar[r]^-{\pi_{\pi}}
-      \ar[d]^-{\pi}
-      \ar@{}[dr]|\square
-      &
-      \cotb[X]
-      \ar[d]^-{\pi}
-      \\
-      &\cotb[X]\ar[r]^-{\pi}&X
-}}\end{equation*}
-\(\cotb[X]\tpb[X]\cotb[X]\)の対角集合を\(
-    \varDelta
-\)とする．\(\varDelta\)と\(\cotb[X]\)を同一視した上で，
-\(\pi_{d}\)を\(\varDelta\)に制限することで
-\(\pi\colon\cotb[{\cotb[X]}]\to\cotb[X]\)の切断
+\(\mucat[V]{X}\)は，
+\(\mres[{[1]}]{\mucat[V]{X}}\)をシフト関手，
 \[
-    \mres[\pi_{d}]{\varDelta}\colon
-    \cotb[X]
-    \cong\varDelta
-    \to\cotb[{\cotb[X]}]
-\]    
-が得られる．
-これを\(\cotb[X]\)の\textbf{標準1形式} (canonical 1-form) といい，
-\(\alpha_X\)で，あるいは混同する恐れのないときは\(\alpha\)で表す．
-
-\subsection*{標準1形式の座標表示}
-
-\((x;\xi)\)を\(\cotb[X]\)の局所座標とする．
-このとき，\(\alpha_X\)は
-\[
-    \alpha_{X}(x;\xi)=((x;\xi);\pi^{\ast}\xi)
+    \left\{F\to G\to H\to F[1]\mathrel{;}\text{\(\Dompb(X)\) の完全三角で} F,G,H\in\mucat[V]{X}\right\}
 \]
-とかける．ここで，\[
-    \pi^{\ast}\xi\in T^{\ast}_{(x;\xi)}T^{\ast}X
-\]は\(T_{(x;\xi)}T^{\ast}X\)の基底\(
-    \frac{\partial}{\partial x_{1}},
-    \dots,
-    \frac{\partial}{\partial x_{n}},
-    \frac{\partial}{\partial \xi_{1}},
-    \dots,
-    \frac{\partial}{\partial \xi_{n}}
-\)に関して，
-\begin{align*}
-    \left\langle \pi^{\ast}\xi, \frac{\partial}{\partial x_{j}}\right\rangle
-    &=
-    \left\langle \xi, d\pi_{(x;\xi)}\frac{\partial}{\partial x_{j}}\right\rangle\\
-    &=
-    \left\langle \xi, \frac{\partial}{\partial x_{j}}\right\rangle,\\
-    \left\langle \pi^{\ast}\xi, \frac{\partial}{\partial \xi_{j}}\right\rangle
-    &=
-    \left\langle \xi, d\pi_{(x;\xi)}\frac{\partial}{\partial \xi_{j}}\right\rangle\\
-    &=
-    \left\langle \xi, 0\right\rangle=0
-\end{align*}
-をみたす．したがって，\(\alpha_X\)は基底\(dx_{1},\dots,dx_{n},d\xi_{1},\dots,d\xi_{n}\)を用いて，
-\[
-    \alpha_X
-    =\pi^{\ast}\left(
-        \sum_{j=1}^{n}\xi_{j}dx_{j}
-    \right)
-    =\sum_{j=1}^{n}\xi_{j}\pi^{\ast}dx_{j}
-    =\sum_{j=1}^{n}\xi_{j}dx_{j}
-\]
-と表せる．
+を完全三角の族として，三角圏になる．
+また，\(\Ob(\mucat[V]{X})\)は\(\Dompb(X)\)の
+零系 (null system) をなす．
+したがって，\(\Dompb(X)\)を\(\Ob(\mucat[V]{X})\)で局所化できる．
 
-\subsection*{余接束上のシンプレクティック形式}
-以上で構成した\(\alpha_X\)に対し，\[\omega_X=d\alpha_X\]とおく．
-\(\omega_X\)は\(\cotb[X]\)上のシンプレクティック形式である．したがって，
-\((\cotb[X],\omega_X)\)はシンプレクティック多様体となる．
+\begin{proof}[{\(\mucat[V]{X}\)が三角圏になることの証明．}]
+    まず\(\mucat[V]{X}\)が加法圏であることを示す．
 
-\(\omega_X\)を座標表示すると，
-\[
-    \omega_X=d\alpha_{X}
-    =d\left(\sum_{j=1}^{n}\xi_{j}dx_{j}\right)
-    =\sum_{j=1}^{n}d(\xi_{j}dx_{j})
-    =\sum_{j=1}^{n}d\xi_{j}\wedge dx_{j}
-\]
-となる．
-
-\subsection*{部分多様体}
-
-\(\cotb[X]\)の部分多様体\(V\)が\textbf{等方的} (isotropic), 
-\textbf{ラグランジュ} (Lagarangian), \textbf{包合的} (involutive) 
-であるとは，
-各点\(p\)に対し，接空間\(T_{p}V\)がそれぞれ\(T_{p}\cotb[X]\)の
-等方的，ラグランジュ，包合的部分空間であることをいう．
-
-\subsection*{ハミルトンベクトル場}
-
-\(f\)を\(\cotb[X]\)の開集合\(U\)で定義された実関数とする．
-ハミルトン同型\(
-    H\colon \cotb[{\cotb[X]}]\cong T\cotb[X]
-\)による\(df\)の像\(H(df)\)を
-\(f\)の\textbf{ハミルトンベクトル場} (Hamiltonian vector field) といい，
-\(H_f\)で表す．
-すなわち，\(H_f\)は次をみたすベクトル場である．
-\[
-    \iota_{H_f}\omega=-df
-\]
-\begin{CMT*}
-    \eqref{eq:A.1.2}から
-    各ベクトル場\(v\)に対し
-    \[    
-        \inner<df,v>
-        =\omega(v,H_f)
-        =-\omega(H_f,v)
-    \]
-    となることから，
-    \[
-        -\inner<df,v>
-        =\omega(H_f,v)
-        =\iota_{H_f}\omega(v)
-    \]
-    が従う．
-\end{CMT*}
-
-\subsection*{ポアソン括弧}
-
-関数\(f\)と\(g\)の\textbf{ポアソン括弧} (Poisson bracket) を
-\begin{equation}\label{eq:A.2.3}
-    \{f,g\}=H_f(g)=\omega(H_f,H_g)
-\end{equation}
-で定める．
-次の関係がなりたつ．
-\begin{equation}
-    \begin{dcases}
-        \{f,g\}=-\{g,f\},\\
-        \{f,hg\}=h\{g,f\}+g\{f,h\},\\
-        \{\{f,g\},h\}+\{\{g,h\},f\}+\{\{h,f\},g\}=0.
-    \end{dcases}
-\end{equation}
-\begin{proof}
-    1つ目の等式：    
-    \[
-        \{f,g\}=\omega(H_f,H_g)=-\omega(H_g,H_f)=-\{g,f\}.
-    \]
-    2つ目の等式：    
-    \begin{align*}
-        h\{g,f\}+g\{f,h\}
-        &=h\omega(H_g,H_f)+g\omega(H_f,H_h)\\
-        &=h\omega(H_g,H_f)-g\omega(H_h,H_f)\\
-        &=\omega(hH_g,H_f)+\omega(-gH_h,H_f)\\
-        &=\omega(hH_g-gH_h,H_f)\\
-        &=\omega(H_f,H_{hg})\\
-        &=\{f,hg\}.
-    \end{align*}
-    3つ目の等式：
-    \begin{align*}
-        &\{\{f,g\},h\}+\{\{g,h\},f\}+\{\{h,f\},g\}\\
-        =&\omega(H_{\omega(H_f,H_g)},H_h)
-    \end{align*}
+    超局所台はシフトによらないので，
+    シフト関手は自己同値\(\mucat[V]{X}\to\mucat[V]{X}\)をひきおこす．
 \end{proof}
-とくに\([H_f,H_g]=H{\{f,g\}}\)である．
-ただし，\([u,v]=uv-vu\)はベクトル場の交換子を表す．
 
-\begin{equation}
-    H_f=\sum_{j=1}^{n}\left(
-        \frac{\partial f}{\partial\xi_j}
-        \frac{\partial }{\partial x_j}
-        -
-        \frac{\partial f}{\partial x_j}
-        \frac{\partial }{\partial\xi_j}
-    \right)
-\end{equation}
 
-\begin{EG}
-    \(Z\)を\(X\)の部分多様体とする．
-    \(Z\tpb[X]\cotb[X]\)は\(\cotb[X]\)の包合的部分多様体であり，
-    \(\conm[Z]{X}\)は\(\cotb[X]\)のラグランジュ部分多様体である．
-    \(Z=X\)の極端な場合を考えるとラグランジュ部分多様体として
-    \(\cotb[X]\)の零切断\(\conm[X]{X}\)を得る．
-\end{EG}
+\clearpage
+\begin{leftbar}
+\begin{PRP}[{\cite[Prop.6.1.4]{KS90}}]\label{prp.6.1.4}
+    \(X\)を多様体とし，\(x_0\in X\)とする．
+    \(K\)を\(\conm[x_0]{X}\)の閉固有凸錐とし，
+    \(U\)を\(K\)の開部分錐とする．
+    \(F\in\Dompb(X)\)とする．
+    \(W\)を\(K\cap\muS(F)-\{0\}\)の錐状近傍とする．
+    このとき，\(F'\in\Dompb(X)\)と\(\Dompb(X)\)の射\(
+        u\colon F'\to F
+    \)で次をみたすものが存在する．
+    \begin{align}
+        \tag{6.1.7}\label{eq:6.1.7}
+        \text{\(u\)は\(U\)上で同形である．}\\
+        \tag{6.1.8}\label{eq:6.1.8}
+        \pi^{-1}(x_0)\cap\muS(F')\subset W\cup\{0\}.
+    \end{align}
+\end{PRP}
+\end{leftbar}
 
-\(\cotb[X]\)上の1形式\(\alpha\)は
-シンプレクティック多様体の構造よりも豊かな構造をひきおこす．
-以下，\(\cotb[X]\)における
-この\textbf{斉次シンプレクティック構造} (homogeneous 
-symplectic structure) について述べる．
+\begin{proof}
+    \(W\)が\(K\cap\muS(F)-\{0\}\)の開近傍を含むので，
+    必要なら\(K\)を太くして，
+    \(\overline{U}\subset\Int{K}\cup\{0\}\)としてよい．
+    \(X\)はベクトル空間で\(x_0=0\)としてよい．
 
-\(H(\alpha)\)をハミルトン同形による\(\alpha\)の像とする．
-\((x;\xi)\)をシンプレクティック座標とすると，
-\begin{equation}
-    \alpha=\sum_{j}^{}\xi_{j}dx_{j},
-    \quad
-    H(\alpha)=-\sum_{j}^{}\xi_{j}\frac{\partial}{\partial \xi_{j}},
-\end{equation}
-である．したがって，\(-H(\alpha)\)は
-ベクトル束\(\cotb[X]\)上の
- 放射状ベクトル場 (radial vector field) （すなわち，
-\(\cotb[X]\)への\(\rrp\)作用の無限小生成元）に他ならない．
-このベクトル場を\textbf{オイラーベクトル場} (Euler vector field) ともいう．
-
-\(\cotb[X]\)の部分集合\(S\)が\textbf{錐的} (conic) であるとは，
-\(S\)が\(\rrp\)不変であることをいう．
-\(S\)が\textbf{局所錐的} (locally conic) であるとは，
-\(S\)が局所的に\(\rrp\)不変であることをいう．
-すなわち任意の\(\rrp\)軌道との共通部分がその軌道の中で開集合であるとき
-\(S\)は局所錐的である\footnote{
-    開いたアニュラスとかか．
-}．
-\(\cotb[X]\)の開集合\(U\)で定義された関数\(f\)が斉次であるとは
-\(f\)がある\(k\in\cc\)に対して微分方程式
-\[
-    H(\alpha)f=kf
-\]をみたすことをいう．
-\begin{CMT*}
-    \(X=\rr^2\)で\(U=\rr^2\times\rr^2\)のとき
+    \(\conm[x_0]{X}\)の閉固有凸錐\(\gamma\)を，
+    \(K^{\circ a}\subset\gamma U^{\circ a}\)をみたし，
+    \(\gamma-\{0\}\)が\(C^1\)級境界\(\delta\gamma\)をもつようにとる．
+    \begin{CMT}
+        \cite[Thm25.5]{Roc}\begin{quotation}
+            \(f\)を\(\rr^n\)上の proper convex function とし，
+            \(D\)を\(f\)が微分可能である点の集合とする．
+            このとき\(D\)は\(\Int(\dom{f})\)の稠密な部分集合であり，
+            \(D\)の\(\Int(\dom{f})\)における補集合は測度\(0\)の集合である．
+            さらに，gradient mapping \(
+                \nabla{f}\colon x\to\nabla{f}(x)
+            \)は\(D\)上で連続である，
+        \end{quotation}
+        と Sardの定理からいけるか？
+    \end{CMT}
+    \(X\)の座標\((x)=(x_1,\dots,x_n)\)を
+    \begin{equation}
+        \tag{6.1.9}\label{eq:6.1.9}
+        \gamma\subset\{0\}\cup\left\{x;x_1<0\right\}
+    \end{equation}
+    をみたすようにとる．
+    \(\cotb[X]\)の\((x)\)に対応する座標を\((x;\xi)\)とする．
+    \(\gamma^{\circ a}\subset K\)より，\(0\)の開近傍\(\varOmega\)で
+    \begin{equation}
+        \tag{6.1.10}\label{eq:6.1.10}
+        W\supset G=\left\{\xi\in \gamma^{\circ a};\exists(x;\xi)\in\pi^{-1}(\varOmega)\cap \muS(F)\right\}
+    \end{equation}
+    をみたすものが存在する．
+    \begin{CMT}
+        ノート参照．
+    \end{CMT}
+    この\(\varOmega\)に対し，実数\(\varepsilon>0\)を
+    \begin{equation}
+        \tag{6.1.11}\label{eq:6.1.11}
+        \varOmega\supset\left\{x\in\gamma;x_1\geqq-\varepsilon\right\}
+    \end{equation}
+    となるものをとる．
+    このとき，\(X\)の閉集合\(Z\)で次をみたすものが構成できる．
+    \begin{align}
+        \notag \text{\(Z\)の境界}\delta Z&\text{は\(C^1\)級である．}\\
+        \tag{6.1.12}\label{eq:6.1.12}
+        0&\in\Int{Z},\\
+        \tag{6.1.13}\label{eq:6.1.13}
+        Z&\subset\left\{x;x_1\geqq-\varepsilon\right\},\\
+        \tag{6.1.14}\label{eq:6.1.14}
+        \text{\(\delta Z\)と\(\delta \gamma\)は共通部部で接する．}&\text{すなわち\(\delta Z\cap\delta \gamma\)で}\\
+        \notag
+        N_x^{\ast}(Z)^{a}&=N_x^{\ast}(\gamma)
+    \end{align}
+    \begin{CMT}
+        構成わからない．
+    \end{CMT}
+    以上の\(\gamma\)と\(Z\)に対し，\(F'\)を
     \[
-        \left(
-            -\xi_1\frac{\partial}{\partial \xi_{1}}
-            -\xi_2\frac{\partial}{\partial \xi_{2}}
-        \right)f=kf
+        F'=\phi_{\gamma}^{-1}\Rder{{\phi_{\gamma}}_{\ast}}\RG_{Z}(F)
+    \]とおき，自然な射\(F'\to F\)を\(u\)とおく．
+    この\(F'\)と\(u\)が条件\eqref{eq:6.1.7}, \eqref{eq:6.1.8}をみたすことを示す．
+    命題5.2.3\begin{quote}
+        \(\phi_{\gamma}^{-1}\Rder{{\phi_{\gamma}}_{\ast}}\RG_{Z}(F)
+        \to
+        \RG_{Z}(F)\)は\(X\times\Int{\gamma^{\circ a}}\)で同形
+    \end{quote}
+    であり，\(\RG_{Z}(F)\to F\)は\(\Int{Z}\)で同形なので
+    \(u\)は\(\Int{Z}\times\Int{\gamma^{\circ a}}\)で同形である．
+    いま，\(U\subset\Int{\gamma^{\circ a}}\)なので\eqref{eq:6.1.7}がなりたつ．
+
+    再び命題5.2.3 (i) (\(\Leftarrow\)) から
+    \[
+        \muS(F')\subset X\times\gamma^{\circ a}
     \]
-    という方程式になる．
-    \(f(x,\xi)=\left|\xi\right|^2=\xi_{1}^{2}+\xi_{2}^{2}\)とすると，
+    なので，あと示すべきは
+    \begin{equation}
+        \tag{6.1.15}\label{eq:6.1.15}
+        \begin{cases*}
+            \xi\in\delta(\gamma^{\circ a})-\{0\},\\
+            (0;\xi)\in\muS(F')
+        \end{cases*}
+        \Longrightarrow
+        \xi\in G
+    \end{equation}
+    となること．（ノート）
+
+    \(q_i\colon X\times X\to X\)を射影，\(s\colon X\times X\to X\)を\(s(x,x')=x-x'\)とする．
+    命題3.5.4\begin{quotation}
+        \(F\in\Dompb(X)\)とする．\(Z(\gamma)=\left\{(x,y)\in X\times X;y-x\in\gamma\right\}\)とする．
+        このとき
+        \[
+            \Rder{{q_1}_{\ast}}\left(\left(q_2^{-1}F\right)_{Z(\gamma)}\right)\cong
+            \phi_{\gamma}^{-1}\Rder{{\phi_{\gamma}}_{\ast}}F
+        \]である．
+    \end{quotation}
+    より，
+    \begin{equation}\tag{6.1.16}\label{eq:6.1.16}
+        F'\cong
+        \Rder{{q_2}_{\ast}}\left(s^{-1}A_{\gamma}\tens[]q_1^{-1}\RG_Z(F)\right)
+    \end{equation}
+    がなりたつ．
+    条件\eqref{eq:6.1.9}, \eqref{eq:6.1.13}より，
+    \(q_2:s^{-1}(\gamma)\cap q_1^{-1}(Z)\to X\)は固有である．（ノート）
+
+    よって，SSの評価式が使える．
     \begin{align*}
-        \left(
-            -\xi_1\frac{\partial}{\partial \xi_{1}}
-            -\xi_2\frac{\partial}{\partial \xi_{2}}
-        \right)f
-        &=\left(
-            -\xi_1\frac{\partial \left|\xi\right|^2}{\partial \xi_{1}}
-            -\xi_2\frac{\partial \left|\xi\right|^2}{\partial \xi_{2}}
-        \right)\\
-        &=-\xi_1\cdot 2\xi_1-\xi_2\cdot 2\xi_2\\
-        &=-2(\xi_1^2+\xi_2^2)=-2 \left|\xi\right|^2
+        \muS(F')&=\muS(
+        \Rder{{q_2}_{\ast}}\left(s^{-1}A_{\gamma}\tens[]q_1^{-1}\RG_Z(F)\right)
+        )\\
+        &\subset
+        \mpb[q_2]\mdiff[q_2]^{-1}\muS(s^{-1}A_{\gamma}\tens[]q_1^{-1}\RG_Z(F))\\
+        &\subset
+        \mpb[q_2]\mdiff[q_2]^{-1}\muS(s^{-1}A_{\gamma})+\muS(q_1^{-1}\RG_Z(F))\\
+        &\subset
+        \mpb[q_2]\mdiff[q_2]^{-1}\mdiff[s]\mpb[s]^{-1}\muS(A_{\gamma})+\mdiff[q_1]\mpb[q_1]^{-1}\muS(\RG_Z(F)).
     \end{align*}
-    であり，\(k=-2\)に関して微分方程式をみたす．
-    したがって\(f\)は斉次関数である．
-\end{CMT*}
+    \((0;\xi)\in\muS(F')\)に対し，
+\end{proof}
 
-部分多様体\(V\)が局所錐状となるのは，
-\(H(\alpha)\)が\(V\)に接しているときであり，
-\(V\)が局所的に斉次方程式\footnote{
-    斉次関数\(=0\)という方程式のことだと思う．
-}で定義されるときである．
 
-\(v\in T\cotb[X]\)に対し
-\(\inner<\alpha,v>=\omega(v,H(\alpha))\)から，
-局所錐状部分多様体\(V\)が等方的となるのは，
-\(\mres[\alpha]{V}\equiv0\)となるときである．
 
-局所錐状包合的部分多様体\(V\)が\textbf{正則} (regular) であるとは，
-\(\mres[\alpha]{V}\)がいたるところ\(0\)にならないことをいう．
-これは\(r=\codim V\)とするとき，
-\(V\)上で\(0\)になる斉次関数\(f_1,\dots,f_r\)で
-\begin{equation}
-    \begin{dcases}
-        \text{\(V\)上で任意の\(i,j\in\{1,\dots,r\}\)に対し} \{f_i,f_j\}=0,\\
-        \text{\(V\)上で} df_1\wedge\dots\wedge df_r\wedge \alpha\ne0
-    \end{dcases}
-\end{equation}
-となるものが局所的に存在することと同値である．
-\section{慣性指数}\label{sec:A.3}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\section{余接束内の法錐}
+%\section{順像}
+%\section{超局所化}
+%\section{包合性と伝播}
+%\section{包合的多様体の近傍における層}
+%\section{超局所化と逆像}
+
+\clearpage
+\appendix
+%\section{ノート中で用いる主張}
+
+\section{三角圏}\label{ssec:tricat}
+
+\begin{DFN}
+    加法圏とは次の3つの
+    条件(\ref{additive:bilin})--(\ref{additive:biproduct})を
+    みたす圏のことである．
+    \begin{enumerate}[(1)]
+        %\renewcommand{\labelenumi}{({\arabic{enumi}})}
+        \item \(\cat\)の任意の対象の組\((X, Y)\)に対し，
+        \(\Hom_{\cat}(X,Y)\)が加法群になり，
+        %どの対象$X, Y, Z\in\cat$に対しても
+        合成
+        %\(
+        %    \circ\colon
+        %    \Hom_{\cat}(Y,Z)\times\Hom_{\cat}(X,Y)
+        %    \to
+        %    \Hom_{\cat}(X,Z)
+        %\)
+        が双線型である．\label{additive:bilin}
+        \item 零対象$0\in\cat$が存在する．
+        さらに$\Hom_{\cat}(0,0)=0$が成り立つ．\label{additive:zero}
+        \item 任意の対象$X, Y\in\cat$に対して積と余積が存在し，
+        さらにそれらは同型になる．（それらを複積といい$X\oplus Y$とかく．）\label{additive:biproduct}
+    \end{enumerate}
+\end{DFN}
+
+$\cat$を加法圏とし，$T\colon\cat\to\cat$を自己関手とする．
+$\cat$の三角とは射の列
+\begin{equation*}
+    X\to Y\to Z\to TX
+\end{equation*}
+のことである．
+
+\begin{Definition}
+    三角圏$\cat$は次のデータ\eqref{eq:tricat}, \eqref{eq:family-dt}と
+    規則(TR\ref{TR0})--(TR\ref{TR5})からなる．
+    \begin{description}%\label{des:data}
+        \item[データ] \begin{align}
+            %\renewcommand{\labelenumi}{(\ref{ssec:tricat}.{\arabic{enumi}})}
+            \text{加法圏}\cat\text{と自己同値}T\colon\cat\to\cat\text{の組},\label{eq:tricat}\\
+            \text{特三角 (distinguished triangle) の族．}\label{eq:family-dt}
+        \end{align}    
+        \item[規則] \label{des:data}
+        \begin{quote}
+            \begin{enumerate}
+                %\setlength{\leftskip}{11pt}
+                \setcounter{enumi}{-1}
+                \renewcommand{\labelenumi}{(TR{\arabic{enumi}})}
+                \item 特三角に同形な三角は特三角である．\label{TR0}
+                \item 任意の対象$X\in\cat$に対し，
+                    $X\overset{\id_X}{\longrightarrow}X\longrightarrow
+                    0\longrightarrow TX$は特三角である．\label{TR1}
+                \item $\cat$の任意の射$f\colon X\to Y$は
+                    特三角$X\overset{f}{\to}Y\to Z\to TX$に埋め込める．
+                    つまり$Z\in\cat$で$X\overset{f}{\to}Y\to Z\to TX$が
+                    特三角となるものが存在する．\label{TR2}
+                \item $X\overset{f}{\to}
+                    Y\overset{g}{\to} 
+                    Z\overset{h}{\to} TX$が
+                    特三角であることと$Y\overset{g}{\longrightarrow}
+                    Z\overset{h}{\longrightarrow} TX\overset{-T(f)}{\longrightarrow} TY$が
+                    特三角であることは同値である．\label{TR3}
+                \item ２つの特三角$X\overset{f}{\to}
+                Y\to Z\to TX$, $X'\overset{f'}{\to}
+                Y'\to Z'\to TX'$に対し，可換図式
+                \begin{equation*}
+                    \vcenter{\xymatrix
+                    @C=26pt@R=26pt
+                    {
+                    X\ar[r]^-{f}\ar[d]^-{u}
+                    &
+                    Y\ar[d]^-{v} 
+                    \\
+                    X'\ar[r]^-{f'}
+                    &
+                    Y'
+                    }}
+                \end{equation*}
+                は特三角の射に埋め込める．\label{TR4}
+                \item\label{TR5}（八面体公理）．３つの特三角
+                \begin{align*}
+                    X\overset{f}{\to}Y\overset{h}{\to} Z'\to TX, \\
+                    Y\overset{g}{\to}Z\overset{k}{\to} X'\to TY,\\
+                    X\overset{g\circ f}{\longrightarrow}
+                    Z\overset{l}{\to} Y'\to TX
+                \end{align*}
+                に対し，完全三角\(
+                    Z'\overset{u}{\to}
+                    Y'\overset{v}{\to} 
+                    X'\overset{w}{\to} 
+                    TZ'
+                \)で以下の図式を可換にするものが存在する．
+                \[\vcenter{\xymatrix{
+                    X
+                    \ar[r]^-{f} 
+                    \ar[d]^-{\id}
+                    & 
+                    Y\ar[r]^-{h} 
+                    \ar[d]^-{g}
+                    & 
+                    Z'\ar[r]^-{}
+                    \ar@{..>}[d]^-{u}
+                    & 
+                    TX\ar[d]^-{\id}\\
+                    X\ar[r]^-{g\circ f} 
+                    \ar[d]^-{f}
+                    & 
+                    Z\ar[r]^-{l} 
+                    \ar[d]^-{\id}
+                    & 
+                    Y'\ar[r]^-{}
+                    \ar@{..>}[d]^-{v}
+                    & 
+                    TX\ar[d]^-{T(f)}\\
+                    Y\ar[r]^-{g} 
+                    \ar[d]^-{h}
+                    & 
+                    Z\ar[r]^-{k} 
+                    \ar[d]^-{l}
+                    & 
+                    X'\ar[r]^-{}
+                    \ar[d]^-{\id}
+                    & 
+                    TY\ar[d]^-{T(h)}\\
+                    Z'
+                    \ar@{..>}[r]^-{u} 
+                    & 
+                    Y'\ar@{..>}[r]^-{v} 
+                    & 
+                    X'\ar@{..>}[r]^-{w}
+                    & 
+                    TZ'.
+                }}\]
+            \end{enumerate}    
+        \end{quote}
+    \end{description}
+\end{Definition}
+
+
+\begin{leftbar}
+\begin{PRP}[{\cite[Prop.3.4.4.]{KS90}}]\label{prp3.4.4}
+  \(X\)と\(Y\)を有限c柔軟次元局所コンパクト（ハウスドルフ）空間とし，
+  \(q_1\)と\(q_2\)をそれぞれ\(X\times Y\)から\(X\)と\(Y\)への射影とする．
+  \(F\in\Dompb(A_X)\), \(G\in\Dompb(A_Y)\)とし，\(F\)はコホモロジー構成可能層とする．
+  このとき，
+  \[
+    \vD{F}\letens G\to \RHOM(q_1^{-1}F,q_2^{!}G)
+  \]は同型である．
+  \(X\)が\(C^0\)多様体ならば，\[
+    \vD'{F}\letens G\to \RHOM(q_1^{-1}F,q_2^{-1}G)
+  \]も同型である．
+\end{PRP}
+\end{leftbar}
+
+\begin{leftbar}
+\begin{PRP}[{\cite[Prop.4.3.4]{KS90}}]\label{prp4.3.4}
+  \(G\in\Dompb(Y)\)とする．
+  このとき，標準的な射による可換図式    
+  \[    
+      \vcenter{\xymatrix@C=36pt@R=36pt{
+      \Rder{{\mpb[f_{N}]}_{!}}{\mdiff[f_{N}]^{-1}}\mu_{N}(G)
+      \ar[d]
+      \ar[r]
+      %\ar@{}[dr]|\square
+      &
+      \mu_{M}(\Rder{f_{!}}G)
+      %\ar[r]
+      \ar[d]
+      \\
+      \Rder{{\mpb[f_{N}]}_{\ast}}({\mdiff[f_{N}]^{!}}\mu_{N}(G)\tens[]\omega_{Y/X}\tens[]\omega_{N/M}^{\otimes{-1}})
+      %\ar@{}[dr]|\square
+      &
+      \mu_{M}(\Rder{f_{\ast}}G)
+      \ar[l]
+      }}
+  \]が存在する．
+  さらに，\(\supp(G)\to X\)と\(
+      C_N(\supp(G))\to T_{M}X
+  \)が固有かつ\(\supp(G)\cap f^{-1}(M)\subset N\)ならば，
+  以上の射はすべて同型である．
+  
+  とくに\(f^{-1}(M)=N\)かつ，
+  \(f\)が\(M\)に関して鮮明\footnotemark[2] (clean) かつ\(\supp(G)\)上固有のとき，
+  以上の射はすべて同型である．
+\end{PRP}
+\end{leftbar}
+
+\footnotetext[2]{試験的な訳語}
+
+\begin{leftbar}
+\begin{PRP}[{\cite[Prop.4.3.5]{KS90}}]\label{prp4.3.5}
+  \(F\in\Dompb(X)\)とする．
+  \begin{enumerate}[(i)]
+      \item 標準的な射で次の図式を可換にするものが存在する．\label{prp4.3.5.1}
+      \[\vcenter{\xymatrix@C=56pt@R=46pt{
+          \Rder{{\mdiff[f_N]}_{!}}(\omega_{N/M}\tens[]{\mpb[f_N]^{-1}}\mu_{M}(F))
+          \ar[d]^{}
+          \ar[r]_{}
+          %\ar@{}[dr]|\square
+          &
+          \mu_{N}(\omega_{Y/X}\tens[]{f^{-1}}F)
+          %\ar[r]
+          \ar[d]
+          \\
+          \Rder{{\mdiff[f_N]}_{\ast}}{\mpb[f_N]^{!}}\mu_{M}(F)
+          %\ar@{}[dr]|\square
+          &
+          \mu_{N}({f^{!}}F)
+          \ar[l]_{\beta}
+      }}\]
+      ここで縦向きの矢印は(3.1.6)から導かれるものである．
+      \item \label{prp4.3.5.2}
+      \(f\colon Y\to X\)と\(\mres[f]{N}\colon N\to M\)が
+      平滑ならば，これらの射はすべて同型となる．    
+      \item \label{prp4.3.5.3}
+      \(f\)が\(M\)に横断的かつ\(f^{-1}(M)=N\)ならば，
+      自然な射\[
+          \Rder{{\mdiff[f_N]}_{\ast}}\mpb[f_N]^{-1}\mu_{M}(F)
+          \to \mu_{N}(f^{-1}F)
+      \]が存在する．
+  \end{enumerate}
+\end{PRP}
+\end{leftbar}
 
 
 
@@ -1096,11 +1032,46 @@ symplectic structure) について述べる．
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
-    \bibitem[Ar78]{Ar78} Arnold
-    \bibitem[AM78]{AM78} Abraham, Marsden
-    \bibitem[Dui73]{Dui73} Duistermaat
-    \bibitem[Hor85]{Hor85} H\"ormander
-    \bibitem[LV80]{LV80} Lion, Vergne
+  \bibitem[dR]{dR} 
+  de Rham, \textit{Vari\'et\'es diff\'erentiables}, Hermann, 1953.
+  和訳：ド・ラーム, 微分多様体, 東京図書, 1974.
+  \bibitem[GKS12]{GKS12} St\'ephane Guillermou, 
+  Masaki Kashiwara, Pierre Schapira, 
+  \textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
+  Duke. Math. J. 161, No. 2, pp.201--245, 2012.  
+  \bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
+    \textit{Differential Topology}, 
+    Prentice-Hall, 1974.
+  \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Sheaves on Manifolds}, 
+    Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+  \bibitem[Hat89]{Hat89} 服部晶夫, 多様体 増補版, 岩波全書 288, 岩波書店, 1989.
+  %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+  \bibitem[Hor63]{Hor63} Lars H\"ormander, 
+  \textit{Linear Pertial Differential Operators}, Fourth Printing, 
+  Grundlehren der Mathematischen Wissenschaften, 116, Springer, 1963.
+  \bibitem[Hor71]{Hor71} Lars H\"ormander, 
+  \textit{Fourier Integral Operators I}, 
+  Acta Math. 127, 79--183, (1971).
+  \bibitem[Hor89]{Hor89} Lars H\"ormander, 
+  \textit{The Analysis of Linear Pertial Differential Operators I}, Second Edition,
+  Grundlehren der Mathematischen Wissenschaften, 256, Springer, 1989.
+  \bibitem[Hor85]{Hor85} Lars H\"ormander, 
+  \textit{The Analysis of Linear Pertial Differential Operators III}, 
+  Grundlehren der Mathematischen Wissenschaften, 274, Springer, 1985.
+  \bibitem[Roc]{Roc} Rockaffeller, \textit{Convex Analysis},. 
+  \bibitem[Sch85]{Sch85} Pierre Schapira, 
+    \textit{Microdifferential Systems in the Complex Domain}, 
+    Grundlehren der Mathematischen Wissenschaften, 269, 
+    Springer, 1985.
+    \bibitem[ST92]{ST92} Pierre Schapira, Nobuyuki Tose, 
+    \textit{Morse Inequalities for \(\rr\)-constructible Sheaves}, 
+    Adv. Math. 93, pp.1--8, 1992. 
+    \bibitem[Zwo12]{Zwo12} Maciej Zworski,
+    \textit{Semiclsaaical Analysis}, 
+    Graduate Studies in Mathematics, 138, 
+    American Mathematical Society, 
+    2012. 
 \end{thebibliography}
 
 %===============================================

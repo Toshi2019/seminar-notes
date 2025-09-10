@@ -1,10 +1,10 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  17 JUL 2025 20:19
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  2 AUG 2025 19:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/giuseppe/seminar-notes/202507/ks90-appendix/ks90-appendix.tex
-(/Users/giuseppe/seminar-notes/202507/ks90-appendix/ks90-appendix.tex
+**/Users/giuseppe/seminar-notes/202508/20250802/20250802.tex
+(/Users/giuseppe/seminar-notes/202508/20250802/20250802.tex
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -822,8 +822,8 @@ File: l3backend-dvipdfmx.def 2024-02-20 L3 backend support: dvipdfmx
 \g__pdf_backend_object_int=\count353
 \g__pdf_backend_annotation_int=\count354
 \g__pdf_backend_link_int=\count355
-) (./ks90-appendix.aux)
-\openout1 = `ks90-appendix.aux'.
+) (./20250802.aux)
+\openout1 = `20250802.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 601.
 LaTeX Font Info:    ... okay on input line 601.
@@ -872,9 +872,9 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 Package xypdf Info: Line width: 0.39998pt on input line 601.
 Package hyperref Info: Link coloring ON on input line 601.
- (./ks90-appendix.out) (./ks90-appendix.out)
+ (./20250802.out) (./20250802.out)
 \@outlinefile=\write6
-\openout6 = `ks90-appendix.out'.
+\openout6 = `20250802.out'.
 
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 (Font)              scaled to size 15.9785pt on input line 603.
@@ -902,60 +902,77 @@ LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 604.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 604.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 607.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 607.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 4.62341pt on input line 607.
 LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 625.
+(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 616.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 625.
+(Font)              scaled to size 9.24683pt on input line 616.
 LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 625.
+(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 616.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 625.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 628.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 628.
+(Font)              scaled to size 9.24683pt on input line 616.
  [1
 
 ]
-LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 722.
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 734.
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 7.39746pt on input line 748.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 722.
- <xymatrix 2x2
-
-Package xypdf Warning: The produced DVI file is NOT PORTABLE. Convert it with
-dvipdfm(x) to the PDF format but do not expect the DVI file itself to be
-displayed correctly.
-
-235> <xymatrix 3x3 349> [2] <xymatrix 3x2 382> <xymatrix 2x2 235> <xymatrix 3x2 331> <xymatrix 3x2 331> [3] [4] [5]
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 1022.
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 1024.
+(Font)              scaled to size 7.39746pt on input line 748.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 1024.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 1024.
+(Font)              scaled to size 5.5481pt on input line 748.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 1024.
+(Font)              scaled to size 5.5481pt on input line 748.
+ [2] [3] [4] [5] [6]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 1073.
- [6] [7] (./ks90-appendix.aux)
+(Font)              scaled to size 4.62341pt on input line 1129.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1152.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1156.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1159.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1162.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1167.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1170.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1173.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1176.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1178.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1180.
+ [7]
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1184.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1187.
+ [8] (./20250802.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `ks90-appendix.out' has not changed.
-(rerunfilecheck)             Checksum: C830AA9D3DC6EBBA74D446E7401DE80F;447.
+Package rerunfilecheck Info: File `20250802.out' has not changed.
+(rerunfilecheck)             Checksum: D2E75C0DED3D726C7746D3D62746BD83;276.
  ) 
 Here is how much of TeX's memory you used:
- 30300 strings out of 474774
- 530533 string characters out of 5758801
- 1949032 words of memory out of 5000000
- 52108 multiletter control sequences out of 15000+600000
- 614078 words of font info for 159 fonts, out of 8000000 for 9000
+ 30606 strings out of 474774
+ 538562 string characters out of 5758801
+ 1947032 words of memory out of 5000000
+ 52412 multiletter control sequences out of 15000+600000
+ 615003 words of font info for 161 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 84i,15n,93p,3273b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,19n,93p,3263b,1197s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on ks90-appendix.dvi (7 pages, 37096 bytes).
+Output written on 20250802.dvi (8 pages, 69396 bytes).

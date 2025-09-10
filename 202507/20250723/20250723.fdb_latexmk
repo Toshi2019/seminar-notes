@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1752751164.84662 "ks90-appendix.dvi" "ks90-appendix.pdf" "ks90-appendix" 1752751165.94027 0
-  "ks90-appendix.dvi" 1752751164.70951 37096 9b7f195621092722ec83c6a786e8e289 "latex"
+["dvipdf"] 1753246536.6531 "20250723.dvi" "20250723.pdf" "20250723" 1753246537.67777 0
+  "20250723.dvi" 1753246536.50419 35720 f8f9cd0d251f1a56acac3494db333068 "latex"
   (generated)
-  "ks90-appendix.pdf"
+  "20250723.pdf"
   (rewritten before read)
-["latex"] 1752751163.20048 "/Users/giuseppe/seminar-notes/202507/ks90-appendix/ks90-appendix.tex" "ks90-appendix.dvi" "ks90-appendix" 1752751165.93485 0
-  "/Users/giuseppe/seminar-notes/202507/ks90-appendix/ks90-appendix.tex" 1752751160.99879 36794 ee745308a1d29459e917daf5815c5394 ""
+["latex"] 1753246535.04433 "/Users/giuseppe/seminar-notes/202507/20250723/20250723.tex" "20250723.dvi" "20250723" 1753246537.67226 0
+  "/Users/giuseppe/seminar-notes/202507/20250723/20250723.tex" 1753246532.99129 37566 d3b56bb414cc75b41adbeee9c8deb618 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -46,9 +46,11 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1136768653 1316 b636689f1933f24d1294acdf6041daaa ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss12.tfm" 1136768653 1324 37b971caf729d7edd9cbb9f9b0ea76eb ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss8.tfm" 1136768653 1296 d77f431d10d47c8ea2cc18cf45346274 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlgothr-h.tfm" 1645134245 868 d00a8d6d9ddcb5aa8cde656e259e4d35 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlgothr-v.tfm" 1645134245 588 e1ae0e7b22becffa2385cb523a787c37 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlminr-h.tfm" 1645134245 868 d00a8d6d9ddcb5aa8cde656e259e4d35 ""
@@ -248,12 +250,14 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "ks90-appendix.aux" 1752751164.70737 1321 b268f0b46fd9a0624de71e3b75126788 "latex"
-  "ks90-appendix.out" 1752751164.70889 447 c830aa9d3dc6ebba74d446e7401de80f "latex"
-  "ks90-appendix.tex" 1752751160.99879 36794 ee745308a1d29459e917daf5815c5394 ""
+  "20250723.aux" 1753246536.49814 2656 bff20eeb420039b1102137b8a1fa6228 "latex"
+  "20250723.out" 1753246536.50353 209 59e67058bcb9a65433d0695a8a491448 "latex"
+  "20250723.tex" 1753246532.99129 37566 d3b56bb414cc75b41adbeee9c8deb618 ""
+  "20250723.toc" 1753246536.50408 192 f3005f558e775bc7019a05ada3939cdd "latex"
   (generated)
-  "ks90-appendix.aux"
-  "ks90-appendix.dvi"
-  "ks90-appendix.log"
-  "ks90-appendix.out"
+  "20250723.aux"
+  "20250723.dvi"
+  "20250723.log"
+  "20250723.out"
+  "20250723.toc"
   (rewritten before read)
