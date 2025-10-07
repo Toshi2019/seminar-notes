@@ -1,0 +1,1174 @@
+%=====================================
+%   20250528.tex
+%   20250528 
+%   toshi2019
+%=====================================
+% ------------------------
+% documentclass
+% ------------------------
+\documentclass[leqno, 10pt, a4paper, dvipdfmx]{jsarticle}
+\title{シンプレクティック幾何}
+\author{Toshi2019}
+\date{\today}
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+
+\usetikzlibrary{cd}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+
+% ================================
+% パッケージを追加する場合のスペース 
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+
+%\usepackage[mathscr]{euscript} % mathscr のフォントを変更
+
+%\usepackage{mmasym}
+
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem{Fact*}{事実}
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{k}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+%\newcommand{\Ring}{{\bf Ring}}
+\newcommand{\Ab}{{\bf Ab}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\Modf}{\mathop{\mathrm{Mod}^\mathrm{f}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits} % 写像の集合
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits} % 射集合
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits} % 自己準同型の集合
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits} % 自己同型の集合
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits} % 射集合
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits} % 核
+\newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
+\newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
+\newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+%\newcommand{\OO}{\mcal{O}}
+
+
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+%        \itshape
+         \bfseries
+%    #1\@addpunct{.}]\ignorespaces
+    {#1}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
+\renewcommand{\proofname}{証明.}
+
+
+
+%\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{section}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Op}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+%\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
+
+\newcommand{\cat}{\mathscr{C}}
+
+%筆記体
+\newcommand{\cA}{\mcal{A}}
+\newcommand{\cB}{\mcal{B}}
+\newcommand{\cC}{\mcal{C}}
+\newcommand{\cD}{\mcal{D}}
+\newcommand{\cE}{\mcal{E}}
+\newcommand{\cF}{\mcal{F}}
+\newcommand{\cG}{\mcal{G}}
+\newcommand{\cH}{\mcal{H}}
+\newcommand{\cI}{\mcal{I}}
+\newcommand{\cJ}{\mcal{J}}
+\newcommand{\cK}{\mcal{K}}
+\newcommand{\cL}{\mcal{L}}
+\newcommand{\cM}{\mcal{M}}
+\newcommand{\cN}{\mcal{N}}
+\newcommand{\cO}{\mcal{O}}
+\newcommand{\cP}{\mcal{P}}
+\newcommand{\cQ}{\mcal{Q}}
+\newcommand{\cR}{\mcal{R}}
+\newcommand{\cS}{\mcal{S}}
+\newcommand{\cT}{\mcal{T}}
+\newcommand{\cU}{\mcal{U}}
+\newcommand{\cV}{\mcal{V}}
+\newcommand{\cW}{\mcal{W}}
+\newcommand{\cX}{\mcal{X}}
+\newcommand{\cY}{\mcal{Y}}
+\newcommand{\cZ}{\mcal{Z}}
+
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+\newcommand{\scN}{\mathscr{N}}
+\newcommand{\scO}{\mathscr{O}}
+\newcommand{\scV}{\mathscr{V}}
+\newcommand{\scU}{\mathscr{U}}
+
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+%\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+%\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+%\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}%複体のホモトピー圏
+%\newcommand{\Comp}{\mathrm{C}}
+%\newcommand{\Komp}{\mathrm{K}}
+%\newcommand{\Domp}{\mathsf{D}}%複体のホモトピー圏
+
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
+\newcommand{\Domp}{\mathord{\mathsf{D}}}%\nolimits}
+\newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
+\newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
+\newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
+\newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
+\newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
+\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+\newcommand{\Dbconic}{\mathop{\mathsf{D}^\mathrm{b}_{\rrp}}\nolimits}
+\newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
+\newcommand{\Domplb}{\mathop{\mathsf{D}^\mathrm{lb}}\nolimits}
+
+
+
+
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+%\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\HOM}{\mathop{\mathcal{H}\hspace{-0pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
+\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+\newcommand{\Rder}{\mathrm{R}}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
+\newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
+\newcommand{\simra}{\mathrel{\overset{\sim}{\leftarrow}}}%同型左矢印
+\newcommand{\simrra}{\mathrel{\overset{\sim}{\longleftarrow}}}%同型左矢印
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\PSh}{\mathrm{PSh}}
+
+\newcommand{\rmD}{\mathsf{D}}
+\newcommand{\vD}{\mathbf{D}}
+
+\newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
+\newcommand{\ori}{\mathord{\mathrm{or}}}
+\newcommand{\Db}{\mathord{\mathscr{D}b}}
+
+\newcommand{\codim}{\mathop{\mathrm{codim}}\nolimits}
+
+
+
+\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
+\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
+
+
+\newcommand{\tens}[1][]{\mathbin{\otimes_{\raise1.5ex\hbox to-.1em{}{#1}}}}
+\newcommand{\etens}{\mathbin{\boxtimes}}
+\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
+\newcommand{\lltens}[1][]{\mathbin{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}}
+\newcommand{\lletens}[1][]{\mathbin{{\mathop{\boxtimes}\limits^{\mathrm{L}}_{#1}}}}
+\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
+\newcommand{\detens}{\underline{\etens}}
+\newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
+\newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
+
+\newcommand{\blk}{\mathord{\ \cdot\ }}
+\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
+
+
+%\newcommand{\hocolim}{{\mathrm{hocolim}}}
+%\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+%\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+%\newcommand{\Pro}{\mathrm{Pro}}
+%\newcommand{\Ind}{\mathrm{Ind}}
+%\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+%\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+\newcommand{\proolim}[1][]{\mathop{\text{\rm``{$\varprojlim$}''}}\limits_{#1}}
+\newcommand{\sproolim}[1][]{\smash{\mathop{\rm``{\varprojlim}''}\limits_{#1}}}
+\newcommand{\inddlim}[1][]{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}
+\newcommand{\sinddlim}[1][]{\smash{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}\,}
+\newcommand{\ooplus}{\mathop{\text{\rm``{$\oplus$}''}}\limits}
+\newcommand{\bbigsqcup}{\mathop{``\bigsqcup''}\limits}
+\newcommand{\bsqcup}{\mathop{``\sqcup''}\limits}
+\newcommand{\dsum}[1][]{\mathbin{\oplus_{#1}}}
+
+\newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
+
+\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+\newcommand{\dpb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+\newcommand{\tpb}[1][]{\mathbin{\mathop{\times}\nolimits_{#1}}}
+
+
+
+
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}[section]
+\newtheorem{DFN}[AXM]{定義}
+\newtheorem{THM}[AXM]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[AXM]{命題}
+\newtheorem{LMM}[AXM]{補題}
+\newtheorem{CRL}[AXM]{系}
+\newtheorem{EG}[AXM]{例}
+\newtheorem*{EG*}{例}
+\newtheorem{RMK}[AXM]{注意}
+\newtheorem{CNV}[AXM]{約束}
+\newtheorem{CMT}[AXM]{コメント}
+\newtheorem*{CMT*}{コメント}
+\newtheorem{NTN}[AXM]{記号}
+
+% 定理環境ここまで
+%====================================================
+
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+
+
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+
+% =================================
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+% 位相空間
+\newcommand{\Int}[1][]{\mathop{\mathrm{Int}}\nolimits_{#1}}
+\newcommand{\Cl}[1][]{\mathop{\mathrm{Cl}}\nolimits_{#1}}
+\newcommand{\Bd}[1][]{\mathop{\mathrm{Bd}}\nolimits_{#1}}
+\newcommand{\bd}{\mathord{\partial}}
+\newcommand{\Fr}[1][]{\mathop{\mathrm{Fr}}\nolimits_{#1}}
+
+
+\newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
+\newcommand{\mtp}[1][]{{}^{t\!}{#1}} % transpose of the morphism
+%\newcommand{\mpb}[1][]{{}^{t\!}{#1}'} % pull-back of the morphism
+\newcommand{\mpb}[1][]{{#1}_{\pi}} % pull-back of the morphism
+\newcommand{\mdiff}[1][]{{#1}_{d}} % pull-back of the morphism
+\newcommand{\mptan}[1][]{{#1}_{\tau}} % pull-back of the morphism
+
+
+%\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+
+\newcommand{\cotb}[1][]{T^{\ast}{#1}}
+\newcommand{\conm}[2][]{T_{#1}^{\hspace{0.7pt}\ast}{#2}}
+\newcommand{\norb}[2][]{T_{#1}{#2}}
+
+\newcommand{\cotz}[1][]{T^{\ast}_{#1}{#1}}
+
+\newcommand{\cotn}[1][]{\dot{T}^{\ast}{#1}}
+\newcommand{\tann}[1][]{\dot{T}{#1}}
+
+
+\newcommand{\muhom}{\mu hom}
+\newcommand{\muHom}[1][]{\mathrm{Hom}^\mu_{\raise1.5ex\hbox to.1em{}#1}}
+
+\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+%\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+
+\newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
+
+\newcommand{\torus}{\mathbf{T}}
+
+\newcommand{\diag}[1][]{\Delta_{#1}}
+%  \[\mu_{\Delta_{Y}}\mathrm{R}\mathcal{H}om(G,F)\]
+\newcommand{\micro}[1]{\mu_{#1}\hspace{-2pt}}
+
+
+\newcommand{\GL}{\mathop{\mathrm{GL}}\nolimits}
+\newcommand{\Sp}{\mathop{\mathrm{Sp}}\nolimits}
+%\newcommand{\Sp}{\mathord{\mathrm{Sp}}}
+
+
+\newcommand{\eu}{\mathbf{e}}
+\newcommand{\rrp}{\rr^{+}}
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+\begin{document}
+\maketitle
+
+\section*{要約}
+シンプレクティック幾何の基本的な道具のうち，
+本書を通して用いるものをまとめた．
+\ref{sec:A.1}節と\ref{sec:A.2}節では
+シンプレクティックベクトル空間と
+斉次シンプレクティック多様体に関する基本的な概念について述べる．
+結果はすべてよく知られたものであり概ね初等的である．
+したがって，証明のいくつかは省略し，
+\cite{Ar78,Dui73,AM78}と特に\cite{Hor85}を参考文献に挙げる．
+
+\ref{sec:A.3}節ではラグランジュ平面の3つ組の慣性指数を導入する．
+ここでの議論の仕方は\cite{LV80}のものと近い．
+読者の便宜のためにすべての証明を与えた．
+また，7章で用いる性質を演習問題としてまとめた．
+
+\section{シンプレクティックベクトル空間}\label{sec:A.1}
+
+本節と次の節では実係数のシンプレクティック空間を扱うが，
+複素係数の場合でも理論は同様である．
+
+\(E\)を有限次元実ベクトル空間とする．
+\(E\)上の\textbf{シンプレクティック形式} (symplectic form) \(\sigma\)とは，
+\(E\)上の非退化交代双線形形式，
+すなわち次をみたす双線形形式\(
+    \sigma\colon E\times E\to\rr
+\)のことである．
+\begin{description}
+    \item[非退化性] \(\sigma(u,v)=0\)が任意の\(v\in E\)について成り立てば\(u=0\)となる．
+    \item[交代性] 任意の\(u,v\in E\)に対し\(\sigma(u,v)=-\sigma(v,u)\)がなりたつ．
+\end{description}
+ベクトル空間\(E\)とシンプレクティック形式\(\sigma\)の組を
+\textbf{シンプレクティックベクトル空間} (symplectic vector space) という．
+\(E\)がシンプレクティックのとき，\(\dim E\)は偶数となる．
+
+\((E_{1},\sigma_{1})\)と\((E_{2},\sigma_{2})\)をシンプレクティックベクトル空間とする．
+線形写像\(u\colon E_{1}\to E_{2}\)が\(
+    u^{\ast}\sigma_{2}=\sigma_{1}
+\)をみたすとき，
+\(u\)を\textbf{シンプレクティック線形写像} (symplectic linear map) という．
+\(u\)がシンプレクティック線形写像ならば，\(u\)は単射である．
+
+シンプレクティックベクトル空間\(E\)のシンプレクティック同形からなる群を
+\(\Sp(E)\)で表す．
+\(\Sp(E)\)は\(E\)の線形同型からなる群\(\GL(E)\)の閉部分群である．
+
+\begin{EG}
+    \(V\)を有限次元実ベクトル空間とし，\(V^{\ast}\)を\(V\)の
+    双対空間とする．ベクトル空間\(E=V\oplus V^{\ast}\)上の
+    双線形形式\(\sigma\)を
+    \((x;\xi)\)と\((x';\xi')\)に対し
+    \begin{equation}\label{eq:A.1.1}
+        \sigma((x;\xi),(x';\xi'))
+        =\inner<x',\xi>-\inner<x,\xi'>
+    \end{equation}
+    で定める．
+    このとき\(\sigma\)は\(E\)のシンプレクティック構造を定める．
+    この\(\sigma\)を\(E\)上の自然なシンプレクティック形式という．
+\end{EG}
+
+\(E=V\oplus V^{\ast}\)で\(u\)を\(V\)の線形同型とする．
+このとき写像\(\begin{pmatrix}
+    u&0\\0&{}^{t}u^{-1}
+\end{pmatrix}\)は\(E\)のシンプレクティック同型である．
+
+\((E,\sigma)\)をシンプレクティックベクトル空間とする．
+このとき\(\sigma\)が非退化であることから，
+\(E^\ast\)から\(E\)への線形同型\(H\)が次で定まる．
+\begin{equation}\label{eq:A.1.2}
+    \inner<\theta,v>
+    =
+    \sigma(v,H(\theta)).
+    \quad (v\in E, \theta\in E^{\ast})
+\end{equation}
+この同型\(H\)を\textbf{ハミルトン同型} (Hamiltonian isomorphism) という．
+\(\theta\in E^{\ast}\)に対し，
+\(H(\theta)\)を\(H_{\theta}\)とかいて
+\(\theta\)のハミルトンベクトルとよぶことも多い．
+
+
+
+
+
+
+
+\section{斉次シンプレクティック多様体}\label{sec:A.2}
+
+ここで考察する多様体とその間の射はすべて実\(C^{\infty}\)または
+実解析的なものとする．
+ことわりのない限り，多様体上の実関数は\(C^{\infty}\)級
+または実解析的なものとするが
+ここで述べる結果のほとんどは，
+適当に修正することで複素解析多様体に対してもなりたつ．
+
+\(X\)を多様体とする．
+\(X\)の接束を\(\tau\colon TX\to X\)で表し，
+余接束を\(\pi\colon \cotb[X]\to X\)で表す．
+\(TX\)と\(\cotb[X]\)から零切断を除いたファイバー束を
+それぞれ\(\tann[X]\)と\(\cotn[X]\)で表し，
+\(\tau\)と\(\pi\)の\(\tann[X]\)と\(\cotn[X]\)への制限を
+それぞれ\(\dot{\tau}\)と\(\dot{\pi}\)で表す．
+\(X\)の部分多様体\(M\)に対し，
+\(M\)の\(X\)における法束\(\norb[M]{X}\)と余法束\(\conm[M]{X}\)を
+\(M\)上のベクトル束の完全列を用いてそれぞれ次で定める．
+\begin{equation}\label{eq:A.2.1}
+    \begin{dcases}
+        0\to TM\to M\dpb[X]TX\to\norb[M]{X}\to0,\\
+        0\to\conm[M]{X}\to M\dpb[X]\cotb[X]\to\cotb[M]\to0.
+    \end{dcases}    
+\end{equation}
+\(Y\to X\)を多様体の射とする．
+\(f\)に対し次の射が定まる．
+\begin{equation}\label{eq:A.2.2}
+    \begin{dcases}
+        TY\underset{f'}{\longrightarrow}Y\dpb[X]TX\underset{f_{\tau}}{\longrightarrow}TX,\\
+        \cotb[Y]\underset{\mdiff[f]}{\longleftarrow}Y\dpb[X]\cotb[X]\underset{\mpb[f]}{\longrightarrow}\cotb[X].
+    \end{dcases}
+\end{equation}
+これは以下のように定まる．
+\subsection*{接束・余接束の基本図式}
+\(\tau\colon TX\to X\)等を接束とすると，
+ベクトル束の引き戻し
+\[\xymatrix{
+  Y\pb[X]TX
+  \ar[r]^-{f_{\tau}}
+  \ar[d]^-{\tau}
+  \ar@{}[dr]|\square
+  &
+  TX
+  \ar[d]^-{\tau}
+  \\
+  Y\ar[r]^-{f}&X
+}\]
+が定まる．\(f\)の微分を\(df\colon TY\to TX\)で表すとき，
+図式
+\[\xymatrix{
+  TY
+  \ar@/^1pc/[rrd]^-{df}
+  \ar@/_1pc/[rdd]_-{\tau}\\
+  &Y\pb[X]TX
+  \ar[r]^-{f_{\tau}}
+  \ar[d]^-{\tau}
+  \ar@{}[dr]|\square
+  &
+  TX
+  \ar[d]^-{\tau}
+  \\
+  &Y\ar[r]^-{f}&X
+}\]
+は可換である．
+したがって，引き戻しの普遍性から
+射\(f'\colon TY\to Y\mathbin{\times_{X}}TX\)がひきおこされ，
+\(df\)は\(df=f_{\tau}\circ f'\)と分解される．
+\[\xymatrix{
+  TY
+  \ar@/^2pc/[rr]^-{df}
+  \ar[r]^-{f'}
+  \ar[rd]_-{\tau}
+  &Y\pb[X]TX
+  \ar[r]^-{f_{\tau}}
+  \ar[d]^-{\tau}
+  \ar@{}[dr]|\square
+  &
+  TX
+  \ar[d]^-{\tau}
+  \\
+  &Y\ar[r]^-{f}&X
+}\]
+この図式を，ここだけの用語で，接束の基本図式とよぶことにする．
+
+\(\pi\colon T^{\ast}X\to X\)等を余接束とする．
+先と同様にベクトル束の引き戻し
+\[\xymatrix{
+  Y\pb[X]T^{\ast}X
+  \ar[r]^-{f_{\pi}}
+  \ar[d]^-{\pi}
+  \ar@{}[dr]|\square
+  &
+  T^{\ast}X
+  \ar[d]^-{\pi}
+  \\
+  Y\ar[r]^-{f}&X
+}\]
+が定まる．
+他方で，\(Y\)上の束の射\(
+  f'\colon TY\to Y\mathbin{\times_{X}}TX
+\)の双対射\(
+  f_{d}\coloneqq {}^{t\!}f'\colon Y\mathbin{\times_{X}}T^{\ast}X\to T^{\ast}Y
+\)が定まる．これにより，図式
+\[\xymatrix{
+  T^{\ast}Y
+  %\ar@/^2pc/[rr]^-{df}
+  \ar[rd]_-{\pi}
+  &
+  Y\pb[X]T^{\ast}X
+  \ar[l]_-{f_{d}}
+  \ar[r]^-{f_{\pi}}
+  \ar[d]^-{\pi}
+  \ar@{}[dr]|\square
+  &
+  T^{\ast}X
+  \ar[d]^-{\pi}
+  \\
+  &Y\ar[r]^-{f}&X
+}\]
+を得る．
+この図式を，ここだけの用語で，余接束の基本図式とよぶことにする．
+
+%\section{余接束のシンプレクティック構造}
+\subsection*{標準1形式}
+
+\eqref{eq:A.2.2}を射影\(\pi\colon \cotb[X]\to X\)に適用すると
+写像\(
+    \mdiff[\pi]\colon\cotb[X]\tpb[X]\cotb[X]\to\cotb[{\cotb[X]}]
+\)を得る．
+\begin{equation*}%\label{eq:cotcot}
+    \vcenter{\xymatrix{
+      T^{\ast}\cotb[X]
+      %\ar@/^2pc/[rr]^-{df}
+      \ar[rd]_-{\pi}
+      &
+      \cotb[X]\pb[X]\cotb[X]
+      \ar[l]_-{\pi_{d}}
+      \ar[r]^-{\pi_{\pi}}
+      \ar[d]^-{\pi}
+      \ar@{}[dr]|\square
+      &
+      \cotb[X]
+      \ar[d]^-{\pi}
+      \\
+      &\cotb[X]\ar[r]^-{\pi}&X
+}}\end{equation*}
+\(\cotb[X]\tpb[X]\cotb[X]\)の対角集合を\(
+    \varDelta
+\)とする．\(\varDelta\)と\(\cotb[X]\)を同一視した上で，
+\(\pi_{d}\)を\(\varDelta\)に制限することで
+\(\pi\colon\cotb[{\cotb[X]}]\to\cotb[X]\)の切断
+\[
+    \mres[\pi_{d}]{\varDelta}\colon
+    \cotb[X]
+    \cong\varDelta
+    \to\cotb[{\cotb[X]}]
+\]    
+が得られる．
+これを\(\cotb[X]\)の\textbf{標準1形式} (canonical 1-form) といい，
+\(\alpha_X\)で，あるいは混同する恐れのないときは\(\alpha\)で表す．
+
+\subsection*{標準1形式の座標表示}
+
+\((x;\xi)\)を\(\cotb[X]\)の局所座標とする．
+このとき，\(\alpha_X\)は
+\[
+    \alpha_{X}(x;\xi)=((x;\xi);\pi^{\ast}\xi)
+\]
+とかける．ここで，\[
+    \pi^{\ast}\xi\in T^{\ast}_{(x;\xi)}T^{\ast}X
+\]は\(T_{(x;\xi)}T^{\ast}X\)の基底\(
+    \frac{\partial}{\partial x_{1}},
+    \dots,
+    \frac{\partial}{\partial x_{n}},
+    \frac{\partial}{\partial \xi_{1}},
+    \dots,
+    \frac{\partial}{\partial \xi_{n}}
+\)に関して，
+\begin{align*}
+    \left\langle \pi^{\ast}\xi, \frac{\partial}{\partial x_{j}}\right\rangle
+    &=
+    \left\langle \xi, d\pi_{(x;\xi)}\frac{\partial}{\partial x_{j}}\right\rangle\\
+    &=
+    \left\langle \xi, \frac{\partial}{\partial x_{j}}\right\rangle,\\
+    \left\langle \pi^{\ast}\xi, \frac{\partial}{\partial \xi_{j}}\right\rangle
+    &=
+    \left\langle \xi, d\pi_{(x;\xi)}\frac{\partial}{\partial \xi_{j}}\right\rangle\\
+    &=
+    \left\langle \xi, 0\right\rangle=0
+\end{align*}
+をみたす．したがって，\(\alpha_X\)は基底\(dx_{1},\dots,dx_{n},d\xi_{1},\dots,d\xi_{n}\)を用いて，
+\[
+    \alpha_X
+    =\pi^{\ast}\left(
+        \sum_{j=1}^{n}\xi_{j}dx_{j}
+    \right)
+    =\sum_{j=1}^{n}\xi_{j}\pi^{\ast}dx_{j}
+    =\sum_{j=1}^{n}\xi_{j}dx_{j}
+\]
+と表せる．
+
+\subsection*{余接束上のシンプレクティック形式}
+以上で構成した\(\alpha_X\)に対し，\[\omega_X=d\alpha_X\]とおく．
+\(\omega_X\)は\(\cotb[X]\)上のシンプレクティック形式である．したがって，
+\((\cotb[X],\omega_X)\)はシンプレクティック多様体となる．
+
+\(\omega_X\)を座標表示すると，
+\[
+    \omega_X=d\alpha_{X}
+    =d\left(\sum_{j=1}^{n}\xi_{j}dx_{j}\right)
+    =\sum_{j=1}^{n}d(\xi_{j}dx_{j})
+    =\sum_{j=1}^{n}d\xi_{j}\wedge dx_{j}
+\]
+となる．
+
+\subsection*{部分多様体}
+
+\(\cotb[X]\)の部分多様体\(V\)が\textbf{等方的} (isotropic), 
+\textbf{ラグランジュ} (Lagarangian), \textbf{包合的} (involutive) 
+であるとは，
+各点\(p\)に対し，接空間\(T_{p}V\)がそれぞれ\(T_{p}\cotb[X]\)の
+等方的，ラグランジュ，包合的部分空間であることをいう．
+
+\subsection*{ハミルトンベクトル場}
+
+\(f\)を\(\cotb[X]\)の開集合\(U\)で定義された実関数とする．
+ハミルトン同型\(
+    H\colon \cotb[{\cotb[X]}]\cong T\cotb[X]
+\)による\(df\)の像\(H(df)\)を
+\(f\)の\textbf{ハミルトンベクトル場} (Hamiltonian vector field) といい，
+\(H_f\)で表す．
+すなわち，\(H_f\)は次をみたすベクトル場である．
+\[
+    \iota_{H_f}\omega=-df
+\]
+\begin{CMT*}
+    \eqref{eq:A.1.2}から
+    各ベクトル場\(v\)に対し
+    \[    
+        \inner<df,v>
+        =\omega(v,H_f)
+        =-\omega(H_f,v)
+    \]
+    となることから，
+    \[
+        -\inner<df,v>
+        =\omega(H_f,v)
+        =\iota_{H_f}\omega(v)
+    \]
+    が従う．
+\end{CMT*}
+
+\subsection*{ポアソン括弧}
+
+関数\(f\)と\(g\)の\textbf{ポアソン括弧} (Poisson bracket) を
+\begin{equation}\label{eq:A.2.3}
+    \{f,g\}=H_f(g)=\omega(H_f,H_g)
+\end{equation}
+で定める．
+次の関係がなりたつ．
+\begin{equation}
+    \begin{dcases}
+        \{f,g\}=-\{g,f\},\\
+        \{f,hg\}=h\{g,f\}+g\{f,h\},\\
+        \{\{f,g\},h\}+\{\{g,h\},f\}+\{\{h,f\},g\}=0.
+    \end{dcases}
+\end{equation}
+\begin{proof}
+    1つ目の等式：    
+    \[
+        \{f,g\}=\omega(H_f,H_g)=-\omega(H_g,H_f)=-\{g,f\}.
+    \]
+    2つ目の等式：    
+    \begin{align*}
+        h\{g,f\}+g\{f,h\}
+        &=h\omega(H_g,H_f)+g\omega(H_f,H_h)\\
+        &=h\omega(H_g,H_f)-g\omega(H_h,H_f)\\
+        &=\omega(hH_g,H_f)+\omega(-gH_h,H_f)\\
+        &=\omega(hH_g-gH_h,H_f)\\
+        &=\omega(H_f,H_{hg})\\
+        &=\{f,hg\}.
+    \end{align*}
+    3つ目の等式：
+    \begin{align*}
+        &\{\{f,g\},h\}+\{\{g,h\},f\}+\{\{h,f\},g\}\\
+        =&\omega(H_{\omega(H_f,H_g)},H_h)
+    \end{align*}
+\end{proof}
+とくに\([H_f,H_g]=H{\{f,g\}}\)である．
+ただし，\([u,v]=uv-vu\)はベクトル場の交換子を表す．
+
+\begin{equation}
+    H_f=\sum_{j=1}^{n}\left(
+        \frac{\partial f}{\partial\xi_j}
+        \frac{\partial }{\partial x_j}
+        -
+        \frac{\partial f}{\partial x_j}
+        \frac{\partial }{\partial\xi_j}
+    \right)
+\end{equation}
+
+\begin{EG}
+    \(Z\)を\(X\)の部分多様体とする．
+    \(Z\tpb[X]\cotb[X]\)は\(\cotb[X]\)の包合的部分多様体であり，
+    \(\conm[Z]{X}\)は\(\cotb[X]\)のラグランジュ部分多様体である．
+    \(Z=X\)の極端な場合を考えるとラグランジュ部分多様体として
+    \(\cotb[X]\)の零切断\(\conm[X]{X}\)を得る．
+\end{EG}
+
+\subsection*{斉次シンプレクティック構造}
+\(\cotb[X]\)上の1形式\(\alpha\)は
+シンプレクティック多様体の構造よりも豊かな構造をひきおこす．
+以下，\(\cotb[X]\)における
+この\textbf{斉次シンプレクティック構造} (homogeneous 
+symplectic structure) について述べる．
+
+\(H(\alpha)\)をハミルトン同形による\(\alpha\)の像とする．
+\((x;\xi)\)をシンプレクティック座標とすると，
+\begin{equation}
+    \alpha=\sum_{j}^{}\xi_{j}dx_{j},
+    \quad
+    H(\alpha)=-\sum_{j}^{}\xi_{j}\frac{\partial}{\partial \xi_{j}},
+\end{equation}
+である．したがって，\(-H(\alpha)\)は
+ベクトル束\(\cotb[X]\)上の
+ 放射状ベクトル場 (radial vector field) （すなわち，
+\(\cotb[X]\)への\(\rrp\)作用の無限小生成元）に他ならない．
+このベクトル場を\textbf{オイラーベクトル場} (Euler vector field) ともいう．
+
+\(\cotb[X]\)の部分集合\(S\)が\textbf{錐的} (conic) であるとは，
+\(S\)が\(\rrp\)不変であることをいう．
+\(S\)が\textbf{局所錐的} (locally conic) であるとは，
+\(S\)が局所的に\(\rrp\)不変であることをいう．
+すなわち任意の\(\rrp\)軌道との共通部分がその軌道の中で開集合であるとき
+\(S\)は局所錐的である\footnote{
+    開いたアニュラスとかか．
+}．
+\(\cotb[X]\)の開集合\(U\)で定義された関数\(f\)が斉次であるとは
+\(f\)がある\(k\in\cc\)に対して微分方程式
+\[
+    H(\alpha)f=kf
+\]をみたすことをいう．
+\begin{CMT*}
+    \(X=\rr^2\)で\(U=\rr^2\times\rr^2\)のとき
+    \[
+        \left(
+            -\xi_1\frac{\partial}{\partial \xi_{1}}
+            -\xi_2\frac{\partial}{\partial \xi_{2}}
+        \right)f=kf
+    \]
+    という方程式になる．
+    \(f(x,\xi)=\left|\xi\right|^2=\xi_{1}^{2}+\xi_{2}^{2}\)とすると，
+    \begin{align*}
+        \left(
+            -\xi_1\frac{\partial}{\partial \xi_{1}}
+            -\xi_2\frac{\partial}{\partial \xi_{2}}
+        \right)f
+        &=\left(
+            -\xi_1\frac{\partial \left|\xi\right|^2}{\partial \xi_{1}}
+            -\xi_2\frac{\partial \left|\xi\right|^2}{\partial \xi_{2}}
+        \right)\\
+        &=-\xi_1\cdot 2\xi_1-\xi_2\cdot 2\xi_2\\
+        &=-2(\xi_1^2+\xi_2^2)=-2 \left|\xi\right|^2
+    \end{align*}
+    であり，\(k=-2\)に関して微分方程式をみたす．
+    したがって\(f\)は斉次関数である．
+\end{CMT*}
+
+部分多様体\(V\)が局所錐状となるのは，
+\(H(\alpha)\)が\(V\)に接しているときであり，
+\(V\)が局所的に斉次方程式\footnote{
+    斉次関数\(=0\)という方程式のことだと思う．
+}で定義されるときである．
+
+\(v\in T\cotb[X]\)に対し
+\(\inner<\alpha,v>=\omega(v,H(\alpha))\)から，
+局所錐状部分多様体\(V\)が等方的となるのは，
+\(\mres[\alpha]{V}\equiv0\)となるときである．
+
+局所錐状包合的部分多様体\(V\)が\textbf{正則} (regular) であるとは，
+\(\mres[\alpha]{V}\)がいたるところ\(0\)にならないことをいう．
+これは\(r=\codim V\)とするとき，
+\(V\)上で\(0\)になる斉次関数\(f_1,\dots,f_r\)で
+\begin{equation}
+    \begin{dcases}
+        \text{\(V\)上で任意の\(i,j\in\{1,\dots,r\}\)に対し} \{f_i,f_j\}=0,\\
+        \text{\(V\)上で} df_1\wedge\dots\wedge df_r\wedge \alpha\ne0
+    \end{dcases}
+\end{equation}
+となるものが局所的に存在することと同値である．
+
+\begin{EG}
+    \(Z\)を\(X\)の部分多様体とする．
+    このとき\(Z\tpb[X]\cotb[X]\)は\(\conm[Z]{X}\)の外側で正則包合的である．
+\end{EG}
+
+\begin{CNV}
+    この付録においては，
+    とくに断らないかぎり，
+    \(\cotb[X]\)の部分多様体はすべて局所錐状とする．
+\end{CNV}
+
+\(p\)においてオイラーベクトル場の生成する\(T_p\cotb[X]\)の部分線形空間
+を\(\rho(p)\)で表す．
+\(p\in\conm[X]{X}\)ならば\(\rho(p)=\left\{0\right\}\)であり，
+それ以外のときは\(\rho(p)\)は直線である．
+
+\begin{CMT*}
+    \(X=S^1\)のとき，\(\cotb[S^1]\cong S^1\times \rr\)である．
+    \(p=(0,1)\in \cotb[S^1]\)とすると，
+    \[
+        \rho(p)
+        =\left\{
+            \xi\left(\frac{\partial}{\partial \xi}\right)_{p}
+            ;\xi\in\rr
+        \right\}
+    \]
+    つまり円筒\(S^1\times \rr\)の1点\(p\)を通り，\(\rr\)成分と平行な直線が\(\rho(p)\)ということである．
+\end{CMT*}
+
+\(V\)が（局所錐状）部分多様体のとき，各点\(p\in V\)において，
+\(T_pV\)は\(\rho(p)\)を含む．\(p\in\cotb[X]\)とする．
+この\(p\)に対し\begin{equation}
+    \lambda_{0}(p)\coloneqq T_{p}\pi^{-1}\pi(p)
+\end{equation}とおく．
+これは\(T_{p}\cotb[X]\)のラグランジュ部分空間である．
+
+\(\varLambda\)をラグランジュ部分多様体とする．
+\textbf{余階数} (corank) とは
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{慣性指数}\label{sec:A.3}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\section{aa}
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    \bibitem[Ar78]{Ar78} Arnold
+    \bibitem[AM78]{AM78} Abraham, Marsden
+    \bibitem[Dui73]{Dui73} Duistermaat
+    \bibitem[Hor85]{Hor85} H\"ormander
+    \bibitem[LV80]{LV80} Lion, Vergne
+\end{thebibliography}
+
+%===============================================
+
+
+
+
+\end{document}
