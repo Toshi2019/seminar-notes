@@ -659,7 +659,7 @@
     \(X\)を多様体，\(M\)を\(X\)の部分多様体とし，
     \((x)=(x',x'')\)を\(M=\{x'=0\}\)をみたす局所座標とする．
     それに対応する\(\cotb[X]\)の局所座標を\((x',x'';\xi',\xi'')\)で表す．
-    \(A\)を\(\cotb[X]\)の錐的集合とする．
+    \(A\)を\(\cotb[X]\)の錐状集合とする．
     \begin{enumerate}[(i)]
         \item \(\mpb[p]\mdiff[p]^{-1}\wncone[{\conm[M]{X}}](A)=\cotb[M]\cap \wncone[{\conm[M]{X}}](A)\)
         \item \((x''_{\circ};\xi''_{\circ})
@@ -692,7 +692,7 @@
     \in \norb[{\conm[M]{X}}]{\cotb[X]}
 \)が法錐\(\wncone[{\conm[M]{X}}](A)\)に属するためには，
 \(A\times\rrp\)の点列\[
-    \left(\left(x_n',x_n'';\xi'_n,\xi''_n\right),c_n\right)_n
+    \left(x_n',x_n'';\xi'_n,\xi''_n,c_n\right)_n
 \]で\[\begin{dcases}
     \text{\(\conm[M]{X}\)で } (0,x_n'',\xi_n',0)\underset{n}{\to} (0,x_0'',\xi_0',0),\\
     \text{\(\conm[M]{X}\)の法ベクトルとして } c_n(x_n',0,0,\xi_n'')\underset{n}{\to} (x_0',0,0,\xi_0'')
@@ -701,7 +701,7 @@
 
 \begin{proof}
     (i) 
-    まず，\(\wncone[{\conm[M]{X}}](A)\)が2重錐的 (biconic) であることを示す．
+    まず，\(\wncone[{\conm[M]{X}}](A)\)が2重錐状 (biconic) であることを示す．
     \(
         (0,x_0'',\xi_0',0;x_0',0,0,\xi_0'')
         \in \norb[{\conm[M]{X}}]{\cotb[X]}
@@ -729,7 +729,7 @@
     \((0,x_0'',\xi_0',0;x_0',0,0,\xi_0'')\in\wncone[{\conm[M]{X}}](A)\)
     とする．このとき，\(A\times\rrp\)の点列\(
         \left(
-            \left(x_n',x_n'';\xi'_n,\xi''_n\right),
+            x_n',x_n'';\xi'_n,\xi''_n,
             c_n
         \right)_n
     \)で\begin{align*}
@@ -748,7 +748,7 @@
         \tilde{c}_n=\lambda c_n
     \]
     とおくと，\(\left(
-        \left(\tilde{x}_n',\tilde{x}_n'';\tilde{\xi}'_n,\tilde{\xi}''_n\right),
+        \tilde{x}_n',\tilde{x}_n'';\tilde{\xi}'_n,\tilde{\xi}''_n,
         \tilde{c}_n
     \right)_n\)は\(A\times \rrp\)の点列であり，
     \begin{align*}
@@ -773,7 +773,7 @@
         \check{c}_n=\frac{1}{\mu} c_n
     \]
     とおくと，\(A\)が錐状であることから\(\left(
-        \left(\check{x}_n',\check{x}_n'';\check{\xi}'_n,\check{\xi}''_n\right),
+        \check{x}_n',\check{x}_n'';\check{\xi}'_n,\check{\xi}''_n,
         \check{c}_n
     \right)_n\)は\(A\times \rrp\)の点列であり，
     \begin{align*}
