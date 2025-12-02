@@ -7,7 +7,7 @@
 % documentclass
 % ------------------------
 \documentclass[leqno, 10pt, a4paper, dvipdfmx]{jsarticle}
-\title{ゼミノート（10/08分）}
+\title{ゼミノート（11/13分）}
 \author{Toshi2019}
 \date{\today}
 
@@ -607,6 +607,8 @@
 
 \newcommand{\wncone}[1][]{C_{#1}} % Whitney normal cones
 
+\newcommand{\Exp}{\mathop{\mathrm{Exp}}\nolimits}
+
 % ----------------------------
 % documenet 
 % ----------------------------
@@ -617,194 +619,76 @@
 
 \begin{document}
 \maketitle
-\section{余接束における法錐}
-次の節では，いろいろな演算のもとでの超局所台の振る舞いを調べる．
-結果を定式化するために，
-余接束の錐状部分集合に対する新しい演算をいくつか定義しなければならない．
-その演算の構成には，第4章第1節で導入した「法錐」の概念と
-\(\cotb[X]\)のシンプレクティック構造 (cf.~Appendix) を用いる．
-\(X\)を多様体とする．\(\cotb[{\cotb[X]}]\)と\(T\cotb[X]\)をハミルトン同型
-\(H\)を用いて\(-H\)により同一視する．
-\((x)=(x_1,\dots,x_n)\)を\(X\)の局所座標系とし，
-\((x;\xi)\)をそれに対応する\(\cotb[X]\)の座標系とする．
 
 
+\section{完備Riemann多様体 ({\cite[sec.4.3]{今野13}})}
 
-以下の同一視をする．
-\[\xymatrix@C=20pt@R=10pt
-{
-    \cotb[{\norb[M]{X}}]
-        \ar@{<->}[r]^-{\varPhi_{\norb[M]{X}}}_-{\sim}
-    &
-    \cotb[{\conm[M]{X}}]
-        \ar@{<->}[r]^-{-H}_-{\sim}
-    &
-    \norb[{\conm[M]{X}}]{\cotb[X]}\\
-    (0,x'',x',0;0,\xi'',\xi',0)
-    &
-    (0,x'',\xi',0;0,\xi'',-x',0)
-    &
-    (0,x'',\xi',0;x',0,0,\xi'')
-}\]
-さらにこれらと\((x',x'';\xi',\xi'')\in \cotb[X]\)を同一視する．
+\((M,g)\)をRiemann多様体とする．
+以下，接続はすべてLevi-Civita接続とする．
 
-上の座標のもとで\(\cotb[{\conm[M]{X}}]\)には次の2通りの仕方で\(\rrp\)作用が定まる．
+\begin{DFN}
+    \((M,g)\)が完備であるとは，
+    \((M,d_{g})\)が距離空間として完備であることをいう．
+\end{DFN}
+
+\begin{leftbar}
+\begin{THM}
+    \((M,g)\)を連結な完備Riemann多様体とする．
+    \begin{enumerate}[(1)]
+        \item 次の条件は同値である．\label{cond:HR}
+        \begin{enumerate}[(a)]
+            \item \(p\in M\)で\(\Exp_{p}\)が\(T_{p}M\)全体で定義されるものが存在する．\label{item:HRa}
+            \item \(K\)が\((M,d_{g})\)の有界閉集合ならば，\(K\)はコンパクトである．\label{item:HRb}
+            \item \((M,g)\)は完備である．\label{item:HRc}
+            \item 任意の\(p\in M\)に対し，\(\Exp_{p}\)が\(T_{p}M\)全体で定義される\label{item:HRd}
+        \end{enumerate}
+        \item \eqref{cond:HR}の同値な条件が成り立つとき，
+        任意の\(p,q\in M\)に対し，
+        \(p\)と\(q\)を結ぶ最短測地線が存在する．
+    \end{enumerate}
+\end{THM}
+\end{leftbar}
+
+証明は次の順におこなう．
 \begin{itemize}
-    \item 余接空間への作用から定まるもの \((0,x'',\xi',0;0,\xi'',-x',0)\mapsto (0,x'',\xi',0;0,\lambda\xi'',\lambda(-x'),0)\)
-    \item 余法束への作用から定まるもの \((0,x'',\xi',0;0,\xi'',-x',0)\mapsto (0,x'',\mu\xi',0;0,\xi'',\mu^{-1}(-x'),0)\)
+    \item \eqref{item:HRa}\(\Rightarrow\)\eqref{item:HRb}（補題\ref{lmm4.3.2}を用いる．）
+    \item \eqref{item:HRb}\(\Rightarrow\)\eqref{item:HRc}（先週（11/6）やった．）
+    \item \eqref{item:HRc}\(\Rightarrow\)\eqref{item:HRd}
+    \item \eqref{item:HRd}\(\Rightarrow\)\eqref{item:HRa}（これは当たり前なので省略）
 \end{itemize}
 
-\begin{leftbar}
-\begin{LMM}[{\cite[lem.6.2.1]{KS90}}]
-    \(X\)を多様体，\(M\)を\(X\)の部分多様体とし，
-    \((x)=(x',x'')\)を\(M=\{x'=0\}\)をみたす局所座標とする．
-    それに対応する\(\cotb[X]\)の局所座標を\((x',x'';\xi',\xi'')\)で表す．
-    \(A\)を\(\cotb[X]\)の錐状集合とする．
-    \begin{enumerate}[(i)]
-        \item \(\mpb[p]\mdiff[p]^{-1}\wncone[{\conm[M]{X}}](A)=\cotb[M]\cap \wncone[{\conm[M]{X}}](A)\)
-        \item \((x''_{\circ};\xi''_{\circ})
-            \in \cotb[M]\cap \wncone[{\conm[M]{X}}](A)
-        \)となるのは，\(A\)の点列\[
-            \left(x'_n,x''_n;\xi'_n,\xi''_n\right)_n
-        \]で次の条件\eqref{eq:6.2.4}をみたすものが存在するときである．
-        \begin{equation}\label{eq:6.2.4}\tag{6.2.4}
-            \begin{dcases}
-                (x''_n;\xi''_n)\underset{n}{\to}(x''_{\circ};\xi''_{\circ}),\\
-                \left\lvert{x'_n}\right\rvert \underset{n}{\to} 0,\\
-                \left\lvert{x'_n}\right\rvert \left\lvert{\xi'_n}\right\rvert \underset{n}{\to} 0.
-            \end{dcases}
-        \end{equation}
-        \item \((x''_{\circ};\xi''_{\circ})
-            \in \mpb[{\dot{p}}]\mdiff[{\dot{p}}]^{-1}\wncone[{\conmn[M]{X}}](A)
-        \)となるのは，\(A\)の点列\[
-            \left(x'_n,x''_n;\xi'_n,\xi''_n\right)_n
-        \]で\eqref{eq:6.2.4}に加え
-        \begin{equation}\label{eq:6.2.5}\tag{6.2.5}
-            \left\lvert{\xi'_n}\right\rvert \underset{n}{\to} +\infty
-        \end{equation}
-        をみたすものが存在するときである．
-    \end{enumerate}
+\begin{LMM}\label{lmm4.3.2}
+    \((M,g)\)を連結な完備Riemann多様体とする．
+    \(p\in M\)に対し，\(\Exp_{p}\)が\(T_{p}M\)全体で定義されるとする．
+    このとき，任意の\(q\in M\)に対し\(v\in T_{p}M\)で\[
+        c_{(p,v)}(t)=\Exp_{p}(t,v)\quad (t\in[0,1])
+    \]が\(p\)と\(q\)を結ぶ最短線となるものが存在する．
 \end{LMM}
-\end{leftbar}
-
-命題 \ref{prp4.1.2}より，\(
-    (0,x_0'',\xi_0',0;x_0',0,0,\xi_0'')
-    \in \norb[{\conm[M]{X}}]{\cotb[X]}
-\)が法錐\(\wncone[{\conm[M]{X}}](A)\)に属するためには，
-\(A\times\rrp\)の点列\[
-    \left(x_n',x_n'';\xi'_n,\xi''_n,c_n\right)_n
-\]で\[\begin{dcases}
-    \text{\(\conm[M]{X}\)で } (0,x_n'',\xi_n',0)\underset{n}{\to} (0,x_0'',\xi_0',0),\\
-    \text{\(\conm[M]{X}\)の法ベクトルとして } c_n(x_n',0,0,\xi_n'')\underset{n}{\to} (x_0',0,0,\xi_0'')
-\end{dcases}\]
-をみたすものが存在することが必要十分である．
-
-\begin{proof}
-    (i) 
-    まず，\(\wncone[{\conm[M]{X}}](A)\)が2重錐状 (biconic) であることを示す．
-    \(
-        (0,x_0'',\xi_0',0;x_0',0,0,\xi_0'')
-        \in \norb[{\conm[M]{X}}]{\cotb[X]}
-    \)であるとする．
-    これを\(\cotb[{\conm[M]{X}}]\)の点
-    \(
-        (0,x_0'',\xi_0',0;0,\xi_0'',-x_0',0)
-        \in \cotb[{\conm[M]{X}}]
-    \)とみなす．このとき，
-    \((0,x_0'',\xi_0',0;x_0',0,0,\xi_0'')\in\wncone[{\conm[M]{X}}](A)\)
-    ならば，
-    \[
-        (0,x_0'',\xi_0',0;0,\lambda\xi_0'',\lambda(-x_0'),0)
-        \leftrightarrow
-        (0,x_0'',\xi_0',0;\lambda x_0',0,0,\lambda\xi_0'')
-        \in\wncone[{\conm[M]{X}}](A)
-    \]かつ
-    \[
-        (0,x_0'',\mu\xi_0',0;0,\xi_0'',\frac{1}{\mu}(-x_0'),0)
-        \leftrightarrow
-        (0,x_0'',\mu\xi_0',0;\frac{1}{\mu}x_0',0,0,\xi_0'')
-        \in\wncone[{\conm[M]{X}}](A)
-    \]であることを示せばよい．
-
-    \((0,x_0'',\xi_0',0;x_0',0,0,\xi_0'')\in\wncone[{\conm[M]{X}}](A)\)
-    とする．このとき，\(A\times\rrp\)の点列\(
-        \left(
-            x_n',x_n'';\xi'_n,\xi''_n,
-            c_n
-        \right)_n
-    \)で\begin{align*}
-        (0,x_n'',\xi_n',0)
-        \underset{n}{\to} (0,x_0'',\xi_0',0),\\
-        c_n(x_n',0,0,\xi_n'')
-        \underset{n}{\to} (x_0',0,0,\xi_0'')
-    \end{align*}
-    をみたすものが存在する．
-    \(\lambda>0\)を実数とする．
-    この点列に対し，\[
-        \left(\tilde{x}_n',\tilde{x}_n'';\tilde{\xi}'_n,\tilde{\xi}''_n\right)
-        =
-        \left(x_n',x_n'';\xi'_n,\xi''_n\right),
-        \quad
-        \tilde{c}_n=\lambda c_n
-    \]
-    とおくと，\(\left(
-        \tilde{x}_n',\tilde{x}_n'';\tilde{\xi}'_n,\tilde{\xi}''_n,
-        \tilde{c}_n
-    \right)_n\)は\(A\times \rrp\)の点列であり，
-    \begin{align*}
-        (0,\tilde{x}_n'',\tilde{\xi}_n',0)
-        &=(0,x_n'',\xi_n',0)\\
-        &\to(0,x_0'',\xi_0',0),\\
-        \tilde{c}_n(\tilde{x}_n',0,0,\tilde{\xi}_n'')
-        &=(\lambda c_n x_n',0,0,\lambda c_n \xi_n'')\\
-        &\to(\lambda x_0',0,0,\lambda\xi_0'')
-    \end{align*}
-    である．したがって，
-    \(
-        (0,x_0'',\xi_0',0;\lambda x_0',0,0,\lambda\xi_0'')
-        \in\wncone[{\conm[M]{X}}](A)
-    \)である．
-
-    次に，\(\mu>0\)を実数とし，\[
-        \left(\check{x}_n',\check{x}_n'';\check{\xi}'_n,\check{\xi}''_n\right)
-        =
-        \left(x_n',x_n'';\mu\xi'_n,\mu\xi''_n\right),
-        \quad 
-        \check{c}_n=\frac{1}{\mu} c_n
-    \]
-    とおくと，\(A\)が錐状であることから\(\left(
-        \check{x}_n',\check{x}_n'';\check{\xi}'_n,\check{\xi}''_n,
-        \check{c}_n
-    \right)_n\)は\(A\times \rrp\)の点列であり，
-    \begin{align*}
-        (0,\check{x}_n'',\check{\xi}_n',0)
-        &=(0,x_n'',\mu\xi_n',0)\\
-        &\to(0,x_0'',\mu\xi_0',0),\\
-        \check{c}_n(\check{x}_n',0,0,\check{\xi}_n'')
-        &=\left(\frac{1}{\mu}c_n x_n',0,0,\frac{1}{\mu}c_n\cdot \mu\xi_n''\right)\\
-        &=\left(\frac{1}{\mu}c_n x_n',0,0,c_n\xi_n''\right)\\&\to\left(\frac{1}{\mu} x_0',0,0,\xi_0''\right)
-    \end{align*}
-    である．よって\(
-        (0,x_0'',\mu\xi_0',0;\mu^{-1}x_0',0,0,\xi_0'')
-        \in\wncone[{\conm[M]{X}}](A)
-    \)である．
-\end{proof}
-
 \appendix
-\section*{本編で用いる命題}
-\begin{leftbar}
-\begin{PRP}[{\cite[Prop. 4.1.2]{KS90}}]\label{prp4.1.2}
-    (ii) 
-    \((x)=(x',x'')\)を\(X\)の局所座標系とし，
-    \(M=\left\{x;x'=0\right\}\)とする．
-    \(S\)を\(X\)の部分集合とする．
-    \(x_{\circ}=(0,x''_{\circ})\in M\), 
-    \((x''_{\circ};v_{\circ})\in \norb[M]{X}\)とする．
-    このとき，
-    \((x_{\circ};v_{\circ})\in\wncone[M](S)\)となるのは，
-    \(S\times \rrp\)の点列で，\(x_n=(x'_n;x''_n)\)とおくとき，\(x_n\underset{n}{\to}x_{\circ}\), \(c_nx'_n\underset{n}{\to}v_\circ\)をみたすものが存在するときである．
-\end{PRP}
-\end{leftbar}
+\section{本編で使う主張}
+\begin{THM}[{\cite[定理4.2.1]{今野13}}]
+    \(p\in M\)と実数\(r>0\)に対し\[
+        V_{r}(p)\coloneqq 
+        \left\{v\in T_{p}M;\left|v\right|<r\right\}
+    \]とする．
+
+    (2) 
+    任意の\(p\in M\)に対し，\(\delta>0\)で\begin{align*}
+        \Exp_{p}(V_{\delta}(p))\subset M: \text{open}\\
+        \mres[\Exp_{p}]{V_{\delta}(p)}\colon V_{\delta}(p)\to \Exp_{p}(V_{\delta}(p)): \text{diffeo.}
+    \end{align*}
+    となるものが存在する．
+
+    (3) 
+    \(K\)を\(M\)のコンパクト集合とする．(2)の\(\delta>0\)は一様にとれる．
+
+    (5) 
+    \(B_{r}(p)\coloneqq \Exp_{p}(V_{r}(p))\)とする．
+    \(\delta\)を(2)の条件をみたすものとする．
+    このとき，実数\(\delta>r>0\)で\[
+        B_{r}(p)= \Exp_{p}(V_{r}(p))
+    \]をみたすものが存在する．
+\end{THM}
 %\section{aa}
 %===============================================
 % 参考文献スペース

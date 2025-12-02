@@ -1,15 +1,25 @@
 %=====================================
-%   20250802.tex
-%   20250802 
+%   truncated-ss.tex
+%   Microlocal Morse Theory and Truncated Microsupport 
 %   toshi2019
 %=====================================
+
+% -----------------------
+% preamble
+% -----------------------
+% ここから本文 (\begin{document}) までの
+% ソースコードに変更を加えた場合は
+% 編集者まで連絡してください. 
+% Don't change preamble code yourself. 
+% If you add something
+% (usepackage, newtheorem, newcommand, renewcommand),
+% please tell it 
+% to the editor of institutional paper of RUMS.
+
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[leqno, 10pt, a4paper, dvipdfmx]{jsarticle}
-\title{ゼミノート（10/08分）}
-\author{Toshi2019}
-\date{\today}
+\documentclass[10pt, a4paper, dvipdfmx]{article}
 
 % ------------------------
 % usepackage
@@ -41,7 +51,7 @@
 
 \usetikzlibrary{cd}
 \usetikzlibrary{arrows.meta}
-\usetikzlibrary{calc}
+
 
 % ================================
 % パッケージを追加する場合のスペース 
@@ -192,10 +202,9 @@
 
 
 % 圏の記号など
-\newcommand{\Set}{\mathsf{Set}}
-\newcommand{\Vect}{\mathsf{Vect}}
-\newcommand{\FDVect}{\mathsf{FDVect}}
-%\newcommand{\FDVect}{{\bf FDVect}}
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
 %\newcommand{\Ring}{{\bf Ring}}
 \newcommand{\Ab}{{\bf Ab}}
 \newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
@@ -256,7 +265,7 @@
 }
 \makeatother
 
-\renewcommand{\proofname}{証明.}
+\renewcommand{\proofname}{Proof.}
 
 
 
@@ -291,7 +300,7 @@
 \newcommand{\colim}{\mathop{\mathrm{colim}}}
 \newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
 
-\newcommand{\cat}{\mathcal{C}}
+\newcommand{\cat}{\mathscr{C}}
 
 %筆記体
 \newcommand{\cA}{\mcal{A}}
@@ -379,7 +388,6 @@
 \newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
 \newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
 \newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
-\newcommand{\Dbconic}{\mathop{\mathsf{D}^\mathrm{b}_{\rrp}}\nolimits}
 \newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
 \newcommand{\Domplb}{\mathop{\mathsf{D}^\mathrm{lb}}\nolimits}
 
@@ -389,11 +397,11 @@
 \newcommand{\CCat}{\Comp(\cat)}
 \newcommand{\KCat}{\Komp(\cat)}
 \newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
-%\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
-\newcommand{\HOM}{\mathop{\mathcal{H}\hspace{-0pt}om}\nolimits}%内部Hom
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
 \newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
 
-\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+%\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\muS}[1][]{\mathop{\mathrm{SS}}\nolimits_{#1}}
 \newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
 \newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
 \newcommand{\Rder}{\mathrm{R}}
@@ -414,8 +422,7 @@
 \newcommand{\Sh}{\mathrm{Sh}}
 \newcommand{\PSh}{\mathrm{PSh}}
 
-\newcommand{\rmD}{\mathsf{D}}
-\newcommand{\vD}{\mathbf{D}}
+\newcommand{\rmD}{\mathrm{D}}
 
 \newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
 \newcommand{\ori}{\mathord{\mathrm{or}}}
@@ -433,8 +440,7 @@
 \newcommand{\etens}{\mathbin{\boxtimes}}
 \newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
 \newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
-\newcommand{\lltens}[1][]{\mathbin{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}}
-\newcommand{\lletens}[1][]{\mathbin{{\mathop{\boxtimes}\limits^{\mathrm{L}}_{#1}}}}
+\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
 \newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
 \newcommand{\detens}{\underline{\etens}}
 \newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
@@ -461,19 +467,9 @@
 \newcommand{\dsum}[1][]{\mathbin{\oplus_{#1}}}
 
 \newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
-%Yoneda embedding
-\newcommand{\yoneda}[1][]{\mathrm{h}_{#1}}
-\newcommand{\coyoneda}[1][]{\mathrm{k}_{#1}}
-%presheaf category
-\newcommand{\precat}[1][]{{#1}^{\wedge}}
-\newcommand{\coprecat}[1][]{{#1}^{\vee}}
 
 \newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
-\newcommand{\dpb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
-\newcommand{\tpb}[1][]{\mathbin{\mathop{\times}\nolimits_{#1}}}
 
-\newcommand{\eu}{\mathbf{e}} % the Euler vector field
-\newcommand{\rrp}{\rr^{+}} % positive real numbers
 
 
 
@@ -499,7 +495,6 @@
 \newtheorem*{THM*}{定理}
 \newtheorem{PRP}[AXM]{命題}
 \newtheorem{LMM}[AXM]{補題}
-\newtheorem{CNJ}[AXM]{予想}
 \newtheorem{CRL}[AXM]{系}
 \newtheorem{EG}[AXM]{例}
 \newtheorem*{EG*}{例}
@@ -556,8 +551,6 @@
 \newcommand{\bd}{\mathord{\partial}}
 \newcommand{\Fr}[1][]{\mathop{\mathrm{Fr}}\nolimits_{#1}}
 
-\newcommand{\dom}[1][]{\mathop{\mathrm{dom}}\nolimits_{#1}}
-
 
 \newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
 \newcommand{\mtp}[1][]{{}^{t\!}{#1}} % transpose of the morphism
@@ -565,9 +558,6 @@
 \newcommand{\mpb}[1][]{{#1}_{\pi}} % pull-back of the morphism
 \newcommand{\mdiff}[1][]{{#1}_{d}} % pull-back of the morphism
 \newcommand{\mptan}[1][]{{#1}_{\tau}} % pull-back of the morphism
-
-\newcommand{\muinv}[1][]{{#1}_{\mu}^{-1}} % microlocal pull-back of the morphism
-\newcommand{\muexinv}[1][]{{#1}_{\mu}^{!}} % microlocal exceptional pull-back of the morphism
 
 
 %\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
@@ -579,7 +569,6 @@
 \newcommand{\cotz}[1][]{T^{\ast}_{#1}{#1}}
 
 \newcommand{\cotn}[1][]{\dot{T}^{\ast}{#1}}
-\newcommand{\conmn}[2][]{\dot{T}_{#1}^{\hspace{0.7pt}\ast}{#2}}
 
 
 \newcommand{\muhom}{\mu hom}
@@ -590,23 +579,6 @@
 
 \newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
 
-\newcommand{\torus}{\mathbf{T}}
-
-\newcommand{\diag}[1][]{\Delta_{#1}}
-%  \[\mu_{\Delta_{Y}}\mathrm{R}\mathcal{H}om(G,F)\]
-\newcommand{\micro}[1]{\mu_{#1}\hspace{0pt}}
-
-\newcommand{\qis}{\stackrel{\text{qis}}{\sim}}%同型右矢印
-
-\newcommand{\Dlcon}{\mathop{\mathsf{D}^{+}_{\rr_{>0}}}\nolimits}
-%\newcommand{\Dlcon}{\mathop{\mathsf{D}^{+}_{\rr^+}}\nolimits}
-\newcommand{\Dbcon}{\mathop{\mathsf{D}^{\mathrm{b}}_{\rr^+}}\nolimits}
-
-\newcommand{\hfun}[1][]{\mathcal{B}_{#1}} % hyperfunctions
-\newcommand{\mfun}[1][]{\mathcal{C}_{#1}} % microfunctions
-
-\newcommand{\wncone}[1][]{C_{#1}} % Whitney normal cones
-
 % ----------------------------
 % documenet 
 % ----------------------------
@@ -615,204 +587,174 @@
 % begin document and end document.
 % ---------------------------
 
+\title{Microlocal Morse Theory and Truncated Microsupport}
+\author{Toshi2019}
+\date{\today\footnote{2025/03/09 first draft}}
 \begin{document}
 \maketitle
-\section{余接束における法錐}
-次の節では，いろいろな演算のもとでの超局所台の振る舞いを調べる．
-結果を定式化するために，
-余接束の錐状部分集合に対する新しい演算をいくつか定義しなければならない．
-その演算の構成には，第4章第1節で導入した「法錐」の概念と
-\(\cotb[X]\)のシンプレクティック構造 (cf.~Appendix) を用いる．
-\(X\)を多様体とする．\(\cotb[{\cotb[X]}]\)と\(T\cotb[X]\)をハミルトン同型
-\(H\)を用いて\(-H\)により同一視する．
-\((x)=(x_1,\dots,x_n)\)を\(X\)の局所座標系とし，
-\((x;\xi)\)をそれに対応する\(\cotb[X]\)の座標系とする．
+%\tableofcontents
+%\tableofcontents
+\section*{Preface}
+In these notes, 
+We study microlocal Morse theory, which is developed by
+Guillermou, Kashiwara, and Schapira in \cite{GKS12}, 
+but replace microsupports with
+truncatd microsupprts introduced by 
+Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KMS03}.
 
+\section{Truncated Microsupport}
 
-
-以下の同一視をする．
-\[\xymatrix@C=20pt@R=10pt
-{
-    \cotb[{\norb[M]{X}}]
-        \ar@{<->}[r]^-{\varPhi_{\norb[M]{X}}}_-{\sim}
-    &
-    \cotb[{\conm[M]{X}}]
-        \ar@{<->}[r]^-{-H}_-{\sim}
-    &
-    \norb[{\conm[M]{X}}]{\cotb[X]}\\
-    (0,x'',x',0;0,\xi'',\xi',0)
-    &
-    (0,x'',\xi',0;0,\xi'',-x',0)
-    &
-    (0,x'',\xi',0;x',0,0,\xi'')
-}\]
-さらにこれらと\((x',x'';\xi',\xi'')\in \cotb[X]\)を同一視する．
-
-上の座標のもとで\(\cotb[{\conm[M]{X}}]\)には次の2通りの仕方で\(\rrp\)作用が定まる．
-\begin{itemize}
-    \item 余接空間への作用から定まるもの \((0,x'',\xi',0;0,\xi'',-x',0)\mapsto (0,x'',\xi',0;0,\lambda\xi'',\lambda(-x'),0)\)
-    \item 余法束への作用から定まるもの \((0,x'',\xi',0;0,\xi'',-x',0)\mapsto (0,x'',\mu\xi',0;0,\xi'',\mu^{-1}(-x'),0)\)
-\end{itemize}
-
-\begin{leftbar}
-\begin{LMM}[{\cite[lem.6.2.1]{KS90}}]
-    \(X\)を多様体，\(M\)を\(X\)の部分多様体とし，
-    \((x)=(x',x'')\)を\(M=\{x'=0\}\)をみたす局所座標とする．
-    それに対応する\(\cotb[X]\)の局所座標を\((x',x'';\xi',\xi'')\)で表す．
-    \(A\)を\(\cotb[X]\)の錐状集合とする．
+\begin{Definition+}
     \begin{enumerate}[(i)]
-        \item \(\mpb[p]\mdiff[p]^{-1}\wncone[{\conm[M]{X}}](A)=\cotb[M]\cap \wncone[{\conm[M]{X}}](A)\)
-        \item \((x''_{\circ};\xi''_{\circ})
-            \in \cotb[M]\cap \wncone[{\conm[M]{X}}](A)
-        \)となるのは，\(A\)の点列\[
-            \left(x'_n,x''_n;\xi'_n,\xi''_n\right)_n
-        \]で次の条件\eqref{eq:6.2.4}をみたすものが存在するときである．
-        \begin{equation}\label{eq:6.2.4}\tag{6.2.4}
-            \begin{dcases}
-                (x''_n;\xi''_n)\underset{n}{\to}(x''_{\circ};\xi''_{\circ}),\\
-                \left\lvert{x'_n}\right\rvert \underset{n}{\to} 0,\\
-                \left\lvert{x'_n}\right\rvert \left\lvert{\xi'_n}\right\rvert \underset{n}{\to} 0.
-            \end{dcases}
-        \end{equation}
-        \item \((x''_{\circ};\xi''_{\circ})
-            \in \mpb[{\dot{p}}]\mdiff[{\dot{p}}]^{-1}\wncone[{\conmn[M]{X}}](A)
-        \)となるのは，\(A\)の点列\[
-            \left(x'_n,x''_n;\xi'_n,\xi''_n\right)_n
-        \]で\eqref{eq:6.2.4}に加え
-        \begin{equation}\label{eq:6.2.5}\tag{6.2.5}
-            \left\lvert{\xi'_n}\right\rvert \underset{n}{\to} +\infty
-        \end{equation}
-        をみたすものが存在するときである．
+        \item Let \(F\in\Dompb(\kk_X)\). 
+        The closed conic subset \(\muS[k](F)\) of \(\cotb[X]\) 
+        is defined by: \(p\notin \muS[k](F)\) 
+        if and only if \(F\) satisfies 
+        the equivalent conditions in Prop.
+        \item aa
     \end{enumerate}
-\end{LMM}
-\end{leftbar}
+\end{Definition+}
 
-命題 \ref{prp4.1.2}より，\(
-    (0,x_0'',\xi_0',0;x_0',0,0,\xi_0'')
-    \in \norb[{\conm[M]{X}}]{\cotb[X]}
-\)が法錐\(\wncone[{\conm[M]{X}}](A)\)に属するためには，
-\(A\times\rrp\)の点列\[
-    \left(x_n',x_n'';\xi'_n,\xi''_n,c_n\right)_n
-\]で\[\begin{dcases}
-    \text{\(\conm[M]{X}\)で } (0,x_n'',\xi_n',0)\underset{n}{\to} (0,x_0'',\xi_0',0),\\
-    \text{\(\conm[M]{X}\)の法ベクトルとして } c_n(x_n',0,0,\xi_n'')\underset{n}{\to} (x_0',0,0,\xi_0'')
-\end{dcases}\]
-をみたすものが存在することが必要十分である．
+\section{Results}
+
+\begin{Proposition+}
+  Let \(F\) in \(\Dompb(\kk_M)\), and 
+  \(\psi\colon M\to \rr\) be a real-valued function of 
+  class \(C^1\), 
+  proper on \(\supp(F)\). 
+  Let \(a<b\) be real numbers.
+  We assume \(d\psi(x)\notin \muS[k](F)\) for \(
+    a\leqq \psi(x)<b
+  \). For \(t\in \rr\), we set \(
+    M_t\coloneqq\psi^{-1}\left(]-\infty,t[\right)
+  \). 
+  Then, the restriction morphisms\[
+    H^{j}(M_{b};F)\to H^{j}(M_{a};F)
+  \]
+  are isomorphic for each \(j\leqq k\).
+\end{Proposition+}
 
 \begin{proof}
-    (i) 
-    まず，\(\wncone[{\conm[M]{X}}](A)\)が2重錐状 (biconic) であることを示す．
-    \(
-        (0,x_0'',\xi_0',0;x_0',0,0,\xi_0'')
-        \in \norb[{\conm[M]{X}}]{\cotb[X]}
-    \)であるとする．
-    これを\(\cotb[{\conm[M]{X}}]\)の点
-    \(
-        (0,x_0'',\xi_0',0;0,\xi_0'',-x_0',0)
-        \in \cotb[{\conm[M]{X}}]
-    \)とみなす．このとき，
-    \((0,x_0'',\xi_0',0;x_0',0,0,\xi_0'')\in\wncone[{\conm[M]{X}}](A)\)
-    ならば，
-    \[
-        (0,x_0'',\xi_0',0;0,\lambda\xi_0'',\lambda(-x_0'),0)
-        \leftrightarrow
-        (0,x_0'',\xi_0',0;\lambda x_0',0,0,\lambda\xi_0'')
-        \in\wncone[{\conm[M]{X}}](A)
-    \]かつ
-    \[
-        (0,x_0'',\mu\xi_0',0;0,\xi_0'',\frac{1}{\mu}(-x_0'),0)
-        \leftrightarrow
-        (0,x_0'',\mu\xi_0',0;\frac{1}{\mu}x_0',0,0,\xi_0'')
-        \in\wncone[{\conm[M]{X}}](A)
-    \]であることを示せばよい．
-
-    \((0,x_0'',\xi_0',0;x_0',0,0,\xi_0'')\in\wncone[{\conm[M]{X}}](A)\)
-    とする．このとき，\(A\times\rrp\)の点列\(
-        \left(
-            x_n',x_n'';\xi'_n,\xi''_n,
-            c_n
-        \right)_n
-    \)で\begin{align*}
-        (0,x_n'',\xi_n',0)
-        \underset{n}{\to} (0,x_0'',\xi_0',0),\\
-        c_n(x_n',0,0,\xi_n'')
-        \underset{n}{\to} (x_0',0,0,\xi_0'')
-    \end{align*}
-    をみたすものが存在する．
-    \(\lambda>0\)を実数とする．
-    この点列に対し，\[
-        \left(\tilde{x}_n',\tilde{x}_n'';\tilde{\xi}'_n,\tilde{\xi}''_n\right)
-        =
-        \left(x_n',x_n'';\xi'_n,\xi''_n\right),
-        \quad
-        \tilde{c}_n=\lambda c_n
-    \]
-    とおくと，\(\left(
-        \tilde{x}_n',\tilde{x}_n'';\tilde{\xi}'_n,\tilde{\xi}''_n,
-        \tilde{c}_n
-    \right)_n\)は\(A\times \rrp\)の点列であり，
-    \begin{align*}
-        (0,\tilde{x}_n'',\tilde{\xi}_n',0)
-        &=(0,x_n'',\xi_n',0)\\
-        &\to(0,x_0'',\xi_0',0),\\
-        \tilde{c}_n(\tilde{x}_n',0,0,\tilde{\xi}_n'')
-        &=(\lambda c_n x_n',0,0,\lambda c_n \xi_n'')\\
-        &\to(\lambda x_0',0,0,\lambda\xi_0'')
-    \end{align*}
-    である．したがって，
-    \(
-        (0,x_0'',\xi_0',0;\lambda x_0',0,0,\lambda\xi_0'')
-        \in\wncone[{\conm[M]{X}}](A)
-    \)である．
-
-    次に，\(\mu>0\)を実数とし，\[
-        \left(\check{x}_n',\check{x}_n'';\check{\xi}'_n,\check{\xi}''_n\right)
-        =
-        \left(x_n',x_n'';\mu\xi'_n,\mu\xi''_n\right),
-        \quad 
-        \check{c}_n=\frac{1}{\mu} c_n
-    \]
-    とおくと，\(A\)が錐状であることから\(\left(
-        \check{x}_n',\check{x}_n'';\check{\xi}'_n,\check{\xi}''_n,
-        \check{c}_n
-    \right)_n\)は\(A\times \rrp\)の点列であり，
-    \begin{align*}
-        (0,\check{x}_n'',\check{\xi}_n',0)
-        &=(0,x_n'',\mu\xi_n',0)\\
-        &\to(0,x_0'',\mu\xi_0',0),\\
-        \check{c}_n(\check{x}_n',0,0,\check{\xi}_n'')
-        &=\left(\frac{1}{\mu}c_n x_n',0,0,\frac{1}{\mu}c_n\cdot \mu\xi_n''\right)\\
-        &=\left(\frac{1}{\mu}c_n x_n',0,0,c_n\xi_n''\right)\\&\to\left(\frac{1}{\mu} x_0',0,0,\xi_0''\right)
-    \end{align*}
-    である．よって\(
-        (0,x_0'',\mu\xi_0',0;\mu^{-1}x_0',0,0,\xi_0'')
-        \in\wncone[{\conm[M]{X}}](A)
-    \)である．
+  First, we have\[
+    H^{j}(M_{t};F)
+    \cong
+    H^{j}\RG({]-\infty,t[}\mathrel{;}\Rder{\psi}_{\ast}F)
+  \]
+  for \(t\in I\).
+  Since we assume that \(d\psi(x)\notin \muS[k](F)\) 
+  for \(a\leqq \psi(x)<b\), and by the formula \(\muS[k](\Rder{\psi}_{\ast}F)
+    \subset \mpb[\psi]\mdiff[\psi]^{-1}\muS[k](F)
+  \), we have\[
+    \left(H^{j}\RG_{[a,b[}\Rder{\psi}_{\ast}F\right)_{\psi(x)}=0
+  \]for each \(j\leqq k\). 
+  Therefore, letting \(d\in\zz\) be the minimum number 
+  that \[H^{d}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)\ne0,\] 
+  by the long exact sequence
+  \begin{align*}
+    0&\to 
+    H^{d}\RG_{[a,b[}(\Rder{\psi}_{\ast}F)
+    \to
+    H^{d}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F)
+    \to
+    H^{d}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)\\
+    &\to 
+    H^{d+1}\RG_{[a,b[}(\Rder{\psi}_{\ast}F)
+    \to
+    H^{d+1}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F)
+    \to
+    H^{d+1}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)\\
+    &\to\cdots\\
+    &\to 
+    H^{k}\RG_{[a,b[}(\Rder{\psi}_{\ast}F)
+    \to
+    H^{k}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F)
+    \to
+    H^{k}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)\\
+    &\to
+    H^{k+1}\RG_{[a,b[}(\Rder{\psi}_{\ast}F)\to\cdots,
+  \end{align*} 
+  we have isomorphisms
+  \begin{equation*}%\label{eq:t-morse-lemma}
+    \left(H^{j}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F)\right)_{\psi(x)}
+    \simarr
+    \left(H^{j}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)\right)_{\psi(x)}
+  \end{equation*}
+  for any \(j\leqq k\) and \(a\leqq \psi(x) < b\), 
+  and then, 
+  \begin{equation}\label{eq:t-morse-lemma}
+    H^{j}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F)
+    \simarr
+    H^{j}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)
+  \end{equation}
+  for all \(j\leqq k\). Then we can conclude that
+  \[
+    H^{j}(M_b\mathrel{;}F)
+    \simarr
+    H^{j}(M_a\mathrel{;}F)
+  \]
+  by applying to the equality \eqref{eq:t-morse-lemma} 
+  the functor \(
+    \Gamma({]-\infty,b[}\mathrel{;}\blk)
+  \) and calculating as follows:
+  \begin{align*}
+    \Gamma({]-\infty,b[}\mathrel{;}H^{j}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F))
+    &\cong
+    \Gamma_{]-\infty,b[}({]-\infty,b[}\mathrel{;}\Rder^{j}{\psi}_{\ast}F)\\
+    &\cong
+    \Gamma({]-\infty,b[}\mathrel{;}\Rder^{j}{\psi}_{\ast}F)\\
+    &\cong
+    H^{j}({\psi}^{-1}\left({]-\infty,b[}\right)\mathrel{;}F)\\
+    &\cong
+    H^{j}(M_{b}\mathrel{;}F)
+  \end{align*}
+  and
+  \begin{align*}
+    \Gamma({]-\infty,b[}\mathrel{;}H^{j}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F))
+    &\cong
+    \Gamma_{]-\infty,a[}({]-\infty,b[}\mathrel{;}\Rder^{j}{\psi}_{\ast}F)\\
+    &\cong
+    \Gamma({]-\infty,a[}\mathrel{;}\Rder^{j}{\psi}_{\ast}F)\\
+    &\cong
+    H^{j}({\psi}^{-1}\left({]-\infty,a[}\right)\mathrel{;}F)\\
+    &\cong
+    H^{j}(M_{a}\mathrel{;}F).
+  \end{align*}
 \end{proof}
 
-\appendix
-\section*{本編で用いる命題}
-\begin{leftbar}
-\begin{PRP}[{\cite[Prop. 4.1.2]{KS90}}]\label{prp4.1.2}
-    (ii) 
-    \((x)=(x',x'')\)を\(X\)の局所座標系とし，
-    \(M=\left\{x;x'=0\right\}\)とする．
-    \(S\)を\(X\)の部分集合とする．
-    \(x_{\circ}=(0,x''_{\circ})\in M\), 
-    \((x''_{\circ};v_{\circ})\in \norb[M]{X}\)とする．
-    このとき，
-    \((x_{\circ};v_{\circ})\in\wncone[M](S)\)となるのは，
-    \(S\times \rrp\)の点列で，\(x_n=(x'_n;x''_n)\)とおくとき，\(x_n\underset{n}{\to}x_{\circ}\), \(c_nx'_n\underset{n}{\to}v_\circ\)をみたすものが存在するときである．
-\end{PRP}
-\end{leftbar}
-%\section{aa}
+\section{Truncated Morse Inequalities}
+The main theorem of \cite{ST92} is the following: 
+we assume
+\begin{align}\label{eq:ST92-H1}
+  \text{\(\psi^{-1}(]-\infty,t[)\cap \supp(F)\) is compact for any \(t\in\rr\)}, \tag{H.1}\\
+  \text{there is a finite family \(\left\{K_{j}\right\}_{1\leqq j\leqq N}\)of disjoint compact}\notag\\
+  \text{subsets in \(X\) and real numbers \(\left\{s_{j}\right\}_{1\leqq j\leqq N}\) such that}\notag\\
+  \pi(\Lambda_{\psi}\cap \Lambda)=\bigcup_{j}K_{j},
+  \quad
+  \mres[\psi]{K_{j}}=s_j,\tag{H.2}\label{eq:ST92-H2}\\
+  \text{\(V_{j}\coloneqq
+  \RG(K_{j};\RG_{\left\{\psi\geqq s_{j}\right\}}(F))\) belongs to \(\Dompb(\Modf(\kk))\).}\tag{H.3}\label{eq:ST92-H3}
+\end{align}
+
+Set 
+\begin{equation}
+  n_{l}\coloneqq \sum_{j}\dim H^{l}(V_j).  \label{eq:ST92-12}
+\end{equation}
+Then 
+\begin{Theorem+}[Generalized Morse Inequalities {\cite[Theorem~1.1]{ST92}}]
+  Assume \eqref{eq:ST92-H1}, \eqref{eq:ST92-H2}, and \eqref{eq:ST92-H3}. 
+  Then
+  \begin{enumerate}[(i)]
+    \item \(\RG(X;F)\in\Dompb(\Modf(\kk))\),
+    \item setting \(b_{l}(X,F)= b_{l}(\RG(X;F))\), we have the inequalities\[
+      b_{l}^{\ast}(X,F)\leqq n_{l}^{\ast}
+    \] where \(n_{l}\) is given by \eqref{eq:ST92-12}.
+  \end{enumerate}
+\end{Theorem+}
+
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
-  \bibitem[dR]{dR} 
-  de Rham, \textit{Vari\'et\'es diff\'erentiables}, Hermann, 1953.
-  和訳：ド・ラーム, 微分多様体, 東京図書, 1974.
   \bibitem[GKS12]{GKS12} St\'ephane Guillermou, 
   Masaki Kashiwara, Pierre Schapira, 
   \textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
@@ -820,38 +762,23 @@
   \bibitem[GP74]{GP74} Victor Guillemin, Alan Pollack, 
     \textit{Differential Topology}, 
     Prentice-Hall, 1974.
+  \bibitem[KMS03]{KMS03} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
+    \textit{Truncated Microsupprt and Holomorphic Solutions 
+    of \(D\)-modules}, 
+    Ann. Scient. \'Ec. Norm. Sup., s\'erie 4, tome 36, 
+    pp.583--399, 2003.
   \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
     \textit{Sheaves on Manifolds}, 
     Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
   \bibitem[Hat89]{Hat89} 服部晶夫, 多様体 増補版, 岩波全書 288, 岩波書店, 1989.
   %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
-  \bibitem[Hor63]{Hor63} Lars H\"ormander, 
-  \textit{Linear Pertial Differential Operators}, Fourth Printing, 
-  Grundlehren der Mathematischen Wissenschaften, 116, Springer, 1963.
-  \bibitem[Hor71]{Hor71} Lars H\"ormander, 
-  \textit{Fourier Integral Operators I}, 
-  Acta Math. 127, 79--183, (1971).
-  \bibitem[Hor89]{Hor89} Lars H\"ormander, 
-  \textit{The Analysis of Linear Pertial Differential Operators I}, Second Edition,
-  Grundlehren der Mathematischen Wissenschaften, 256, Springer, 1989.
-  \bibitem[Hor85]{Hor85} Lars H\"ormander, 
-  \textit{The Analysis of Linear Pertial Differential Operators III}, 
-  Grundlehren der Mathematischen Wissenschaften, 274, Springer, 1985.
-  \bibitem[今野13]{今野13} 今野宏, 微分幾何学, 東京大学出版会, 2013.
-  \bibitem[Roc]{Roc} Rockaffeller, \textit{Convex Analysis},. 
   \bibitem[Sch85]{Sch85} Pierre Schapira, 
-  \textit{Microdifferential Systems in the Complex Domain}, 
-  Grundlehren der Mathematischen Wissenschaften, 269, 
-  Springer, 1985.
-  \bibitem[Sch88]{Sch88} Pierre Schapira, 
-  \textit{Microfunctions for Boundary Value Problems}, 
-  in Algebraic Analysis, Volume II, 1988.
+    \textit{Microdifferential Systems in the Complex Domain}, 
+    Grundlehren der Mathematischen Wissenschaften, 269, 
+    Springer, 1985.
   \bibitem[ST92]{ST92} Pierre Schapira, Nobuyuki Tose, 
-  \textit{Morse Inequalities for \(\rr\)-constructible Sheaves}, 
-  Adv. Math. 93, pp.1--8, 1992. 
-  \bibitem[Zwo12]{Zwo12} Maciej Zworski,
-  \textit{Semiclsaaical Analysis}, 
-  Graduate Studies in Mathematics, 138, American Mathematical Society, 2012. 
+    \textit{Morse Inequalities for \(\rr\)-constructible Sheaves}, 
+    Adv. Math. 93, pp.1--8, 1992. 
 \end{thebibliography}
 
 %===============================================
