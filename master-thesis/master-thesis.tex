@@ -19,7 +19,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[10pt, a4paper, dvipdfmx]{article}
+\documentclass[leqno, 10pt, a4paper, dvipdfmx]{article}
 
 % ------------------------
 % usepackage
@@ -579,6 +579,12 @@
 
 \newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
 
+
+\newcommand{\lopen}{\mathopen{]}}
+\newcommand{\lclosed}{\mathopen{[}}
+\newcommand{\ropen}{\mathclose{[}}
+\newcommand{\rclosed}{\mathopen{]}}
+
 % ----------------------------
 % documenet 
 % ----------------------------
@@ -617,7 +623,7 @@ Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KMS03}.
 
 \section{Results}
 
-\begin{Proposition+}
+\begin{Theorem+}\label{thm:t-morse}
   Let \(F\) in \(\Dompb(\kk_M)\), and 
   \(\psi\colon M\to \rr\) be a real-valued function of 
   class \(C^1\), 
@@ -632,9 +638,82 @@ Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KMS03}.
     H^{j}(M_{b};F)\to H^{j}(M_{a};F)
   \]
   are isomorphic for each \(j\leqq k\).
-\end{Proposition+}
+\end{Theorem+}
+
+\begin{Lemma+}
+    Let \(-\infty<a<b<+\infty\) be real numbers 
+    and \(G\in \Dompb(\rr)\). Let \(k\) be an integer.
+    If \[
+        \left(H^{j}_{\left[t,+\infty\right[}(G)\right)_t
+        \cong 0
+        \quad
+        \text{
+            for all \(t\in\left[a,b\right[\) , 
+            and all \(j\leqq k\).
+        }
+    \]
+    Then one has \[
+        H^{j}(\left]-\infty,b\right[;G)\simarr
+        H^{j}(\left]-\infty,a\right[;G)
+    \] for all \(j<k\).\footnote{
+        For \(k\), this morphism might be injective.
+         (not written in this draft.)
+    }
+\end{Lemma+}
 
 \begin{proof}
+    Let \(t\in \lclosed a,b\ropen\). 
+    We will denote by \(I_t\) the open interval \(
+        \left]-\infty,t\right[
+    \) and denote by \(Z_t\) the closed interval \(
+        \left]-\infty,t\right] (= \overline{I_t})
+    \).
+    By applying to the distinguished triangle\[
+        \RG_{\rr-I_t}(G)\to G\to \RG_{I_t}(G)\overset{+1}{\longrightarrow}
+    \] the functor \((\blk)_{\overline{I_t}}\), we have\[
+        (\RG_{[t,+\infty[}(G))_{\{t\}}
+        \to G_{Z_t}
+        \to 
+        \RG_{I_t}(G)
+        \overset{+1}{\longrightarrow}.
+    \]
+    Aplying the functor \(\RG(\rr;\blk)\) to this, we have
+    \begin{equation}\label{eq:morse-d.t.}
+        (\RG_{[t,+\infty[}(G))_{t}
+        \to \RG(Z_t;G)
+        \to 
+        \RG(I_t;G)
+        \overset{+1}{\longrightarrow}.
+    \end{equation}
+    Then consider the following conditions:
+    \begin{align}
+        \tag*{\((a)^j_s\)}\label{eq:nonchar-a}
+        \indlim[t>s] H^{j}(I_t;G) &\simarr H^{j}(I_s;G)
+        \quad \text{for all \(s\in[a,b[\)},\\
+        \tag*{\((b)^j_t\)}\label{eq:nonchar-b}
+        \prolim[s<t] H^{j}(I_t;G) &\simrra H^{j}(I_s;G)
+        \quad \text{for all \(t\in \left]a,b\right]\)}.
+    \end{align}
+    By hypothesis, 
+    it follows from \eqref{eq:morse-d.t.} that 
+    \(
+        H^{j}(Z_t;G)\simar H^{j}(I_t;G)
+    \) for \(t\in \left[a,b\right[\). 
+    Similarly, we have injections \(
+        H^{k}(Z_t;G)\hookrightarrow H^{k}(I_t;G)
+    \) for \(t\in \left[a,b\right[\). 
+    Since \(
+        \indlim[t>s] H^{j}(I_t;G)\cong H^{j}(Z_s;G)
+    \), \ref{eq:nonchar-a} holds for any \(j<k\).
+    Similarly, \[
+        \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(Z_s;G)
+    \] gives injections \[
+        \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(I_s;G)
+    \] for all \(s\in \left[a,b\right[\). 
+    Moreover, \ref{eq:nonchar-b}
+\end{proof}
+
+\begin{proof}[Proof of Theorem {\ref{thm:t-morse}}.]
   First, we have\[
     H^{j}(M_{t};F)
     \cong
@@ -721,35 +800,6 @@ Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KMS03}.
   \end{align*}
 \end{proof}
 
-\section{Truncated Morse Inequalities}
-The main theorem of \cite{ST92} is the following: 
-we assume
-\begin{align}\label{eq:ST92-H1}
-  \text{\(\psi^{-1}(]-\infty,t[)\cap \supp(F)\) is compact for any \(t\in\rr\)}, \tag{H.1}\\
-  \text{there is a finite family \(\left\{K_{j}\right\}_{1\leqq j\leqq N}\)of disjoint compact}\notag\\
-  \text{subsets in \(X\) and real numbers \(\left\{s_{j}\right\}_{1\leqq j\leqq N}\) such that}\notag\\
-  \pi(\Lambda_{\psi}\cap \Lambda)=\bigcup_{j}K_{j},
-  \quad
-  \mres[\psi]{K_{j}}=s_j,\tag{H.2}\label{eq:ST92-H2}\\
-  \text{\(V_{j}\coloneqq
-  \RG(K_{j};\RG_{\left\{\psi\geqq s_{j}\right\}}(F))\) belongs to \(\Dompb(\Modf(\kk))\).}\tag{H.3}\label{eq:ST92-H3}
-\end{align}
-
-Set 
-\begin{equation}
-  n_{l}\coloneqq \sum_{j}\dim H^{l}(V_j).  \label{eq:ST92-12}
-\end{equation}
-Then 
-\begin{Theorem+}[Generalized Morse Inequalities {\cite[Theorem~1.1]{ST92}}]
-  Assume \eqref{eq:ST92-H1}, \eqref{eq:ST92-H2}, and \eqref{eq:ST92-H3}. 
-  Then
-  \begin{enumerate}[(i)]
-    \item \(\RG(X;F)\in\Dompb(\Modf(\kk))\),
-    \item setting \(b_{l}(X,F)= b_{l}(\RG(X;F))\), we have the inequalities\[
-      b_{l}^{\ast}(X,F)\leqq n_{l}^{\ast}
-    \] where \(n_{l}\) is given by \eqref{eq:ST92-12}.
-  \end{enumerate}
-\end{Theorem+}
 
 %===============================================
 % 参考文献スペース

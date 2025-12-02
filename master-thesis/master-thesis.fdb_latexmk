@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1764662226.89749 "master-thesis.dvi" "master-thesis.pdf" "master-thesis" 1764662227.82605 0
-  "master-thesis.dvi" 1764662226.76418 14364 7b7a916b669a780ff4d8bfc9b6fc0310 "latex"
+["dvipdf"] 1764668332.41168 "master-thesis.dvi" "master-thesis.pdf" "master-thesis" 1764668333.10913 0
+  "master-thesis.dvi" 1764668332.28459 15948 08d9ca5d5d2093bc49e59d3bdb49f075 "latex"
   (generated)
   "master-thesis.pdf"
   (rewritten before read)
-["latex"] 1764662225.3794 "/Users/giuseppe/seminar-notes/master-thesis/master-thesis.tex" "master-thesis.dvi" "master-thesis" 1764662227.82011 0
-  "/Users/giuseppe/seminar-notes/master-thesis/master-thesis.tex" 1764662222.26313 25756 7bdaabc46974ef72ce12ac6aeaf23059 ""
+["latex"] 1764668330.93337 "/Users/giuseppe/seminar-notes/master-thesis/master-thesis.tex" "master-thesis.dvi" "master-thesis" 1764668333.10337 0
+  "/Users/giuseppe/seminar-notes/master-thesis/master-thesis.tex" 1764668328.9921 27145 40eefa0ad5c838be6020036ffcdafa90 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -179,6 +179,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/atbegshi-ltx.sty" 1705352648 3045 273c666a54e60b9f730964f431a56c1b ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/atveryend-ltx.sty" 1705352648 2462 6bc53756156dbd71c1ad550d30a3b93f ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty" 1705352648 5319 2b738d02ce36ada6dcdd9534940db0ee ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/base/leqno.clo" 1705352648 1958 fd4c49bb58706659140a05db86f351f5 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/size10.clo" 1705352648 8448 dbc0dbf4156c0bb9ba01a1c685d3bad0 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/bxjatoucs/bxjatoucs.sty" 1571867428 9159 ebd68ea70b64dbc04bdc806c9afa9ea1 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
@@ -246,9 +247,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "master-thesis.aux" 1764662226.76228 990 71f2e5b6b78e297faef8639b2921b7bf "latex"
-  "master-thesis.out" 1764662226.76356 477 fe6ae7d152f354335816fac529a3816a "latex"
-  "master-thesis.tex" 1764662222.26313 25756 7bdaabc46974ef72ce12ac6aeaf23059 ""
+  "master-thesis.aux" 1764668332.2832 765 1c27d002dc291f79662a6d0449b6a395 "latex"
+  "master-thesis.out" 1764668332.28417 288 09412dd74c55808b14f33701629bbbd0 "latex"
+  "master-thesis.tex" 1764668328.9921 27145 40eefa0ad5c838be6020036ffcdafa90 ""
   (generated)
   "master-thesis.aux"
   "master-thesis.dvi"
