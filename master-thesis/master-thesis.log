@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  2 DEC 2025 18:53
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  3 DEC 2025 02:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -857,48 +857,61 @@ LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <14.4> not available
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 13.85594pt on input line 603.
 LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 614.
+(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 622.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 614.
+(Font)              scaled to size 9.6222pt on input line 622.
 LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 614.
+(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 622.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 614.
+(Font)              scaled to size 9.6222pt on input line 622.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 653.
+(Font)              scaled to size 6.73553pt on input line 633.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 653.
+(Font)              scaled to size 6.73553pt on input line 633.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 653.
+(Font)              scaled to size 4.8111pt on input line 633.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 653.
- [1
+(Font)              scaled to size 4.8111pt on input line 633.
+LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <12> not available
+(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 637.
+LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
+(Font)              scaled to size 11.54663pt on input line 637.
+LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <12> not available
+(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 637.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 11.54663pt on input line 637.
 
-] [2]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 648.
+
+[1
+
+] [2] [3]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 810.
+(Font)              No change on input line 887.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 814.
+(Font)              No change on input line 891.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 818.
+(Font)              No change on input line 895.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 821.
- [3] (./master-thesis.aux)
+(Font)              No change on input line 898.
+ [4] (./master-thesis.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `master-thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 09412DD74C55808B14F33701629BBBD0;288.
+(rerunfilecheck)             Checksum: 782844B413C1FECD27ECC76360C54AC9;670.
  ) 
 Here is how much of TeX's memory you used:
- 29972 strings out of 474774
- 526286 string characters out of 5758801
- 1941032 words of memory out of 5000000
- 51786 multiletter control sequences out of 15000+600000
- 613270 words of font info for 149 fonts, out of 8000000 for 9000
+ 29985 strings out of 474774
+ 526506 string characters out of 5758801
+ 1943032 words of memory out of 5000000
+ 51799 multiletter control sequences out of 15000+600000
+ 613584 words of font info for 151 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  84i,22n,93p,3266b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on master-thesis.dvi (3 pages, 15960 bytes).
+Output written on master-thesis.dvi (4 pages, 23728 bytes).

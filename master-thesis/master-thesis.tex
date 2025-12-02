@@ -603,23 +603,108 @@
 \section*{Preface}
 In these notes, 
 We study microlocal Morse theory, which is developed by
-Guillermou, Kashiwara, and Schapira in \cite{GKS12}, 
+Guillermou, Kashiwara, and Schapira in \cite{ST92}, 
 but replace microsupports with
 truncatd microsupprts introduced by 
 Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KMS03}.
 
+\section{Notations}
+
+We consider a commutative unital ring \(\kk\) 
+of finite global dimension (e.g. \(\zz\) or a field). 
+Let \(X\) be a real analytic manifold. 
+We denote by \(\Dompb(\kk_X)\) the bounded derived category of 
+sheaves of \(\kk\)-modules on \(X\).
+
 \section{Truncated Microsupport}
 
 \begin{Definition+}
-    \begin{enumerate}[(i)]
-        \item Let \(F\in\Dompb(\kk_X)\). 
-        The closed conic subset \(\muS[k](F)\) of \(\cotb[X]\) 
-        is defined by: \(p\notin \muS[k](F)\) 
-        if and only if \(F\) satisfies 
-        the equivalent conditions in Prop.
-        \item aa
-    \end{enumerate}
+  Let \(F\in\Dompb(\kk_X)\). 
+  The closed conic subset \(\muS[k](F)\) of \(\cotb[X]\) 
+  is defined by: \(p\notin \muS[k](F)\) 
+  if and only if 
+  there exists an open conic neighborhood \(U\) of \(p\) 
+  such that for any \(x\in \pi(U)\) and 
+  for any real-valued \(C^{1}\)-function \(\varphi\) 
+  defined on a neighborhood of \(x\) such that 
+  \(\varphi(x)=0\), \(d\varphi(x)\in U\), 
+  one has \begin{equation}
+    H^{j}_{\{\varphi\geqq0\}}(F)_x=0
+    \quad \text{for any \(j\leqq k\).}
+  \end{equation}
 \end{Definition+}
+
+\subsection{Functorial Properties} 
+\begin{Proposition+}
+  Let \(f\colon X\to Y\) be a morphism of real analytic manifolds and let \(F\in\Dompb(\kk_X)\) such that \(f\) is proper on \(\supp(F)\). 
+  Then for any \(k\in\zz\), 
+  \begin{equation}\label{eq:t-push}
+    \muS[k](\Rder{f_{\ast}}F)\subset
+    \mpb[f]\mdiff[f]^{-1}(\muS[k](F)).
+  \end{equation}
+  The equality holds in case \(f\) is a closed embedding.
+\end{Proposition+}
+
+\section{Lemmas from {\cite{KS90}}}
+
+Consider a projective system of abelian groups \(
+  \left(M_n,\rho_{n,p}\right)_n
+\) indexed by \(\nn\). 
+One says that this system satisfies 
+the Mittag-Leffler condition (ML for short) 
+if for any \(n\in\nn\), the decreasing sequence \(
+  (\rho_{n,p}(M_p))_p
+\) of subgroups of \(M_n\) is stationary.
+
+For a projective system of abelian groups \((M_{n})_n\), 
+we set \[
+  M_{\infty}\coloneqq \prolim[n]M_n.
+\]
+
+Consider a projective system of complexes
+\begin{equation}
+  E_n^{\bullet}\colon 
+  \cdots\to M_{n}^{j-1}\to M_{n}^{j}\to M_{n}^{j+1}\to\cdots,
+\end{equation}
+and projective limit
+\begin{equation}
+  E_{\infty}^{\bullet}\colon 
+  \cdots
+  \to M_{\infty}^{j-1}
+  \to M_{\infty}^{j}
+  \to M_{\infty}^{j+1}
+  \to\cdots.
+\end{equation}
+Denote by 
+\begin{equation}
+  \varPhi_{k}\colon H^{k}(E_{\infty}^{\bullet})\to \prolim[n]H^{k}(E_{n}^{\bullet})
+\end{equation}
+the natural morphism.
+
+\begin{Proposition+}[{\cite[Proposition 1.12.4]{KS90}}]\label{prop:ks1.12.4}
+  Assume that for each \(j\in\zz\), 
+  the system \(\left(M_{n}^{j}\right)_{n}\) satisfies 
+  the ML condition. 
+  Then
+  \begin{enumerate}[(a)]
+    \item for each \(k\in \zz\), the map \(\varPhi_k\) is surjective,
+    \item if moreover, for a given \(i\) the system \(\left(H^{i-1}(E_{n}^{\bullet})\right)_{n}\) satisfies the ML condition, then \(\varPhi_i\) is bijective.
+  \end{enumerate} 
+\end{Proposition+}
+
+The following is called Kashiwara's lemma.
+
+\begin{Proposition+}[{\cite[Proposition 1.12.6]{KS90}}]\label{prop:ks1.12.6}
+  Let \(\left(X_s,\rho_{s,t}\right)\) be 
+  a projective system of sets indexed by \(\rr\). 
+  Assume that for each \(s\in\rr\), the canonical maps\[
+    \lambda_s\colon X_s\to\prolim[r<s]X_r
+  \] and \[
+    \mu_s\colon \indlim[t>s]X_t\to X_s
+  \] are both injective (resp. surjective). 
+  Then all the maps \(\rho_{s_{0},s_{1}}\) \((s_0\leqq s_1)\) are 
+  injective (resp. surjective).
+\end{Proposition+}
 
 \section{Results}
 
@@ -640,165 +725,157 @@ Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KMS03}.
   are isomorphic for each \(j\leqq k\).
 \end{Theorem+}
 
-\begin{Lemma+}
-    Let \(-\infty<a<b<+\infty\) be real numbers 
-    and \(G\in \Dompb(\rr)\). Let \(k\) be an integer.
-    If \[
-        \left(H^{j}_{\left[t,+\infty\right[}(G)\right)_t
-        \cong 0
-        \quad
-        \text{
-            for all \(t\in\left[a,b\right[\) , 
-            and all \(j\leqq k\).
-        }
-    \]
-    Then one has \[
-        H^{j}(\left]-\infty,b\right[;G)\simarr
-        H^{j}(\left]-\infty,a\right[;G)
-    \] for all \(j<k\).\footnote{
-        For \(k\), this morphism might be injective.
-         (not written in this draft.)
-    }
+\begin{Lemma+}\label{Lem:1d-t-morse}
+  Let \(-\infty<a<b<+\infty\) be real numbers 
+  and \(G\in \Dompb(\rr)\). Let \(k\) be an integer.
+  If \[
+      \left(H^{j}_{\left[t,+\infty\right[}(G)\right)_t
+      \cong 0
+      \quad
+      \text{
+          for all \(t\in\left[a,b\right[\) , 
+          and all \(j\leqq k\).
+      }
+  \]
+  Then one has \[
+      H^{j}(\left]-\infty,b\right[;G)\simarr
+      H^{j}(\left]-\infty,a\right[;G)
+  \] for all \(j<k\).\footnote{
+      For \(k\), this morphism might be injective.
+        (not written in this draft.)
+  }
 \end{Lemma+}
 
 \begin{proof}
-    Let \(t\in \lclosed a,b\ropen\). 
-    We will denote by \(I_t\) the open interval \(
-        \left]-\infty,t\right[
-    \) and denote by \(Z_t\) the closed interval \(
-        \left]-\infty,t\right] (= \overline{I_t})
-    \).
-    By applying to the distinguished triangle\[
-        \RG_{\rr-I_t}(G)\to G\to \RG_{I_t}(G)\overset{+1}{\longrightarrow}
-    \] the functor \((\blk)_{\overline{I_t}}\), we have\[
-        (\RG_{[t,+\infty[}(G))_{\{t\}}
-        \to G_{Z_t}
-        \to 
-        \RG_{I_t}(G)
-        \overset{+1}{\longrightarrow}.
-    \]
-    Aplying the functor \(\RG(\rr;\blk)\) to this, we have
-    \begin{equation}\label{eq:morse-d.t.}
-        (\RG_{[t,+\infty[}(G))_{t}
-        \to \RG(Z_t;G)
-        \to 
-        \RG(I_t;G)
-        \overset{+1}{\longrightarrow}.
-    \end{equation}
-    Then consider the following conditions:
-    \begin{align}
-        \tag*{\((a)^j_s\)}\label{eq:nonchar-a}
-        \indlim[t>s] H^{j}(I_t;G) &\simarr H^{j}(I_s;G)
-        \quad \text{for all \(s\in[a,b[\)},\\
-        \tag*{\((b)^j_t\)}\label{eq:nonchar-b}
-        \prolim[s<t] H^{j}(I_t;G) &\simrra H^{j}(I_s;G)
-        \quad \text{for all \(t\in \left]a,b\right]\)}.
-    \end{align}
-    By hypothesis, 
-    it follows from \eqref{eq:morse-d.t.} that 
-    \(
-        H^{j}(Z_t;G)\simar H^{j}(I_t;G)
-    \) for \(t\in \left[a,b\right[\). 
-    Similarly, we have injections \(
-        H^{k}(Z_t;G)\hookrightarrow H^{k}(I_t;G)
-    \) for \(t\in \left[a,b\right[\). 
-    Since \(
-        \indlim[t>s] H^{j}(I_t;G)\cong H^{j}(Z_s;G)
-    \), \ref{eq:nonchar-a} holds for any \(j<k\).
-    Similarly, \[
+  Let \(t\in \lclosed a,b\ropen\). 
+  We will denote by \(I_t\) the open interval \(
+      \left]-\infty,t\right[
+  \) and denote by \(Z_t\) the closed interval \(
+      \left]-\infty,t\right] (= \overline{I_t})
+  \).
+  By applying to the distinguished triangle\[
+      \RG_{\rr-I_t}(G)\to G\to \RG_{I_t}(G)\overset{+1}{\longrightarrow}
+  \] the functor \((\blk)_{\overline{I_t}}\), we have\[
+      (\RG_{[t,+\infty[}(G))_{\{t\}}
+      \to G_{Z_t}
+      \to 
+      \RG_{I_t}(G)
+      \overset{+1}{\longrightarrow}.
+  \]
+  Aplying the functor \(\RG(\rr;\blk)\) to this, we have
+  \begin{equation}\label{eq:morse-d.t.}
+      (\RG_{[t,+\infty[}(G))_{t}
+      \to \RG(Z_t;G)
+      \to 
+      \RG(I_t;G)
+      \overset{+1}{\longrightarrow}.
+  \end{equation}
+  Then consider the following conditions:
+  \begin{align}
+      \tag*{\((a)^j_s\)}\label{eq:nonchar-a}
+      \indlim[t>s] H^{j}(I_t;G) &\simarr H^{j}(I_s;G)
+      \quad \text{for all \(s\in[a,b[\)},\\
+      \tag*{\((b)^j_t\)}\label{eq:nonchar-b}
+      \prolim[s<t] H^{j}(I_t;G) &\simrra H^{j}(I_s;G)
+      \quad \text{for all \(t\in \left]a,b\right]\)}.
+  \end{align}
+  By hypothesis, 
+  it follows from \eqref{eq:morse-d.t.} that 
+  \(
+      H^{j}(Z_t;G)\simar H^{j}(I_t;G)
+  \) for \(t\in \left[a,b\right[\). 
+  Similarly, we have injections \(
+      H^{k}(Z_t;G)\hookrightarrow H^{k}(I_t;G)
+  \) for \(t\in \left[a,b\right[\). 
+  Since \(
+      \indlim[t>s] H^{j}(I_t;G)\cong H^{j}(Z_s;G)
+  \), \ref{eq:nonchar-a} holds for any \(j<k\).
+  \footnote{
+      Similarly, \[
         \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(Z_s;G)
     \] gives injections \[
         \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(I_s;G)
     \] for all \(s\in \left[a,b\right[\). 
-    Moreover, \ref{eq:nonchar-b}
+  }Moreover, \ref{eq:nonchar-b} holds for \(j\ll0\). 
+  Let us argue by induction on \(j\). 
+  Assume \ref{eq:nonchar-b} holds for all 
+  \(t\in\left]a,b\right[\) and all \(j\leqq j_0\). 
+  Applying Proposition \ref{prop:ks1.12.6}, 
+  we find the isomorphisms \begin{equation}\label{eq:non-char-init}
+    H^{j}(I_s;G) \simarr H^{j}(I_t;G)
+    \quad
+    \text{for all \(j\leqq j_0\) and all \(a<s\leqq t< b\).}
+  \end{equation}
+  Let \(G \simar G^{\bullet}\) be a flabby resolution. 
+  Let \(t\in\left]a,b\right]\). Consider a complex \[
+    E^{\bullet}_{n}=\Gamma(I_{t-\frac{1}{n}};G^{\bullet}).
+  \]
+  Since \(G^{\bullet}\) is flabby, 
+  the projective system \((E^{j}_{n})_{n}\) satisfies 
+  the ML condition for all \(j< k\). 
+  
+  By \eqref{eq:non-char-init}, the projective system \(
+    (H^{j_0}(E^{\bullet}_{n}))_{n}
+  \) satisfies the ML condition (because we have \(
+    a<t-\frac{1}{n}<t
+  \) for \(n\gg0\)). 
+  Applying Proposition \ref{prop:ks1.12.4} to \(
+    (E^{\bullet}_{n})_{n}
+  \), it follows that \ref{eq:nonchar-b} holds for \(j_{0}+1\) 
+  and the induction proceeds. More precisely, we have \begin{align*}
+    H^{j_0+1}(I_{t};G^{\bullet})
+    \overunderset{\sim}{\varPhi_{j_{0}+1}}{\longrightarrow}&
+    \prolim[n]H^{j_0+1}(I_{t-\frac{1}{n}};G^{\bullet})\\
+    \cong&
+    \prolim[n]H^{j_0+1}(I_{t-\frac{1}{n}};G)\\
+    \cong&
+    \prolim[s<t]H^{j_0+1}(I_{s};G).
+  \end{align*}
+  Again by Proposition \ref{prop:ks1.12.6}, we get the isomorphisms\[
+    H^{j}(I_{s};G)\simarr H^{j}(I_t;G)
+    \quad
+    \text{for all \(j<k\) and all \(a<s\leqq t\leqq b\).}
+  \]
+
+  Finally, using \eqref{eq:morse-d.t.} and the hypothesis, 
+  we have the isomorphisms\[
+    H^{j}(I_{a};G)\simrra
+    H^{j}(Z_{a};G)\simarr H^{j}(I_s;G)
+    \quad
+    \text{for all \(j<k\) and all \(a<s\leqq b\).}
+  \]
 \end{proof}
 
 \begin{proof}[Proof of Theorem {\ref{thm:t-morse}}.]
   First, we have\[
     H^{j}(M_{t};F)
     \cong
-    H^{j}\RG({]-\infty,t[}\mathrel{;}\Rder{\psi}_{\ast}F)
+    H^{j}\RG(
+      {\left]-\infty,t\right[}\mathrel{;}\Rder{\psi}_{\ast}F
+    )
   \]
   for \(t\in I\).
   Since we assume that \(d\psi(x)\notin \muS[k](F)\) 
-  for \(a\leqq \psi(x)<b\), and by the formula \(\muS[k](\Rder{\psi}_{\ast}F)
+  for \(a\leqq \psi(x)<b\), and by \eqref{eq:t-push}, the formula \(
+    \muS[k](\Rder{\psi}_{\ast}F)
     \subset \mpb[\psi]\mdiff[\psi]^{-1}\muS[k](F)
-  \), we have\[
-    \left(H^{j}\RG_{[a,b[}\Rder{\psi}_{\ast}F\right)_{\psi(x)}=0
+  \) holds. Hence we have\[
+    \left(H^{j}\RG_{\left[\psi(x),+\infty\right[}\Rder{\psi}_{\ast}F\right)_{\psi(x)}=0
   \]for each \(j\leqq k\). 
-  Therefore, letting \(d\in\zz\) be the minimum number 
-  that \[H^{d}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)\ne0,\] 
-  by the long exact sequence
-  \begin{align*}
-    0&\to 
-    H^{d}\RG_{[a,b[}(\Rder{\psi}_{\ast}F)
-    \to
-    H^{d}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F)
-    \to
-    H^{d}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)\\
-    &\to 
-    H^{d+1}\RG_{[a,b[}(\Rder{\psi}_{\ast}F)
-    \to
-    H^{d+1}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F)
-    \to
-    H^{d+1}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)\\
-    &\to\cdots\\
-    &\to 
-    H^{k}\RG_{[a,b[}(\Rder{\psi}_{\ast}F)
-    \to
-    H^{k}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F)
-    \to
-    H^{k}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)\\
-    &\to
-    H^{k+1}\RG_{[a,b[}(\Rder{\psi}_{\ast}F)\to\cdots,
-  \end{align*} 
-  we have isomorphisms
-  \begin{equation*}%\label{eq:t-morse-lemma}
-    \left(H^{j}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F)\right)_{\psi(x)}
+  Then we can apply Lemma \ref{Lem:1d-t-morse} and have
+  \[
+    H^{j}(\left]-\infty,b\right[;\Rder{\psi_{\ast}}F)
     \simarr
-    \left(H^{j}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)\right)_{\psi(x)}
-  \end{equation*}
-  for any \(j\leqq k\) and \(a\leqq \psi(x) < b\), 
-  and then, 
-  \begin{equation}\label{eq:t-morse-lemma}
-    H^{j}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F)
-    \simarr
-    H^{j}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F)
-  \end{equation}
-  for all \(j\leqq k\). Then we can conclude that
+    H^{j}(\left]-\infty,a\right[;\Rder{\psi_{\ast}}F)
+  \] for all \(j<k\).
+  Then we can conclude that
   \[
     H^{j}(M_b\mathrel{;}F)
     \simarr
     H^{j}(M_a\mathrel{;}F)
   \]
-  by applying to the equality \eqref{eq:t-morse-lemma} 
-  the functor \(
-    \Gamma({]-\infty,b[}\mathrel{;}\blk)
-  \) and calculating as follows:
-  \begin{align*}
-    \Gamma({]-\infty,b[}\mathrel{;}H^{j}\RG_{]-\infty,b[}(\Rder{\psi}_{\ast}F))
-    &\cong
-    \Gamma_{]-\infty,b[}({]-\infty,b[}\mathrel{;}\Rder^{j}{\psi}_{\ast}F)\\
-    &\cong
-    \Gamma({]-\infty,b[}\mathrel{;}\Rder^{j}{\psi}_{\ast}F)\\
-    &\cong
-    H^{j}({\psi}^{-1}\left({]-\infty,b[}\right)\mathrel{;}F)\\
-    &\cong
-    H^{j}(M_{b}\mathrel{;}F)
-  \end{align*}
-  and
-  \begin{align*}
-    \Gamma({]-\infty,b[}\mathrel{;}H^{j}\RG_{]-\infty,a[}(\Rder{\psi}_{\ast}F))
-    &\cong
-    \Gamma_{]-\infty,a[}({]-\infty,b[}\mathrel{;}\Rder^{j}{\psi}_{\ast}F)\\
-    &\cong
-    \Gamma({]-\infty,a[}\mathrel{;}\Rder^{j}{\psi}_{\ast}F)\\
-    &\cong
-    H^{j}({\psi}^{-1}\left({]-\infty,a[}\right)\mathrel{;}F)\\
-    &\cong
-    H^{j}(M_{a}\mathrel{;}F).
-  \end{align*}
-\end{proof}
+  for all \(j<k\).
+  \end{proof}
 
 
 %===============================================
