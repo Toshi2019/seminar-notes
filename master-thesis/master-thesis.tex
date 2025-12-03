@@ -602,10 +602,10 @@
 %\tableofcontents
 \section*{Preface}
 In these notes, 
-We study microlocal Morse theory, which is developed by
-Guillermou, Kashiwara, and Schapira in \cite{ST92}, 
-but replace microsupports with
-truncatd microsupprts introduced by 
+We study microlocal Morse theory, which is presented, 
+for instance, in \cite{GKS12}. 
+However, we replace the notion of microsupports with
+ that of truncatd microsupprts, introduced by 
 Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KMS03}.
 
 \section{Notations}
@@ -695,7 +695,7 @@ the natural morphism.
 The following is called Kashiwara's lemma.
 
 \begin{Proposition+}[{\cite[Proposition 1.12.6]{KS90}}]\label{prop:ks1.12.6}
-  Let \(\left(X_s,\rho_{s,t}\right)\) be 
+  Let \(\left(X_s,\rho_{s,t}\colon X_t\to X_s\right)_{(s,(s\leqq t))}\) be 
   a projective system of sets indexed by \(\rr\). 
   Assume that for each \(s\in\rr\), the canonical maps\[
     \lambda_s\colon X_s\to\prolim[r<s]X_r
@@ -722,7 +722,9 @@ The following is called Kashiwara's lemma.
   Then, the restriction morphisms\[
     H^{j}(M_{b};F)\to H^{j}(M_{a};F)
   \]
-  are isomorphic for each \(j\leqq k\).
+  are isomorphic for each \(j< k\).\footnote{
+    For \(j=k\), this morphism might be injective.
+  }
 \end{Theorem+}
 
 \begin{Lemma+}\label{Lem:1d-t-morse}
@@ -782,21 +784,22 @@ The following is called Kashiwara's lemma.
   By hypothesis, 
   it follows from \eqref{eq:morse-d.t.} that 
   \(
-      H^{j}(Z_t;G)\simar H^{j}(I_t;G)
-  \) for \(t\in \left[a,b\right[\). 
-  Similarly, we have injections \(
+    H^{j}(Z_t;G)\simar H^{j}(I_t;G)
+  \) for \(t\in \left[a,b\right[\).\footnote{
+    Similarly, we have injections \(
       H^{k}(Z_t;G)\hookrightarrow H^{k}(I_t;G)
   \) for \(t\in \left[a,b\right[\). 
+  } 
   Since \(
       \indlim[t>s] H^{j}(I_t;G)\cong H^{j}(Z_s;G)
-  \), \ref{eq:nonchar-a} holds for any \(j<k\).
-  \footnote{
+  \), \ref{eq:nonchar-a} holds for any \(j<k\).\footnote{
       Similarly, \[
         \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(Z_s;G)
     \] gives injections \[
         \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(I_s;G)
     \] for all \(s\in \left[a,b\right[\). 
-  }Moreover, \ref{eq:nonchar-b} holds for \(j\ll0\). 
+  } Moreover, since we assume \(G\) is a bounded complex, 
+  \ref{eq:nonchar-b} holds for \(j\ll0\). 
   Let us argue by induction on \(j\). 
   Assume \ref{eq:nonchar-b} holds for all 
   \(t\in\left]a,b\right[\) and all \(j\leqq j_0\). 
@@ -807,7 +810,8 @@ The following is called Kashiwara's lemma.
     \text{for all \(j\leqq j_0\) and all \(a<s\leqq t< b\).}
   \end{equation}
   Let \(G \simar G^{\bullet}\) be a flabby resolution. 
-  Let \(t\in\left]a,b\right]\). Consider a complex \[
+  Let \(t\in\left]a,b\right]\). 
+  Consider a complex \[
     E^{\bullet}_{n}=\Gamma(I_{t-\frac{1}{n}};G^{\bullet}).
   \]
   Since \(G^{\bullet}\) is flabby, 
