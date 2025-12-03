@@ -763,14 +763,19 @@ let \(M\) be a manifold.\footnote{
   \) and denote by \(Z_t\) the closed interval \(
       \left]-\infty,t\right] (= \overline{I_t})
   \).
-  By applying to the distinguished triangle\[
-      \RG_{\rr-I_t}(G)\to G\to \RG_{I_t}(G)\overset{+1}{\longrightarrow}
-  \] the functor \((\blk)_{\overline{I_t}}\), we have\[
+  By applying the functor \((\blk)_{\overline{I_t}}\) 
+  to the distinguished triangle\[
+      \RG_{\rr-I_t}(G)\to 
+      G\to 
+      \RG_{I_t}(G)\overset{+1}{\longrightarrow}
+      \quad\text{ in \(\Dompb(\kk_\rr)\)},
+  \] we have\[
       (\RG_{[t,+\infty[}(G))_{\{t\}}
       \to G_{Z_t}
       \to 
       \RG_{I_t}(G)
-      \overset{+1}{\longrightarrow}.
+      \overset{+1}{\longrightarrow}
+      \quad\text{ in \(\Dompb(\kk_\rr)\)}.
   \]
   Aplying the functor \(\RG(\rr;\blk)\) to this, we have
   \begin{equation}\label{eq:morse-d.t.}
@@ -778,16 +783,17 @@ let \(M\) be a manifold.\footnote{
       \to \RG(Z_t;G)
       \to 
       \RG(I_t;G)
-      \overset{+1}{\longrightarrow}.
+      \overset{+1}{\longrightarrow}
+      \quad\text{ in \(\Dompb(\kk)\)}.
   \end{equation}
-  Then consider the following conditions:
+  Then consider the following conditions for 
+  \(j\in\zz\), \(s\in\left[a,b\right[\), and 
+  \(t\in \left]a,b\right]\):
   \begin{align}
       \tag*{\((a)^j_s\)}\label{eq:nonchar-a}
-      \indlim[t>s] H^{j}(I_t;G) &\simarr H^{j}(I_s;G)
-      \quad \text{for all \(s\in[a,b[\)},\\
+      \indlim[t>s] H^{j}(I_t;G) &\simarr H^{j}(I_s;G),\\
       \tag*{\((b)^j_t\)}\label{eq:nonchar-b}
-      \prolim[s<t] H^{j}(I_t;G) &\simrra H^{j}(I_s;G)
-      \quad \text{for all \(t\in \left]a,b\right]\)}.
+      \prolim[s<t] H^{j}(I_t;G) &\simrra H^{j}(I_s;G).
   \end{align}
   By hypothesis, 
   it follows from \eqref{eq:morse-d.t.} that 
@@ -800,14 +806,17 @@ let \(M\) be a manifold.\footnote{
   } 
   Since \(
       \indlim[t>s] H^{j}(I_t;G)\cong H^{j}(Z_s;G)
-  \), \ref{eq:nonchar-a} holds for any \(j<k\).\footnote{
+  \), \ref{eq:nonchar-a} holds 
+  for any \(j<k\) and \(s\in\left[a,b\right[\).\footnote{
       Similarly, \[
         \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(Z_s;G)
     \] gives injections \[
         \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(I_s;G)
     \] for all \(s\in \left[a,b\right[\). 
   } Moreover, since we assume \(G\) is a bounded complex, 
-  \ref{eq:nonchar-b} holds for \(j\ll0\). 
+  \ref{eq:nonchar-b} holds for \(j\ll0\) 
+  and for all \(t\in \left]a,b\right]\). 
+  Let us denote such \(j\) by \(j_0\). 
   Let us argue by induction on \(j\). 
   Assume \ref{eq:nonchar-b} holds for all 
   \(t\in\left]a,b\right[\) and all \(j\leqq j_0\). 
@@ -823,8 +832,9 @@ let \(M\) be a manifold.\footnote{
     E^{\bullet}_{n}=\Gamma(I_{t-\frac{1}{n}};G^{\bullet}).
   \]
   Since \(G^{\bullet}\) is flabby, 
+  we have \(E_{n}^{j}\cong E_{\infty}^{j}\) and 
   the projective system \((E^{j}_{n})_{n}\) satisfies 
-  the ML condition for all \(j< k\). 
+  the ML condition for all \(j\in\zz\). 
   
   By \eqref{eq:non-char-init}, the projective system \(
     (H^{j_0}(E^{\bullet}_{n}))_{n}
@@ -843,11 +853,15 @@ let \(M\) be a manifold.\footnote{
     \cong&
     \prolim[s<t]H^{j_0+1}(I_{s};G).
   \end{align*}
-  Again by Proposition \ref{prop:ks1.12.6}, we get the isomorphisms\[
+  Again by Proposition \ref{prop:ks1.12.6}, 
+  we get the isomorphisms\[
     H^{j}(I_{s};G)\simarr H^{j}(I_t;G)
     \quad
-    \text{for all \(j<k\) and all \(a<s\leqq t\leqq b\).}
+    \text{for all \(j<k\) and all \(a<s\leqq t\leqq b\),}
   \]
+  and injections \[
+    H^{j}(I_{s};G)\hookrightarrow H^{j}(I_t;G)
+  \] for \(j=k\) and for all \(a<s\leqq t\leqq b\). 
 
   Finally, using \eqref{eq:morse-d.t.} and the hypothesis, 
   we have the isomorphisms\[
@@ -855,6 +869,9 @@ let \(M\) be a manifold.\footnote{
     H^{j}(Z_{a};G)\simarr H^{j}(I_s;G)
     \quad
     \text{for all \(j<k\) and all \(a<s\leqq b\).}
+  \]
+  Similarly, for \(j=k\), we have\[
+    H^{k}(I_{b};G) \cong \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(I_s;G) \hookrightarrow H^{k}(I_{a};G).
   \]
 \end{proof}
 
