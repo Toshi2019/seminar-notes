@@ -585,6 +585,10 @@
 \newcommand{\ropen}{\mathclose{[}}
 \newcommand{\rclosed}{\mathopen{]}}
 
+\newcommand{\sm}{\raisebox{2.33pt}{~\rule{6.4pt}{1.3pt}~}}
+\newcommand{\smi}{\mathbin{\raisebox{2.33pt}{\rule{6.4pt}{1.3pt}}}}
+
+
 % ----------------------------
 % documenet 
 % ----------------------------
@@ -709,6 +713,39 @@ The following is called Kashiwara's lemma.
   injective (resp. surjective).
 \end{Proposition+}
 
+\subsection*{ML procedure for sheaves}
+
+\begin{Proposition+}[{\cite[Proposition 2.7.1]{KS90}}]\label{prop:ks2.7.1}
+  Let \(X\) be a topological space and let \(F\in\Dompl(\zz_X)\). 
+  Let \(\left(U_n\right)_{n\in\nn}\) be an increasing sequence 
+  of open subsets of \(X\), \(\left(Z_n\right)_{n\in\nn}\) 
+  a decreasing sequence of closed subsets of \(X\). 
+  Set \(U\coloneqq\bigcup_{n}U_{n}\), 
+  \(Z\coloneqq\bigcap_{n}Z_{n}\). 
+  \begin{enumerate}[(i)]
+    \item For any \(j\), the natural map \(
+      \varphi_j\colon H^{j}_{Z}(U;F)
+      \to 
+      \prolim[n]H^{j}_{Z_{n}}(U_{n};F)
+    \) is surjective. 
+    \item Assume that for a given \(j\), 
+    the projective system \(
+      (H^{j-1}_{Z_{n}}(U_{n};F))_{n}
+    \) satisfies the ML condition. 
+    Then \(\varphi_{j}\) is bijective. 
+    \item Let now \(\left(X_{n}\right)_{n\in\nn}\) be 
+    an increasing family of subsets of \(X\) satisfying \(
+      X=\bigcup_{n}X_n\) and \(X_{n}\subset \Int[](X_{n+1})
+    \) for all \(n\). 
+    Assume that for a given \(j\), the projective system \(
+      \left(H^{j-1}(X_{n};F)\right)_{n}
+    \) satisfies the ML condition. 
+    Then the natural map \(
+      H^{j}(X;F)\to \prolim[n]H^{j}(X_{n};F)
+    \) is bijective. 
+  \end{enumerate}
+\end{Proposition+}
+
 \section{Results}
 
 In this section, 
@@ -793,7 +830,7 @@ let \(M\) be a manifold.\footnote{
       \tag*{\((a)^j_s\)}\label{eq:nonchar-a}
       \indlim[t>s] H^{j}(I_t;G) &\simarr H^{j}(I_s;G),\\
       \tag*{\((b)^j_t\)}\label{eq:nonchar-b}
-      \prolim[s<t] H^{j}(I_t;G) &\simrra H^{j}(I_s;G).
+      \prolim[s<t] H^{j}(I_t;G) &\simrra H^{j}(I_t;G).
   \end{align}
   By hypothesis, 
   it follows from \eqref{eq:morse-d.t.} that 
@@ -905,6 +942,153 @@ let \(M\) be a manifold.\footnote{
   \]
   for all \(j<k\).
   \end{proof}
+
+\section{Truncated Noncharacteristic Deformation}
+
+We will reformulate the noncharacteristic deformation 
+lemma \cite[Proposition 2.7.2]{KS90} to make a relation 
+to truncated microsupport. 
+
+\begin{Proposition+}\label{prop:t-nonchar}
+  Let \(X\) be a Hausdorff space, \(F\in\Dompb(\zz_X)\), and 
+  let \(\left(U_{t}\right)_{t\in\rr}\) be a family of 
+  open subsets of \(X\). 
+  We assume the following conditions. 
+  \begin{enumerate}[(i)]
+    \item \label{item:t-nonchar1}
+    \(U_{t}=\bigcup_{s<t}U_{s}\), for all \(t\in\rr\). 
+    \item \label{item:t-nonchar2}
+    For all pairs \((s,t)\) with \(s\leqq t\), 
+    the set \(\overline{U_{t}\smi U_{s}}\cap \supp{F}\) is compact.
+    \item \label{item:t-nonchar3}
+    Setting \(
+      Z_{s}\coloneqq \bigcap_{t>s}\overline{U_t\smi U_s}
+    \), we have for all pairs \((s,t)\) with \(s\leqq t\), 
+    and all \(x\in Z_{s}\smi U_{t}\), \[
+      (H^{j}_{X\smi U_{t}}(F))_{x}=0
+      \quad 
+      \text{for all \(j\leqq k\).}
+    \]
+  \end{enumerate}
+  Then we have for all \(t\in\rr\), the isomorphisms\[
+    H^{j}\left(\bigcup_{s}U_{s};F\right)
+    \simar 
+    H^{j}\left(U_{t};F\right)
+    \quad \text{for all \(j< k\)} 
+  \]
+  and the injections\[
+    H^{k}\left(\bigcup_{s}U_{s};F\right)
+    \hookrightarrow 
+    H^{k}\left(U_{t};F\right).
+  \] 
+\end{Proposition+}
+
+\begin{proof}
+  Consider the following conditions for 
+  \(j\in\zz\), \(s\), and \(t\):
+  \begin{align}
+      \tag*{\((a)^j_s\)}\label{eq:t-nonchar-a}
+      \indlim[t>s] H^{j}(U_t;F) &\simarr H^{j}(U_s;F),\\
+      \tag*{\((b)^j_t\)}\label{eq:t-nonchar-b}
+      \prolim[s<t] H^{j}(U_s;F) &\simrra H^{j}(U_t;F).
+  \end{align}
+
+  Let us prove \ref{eq:t-nonchar-a} for \(s\in \rr\) and \(j<k\). 
+  We can assume that \(\overline{U_{t}\smi U_{s}}\) is compact 
+  for any \(s\leqq t\) by replacing \(X\) by \(\supp{F}\). 
+  Consider the distinguished triangle\[
+    \mres[(\RG_{X\smi U_{t}}(F))]{Z_{s}}\to
+    \mres[(\RG_{X\smi U_{s}}(F))]{Z_{s}}\to
+    \mres[(\RG_{U_{t}\smi U_{s}}(F))]{Z_{s}}\overset{+1}{\longrightarrow}.
+  \] 
+  By hypothesis \eqref{item:t-nonchar3}, it follows that
+  \[
+      \mres[(H^{j}_{X\smi U_{t}}(F))]{Z_{s}}=0,
+      \quad
+      \mres[(H^{j}_{X\smi U_{s}}(F))]{Z_{s}}=0
+  \]
+  for any \(j\leqq k\) and then \[
+    \mres[(H^{j}_{U_{t}\smi U_{s}}(F))]{Z_{s}}=0 
+    \quad
+    \text{for any \(j\leqq k-1\).}
+  \] 
+  Thus for any \(j<k\) and \(t\geqq s\), we have
+  \begin{align}
+    0
+    &=
+    \Gamma(Z_{s};H^{j}_{U_{t}\smi U_{s}}(F))\\
+    &=\indlim[U\supset Z_{s}]H^{j}(U\cap U_{t};H^{})
+  \end{align}
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
+\begin{Remark+}
+  Lemma \ref{Lem:1d-t-morse} follows from 
+  Proposition \ref{prop:t-nonchar}. 
+  Indeed, putting \(X=\lopen-\infty,b\ropen\), 
+  \(F=\mres[G]{I_{b}}\), and \(U_t=I_t\), 
+  we find that \begin{enumerate}[(i)]
+    \item \(\bigcup_{s<t} I_s
+    = \bigcup_{s<t}\lopen-\infty,s\ropen
+    = \lopen-\infty,t\ropen= I_t\) for all \(t\in\rr\). 
+    \item If \(s\leqq t\), then \(
+      \overline{I_t\smi I_s}\cap\supp{G}
+      =\overline{\lclosed s,t\ropen}\cap\supp{G}
+      =\lclosed s,t\rclosed\cap\supp{G}
+      \) is compact.
+    \item For \(s\in\rr\), we have \[
+      Z_{s}
+      =\bigcap_{t>s}\overline{I_{t}\smi I_{s}}
+      =\bigcap_{t>s}\overline{\lclosed s,t\ropen}
+      =\bigcap_{t>s}\lclosed s,t\rclosed
+      =\left\{s\right\},
+    \]
+    and \[
+      Z_s\smi I_t
+      =\left\{s\right\}\smi \lopen-\infty,t\ropen
+      =\begin{cases*}
+        \left\{s\right\}& if \(s=t\),\\
+        \varnothing& if \(s<t\).
+      \end{cases*}
+    \]
+    By hypothesis of Lemma \ref{Lem:1d-t-morse}, 
+    for all \(s\in \left\{s\right\}\), 
+    \[
+      H^{j}_{X\smi I_s}(F)_{s}
+      =H^{j}_{\lclosed s,\infty\ropen}(F)_{s}=0.
+    \]
+    Then we can apply Proposition \ref{prop:t-nonchar}, and 
+    we have the isomorphisms for all \(t\in \lclosed a,b\ropen\) and \(j<k\),
+    \[
+      H^{j}(I_{b};F)
+      =H^{j}(\bigcup_{s}I_{s};F)
+      \simar
+      H^{j}(I_{t};F)
+    \]
+    and the injections
+    \[
+      H^{k}(I_{b};F)
+      =H^{k}(\bigcup_{s}I_{s};F)
+      \hookrightarrow
+      H^{k}(I_{t};F)
+    \]
+  \end{enumerate}
+\end{Remark+}
+
+
+
 
 
 %===============================================
