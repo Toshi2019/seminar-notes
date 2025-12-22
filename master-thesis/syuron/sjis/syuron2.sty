@@ -1,0 +1,148 @@
+\newif\if@jslayout
+
+\DeclareOption{jslayout}{\@jslayouttrue}
+\ProcessOptions\relax
+
+\if@jslayout
+\setlength\columnsep{2zw}
+\setlength\columnseprule{0\p@}
+\setlength\lineskip{1\p@}
+\setlength\normallineskip{1\p@}
+\setlength\lineskiplimit{1\p@}
+\setlength\normallineskiplimit{1\p@}
+\renewcommand{\baselinestretch}{}
+\setlength\parskip{0\p@}
+\setlength\parindent{1zw}
+\@lowpenalty   51
+\@medpenalty  151
+\@highpenalty 301
+\setlength\topskip{10\p@}
+\setlength\headheight{2\topskip}
+\setlength\footskip{0.03367\paperheight}
+\ifdim\footskip<\baselineskip
+  \setlength\footskip{\baselineskip}
+\fi
+\setlength\headsep{\footskip}
+\addtolength\headsep{-\topskip}
+\setlength\maxdepth{.5\topskip}
+\newdimen\fullwidth
+\setlength\fullwidth{0.76\paperwidth}
+\if@twocolumn \@tempdima=2zw \else \@tempdima=1zw \fi
+\divide\fullwidth\@tempdima \multiply\fullwidth\@tempdima
+\setlength\textwidth{\fullwidth}
+\setlength{\textheight}{0.83\paperheight}
+\addtolength{\textheight}{-\topskip}
+\addtolength{\textheight}{-\headsep}
+\addtolength{\textheight}{-\footskip}
+\addtolength{\textheight}{-\topskip}
+\divide\textheight\baselineskip
+\multiply\textheight\baselineskip
+\addtolength{\textheight}{\topskip}
+\addtolength{\textheight}{0.1\p@}
+\setlength\marginparsep{\columnsep}
+\setlength\marginparpush{\baselineskip}
+\setlength{\oddsidemargin}{\paperwidth}
+\addtolength{\oddsidemargin}{-\fullwidth}
+\setlength{\oddsidemargin}{.5\oddsidemargin}
+\iftombow
+  \addtolength{\oddsidemargin}{-1in}
+\else
+  \addtolength{\oddsidemargin}{-1truein}
+\fi
+\setlength{\evensidemargin}{\oddsidemargin}
+\if@mparswitch
+  \addtolength{\evensidemargin}{\fullwidth}
+  \addtolength{\evensidemargin}{-\textwidth}
+\fi
+\setlength\marginparwidth{\paperwidth}
+\addtolength\marginparwidth{-\oddsidemargin}
+\addtolength\marginparwidth{-1truein}
+\addtolength\marginparwidth{-\textwidth}
+\addtolength\marginparwidth{-1cm}
+\addtolength\marginparwidth{-\marginparsep}
+\@tempdima=1zw
+\divide\marginparwidth\@tempdima
+\multiply\marginparwidth\@tempdima
+\setlength\topmargin{\paperheight}
+\addtolength\topmargin{-\textheight}
+\addtolength\topmargin{-\topskip}
+\addtolength\topmargin{-\headsep}
+\addtolength\topmargin{-\footskip}
+\setlength\topmargin{0.5\topmargin}
+\iftombow
+  \addtolength\topmargin{-1in}
+\else
+  \addtolength\topmargin{-1truein}
+\fi
+{\footnotesize\global\setlength\footnotesep{\baselineskip}}
+\setlength\footnotesep{0.7\footnotesep}
+\fi
+
+\def\author#1{\gdef\@author{#1}}
+\def\@author{\@latex@error{No \noexpand\author given}\@ehc}
+
+%\newcommand{\HUGE}{\@setfontsize\HUGE{28}{37}}
+\renewcommand{\tableofcontents}{%
+%% \newpage
+%% \thispagestyle{empty}
+%% \mbox{}
+%% \newpage
+  \@restonecolfalse
+  \contentsname%
+  \@starttoc{toc}%
+  \if@restonecol\twocolumn\fi
+}
+\renewcommand{\maketitle}{%
+    \begin{titlepage}%
+      \let\footnotesize\small
+      \let\footnoterule\relax
+      \let\footnote\thanks
+
+	\begin{flushleft}
+		\Large{CŽm˜_•¶}
+	\end{flushleft}
+	\vskip 6zw
+      \begin{center}%
+        {\Huge \@title \par}%
+        \vskip 0pt plus 1.5fil%
+        {\Huge \@author \par}%
+        \vskip 0pt plus 1fil
+        {\huge \@date \par}%
+	\vskip 2zw
+        {\huge –kŠC“¹‘åŠw‘åŠw‰@—Šw‰@ \\
+	”ŠwêU”ŽŽm‘OŠú‰Û’ö \par}
+     \end{center}\par\vfilneg
+    \end{titlepage}%
+    \newpage
+    \thispagestyle{empty}
+    \mbox{}
+    \newpage
+    \setcounter{page}{1}
+    \setcounter{footnote}{0}%
+}%
+\renewcommand{\contentsname}{%
+	%% \leftline{\Large{\@date}}
+	%% \vspace{2zw}
+	\begin{center}
+		\huge{\@title}
+	\end{center}
+	\vspace{0.5zw}
+	\begin{center}
+		\LARGE{\@author}
+	\end{center}
+	\vspace{2.5zw}
+	\begin{flushleft}
+		\huge{\textbf{–ÚŽŸ}}
+	\end{flushleft}
+	\vspace{1zw}
+    \global\let\thanks\relax
+    \global\let\maketitle\relax
+    \global\let\@thanks\@empty
+    \global\let\@author\@empty
+    \global\let\@date\@empty
+    \global\let\@title\@empty
+    \global\let\title\relax
+    \global\let\author\relax
+    \global\let\date\relax
+    \global\let\and\relax
+}

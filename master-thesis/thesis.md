@@ -38,3 +38,17 @@ non-characteristic deformation lemma の打ち切り版
 できればモース不等式もやる．
 
 完成は1/16目標
+
+## 12/22 に考えたこと
+
+### truncated non-characteristic deformation lemma について
+
+共通部分が閉包になるという条件は帰納極限のところで必要
+
+コホモロジーの消滅が示せるかどうかがわからない（ワンチャン仮定に入れるか）
+
+### 相対版Morseの証明について考えた
+
+ストーリーを「non proper な場合の順像に関する関手的性質のtruncated ver.」としても良さそう．
+
+順像公式とSSkが錐であることが大事っぽい

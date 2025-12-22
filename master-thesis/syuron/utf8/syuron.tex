@@ -1,0 +1,123 @@
+﻿\documentclass[a4paper]{jsarticle}
+\usepackage{syuron2}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{defn}{定義}
+\newtheorem{thm}[defn]{定理}
+\newtheorem{prop}[defn]{命題}
+\newtheorem{lemma}[defn]{補題}
+\newtheorem{rem}[defn]{注意}
+
+%\documentclass[a4paper]{jarticle}
+% として jarticle を使う場合は，上の \usepackage の部分を
+%\usepackage[jslayout]{syuron2}
+% のように [jslayout] を追加する．
+
+% 以下は修論のフォーマットを参照して記入する．
+\title{修論のタイトル}
+\author{自分の名前}
+\date{2024.3} % 例. 2024年3月卒業の場合は「2024.3」を記入する．
+
+\begin{document}
+
+%表紙の作成
+\maketitle
+
+%目次の作成
+\tableofcontents
+
+\section{はじめに}
+\label{sec:intro}
+修士論文は指導教員の指導のもとに作成する．
+修士論文の構成や文体については指導教員の指導に従う．
+一般的にはセミナーで読んだ論文や書籍を参考にするとよい．
+数学に限らず，文章を書く際の注意として参考文献\cite{ref2}は定評のある和書である．
+このサンプルファイルは一般的な修士論文の構成を紹介するものである．
+
+\section{主結果}
+以下に修士論文作成に際しての注意および\LaTeX{}を利用する際の注意点を示す．
+\subsection{修士論文作成の注意}
+実際の修士論文作成に当たっては指導教員とよく相談し，
+最初の草稿は短く作成し早めに見てもらうとよい．
+短く作成し，早く見てもらうことで論文調の文章作成に慣れることができ，
+短く作成することで構成を練ることができる．
+
+論文では句読点にカンマとピリオドを用いる．半角・全角は統一する．
+
+\subsection{\LaTeX{}利用上の注意}
+段落分けの注意を示す．
+\LaTeX{}で段落を分ける際には1行空ければよい．段落の冒頭には自動的に1文字分の空白が
+入る．本文中で強制的な改行指示（\verb|\\|）を使う場面はごく少ない．
+一般的に，1つの段落には1つの内容を記述し，冒頭の文章で段落の内容を
+簡潔に紹介する．
+
+節や数式，図表，参考文献の引用について説明する．
+節（\verb|\section|など）番号，数式（\verb|equation|環境）番号，
+図表の番号は自動的に設定される．
+このサンプルファイルのようにlabelをつけて適切に参照する．まず，節番号の参照（第\ref{sec:intro}
+節）と参考文献の参照\cite{ref1}を例として示す．
+
+続いて，式(\ref{eq:main1})を主結果の例として，数式番号の参照例を紹介する．
+\begin{equation}
+  \label{eq:main1}
+  \lim_{n\to\infty}\frac{1}{n}\sum_{k=0}^{n-1}f(T^k(x))=\int_Xfd\mu
+\end{equation}
+番号を振らない数式は次のように書く．
+\[
+  \lambda(x)=\lim_{n\to\infty}\frac{1}{n}\sum_{k=0}^{n-1}\log|f'(T^k(x))|.
+\]
+
+表を参照する場合の例（表\ref{tab:main1}）を示す．図の場合もfigure環境を使えば同様である．
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c|c}
+    $a=1$ & $a=2$\\
+    \hline
+    成立 & 不成立
+  \end{tabular}
+  \caption{表の例}
+  \label{tab:main1}
+\end{table}
+
+\begin{defn}
+  定義はdefn環境を使う．
+\end{defn}
+
+\begin{prop}
+  命題はprop環境．
+\end{prop}
+
+\begin{lemma}
+  補題はlemma環境．
+\end{lemma}
+
+主定理\ref{thm:main}を下記に述べる．
+\begin{thm}[主定理]
+  \label{thm:main}
+  命題，補題，定理はamsthmパッケージを使う．本ファイル冒頭の記述を参照．
+  必要があればnewtheoremを用いて同じように増やして良い．
+\end{thm}
+
+目次，参考文献を正しく参照するために，platexの処理は3回繰り返すこと．
+
+\section{終わりに}
+修士論文の構成例を簡単に紹介し，\LaTeX{}を使用する際の注意点を示した．
+\LaTeX{}全般の参考書としては\cite{latex}が有名である．PCへの
+インストール用DVDも付属している．
+
+
+
+\section*{謝辞}
+本修士論文を作成するにあたり，ご指導いただいた指導教員のOO先生に深く感謝します．
+
+\begin{thebibliography}{99}
+\bibitem{ref1} Author, ``{\it Title}'', Journal, Volume, pagerange, year.
+\bibitem{ref2} 木下是雄『理科系の作文技術』（中公新書）
+\bibitem{latex} 奥村晴彦，黒木裕介『\LaTeX2e{}美文書作成入門』
+  （技術評論社）
+\end{thebibliography}
+
+\end{document}

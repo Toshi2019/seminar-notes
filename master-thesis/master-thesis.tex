@@ -404,7 +404,8 @@
 \newcommand{\muS}[1][]{\mathop{\mathrm{SS}}\nolimits_{#1}}
 \newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
 \newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
-\newcommand{\Rder}{\mathrm{R}}
+%\newcommand{\Rder}{\mathrm{R}}
+\newcommand{\Rder}[1][]{\mathop{\mathrm{R}^{#1}\hspace{-2pt}}\nolimits}
 
 \newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
 \newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
@@ -469,6 +470,8 @@
 \newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
 
 \newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+\newcommand{\dpb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+\newcommand{\tpb}[1][]{\mathbin{\mathop{\times}\nolimits_{#1}}}
 
 
 
@@ -587,6 +590,8 @@
 
 \newcommand{\sm}{\raisebox{2.33pt}{~\rule{6.4pt}{1.3pt}~}}
 \newcommand{\smi}{\mathbin{\raisebox{2.33pt}{\rule{6.4pt}{1.3pt}}}}
+
+\newcommand{\smid}{\mathrel{;}}
 
 
 % ----------------------------
@@ -1088,8 +1093,92 @@ to truncated microsupport.
 \end{Remark+}
 
 
+\section{
+  Relative Microlocal Morse Theory via Truncated Microsupport
+}
 
+Let \(f\colon Y\to X\) be a morphism of manifolds, and 
+\(\varphi\) a real valued function of class \(C^1\). 
+For a real number \(t\in \rr\), we set 
+\begin{align*}
+  Y_t
+  &\coloneqq \left\{y\in Y\smid \varphi(y)< t\right\} 
+  = \varphi^{-1}(\lopen-\infty,t\ropen),\\
+  \widetilde{Y_t}
+  &\coloneqq \left\{y\in Y\smid \varphi(y)\leqq t\right\} 
+  = \varphi^{-1}(\lopen-\infty,t\rclosed).
+\end{align*}
+Let us define the following morphisms:
+\[\xymatrix{
+  Y_t\ar[r]^-{j_t}
+  \ar[rd]_-{f_t}
+  &
+  Y
+  \ar[d]^-{f}\\
+  &X,
+}\quad\xymatrix{
+  \widetilde{Y_t}\ar[r]^-{\tilde{j}_t}
+  \ar[rd]_-{f_t}
+  &
+  Y
+  \ar[d]^-{f}\\
+  &X.
+}\]
 
+\begin{Proposition+}
+  Let \(G\in\Dompb(Y)\), and assume \(
+    f_{t}\colon \supp(G)\cap \overline{Y_t}\to X
+  \) is proper for all \(t\in\rr\). 
+  Let \(k\) be an integer, and \(t_\circ\) a real number.
+  \begin{enumerate}[(i)]
+    \item Assume that, 
+    for any \(y\in Y\smi \widetilde{Y}_{t_{\circ}}\), 
+    we have \[
+      d\varphi(y)\notin \left(
+        \muS[k](G)+ \mdiff[f]\left(
+          Y\pb[X]\cotb[X]
+        \right)
+      \right).
+    \]
+    Then \begin{align}
+      \tag{a}
+      \Rder[j]{f_{\ast}}G
+      &\cong
+      \Rder[j]{{f_{t}}_{\ast}}j^{-1}_{t}G
+      \quad
+      &&\text{ for \(j<k\) and \(t>t_\circ\)},\\
+      \tag{a\(_k\)}
+      \Rder[k]{f_{\ast}}G
+      &\hookrightarrow
+      \Rder[k]{{f_{t}}_{\ast}}j^{-1}_{t}G
+      \quad
+      &&\text{ for \(t>t_\circ\)},\\
+      \tag{a\('\)}
+      \Rder[j]{\tilde{f}_{\ast}}G
+      &\cong
+      \Rder[j]\tilde{f_{t}}_{\ast}\tilde{j}^{-1}_{t}G
+      \quad
+      &&\text{ for \(j<k\) and \(t\geqq t_\circ\)},\\
+      \tag{a\(_k'\)}
+      \Rder[k]{\tilde{f}_{\ast}}G
+      &\hookrightarrow
+      \Rder[k]\tilde{f_{t}}_{\ast}\tilde{j}^{-1}_{t}G
+      \quad
+      &&\text{ for \(t\geqq t_\circ\)},\\
+      \tag{b}
+      \muS[k](\Rder[]{f_{\ast}}G)
+      &\subset
+      \mpb[f]\left(\mdiff[f]^{-1}\left(
+        \muS[k](G)\cap \pi^{-1}(\widetilde{Y}_{t_{\circ}})
+      \right)\right)%\\
+      %&
+      &&=\mpb[f]\left(\mdiff[f]^{-1}\left(
+        \muS[k](G)
+      \right)\right)
+      .
+    \end{align}
+  \end{enumerate}
+\end{Proposition+}
 
 %===============================================
 % 参考文献スペース

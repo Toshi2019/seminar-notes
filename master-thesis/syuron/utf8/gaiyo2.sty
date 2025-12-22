@@ -1,0 +1,157 @@
+﻿%つかいかた
+%\documentclass[a4paper,draft]{jsarticle}
+%\usepackage{gaiyo}
+%\title{タイトル\\}
+%\author{なまえ}
+%\date{2004.3}
+%\kei{代数系}
+%\shisho{なまえ 教授}
+%\begin{document}
+%\begin{gaiyo}
+% ここにアブストラクト
+%\end{gaiyo}
+%\end{document}
+
+\newif\if@jslayout
+
+\DeclareOption{jslayout}{\@jslayouttrue}
+\ProcessOptions\relax
+
+\if@jslayout
+\setlength\columnsep{2zw}
+\setlength\columnseprule{0\p@}
+\setlength\lineskip{1\p@}
+\setlength\normallineskip{1\p@}
+\setlength\lineskiplimit{1\p@}
+\setlength\normallineskiplimit{1\p@}
+\renewcommand{\baselinestretch}{}
+\setlength\parskip{0\p@}
+\setlength\parindent{1zw}
+\@lowpenalty   51
+\@medpenalty  151
+\@highpenalty 301
+\setlength\topskip{10\p@}
+\setlength\headheight{2\topskip}
+\setlength\footskip{0.03367\paperheight}
+\ifdim\footskip<\baselineskip
+  \setlength\footskip{\baselineskip}
+\fi
+\setlength\headsep{\footskip}
+\addtolength\headsep{-\topskip}
+\setlength\maxdepth{.5\topskip}
+\newdimen\fullwidth
+\setlength\fullwidth{0.76\paperwidth}
+\if@twocolumn \@tempdima=2zw \else \@tempdima=1zw \fi
+\divide\fullwidth\@tempdima \multiply\fullwidth\@tempdima
+\setlength\textwidth{\fullwidth}
+\setlength{\textheight}{0.83\paperheight}
+\addtolength{\textheight}{-\topskip}
+\addtolength{\textheight}{-\headsep}
+\addtolength{\textheight}{-\footskip}
+\addtolength{\textheight}{-\topskip}
+\divide\textheight\baselineskip
+\multiply\textheight\baselineskip
+\addtolength{\textheight}{\topskip}
+\addtolength{\textheight}{0.1\p@}
+\setlength\marginparsep{\columnsep}
+\setlength\marginparpush{\baselineskip}
+\setlength{\oddsidemargin}{\paperwidth}
+\addtolength{\oddsidemargin}{-\fullwidth}
+\setlength{\oddsidemargin}{.5\oddsidemargin}
+\iftombow
+  \addtolength{\oddsidemargin}{-1in}
+\else
+  \addtolength{\oddsidemargin}{-1truein}
+\fi
+\setlength{\evensidemargin}{\oddsidemargin}
+\if@mparswitch
+  \addtolength{\evensidemargin}{\fullwidth}
+  \addtolength{\evensidemargin}{-\textwidth}
+\fi
+\setlength\marginparwidth{\paperwidth}
+\addtolength\marginparwidth{-\oddsidemargin}
+\addtolength\marginparwidth{-1truein}
+\addtolength\marginparwidth{-\textwidth}
+\addtolength\marginparwidth{-1cm}
+\addtolength\marginparwidth{-\marginparsep}
+\@tempdima=1zw
+\divide\marginparwidth\@tempdima
+\multiply\marginparwidth\@tempdima
+\setlength\topmargin{\paperheight}
+\addtolength\topmargin{-\textheight}
+\addtolength\topmargin{-\topskip}
+\addtolength\topmargin{-\headsep}
+\addtolength\topmargin{-\footskip}
+\setlength\topmargin{0.5\topmargin}
+\iftombow
+  \addtolength\topmargin{-1in}
+\else
+  \addtolength\topmargin{-1truein}
+\fi
+{\footnotesize\global\setlength\footnotesep{\baselineskip}}
+\setlength\footnotesep{0.7\footnotesep}
+\fi
+
+\def\author#1{\gdef\@author{#1}}
+\def\@author{\@latex@error{No \noexpand\author given}\@ehc}
+\def\kei#1{\gdef\nous@kei{#1}}
+\def\nous@kei{\@latex@error{No \noexpand\kei given}\@ehc}
+\def\shisho#1{\gdef\nous@shisho{#1}}
+\def\nous@shisho{\@latex@error{No \noexpand\shisho given}\@ehc}
+
+\newcommand{\hyoshi}{
+\begin{titlepage} 
+修士論文\vspace{2cm}
+\begin{center} 
+{\LARGE \@title }
+\end{center} 
+\vfill
+\begin{center} 
+{\LARGE \@author}
+\end{center} 
+\vfill
+\begin{center} 
+{\Large \@date }\\ [1.5cm] 
+{\Large 北海道大学大学院理学院}\\
+{\Large 数学専攻博士前期課程}\\ [.5cm] 
+\end{center} 
+\end{titlepage} 
+}
+
+\newcommand{\taitoru}{
+\thispagestyle{plain}
+\newpage
+\setcounter{page}{1}
+\@date
+\begin{center}
+\parbox{.9\textwidth}{\LARGE \begin{center}\@title\end{center}}
+%&}
+\\[1cm]
+{\Large \@author}
+\\
+\end{center}
+}
+
+
+
+\newenvironment{gaiyo}[1][{概\hspace{2zw}要}]{
+\newpage\thispagestyle{plain}
+%\section*{}
+\setcounter{page}{1}
+\begin{center}
+{\Large \nous@kei}\hfill{\Large{指導教員\hspace{1zw}\nous@shisho}}\\
+\parbox{.9\textwidth}{\LARGE \begin{center}\@title\end{center}}
+%&}
+\\
+{\large {\@author}}
+\\
+%\\
+\vspace{1cm}{\bfseries #1}
+\end{center}
+}{
+
+}
+
+
+
+
