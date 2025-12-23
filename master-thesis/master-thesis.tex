@@ -974,12 +974,24 @@ to truncated microsupport.
       \quad 
       \text{for all \(j\leqq k\).}
     \]
+    \item \label{item:t-nonchar4} 
+    For any \(s\in\rr\), 
+    \(\bigcap_{t>s}U_{t}=\overline{U_{s}}\) 
+    and 
+    \(\overline{U_{s}}\) is closed 
+    in a paracompact open subset of \(X\).
+    \item\footnote{
+      This condition might be 
+      deduced from \eqref{item:t-nonchar3}.
+    } \label{item:t-nonchar5} 
+    \(Z_s\smi U_{s}\subset\bd{U_{s}}\) 
+    for all \(s\in\rr\). 
   \end{enumerate}
-  Then we have for all \(t\in\rr\), the isomorphisms\[
+  Then, for all \(t\in\rr\), we have the isomorphisms\[
     H^{j}\left(\bigcup_{s}U_{s};F\right)
     \simar 
     H^{j}\left(U_{t};F\right)
-    \quad \text{for all \(j< k\)} 
+    \quad \text{for all \(j< k\),} 
   \]
   and the injections\[
     H^{k}\left(\bigcup_{s}U_{s};F\right)
@@ -993,37 +1005,94 @@ to truncated microsupport.
   \(j\in\zz\), \(s\), and \(t\):
   \begin{align}
       \tag*{\((a)^j_s\)}\label{eq:t-nonchar-a}
-      \indlim[t>s] H^{j}(U_t;F) &\simarr H^{j}(U_s;F),\\
-      \tag*{\((b)^j_t\)}\label{eq:t-nonchar-b}
-      \prolim[s<t] H^{j}(U_s;F) &\simrra H^{j}(U_t;F).
+      \mu_{s}^{j}&\colon
+      \indlim[t>s] H^{j}(U_t;F) \simarr H^{j}(U_s;F),\\
+      \tag*{\((a')^k_s\)}\label{eq:t-nonchar-a'}
+      \mu_{s}^{k}&\colon
+      \indlim[t>s] H^{j}(U_t;F) \hookrightarrow H^{j}(U_s;F),\\
+      \tag*{\((b)^j_s\)}\label{eq:t-nonchar-b}
+      \lambda_{s}^{j}&\colon
+      H^{j}(U_t;F)\simarr \prolim[s<t] H^{j}(U_s;F).
   \end{align}
 
   Let us prove \ref{eq:t-nonchar-a} for \(s\in \rr\) and \(j<k\). 
   We can assume that \(\overline{U_{t}\smi U_{s}}\) is compact 
   for any \(s\leqq t\) by replacing \(X\) by \(\supp{F}\). 
   Consider the distinguished triangle\[
-    \mres[(\RG_{X\smi U_{t}}(F))]{Z_{s}}\to
-    \mres[(\RG_{X\smi U_{s}}(F))]{Z_{s}}\to
-    \mres[(\RG_{U_{t}\smi U_{s}}(F))]{Z_{s}}\overset{+1}{\longrightarrow}.
-  \] 
-  By hypothesis \eqref{item:t-nonchar3}, it follows that
+    \RG_{X\smi U_{t}}(F)
+    \to
+    F
+    \to
+    \RG_{U_{t}}(F)
+    \overset{+1}{\longrightarrow}.
+  \]
+  Applying to this triangle the functor \(
+    (\blk)_{\overline{U_{t}}}
+  \), we have \[
+    \left(\RG_{X\smi U_{t}}(F)\right)_{\overline{U_{t}}}
+    \to
+    F_{\overline{U_{t}}}
+    \to
+    \RG_{U_{t}}(F)
+    \overset{+1}{\longrightarrow}.
+  \]
+  Again applying to this triangle the functor \(\RG(X;\blk)\), 
+  we have
+  \begin{equation}
+    \RG\left(X;\left(\RG_{X\smi U_{t}}(F)\right)_{\overline{U_{t}}}\right)
+    \to
+    \RG(\overline{U_{t}};F)
+    \to
+    \RG(U_{t};F)
+    \overset{+1}{\longrightarrow}.
+  \end{equation}
+  By hypotheses \eqref{item:t-nonchar3}--\eqref{item:t-nonchar5}, 
+  it follows that
   \[
-      \mres[(H^{j}_{X\smi U_{t}}(F))]{Z_{s}}=0,
-      \quad
-      \mres[(H^{j}_{X\smi U_{s}}(F))]{Z_{s}}=0
+    \left(H^{j}_{X\smi U_{t}}(F)\right)_{\bd{U_{t}}}=0
   \]
   for any \(j\leqq k\) and then \[
-    \mres[(H^{j}_{U_{t}\smi U_{s}}(F))]{Z_{s}}=0 
+    H^{j}\left(X;
+      \left(
+        \RG_{X\smi U_{t}}(F)
+      \right)_{\overline{U_{t}}}
+    \right)=0
     \quad
-    \text{for any \(j\leqq k-1\).}
-  \] 
-  Thus for any \(j<k\) and \(t\geqq s\), we have
+    \text{for any \(j\leqq k\).}
+  \] \footnote{この辺の議論はきちんと詰めないといけない．}
+  Thus for any \(t\), we have
   \begin{align}
-    0
-    &=
-    \Gamma(Z_{s};H^{j}_{U_{t}\smi U_{s}}(F))\\
-    &=\indlim[U\supset Z_{s}]H^{j}(U\cap U_{t};H^{})
+    \label{eq:a-iso}H^{j}(\overline{U_{t}};F)
+    &\simar
+    H^{j}(U_{t};F)\quad
+    \text{for any \(j< k\),}\\
+    \label{eq:a-inj}H^{k}(\overline{U_{t}};F)
+    &\hookrightarrow
+    H^{k}(U_{t};F).
   \end{align}
+  Therefore, we have by \eqref{item:t-nonchar4} and \eqref{eq:a-iso},  
+  \begin{align*}
+    \indlim[t>s]H^{j}(U_t;F)
+    &\cong 
+    H^{j}\left(\bigcap_{t>s}U_t;F\right)\\
+    &=
+    H^{j}(\overline{U_s};F)\\
+    &\simar
+    H^{j}(U_s;F)
+  \end{align*}
+  for any \(j<k\), and \ref{eq:t-nonchar-a} follows. 
+  Similarly, 
+  we have by \eqref{item:t-nonchar4} and \eqref{eq:a-inj},
+    \begin{align*}
+    \indlim[t>s]H^{k}(U_t;F)
+    &\cong 
+    H^{k}\left(\bigcap_{t>s}U_t;F\right)\\
+    &=
+    H^{k}(\overline{U_s};F)\\
+    &\hookrightarrow
+    H^{k}(U_s;F)
+  \end{align*}
+  and \ref{eq:t-nonchar-a'} follows.
 \end{proof}
 
 
@@ -1129,7 +1198,7 @@ Let us define the following morphisms:
   Let \(G\in\Dompb(Y)\), and assume \(
     f_{t}\colon \supp(G)\cap \overline{Y_t}\to X
   \) is proper for all \(t\in\rr\). 
-  Let \(k\) be an integer, and \(t_\circ\) a real number.
+  Let \(k\) be an integer and \(t_\circ\) a real number.
   \begin{enumerate}[(i)]
     \item Assume that, 
     for any \(y\in Y\smi \widetilde{Y}_{t_{\circ}}\), 
@@ -1146,40 +1215,87 @@ Let us define the following morphisms:
       &\cong
       \Rder[j]{{f_{t}}_{\ast}}j^{-1}_{t}G
       \quad
-      &&\text{ for \(j<k\) and \(t>t_\circ\)},\\
+      \text{ for \(j<k\) and \(t>t_\circ\)},\\
       \tag{a\(_k\)}
       \Rder[k]{f_{\ast}}G
       &\hookrightarrow
       \Rder[k]{{f_{t}}_{\ast}}j^{-1}_{t}G
       \quad
-      &&\text{ for \(t>t_\circ\)},\\
+      \text{ for \(t>t_\circ\)},\\
       \tag{a\('\)}
       \Rder[j]{\tilde{f}_{\ast}}G
       &\cong
       \Rder[j]\tilde{f_{t}}_{\ast}\tilde{j}^{-1}_{t}G
       \quad
-      &&\text{ for \(j<k\) and \(t\geqq t_\circ\)},\\
+      \text{ for \(j<k\) and \(t\geqq t_\circ\)},\\
       \tag{a\(_k'\)}
       \Rder[k]{\tilde{f}_{\ast}}G
       &\hookrightarrow
       \Rder[k]\tilde{f_{t}}_{\ast}\tilde{j}^{-1}_{t}G
       \quad
-      &&\text{ for \(t\geqq t_\circ\)},\\
+      \text{ for \(t\geqq t_\circ\)},\\
       \tag{b}
       \muS[k](\Rder[]{f_{\ast}}G)
       &\subset
       \mpb[f]\left(\mdiff[f]^{-1}\left(
         \muS[k](G)\cap \pi^{-1}(\widetilde{Y}_{t_{\circ}})
-      \right)\right)%\\
+      \right)\right)\\
       %&
-      &&=\mpb[f]\left(\mdiff[f]^{-1}\left(
+      \notag&=\mpb[f]\mdiff[f]^{-1}\left(
         \muS[k](G)
-      \right)\right)
-      .
+      \right).
+    \end{align}
+    \item Assume that, 
+    for any \(y\in Y\smi \widetilde{Y}_{t_{\circ}}\), 
+    we have \[
+      -d\varphi(y)\notin \left(
+        \muS[k](G)+ \mdiff[f]\left(
+          Y\pb[X]\cotb[X]
+        \right)
+      \right).
+    \]
+    Then \begin{align}
+      \tag{c}
+      \Rder[j]{f_{!}}G
+      &\cong
+      \Rder[j]{{f_{t}}_{!}}j^{-1}_{t}G
+      \quad
+      \text{ for \(j<k\) and \(t>t_\circ\)},\\
+      \tag{c\(_k\)}
+      \Rder[k]{f_{!}}G
+      &\hookrightarrow
+      \Rder[k]{{f_{t}}_{!}}j^{-1}_{t}G
+      \quad
+      \text{ for \(t>t_\circ\)},\\
+      \tag{c\('\)}
+      \Rder[j]{\tilde{f}_{!}}G
+      &\cong
+      \Rder[j]\tilde{f_{t}}_{\ast}\tilde{j}^{!}_{t}G
+      \quad
+      \text{ for \(j<k\) and \(t\geqq t_\circ\)},\\
+      \tag{c\(_k'\)}
+      \Rder[k]{\tilde{f}_{!}}G
+      &\hookrightarrow
+      \Rder[k]\tilde{f_{t}}_{\ast}\tilde{j}^{!}_{t}G
+      \quad
+      \text{ for \(t\geqq t_\circ\)},\\
+      \tag{d}
+      \muS[k](\Rder[]{f_{!}}G)
+      &\subset
+      \mpb[f]\left(\mdiff[f]^{-1}\left(
+        \muS[k](G)\cap \pi^{-1}(\widetilde{Y}_{t_{\circ}})
+      \right)\right)\\
+      %&
+      \notag&=\mpb[f]\mdiff[f]^{-1}\left(
+        \muS[k](G)
+      \right).
     \end{align}
   \end{enumerate}
 \end{Proposition+}
 
+\begin{proof}
+  Let \(\tilde{f}\) be the morphism \((f,\varphi)\colon Y\to X\times \rr\), and let \(q\) and \(\tilde{\varphi}\) be the first and second projections defined on \(X\times \rr\) respectively.
+\end{proof}
 %===============================================
 % 参考文献スペース
 %===============================================

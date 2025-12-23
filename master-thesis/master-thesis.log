@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  23 DEC 2025 00:18
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  23 DEC 2025 16:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -897,13 +897,13 @@ displayed correctly.
 
 ]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1189.
+(Font)              No change on input line 1305.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1193.
+(Font)              No change on input line 1309.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1197.
+(Font)              No change on input line 1313.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1200.
+(Font)              No change on input line 1316.
  [8] (./master-thesis.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
@@ -914,12 +914,12 @@ Package rerunfilecheck Info: File `master-thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 6EFE83BB1114C15C9F8551AA0711C42D;1286.
  ) 
 Here is how much of TeX's memory you used:
- 30020 strings out of 474774
- 526847 string characters out of 5758801
+ 30025 strings out of 474774
+ 526918 string characters out of 5758801
  1945032 words of memory out of 5000000
- 51834 multiletter control sequences out of 15000+600000
+ 51839 multiletter control sequences out of 15000+600000
  613584 words of font info for 151 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  84i,22n,93p,3266b,1071s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on master-thesis.dvi (8 pages, 43684 bytes).
+Output written on master-thesis.dvi (8 pages, 50796 bytes).

@@ -1,6 +1,6 @@
 # 修論
 
-修論（12/23 00:38 更新）[(pdf)](master-thesis.pdf)
+修論（12/23 16:30 更新）[(pdf)](master-thesis.pdf)
 
 ## 12/03に話したこと
 

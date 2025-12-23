@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1766416695.26517 "master-thesis.dvi" "master-thesis.pdf" "master-thesis" 1766416695.99338 0
-  "master-thesis.dvi" 1766416695.13483 43684 ce3595871546ef585849ff60fe803828 "latex"
+["dvipdf"] 1766475047.54832 "master-thesis.dvi" "master-thesis.pdf" "master-thesis" 1766475048.78461 0
+  "master-thesis.dvi" 1766475047.37436 50796 8b1fd463687a3340f86ebb33ef8024c6 "latex"
   (generated)
   "master-thesis.pdf"
   (rewritten before read)
-["latex"] 1766416693.70569 "/Users/giuseppe/seminar-notes/master-thesis/master-thesis.tex" "master-thesis.dvi" "master-thesis" 1766416695.98732 0
-  "/Users/giuseppe/seminar-notes/master-thesis/master-thesis.tex" 1766416691.64314 38682 faaa5248580feb977814b406b5e7d81c ""
+["latex"] 1766475045.9343 "/Users/giuseppe/seminar-notes/master-thesis/master-thesis.tex" "master-thesis.dvi" "master-thesis" 1766475048.77563 0
+  "/Users/giuseppe/seminar-notes/master-thesis/master-thesis.tex" 1766475042.93526 41892 6038677777441a304054ee916f22f900 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -247,9 +247,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "master-thesis.aux" 1766416695.133 2230 b5f3a6448c0193ae09bad132bc8648dd "latex"
-  "master-thesis.out" 1766416695.13414 1286 6efe83bb1114c15c9f8551aa0711c42d "latex"
-  "master-thesis.tex" 1766416691.64314 38682 faaa5248580feb977814b406b5e7d81c ""
+  "master-thesis.aux" 1766475047.37137 2598 56774a09045989fb3e247bbdfd8ffe7f "latex"
+  "master-thesis.out" 1766475047.37376 1286 6efe83bb1114c15c9f8551aa0711c42d "latex"
+  "master-thesis.tex" 1766475042.93526 41892 6038677777441a304054ee916f22f900 ""
   (generated)
   "master-thesis.aux"
   "master-thesis.dvi"
