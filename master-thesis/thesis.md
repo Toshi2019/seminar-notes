@@ -2,6 +2,7 @@
 
 修論（12/23 16:30 更新）[(pdf)](master-thesis.pdf)
 
+[(ちゃんとした様式)](syuron/utf8/syuron.pdf)
 ## 12/03に話したこと
 
 ### 今後の方針

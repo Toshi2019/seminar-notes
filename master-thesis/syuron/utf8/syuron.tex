@@ -1,10 +1,584 @@
 ﻿\documentclass[a4paper]{jsarticle}
 \usepackage{syuron2}
 
-\usepackage{amsmath}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amsthm}
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amscd}
 \usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
 \usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+
+\usetikzlibrary{cd}
+\usetikzlibrary{arrows.meta}
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+}
+\usepackage{pxjahyper}
+
+%\usepackage[mathscr]{euscript} % mathscr のフォントを変更
+
+%\usepackage{mmasym}
+
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
 \theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{Axiom}{公理}[section]
+\newtheorem{Definition}[Axiom]{定義}
+\newtheorem{Theorem}[Axiom]{定理}
+\newtheorem{Proposition}[Axiom]{命題}
+\newtheorem{Lemma}[Axiom]{補題}
+\newtheorem{Corollary}[Axiom]{系}
+\newtheorem{Example}[Axiom]{例}
+\newtheorem{Claim}[Axiom]{主張}
+\newtheorem{Property}[Axiom]{性質}
+\newtheorem{Attention}[Axiom]{注意}
+\newtheorem{Question}[Axiom]{問}
+\newtheorem{Problem}[Axiom]{問題}
+\newtheorem{Consideration}[Axiom]{考察}
+\newtheorem{Alert}[Axiom]{警告}
+\newtheorem{Fact}[Axiom]{事実}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{Axiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem{Fact*}{事実}
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Definition+}[Axiom+]{Definition}
+\newtheorem{Theorem+}[Axiom+]{Theorem}
+\newtheorem{Proposition+}[Axiom+]{Proposition}
+\newtheorem{Lemma+}[Axiom+]{Lemma}
+\newtheorem{Example+}[Axiom+]{Example}
+\newtheorem{Corollary+}[Axiom+]{Corollary}
+\newtheorem{Claim+}[Axiom+]{Claim}
+\newtheorem{Property+}[Axiom+]{Property}
+\newtheorem{Attention+}[Axiom+]{Attention}
+\newtheorem{Question+}[Axiom+]{Question}
+\newtheorem{Problem+}[Axiom+]{Problem}
+\newtheorem{Consideration+}[Axiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[Axiom+]{Fact}
+\newtheorem{Remark+}[Axiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{k}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+%\newcommand{\Ring}{{\bf Ring}}
+\newcommand{\Ab}{{\bf Ab}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\Modf}{\mathop{\mathrm{Mod}^\mathrm{f}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits} % 写像の集合
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits} % 射集合
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits} % 自己準同型の集合
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits} % 自己同型の集合
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits} % 射集合
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits} % 核
+\newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
+\newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
+\newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+%\newcommand{\OO}{\mcal{O}}
+
+
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+%        \itshape
+         \bfseries
+%    #1\@addpunct{.}]\ignorespaces
+    {#1}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
+\renewcommand{\proofname}{Proof.}
+
+
+
+%\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{section}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Op}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+%\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
+
+\newcommand{\cat}{\mathscr{C}}
+
+%筆記体
+\newcommand{\cA}{\mcal{A}}
+\newcommand{\cB}{\mcal{B}}
+\newcommand{\cC}{\mcal{C}}
+\newcommand{\cD}{\mcal{D}}
+\newcommand{\cE}{\mcal{E}}
+\newcommand{\cF}{\mcal{F}}
+\newcommand{\cG}{\mcal{G}}
+\newcommand{\cH}{\mcal{H}}
+\newcommand{\cI}{\mcal{I}}
+\newcommand{\cJ}{\mcal{J}}
+\newcommand{\cK}{\mcal{K}}
+\newcommand{\cL}{\mcal{L}}
+\newcommand{\cM}{\mcal{M}}
+\newcommand{\cN}{\mcal{N}}
+\newcommand{\cO}{\mcal{O}}
+\newcommand{\cP}{\mcal{P}}
+\newcommand{\cQ}{\mcal{Q}}
+\newcommand{\cR}{\mcal{R}}
+\newcommand{\cS}{\mcal{S}}
+\newcommand{\cT}{\mcal{T}}
+\newcommand{\cU}{\mcal{U}}
+\newcommand{\cV}{\mcal{V}}
+\newcommand{\cW}{\mcal{W}}
+\newcommand{\cX}{\mcal{X}}
+\newcommand{\cY}{\mcal{Y}}
+\newcommand{\cZ}{\mcal{Z}}
+
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+\newcommand{\scN}{\mathscr{N}}
+\newcommand{\scO}{\mathscr{O}}
+\newcommand{\scV}{\mathscr{V}}
+\newcommand{\scU}{\mathscr{U}}
+
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+%\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+%\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+%\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}%複体のホモトピー圏
+%\newcommand{\Comp}{\mathrm{C}}
+%\newcommand{\Komp}{\mathrm{K}}
+%\newcommand{\Domp}{\mathsf{D}}%複体のホモトピー圏
+
+\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+\newcommand{\Komp}{\mathop{\mathsf{K}}\nolimits}
+\newcommand{\Domp}{\mathord{\mathsf{D}}}%\nolimits}
+\newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
+\newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
+\newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
+\newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
+\newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
+\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+\newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
+\newcommand{\Domplb}{\mathop{\mathsf{D}^\mathrm{lb}}\nolimits}
+
+
+
+
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
+%\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\muS}[1][]{\mathop{\mathrm{SS}}\nolimits_{#1}}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+%\newcommand{\Rder}{\mathrm{R}}
+\newcommand{\Rder}[1][]{\mathop{\mathrm{R}^{#1}\hspace{-2pt}}\nolimits}
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
+\newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
+\newcommand{\simra}{\mathrel{\overset{\sim}{\leftarrow}}}%同型左矢印
+\newcommand{\simrra}{\mathrel{\overset{\sim}{\longleftarrow}}}%同型左矢印
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\PSh}{\mathrm{PSh}}
+
+\newcommand{\rmD}{\mathrm{D}}
+
+\newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
+\newcommand{\ori}{\mathord{\mathrm{or}}}
+\newcommand{\Db}{\mathord{\mathscr{D}b}}
+
+\newcommand{\codim}{\mathop{\mathrm{codim}}\nolimits}
+
+
+
+\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
+\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
+
+
+\newcommand{\tens}[1][]{\mathbin{\otimes_{\raise1.5ex\hbox to-.1em{}{#1}}}}
+\newcommand{\etens}{\mathbin{\boxtimes}}
+\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
+\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
+\newcommand{\detens}{\underline{\etens}}
+\newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
+\newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
+
+\newcommand{\blk}{\mathord{\ \cdot\ }}
+\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
+
+
+%\newcommand{\hocolim}{{\mathrm{hocolim}}}
+%\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+%\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+%\newcommand{\Pro}{\mathrm{Pro}}
+%\newcommand{\Ind}{\mathrm{Ind}}
+%\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+%\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+\newcommand{\proolim}[1][]{\mathop{\text{\rm``{$\varprojlim$}''}}\limits_{#1}}
+\newcommand{\sproolim}[1][]{\smash{\mathop{\rm``{\varprojlim}''}\limits_{#1}}}
+\newcommand{\inddlim}[1][]{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}
+\newcommand{\sinddlim}[1][]{\smash{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}\,}
+\newcommand{\ooplus}{\mathop{\text{\rm``{$\oplus$}''}}\limits}
+\newcommand{\bbigsqcup}{\mathop{``\bigsqcup''}\limits}
+\newcommand{\bsqcup}{\mathop{``\sqcup''}\limits}
+\newcommand{\dsum}[1][]{\mathbin{\oplus_{#1}}}
+
+\newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
+
+\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+\newcommand{\dpb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+\newcommand{\tpb}[1][]{\mathbin{\mathop{\times}\nolimits_{#1}}}
+
+
+
+
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}[section]
+\newtheorem{DFN}[AXM]{定義}
+\newtheorem{THM}[AXM]{定理}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[AXM]{命題}
+\newtheorem{LMM}[AXM]{補題}
+\newtheorem{CRL}[AXM]{系}
+\newtheorem{EG}[AXM]{例}
+\newtheorem*{EG*}{例}
+\newtheorem{RMK}[AXM]{注意}
+\newtheorem{CNV}[AXM]{約束}
+\newtheorem{CMT}[AXM]{コメント}
+\newtheorem*{CMT*}{コメント}
+\newtheorem{NTN}[AXM]{記号}
+
+% 定理環境ここまで
+%====================================================
+
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+
+
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+
+% =================================
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+% 位相空間
+\newcommand{\Int}[1][]{\mathop{\mathrm{Int}}\nolimits_{#1}}
+\newcommand{\Cl}[1][]{\mathop{\mathrm{Cl}}\nolimits_{#1}}
+\newcommand{\Bd}[1][]{\mathop{\mathrm{Bd}}\nolimits_{#1}}
+\newcommand{\bd}{\mathord{\partial}}
+\newcommand{\Fr}[1][]{\mathop{\mathrm{Fr}}\nolimits_{#1}}
+
+
+\newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
+\newcommand{\mtp}[1][]{{}^{t\!}{#1}} % transpose of the morphism
+%\newcommand{\mpb}[1][]{{}^{t\!}{#1}'} % pull-back of the morphism
+\newcommand{\mpb}[1][]{{#1}_{\pi}} % pull-back of the morphism
+\newcommand{\mdiff}[1][]{{#1}_{d}} % pull-back of the morphism
+\newcommand{\mptan}[1][]{{#1}_{\tau}} % pull-back of the morphism
+
+
+%\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+
+\newcommand{\cotb}[1][]{T^{\ast}{#1}}
+\newcommand{\conm}[2][]{T_{#1}^{\hspace{0.7pt}\ast}{#2}}
+\newcommand{\norb}[2][]{T_{#1}{#2}}
+
+\newcommand{\cotz}[1][]{T^{\ast}_{#1}{#1}}
+
+\newcommand{\cotn}[1][]{\dot{T}^{\ast}{#1}}
+
+
+\newcommand{\muhom}{\mu hom}
+\newcommand{\muHom}[1][]{\mathrm{Hom}^\mu_{\raise1.5ex\hbox to.1em{}#1}}
+
+\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+%\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+
+\newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
+
+
+\newcommand{\lopen}{\mathopen{]}}
+\newcommand{\lclosed}{\mathopen{[}}
+\newcommand{\ropen}{\mathclose{[}}
+\newcommand{\rclosed}{\mathopen{]}}
+
+\newcommand{\sm}{\raisebox{2.33pt}{~\rule{6.4pt}{1.3pt}~}}
+\newcommand{\smi}{\mathbin{\raisebox{2.33pt}{\rule{6.4pt}{1.3pt}}}}
+
+\newcommand{\smid}{\mathrel{;}}
+
+
+%\theoremstyle{definition}
 \newtheorem{defn}{定義}
 \newtheorem{thm}[defn]{定理}
 \newtheorem{prop}[defn]{命題}
@@ -28,6 +602,718 @@
 
 %目次の作成
 \tableofcontents
+\section*{Preface}
+In these notes, 
+We study microlocal Morse theory, which is presented, 
+for instance, in \cite{GKS12}. 
+However, we replace the notion of microsupports with
+ that of truncatd microsupprts, introduced by 
+Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KMS03}.
+
+\section{Notations}
+
+We consider a commutative unital ring \(\kk\) 
+of finite global dimension (e.g. \(\zz\) or a field). 
+Let \(X\) be a real analytic manifold. 
+We denote the cotangent bundle of \(X\) by \(
+  \pi\colon \cotb[X]\to X
+\). 
+We denote by \(\Dompb(\kk_X)\) the bounded derived category of 
+sheaves of \(\kk\)-modules on \(X\). 
+
+\section{Truncated Microsupport}
+
+\begin{Definition+}
+  Let \(F\in\Dompb(\kk_X)\). 
+  The closed conic subset \(\muS[k](F)\) of \(\cotb[X]\) 
+  is defined by: \(p\notin \muS[k](F)\) 
+  if and only if 
+  there exists an open conic neighborhood \(U\) of \(p\) 
+  such that for any \(x\in \pi(U)\) and 
+  for any real-valued \(C^{1}\)-function \(\varphi\) 
+  defined on a neighborhood of \(x\) such that 
+  \(\varphi(x)=0\), \(d\varphi(x)\in U\), 
+  one has \begin{equation}
+    H^{j}_{\{\varphi\geqq0\}}(F)_x=0
+    \quad \text{for any \(j\leqq k\).}
+  \end{equation}
+\end{Definition+}
+
+\subsection{Functorial Properties} 
+\begin{Proposition+}
+  Let \(f\colon X\to Y\) be a morphism of real analytic manifolds and let \(F\in\Dompb(\kk_X)\) such that \(f\) is proper on \(\supp(F)\). 
+  Then for any \(k\in\zz\), 
+  \begin{equation}\label{eq:t-push}
+    \muS[k](\Rder{f_{\ast}}F)\subset
+    \mpb[f]\mdiff[f]^{-1}(\muS[k](F)).
+  \end{equation}
+  The equality holds in case \(f\) is a closed embedding.
+\end{Proposition+}
+
+\section{Lemmas from {\cite{KS90}}}
+
+Consider a projective system of abelian groups \(
+  \left(M_n,\rho_{n,p}\right)_n
+\) indexed by \(\nn\). 
+One says that this system satisfies 
+the Mittag-Leffler condition (ML for short) 
+if for any \(n\in\nn\), the decreasing sequence \(
+  (\rho_{n,p}(M_p))_p
+\) of subgroups of \(M_n\) is stationary.
+
+For a projective system of abelian groups \((M_{n})_n\), 
+we set \[
+  M_{\infty}\coloneqq \prolim[n]M_n.
+\]
+
+Consider a projective system of complexes
+\begin{equation}
+  E_n^{\bullet}\colon 
+  \cdots\to M_{n}^{j-1}\to M_{n}^{j}\to M_{n}^{j+1}\to\cdots,
+\end{equation}
+and projective limit
+\begin{equation}
+  E_{\infty}^{\bullet}\colon 
+  \cdots
+  \to M_{\infty}^{j-1}
+  \to M_{\infty}^{j}
+  \to M_{\infty}^{j+1}
+  \to\cdots.
+\end{equation}
+Denote by 
+\begin{equation}
+  \varPhi_{k}\colon H^{k}(E_{\infty}^{\bullet})\to \prolim[n]H^{k}(E_{n}^{\bullet})
+\end{equation}
+the natural morphism.
+
+\begin{Proposition+}[{\cite[Proposition 1.12.4]{KS90}}]\label{prop:ks1.12.4}
+  Assume that for each \(j\in\zz\), 
+  the system \(\left(M_{n}^{j}\right)_{n}\) satisfies 
+  the ML condition. 
+  Then
+  \begin{enumerate}[(a)]
+    \item for each \(k\in \zz\), the map \(\varPhi_k\) is surjective,
+    \item if moreover, for a given \(i\) the system \(\left(H^{i-1}(E_{n}^{\bullet})\right)_{n}\) satisfies the ML condition, then \(\varPhi_i\) is bijective.
+  \end{enumerate} 
+\end{Proposition+}
+
+The following is called Kashiwara's lemma.
+
+\begin{Proposition+}[{\cite[Proposition 1.12.6]{KS90}}]\label{prop:ks1.12.6}
+  Let \(\left(X_s,\rho_{s,t}\colon X_t\to X_s\right)_{(s,(s\leqq t))}\) be 
+  a projective system of sets indexed by \(\rr\). 
+  Assume that for each \(s\in\rr\), the canonical maps\[
+    \lambda_s\colon X_s\to\prolim[r<s]X_r
+  \] and \[
+    \mu_s\colon \indlim[t>s]X_t\to X_s
+  \] are both injective (resp. surjective). 
+  Then all the maps \(\rho_{s_{0},s_{1}}\) \((s_0\leqq s_1)\) are 
+  injective (resp. surjective).
+\end{Proposition+}
+
+\subsection*{ML procedure for sheaves}
+
+\begin{Proposition+}[{\cite[Proposition 2.7.1]{KS90}}]\label{prop:ks2.7.1}
+  Let \(X\) be a topological space and let \(F\in\Dompl(\zz_X)\). 
+  Let \(\left(U_n\right)_{n\in\nn}\) be an increasing sequence 
+  of open subsets of \(X\), \(\left(Z_n\right)_{n\in\nn}\) 
+  a decreasing sequence of closed subsets of \(X\). 
+  Set \(U\coloneqq\bigcup_{n}U_{n}\), 
+  \(Z\coloneqq\bigcap_{n}Z_{n}\). 
+  \begin{enumerate}[(i)]
+    \item For any \(j\), the natural map \(
+      \varphi_j\colon H^{j}_{Z}(U;F)
+      \to 
+      \prolim[n]H^{j}_{Z_{n}}(U_{n};F)
+    \) is surjective. 
+    \item Assume that for a given \(j\), 
+    the projective system \(
+      (H^{j-1}_{Z_{n}}(U_{n};F))_{n}
+    \) satisfies the ML condition. 
+    Then \(\varphi_{j}\) is bijective. 
+    \item Let now \(\left(X_{n}\right)_{n\in\nn}\) be 
+    an increasing family of subsets of \(X\) satisfying \(
+      X=\bigcup_{n}X_n\) and \(X_{n}\subset \Int[](X_{n+1})
+    \) for all \(n\). 
+    Assume that for a given \(j\), the projective system \(
+      \left(H^{j-1}(X_{n};F)\right)_{n}
+    \) satisfies the ML condition. 
+    Then the natural map \(
+      H^{j}(X;F)\to \prolim[n]H^{j}(X_{n};F)
+    \) is bijective. 
+  \end{enumerate}
+\end{Proposition+}
+
+\section{Results}
+
+In this section, 
+let \(M\) be a manifold.\footnote{
+  Can \(M\) be of class \(C^\infty\)?
+}
+
+\begin{Theorem+}\label{thm:t-morse}
+  Let \(F\) in \(\Dompb(\kk_M)\), and 
+  \(\psi\colon M\to \rr\) be a real-valued function of 
+  class \(C^1\), 
+  proper on \(\supp(F)\). 
+  Let \(a<b\) be real numbers.
+  We assume \(d\psi(x)\notin \muS[k](F)\) for \(
+    a\leqq \psi(x)<b
+  \). For \(t\in \rr\), we set \(
+    M_t\coloneqq\psi^{-1}\left(]-\infty,t[\right)
+  \). 
+  Then, the restriction morphisms\[
+    H^{j}(M_{b};F)\to H^{j}(M_{a};F)
+  \]
+  are isomorphic for each \(j< k\).\footnote{
+    For \(j=k\), this morphism might be injective.
+  }
+\end{Theorem+}
+
+\begin{Lemma+}\label{Lem:1d-t-morse}
+  Let \(-\infty<a<b<+\infty\) be real numbers 
+  and \(G\in \Dompb(\rr)\). Let \(k\) be an integer.
+  If \[
+      \left(H^{j}_{\left[t,+\infty\right[}(G)\right)_t
+      \cong 0
+      \quad
+      \text{
+          for all \(t\in\left[a,b\right[\) , 
+          and all \(j\leqq k\).
+      }
+  \]
+  Then one has \[
+      H^{j}(\left]-\infty,b\right[;G)\simarr
+      H^{j}(\left]-\infty,a\right[;G)
+  \] for all \(j<k\).\footnote{
+      For \(k\), this morphism might be injective.
+        (not written in this draft.)
+  }
+\end{Lemma+}
+
+\begin{proof}
+  Let \(t\in \lclosed a,b\ropen\). 
+  We will denote by \(I_t\) the open interval \(
+      \left]-\infty,t\right[
+  \) and denote by \(Z_t\) the closed interval \(
+      \left]-\infty,t\right] (= \overline{I_t})
+  \).
+  By applying the functor \((\blk)_{\overline{I_t}}\) 
+  to the distinguished triangle\[
+      \RG_{\rr-I_t}(G)\to 
+      G\to 
+      \RG_{I_t}(G)\overset{+1}{\longrightarrow}
+      \quad\text{ in \(\Dompb(\kk_\rr)\)},
+  \] we have\[
+      (\RG_{[t,+\infty[}(G))_{\{t\}}
+      \to G_{Z_t}
+      \to 
+      \RG_{I_t}(G)
+      \overset{+1}{\longrightarrow}
+      \quad\text{ in \(\Dompb(\kk_\rr)\)}.
+  \]
+  Aplying the functor \(\RG(\rr;\blk)\) to this, we have
+  \begin{equation}\label{eq:morse-d.t.}
+      (\RG_{[t,+\infty[}(G))_{t}
+      \to \RG(Z_t;G)
+      \to 
+      \RG(I_t;G)
+      \overset{+1}{\longrightarrow}
+      \quad\text{ in \(\Dompb(\kk)\)}.
+  \end{equation}
+  Then consider the following conditions for 
+  \(j\in\zz\), \(s\in\left[a,b\right[\), and 
+  \(t\in \left]a,b\right]\):
+  \begin{align}
+      \tag*{\((a)^j_s\)}\label{eq:nonchar-a}
+      \indlim[t>s] H^{j}(I_t;G) &\simarr H^{j}(I_s;G),\\
+      \tag*{\((b)^j_t\)}\label{eq:nonchar-b}
+      \prolim[s<t] H^{j}(I_t;G) &\simrra H^{j}(I_t;G).
+  \end{align}
+  By hypothesis, 
+  it follows from \eqref{eq:morse-d.t.} that 
+  \(
+    H^{j}(Z_t;G)\simar H^{j}(I_t;G)
+  \) for \(t\in \left[a,b\right[\).\footnote{
+    Similarly, we have injections \(
+      H^{k}(Z_t;G)\hookrightarrow H^{k}(I_t;G)
+  \) for \(t\in \left[a,b\right[\). 
+  } 
+  Since \(
+      \indlim[t>s] H^{j}(I_t;G)\cong H^{j}(Z_s;G)
+  \), \ref{eq:nonchar-a} holds 
+  for any \(j<k\) and \(s\in\left[a,b\right[\).\footnote{
+      Similarly, \[
+        \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(Z_s;G)
+    \] gives injections \[
+        \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(I_s;G)
+    \] for all \(s\in \left[a,b\right[\). 
+  } Moreover, since we assume \(G\) is a bounded complex, 
+  \ref{eq:nonchar-b} holds for \(j\ll0\) 
+  and for all \(t\in \left]a,b\right]\). 
+  Let us denote such \(j\) by \(j_0\). 
+  Let us argue by induction on \(j\). 
+  Assume \ref{eq:nonchar-b} holds for all 
+  \(t\in\left]a,b\right[\) and all \(j\leqq j_0\). 
+  Applying Proposition \ref{prop:ks1.12.6}, 
+  we find the isomorphisms \begin{equation}\label{eq:non-char-init}
+    H^{j}(I_s;G) \simarr H^{j}(I_t;G)
+    \quad
+    \text{for all \(j\leqq j_0\) and all \(a<s\leqq t< b\).}
+  \end{equation}
+  Let \(G \simar G^{\bullet}\) be a flabby resolution. 
+  Let \(t\in\left]a,b\right]\). 
+  Consider a complex \[
+    E^{\bullet}_{n}=\Gamma(I_{t-\frac{1}{n}};G^{\bullet}).
+  \]
+  Since \(G^{\bullet}\) is flabby, 
+  we have \(E_{n}^{j}\cong E_{\infty}^{j}\) and 
+  the projective system \((E^{j}_{n})_{n}\) satisfies 
+  the ML condition for all \(j\in\zz\). 
+  
+  By \eqref{eq:non-char-init}, the projective system \(
+    (H^{j_0}(E^{\bullet}_{n}))_{n}
+  \) satisfies the ML condition (because we have \(
+    a<t-\frac{1}{n}<t
+  \) for \(n\gg0\)). 
+  Applying Proposition \ref{prop:ks1.12.4} to \(
+    (E^{\bullet}_{n})_{n}
+  \), it follows that \ref{eq:nonchar-b} holds for \(j_{0}+1\) 
+  and the induction proceeds. More precisely, we have \begin{align*}
+    H^{j_0+1}(I_{t};G^{\bullet})
+    \overunderset{\sim}{\varPhi_{j_{0}+1}}{\longrightarrow}&
+    \prolim[n]H^{j_0+1}(I_{t-\frac{1}{n}};G^{\bullet})\\
+    \cong&
+    \prolim[n]H^{j_0+1}(I_{t-\frac{1}{n}};G)\\
+    \cong&
+    \prolim[s<t]H^{j_0+1}(I_{s};G).
+  \end{align*}
+  Again by Proposition \ref{prop:ks1.12.6}, 
+  we get the isomorphisms\[
+    H^{j}(I_{s};G)\simarr H^{j}(I_t;G)
+    \quad
+    \text{for all \(j<k\) and all \(a<s\leqq t\leqq b\),}
+  \]
+  and injections \[
+    H^{j}(I_{s};G)\hookrightarrow H^{j}(I_t;G)
+  \] for \(j=k\) and for all \(a<s\leqq t\leqq b\). 
+
+  Finally, using \eqref{eq:morse-d.t.} and the hypothesis, 
+  we have the isomorphisms\[
+    H^{j}(I_{a};G)\simrra
+    H^{j}(Z_{a};G)\simarr H^{j}(I_s;G)
+    \quad
+    \text{for all \(j<k\) and all \(a<s\leqq b\).}
+  \]
+  Similarly, for \(j=k\), we have\[
+    H^{k}(I_{b};G) \cong \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(I_s;G) \hookrightarrow H^{k}(I_{a};G).
+  \]
+\end{proof}
+
+\begin{proof}[Proof of Theorem {\ref{thm:t-morse}}.]
+  First, we have\[
+    H^{j}(M_{t};F)
+    \cong
+    H^{j}\RG(
+      {\left]-\infty,t\right[}\mathrel{;}\Rder{\psi}_{\ast}F
+    )
+  \]
+  for \(t\in I\).
+  Since we assume that \(d\psi(x)\notin \muS[k](F)\) 
+  for \(a\leqq \psi(x)<b\), and by \eqref{eq:t-push}, the formula \(
+    \muS[k](\Rder{\psi}_{\ast}F)
+    \subset \mpb[\psi]\mdiff[\psi]^{-1}\muS[k](F)
+  \) holds. Hence we have\[
+    \left(H^{j}\RG_{\left[\psi(x),+\infty\right[}\Rder{\psi}_{\ast}F\right)_{\psi(x)}=0
+  \]for each \(j\leqq k\). 
+  Then we can apply Lemma \ref{Lem:1d-t-morse} and have
+  \[
+    H^{j}(\left]-\infty,b\right[;\Rder{\psi_{\ast}}F)
+    \simarr
+    H^{j}(\left]-\infty,a\right[;\Rder{\psi_{\ast}}F)
+  \] for all \(j<k\).
+  Then we can conclude that
+  \[
+    H^{j}(M_b\mathrel{;}F)
+    \simarr
+    H^{j}(M_a\mathrel{;}F)
+  \]
+  for all \(j<k\).
+  \end{proof}
+
+\section{Truncated Noncharacteristic Deformation}
+
+We will reformulate the noncharacteristic deformation 
+lemma \cite[Proposition 2.7.2]{KS90} to make a relation 
+to truncated microsupport. 
+
+\begin{Proposition+}\label{prop:t-nonchar}
+  Let \(X\) be a Hausdorff space, \(F\in\Dompb(\zz_X)\), and 
+  let \(\left(U_{t}\right)_{t\in\rr}\) be a family of 
+  open subsets of \(X\). 
+  We assume the following conditions. 
+  \begin{enumerate}[(i)]
+    \item \label{item:t-nonchar1}
+    \(U_{t}=\bigcup_{s<t}U_{s}\), for all \(t\in\rr\). 
+    \item \label{item:t-nonchar2}
+    For all pairs \((s,t)\) with \(s\leqq t\), 
+    the set \(\overline{U_{t}\smi U_{s}}\cap \supp{F}\) is compact.
+    \item \label{item:t-nonchar3}
+    Setting \(
+      Z_{s}\coloneqq \bigcap_{t>s}\overline{U_t\smi U_s}
+    \), we have for all pairs \((s,t)\) with \(s\leqq t\), 
+    and all \(x\in Z_{s}\smi U_{t}\), \[
+      (H^{j}_{X\smi U_{t}}(F))_{x}=0
+      \quad 
+      \text{for all \(j\leqq k\).}
+    \]
+    \item \label{item:t-nonchar4} 
+    For any \(s\in\rr\), 
+    \(\bigcap_{t>s}U_{t}=\overline{U_{s}}\) 
+    and 
+    \(\overline{U_{s}}\) is closed 
+    in a paracompact open subset of \(X\).
+    \item\footnote{
+      This condition might be 
+      deduced from \eqref{item:t-nonchar3}.
+    } \label{item:t-nonchar5} 
+    \(Z_s\smi U_{s}\subset\bd{U_{s}}\) 
+    for all \(s\in\rr\). 
+  \end{enumerate}
+  Then, for all \(t\in\rr\), we have the isomorphisms\[
+    H^{j}\left(\bigcup_{s}U_{s};F\right)
+    \simar 
+    H^{j}\left(U_{t};F\right)
+    \quad \text{for all \(j< k\),} 
+  \]
+  and the injections\[
+    H^{k}\left(\bigcup_{s}U_{s};F\right)
+    \hookrightarrow 
+    H^{k}\left(U_{t};F\right).
+  \] 
+\end{Proposition+}
+
+\begin{proof}
+  Consider the following conditions for 
+  \(j\in\zz\), \(s\), and \(t\):
+  \begin{align}
+      \tag*{\((a)^j_s\)}\label{eq:t-nonchar-a}
+      \mu_{s}^{j}&\colon
+      \indlim[t>s] H^{j}(U_t;F) \simar H^{j}(U_s;F),\\
+      \tag*{\((a')^k_s\)}\label{eq:t-nonchar-a'}
+      \mu_{s}^{k}&\colon
+      \indlim[t>s] H^{k}(U_t;F) \hookrightarrow H^{k}(U_s;F),\\
+      \tag*{\((b)^j_s\)}\label{eq:t-nonchar-b}
+      \lambda_{s}^{j}&\colon
+      H^{j}(U_t;F)\simarr \prolim[s<t] H^{j}(U_s;F).
+  \end{align}
+
+  Let us prove \ref{eq:t-nonchar-a} for \(s\in \rr\) and \(j<k\). 
+  We can assume that \(\overline{U_{t}\smi U_{s}}\) is compact 
+  for any \(s\leqq t\) by replacing \(X\) by \(\supp{F}\). 
+  Consider the distinguished triangle\[
+    \RG_{X\smi U_{t}}(F)
+    \to
+    F
+    \to
+    \RG_{U_{t}}(F)
+    \overset{+1}{\longrightarrow}.
+  \]
+  Applying to this triangle the functor \(
+    (\blk)_{\overline{U_{t}}}
+  \), we have \[
+    \left(\RG_{X\smi U_{t}}(F)\right)_{\overline{U_{t}}}
+    \to
+    F_{\overline{U_{t}}}
+    \to
+    \RG_{U_{t}}(F)
+    \overset{+1}{\longrightarrow}.
+  \]
+  Again applying to this triangle the functor \(\RG(X;\blk)\), 
+  we have
+  \begin{equation}
+    \RG\left(X;\left(\RG_{X\smi U_{t}}(F)\right)_{\overline{U_{t}}}\right)
+    \to
+    \RG(\overline{U_{t}};F)
+    \to
+    \RG(U_{t};F)
+    \overset{+1}{\longrightarrow}.
+  \end{equation}
+  By hypotheses \eqref{item:t-nonchar3}--\eqref{item:t-nonchar5}, 
+  it follows that
+  \[
+    \left(H^{j}_{X\smi U_{t}}(F)\right)_{\bd{U_{t}}}=0
+  \]
+  for any \(j\leqq k\) and then \[
+    H^{j}\left(X;
+      \left(
+        \RG_{X\smi U_{t}}(F)
+      \right)_{\overline{U_{t}}}
+    \right)=0
+    \quad
+    \text{for any \(j\leqq k\).}
+  \] \footnote{この辺の議論はきちんと詰めないといけない．}
+  Thus for any \(t\), we have
+  \begin{align}
+    \label{eq:a-iso}H^{j}(\overline{U_{t}};F)
+    &\simar
+    H^{j}(U_{t};F)\quad
+    \text{for any \(j< k\),}\\
+    \label{eq:a-inj}H^{k}(\overline{U_{t}};F)
+    &\hookrightarrow
+    H^{k}(U_{t};F).
+  \end{align}
+  Therefore, we have by \eqref{item:t-nonchar4} and \eqref{eq:a-iso},  
+  \begin{align*}
+    \indlim[t>s]H^{j}(U_t;F)
+    &\cong 
+    H^{j}\left(\bigcap_{t>s}U_t;F\right)\\
+    &=
+    H^{j}(\overline{U_s};F)\\
+    &\simar
+    H^{j}(U_s;F)
+  \end{align*}
+  for any \(j<k\), and \ref{eq:t-nonchar-a} follows. 
+  Similarly, 
+  we have by \eqref{item:t-nonchar4} and \eqref{eq:a-inj},
+    \begin{align*}
+    \indlim[t>s]H^{k}(U_t;F)
+    &\cong 
+    H^{k}\left(\bigcap_{t>s}U_t;F\right)\\
+    &=
+    H^{k}(\overline{U_s};F)\\
+    &\hookrightarrow
+    H^{k}(U_s;F)
+  \end{align*}
+  and \ref{eq:t-nonchar-a'} follows.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
+\begin{Remark+}
+  Lemma \ref{Lem:1d-t-morse} follows from 
+  Proposition \ref{prop:t-nonchar}. 
+  Indeed, putting \(X=\lopen-\infty,b\ropen\), 
+  \(F=\mres[G]{I_{b}}\), and \(U_t=I_t\), 
+  we find that \begin{enumerate}[(i)]
+    \item \(\bigcup_{s<t} I_s
+    = \bigcup_{s<t}\lopen-\infty,s\ropen
+    = \lopen-\infty,t\ropen= I_t\) for all \(t\in\rr\). 
+    \item If \(s\leqq t\), then \(
+      \overline{I_t\smi I_s}\cap\supp{G}
+      =\overline{\lclosed s,t\ropen}\cap\supp{G}
+      =\lclosed s,t\rclosed\cap\supp{G}
+      \) is compact.
+    \item For \(s\in\rr\), we have \[
+      Z_{s}
+      =\bigcap_{t>s}\overline{I_{t}\smi I_{s}}
+      =\bigcap_{t>s}\overline{\lclosed s,t\ropen}
+      =\bigcap_{t>s}\lclosed s,t\rclosed
+      =\left\{s\right\},
+    \]
+    and \[
+      Z_s\smi I_t
+      =\left\{s\right\}\smi \lopen-\infty,t\ropen
+      =\begin{cases*}
+        \left\{s\right\}& if \(s=t\),\\
+        \varnothing& if \(s<t\).
+      \end{cases*}
+    \]
+    By hypothesis of Lemma \ref{Lem:1d-t-morse}, 
+    for all \(s\in \left\{s\right\}\), 
+    \[
+      H^{j}_{X\smi I_s}(F)_{s}
+      =H^{j}_{\lclosed s,\infty\ropen}(F)_{s}=0.
+    \]
+    Then we can apply Proposition \ref{prop:t-nonchar}, and 
+    we have the isomorphisms for all \(t\in \lclosed a,b\ropen\) and \(j<k\),
+    \[
+      H^{j}(I_{b};F)
+      =H^{j}(\bigcup_{s}I_{s};F)
+      \simar
+      H^{j}(I_{t};F)
+    \]
+    and the injections
+    \[
+      H^{k}(I_{b};F)
+      =H^{k}(\bigcup_{s}I_{s};F)
+      \hookrightarrow
+      H^{k}(I_{t};F)
+    \]
+  \end{enumerate}
+\end{Remark+}
+
+
+\section{
+  Relative Microlocal Morse Theory via Truncated Microsupport
+}
+
+Let \(f\colon Y\to X\) be a morphism of manifolds, and 
+\(\varphi\) a real valued function of class \(C^1\). 
+For a real number \(t\in \rr\), we set 
+\begin{align*}
+  Y_t
+  &\coloneqq \left\{y\in Y\smid \varphi(y)< t\right\} 
+  = \varphi^{-1}(\lopen-\infty,t\ropen),\\
+  \widetilde{Y_t}
+  &\coloneqq \left\{y\in Y\smid \varphi(y)\leqq t\right\} 
+  = \varphi^{-1}(\lopen-\infty,t\rclosed).
+\end{align*}
+Let us define the following morphisms:
+\[\xymatrix{
+  Y_t\ar[r]^-{j_t}
+  \ar[rd]_-{f_t}
+  &
+  Y
+  \ar[d]^-{f}\\
+  &X,
+}\quad\xymatrix{
+  \widetilde{Y_t}\ar[r]^-{\tilde{j}_t}
+  \ar[rd]_-{f_t}
+  &
+  Y
+  \ar[d]^-{f}\\
+  &X.
+}\]
+
+\begin{Proposition+}
+  Let \(G\in\Dompb(Y)\), and assume \(
+    f_{t}\colon \supp(G)\cap \overline{Y_t}\to X
+  \) is proper for all \(t\in\rr\). 
+  Let \(k\) be an integer and \(t_\circ\) a real number.
+  \begin{enumerate}[(i)]
+    \item Assume that, 
+    for any \(y\in Y\smi \widetilde{Y}_{t_{\circ}}\), 
+    we have \[
+      d\varphi(y)\notin \left(
+        \muS[k](G)+ \mdiff[f]\left(
+          Y\pb[X]\cotb[X]
+        \right)
+      \right).
+    \]
+    Then \begin{align}
+      \tag{a}
+      \Rder[j]{f_{\ast}}G
+      &\cong
+      \Rder[j]{{f_{t}}_{\ast}}j^{-1}_{t}G
+      \quad
+      \text{ for \(j<k\) and \(t>t_\circ\)},\\
+      \tag{a\(_k\)}
+      \Rder[k]{f_{\ast}}G
+      &\hookrightarrow
+      \Rder[k]{{f_{t}}_{\ast}}j^{-1}_{t}G
+      \quad
+      \text{ for \(t>t_\circ\)},\\
+      \tag{a\('\)}
+      \Rder[j]{\tilde{f}_{\ast}}G
+      &\cong
+      \Rder[j]\tilde{f_{t}}_{\ast}\tilde{j}^{-1}_{t}G
+      \quad
+      \text{ for \(j<k\) and \(t\geqq t_\circ\)},\\
+      \tag{a\(_k'\)}
+      \Rder[k]{\tilde{f}_{\ast}}G
+      &\hookrightarrow
+      \Rder[k]\tilde{f_{t}}_{\ast}\tilde{j}^{-1}_{t}G
+      \quad
+      \text{ for \(t\geqq t_\circ\)},\\
+      \tag{b}
+      \muS[k](\Rder[]{f_{\ast}}G)
+      &\subset
+      \mpb[f]\left(\mdiff[f]^{-1}\left(
+        \muS[k](G)\cap \pi^{-1}(\widetilde{Y}_{t_{\circ}})
+      \right)\right)\\
+      %&
+      \notag&=\mpb[f]\mdiff[f]^{-1}\left(
+        \muS[k](G)
+      \right).
+    \end{align}
+    \item Assume that, 
+    for any \(y\in Y\smi \widetilde{Y}_{t_{\circ}}\), 
+    we have \[
+      -d\varphi(y)\notin \left(
+        \muS[k](G)+ \mdiff[f]\left(
+          Y\pb[X]\cotb[X]
+        \right)
+      \right).
+    \]
+    Then \begin{align}
+      \tag{c}
+      \Rder[j]{f_{!}}G
+      &\cong
+      \Rder[j]{{f_{t}}_{!}}j^{-1}_{t}G
+      \quad
+      \text{ for \(j<k\) and \(t>t_\circ\)},\\
+      \tag{c\(_k\)}
+      \Rder[k]{f_{!}}G
+      &\hookrightarrow
+      \Rder[k]{{f_{t}}_{!}}j^{-1}_{t}G
+      \quad
+      \text{ for \(t>t_\circ\)},\\
+      \tag{c\('\)}
+      \Rder[j]{\tilde{f}_{!}}G
+      &\cong
+      \Rder[j]\tilde{f_{t}}_{\ast}\tilde{j}^{!}_{t}G
+      \quad
+      \text{ for \(j<k\) and \(t\geqq t_\circ\)},\\
+      \tag{c\(_k'\)}
+      \Rder[k]{\tilde{f}_{!}}G
+      &\hookrightarrow
+      \Rder[k]\tilde{f_{t}}_{\ast}\tilde{j}^{!}_{t}G
+      \quad
+      \text{ for \(t\geqq t_\circ\)},\\
+      \tag{d}
+      \muS[k](\Rder[]{f_{!}}G)
+      &\subset
+      \mpb[f]\left(\mdiff[f]^{-1}\left(
+        \muS[k](G)\cap \pi^{-1}(\widetilde{Y}_{t_{\circ}})
+      \right)\right)\\
+      %&
+      \notag&=\mpb[f]\mdiff[f]^{-1}\left(
+        \muS[k](G)
+      \right).
+    \end{align}
+  \end{enumerate}
+\end{Proposition+}
+
+\begin{proof}
+  Let \(\tilde{f}\) be the morphism \((f,\varphi)\colon Y\to X\times \rr\), and let \(q\) and \(\tilde{\varphi}\) be the first and second projections defined on \(X\times \rr\) respectively.
+\end{proof}
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+  \bibitem[GKS12]{GKS12} St\'ephane Guillermou, 
+  Masaki Kashiwara, Pierre Schapira, 
+  \textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
+  Duke. Math. J. 161, No. 2, pp.201--245, 2012.  
+  \bibitem[KMS03]{KMS03} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
+    \textit{Truncated Microsupprt and Holomorphic Solutions 
+    of \(D\)-modules}, 
+    Ann. Scient. \'Ec. Norm. Sup., s\'erie 4, tome 36, 
+    pp.583--399, 2003.
+  \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Sheaves on Manifolds}, 
+    Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+  \bibitem[ST92]{ST92} Pierre Schapira, Nobuyuki Tose, 
+    \textit{Morse Inequalities for \(\rr\)-constructible Sheaves}, 
+    Adv. Math. 93, pp.1--8, 1992. 
+\end{thebibliography}
+
+%===============================================
+
+
+
 
 \section{はじめに}
 \label{sec:intro}
