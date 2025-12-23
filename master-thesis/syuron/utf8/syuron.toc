@@ -1,12 +1,7 @@
 \contentsline {section}{\numberline {1}Notations}{1}{section.1}%
-\contentsline {section}{\numberline {2}Truncated Microsupport}{2}{section.2}%
+\contentsline {section}{\numberline {2}Truncated Microsupport}{1}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Functorial Properties}{2}{subsection.2.1}%
 \contentsline {section}{\numberline {3}Lemmas from {\cite {KS90}}}{2}{section.3}%
 \contentsline {section}{\numberline {4}Results}{3}{section.4}%
 \contentsline {section}{\numberline {5}Truncated Noncharacteristic Deformation}{5}{section.5}%
-\contentsline {section}{\numberline {6} Relative Microlocal Morse Theory via Truncated Microsupport }{8}{section.6}%
-\contentsline {section}{\numberline {\presectionname 7\postsectionname }はじめに}{9}{section.7}%
-\contentsline {section}{\numberline {\presectionname 8\postsectionname }主結果}{10}{section.8}%
-\contentsline {subsection}{\numberline {8.1}修士論文作成の注意}{10}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}\LaTeX {}利用上の注意}{10}{subsection.8.2}%
-\contentsline {section}{\numberline {\presectionname 9\postsectionname }終わりに}{11}{section.9}%
+\contentsline {section}{\numberline {6} Relative Microlocal Morse Theory via Truncated Microsupport }{7}{section.6}%

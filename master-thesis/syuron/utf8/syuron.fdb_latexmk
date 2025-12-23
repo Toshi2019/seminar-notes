@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1766478436.23085 "syuron.dvi" "syuron.pdf" "syuron" 1766478437.78554 0
-  "syuron.dvi" 1766478436.07979 74108 8f6bd489b28cbbc45d3982920e01ff0e "latex"
+["dvipdf"] 1766481984.8704 "syuron.dvi" "syuron.pdf" "syuron" 1766481986.1812 0
+  "syuron.dvi" 1766481984.6272 70148 b934687a33a9b72b940a05c1d90b282f "latex"
   (generated)
   "syuron.pdf"
   (rewritten before read)
-["latex"] 1766478434.53991 "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/syuron.tex" "syuron.dvi" "syuron" 1766478437.78011 0
-  "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/syuron.tex" 1766478430.09083 46770 8d35386cea861753815f6f8f7925afaf ""
+["latex"] 1766481983.1567 "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/syuron.tex" "syuron.dvi" "syuron" 1766481986.17532 0
+  "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/syuron.tex" 1766481978.24431 49748 11575b346f203edd1a059e6d36c478ad ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -35,8 +35,6 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm" 1136768653 1344 8a0be4fe4d376203000810ad4dc81558 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm" 1136768653 1336 3125ccb448c1a09074e3aa4a9832f130 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm" 1136768653 1332 1fde11373e221473104d6cc5993f046e ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1136768653 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1136768653 1520 eccf95517727cb11801f4f1aee3a21b4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm" 1136768653 1524 554068197b70979a55370e6c6495f441 ""
@@ -44,15 +42,12 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1136768653 1292 296a67155bdbfc32aa9c636f21e91433 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1136768653 1300 b62933e007d01cfd073f79b963c01526 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1136768653 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1136768653 1316 b636689f1933f24d1294acdf6041daaa ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss12.tfm" 1136768653 1324 37b971caf729d7edd9cbb9f9b0ea76eb ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss8.tfm" 1136768653 1296 d77f431d10d47c8ea2cc18cf45346274 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlgothr-h.tfm" 1645134245 868 d00a8d6d9ddcb5aa8cde656e259e4d35 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlgothr-v.tfm" 1645134245 588 e1ae0e7b22becffa2385cb523a787c37 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlminr-h.tfm" 1645134245 868 d00a8d6d9ddcb5aa8cde656e259e4d35 ""
@@ -176,6 +171,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/atbegshi-ltx.sty" 1705352648 3045 273c666a54e60b9f730964f431a56c1b ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/atveryend-ltx.sty" 1705352648 2462 6bc53756156dbd71c1ad550d30a3b93f ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty" 1705352648 5319 2b738d02ce36ada6dcdd9534940db0ee ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/base/leqno.clo" 1705352648 1958 fd4c49bb58706659140a05db86f351f5 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/bxjatoucs/bxjatoucs.sty" 1571867428 9159 ebd68ea70b64dbc04bdc806c9afa9ea1 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/fancybox/fancybox.sty" 1274111957 27261 5ae6156674330dc345adb79b6e5d8966 ""
@@ -244,10 +240,10 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "syuron.aux" 1766478436.07639 3880 ef2494abbc07a3f3e2e324692ab6069c "latex"
-  "syuron.out" 1766478436.07915 1765 fe50527e505fa1383079dda012a5f28e "latex"
-  "syuron.tex" 1766478430.09083 46770 8d35386cea861753815f6f8f7925afaf ""
-  "syuron.toc" 1766478436.07966 1077 2bc95ff23b3e2f9130ea2d14994bfa5e "latex"
+  "syuron.aux" 1766481984.62404 2661 25d6b77fdc95160be54b85afd4e2e527 "latex"
+  "syuron.out" 1766481984.62649 1286 6efe83bb1114c15c9f8551aa0711c42d "latex"
+  "syuron.tex" 1766481978.24431 49748 11575b346f203edd1a059e6d36c478ad ""
+  "syuron.toc" 1766481984.62708 587 c58e0e910a941f2ccd015ccf61714d2b "latex"
   "syuron2.sty" 1287550710 4101 374aba698b6271bbcc9ea842b1cf67f0 ""
   (generated)
   "syuron.aux"

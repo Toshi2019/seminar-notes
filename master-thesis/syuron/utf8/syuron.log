@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  23 DEC 2025 17:27
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  23 DEC 2025 18:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -10,6 +10,9 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/platex/jsclasses/jsarticle.cls
 Document Class: jsarticle 2023/02/23 jsclasses (okumura, texjporg)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/leqno.clo
+File: leqno.clo 2016/12/29 v1.2b Standard LaTeX option (left equation numbers)
+)
 Class jsarticle Info: Autodetected engine: upLaTeX on input line 217.
 \jsc@mpt=\dimen156
 \jsc@mmm=\dimen157
@@ -42,7 +45,7 @@ LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
 \jsc@tocl@width=\dimen159
 \@lnumwidth=\dimen160
 \bibindent=\dimen161
-(/usr/local/texlive/2024/texmf-dist/tex/platex/jsclasses/jslogo.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/platex/jsclasses/jslogo.sty
 Package: jslogo 2019/07/25 okumura, texjporg
 LaTeX Info: Redefining \TeX on input line 82.
 LaTeX Info: Redefining \LaTeX on input line 135.
@@ -899,10 +902,7 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 3.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 11.
-)
+))
 \tf@toc=\write7
 \openout7 = `syuron.toc'.
 
@@ -922,7 +922,8 @@ LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <10> not available
 (Font)              Font shape `JY2/hgt/m/n' tried instead on input line 627.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 9.24683pt on input line 627.
- [1]
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 638.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 (Font)              scaled to size 4.62341pt on input line 638.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
@@ -933,7 +934,7 @@ LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
 (Font)              scaled to size 11.09619pt on input line 642.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 11.09619pt on input line 642.
-
+ [1]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 653.
@@ -955,45 +956,31 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 5.5481pt on input line 752.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 (Font)              scaled to size 5.5481pt on input line 752.
- [3] [4] [5] [6] [7] <xymatrix 2x2 150> <xymatrix 2x2 150> [8
-
-]
+ [3] [4] [5] [6] <xymatrix 2x2 150> <xymatrix 2x2 150> [7] <xymatrix 6x2 578> [8]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1298.
+(Font)              No change on input line 1401.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1302.
+(Font)              No change on input line 1405.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1306.
+(Font)              No change on input line 1409.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1309.
- [9]
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 1336.
-LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 7.39746pt on input line 1336.
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 1367.
-LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 1367.
- [10]
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1403.
- [11] (./syuron.aux)
+(Font)              No change on input line 1412.
+ [9] (./syuron.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `syuron.out' has not changed.
-(rerunfilecheck)             Checksum: FE50527E505FA1383079DDA012A5F28E;1765.
+(rerunfilecheck)             Checksum: 6EFE83BB1114C15C9F8551AA0711C42D;1286.
  ) 
 Here is how much of TeX's memory you used:
- 29853 strings out of 474774
- 523999 string characters out of 5758801
- 1945032 words of memory out of 5000000
- 51674 multiletter control sequences out of 15000+600000
- 618374 words of font info for 178 fonts, out of 8000000 for 9000
+ 29835 strings out of 474774
+ 523681 string characters out of 5758801
+ 1968032 words of memory out of 5000000
+ 51656 multiletter control sequences out of 15000+600000
+ 614961 words of font info for 163 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 84i,22n,93p,599b,1075s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,22n,93p,599b,1069s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on syuron.dvi (13 pages, 74108 bytes).
+Output written on syuron.dvi (11 pages, 70148 bytes).

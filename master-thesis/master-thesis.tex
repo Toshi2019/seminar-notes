@@ -1294,7 +1294,110 @@ Let us define the following morphisms:
 \end{Proposition+}
 
 \begin{proof}
-  Let \(\tilde{f}\) be the morphism \((f,\varphi)\colon Y\to X\times \rr\), and let \(q\) and \(\tilde{\varphi}\) be the first and second projections defined on \(X\times \rr\) respectively.
+  Let \(\tilde{f}\) be the morphism \(
+    (f,\varphi)\colon Y\to X\times \rr
+  \), and let \(q\) and \(\tilde{\varphi}\) be 
+  the first and second projections 
+  defined on \(X\times \rr\) respectively. 
+  Then \(\tilde{f}\) is proper on \(\supp(G)\) and 
+  \(f=q\circ \tilde{f}\). \footnote{This can be proved as follows. 
+  If \(K\) is a compact set of \(X\times \rr\), 
+  \(\tilde{f}^{-1}(K)\) is compact.}
+  Let \(i_t\) be the open embedding \(
+    X\times\lopen -\infty, t\ropen\hookrightarrow X\times \rr
+  \) and \(\tilde{i}_t\) the closed embedding \(
+    X\times\lopen -\infty, t\rclosed\hookrightarrow X\times \rr
+  \). Set \(q_t=q\circ i_t\) and \(\tilde{q}_t=q\circ\tilde{i}_t\). 
+  These morphisms can be visualized by the following diagrams.
+  \[\xymatrix@C=30pt@R=30pt{
+    Y
+      \ar[r]^-{\tilde{f}}
+    &
+    X\times\rr
+      \ar[r]^-{q}
+    &
+    X\\
+    Y_{t}
+      \ar@{^(->}[u]^-{j_t}
+      \ar[r]^-{\hat{f}_{t}}
+    &
+    X\times \lopen-\infty,t\ropen
+      \ar@{^(->}[u]_-{i_{t}}
+      \ar[ur]_-{q_{t}}
+    &
+  },\quad
+  \xymatrix@C=30pt@R=30pt{
+    Y
+      \ar[r]^-{\tilde{f}}
+    &
+    X\times\rr
+      \ar[r]^-{q}
+    &
+    X\\
+    \widetilde{Y}_{t}
+      \ar@{^(->}[u]^-{\tilde{j}_t}
+      \ar[r]^-{\check{f}_{t}}
+    &
+    X\times \lopen-\infty,t\rclosed
+      \ar@{^(->}[u]_-{\tilde{i}_{t}}
+      \ar[ur]_-{\tilde{q}_{t}}
+    &
+  }.\]
+  Then, setting \(\widetilde{G}\coloneqq \Rder[]{f_{\ast}}G\), 
+  we have \begin{align*}
+    \Rder[]{f_{\ast}}G
+    &\cong 
+    \Rder[]{q_{\ast}}\widetilde{G},
+    &
+    \Rder[]{\tilde{f}_{\ast}}G
+    &\cong 
+    \Rder[]{\tilde{q}_{\ast}}\widetilde{G},
+    \\
+    \Rder[]{{f_{t}}_{\ast}}j_{t}^{-1}G
+    &\cong 
+    \Rder[]{{q_{t}}_{\ast}}i_{t}^{-1}\widetilde{G},
+    &
+    \Rder[]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{-1}G
+    &\cong 
+    \Rder[]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{-1}\widetilde{G},
+    \\
+    \Rder[]{{f_{t}}_{!}}j_{t}^{-1}G
+    &\cong 
+    \Rder[]{{q_{t}}_{!}}i_{t}^{-1}\widetilde{G},
+    &
+    \Rder[]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{!}G
+    &\cong 
+    \Rder[]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{!}\widetilde{G}.
+  \end{align*}
+  Thus taking \(j\)-th cohomology, we have\begin{align*}
+    \Rder[j]{f_{\ast}}G
+    &\cong 
+    \Rder[j]{q_{\ast}}\widetilde{G},
+    &
+    \Rder[j]{\tilde{f}_{\ast}}G
+    &\cong 
+    \Rder[j]{\tilde{q}_{\ast}}\widetilde{G},
+    \\
+    \Rder[j]{{f_{t}}_{\ast}}j_{t}^{-1}G
+    &\cong 
+    \Rder[j]{{q_{t}}_{\ast}}i_{t}^{-1}\widetilde{G},
+    &
+    \Rder[j]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{-1}G
+    &\cong 
+    \Rder[j]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{-1}\widetilde{G},
+    \\
+    \Rder[j]{{f_{t}}_{!}}j_{t}^{-1}G
+    &\cong 
+    \Rder[j]{{q_{t}}_{!}}i_{t}^{-1}\widetilde{G},
+    &
+    \Rder[j]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{!}G
+    &\cong 
+    \Rder[j]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{!}\widetilde{G}.    
+  \end{align*}
+  Therefore, it is enough to prove the result for \(\widetilde{G}\), \(q\), \(i_t\), \(\tilde{\varphi}\) instead of \(G\), \(f\), \(j_t\), \(\varphi\). 
+
+  (i) 
+
 \end{proof}
 %===============================================
 % 参考文献スペース
