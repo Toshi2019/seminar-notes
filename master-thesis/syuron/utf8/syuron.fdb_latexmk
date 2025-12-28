@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1766481984.8704 "syuron.dvi" "syuron.pdf" "syuron" 1766481986.1812 0
-  "syuron.dvi" 1766481984.6272 70148 b934687a33a9b72b940a05c1d90b282f "latex"
+["dvipdf"] 1766912042.93216 "syuron.dvi" "syuron.pdf" "syuron" 1766912044.19331 0
+  "syuron.dvi" 1766912042.80214 77064 ee1b5a2d34c79462c5e3f46c7310ed0f "latex"
   (generated)
   "syuron.pdf"
   (rewritten before read)
-["latex"] 1766481983.1567 "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/syuron.tex" "syuron.dvi" "syuron" 1766481986.17532 0
-  "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/syuron.tex" 1766481978.24431 49748 11575b346f203edd1a059e6d36c478ad ""
+["latex"] 1766912041.19838 "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/syuron.tex" "syuron.dvi" "syuron" 1766912044.18219 0
+  "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/syuron.tex" 1766912036.72365 52885 07ff0630506bd0c82897ff553176d7fa ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -151,7 +151,6 @@
   "/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xyrecat.tex" 1312310545 1391 c8763fc8e281cb6ecf697988b6608e4a ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xyrotate.tex" 1312310545 7008 cb768d8d63a12d35607cbb3c4e7ba163 ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xytips.tex" 1381187214 3689 0d51788a4141bc66ab896f7ac63495fd ""
-  "/usr/local/texlive/2024/texmf-dist/tex/latex/algorithms/algorithm.sty" 1251330371 3249 15763257e50278eef5db1952ccde229c ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/algorithms/algorithmic.sty" 1251330371 9318 793e9d5a71e74e730d97f6bf5d7e2bca ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty" 1591045760 12594 0d51ac3a545aaaa555021326ff22a6cc ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1359763108 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
@@ -175,7 +174,6 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/bxjatoucs/bxjatoucs.sty" 1571867428 9159 ebd68ea70b64dbc04bdc806c9afa9ea1 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/fancybox/fancybox.sty" 1274111957 27261 5ae6156674330dc345adb79b6e5d8966 ""
-  "/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/footmisc/footmisc.sty" 1688586963 21399 e9fa1517a82f349507e998594ef20b82 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/framed/framed.sty" 1338588508 22449 7ec15c16d0d66790f28e90343c5434a3 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
@@ -240,10 +238,10 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "syuron.aux" 1766481984.62404 2661 25d6b77fdc95160be54b85afd4e2e527 "latex"
-  "syuron.out" 1766481984.62649 1286 6efe83bb1114c15c9f8551aa0711c42d "latex"
-  "syuron.tex" 1766481978.24431 49748 11575b346f203edd1a059e6d36c478ad ""
-  "syuron.toc" 1766481984.62708 587 c58e0e910a941f2ccd015ccf61714d2b "latex"
+  "syuron.aux" 1766912042.79874 3020 e02185c628758647abe30c11d4c9c1a2 "latex"
+  "syuron.out" 1766912042.80138 1430 28a64b8101fdcbfcc571c894545d3878 "latex"
+  "syuron.tex" 1766912036.72365 52885 07ff0630506bd0c82897ff553176d7fa ""
+  "syuron.toc" 1766912042.802 662 f151fc025f98f72300e09e83e75e6485 "latex"
   "syuron2.sty" 1287550710 4101 374aba698b6271bbcc9ea842b1cf67f0 ""
   (generated)
   "syuron.aux"

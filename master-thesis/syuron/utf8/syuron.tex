@@ -8,7 +8,7 @@
 % ------------------------
 % usepackage
 % ------------------------
-\usepackage{algorithm}
+%\usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage{amscd}
 \usepackage{amsfonts}
@@ -602,15 +602,18 @@
 
 %目次の作成
 \tableofcontents
-\section*{Preface}
-In these notes, 
+\section{Preface}
+In this thesis, 
 We study microlocal Morse theory, which is presented, 
 for instance, in \cite{GKS12}. 
 However, we replace the notion of microsupports with
- that of truncatd microsupprts, introduced by 
-Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KMS03}.
+that of truncatd microsupprts, introduced by 
+Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KFS03}.
+In \cite{KFS03}, they do not study the functorial property of 
+truncated microsupport of direct images of non proper morphisms. 
+We prove this functorial property under non proper direct images. 
 
-\section{Notations}
+\section{Notations and Reviews}
 
 We consider a commutative unital ring \(\kk\) 
 of finite global dimension (e.g. \(\zz\) or a field). 
@@ -620,6 +623,64 @@ We denote the cotangent bundle of \(X\) by \(
 \). 
 We denote by \(\Dompb(\kk_X)\) the bounded derived category of 
 sheaves of \(\kk\)-modules on \(X\). 
+
+Let us denote \(Z\) a locally closed set of \(X\) 
+and \(i\colon Z\hookrightarrow X\) an inclusion. 
+We use the following functors: 
+\[
+  \RG_{Z}(\blk) \coloneqq \Rder[]{i_{\ast}}i^{!}, 
+  \quad
+  (\blk)_{Z}\coloneqq \Rder[]{i_{!}}i^{-1}.
+\]
+
+\subsection*{Geometrical Notations}
+Let \(M\) be a manifold. 
+We denote by \(\pi\colon \cotb[M] \to M\) 
+the cotangent bundle of \(M\). 
+If \(f\colon M\to N\) is a morphism of manifolds, 
+then we have the natural diagram. 
+\[\vcenter{\xymatrix{
+  TM
+    \ar[r]^-{f'}
+    \ar[rd]_-{\tau_M} 
+  &
+  M\dpb[N]TN
+    \ar[r]^-{\mptan[f]}
+    \ar[d]
+    \ar@{}[dr]|\square
+  & 
+  TN
+    \ar[d]^-{\tau_N}
+  &
+  \cotb[M]
+    \ar[rd]_-{\pi_M}
+  &
+  M\dpb[N]\cotb[N]
+    \ar[l]_-{\mdiff[f]}
+    \ar[r]^-{\mpb[f]}
+    \ar[d]
+    \ar@{}[dr]|\square
+  &
+  \cotb[N]
+    \ar[d]^{\pi_N}
+  \\
+  &
+  M
+    \ar[r]_-{f}
+  &
+  N,
+  &
+  &
+  M
+    \ar[r]_-{f}
+  &
+  N.
+}}\]
+In this diagram, 
+\(\mptan[f]\) and \(\mpb[f]\) denote 
+the natural projections. \(f'\) is defined by 
+\((x;v)\mapsto (x;df_{x}v)\), 
+and \(\mdiff[f]\) is induced by the transposition of \(f'\). 
 
 \section{Truncated Microsupport}
 
@@ -1390,8 +1451,63 @@ Let us define the following morphisms:
   Therefore, it is enough to prove the result for \(\widetilde{G}\), \(q\), \(i_t\), \(\tilde{\varphi}\) instead of \(G\), \(f\), \(j_t\), \(\varphi\). 
 
   (i) 
+  It follows from the hypothesis that\begin{equation}\label{eq:tilde-estimate}
+    \muS[k](\widetilde{G})\cap\left(
+      \cotb[X]\times\left\{(t;\tau);t>t_{\circ}\right\}
+    \right)
+    \subset
+    \cotb[X]\times\left\{(t;\tau);\tau\leqq0\right\}.
+  \end{equation}
+  Indeed, by hypothesis, 
+  for any \((y;\eta)\in\muS[k](G)\) 
+  and \((f(x);\xi)\in Y\tpb[X]\cotb[X]\), 
+  we have \begin{equation}\label{eq:pb-conic}
+    d\varphi(y)\neq \eta + f^{\ast}\xi.
+  \end{equation}
+  If \((x,t;\xi,\tau)\) is a point of \(
+    \muS[k](\widetilde{G})\cap\left(
+      \cotb[X]\times\left\{(t;\tau);t>t_{\circ}\right\}
+  \right)\), 
+  then, by the formula \eqref{eq:t-push}, 
+  there exists \((y;\eta)\in\muS[k](G)\) such that \[
+    \tilde{f}(y)=(x,t) 
+    \text{ and } 
+    \eta=\tilde{f}^{\ast}(\xi,\tau).
+  \] For this \(\eta\), we have \[
+    \eta
+    =\tilde{f}^{\ast}(\xi,\tau)
+    =f^{\ast}\xi +\varphi^{\ast}\tau
+    =f^{\ast}\xi +\tau d\varphi(y).
+  \]
+  If \(\tau>0\), we get \[
+    d\varphi(y)=\frac{1}{\tau}\eta-\frac{1}{\tau}f^{\ast}\xi
+  \] and this contradicts \eqref{eq:pb-conic} 
+  because \(\muS[k](G)\) is conic. 
 
+  By \eqref{eq:tilde-estimate}, 
+  Let \(U\) be an open subset of \(X\) contained 
+  in a local chart, and convex in such a chart. 
+  By Proposition \ref{prop:t-nonchar}, we have isomorphisms 
+  for all \(t>t_{\circ}\) and \(j<k\)
+  \begin{equation}
+    H^{j}(U\times\rr;\widetilde{G})
+    \simar
+    H^{j}(U\times\lopen-\infty,t\ropen;\widetilde{G})
+  \end{equation}
+  and have an injection 
+  for all \(t>t_{\circ}\) 
+  \begin{equation}
+    H^{k}(U\times\rr;\widetilde{G})
+    \hookrightarrow
+    H^{k}(U\times\left]-\infty,t\right[;\widetilde{G}).
+  \end{equation}
+  This proves the result. 
 \end{proof}
+
+
+
+
+
 %===============================================
 % 参考文献スペース
 %===============================================
@@ -1400,7 +1516,7 @@ Let us define the following morphisms:
   Masaki Kashiwara, Pierre Schapira, 
   \textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
   Duke. Math. J. 161, No. 2, pp.201--245, 2012.  
-  \bibitem[KMS03]{KMS03} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
+  \bibitem[KFS03]{KFS03} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
     \textit{Truncated Microsupprt and Holomorphic Solutions 
     of \(D\)-modules}, 
     Ann. Scient. \'Ec. Norm. Sup., s\'erie 4, tome 36, 

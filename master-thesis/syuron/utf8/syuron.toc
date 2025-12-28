@@ -1,7 +1,8 @@
-\contentsline {section}{\numberline {1}Notations}{1}{section.1}%
-\contentsline {section}{\numberline {2}Truncated Microsupport}{1}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Functorial Properties}{2}{subsection.2.1}%
-\contentsline {section}{\numberline {3}Lemmas from {\cite {KS90}}}{2}{section.3}%
-\contentsline {section}{\numberline {4}Results}{3}{section.4}%
-\contentsline {section}{\numberline {5}Truncated Noncharacteristic Deformation}{5}{section.5}%
-\contentsline {section}{\numberline {6} Relative Microlocal Morse Theory via Truncated Microsupport }{7}{section.6}%
+\contentsline {section}{\numberline {1}Preface}{1}{section.1}%
+\contentsline {section}{\numberline {2}Notations and Reviews}{1}{section.2}%
+\contentsline {section}{\numberline {3}Truncated Microsupport}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Functorial Properties}{2}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Lemmas from {\cite {KS90}}}{2}{section.4}%
+\contentsline {section}{\numberline {5}Results}{3}{section.5}%
+\contentsline {section}{\numberline {6}Truncated Noncharacteristic Deformation}{6}{section.6}%
+\contentsline {section}{\numberline {7} Relative Microlocal Morse Theory via Truncated Microsupport }{8}{section.7}%
