@@ -53,3 +53,19 @@ non-characteristic deformation lemma の打ち切り版
 ストーリーを「non proper な場合の順像に関する関手的性質のtruncated ver.」としても良さそう．
 
 順像公式とSSkが錐であることが大事っぽい
+
+## 12/24 のゼミで話したこと
+
+truncated noncharacteristic deformation の定式化と証明.
+特に，パラコンパクト性の仮定を全空間につけることと，
+開集合族の共通部分が閉集合になること．
+
+証明中では，最後の帰納極限の計算をきちんとすること．
+
+## 12/29 に考えていること
+
+### 相対版 Morse理論の意義と証明の方針
+
+コンパクト性の仮定があるとnon-proper な場合に順像公式を証明しましたという話はできない．
+
+証明：凸開集合を取ったときに，その開集合と区間の積がgentle familyになることを示せば，noncharacteristic deformation lemma が使えて，証明が回る．
