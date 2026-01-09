@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  28 DEC 2025 17:54
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  9 JAN 2026 21:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -947,13 +947,13 @@ LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 (Font)              scaled to size 5.5481pt on input line 813.
  [3] [4] [5] [6] [7] <xymatrix 2x2 150> <xymatrix 2x2 150> [8] <xymatrix 6x2 578> [9]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1517.
+(Font)              No change on input line 1518.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1521.
+(Font)              No change on input line 1522.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1525.
+(Font)              No change on input line 1526.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1528.
+(Font)              No change on input line 1529.
  [10] (./syuron.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
@@ -961,7 +961,7 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `syuron.out' has not changed.
-(rerunfilecheck)             Checksum: 28A64B8101FDCBFCC571C894545D3878;1430.
+(rerunfilecheck)             Checksum: 682C50C4507B1FA11E23D3491EC21F53;1414.
  ) 
 Here is how much of TeX's memory you used:
  29723 strings out of 474774
@@ -972,4 +972,4 @@ Here is how much of TeX's memory you used:
  934 hyphenation exceptions out of 8191
  84i,22n,93p,599b,1104s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on syuron.dvi (12 pages, 77064 bytes).
+Output written on syuron.dvi (12 pages, 77288 bytes).

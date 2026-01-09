@@ -1,8 +1,7 @@
 # 修論
 
-修論（12/23 16:30 更新）[(pdf)](master-thesis.pdf)
+修論（01/09 21:18 更新）[(pdf)](syuron/utf8/syuron.pdf)
 
-[(ちゃんとした様式)](syuron/utf8/syuron.pdf)
 ## 12/03に話したこと
 
 ### 今後の方針
@@ -69,3 +68,21 @@ truncated noncharacteristic deformation の定式化と証明.
 コンパクト性の仮定があるとnon-proper な場合に順像公式を証明しましたという話はできない．
 
 証明：凸開集合を取ったときに，その開集合と区間の積がgentle familyになることを示せば，noncharacteristic deformation lemma が使えて，証明が回る．
+
+## 01/07 にやったこと
+
+元の仮定（共通部分が閉包になるというやつ）だと，相対版の証明に
+出てくる開集合族（ところてん形のやつ）は満たさないので
+相対版が証明できなさそう．
+
+## 01/09 にやったこと
+
+オリジナルの non-characteristic deformation lemma は
+成り立つが truncated 版は成り立たないような例を教えてもらった．
+
+### 方針
+
+仮定を弱めた truncated noncharacteristic deformation lemma が
+証明できるかの検討．
+
+それを用いたら相対版が証明できるかの検討．
