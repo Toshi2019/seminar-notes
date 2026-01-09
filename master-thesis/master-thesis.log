@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  23 DEC 2025 18:17
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  9 JAN 2026 21:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -784,7 +784,71 @@ File: l3backend-dvipdfmx.def 2024-02-20 L3 backend support: dvipdfmx
 \g__pdf_backend_object_int=\count352
 \g__pdf_backend_annotation_int=\count353
 \g__pdf_backend_link_int=\count354
-) (./master-thesis.aux)
+) (./master-thesis.aux
+
+LaTeX Warning: Label `eq:t-push' multiply defined.
+
+
+LaTeX Warning: Label `prop:ks1.12.4' multiply defined.
+
+
+LaTeX Warning: Label `prop:ks1.12.6' multiply defined.
+
+
+LaTeX Warning: Label `prop:ks2.7.1' multiply defined.
+
+
+LaTeX Warning: Label `thm:t-morse' multiply defined.
+
+
+LaTeX Warning: Label `Lem:1d-t-morse' multiply defined.
+
+
+LaTeX Warning: Label `eq:morse-d.t.' multiply defined.
+
+
+LaTeX Warning: Label `eq:nonchar-a' multiply defined.
+
+
+LaTeX Warning: Label `eq:nonchar-b' multiply defined.
+
+
+LaTeX Warning: Label `eq:non-char-init' multiply defined.
+
+
+LaTeX Warning: Label `prop:t-nonchar' multiply defined.
+
+
+LaTeX Warning: Label `item:t-nonchar1' multiply defined.
+
+
+LaTeX Warning: Label `item:t-nonchar2' multiply defined.
+
+
+LaTeX Warning: Label `item:t-nonchar3' multiply defined.
+
+
+LaTeX Warning: Label `item:t-nonchar4' multiply defined.
+
+
+LaTeX Warning: Label `item:t-nonchar5' multiply defined.
+
+
+LaTeX Warning: Label `eq:t-nonchar-a' multiply defined.
+
+
+LaTeX Warning: Label `eq:t-nonchar-a'' multiply defined.
+
+
+LaTeX Warning: Label `eq:t-nonchar-b' multiply defined.
+
+
+LaTeX Warning: Label `eq:a-iso' multiply defined.
+
+
+LaTeX Warning: Label `eq:a-inj' multiply defined.
+
+)
 \openout1 = `master-thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 608.
@@ -829,21 +893,21 @@ Package hyperref Info: Link coloring ON on input line 608.
 \openout6 = `master-thesis.out'.
 
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 16.62714pt on input line 612.
+(Font)              scaled to size 16.62714pt on input line 610.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 16.62714pt on input line 612.
+(Font)              scaled to size 16.62714pt on input line 610.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 612.
+(Font)              scaled to size 11.54663pt on input line 610.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 612.
+(Font)              scaled to size 11.54663pt on input line 610.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 612.
+(Font)              scaled to size 7.69775pt on input line 610.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 612.
+(Font)              scaled to size 7.69775pt on input line 610.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 612.
+(Font)              scaled to size 5.77332pt on input line 610.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 612.
+(Font)              scaled to size 5.77332pt on input line 610.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 (Font)              scaled to size 13.85594pt on input line 612.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
@@ -856,70 +920,91 @@ LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <14.4> not available
 (Font)              Font shape `JY2/hgt/m/n' tried instead on input line 612.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 13.85594pt on input line 612.
+ (./master-thesis.toc
 LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 634.
+(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 634.
+(Font)              scaled to size 9.6222pt on input line 1.
 LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 634.
+(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 634.
+(Font)              scaled to size 9.6222pt on input line 1.
+)
+\tf@toc=\write7
+\openout7 = `master-thesis.toc'.
+
+ [1
+
+]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 645.
+(Font)              scaled to size 6.73553pt on input line 646.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 645.
+(Font)              scaled to size 6.73553pt on input line 646.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 645.
+(Font)              scaled to size 4.8111pt on input line 646.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 645.
+(Font)              scaled to size 4.8111pt on input line 646.
 LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <12> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 649.
+(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 650.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 649.
+(Font)              scaled to size 11.54663pt on input line 650.
 LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <12> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 649.
+(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 650.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 649.
+(Font)              scaled to size 11.54663pt on input line 650.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 660.
+(hyperref)                removing `\@ifnextchar' on input line 661.
 
-[1
-
-] [2] [3] [4] [5] [6] <xymatrix 2x2
+[2] [3] [4] [5] [6] [7] <xymatrix 2x2
 
 Package xypdf Warning: The produced DVI file is NOT PORTABLE. Convert it with
 dvipdfm(x) to the PDF format but do not expect the DVI file itself to be
 displayed correctly.
 
-150> <xymatrix 2x2 150> [7
+150> <xymatrix 2x2 150> [8
 
-] <xymatrix 3x2 290> <xymatrix 3x2 290> [8]
+] <xymatrix 3x2 290> <xymatrix 3x2 290> [9] <xymatrix 6x2 637> [10]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 1510.
+
+
+Overfull \hbox (2.0221pt too wide) in paragraph at lines 1560--1562
+[][]\OT1/cmr/bx/n/10 Proposition 10.2 \OT1/cmr/m/n/10 ([[], Propo-si-tion 1.12.6])\OT1/cmr/bx/n/10 . []\OT1/cmr/m/n/10 Let $[][]$
+ []
+
+[11] [12] [13] [14] [15] <xymatrix 2x2 150> <xymatrix 2x2 150> [16] <xymatrix 6x2 578> [17]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1408.
+(Font)              No change on input line 2314.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1412.
+(Font)              No change on input line 2318.
+ [18]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1416.
+(Font)              No change on input line 2322.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1419.
- [9] (./master-thesis.aux)
+(Font)              No change on input line 2325.
+ [19] (./master-thesis.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `master-thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 6EFE83BB1114C15C9F8551AA0711C42D;1286.
+(rerunfilecheck)             Checksum: FF3FF62A9582CA50ABE1405F9324D6FC;2490.
  ) 
 Here is how much of TeX's memory you used:
- 30028 strings out of 474774
- 526934 string characters out of 5758801
- 1963032 words of memory out of 5000000
- 51842 multiletter control sequences out of 15000+600000
+ 30046 strings out of 474774
+ 527136 string characters out of 5758801
+ 1964032 words of memory out of 5000000
+ 51857 multiletter control sequences out of 15000+600000
  613584 words of font info for 151 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  84i,22n,93p,3266b,1071s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on master-thesis.dvi (9 pages, 57552 bytes).
+Output written on master-thesis.dvi (19 pages, 122052 bytes).

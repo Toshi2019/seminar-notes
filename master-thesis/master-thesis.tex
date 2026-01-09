@@ -607,8 +607,9 @@
 \date{\today\footnote{2025/03/09 first draft}}
 \begin{document}
 \maketitle
-%\tableofcontents
-%\tableofcontents
+
+%目次の作成
+\tableofcontents
 \section*{Preface}
 In these notes, 
 We study microlocal Morse theory, which is presented, 
@@ -1399,6 +1400,911 @@ Let us define the following morphisms:
   (i) 
 
 \end{proof}
+
+\section{Preface}
+In this thesis, 
+We study microlocal Morse theory, which is presented, 
+for instance, in \cite{GKS12}. 
+However, we replace the notion of microsupports with
+that of truncatd microsupprts, introduced by 
+Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KFS03}.
+In \cite{KFS03}, they do not study the functorial property of 
+truncated microsupport of direct images of non proper morphisms. 
+We prove this functorial property under non proper direct images. 
+
+\section{Notations and Reviews}
+
+We consider a commutative unital ring \(\kk\) 
+of finite global dimension (e.g. \(\zz\) or a field). 
+Let \(X\) be a topological space. 
+We denote by \(\Dompb(\kk_X)\) the bounded derived category of 
+sheaves of \(\kk\)-modules on \(X\). 
+
+Let us denote \(Z\) a locally closed set of \(X\) 
+and \(i\colon Z\hookrightarrow X\) an inclusion. 
+We use the following functors: 
+\[
+  \RG_{Z}(\blk) \coloneqq \Rder[]{i_{\ast}}i^{!}, 
+  \quad
+  (\blk)_{Z}\coloneqq \Rder[]{i_{!}}i^{-1}.
+\]
+
+\subsection*{Geometrical Notations}
+Let \(M\) be a real manifold of class \(C^\infty\). 
+We denote by \(\pi\colon \cotb[M] \to M\) 
+the cotangent bundle of \(M\). 
+If \(f\colon M\to N\) is a morphism of manifolds, 
+then we have the natural diagram. 
+\[\vcenter{\xymatrix{
+  TM
+    \ar[r]^-{f'}
+    \ar[rd]_-{\tau_M} 
+  &
+  M\dpb[N]TN
+    \ar[r]^-{\mptan[f]}
+    \ar[d]
+    \ar@{}[dr]|\square
+  & 
+  TN
+    \ar[d]^-{\tau_N}
+  &
+  \cotb[M]
+    \ar[rd]_-{\pi_M}
+  &
+  M\dpb[N]\cotb[N]
+    \ar[l]_-{\mdiff[f]}
+    \ar[r]^-{\mpb[f]}
+    \ar[d]
+    \ar@{}[dr]|\square
+  &
+  \cotb[N]
+    \ar[d]^{\pi_N}
+  \\
+  &
+  M
+    \ar[r]_-{f}
+  &
+  N,
+  &
+  &
+  M
+    \ar[r]_-{f}
+  &
+  N.
+}}\]
+In this diagram, 
+\(\mptan[f]\) and \(\mpb[f]\) denote 
+the natural projections. \(f'\) is defined by 
+\((x;v)\mapsto (x;df_{x}v)\), 
+and \(\mdiff[f]\) is induced by the transposition of \(f'\). 
+
+\section{Truncated Microsupport}
+
+\begin{Definition+}
+  Let \(F\in\Dompb(\kk_X)\). 
+  The closed conic subset \(\muS[k](F)\) of \(\cotb[X]\) 
+  is defined by: \(p\notin \muS[k](F)\) 
+  if and only if 
+  there exists an open conic neighborhood \(U\) of \(p\) 
+  such that for any \(x\in \pi(U)\) and 
+  for any real-valued \(C^{1}\)-function \(\varphi\) 
+  defined on a neighborhood of \(x\) such that 
+  \(\varphi(x)=0\), \(d\varphi(x)\in U\), 
+  one has \begin{equation}
+    H^{j}_{\{\varphi\geqq0\}}(F)_x=0
+    \quad \text{for any \(j\leqq k\).}
+  \end{equation}
+\end{Definition+}
+
+\subsection*{Functorial Properties} 
+\begin{Proposition+}
+  Let \(f\colon X\to Y\) be a morphism of real analytic manifolds and let \(F\in\Dompb(\kk_X)\) such that \(f\) is proper on \(\supp(F)\). 
+  Then for any \(k\in\zz\), 
+  \begin{equation}\label{eq:t-push}
+    \muS[k](\Rder{f_{\ast}}F)\subset
+    \mpb[f]\mdiff[f]^{-1}(\muS[k](F)).
+  \end{equation}
+  The equality holds in case \(f\) is a closed embedding.
+\end{Proposition+}
+
+\section{Lemmas from {\cite{KS90}}}
+
+Consider a projective system of abelian groups \(
+  \left(M_n,\rho_{n,p}\right)_n
+\) indexed by \(\nn\). 
+One says that this system satisfies 
+the Mittag-Leffler condition (ML for short) 
+if for any \(n\in\nn\), the decreasing sequence \(
+  (\rho_{n,p}(M_p))_p
+\) of subgroups of \(M_n\) is stationary.
+
+For a projective system of abelian groups \((M_{n})_n\), 
+we set \[
+  M_{\infty}\coloneqq \prolim[n]M_n.
+\]
+
+Consider a projective system of complexes
+\begin{equation}
+  E_n^{\bullet}\colon 
+  \cdots\to M_{n}^{j-1}\to M_{n}^{j}\to M_{n}^{j+1}\to\cdots,
+\end{equation}
+and projective limit
+\begin{equation}
+  E_{\infty}^{\bullet}\colon 
+  \cdots
+  \to M_{\infty}^{j-1}
+  \to M_{\infty}^{j}
+  \to M_{\infty}^{j+1}
+  \to\cdots.
+\end{equation}
+Denote by 
+\begin{equation}
+  \varPhi_{k}\colon H^{k}(E_{\infty}^{\bullet})\to \prolim[n]H^{k}(E_{n}^{\bullet})
+\end{equation}
+the natural morphism.
+
+\begin{Proposition+}[{\cite[Proposition 1.12.4]{KS90}}]\label{prop:ks1.12.4}
+  Assume that for each \(j\in\zz\), 
+  the system \(\left(M_{n}^{j}\right)_{n}\) satisfies 
+  the ML condition. 
+  Then
+  \begin{enumerate}[(a)]
+    \item for each \(k\in \zz\), the map \(\varPhi_k\) is surjective,
+    \item if moreover, for a given \(i\) the system \(\left(H^{i-1}(E_{n}^{\bullet})\right)_{n}\) satisfies the ML condition, then \(\varPhi_i\) is bijective.
+  \end{enumerate} 
+\end{Proposition+}
+
+The following is called Kashiwara's lemma.
+
+\begin{Proposition+}[{\cite[Proposition 1.12.6]{KS90}}]\label{prop:ks1.12.6}
+  Let \(\left(X_s,\rho_{s,t}\colon X_t\to X_s\right)_{(s,(s\leqq t))}\) be 
+  a projective system of sets indexed by \(\rr\). 
+  Assume that for each \(s\in\rr\), the canonical maps\[
+    \lambda_s\colon X_s\to\prolim[r<s]X_r
+  \] and \[
+    \mu_s\colon \indlim[t>s]X_t\to X_s
+  \] are both injective (resp. surjective). 
+  Then all the maps \(\rho_{s_{0},s_{1}}\) \((s_0\leqq s_1)\) are 
+  injective (resp. surjective).
+\end{Proposition+}
+
+\subsection*{ML procedure for sheaves}
+
+\begin{Proposition+}[{\cite[Proposition 2.7.1]{KS90}}]\label{prop:ks2.7.1}
+  Let \(X\) be a topological space and let \(F\in\Dompl(\zz_X)\). 
+  Let \(\left(U_n\right)_{n\in\nn}\) be an increasing sequence 
+  of open subsets of \(X\), \(\left(Z_n\right)_{n\in\nn}\) 
+  a decreasing sequence of closed subsets of \(X\). 
+  Set \(U\coloneqq\bigcup_{n}U_{n}\), 
+  \(Z\coloneqq\bigcap_{n}Z_{n}\). 
+  \begin{enumerate}[(i)]
+    \item For any \(j\), the natural map \(
+      \varphi_j\colon H^{j}_{Z}(U;F)
+      \to 
+      \prolim[n]H^{j}_{Z_{n}}(U_{n};F)
+    \) is surjective. 
+    \item Assume that for a given \(j\), 
+    the projective system \(
+      (H^{j-1}_{Z_{n}}(U_{n};F))_{n}
+    \) satisfies the ML condition. 
+    Then \(\varphi_{j}\) is bijective. 
+    \item Let now \(\left(X_{n}\right)_{n\in\nn}\) be 
+    an increasing family of subsets of \(X\) satisfying \(
+      X=\bigcup_{n}X_n\) and \(X_{n}\subset \Int[](X_{n+1})
+    \) for all \(n\). 
+    Assume that for a given \(j\), the projective system \(
+      \left(H^{j-1}(X_{n};F)\right)_{n}
+    \) satisfies the ML condition. 
+    Then the natural map \(
+      H^{j}(X;F)\to \prolim[n]H^{j}(X_{n};F)
+    \) is bijective. 
+  \end{enumerate}
+\end{Proposition+}
+
+\section{Results}
+
+In this section, 
+let \(M\) be a manifold.\footnote{
+  Can \(M\) be of class \(C^\infty\)?
+}
+
+\begin{Theorem+}\label{thm:t-morse}
+  Let \(F\) in \(\Dompb(\kk_M)\), and 
+  \(\psi\colon M\to \rr\) be a real-valued function of 
+  class \(C^1\), 
+  proper on \(\supp(F)\). 
+  Let \(a<b\) be real numbers.
+  We assume \(d\psi(x)\notin \muS[k](F)\) for \(
+    a\leqq \psi(x)<b
+  \). For \(t\in \rr\), we set \(
+    M_t\coloneqq\psi^{-1}\left(]-\infty,t[\right)
+  \). 
+  Then, the restriction morphisms\[
+    H^{j}(M_{b};F)\to H^{j}(M_{a};F)
+  \]
+  are isomorphic for each \(j< k\).\footnote{
+    For \(j=k\), this morphism might be injective.
+  }
+\end{Theorem+}
+
+\begin{Lemma+}\label{Lem:1d-t-morse}
+  Let \(-\infty<a<b<+\infty\) be real numbers 
+  and \(G\in \Dompb(\rr)\). Let \(k\) be an integer.
+  If \[
+      \left(H^{j}_{\left[t,+\infty\right[}(G)\right)_t
+      \cong 0
+      \quad
+      \text{
+          for all \(t\in\left[a,b\right[\) , 
+          and all \(j\leqq k\).
+      }
+  \]
+  Then one has \[
+      H^{j}(\left]-\infty,b\right[;G)\simarr
+      H^{j}(\left]-\infty,a\right[;G)
+  \] for all \(j<k\).\footnote{
+      For \(k\), this morphism might be injective.
+        (not written in this draft.)
+  }
+\end{Lemma+}
+
+\begin{proof}
+  Let \(t\in \lclosed a,b\ropen\). 
+  We will denote by \(I_t\) the open interval \(
+      \left]-\infty,t\right[
+  \) and denote by \(Z_t\) the closed interval \(
+      \left]-\infty,t\right] (= \overline{I_t})
+  \).
+  By applying the functor \((\blk)_{\overline{I_t}}\) 
+  to the distinguished triangle\[
+      \RG_{\rr-I_t}(G)\to 
+      G\to 
+      \RG_{I_t}(G)\overset{+1}{\longrightarrow}
+      \quad\text{ in \(\Dompb(\kk_\rr)\)},
+  \] we have\[
+      (\RG_{[t,+\infty[}(G))_{\{t\}}
+      \to G_{Z_t}
+      \to 
+      \RG_{I_t}(G)
+      \overset{+1}{\longrightarrow}
+      \quad\text{ in \(\Dompb(\kk_\rr)\)}.
+  \]
+  Aplying the functor \(\RG(\rr;\blk)\) to this, we have
+  \begin{equation}\label{eq:morse-d.t.}
+      (\RG_{[t,+\infty[}(G))_{t}
+      \to \RG(Z_t;G)
+      \to 
+      \RG(I_t;G)
+      \overset{+1}{\longrightarrow}
+      \quad\text{ in \(\Dompb(\kk)\)}.
+  \end{equation}
+  Then consider the following conditions for 
+  \(j\in\zz\), \(s\in\left[a,b\right[\), and 
+  \(t\in \left]a,b\right]\):
+  \begin{align}
+      \tag*{\((a)^j_s\)}\label{eq:nonchar-a}
+      \indlim[t>s] H^{j}(I_t;G) &\simarr H^{j}(I_s;G),\\
+      \tag*{\((b)^j_t\)}\label{eq:nonchar-b}
+      \prolim[s<t] H^{j}(I_t;G) &\simrra H^{j}(I_t;G).
+  \end{align}
+  By hypothesis, 
+  it follows from \eqref{eq:morse-d.t.} that 
+  \(
+    H^{j}(Z_t;G)\simar H^{j}(I_t;G)
+  \) for \(t\in \left[a,b\right[\).\footnote{
+    Similarly, we have injections \(
+      H^{k}(Z_t;G)\hookrightarrow H^{k}(I_t;G)
+  \) for \(t\in \left[a,b\right[\). 
+  } 
+  Since \(
+      \indlim[t>s] H^{j}(I_t;G)\cong H^{j}(Z_s;G)
+  \), \ref{eq:nonchar-a} holds 
+  for any \(j<k\) and \(s\in\left[a,b\right[\).\footnote{
+      Similarly, \[
+        \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(Z_s;G)
+    \] gives injections \[
+        \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(I_s;G)
+    \] for all \(s\in \left[a,b\right[\). 
+  } Moreover, since we assume \(G\) is a bounded complex, 
+  \ref{eq:nonchar-b} holds for \(j\ll0\) 
+  and for all \(t\in \left]a,b\right]\). 
+  Let us denote such \(j\) by \(j_0\). 
+  Let us argue by induction on \(j\). 
+  Assume \ref{eq:nonchar-b} holds for all 
+  \(t\in\left]a,b\right[\) and all \(j\leqq j_0\). 
+  Applying Proposition \ref{prop:ks1.12.6}, 
+  we find the isomorphisms \begin{equation}\label{eq:non-char-init}
+    H^{j}(I_s;G) \simarr H^{j}(I_t;G)
+    \quad
+    \text{for all \(j\leqq j_0\) and all \(a<s\leqq t< b\).}
+  \end{equation}
+  Let \(G \simar G^{\bullet}\) be a flabby resolution. 
+  Let \(t\in\left]a,b\right]\). 
+  Consider a complex \[
+    E^{\bullet}_{n}=\Gamma(I_{t-\frac{1}{n}};G^{\bullet}).
+  \]
+  Since \(G^{\bullet}\) is flabby, 
+  we have \(E_{n}^{j}\cong E_{\infty}^{j}\) and 
+  the projective system \((E^{j}_{n})_{n}\) satisfies 
+  the ML condition for all \(j\in\zz\). 
+  
+  By \eqref{eq:non-char-init}, the projective system \(
+    (H^{j_0}(E^{\bullet}_{n}))_{n}
+  \) satisfies the ML condition (because we have \(
+    a<t-\frac{1}{n}<t
+  \) for \(n\gg0\)). 
+  Applying Proposition \ref{prop:ks1.12.4} to \(
+    (E^{\bullet}_{n})_{n}
+  \), it follows that \ref{eq:nonchar-b} holds for \(j_{0}+1\) 
+  and the induction proceeds. More precisely, we have \begin{align*}
+    H^{j_0+1}(I_{t};G^{\bullet})
+    \overunderset{\sim}{\varPhi_{j_{0}+1}}{\longrightarrow}&
+    \prolim[n]H^{j_0+1}(I_{t-\frac{1}{n}};G^{\bullet})\\
+    \cong&
+    \prolim[n]H^{j_0+1}(I_{t-\frac{1}{n}};G)\\
+    \cong&
+    \prolim[s<t]H^{j_0+1}(I_{s};G).
+  \end{align*}
+  Again by Proposition \ref{prop:ks1.12.6}, 
+  we get the isomorphisms\[
+    H^{j}(I_{s};G)\simarr H^{j}(I_t;G)
+    \quad
+    \text{for all \(j<k\) and all \(a<s\leqq t\leqq b\),}
+  \]
+  and injections \[
+    H^{j}(I_{s};G)\hookrightarrow H^{j}(I_t;G)
+  \] for \(j=k\) and for all \(a<s\leqq t\leqq b\). 
+
+  Finally, using \eqref{eq:morse-d.t.} and the hypothesis, 
+  we have the isomorphisms\[
+    H^{j}(I_{a};G)\simrra
+    H^{j}(Z_{a};G)\simarr H^{j}(I_s;G)
+    \quad
+    \text{for all \(j<k\) and all \(a<s\leqq b\).}
+  \]
+  Similarly, for \(j=k\), we have\[
+    H^{k}(I_{b};G) \cong \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(I_s;G) \hookrightarrow H^{k}(I_{a};G).
+  \]
+\end{proof}
+
+\begin{proof}[Proof of Theorem {\ref{thm:t-morse}}.]
+  First, we have\[
+    H^{j}(M_{t};F)
+    \cong
+    H^{j}\RG(
+      {\left]-\infty,t\right[}\mathrel{;}\Rder{\psi}_{\ast}F
+    )
+  \]
+  for \(t\in I\).
+  Since we assume that \(d\psi(x)\notin \muS[k](F)\) 
+  for \(a\leqq \psi(x)<b\), and by \eqref{eq:t-push}, the formula \(
+    \muS[k](\Rder{\psi}_{\ast}F)
+    \subset \mpb[\psi]\mdiff[\psi]^{-1}\muS[k](F)
+  \) holds. Hence we have\[
+    \left(H^{j}\RG_{\left[\psi(x),+\infty\right[}\Rder{\psi}_{\ast}F\right)_{\psi(x)}=0
+  \]for each \(j\leqq k\). 
+  Then we can apply Lemma \ref{Lem:1d-t-morse} and have
+  \[
+    H^{j}(\left]-\infty,b\right[;\Rder{\psi_{\ast}}F)
+    \simarr
+    H^{j}(\left]-\infty,a\right[;\Rder{\psi_{\ast}}F)
+  \] for all \(j<k\).
+  Then we can conclude that
+  \[
+    H^{j}(M_b\mathrel{;}F)
+    \simarr
+    H^{j}(M_a\mathrel{;}F)
+  \]
+  for all \(j<k\).
+  \end{proof}
+
+\section{Truncated Noncharacteristic Deformation}
+
+We will reformulate the noncharacteristic deformation 
+lemma \cite[Proposition 2.7.2]{KS90} to make a relation 
+to truncated microsupport. 
+
+\begin{Proposition+}\label{prop:t-nonchar}
+  Let \(X\) be a Hausdorff space, \(F\in\Dompb(\zz_X)\), and 
+  let \(\left(U_{t}\right)_{t\in\rr}\) be a family of 
+  open subsets of \(X\). 
+  We assume the following conditions. 
+  \begin{enumerate}[(i)]
+    \item \label{item:t-nonchar1}
+    \(U_{t}=\bigcup_{s<t}U_{s}\), for all \(t\in\rr\). 
+    \item \label{item:t-nonchar2}
+    For all pairs \((s,t)\) with \(s\leqq t\), 
+    the set \(\overline{U_{t}\smi U_{s}}\cap \supp{F}\) is compact.
+    \item \label{item:t-nonchar3}
+    Setting \(
+      Z_{s}\coloneqq \bigcap_{t>s}\overline{U_t\smi U_s}
+    \), we have for all pairs \((s,t)\) with \(s\leqq t\), 
+    and all \(x\in Z_{s}\smi U_{t}\), \[
+      (H^{j}_{X\smi U_{t}}(F))_{x}=0
+      \quad 
+      \text{for all \(j\leqq k\).}
+    \]
+    \item \label{item:t-nonchar4} 
+    For any \(s\in\rr\), 
+    \(\bigcap_{t>s}U_{t}=\overline{U_{s}}\) 
+    and 
+    \(\overline{U_{s}}\) is closed 
+    in a paracompact open subset of \(X\).
+    \item\footnote{
+      This condition might be 
+      deduced from \eqref{item:t-nonchar3}.
+    } \label{item:t-nonchar5} 
+    \(Z_s\smi U_{s}\subset\bd{U_{s}}\) 
+    for all \(s\in\rr\). 
+  \end{enumerate}
+  Then, for all \(t\in\rr\), we have the isomorphisms\[
+    H^{j}\left(\bigcup_{s}U_{s};F\right)
+    \simar 
+    H^{j}\left(U_{t};F\right)
+    \quad \text{for all \(j< k\),} 
+  \]
+  and the injections\[
+    H^{k}\left(\bigcup_{s}U_{s};F\right)
+    \hookrightarrow 
+    H^{k}\left(U_{t};F\right).
+  \] 
+\end{Proposition+}
+
+\begin{proof}
+  Consider the following conditions for 
+  \(j\in\zz\), \(s\), and \(t\):
+  \begin{align}
+      \tag*{\((a)^j_s\)}\label{eq:t-nonchar-a}
+      \mu_{s}^{j}&\colon
+      \indlim[t>s] H^{j}(U_t;F) \simar H^{j}(U_s;F),\\
+      \tag*{\((a')^k_s\)}\label{eq:t-nonchar-a'}
+      \mu_{s}^{k}&\colon
+      \indlim[t>s] H^{k}(U_t;F) \hookrightarrow H^{k}(U_s;F),\\
+      \tag*{\((b)^j_s\)}\label{eq:t-nonchar-b}
+      \lambda_{s}^{j}&\colon
+      H^{j}(U_t;F)\simarr \prolim[s<t] H^{j}(U_s;F).
+  \end{align}
+
+  Let us prove \ref{eq:t-nonchar-a} for \(s\in \rr\) and \(j<k\). 
+  We can assume that \(\overline{U_{t}\smi U_{s}}\) is compact 
+  for any \(s\leqq t\) by replacing \(X\) by \(\supp{F}\). 
+  Consider the distinguished triangle\[
+    \RG_{X\smi U_{t}}(F)
+    \to
+    F
+    \to
+    \RG_{U_{t}}(F)
+    \overset{+1}{\longrightarrow}.
+  \]
+  Applying to this triangle the functor \(
+    (\blk)_{\overline{U_{t}}}
+  \), we have \[
+    \left(\RG_{X\smi U_{t}}(F)\right)_{\overline{U_{t}}}
+    \to
+    F_{\overline{U_{t}}}
+    \to
+    \RG_{U_{t}}(F)
+    \overset{+1}{\longrightarrow}.
+  \]
+  Again applying to this triangle the functor \(\RG(X;\blk)\), 
+  we have
+  \begin{equation}
+    \RG\left(X;\left(\RG_{X\smi U_{t}}(F)\right)_{\overline{U_{t}}}\right)
+    \to
+    \RG(\overline{U_{t}};F)
+    \to
+    \RG(U_{t};F)
+    \overset{+1}{\longrightarrow}.
+  \end{equation}
+  By hypotheses \eqref{item:t-nonchar3}--\eqref{item:t-nonchar5}, 
+  it follows that
+  \[
+    \left(H^{j}_{X\smi U_{t}}(F)\right)_{\bd{U_{t}}}=0
+  \]
+  for any \(j\leqq k\) and then \[
+    H^{j}\left(X;
+      \left(
+        \RG_{X\smi U_{t}}(F)
+      \right)_{\overline{U_{t}}}
+    \right)=0
+    \quad
+    \text{for any \(j\leqq k\).}
+  \] \footnote{この辺の議論はきちんと詰めないといけない．}
+  Thus for any \(t\), we have
+  \begin{align}
+    \label{eq:a-iso}H^{j}(\overline{U_{t}};F)
+    &\simar
+    H^{j}(U_{t};F)\quad
+    \text{for any \(j< k\),}\\
+    \label{eq:a-inj}H^{k}(\overline{U_{t}};F)
+    &\hookrightarrow
+    H^{k}(U_{t};F).
+  \end{align}
+  Therefore, we have by \eqref{item:t-nonchar4} and \eqref{eq:a-iso},  
+  \begin{align*}
+    \indlim[t>s]H^{j}(U_t;F)
+    &\cong 
+    H^{j}\left(\bigcap_{t>s}U_t;F\right)\\
+    &=
+    H^{j}(\overline{U_s};F)\\
+    &\simar
+    H^{j}(U_s;F)
+  \end{align*}
+  for any \(j<k\), and \ref{eq:t-nonchar-a} follows. 
+  Similarly, 
+  we have by \eqref{item:t-nonchar4} and \eqref{eq:a-inj},
+    \begin{align*}
+    \indlim[t>s]H^{k}(U_t;F)
+    &\cong 
+    H^{k}\left(\bigcap_{t>s}U_t;F\right)\\
+    &=
+    H^{k}(\overline{U_s};F)\\
+    &\hookrightarrow
+    H^{k}(U_s;F)
+  \end{align*}
+  and \ref{eq:t-nonchar-a'} follows.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\clearpage
+\begin{Remark+}
+  Lemma \ref{Lem:1d-t-morse} follows from 
+  Proposition \ref{prop:t-nonchar}. 
+  Indeed, putting \(X=\lopen-\infty,b\ropen\), 
+  \(F=\mres[G]{I_{b}}\), and \(U_t=I_t\), 
+  we find that \begin{enumerate}[(i)]
+    \item \(\bigcup_{s<t} I_s
+    = \bigcup_{s<t}\lopen-\infty,s\ropen
+    = \lopen-\infty,t\ropen= I_t\) for all \(t\in\rr\). 
+    \item If \(s\leqq t\), then \(
+      \overline{I_t\smi I_s}\cap\supp{G}
+      =\overline{\lclosed s,t\ropen}\cap\supp{G}
+      =\lclosed s,t\rclosed\cap\supp{G}
+      \) is compact.
+    \item For \(s\in\rr\), we have \[
+      Z_{s}
+      =\bigcap_{t>s}\overline{I_{t}\smi I_{s}}
+      =\bigcap_{t>s}\overline{\lclosed s,t\ropen}
+      =\bigcap_{t>s}\lclosed s,t\rclosed
+      =\left\{s\right\},
+    \]
+    and \[
+      Z_s\smi I_t
+      =\left\{s\right\}\smi \lopen-\infty,t\ropen
+      =\begin{cases*}
+        \left\{s\right\}& if \(s=t\),\\
+        \varnothing& if \(s<t\).
+      \end{cases*}
+    \]
+    By hypothesis of Lemma \ref{Lem:1d-t-morse}, 
+    for all \(s\in \left\{s\right\}\), 
+    \[
+      H^{j}_{X\smi I_s}(F)_{s}
+      =H^{j}_{\lclosed s,\infty\ropen}(F)_{s}=0.
+    \]
+    Then we can apply Proposition \ref{prop:t-nonchar}, and 
+    we have the isomorphisms for all \(t\in \lclosed a,b\ropen\) and \(j<k\),
+    \[
+      H^{j}(I_{b};F)
+      =H^{j}(\bigcup_{s}I_{s};F)
+      \simar
+      H^{j}(I_{t};F)
+    \]
+    and the injections
+    \[
+      H^{k}(I_{b};F)
+      =H^{k}(\bigcup_{s}I_{s};F)
+      \hookrightarrow
+      H^{k}(I_{t};F)
+    \]
+  \end{enumerate}
+\end{Remark+}
+
+
+\section{Relative Microlocal Morse Theory via Truncated Microsupport}
+
+Let \(f\colon Y\to X\) be a morphism of manifolds, and 
+\(\varphi\) a real valued function of class \(C^1\). 
+For a real number \(t\in \rr\), we set 
+\begin{align*}
+  Y_t
+  &\coloneqq \left\{y\in Y\smid \varphi(y)< t\right\} 
+  = \varphi^{-1}(\lopen-\infty,t\ropen),\\
+  \widetilde{Y_t}
+  &\coloneqq \left\{y\in Y\smid \varphi(y)\leqq t\right\} 
+  = \varphi^{-1}(\lopen-\infty,t\rclosed).
+\end{align*}
+Let us define the following morphisms:
+\[\xymatrix{
+  Y_t\ar[r]^-{j_t}
+  \ar[rd]_-{f_t}
+  &
+  Y
+  \ar[d]^-{f}\\
+  &X,
+}\quad\xymatrix{
+  \widetilde{Y_t}\ar[r]^-{\tilde{j}_t}
+  \ar[rd]_-{f_t}
+  &
+  Y
+  \ar[d]^-{f}\\
+  &X.
+}\]
+
+\begin{Proposition+}
+  Let \(G\in\Dompb(Y)\), and assume \(
+    f_{t}\colon \supp(G)\cap \overline{Y_t}\to X
+  \) is proper for all \(t\in\rr\). 
+  Let \(k\) be an integer and \(t_\circ\) a real number.
+  \begin{enumerate}[(i)]
+    \item Assume that, 
+    for any \(y\in Y\smi \widetilde{Y}_{t_{\circ}}\), 
+    we have \[
+      d\varphi(y)\notin \left(
+        \muS[k](G)+ \mdiff[f]\left(
+          Y\pb[X]\cotb[X]
+        \right)
+      \right).
+    \]
+    Then \begin{align}
+      \tag{a}
+      \Rder[j]{f_{\ast}}G
+      &\cong
+      \Rder[j]{{f_{t}}_{\ast}}j^{-1}_{t}G
+      \quad
+      \text{ for \(j<k\) and \(t>t_\circ\)},\\
+      \tag{a\(_k\)}
+      \Rder[k]{f_{\ast}}G
+      &\hookrightarrow
+      \Rder[k]{{f_{t}}_{\ast}}j^{-1}_{t}G
+      \quad
+      \text{ for \(t>t_\circ\)},\\
+      \tag{a\('\)}
+      \Rder[j]{\tilde{f}_{\ast}}G
+      &\cong
+      \Rder[j]\tilde{f_{t}}_{\ast}\tilde{j}^{-1}_{t}G
+      \quad
+      \text{ for \(j<k\) and \(t\geqq t_\circ\)},\\
+      \tag{a\(_k'\)}
+      \Rder[k]{\tilde{f}_{\ast}}G
+      &\hookrightarrow
+      \Rder[k]\tilde{f_{t}}_{\ast}\tilde{j}^{-1}_{t}G
+      \quad
+      \text{ for \(t\geqq t_\circ\)},\\
+      \tag{b}
+      \muS[k](\Rder[]{f_{\ast}}G)
+      &\subset
+      \mpb[f]\left(\mdiff[f]^{-1}\left(
+        \muS[k](G)\cap \pi^{-1}(\widetilde{Y}_{t_{\circ}})
+      \right)\right)\\
+      %&
+      \notag&=\mpb[f]\mdiff[f]^{-1}\left(
+        \muS[k](G)
+      \right).
+    \end{align}
+    \item Assume that, 
+    for any \(y\in Y\smi \widetilde{Y}_{t_{\circ}}\), 
+    we have \[
+      -d\varphi(y)\notin \left(
+        \muS[k](G)+ \mdiff[f]\left(
+          Y\pb[X]\cotb[X]
+        \right)
+      \right).
+    \]
+    Then \begin{align}
+      \tag{c}
+      \Rder[j]{f_{!}}G
+      &\cong
+      \Rder[j]{{f_{t}}_{!}}j^{-1}_{t}G
+      \quad
+      \text{ for \(j<k\) and \(t>t_\circ\)},\\
+      \tag{c\(_k\)}
+      \Rder[k]{f_{!}}G
+      &\hookrightarrow
+      \Rder[k]{{f_{t}}_{!}}j^{-1}_{t}G
+      \quad
+      \text{ for \(t>t_\circ\)},\\
+      \tag{c\('\)}
+      \Rder[j]{\tilde{f}_{!}}G
+      &\cong
+      \Rder[j]\tilde{f_{t}}_{\ast}\tilde{j}^{!}_{t}G
+      \quad
+      \text{ for \(j<k\) and \(t\geqq t_\circ\)},\\
+      \tag{c\(_k'\)}
+      \Rder[k]{\tilde{f}_{!}}G
+      &\hookrightarrow
+      \Rder[k]\tilde{f_{t}}_{\ast}\tilde{j}^{!}_{t}G
+      \quad
+      \text{ for \(t\geqq t_\circ\)},\\
+      \tag{d}
+      \muS[k](\Rder[]{f_{!}}G)
+      &\subset
+      \mpb[f]\left(\mdiff[f]^{-1}\left(
+        \muS[k](G)\cap \pi^{-1}(\widetilde{Y}_{t_{\circ}})
+      \right)\right)\\
+      %&
+      \notag&\subset\mpb[f]\mdiff[f]^{-1}\left(
+        \muS[k](G)
+      \right).
+    \end{align}
+  \end{enumerate}
+\end{Proposition+}
+
+\begin{proof}
+  Let \(\tilde{f}\) be the morphism \(
+    (f,\varphi)\colon Y\to X\times \rr
+  \), and let \(q\) and \(\tilde{\varphi}\) be 
+  the first and second projections 
+  defined on \(X\times \rr\) respectively. 
+  Then \(\tilde{f}\) is proper on \(\supp(G)\) and 
+  \(f=q\circ \tilde{f}\). \footnote{This can be proved as follows. 
+  If \(K\) is a compact set of \(X\times \rr\), 
+  \(\tilde{f}^{-1}(K)\) is compact.}
+  Let \(i_t\) be the open embedding \(
+    X\times\lopen -\infty, t\ropen\hookrightarrow X\times \rr
+  \) and \(\tilde{i}_t\) the closed embedding \(
+    X\times\lopen -\infty, t\rclosed\hookrightarrow X\times \rr
+  \). Set \(q_t=q\circ i_t\) and \(\tilde{q}_t=q\circ\tilde{i}_t\). 
+  These morphisms can be visualized by the following diagrams.
+  \[\vcenter{\xymatrix@C=30pt@R=30pt{
+    Y
+      \ar[r]^-{\tilde{f}}
+    &
+    X\times\rr
+      \ar[r]^-{q}
+    &
+    X,
+    &
+    Y
+      \ar[r]^-{\tilde{f}}
+    &
+    X\times\rr
+      \ar[r]^-{q}
+    &
+    X.\\
+    Y_{t}
+      \ar@{^(->}[u]^-{j_t}
+      \ar[r]^-{\hat{f}_{t}}
+    &
+    X\times \lopen-\infty,t\ropen
+      \ar@{^(->}[u]_-{i_{t}}
+      \ar[ur]_-{q_{t}}
+    &
+    &
+    \widetilde{Y}_{t}
+      \ar@{^(->}[u]^-{\tilde{j}_t}
+      \ar[r]^-{\check{f}_{t}}
+    &
+    X\times \lopen-\infty,t\rclosed
+      \ar@{^(->}[u]_-{\tilde{i}_{t}}
+      \ar[ur]_-{\tilde{q}_{t}}
+    &
+  }}\]
+  Then, setting \(\widetilde{G}\coloneqq \Rder[]{f_{\ast}}G\), 
+  we have \begin{align*}
+    \Rder[]{f_{\ast}}G
+    &\cong 
+    \Rder[]{q_{\ast}}\widetilde{G},
+    &
+    \Rder[]{\tilde{f}_{\ast}}G
+    &\cong 
+    \Rder[]{\tilde{q}_{\ast}}\widetilde{G},
+    \\
+    \Rder[]{{f_{t}}_{\ast}}j_{t}^{-1}G
+    &\cong 
+    \Rder[]{{q_{t}}_{\ast}}i_{t}^{-1}\widetilde{G},
+    &
+    \Rder[]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{-1}G
+    &\cong 
+    \Rder[]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{-1}\widetilde{G},
+    \\
+    \Rder[]{{f_{t}}_{!}}j_{t}^{-1}G
+    &\cong 
+    \Rder[]{{q_{t}}_{!}}i_{t}^{-1}\widetilde{G},
+    &
+    \Rder[]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{!}G
+    &\cong 
+    \Rder[]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{!}\widetilde{G}.
+  \end{align*}
+  Thus taking \(j\)-th cohomology, we have\begin{align*}
+    \Rder[j]{f_{\ast}}G
+    &\cong 
+    \Rder[j]{q_{\ast}}\widetilde{G},
+    &
+    \Rder[j]{\tilde{f}_{\ast}}G
+    &\cong 
+    \Rder[j]{\tilde{q}_{\ast}}\widetilde{G},
+    \\
+    \Rder[j]{{f_{t}}_{\ast}}j_{t}^{-1}G
+    &\cong 
+    \Rder[j]{{q_{t}}_{\ast}}i_{t}^{-1}\widetilde{G},
+    &
+    \Rder[j]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{-1}G
+    &\cong 
+    \Rder[j]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{-1}\widetilde{G},
+    \\
+    \Rder[j]{{f_{t}}_{!}}j_{t}^{-1}G
+    &\cong 
+    \Rder[j]{{q_{t}}_{!}}i_{t}^{-1}\widetilde{G},
+    &
+    \Rder[j]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{!}G
+    &\cong 
+    \Rder[j]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{!}\widetilde{G}.    
+  \end{align*}
+  Therefore, it is enough to prove the result for \(\widetilde{G}\), \(q\), \(i_t\), \(\tilde{\varphi}\) instead of \(G\), \(f\), \(j_t\), \(\varphi\). 
+
+  (i) 
+  It follows from the hypothesis that\begin{equation}\label{eq:tilde-estimate}
+    \muS[k](\widetilde{G})\cap\left(
+      \cotb[X]\times\left\{(t;\tau);t>t_{\circ}\right\}
+    \right)
+    \subset
+    \cotb[X]\times\left\{(t;\tau);\tau\leqq0\right\}.
+  \end{equation}
+  Indeed, by hypothesis, 
+  for any \((y;\eta)\in\muS[k](G)\) 
+  and \((f(x);\xi)\in Y\tpb[X]\cotb[X]\), 
+  we have \begin{equation}\label{eq:pb-conic}
+    d\varphi(y)\neq \eta + f^{\ast}\xi.
+  \end{equation}
+  If \((x,t;\xi,\tau)\) is a point of \(
+    \muS[k](\widetilde{G})\cap\left(
+      \cotb[X]\times\left\{(t;\tau);t>t_{\circ}\right\}
+  \right)\), 
+  then, by the formula \eqref{eq:t-push}, 
+  there exists \((y;\eta)\in\muS[k](G)\) such that \[
+    \tilde{f}(y)=(x,t) 
+    \text{ and } 
+    \eta=\tilde{f}^{\ast}(\xi,\tau).
+  \] For this \(\eta\), we have \[
+    \eta
+    =\tilde{f}^{\ast}(\xi,\tau)
+    =f^{\ast}\xi +\varphi^{\ast}\tau
+    =f^{\ast}\xi +\tau d\varphi(y).
+  \]
+  If \(\tau>0\), we get \[
+    d\varphi(y)=\frac{1}{\tau}\eta-\frac{1}{\tau}f^{\ast}\xi
+  \] and this contradicts \eqref{eq:pb-conic} 
+  because \(\muS[k](G)\) is conic. 
+
+  By \eqref{eq:tilde-estimate}, 
+  Let \(U\) be an open subset of \(X\) contained 
+  in a local chart, and convex in such a chart. 
+  By Proposition \ref{prop:t-nonchar}, we have isomorphisms 
+  for all \(t>t_{\circ}\) and \(j<k\)
+  \begin{equation}
+    H^{j}(U\times\rr;\widetilde{G})
+    \simar
+    H^{j}(U\times\lopen-\infty,t\ropen;\widetilde{G})
+  \end{equation}
+  and have an injection 
+  for all \(t>t_{\circ}\) 
+  \begin{equation}
+    H^{k}(U\times\rr;\widetilde{G})
+    \hookrightarrow
+    H^{k}(U\times\left]-\infty,t\right[;\widetilde{G}).
+  \end{equation}
+  This can be showed as follows.
+
+  This proves the result. 
+\end{proof}
+
+\begin{Remark+}
+  \((U\times I_t)\) is not a gentle family.  
+\end{Remark+}
+
+
 %===============================================
 % 参考文献スペース
 %===============================================
@@ -1421,7 +2327,6 @@ Let us define the following morphisms:
 \end{thebibliography}
 
 %===============================================
-
 
 
 

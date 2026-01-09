@@ -46,9 +46,12 @@
 \definecolor{darkblue}{rgb}{0,0,0.6} 
 \hypersetup{
     colorlinks=true,
-    citecolor=darkgreen,
-    linkcolor=darkred,
-    urlcolor=darkblue,
+    %citecolor=darkgreen,
+    %linkcolor=darkred,
+    %urlcolor=darkblue,
+    citecolor=black,
+    linkcolor=black,
+    urlcolor=black,
 }
 \usepackage{pxjahyper}
 
@@ -567,13 +570,18 @@
 \newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
 
 
-\newcommand{\lopen}{\mathopen{]}}
+%\newcommand{\lopen}{\mathopen{]}}
+%\newcommand{\lclosed}{\mathopen{[}}
+%\newcommand{\ropen}{\mathclose{[}}
+%\newcommand{\rclosed}{\mathopen{]}}
+\newcommand{\lopen}{\mathopen{(}}
 \newcommand{\lclosed}{\mathopen{[}}
-\newcommand{\ropen}{\mathclose{[}}
+\newcommand{\ropen}{\mathclose{)}}
 \newcommand{\rclosed}{\mathopen{]}}
 
 \newcommand{\sm}{\raisebox{2.33pt}{~\rule{6.4pt}{1.3pt}~}}
-\newcommand{\smi}{\mathbin{\raisebox{2.33pt}{\rule{6.4pt}{1.3pt}}}}
+%\newcommand{\smi}{\mathbin{\raisebox{2.33pt}{\rule{6.4pt}{1.3pt}}}}
+\newcommand{\smi}{-}
 
 \newcommand{\smid}{\mathrel{;}}
 
@@ -602,7 +610,8 @@
 
 %目次の作成
 \tableofcontents
-\section{Preface}
+\section{Introduction}
+
 In this thesis, 
 We study microlocal Morse theory, which is presented, 
 for instance, in \cite{GKS12}. 
@@ -617,10 +626,7 @@ We prove this functorial property under non proper direct images.
 
 We consider a commutative unital ring \(\kk\) 
 of finite global dimension (e.g. \(\zz\) or a field). 
-Let \(X\) be a real analytic manifold. 
-We denote the cotangent bundle of \(X\) by \(
-  \pi\colon \cotb[X]\to X
-\). 
+Let \(X\) be a topological space. 
 We denote by \(\Dompb(\kk_X)\) the bounded derived category of 
 sheaves of \(\kk\)-modules on \(X\). 
 
@@ -632,9 +638,11 @@ We use the following functors:
   \quad
   (\blk)_{Z}\coloneqq \Rder[]{i_{!}}i^{-1}.
 \]
+If there is no risk, 
+we will write \(\kk_Z\) rather than \(\kk_{X,Z}\).
 
 \subsection*{Geometrical Notations}
-Let \(M\) be a manifold. 
+Let \(M\) be a real manifold of class \(C^\infty\). 
 We denote by \(\pi\colon \cotb[M] \to M\) 
 the cotangent bundle of \(M\). 
 If \(f\colon M\to N\) is a morphism of manifolds, 
@@ -700,7 +708,7 @@ and \(\mdiff[f]\) is induced by the transposition of \(f'\).
   \end{equation}
 \end{Definition+}
 
-\subsection{Functorial Properties} 
+\subsection*{Functorial Properties} 
 \begin{Proposition+}
   Let \(f\colon X\to Y\) be a morphism of real analytic manifolds and let \(F\in\Dompb(\kk_X)\) such that \(f\) is proper on \(\supp(F)\). 
   Then for any \(k\in\zz\), 
@@ -805,202 +813,6 @@ The following is called Kashiwara's lemma.
   \end{enumerate}
 \end{Proposition+}
 
-\section{Results}
-
-In this section, 
-let \(M\) be a manifold.\footnote{
-  Can \(M\) be of class \(C^\infty\)?
-}
-
-\begin{Theorem+}\label{thm:t-morse}
-  Let \(F\) in \(\Dompb(\kk_M)\), and 
-  \(\psi\colon M\to \rr\) be a real-valued function of 
-  class \(C^1\), 
-  proper on \(\supp(F)\). 
-  Let \(a<b\) be real numbers.
-  We assume \(d\psi(x)\notin \muS[k](F)\) for \(
-    a\leqq \psi(x)<b
-  \). For \(t\in \rr\), we set \(
-    M_t\coloneqq\psi^{-1}\left(]-\infty,t[\right)
-  \). 
-  Then, the restriction morphisms\[
-    H^{j}(M_{b};F)\to H^{j}(M_{a};F)
-  \]
-  are isomorphic for each \(j< k\).\footnote{
-    For \(j=k\), this morphism might be injective.
-  }
-\end{Theorem+}
-
-\begin{Lemma+}\label{Lem:1d-t-morse}
-  Let \(-\infty<a<b<+\infty\) be real numbers 
-  and \(G\in \Dompb(\rr)\). Let \(k\) be an integer.
-  If \[
-      \left(H^{j}_{\left[t,+\infty\right[}(G)\right)_t
-      \cong 0
-      \quad
-      \text{
-          for all \(t\in\left[a,b\right[\) , 
-          and all \(j\leqq k\).
-      }
-  \]
-  Then one has \[
-      H^{j}(\left]-\infty,b\right[;G)\simarr
-      H^{j}(\left]-\infty,a\right[;G)
-  \] for all \(j<k\).\footnote{
-      For \(k\), this morphism might be injective.
-        (not written in this draft.)
-  }
-\end{Lemma+}
-
-\begin{proof}
-  Let \(t\in \lclosed a,b\ropen\). 
-  We will denote by \(I_t\) the open interval \(
-      \left]-\infty,t\right[
-  \) and denote by \(Z_t\) the closed interval \(
-      \left]-\infty,t\right] (= \overline{I_t})
-  \).
-  By applying the functor \((\blk)_{\overline{I_t}}\) 
-  to the distinguished triangle\[
-      \RG_{\rr-I_t}(G)\to 
-      G\to 
-      \RG_{I_t}(G)\overset{+1}{\longrightarrow}
-      \quad\text{ in \(\Dompb(\kk_\rr)\)},
-  \] we have\[
-      (\RG_{[t,+\infty[}(G))_{\{t\}}
-      \to G_{Z_t}
-      \to 
-      \RG_{I_t}(G)
-      \overset{+1}{\longrightarrow}
-      \quad\text{ in \(\Dompb(\kk_\rr)\)}.
-  \]
-  Aplying the functor \(\RG(\rr;\blk)\) to this, we have
-  \begin{equation}\label{eq:morse-d.t.}
-      (\RG_{[t,+\infty[}(G))_{t}
-      \to \RG(Z_t;G)
-      \to 
-      \RG(I_t;G)
-      \overset{+1}{\longrightarrow}
-      \quad\text{ in \(\Dompb(\kk)\)}.
-  \end{equation}
-  Then consider the following conditions for 
-  \(j\in\zz\), \(s\in\left[a,b\right[\), and 
-  \(t\in \left]a,b\right]\):
-  \begin{align}
-      \tag*{\((a)^j_s\)}\label{eq:nonchar-a}
-      \indlim[t>s] H^{j}(I_t;G) &\simarr H^{j}(I_s;G),\\
-      \tag*{\((b)^j_t\)}\label{eq:nonchar-b}
-      \prolim[s<t] H^{j}(I_t;G) &\simrra H^{j}(I_t;G).
-  \end{align}
-  By hypothesis, 
-  it follows from \eqref{eq:morse-d.t.} that 
-  \(
-    H^{j}(Z_t;G)\simar H^{j}(I_t;G)
-  \) for \(t\in \left[a,b\right[\).\footnote{
-    Similarly, we have injections \(
-      H^{k}(Z_t;G)\hookrightarrow H^{k}(I_t;G)
-  \) for \(t\in \left[a,b\right[\). 
-  } 
-  Since \(
-      \indlim[t>s] H^{j}(I_t;G)\cong H^{j}(Z_s;G)
-  \), \ref{eq:nonchar-a} holds 
-  for any \(j<k\) and \(s\in\left[a,b\right[\).\footnote{
-      Similarly, \[
-        \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(Z_s;G)
-    \] gives injections \[
-        \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(I_s;G)
-    \] for all \(s\in \left[a,b\right[\). 
-  } Moreover, since we assume \(G\) is a bounded complex, 
-  \ref{eq:nonchar-b} holds for \(j\ll0\) 
-  and for all \(t\in \left]a,b\right]\). 
-  Let us denote such \(j\) by \(j_0\). 
-  Let us argue by induction on \(j\). 
-  Assume \ref{eq:nonchar-b} holds for all 
-  \(t\in\left]a,b\right[\) and all \(j\leqq j_0\). 
-  Applying Proposition \ref{prop:ks1.12.6}, 
-  we find the isomorphisms \begin{equation}\label{eq:non-char-init}
-    H^{j}(I_s;G) \simarr H^{j}(I_t;G)
-    \quad
-    \text{for all \(j\leqq j_0\) and all \(a<s\leqq t< b\).}
-  \end{equation}
-  Let \(G \simar G^{\bullet}\) be a flabby resolution. 
-  Let \(t\in\left]a,b\right]\). 
-  Consider a complex \[
-    E^{\bullet}_{n}=\Gamma(I_{t-\frac{1}{n}};G^{\bullet}).
-  \]
-  Since \(G^{\bullet}\) is flabby, 
-  we have \(E_{n}^{j}\cong E_{\infty}^{j}\) and 
-  the projective system \((E^{j}_{n})_{n}\) satisfies 
-  the ML condition for all \(j\in\zz\). 
-  
-  By \eqref{eq:non-char-init}, the projective system \(
-    (H^{j_0}(E^{\bullet}_{n}))_{n}
-  \) satisfies the ML condition (because we have \(
-    a<t-\frac{1}{n}<t
-  \) for \(n\gg0\)). 
-  Applying Proposition \ref{prop:ks1.12.4} to \(
-    (E^{\bullet}_{n})_{n}
-  \), it follows that \ref{eq:nonchar-b} holds for \(j_{0}+1\) 
-  and the induction proceeds. More precisely, we have \begin{align*}
-    H^{j_0+1}(I_{t};G^{\bullet})
-    \overunderset{\sim}{\varPhi_{j_{0}+1}}{\longrightarrow}&
-    \prolim[n]H^{j_0+1}(I_{t-\frac{1}{n}};G^{\bullet})\\
-    \cong&
-    \prolim[n]H^{j_0+1}(I_{t-\frac{1}{n}};G)\\
-    \cong&
-    \prolim[s<t]H^{j_0+1}(I_{s};G).
-  \end{align*}
-  Again by Proposition \ref{prop:ks1.12.6}, 
-  we get the isomorphisms\[
-    H^{j}(I_{s};G)\simarr H^{j}(I_t;G)
-    \quad
-    \text{for all \(j<k\) and all \(a<s\leqq t\leqq b\),}
-  \]
-  and injections \[
-    H^{j}(I_{s};G)\hookrightarrow H^{j}(I_t;G)
-  \] for \(j=k\) and for all \(a<s\leqq t\leqq b\). 
-
-  Finally, using \eqref{eq:morse-d.t.} and the hypothesis, 
-  we have the isomorphisms\[
-    H^{j}(I_{a};G)\simrra
-    H^{j}(Z_{a};G)\simarr H^{j}(I_s;G)
-    \quad
-    \text{for all \(j<k\) and all \(a<s\leqq b\).}
-  \]
-  Similarly, for \(j=k\), we have\[
-    H^{k}(I_{b};G) \cong \indlim[t>s] H^{k}(I_t;G)\hookrightarrow H^{k}(I_s;G) \hookrightarrow H^{k}(I_{a};G).
-  \]
-\end{proof}
-
-\begin{proof}[Proof of Theorem {\ref{thm:t-morse}}.]
-  First, we have\[
-    H^{j}(M_{t};F)
-    \cong
-    H^{j}\RG(
-      {\left]-\infty,t\right[}\mathrel{;}\Rder{\psi}_{\ast}F
-    )
-  \]
-  for \(t\in I\).
-  Since we assume that \(d\psi(x)\notin \muS[k](F)\) 
-  for \(a\leqq \psi(x)<b\), and by \eqref{eq:t-push}, the formula \(
-    \muS[k](\Rder{\psi}_{\ast}F)
-    \subset \mpb[\psi]\mdiff[\psi]^{-1}\muS[k](F)
-  \) holds. Hence we have\[
-    \left(H^{j}\RG_{\left[\psi(x),+\infty\right[}\Rder{\psi}_{\ast}F\right)_{\psi(x)}=0
-  \]for each \(j\leqq k\). 
-  Then we can apply Lemma \ref{Lem:1d-t-morse} and have
-  \[
-    H^{j}(\left]-\infty,b\right[;\Rder{\psi_{\ast}}F)
-    \simarr
-    H^{j}(\left]-\infty,a\right[;\Rder{\psi_{\ast}}F)
-  \] for all \(j<k\).
-  Then we can conclude that
-  \[
-    H^{j}(M_b\mathrel{;}F)
-    \simarr
-    H^{j}(M_a\mathrel{;}F)
-  \]
-  for all \(j<k\).
-  \end{proof}
 
 \section{Truncated Noncharacteristic Deformation}
 
@@ -1009,9 +821,17 @@ lemma \cite[Proposition 2.7.2]{KS90} to make a relation
 to truncated microsupport. 
 
 \begin{Proposition+}\label{prop:t-nonchar}
-  Let \(X\) be a Hausdorff space, \(F\in\Dompb(\zz_X)\), and 
-  let \(\left(U_{t}\right)_{t\in\rr}\) be a family of 
+  Let \(X\) be a 
+  locally compact (i.e., by definition, Hausdorff) space 
+  countable at infinity (i.e., countable union 
+  of compact subspaces). Let
+  \(F\in\Dompb(\zz_X)\), and 
+  \(\left(U_{t}\right)_{t\in\rr}\) be a family of 
   open subsets of \(X\). 
+  Let \(k\in\zz\). 
+  If \(s\) is a real number, set \(
+    Z_{s}\coloneqq \bigcap_{t>s}\overline{U_t\smi U_s}
+  \). 
   We assume the following conditions. 
   \begin{enumerate}[(i)]
     \item \label{item:t-nonchar1}
@@ -1020,41 +840,76 @@ to truncated microsupport.
     For all pairs \((s,t)\) with \(s\leqq t\), 
     the set \(\overline{U_{t}\smi U_{s}}\cap \supp{F}\) is compact.
     \item \label{item:t-nonchar3}
-    Setting \(
-      Z_{s}\coloneqq \bigcap_{t>s}\overline{U_t\smi U_s}
-    \), we have for all pairs \((s,t)\) with \(s\leqq t\), 
-    and all \(x\in Z_{s}\smi U_{t}\), \[
+    For all pairs \((s,t)\) with \(s\leqq t\), 
+    and all \(x\in Z_{s}\smi U_{t}\), we have\[
       (H^{j}_{X\smi U_{t}}(F))_{x}=0
       \quad 
       \text{for all \(j\leqq k\).}
     \]
     \item \label{item:t-nonchar4} 
-    For any \(s\in\rr\), 
-    \(\bigcap_{t>s}U_{t}=\overline{U_{s}}\) 
-    and 
-    \(\overline{U_{s}}\) is closed 
-    in a paracompact open subset of \(X\).
-    \item\footnote{
-      This condition might be 
-      deduced from \eqref{item:t-nonchar3}.
-    } \label{item:t-nonchar5} 
-    \(Z_s\smi U_{s}\subset\bd{U_{s}}\) 
-    for all \(s\in\rr\). 
+    %For any \(s\in\rr\), 
+    %\(\bigcap_{t>s}U_{t}=\overline{U_{s}}\) 
+    %and 
+    %\(\overline{U_{s}}\) is closed 
+    %in a paracompact open subset of \(X\).
+    For any \(s\in\rr\), \(Z_s\subset U_{t}\).
+    %\item\footnote{
+    %  This condition might be 
+    %  deduced from \eqref{item:t-nonchar3}.
+    %} \label{item:t-nonchar5} 
+    %\(Z_s\smi U_{s}\subset\bd{U_{s}}\) 
+    %for all \(s\in\rr\). 
   \end{enumerate}
   Then, for all \(t\in\rr\), we have the isomorphisms\[
-    H^{j}\left(\bigcup_{s}U_{s};F\right)
+    H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
     \simar 
     H^{j}\left(U_{t};F\right)
     \quad \text{for all \(j< k\),} 
   \]
   and the injections\[
-    H^{k}\left(\bigcup_{s}U_{s};F\right)
+    H^{k}\left(\bigcup_{s\in\rr}U_{s};F\right)
     \hookrightarrow 
     H^{k}\left(U_{t};F\right).
   \] 
 \end{Proposition+}
 
-\begin{proof}
+\begin{Remark+}
+  Let us give an example that satisfies 
+  the hypotheses 
+  \eqref{item:t-nonchar1}--\eqref{item:t-nonchar3} 
+  but not \eqref{item:t-nonchar4}. 
+  Let us define a locally closed subset \(Z\) of \(\rr^2\) by\[
+    Z\coloneqq\left\{
+      (x,y)\in\rr^2
+      \mathrel{;}
+      (x+2)^{2}+(y-1)^{2}=1\right\}\smallsetminus\left\{(-2,0)\right\}.
+  \]
+  Consider a real valued function \(\varphi_{s}\) for 
+  a real number \(s\): \begin{equation}
+    \varphi_{s}(x)\coloneqq\begin{cases}
+      0&\left|x\right|\geqq 2,\\
+      \max(0,s(2-\left|x\right|))&\left|x\right|\leqq 2.
+    \end{cases}
+  \end{equation}
+  We define \(\left(U_t\right)_{t\in\rr}\), 
+  a family of open sets of \(\rr^2\) by
+  \[
+    U_t\coloneqq\left\{
+      (x,y)\in\rr^2\mathrel{;}
+      y<\varphi_{s}(x)
+    \right\}.
+  \]
+  Then \(F\coloneqq \kk_{Z}\) and \(\left(U_t\right)_{t}\) 
+  satisfy the hypotheses for \(k=0\). 
+  Therefore, the natural morphism\[
+    H^{0}(U_{1};\kk_Z)=\kk\to
+    H^{0}(U_{0};\kk_Z)=0
+  \]
+  is not injective and the consequence of 
+  Proposition \ref{prop:t-nonchar} does not hold.
+\end{Remark+}
+
+\begin{proof}[Proof of Proposition 5.1.]
   Consider the following conditions for 
   \(j\in\zz\), \(s\), and \(t\):
   \begin{align}
@@ -1066,7 +921,7 @@ to truncated microsupport.
       \indlim[t>s] H^{k}(U_t;F) \hookrightarrow H^{k}(U_s;F),\\
       \tag*{\((b)^j_s\)}\label{eq:t-nonchar-b}
       \lambda_{s}^{j}&\colon
-      H^{j}(U_t;F)\simarr \prolim[s<t] H^{j}(U_s;F).
+      H^{j}(U_t;F)\simar \prolim[s<t] H^{j}(U_s;F).
   \end{align}
 
   Let us prove \ref{eq:t-nonchar-a} for \(s\in \rr\) and \(j<k\). 
@@ -1161,59 +1016,6 @@ to truncated microsupport.
 
 
 
-%\clearpage
-\begin{Remark+}
-  Lemma \ref{Lem:1d-t-morse} follows from 
-  Proposition \ref{prop:t-nonchar}. 
-  Indeed, putting \(X=\lopen-\infty,b\ropen\), 
-  \(F=\mres[G]{I_{b}}\), and \(U_t=I_t\), 
-  we find that \begin{enumerate}[(i)]
-    \item \(\bigcup_{s<t} I_s
-    = \bigcup_{s<t}\lopen-\infty,s\ropen
-    = \lopen-\infty,t\ropen= I_t\) for all \(t\in\rr\). 
-    \item If \(s\leqq t\), then \(
-      \overline{I_t\smi I_s}\cap\supp{G}
-      =\overline{\lclosed s,t\ropen}\cap\supp{G}
-      =\lclosed s,t\rclosed\cap\supp{G}
-      \) is compact.
-    \item For \(s\in\rr\), we have \[
-      Z_{s}
-      =\bigcap_{t>s}\overline{I_{t}\smi I_{s}}
-      =\bigcap_{t>s}\overline{\lclosed s,t\ropen}
-      =\bigcap_{t>s}\lclosed s,t\rclosed
-      =\left\{s\right\},
-    \]
-    and \[
-      Z_s\smi I_t
-      =\left\{s\right\}\smi \lopen-\infty,t\ropen
-      =\begin{cases*}
-        \left\{s\right\}& if \(s=t\),\\
-        \varnothing& if \(s<t\).
-      \end{cases*}
-    \]
-    By hypothesis of Lemma \ref{Lem:1d-t-morse}, 
-    for all \(s\in \left\{s\right\}\), 
-    \[
-      H^{j}_{X\smi I_s}(F)_{s}
-      =H^{j}_{\lclosed s,\infty\ropen}(F)_{s}=0.
-    \]
-    Then we can apply Proposition \ref{prop:t-nonchar}, and 
-    we have the isomorphisms for all \(t\in \lclosed a,b\ropen\) and \(j<k\),
-    \[
-      H^{j}(I_{b};F)
-      =H^{j}(\bigcup_{s}I_{s};F)
-      \simar
-      H^{j}(I_{t};F)
-    \]
-    and the injections
-    \[
-      H^{k}(I_{b};F)
-      =H^{k}(\bigcup_{s}I_{s};F)
-      \hookrightarrow
-      H^{k}(I_{t};F)
-    \]
-  \end{enumerate}
-\end{Remark+}
 
 
 \section{Relative Microlocal Morse Theory via Truncated Microsupport}
@@ -1490,14 +1292,14 @@ Let us define the following morphisms:
   \begin{equation}
     H^{j}(U\times\rr;\widetilde{G})
     \simar
-    H^{j}(U\times\lopen-\infty,t\ropen;\widetilde{G})
+    H^{j}(U\times\left(-\infty,t\right);\widetilde{G})
   \end{equation}
   and have an injection 
   for all \(t>t_{\circ}\) 
   \begin{equation}
     H^{k}(U\times\rr;\widetilde{G})
     \hookrightarrow
-    H^{k}(U\times\left]-\infty,t\right[;\widetilde{G}).
+    H^{k}(U\times\left(-\infty,t\right);\widetilde{G}).
   \end{equation}
   This can be showed as follows.
 
