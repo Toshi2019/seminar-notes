@@ -4,7 +4,7 @@
 
 ## 12/03に話したこと
 
-### 今後の方針
+### 今後の方針(12/03)
 
 端点の処理をきちんと書く．
 
@@ -28,7 +28,7 @@ non-characteristic deformation lemma の打ち切り版
 
 どの部分が truncated になるか
 
-### 今後の方針
+### 今後の方針(12/10)
 
 非特性変形補題 (Prop.2.7.2) を truncated にする
 
@@ -80,9 +80,11 @@ truncated noncharacteristic deformation の定式化と証明.
 オリジナルの non-characteristic deformation lemma は
 成り立つが truncated 版は成り立たないような例を教えてもらった．
 
-### 方針
+### 方針(01/09)
 
 仮定を弱めた truncated noncharacteristic deformation lemma が
 証明できるかの検討．
 
 それを用いたら相対版が証明できるかの検討．
+
+1次元版の non-char に落としてから順像公式を使って Microlocal Morse Morse Lemma を証明していた部分を，1次元を経由せずに証明する．
