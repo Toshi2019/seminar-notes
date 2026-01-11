@@ -2,6 +2,8 @@
 
 修論（01/09 21:18 更新）[(pdf)](syuron/utf8/syuron.pdf)
 
+概要 [(pdf)](syron/utf8/gaiyo.pdf)
+
 ## 12/03に話したこと
 
 ### 今後の方針(12/03)
