@@ -4,6 +4,8 @@
 
 概要 [(pdf)](syron/utf8/gaiyo.pdf)
 
+truncated noncharacteristic deformation lemma [(pdf)](t-nonchar.pdf)
+
 ## 12/03に話したこと
 
 ### 今後の方針(12/03)
