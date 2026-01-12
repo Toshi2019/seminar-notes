@@ -616,9 +616,9 @@
 
 %目次の作成
 \tableofcontents
-\section{Introduction}
+\section{Introduction}\label{sec:intro}
 
-In this thesis, 
+In this paper, 
 We study microlocal Morse theory, which is presented, 
 for instance, in \cite{GKS12}. 
 However, we replace the notion of microsupports with
@@ -628,7 +628,14 @@ In \cite{KFS03}, they do not study the functorial property of
 truncated microsupport of direct images of non proper morphisms. 
 We prove this functorial property under non proper direct images. 
 
-\section{Notations and Reviews}
+\subsection{Organization}
+
+This paper is organized as follows. 
+In Section \ref{sec:t-nonchar}, 
+we prove a truncated version of 
+the noncharacteristic deformation lemma. 
+
+\section{Notations and Reviews}\label{sec:review}
 
 We consider a commutative unital ring \(\kk\) 
 of finite global dimension (e.g. \(\zz\) or a field). 
@@ -725,7 +732,7 @@ and \(\mdiff[f]\) is induced by the transposition of \(f'\).
   The equality holds in case \(f\) is a closed embedding.
 \end{Proposition+}
 
-\section{Lemmas from {\cite{KS90}}}
+\section{Lemmas from {\cite{KS90}}}\label{sec:lemmas}
 
 Consider a projective system of abelian groups \(
   \left(M_n,\rho_{n,p}\right)_n
@@ -763,7 +770,7 @@ the natural morphism.
 
 \begin{Proposition+}[{\cite[Proposition 1.12.4]{KS90}}]\label{prop:ks1.12.4}
   Assume that for each \(j\in\zz\), 
-  the system \(\left(M_{n}^{j}\right)_{n}\) satisfies 
+  the system \(\left(M_{n}^{j-1}\right)_{n}\) satisfies 
   the ML condition. 
   Then
   \begin{enumerate}[(a)]
@@ -820,7 +827,7 @@ The following is called Kashiwara's lemma.
 \end{Proposition+}
 
 
-\section{Truncated Noncharacteristic Deformation}
+\section{Truncated Noncharacteristic Deformation}\label{sec:t-nonchar}
 
 We will reformulate the noncharacteristic deformation 
 lemma \cite[Proposition 2.7.2]{KS90} to make a relation 

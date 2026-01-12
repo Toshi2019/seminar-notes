@@ -62,9 +62,12 @@
 \definecolor{darkblue}{rgb}{0,0,0.6} 
 \hypersetup{
     colorlinks=true,
-    citecolor=darkgreen,
-    linkcolor=darkred,
-    urlcolor=darkblue,
+    %citecolor=darkgreen,
+    %linkcolor=darkred,
+    %urlcolor=darkblue,
+    citecolor=black,
+    linkcolor=black,
+    urlcolor=black,
 }
 \usepackage{pxjahyper}
 
@@ -604,10 +607,107 @@
 
 \title{Truncated Noncharacteristic Deformation Lemma}
 \author{Toshihiro Oshiba}
-\date{\today\footnote{2025/03/09 first draft}}
+\date{\today}
 \begin{document}
-%\maketitle
-\begin{Proposition+}
+\maketitle
+
+\section{Lemmas from {\cite{KS90}}}
+
+Consider a projective system of abelian groups \(
+  \left(M_n,\rho_{n,p}\right)_n
+\) indexed by \(\nn\). 
+One says that this system satisfies 
+the Mittag-Leffler condition (ML for short) 
+if for any \(n\in\nn\), the decreasing sequence \(
+  (\rho_{n,p}(M_p))_p
+\) of subgroups of \(M_n\) is stationary.
+
+For a projective system of abelian groups \((M_{n})_n\), 
+we set \[
+  M_{\infty}\coloneqq \prolim[n]M_n.
+\]
+
+Consider a projective system of complexes
+\begin{equation}
+  E_n^{\bullet}\colon 
+  \cdots\to M_{n}^{j-1}\to M_{n}^{j}\to M_{n}^{j+1}\to\cdots,
+\end{equation}
+and projective limit
+\begin{equation}
+  E_{\infty}^{\bullet}\colon 
+  \cdots
+  \to M_{\infty}^{j-1}
+  \to M_{\infty}^{j}
+  \to M_{\infty}^{j+1}
+  \to\cdots.
+\end{equation}
+Denote by 
+\begin{equation}
+  \varPhi_{k}\colon H^{k}(E_{\infty}^{\bullet})\to \prolim[n]H^{k}(E_{n}^{\bullet})
+\end{equation}
+the natural morphism.
+
+\begin{Proposition+}[{\cite[Proposition 1.12.4]{KS90}}]\label{prop:ks1.12.4}
+  Assume that for each \(j\in\zz\), 
+  the system \(\left(M_{n}^{j}\right)_{n}\) satisfies 
+  the ML condition. 
+  Then
+  \begin{enumerate}[(a)]
+    \item for each \(k\in \zz\), the map \(\varPhi_k\) is surjective,
+    \item if moreover, for a given \(i\) the system \(\left(H^{i-1}(E_{n}^{\bullet})\right)_{n}\) satisfies the ML condition, then \(\varPhi_i\) is bijective.
+  \end{enumerate} 
+\end{Proposition+}
+
+The following is called Kashiwara's lemma.
+
+\begin{Proposition+}[{\cite[Proposition 1.12.6]{KS90}}]\label{prop:ks1.12.6}
+  Let \(\left(X_s,\rho_{s,t}\colon X_t\to X_s\right)_{(s,(s\leqq t))}\) be 
+  a projective system of sets indexed by \(\rr\). 
+  Assume that for each \(s\in\rr\), the canonical maps\[
+    \lambda_s\colon X_s\to\prolim[r<s]X_r
+  \] and \[
+    \mu_s\colon \indlim[t>s]X_t\to X_s
+  \] are both injective (resp. surjective). 
+  Then all the maps \(\rho_{s_{0},s_{1}}\) \((s_0\leqq s_1)\) are 
+  injective (resp. surjective).
+\end{Proposition+}
+
+\subsection*{ML procedure for sheaves}
+
+\begin{Proposition+}[{\cite[Proposition 2.7.1]{KS90}}]\label{prop:ks2.7.1}
+  Let \(X\) be a topological space and let \(F\in\Dompl(\zz_X)\). 
+  Let \(\left(U_n\right)_{n\in\nn}\) be an increasing sequence 
+  of open subsets of \(X\), \(\left(Z_n\right)_{n\in\nn}\) 
+  a decreasing sequence of closed subsets of \(X\). 
+  Set \(U\coloneqq\bigcup_{n}U_{n}\), 
+  \(Z\coloneqq\bigcap_{n}Z_{n}\). 
+  \begin{enumerate}[(i)]
+    \item \label{item:ks2.7.1.1} For any \(j\), the natural map \(
+      \varphi_j\colon H^{j}_{Z}(U;F)
+      \to 
+      \prolim[n]H^{j}_{Z_{n}}(U_{n};F)
+    \) is surjective. 
+    \item \label{item:ks2.7.1.2} Assume that for a given \(j\), 
+    the projective system \(
+      (H^{j-1}_{Z_{n}}(U_{n};F))_{n}
+    \) satisfies the ML condition. 
+    Then \(\varphi_{j}\) is bijective. 
+    \item \label{item:ks2.7.1.3} Let now \(\left(X_{n}\right)_{n\in\nn}\) be 
+    an increasing family of subsets of \(X\) satisfying \(
+      X=\bigcup_{n}X_n\) and \(X_{n}\subset \Int[](X_{n+1})
+    \) for all \(n\). 
+    Assume that for a given \(j\), the projective system \(
+      \left(H^{j-1}(X_{n};F)\right)_{n}
+    \) satisfies the ML condition. 
+    Then the natural map \(
+      H^{j}(X;F)\to \prolim[n]H^{j}(X_{n};F)
+    \) is bijective. 
+  \end{enumerate}
+\end{Proposition+}
+
+\section{Noncharacteristic Deformation Lemma}
+
+\begin{Proposition+}\label{prp:t-nonchar}
   Let \(X\) be a 
   locally compact (i.e., by definition, Hausdorff) space 
   countable at infinity (i.e., countable union 
@@ -627,25 +727,14 @@
     For all pairs \((s,t)\) with \(s\leqq t\), 
     the set \(\overline{U_{t}\smi U_{s}}\cap \supp{F}\) is compact.
     \item \label{item:t-nonchar3}
-    For all \(s\in\rr\) and all \(x\in Z_{s}\smi U_{t}\), 
+    For all \(s\in\rr\) and all \(x\in Z_{s}\smi U_{s}\), 
     we have\[
       (H^{j}_{X\smi U_{s}}(F))_{x}=0
       \quad 
       \text{for all \(j\leqq k\).}
     \]
     \item \label{item:t-nonchar4} 
-    %For any \(s\in\rr\), 
-    %\(\bigcap_{t>s}U_{t}=\overline{U_{s}}\) 
-    %and 
-    %\(\overline{U_{s}}\) is closed 
-    %in a paracompact open subset of \(X\).
     For all pairs \((s,t)\) with \(s< t\), \(Z_s\subset U_{t}\).
-    %\item\footnote{
-    %  This condition might be 
-    %  deduced from \eqref{item:t-nonchar3}.
-    %} \label{item:t-nonchar5} 
-    %\(Z_s\smi U_{s}\subset\bd{U_{s}}\) 
-    %for all \(s\in\rr\). 
   \end{enumerate}
   Then, for all \(t\in\rr\), we have the isomorphisms\[
     H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
@@ -662,7 +751,7 @@
 
 \begin{proof}
   Consider the following conditions for 
-  \(j\in\zz\), \(s\), and \(t\):
+  \(j\in\zz\) and \(s\in\rr\):
   \begin{align}
       \tag*{\((a)^j_s\)}\label{eq:t-nonchar-a}
       \mu_{s}^{j}&\colon
@@ -675,8 +764,10 @@
       H^{j}(U_s;F)\simarr \prolim[r<s] H^{j}(U_r;F).
   \end{align}
 
-  Let us prove \ref{eq:t-nonchar-a} for \(s\in \rr\) and \(j<k\). 
-  We can assume that \(\overline{U_{t}\smi U_{s}}\) is compact 
+  Let us prove, 
+  for all \(s\in \rr\), 
+  \ref{eq:t-nonchar-a} for \(j<k\) and \ref{eq:t-nonchar-a'}. 
+  We may assume that \(\overline{U_{t}\smi U_{s}}\) is compact 
   for any \(s\leqq t\) by replacing \(X\) by \(\supp{F}\). 
   Consider the distinguished triangle\[
     \RG_{X\smi U_{s}}(F)
@@ -688,19 +779,16 @@
   \]
   Let us endow with \(Z_{s}\cup U_{s}\) the induced topology, and
   denote by \(
-    i\colon Z_{s}\cup U_{s}\hookrightarrow X
+    i_{s}\colon Z_{s}\cup U_{s}\hookrightarrow X
   \) the natural continuous map.  
   Applying the functor \[
     \mres[(\blk)]{Z_{s}\cup U_{s}}=i_{s}^{-1}
   \] to the d.t.~above, we have \[
     \mres[\RG_{X\smi U_{s}}(F)]{Z_{s}\cup U_{s}}  
-  %\left(\RG_{X\smi U_{t}}(F)\right)_{\overline{U_{t}}}
     \to
     \mres[F]{Z_{s}\cup U_{s}}  
-    %F_{\overline{U_{t}}}
     \to
     \mres[\RG_{U_{s}}(F)]{Z_{s}\cup U_{s}}  
-    %\RG_{U_{t}}(F)
     \overset{+1}{\longrightarrow}.
   \]
   Again applying to this triangle the functor \(\RG(Z_{s}\cup U_{s};\blk)\), 
@@ -720,7 +808,8 @@
       \ar[ll]
     }}
   \end{equation}
-  By hypotheses \eqref{item:t-nonchar3} and \eqref{item:t-nonchar4}, 
+  By hypotheses \eqref{item:t-nonchar3} and 
+  the definition of local cohomology, 
   it follows that
   \[
     \mres[H^{j}_{X\smi U_{s}}(F)]{Z_{s}\cup U_{s}}=0
@@ -734,7 +823,7 @@
     \quad
     \text{for any \(j\leqq k\).}
   \]
-  Thus for any \(s\), we have
+  Thus we have
   \begin{align}
     \label{eq:a-iso}H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
     &\simar
@@ -772,6 +861,107 @@
       H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
     \]
   \end{Claim+}
+
+  \begin{proof}[Proof of Claim \ref{clm:ind-nonchar}]
+    %We will construct two isomorphisms below. 
+    %\begin{align*}
+    %  \indlim[U]H^{j}(U;F)
+    %  &\simar
+    %  H^{j}(Z_{s}\cap U_{s};\mres[F]{Z_{s}\cap U_{s}})\\
+    %  \indlim[U]H^{j}(U;F)
+    %  &\simar
+    %  \indlim[t>s]H^{j}(U_{t};F).
+    %\end{align*}
+    %Then, by composing them, we have the isomorphism that we want. 
+    First we prove that 
+    for \(F\in \Mod(\kk_X)\) 
+    there exists an isomorphism
+    \begin{equation}\label{eq:qis-claim}
+      \indlim[t>s]\Gamma(U_t;F)
+      \cong 
+      \Gamma(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).      
+    \end{equation}
+    
+    Next Let \(F\in\Dompl(\kk_X)\). 
+    Let \(I^{\bm{\bullet}}\) be a complex of flabby sheaves 
+    quasi-isomorphic to \(F\). 
+    Then  it follows from \eqref{eq:qis-claim} that 
+    \begin{align*}
+      \indlim[t>s]H^{j}(U_t;F)
+      &\cong 
+      \indlim[t>s]H^{j}\Gamma(U_t;I^{\bullet})\\
+      &\cong
+      H^{j}\Gamma(Z_{s}\cup U_{s};\mres[I^{\bullet}]{Z_{s}\cup U_{s}}).\\
+      &\cong
+      H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
+    \end{align*}
+    This completes the proof.
+  \end{proof}
+
+  Let us come back to the proof of 
+  Proposition \ref{prp:t-nonchar}. 
+  We prove \ref{eq:t-nonchar-b} for 
+  all \(j\in\zz\) and \(s\in\rr\) by induction on \(j\). 
+  Since \(F\in\Dompl(\zz_X)\), 
+  we have \ref{eq:t-nonchar-b} for \(j\ll 0\) and \(s\in\rr\). 
+  Assume \ref{eq:t-nonchar-b} is proved for 
+  all \(j< j_{0} (<k)\) and \(s\in\rr\). 
+  Since we have \ref{eq:t-nonchar-a} and \ref{eq:t-nonchar-b} 
+  for each \(j< j_{0}\) and each \(s\in\rr\), 
+  we can apply 
+  Kashiwara's lemma (Proposition \ref{prop:ks1.12.6}) 
+  and have\[
+    H^{j}(U_{t};F)\simar H^{j}(U_{s};F) 
+    \quad
+    \text{ for \(j< j_{0}\) and \(s\leqq t\). }
+  \]
+  Fix \(s\in\rr\) and consider the projective system \(
+    \left(H^{j_{0}-1}(U_{s-1/n})\right)_{n\in\nn}
+  \). This system satisfies ML condition, 
+  so, by applying 
+  Proposition \ref{prop:ks2.7.1} (\ref{item:ks2.7.1.3})\footnote{
+    \cite{KS90}の証明だと``by Proposition 1.12.4''
+    としているが，Proposition 2.7.1の誤植かもしれない．
+    どちらでも良いとは思うが，
+    このあと``Again by Proposition 2.7.1'' と書いていることからも，
+    誤植だと思う方が自然と思われる．
+  }, 
+  we have \[
+    H^{j}(U_{s};F)
+    \simar 
+    \prolim[n]H^{j}\left(U_{s-\frac{1}{n}};F\right). 
+  \]
+  Since \((s-1/n)_{n}\) is a cofinal family of \((t)_{s>t}\), 
+  we have \((b)_{s}^{j_{0}}\). 
+  Then by induction on \(j\), 
+  we have \((b)_{s}^{j}\) for \(j<k\) and \(s\in\rr\). 
+  Again by applying Proposition \ref{prop:ks2.7.1} to the 
+  projective system \(\left(H^{j}(U_{n};F)\right)_{n}\), 
+  we obtain 
+  \begin{align*}
+    H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
+    &\cong
+    H^{j}\left(\bigcup_{n\in\nn}U_{n};F\right)\\
+    &\simar 
+    \prolim[n]H^{j}\left(U_{n};F\right)
+    %\quad \text{for all \(j< k\),} 
+  \end{align*}
+  and for each \(n\), we have by Kashiwara's lemma that
+  \[
+    H^{j}\left(U_{n};F\right)
+    \cong
+    H^{j}(U_{s};F)
+  \]
+  for \(n\geqq s\).
+
+  Finally we replace \ref{eq:t-nonchar-a} by 
+  \ref{eq:t-nonchar-a'} for \(j=k\), and obtain
+  \[
+    H^{k}\left(\bigcup_{s\in\rr}U_{s};F\right)
+    \hookrightarrow
+    H^{j}\left(U_{s};F\right).
+  \]
+  This completes the proof. 
 \end{proof}
 
 
@@ -809,7 +999,6 @@
 \end{thebibliography}
 
 %===============================================
-
 
 
 \end{document}
