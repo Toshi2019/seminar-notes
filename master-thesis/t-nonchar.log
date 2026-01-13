@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  13 JAN 2026 03:04
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  13 JAN 2026 19:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -888,22 +888,22 @@ displayed correctly.
 
 138> [3]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 928.
+(Font)              scaled to size 7.69775pt on input line 930.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 928.
+(Font)              scaled to size 7.69775pt on input line 930.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 928.
+(Font)              scaled to size 5.77332pt on input line 930.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 928.
+(Font)              scaled to size 5.77332pt on input line 930.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 986.
+(Font)              No change on input line 988.
  [4]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 990.
+(Font)              No change on input line 992.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 994.
+(Font)              No change on input line 996.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 997.
+(Font)              No change on input line 999.
  [5] (./t-nonchar.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
@@ -920,6 +920,6 @@ Here is how much of TeX's memory you used:
  51827 multiletter control sequences out of 15000+600000
  612907 words of font info for 149 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 84i,22n,93p,3262b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,23n,93p,3262b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on t-nonchar.dvi (5 pages, 28164 bytes).
+Output written on t-nonchar.dvi (5 pages, 28360 bytes).
