@@ -879,8 +879,34 @@ The following is called Kashiwara's lemma.
     \begin{equation}\label{eq:qis-claim}
       \indlim[t>s]\Gamma(U_t;F)
       \cong 
-      \Gamma(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).      
+      \Gamma(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
     \end{equation}
+    Since \(X\) is Hausdorff and \(Z_{s}\) is commpact, 
+    the natural morhism 
+    \[
+      \indlim[U\supset Z_{s}]\Gamma(U;F)
+      \cong 
+      \Gamma(Z_{s};F)
+    \]
+    is isomorphic. 
+    Let \(s\in \Gamma(Z_{s};F)\) be 
+    a section of \(\mres[F]{Z_{s}}\). 
+    By the isomorphism abve, we can extend \(s\) to 
+    an open neighborhood \(U\) of \(Z_{s}\). 
+    More precisely, there exists a family of pairs\[
+      ((\tilde{s}_{U},U))_{U}
+      \in 
+      \bigsqcup_{U\supset Z_{s}}\Gamma(U;F)
+    \] such that \(\mres[\tilde{s}_{U}]{Z_{s}}=s\) 
+    for all \(U\). For this \((\tilde{s}_{U},U)_{U}\), 
+    there exists a family of sections 
+    \[
+      (\hat{s}_{U},U)_{U}
+      \in 
+      \bigsqcup_{U\supset Z_{s}}\Gamma(U\cup U_t;F)
+    \]
+    such that \(\mres[\hat{s}_{U}]{U\cap U_{t}} = \mres[\tilde{s}_{U}]{U\cap U_{t}}\) for all \(U\). 
+    Indeed, 
     
     Next Let \(F\in\Dompl(\kk_X)\). 
     Let \(I^{\bm{\bullet}}\) be a complex of flabby sheaves 
@@ -893,7 +919,9 @@ The following is called Kashiwara's lemma.
       &\cong 
       H^{j}\left(\indlim[t>s]\Gamma(U_t;I^{\bullet})\right)\\
       &\cong
-      H^{j}\Gamma(Z_{s}\cup U_{s};\mres[I^{\bullet}]{Z_{s}\cup U_{s}}).\\
+      H^{j}\Gamma(
+        Z_{s}\cup U_{s};
+        \mres[I^{\bullet}]{Z_{s}\cup U_{s}})\\
       &\cong
       H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
     \end{align*}
