@@ -881,33 +881,110 @@ The following is called Kashiwara's lemma.
       \cong 
       \Gamma(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
     \end{equation}
+    Consider the following diagram. 
+    \[\vcenter{\xymatrix{
+      \indlim[t>s]\Gamma(U_t;F)
+      \ar[rd]
+      \ar[d]
+      &
+      \\
+      \indlim[U\supset Z_{s}]
+      \Gamma(U\cup U_{s};F)
+      \ar[d]
+      \ar[r]
+      &
+      \Gamma(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
+      \ar[d]
+      \\
+      \indlim[U\supset Z_{s}]
+      \Gamma(U;F)
+      \ar[r]
+      &
+      \Gamma(Z_{s};\mres[F]{Z_{s}})
+    }}
+    \] 
+    Since \(\left(U_{t}\right)_{t>s}\) is a 
+    cofinal family of \((U\cup U_{s})_{U\supset Z_{s}}\), 
+    we have 
+    \[
+      \indlim[t>s]
+      \Gamma(U_{t};F)
+      \simarr
+      \indlim[U\supset Z_{s}]
+      \Gamma(U\cup U_{s};F), 
+    \]
+    so it is enough to show that
+    \[
+      \phi\colon\indlim[U\supset Z_{s}]
+      \Gamma(U\cup U_{s};F)
+      \to
+      \Gamma(Z_{s}\cup U_{s};F)
+    \]
+    is isomorphic.     
     Since \(X\) is Hausdorff and \(Z_{s}\) is commpact, 
     the natural morhism 
     \[
-      \indlim[U\supset Z_{s}]\Gamma(U;F)
-      \cong 
+      \psi\colon\indlim[U\supset Z_{s}]\Gamma(U;F)
+      \to
       \Gamma(Z_{s};F)
     \]
-    is isomorphic. 
-    Let \(s\in \Gamma(Z_{s};F)\) be 
-    a section of \(\mres[F]{Z_{s}}\). 
-    By the isomorphism abve, we can extend \(s\) to 
-    an open neighborhood \(U\) of \(Z_{s}\). 
-    More precisely, there exists a family of pairs\[
-      ((\tilde{s}_{U},U))_{U}
-      \in 
-      \bigsqcup_{U\supset Z_{s}}\Gamma(U;F)
-    \] such that \(\mres[\tilde{s}_{U}]{Z_{s}}=s\) 
-    for all \(U\). For this \((\tilde{s}_{U},U)_{U}\), 
-    there exists a family of sections 
+    is isomorphic (see \cite[Proposition 2.5.1]{KS90}). 
+    Since \(U_{s}\) is open, we have another isomorphism 
     \[
-      (\hat{s}_{U},U)_{U}
+      \psi'\colon\indlim[V\supset U_{s}]\Gamma(V;F)
+      \to
+      \Gamma(U_{s};F).
+    \] 
+    The injectivity of \(\phi\) follows from 
+    the definition of a sheaf 
+    and the injectivities of \(\psi\) and \(\psi'\). 
+
+    Let us prove that \(\phi\) is surjective. 
+    Let \(\sigma\in \Gamma(Z_{s};F)\) be 
+    a section of \(\mres[F]{Z_{s}\cup U_{s}}\). 
+    By the isomorphism \(\psi\) above, 
+    we can extend \(\mres[\sigma]{Z_{s}}\) to 
+    an open neighborhood \(U\) of \(Z_{s}\). 
+    More precisely, there exists a family \(
+      \left(\alpha^{U}\right)_{U}
       \in 
-      \bigsqcup_{U\supset Z_{s}}\Gamma(U\cup U_t;F)
+      \indlim[U\supset Z_{s}]\Gamma(U;F)
+    \) such that \[
+      \mres[\alpha^{U}]{Z_{s}}=\mres[\sigma]{Z_{s}}
+    \] for all \(U\). 
+    Similarly, there exists a family \(
+      \left(\beta^{V}\right)_{V}
+      \in 
+      \indlim[V\supset Z_{s}]\Gamma(V;F)
+    \) such that \[
+      \mres[\beta^{V}]{U_{s}}=\mres[\sigma]{U_{s}}
+    \] for all \(V\). 
+    These \((\alpha^{U})_{U}\) and \((\beta^{V})_{V}\) satisfy
+    \[
+      \mres[\alpha^{U}]{_{U\cap U_{s}}}
+      =
+      \mres[\beta^{V}]{_{U\cap U_{s}}}. 
     \]
-    such that \(\mres[\hat{s}_{U}]{U\cap U_{t}} = \mres[\tilde{s}_{U}]{U\cap U_{t}}\) for all \(U\). 
-    Indeed, 
-    
+    Therefore, by the definition of a sheaf, 
+    there exists a unique section \(
+      \gamma\in\Gamma(U\cup U_{s};F)
+    \) such that \[
+      \mres[\gamma]{U} =\alpha^{U},
+      \quad
+      \mres[\gamma]{U_{s}}= \beta^{U_{s}}.
+    \]
+    For this \(\gamma\), we have \[
+      \mres[\gamma]{Z_{s}\cup U_{s}}=\sigma
+    \]
+    and it follows that 
+    \[
+      \indlim[U\supset Z_{s}]
+      \Gamma(U\cup U_{s};F)
+      \to
+      \Gamma(Z_{s}\cup U_{s};F)
+    \]
+    is an isomorphism. 
+
     Next Let \(F\in\Dompl(\kk_X)\). 
     Let \(I^{\bm{\bullet}}\) be a complex of flabby sheaves 
     quasi-isomorphic to \(F\). 

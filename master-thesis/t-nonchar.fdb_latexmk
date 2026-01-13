@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1768300591.82894 "t-nonchar.dvi" "t-nonchar.pdf" "t-nonchar" 1768300592.5963 0
-  "t-nonchar.dvi" 1768300591.6961 29640 c79c977f912fed7f251c1e35671d105a "latex"
+["dvipdf"] 1768317548.89454 "t-nonchar.dvi" "t-nonchar.pdf" "t-nonchar" 1768317550.10539 0
+  "t-nonchar.dvi" 1768317548.7169 33656 84731d34a51cb427f2781884f9226620 "latex"
   (generated)
   "t-nonchar.pdf"
   (rewritten before read)
-["latex"] 1768300590.25717 "/Users/giuseppe/seminar-notes/master-thesis/t-nonchar.tex" "t-nonchar.dvi" "t-nonchar" 1768300592.5908 0
-  "/Users/giuseppe/seminar-notes/master-thesis/t-nonchar.tex" 1768300588.22765 33354 2c2be8eb2a4860fd203c3575d4b4a69e ""
+["latex"] 1768317547.06795 "/Users/giuseppe/seminar-notes/master-thesis/t-nonchar.tex" "t-nonchar.dvi" "t-nonchar" 1768317550.09849 0
+  "/Users/giuseppe/seminar-notes/master-thesis/t-nonchar.tex" 1768317543.60445 35232 9abb9b68377f089e0ba0641db2dcac94 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -245,9 +245,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "t-nonchar.aux" 1768300591.69432 1828 4484cc7500aa7810b30671d76d0e7907 "latex"
-  "t-nonchar.out" 1768300591.69545 407 878f40d4573a0e409376d93a88bce5f5 "latex"
-  "t-nonchar.tex" 1768300588.22765 33354 2c2be8eb2a4860fd203c3575d4b4a69e ""
+  "t-nonchar.aux" 1768317548.71514 1844 5650dc361c38c5ee58ee06563ea919a9 "latex"
+  "t-nonchar.out" 1768317548.7163 407 878f40d4573a0e409376d93a88bce5f5 "latex"
+  "t-nonchar.tex" 1768317543.60445 35232 9abb9b68377f089e0ba0641db2dcac94 ""
   (generated)
   "t-nonchar.aux"
   "t-nonchar.dvi"

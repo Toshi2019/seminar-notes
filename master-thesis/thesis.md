@@ -4,7 +4,7 @@
 
 概要 [(pdf)](syron/utf8/gaiyo.pdf)
 
-truncated noncharacteristic deformation lemma [(pdf)](t-nonchar.pdf)
+truncated noncharacteristic deformation lemma （01/14 00:21 更新）[(pdf)](t-nonchar.pdf)
 
 ## 12/03に話したこと
 
@@ -92,3 +92,9 @@ truncated noncharacteristic deformation の定式化と証明.
 それを用いたら相対版が証明できるかの検討．
 
 1次元版の non-char に落としてから順像公式を使って Microlocal Morse Morse Lemma を証明していた部分を，1次元を経由せずに証明する．
+
+## 01/13 までにやったこと
+
+仮定を弱めた truncated noncharacteristic deformation lemma の
+証明？を書き下した．
+切断の，特に全射性のところでガンマが well-defined のところはきちんと説明できるかというと微妙．
