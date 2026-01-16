@@ -708,11 +708,8 @@ The following is called Kashiwara's lemma.
 \section{Noncharacteristic Deformation Lemma}
 
 \begin{Proposition+}\label{prp:t-nonchar}
-  Let \(X\) be a 
-  locally compact (i.e., by definition, Hausdorff) space 
-  countable at infinity (i.e., countable union 
-  of compact subspaces). Let
-  \(F\in\Dompb(\zz_X)\), and 
+  Let \(X\) be a Hausdorff space. 
+  Let \(F\in\Dompl(\kk_X)\), and 
   \(\left(U_{t}\right)_{t\in\rr}\) be a family of 
   open subsets of \(X\). 
   Let \(k\in\zz\). 
@@ -748,6 +745,178 @@ The following is called Kashiwara's lemma.
     H^{k}\left(U_{t};F\right).
   \] 
 \end{Proposition+}
+
+\begin{Example+}
+  Let us give examples of \(\left(U_{t}\right)_{t}\) 
+  satisfying the condition \ref{item:t-nonchar4}, 
+  which is not contained in the original version 
+  of the proposition (\cite[Proposition 2.7.2]{KS90}). 
+  In all the examples below, \(X\) is \(\rr^{2}\). 
+  \begin{enumerate}[(i)]
+    \item For a real number \(t\), 
+    define the open set \(U_{t}\) by \[
+      U_{t}\coloneqq
+      \begin{cases}
+      \left\{(x,y)\in X;\ \left\|(x,y)\right\|<t\right\}&(t>0),\\
+      \varnothing&(t\leqq0).         
+      \end{cases}
+    \]
+    \item For a real number \(t\), 
+    define the function \(\varphi_{t}\colon \rr\to \rr\) as follows.
+    If \(t\leqq 0\), set \(\varphi_{t}(x)\equiv 0\). 
+    If \(t> 0\), set \[
+      \varphi_{t}(x)\coloneqq\begin{cases}
+        \sqrt{t^{2}-x^{2}} & (\left|x\right|<s),\\
+        0&(\left|x\right|\geqq s).
+      \end{cases}
+    \]
+    Then define the open set \(U_{t}\) by \[
+      U_{t}\coloneqq
+      \left\{(x,y)\in X;\ y<\varphi_{t}(x)\right\}. 
+    \]
+    \item For a real number \(t\), 
+    define the open set \(U_{t}\) as follows. 
+    If \(t\leqq0\), set \[
+      U_{t}\coloneqq
+      \left\{(x,y)\in X;\ y<0\right\}. 
+    \]
+    If \(t>0\), set \[
+      U_{t}\coloneqq
+      \left\{(x,y)\in X;\ 
+        \begin{array}{cc}
+          \text{If \(\left|x\right|<\tfrac{1}{t}\),}&y<t.\vspace{2pt}\\
+          \text{Otherwise,}&y<\tfrac{1}{\left|x\right|}.
+        \end{array}
+      \right\}. 
+    \]
+  \end{enumerate}
+  These families are visualized as Figure \ref{fig:1}.
+  \begin{figure}
+    \centering
+    \begin{minipage}[b]{0.32\columnwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.5]
+
+        % 円の中心と半径
+        \def\r{1}
+        \coordinate (O) at (0,0);
+
+        % 角度は辺の比に反比例する（弧の長さが辺に対応）
+        % AB:BC:CA = 10:9:8 → 弧の比 = 10:9:8 → 角度の比 = 10:9:8
+
+        % 合計角度 = 360度なので
+        \pgfmathsetmacro{\angleA}{(10/27)*360}
+        \pgfmathsetmacro{\angleB}{(9/27)*360}
+        \pgfmathsetmacro{\angleC}{(8/27)*360}
+
+        % 各点の位置（単位円上に配置）
+        \coordinate (A) at ({\r*cos(0)}, {\r*sin(0)});
+        \coordinate (B) at ({\r*cos(\angleC)}, {\r*sin(\angleC)});
+        \coordinate (C) at ({\r*cos(\angleC+\angleB)}, {\r*sin(\angleC+\angleB)});
+
+        % 円
+        \draw[gray!60, dashed] (O) circle (\r);
+
+        % 三角形
+        \draw[thick, blue] (A) -- (B) -- (C) -- cycle;
+
+        % 頂点
+        \fill[red] (A) circle (0.02);
+        \fill[red] (B) circle (0.02);
+        \fill[red] (C) circle (0.02);
+
+        % ラベル
+        \node[above right] at (A) {A};
+        \node[below left] at (B) {B};
+        \node[above left] at (C) {C};
+        \node[below right] at (O) {O};
+
+      \end{tikzpicture}
+    \end{minipage}
+    \begin{minipage}[b]{0.32\columnwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.5]
+
+        % 円の中心と半径
+        \def\r{1}
+        \coordinate (O) at (0,0);
+
+        % 角度は辺の比に反比例する（弧の長さが辺に対応）
+        % AB:BC:CA = 10:9:8 → 弧の比 = 10:9:8 → 角度の比 = 10:9:8
+
+        % 合計角度 = 360度なので
+        \pgfmathsetmacro{\angleA}{(10/27)*360}
+        \pgfmathsetmacro{\angleB}{(9/27)*360}
+        \pgfmathsetmacro{\angleC}{(8/27)*360}
+
+        % 各点の位置（単位円上に配置）
+        \coordinate (A) at ({\r*cos(0)}, {\r*sin(0)});
+        \coordinate (B) at ({\r*cos(\angleC)}, {\r*sin(\angleC)});
+        \coordinate (C) at ({\r*cos(\angleC+\angleB)}, {\r*sin(\angleC+\angleB)});
+
+        % 円
+        \draw[gray!60, dashed] (O) circle (\r);
+
+        % 三角形
+        \draw[thick, blue] (A) -- (B) -- (C) -- cycle;
+
+        % 頂点
+        \fill[red] (A) circle (0.02);
+        \fill[red] (B) circle (0.02);
+        \fill[red] (C) circle (0.02);
+
+        % ラベル
+        \node[above right] at (A) {A};
+        \node[below left] at (B) {B};
+        \node[above left] at (C) {C};
+        \node[below right] at (O) {O};
+
+      \end{tikzpicture}
+    \end{minipage}
+    \begin{minipage}[b]{0.32\columnwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.5]
+
+        % 円の中心と半径
+        \def\r{1}
+        \coordinate (O) at (0,0);
+
+        % 角度は辺の比に反比例する（弧の長さが辺に対応）
+        % AB:BC:CA = 10:9:8 → 弧の比 = 10:9:8 → 角度の比 = 10:9:8
+
+        % 合計角度 = 360度なので
+        \pgfmathsetmacro{\angleA}{(10/27)*360}
+        \pgfmathsetmacro{\angleB}{(9/27)*360}
+        \pgfmathsetmacro{\angleC}{(8/27)*360}
+
+        % 各点の位置（単位円上に配置）
+        \coordinate (A) at ({\r*cos(0)}, {\r*sin(0)});
+        \coordinate (B) at ({\r*cos(\angleC)}, {\r*sin(\angleC)});
+        \coordinate (C) at ({\r*cos(\angleC+\angleB)}, {\r*sin(\angleC+\angleB)});
+
+        % 円
+        \draw[gray!60, dashed] (O) circle (\r);
+
+        % 三角形
+        \draw[thick, blue] (A) -- (B) -- (C) -- cycle;
+
+        % 頂点
+        \fill[red] (A) circle (0.02);
+        \fill[red] (B) circle (0.02);
+        \fill[red] (C) circle (0.02);
+
+        % ラベル
+        \node[above right] at (A) {A};
+        \node[below left] at (B) {B};
+        \node[above left] at (C) {C};
+        \node[below right] at (O) {O};
+
+      \end{tikzpicture}
+    \end{minipage}
+    \caption{Examples of deformation families.}
+    \label{fig:1}
+  \end{figure}
+\end{Example+}
 
 \begin{proof}
   Consider the following conditions for 
@@ -833,7 +1002,7 @@ The following is called Kashiwara's lemma.
     &\hookrightarrow
     H^{k}(U_{s};F).
   \end{align}
-  Therefore, if we show Claim \ref{clm:ind-nonchar} below, 
+  Therefore, if we show Lemma \ref{clm:ind-nonchar} below, 
   we have 
   \begin{align*}
     \indlim[t>s]H^{j}(U_t;F)
@@ -853,16 +1022,16 @@ The following is called Kashiwara's lemma.
     H^{k}(U_s;F)
   \end{align*}
   and \ref{eq:t-nonchar-a'} follows. 
-  \begin{Claim+}\label{clm:ind-nonchar}
+  \begin{Lemma+}\label{clm:ind-nonchar}
     For any \(j\in\zz\) and \(s\in\rr\), there exists a natural isomorphism 
     \[
       \indlim[t>s]H^{j}(U_t;F)
       \cong 
       H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
     \]
-  \end{Claim+}
+  \end{Lemma+}
 
-  \begin{proof}[Proof of Claim \ref{clm:ind-nonchar}]
+  \begin{proof}[Proof of Lemma\ref{clm:ind-nonchar}]
     %We will construct two isomorphisms below. 
     %\begin{align*}
     %  \indlim[U]H^{j}(U;F)
@@ -1026,13 +1195,14 @@ The following is called Kashiwara's lemma.
     \left(H^{j_{0}-1}(U_{s-1/n})\right)_{n\in\nn}
   \). This system satisfies ML condition, 
   so, by applying 
-  Proposition \ref{prop:ks2.7.1} (\ref{item:ks2.7.1.3})\footnote{
-    \cite{KS90}の証明だと``by Proposition 1.12.4''
-    としているが，Proposition 2.7.1の誤植かもしれない．
-    どちらでも良いとは思うが，
-    このあと``Again by Proposition 2.7.1'' と書いていることからも，
-    誤植だと思う方が自然と思われる．
-  }, 
+  Proposition \ref{prop:ks2.7.1} (\ref{item:ks2.7.1.3}), 
+  %\footnote{
+  %  \cite{KS90}の証明だと``by Proposition 1.12.4''
+  %  としているが，Proposition 2.7.1の誤植かもしれない．
+  %  どちらでも良いとは思うが，
+  %  このあと``Again by Proposition 2.7.1'' と書いていることからも，
+  %  誤植だと思う方が自然と思われる．
+  %}, 
   we have \[
     H^{j}(U_{s};F)
     \simar 
@@ -1083,7 +1253,7 @@ The following is called Kashiwara's lemma.
 
 
 
-
+\section{a}
 %===============================================
 % 参考文献スペース
 %===============================================
@@ -1104,7 +1274,6 @@ The following is called Kashiwara's lemma.
     \textit{Morse Inequalities for \(\rr\)-constructible Sheaves}, 
     Adv. Math. 93, pp.1--8, 1992. 
 \end{thebibliography}
-
 %===============================================
 
 

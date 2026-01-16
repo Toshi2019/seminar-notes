@@ -803,17 +803,17 @@ The following is called Kashiwara's lemma.
   Set \(U\coloneqq\bigcup_{n}U_{n}\), 
   \(Z\coloneqq\bigcap_{n}Z_{n}\). 
   \begin{enumerate}[(i)]
-    \item For any \(j\), the natural map \(
+    \item \label{item:ks2.7.1.1} For any \(j\), the natural map \(
       \varphi_j\colon H^{j}_{Z}(U;F)
       \to 
       \prolim[n]H^{j}_{Z_{n}}(U_{n};F)
     \) is surjective. 
-    \item Assume that for a given \(j\), 
+    \item \label{item:ks2.7.1.2} Assume that for a given \(j\), 
     the projective system \(
       (H^{j-1}_{Z_{n}}(U_{n};F))_{n}
     \) satisfies the ML condition. 
     Then \(\varphi_{j}\) is bijective. 
-    \item Let now \(\left(X_{n}\right)_{n\in\nn}\) be 
+    \item \label{item:ks2.7.1.3} Let now \(\left(X_{n}\right)_{n\in\nn}\) be 
     an increasing family of subsets of \(X\) satisfying \(
       X=\bigcup_{n}X_n\) and \(X_{n}\subset \Int[](X_{n+1})
     \) for all \(n\). 
@@ -827,18 +827,11 @@ The following is called Kashiwara's lemma.
 \end{Proposition+}
 
 
-\section{Truncated Noncharacteristic Deformation}\label{sec:t-nonchar}
+\section{Truncated Noncharacteristic Deformation Lemma}
 
-We will reformulate the noncharacteristic deformation 
-lemma \cite[Proposition 2.7.2]{KS90} to make a relation 
-to truncated microsupport. 
-
-\begin{Proposition+}\label{prop:t-nonchar}
-  Let \(X\) be a 
-  locally compact (i.e., by definition, Hausdorff) space 
-  countable at infinity (i.e., countable union 
-  of compact subspaces). Let
-  \(F\in\Dompb(\zz_X)\), and 
+\begin{Proposition+}\label{prp:t-nonchar}
+  Let \(X\) be a Hausdorff space. 
+  Let \(F\in\Dompl(\kk_X)\), and 
   \(\left(U_{t}\right)_{t\in\rr}\) be a family of 
   open subsets of \(X\). 
   Let \(k\in\zz\). 
@@ -853,25 +846,14 @@ to truncated microsupport.
     For all pairs \((s,t)\) with \(s\leqq t\), 
     the set \(\overline{U_{t}\smi U_{s}}\cap \supp{F}\) is compact.
     \item \label{item:t-nonchar3}
-    For all pairs \((s,t)\) with \(s\leqq t\), 
-    and all \(x\in Z_{s}\smi U_{t}\), we have\[
-      (H^{j}_{X\smi U_{t}}(F))_{x}=0
+    For all \(s\in\rr\) and all \(x\in Z_{s}\smi U_{s}\), 
+    we have\[
+      (H^{j}_{X\smi U_{s}}(F))_{x}=0
       \quad 
       \text{for all \(j\leqq k\).}
     \]
     \item \label{item:t-nonchar4} 
-    %For any \(s\in\rr\), 
-    %\(\bigcap_{t>s}U_{t}=\overline{U_{s}}\) 
-    %and 
-    %\(\overline{U_{s}}\) is closed 
-    %in a paracompact open subset of \(X\).
-    For any \(s\in\rr\), \(Z_s\subset U_{t}\).
-    %\item\footnote{
-    %  This condition might be 
-    %  deduced from \eqref{item:t-nonchar3}.
-    %} \label{item:t-nonchar5} 
-    %\(Z_s\smi U_{s}\subset\bd{U_{s}}\) 
-    %for all \(s\in\rr\). 
+    For all pairs \((s,t)\) with \(s< t\), \(Z_s\subset U_{t}\).
   \end{enumerate}
   Then, for all \(t\in\rr\), we have the isomorphisms\[
     H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
@@ -886,45 +868,56 @@ to truncated microsupport.
   \] 
 \end{Proposition+}
 
-\begin{Remark+}
-  Let us give an example that satisfies 
-  the hypotheses 
-  \eqref{item:t-nonchar1}--\eqref{item:t-nonchar3} 
-  but not \eqref{item:t-nonchar4}. 
-  Let us define a locally closed subset \(Z\) of \(\rr^2\) by\[
-    Z\coloneqq\left\{
-      (x,y)\in\rr^2
-      \mathrel{;}
-      (x+2)^{2}+(y-1)^{2}=1\right\}\smallsetminus\left\{(-2,0)\right\}.
-  \]
-  Consider a real valued function \(\varphi_{s}\) for 
-  a real number \(s\): \begin{equation}
-    \varphi_{s}(x)\coloneqq\begin{cases}
-      0&\left|x\right|\geqq 2,\\
-      \max(0,s(2-\left|x\right|))&\left|x\right|\leqq 2.
-    \end{cases}
-  \end{equation}
-  We define \(\left(U_t\right)_{t\in\rr}\), 
-  a family of open sets of \(\rr^2\) by
-  \[
-    U_t\coloneqq\left\{
-      (x,y)\in\rr^2\mathrel{;}
-      y<\varphi_{s}(x)
-    \right\}.
-  \]
-  Then \(F\coloneqq \kk_{Z}\) and \(\left(U_t\right)_{t}\) 
-  satisfy the hypotheses for \(k=0\). 
-  Therefore, the natural morphism\[
-    H^{0}(U_{1};\kk_Z)=\kk\to
-    H^{0}(U_{0};\kk_Z)=0
-  \]
-  is not injective and the consequence of 
-  Proposition \ref{prop:t-nonchar} does not hold.
-\end{Remark+}
+\begin{Example+}
+  Let us give examples of \(\left(U_{t}\right)_{t}\) 
+  satisfying the condition \ref{item:t-nonchar4}, 
+  which is not contained in the original version 
+  of the proposition (\cite[Proposition 2.7.2]{KS90}). 
+  In all the examples below, \(X\) is \(\rr^{2}\). 
+  \begin{enumerate}[(i)]
+    \item For a real number \(t\), 
+    define the open set \(U_{t}\) by \[
+      U_{t}\coloneqq
+      \begin{cases}
+      \left\{(x,y)\in X;\ \left\|(x,y)\right\|<t\right\}&(t>0),\\
+      \varnothing&(t\leqq0).         
+      \end{cases}
+    \]
+    \item For a real number \(t\), 
+    define the function \(\varphi_{t}\colon \rr\to \rr\) as follows.
+    If \(t\leqq 0\), set \(\varphi_{t}(x)\equiv 0\). 
+    If \(t> 0\), set \[
+      \varphi_{t}(x)\coloneqq\begin{cases}
+        \sqrt{t^{2}-x^{2}} & (\left|x\right|<s),\\
+        0&(\left|x\right|\geqq s).
+      \end{cases}
+    \]
+    Then define the open set \(U_{t}\) by \[
+      U_{t}\coloneqq
+      \left\{(x,y)\in X;\ y<\varphi_{t}(x)\right\}. 
+    \]
+    \item For a real number \(t\), 
+    define the open set \(U_{t}\) as follows. 
+    If \(t\leqq0\), set \[
+      U_{t}\coloneqq
+      \left\{(x,y)\in X;\ y<0\right\}. 
+    \]
+    If \(t>0\), set \[
+      U_{t}\coloneqq
+      \left\{(x,y)\in X;\ 
+        \begin{array}{cc}
+          \text{If \(\left|x\right|<\tfrac{1}{t}\),}&y<t.\vspace{2pt}\\
+          \text{Otherwise,}&y<\tfrac{1}{\left|x\right|}.
+        \end{array}
+      \right\}. 
+    \]
+  \end{enumerate}
+  These families are visualized as Figure \ref{fig:1}.
+\end{Example+}
 
-\begin{proof}[Proof of Proposition 5.1.]
+\begin{proof}
   Consider the following conditions for 
-  \(j\in\zz\), \(s\), and \(t\):
+  \(j\in\zz\) and \(s\in\rr\):
   \begin{align}
       \tag*{\((a)^j_s\)}\label{eq:t-nonchar-a}
       \mu_{s}^{j}&\colon
@@ -934,97 +927,331 @@ to truncated microsupport.
       \indlim[t>s] H^{k}(U_t;F) \hookrightarrow H^{k}(U_s;F),\\
       \tag*{\((b)^j_s\)}\label{eq:t-nonchar-b}
       \lambda_{s}^{j}&\colon
-      H^{j}(U_t;F)\simar \prolim[s<t] H^{j}(U_s;F).
+      H^{j}(U_s;F)\simarr \prolim[r<s] H^{j}(U_r;F).
   \end{align}
 
-  Let us prove \ref{eq:t-nonchar-a} for \(s\in \rr\) and \(j<k\). 
-  We can assume that \(\overline{U_{t}\smi U_{s}}\) is compact 
+  Let us prove, 
+  for all \(s\in \rr\), 
+  \ref{eq:t-nonchar-a} for \(j<k\) and \ref{eq:t-nonchar-a'}. 
+  We may assume that \(\overline{U_{t}\smi U_{s}}\) is compact 
   for any \(s\leqq t\) by replacing \(X\) by \(\supp{F}\). 
   Consider the distinguished triangle\[
-    \RG_{X\smi U_{t}}(F)
+    \RG_{X\smi U_{s}}(F)
     \to
     F
     \to
-    \RG_{U_{t}}(F)
+    \RG_{U_{s}}(F)
     \overset{+1}{\longrightarrow}.
   \]
-  Applying to this triangle the functor \(
-    (\blk)_{\overline{U_{t}}}
-  \), we have \[
-    \left(\RG_{X\smi U_{t}}(F)\right)_{\overline{U_{t}}}
+  Let us endow with \(Z_{s}\cup U_{s}\) the induced topology, and
+  denote by \(
+    i_{s}\colon Z_{s}\cup U_{s}\hookrightarrow X
+  \) the natural continuous map.  
+  Applying the functor \[
+    \mres[(\blk)]{Z_{s}\cup U_{s}}=i_{s}^{-1}
+  \] to the d.t.~above, we have \[
+    \mres[\RG_{X\smi U_{s}}(F)]{Z_{s}\cup U_{s}}  
     \to
-    F_{\overline{U_{t}}}
+    \mres[F]{Z_{s}\cup U_{s}}  
     \to
-    \RG_{U_{t}}(F)
+    \mres[\RG_{U_{s}}(F)]{Z_{s}\cup U_{s}}  
     \overset{+1}{\longrightarrow}.
   \]
-  Again applying to this triangle the functor \(\RG(X;\blk)\), 
+  Again applying to this triangle the functor \(\RG(Z_{s}\cup U_{s};\blk)\), 
   we have
   \begin{equation}
-    \RG\left(X;\left(\RG_{X\smi U_{t}}(F)\right)_{\overline{U_{t}}}\right)
-    \to
-    \RG(\overline{U_{t}};F)
-    \to
-    \RG(U_{t};F)
-    \overset{+1}{\longrightarrow}.
+    \vcenter{\xymatrix@C=-20pt@R=30pt{
+      &
+      \RG(Z_{s}\cup U_{s};
+      \mres[\RG_{X\smi U_{s}}(F)]{Z_{s}\cup U_{s}})
+      \ar[rd]
+      &
+      \\
+      \RG(U_{s};F)
+      \ar[ru]^-{+1}
+      &&
+      \RG(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
+      \ar[ll]
+    }}
   \end{equation}
-  By hypotheses \eqref{item:t-nonchar3}--\eqref{item:t-nonchar5}, 
+  By hypotheses \eqref{item:t-nonchar3} and 
+  the definition of local cohomology, 
   it follows that
   \[
-    \left(H^{j}_{X\smi U_{t}}(F)\right)_{\bd{U_{t}}}=0
+    \mres[H^{j}_{X\smi U_{s}}(F)]{Z_{s}\cup U_{s}}=0
+    \quad
+    \text{for any \(j\leqq k\),}
   \]
-  for any \(j\leqq k\) and then \[
-    H^{j}\left(X;
-      \left(
-        \RG_{X\smi U_{t}}(F)
-      \right)_{\overline{U_{t}}}
+  and then \[
+    H^{j}\left(Z_{s}\cup U_{s};
+      \mres[\RG_{X\smi U_{s}}(F)]{Z_{s}\cup U_{s}}
     \right)=0
     \quad
     \text{for any \(j\leqq k\).}
-  \] \footnote{この辺の議論はきちんと詰めないといけない．}
-  Thus for any \(t\), we have
+  \]
+  Thus we have
   \begin{align}
-    \label{eq:a-iso}H^{j}(\overline{U_{t}};F)
+    \label{eq:a-iso}H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
     &\simar
-    H^{j}(U_{t};F)\quad
+    H^{j}(U_{s};F)\quad
     \text{for any \(j< k\),}\\
-    \label{eq:a-inj}H^{k}(\overline{U_{t}};F)
+    \label{eq:a-inj}H^{k}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
     &\hookrightarrow
-    H^{k}(U_{t};F).
+    H^{k}(U_{s};F).
   \end{align}
-  Therefore, we have by \eqref{item:t-nonchar4} and \eqref{eq:a-iso},  
+  Therefore, if we show Lemma \ref{clm:ind-nonchar} below, 
+  we have 
   \begin{align*}
     \indlim[t>s]H^{j}(U_t;F)
     &\cong 
-    H^{j}\left(\bigcap_{t>s}U_t;F\right)\\
-    &=
-    H^{j}(\overline{U_s};F)\\
+    H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})\\
     &\simar
     H^{j}(U_s;F)
   \end{align*}
   for any \(j<k\), and \ref{eq:t-nonchar-a} follows. 
   Similarly, 
-  we have by \eqref{item:t-nonchar4} and \eqref{eq:a-inj},
-    \begin{align*}
+  we have
+  \begin{align*}
     \indlim[t>s]H^{k}(U_t;F)
     &\cong 
-    H^{k}\left(\bigcap_{t>s}U_t;F\right)\\
-    &=
-    H^{k}(\overline{U_s};F)\\
+    H^{k}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})\\
     &\hookrightarrow
     H^{k}(U_s;F)
   \end{align*}
-  and \ref{eq:t-nonchar-a'} follows.
+  and \ref{eq:t-nonchar-a'} follows. 
+  \begin{Lemma+}\label{clm:ind-nonchar}
+    For any \(j\in\zz\) and \(s\in\rr\), there exists a natural isomorphism 
+    \[
+      \indlim[t>s]H^{j}(U_t;F)
+      \cong 
+      H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
+    \]
+  \end{Lemma+}
+
+  \begin{proof}[Proof of Lemma \ref{clm:ind-nonchar}]
+    %We will construct two isomorphisms below. 
+    %\begin{align*}
+    %  \indlim[U]H^{j}(U;F)
+    %  &\simar
+    %  H^{j}(Z_{s}\cap U_{s};\mres[F]{Z_{s}\cap U_{s}})\\
+    %  \indlim[U]H^{j}(U;F)
+    %  &\simar
+    %  \indlim[t>s]H^{j}(U_{t};F).
+    %\end{align*}
+    %Then, by composing them, we have the isomorphism that we want. 
+    First we prove that 
+    for \(F\in \Mod(\kk_X)\), 
+    the natural morphism
+    \begin{equation}\label{eq:qis-claim}
+      \indlim[t>s]\Gamma(U_t;F)
+      \simar 
+      \Gamma(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
+    \end{equation}
+    is isomorphic. 
+    Consider the following diagram. 
+    \[\vcenter{\xymatrix{
+      \indlim[t>s]\Gamma(U_t;F)
+      \ar[rd]
+      \ar[d]
+      &
+      \\
+      \indlim[U\supset Z_{s}]
+      \Gamma(U\cup U_{s};F)
+      \ar[d]
+      \ar[r]
+      &
+      \Gamma(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
+      \ar[d]
+      \\
+      \indlim[U\supset Z_{s}]
+      \Gamma(U;F)
+      \ar[r]
+      &
+      \Gamma(Z_{s};\mres[F]{Z_{s}})
+    }}
+    \] 
+    Note that 
+    \(\left(U_{t}\right)_{t>s}\) is a 
+    cofinal family of \((U\cup U_{s})_{U\supset Z_{s}}\). 
+    Indeed, 
+    \textcolor{red}{かく．}
+
+    Therefore, we have 
+    \[
+      \indlim[t>s]
+      \Gamma(U_{t};F)
+      \simarr
+      \indlim[U\supset Z_{s}]
+      \Gamma(U\cup U_{s};F).  
+    \]
+    By this isomorphism, it is enough to show that
+    \[
+      \phi\colon\indlim[U\supset Z_{s}]
+      \Gamma(U\cup U_{s};F)
+      \to
+      \Gamma(Z_{s}\cup U_{s};F)
+    \]
+    is isomorphic.     
+    Since \(X\) is Hausdorff and \(Z_{s}\) is compact, 
+    the natural morhism 
+    \[
+      \psi\colon\indlim[U\supset Z_{s}]\Gamma(U;F)
+      \to
+      \Gamma(Z_{s};F)
+    \]
+    is isomorphic (see \cite[Proposition 2.5.1]{KS90}). 
+    Since \(U_{s}\) is open, we have another isomorphism 
+    \[
+      \psi'\colon\indlim[V\supset U_{s}]\Gamma(V;F)
+      \to
+      \Gamma(U_{s};F).
+    \] 
+    The injectivity of \(\phi\) follows from 
+    the definition of a sheaf 
+    and the injectivities of \(\psi\) and \(\psi'\). 
+
+    Let us prove that \(\phi\) is surjective. 
+    Let \(\sigma\in \Gamma(Z_{s};F)\) be 
+    a section of \(\mres[F]{Z_{s}\cup U_{s}}\). 
+    By the isomorphism \(\psi\) above, 
+    we can extend \(\mres[\sigma]{Z_{s}}\) to 
+    an open neighborhood \(U\) of \(Z_{s}\). 
+    More precisely, there exists a section 
+    \(\sigma'\) on \(U\) such that \[
+      \mres[\sigma']{Z_{s}}=\mres[\sigma]{Z_{s}}. 
+    \]
+    For this \(\sigma'\), there exists an open subset \(W\) of \(Z_{s}\cup U_{s}\) such that .
+
+
+
+
+
+
+
+
+
+
+
+
+    Similarly, there exists a family \(
+      \left(\beta^{V}\right)_{V}
+      \in 
+      \indlim[V\supset Z_{s}]\Gamma(V;F)
+    \) such that \[
+      \mres[\beta^{V}]{U_{s}}=\mres[\sigma]{U_{s}}
+    \] for all \(V\). 
+    These \((\alpha^{U})_{U}\) and \((\beta^{V})_{V}\) satisfy
+    \[
+      \mres[\alpha^{U}]{_{U\cap U_{s}}}
+      =
+      \mres[\beta^{V}]{_{U\cap U_{s}}}. 
+    \]
+    Therefore, by the definition of a sheaf, 
+    there exists a unique section \(
+      \gamma\in\Gamma(U\cup U_{s};F)
+    \) such that \[
+      \mres[\gamma]{U} =\alpha^{U},
+      \quad
+      \mres[\gamma]{U_{s}}= \beta^{U_{s}}.
+    \]
+    For this \(\gamma\), we have \[
+      \mres[\gamma]{Z_{s}\cup U_{s}}=\sigma
+    \]
+    and it follows that 
+    \[
+      \indlim[U\supset Z_{s}]
+      \Gamma(U\cup U_{s};F)
+      \to
+      \Gamma(Z_{s}\cup U_{s};F)
+    \]
+    is an isomorphism. 
+
+    Next Let \(F\in\Dompl(\kk_X)\). 
+    Let \(I^{\bm{\bullet}}\) be a complex of flabby sheaves 
+    quasi-isomorphic to \(F\). 
+    Then  it follows from \eqref{eq:qis-claim} that 
+    \begin{align*}
+      \indlim[t>s]H^{j}(U_t;F)
+      &\cong 
+      \indlim[t>s]H^{j}\Gamma(U_t;I^{\bullet})\\
+      &\cong 
+      H^{j}\left(\indlim[t>s]\Gamma(U_t;I^{\bullet})\right)\\
+      &\cong
+      H^{j}\Gamma(
+        Z_{s}\cup U_{s};
+        \mres[I^{\bullet}]{Z_{s}\cup U_{s}})\\
+      &\cong
+      H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
+    \end{align*}
+    This completes the proof.
+  \end{proof}
+
+  Let us come back to the proof of 
+  Proposition \ref{prp:t-nonchar}. 
+  We prove \ref{eq:t-nonchar-b} for 
+  all \(j\in\zz\) and \(s\in\rr\) by induction on \(j\). 
+  Since \(F\in\Dompl(\zz_X)\), 
+  we have \ref{eq:t-nonchar-b} for \(j\ll 0\) and \(s\in\rr\). 
+  Assume \ref{eq:t-nonchar-b} is proved for 
+  all \(j< j_{0} (<k)\) and \(s\in\rr\). 
+  Since we have \ref{eq:t-nonchar-a} and \ref{eq:t-nonchar-b} 
+  for each \(j< j_{0}\) and each \(s\in\rr\), 
+  we can apply 
+  Kashiwara's lemma (Proposition \ref{prop:ks1.12.6}) 
+  and have\[
+    H^{j}(U_{t};F)\simar H^{j}(U_{s};F) 
+    \quad
+    \text{ for \(j< j_{0}\) and \(s\leqq t\). }
+  \]
+  Fix \(s\in\rr\) and consider the projective system \(
+    \left(H^{j_{0}-1}(U_{s-1/n})\right)_{n\in\nn}
+  \). This system satisfies ML condition, 
+  so, by applying 
+  Proposition \ref{prop:ks2.7.1} (\ref{item:ks2.7.1.3}), 
+  %\footnote{
+  %  \cite{KS90}の証明だと``by Proposition 1.12.4''
+  %  としているが，Proposition 2.7.1の誤植かもしれない．
+  %  どちらでも良いとは思うが，
+  %  このあと``Again by Proposition 2.7.1'' と書いていることからも，
+  %  誤植だと思う方が自然と思われる．
+  %}, 
+  we have \[
+    H^{j}(U_{s};F)
+    \simar 
+    \prolim[n]H^{j}\left(U_{s-\frac{1}{n}};F\right). 
+  \]
+  Since \((s-1/n)_{n}\) is a cofinal family of \((t)_{s>t}\), 
+  we have \((b)_{s}^{j_{0}}\). 
+  Then by induction on \(j\), 
+  we have \((b)_{s}^{j}\) for \(j<k\) and \(s\in\rr\). 
+  Again by applying Proposition \ref{prop:ks2.7.1} to the 
+  projective system \(\left(H^{j}(U_{n};F)\right)_{n}\), 
+  we obtain 
+  \begin{align*}
+    H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
+    &\cong
+    H^{j}\left(\bigcup_{n\in\nn}U_{n};F\right)\\
+    &\simar 
+    \prolim[n]H^{j}\left(U_{n};F\right)
+    %\quad \text{for all \(j< k\),} 
+  \end{align*}
+  and for each \(n\), we have by Kashiwara's lemma that
+  \[
+    H^{j}\left(U_{n};F\right)
+    \cong
+    H^{j}(U_{s};F)
+  \]
+  for \(n\geqq s\).
+
+  Finally we replace \ref{eq:t-nonchar-a} by 
+  \ref{eq:t-nonchar-a'} for \(j=k\), and obtain
+  \[
+    H^{k}\left(\bigcup_{s\in\rr}U_{s};F\right)
+    \hookrightarrow
+    H^{j}\left(U_{s};F\right).
+  \]
+  This completes the proof. 
 \end{proof}
-
-
-
-
-
-
-
-
-
 
 
 

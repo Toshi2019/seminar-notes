@@ -447,12 +447,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlminr
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlminr-h.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlminr-v.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlminr-h.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlminr-v.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlminr-h.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlminr-v.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlminr-h.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT t-nonchar.aux
 INPUT ./t-nonchar.out
