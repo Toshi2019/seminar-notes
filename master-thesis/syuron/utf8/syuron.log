@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  16 JAN 2026 20:53
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  16 JAN 2026 23:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -936,19 +936,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 LaTeX Warning: Reference `fig:1' on page 4 undefined on input line 915.
 
-[4] <xymatrix 3x2 138> [5] <xymatrix 2x3 230> [6] [7] <xymatrix 2x2 150> <xymatrix 2x2 150> [8] <xymatrix 6x2 578> [9]
+[4] <xymatrix 3x2 138> [5] <xymatrix 2x3 230> [6] [7] <xymatrix 2x2 150> <xymatrix 2x2 150> [8] <xymatrix 6x2 578>
 
-LaTeX Warning: Reference `prop:t-nonchar' on page 10 undefined on input line 1534.
+LaTeX Warning: Reference `prop:t-nonchar' on page 9 undefined on input line 1526.
 
+[9]
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1556.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1560.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
 (Font)              No change on input line 1564.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1568.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1572.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1575.
-[10] (./syuron.aux)
+(Font)              No change on input line 1567.
+ [10] (./syuron.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
@@ -962,12 +963,12 @@ Package rerunfilecheck Info: File `syuron.out' has not changed.
 (rerunfilecheck)             Checksum: 8C738039945473719061396385466833;1346.
  ) 
 Here is how much of TeX's memory you used:
- 29691 strings out of 474774
- 521429 string characters out of 5758801
- 1963032 words of memory out of 5000000
- 51531 multiletter control sequences out of 15000+600000
+ 29692 strings out of 474774
+ 521442 string characters out of 5758801
+ 1959032 words of memory out of 5000000
+ 51532 multiletter control sequences out of 15000+600000
  608014 words of font info for 134 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  84i,28n,93p,599b,1075s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on syuron.dvi (12 pages, 73124 bytes).
+Output written on syuron.dvi (12 pages, 73592 bytes).

@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1768564391.29269 "syuron.dvi" "syuron.pdf" "syuron" 1768564392.3583 0
-  "syuron.dvi" 1768564391.1544 73124 53c55f7e2f466eb451bea6b6305b3e5f "latex"
+["dvipdf"] 1768572308.74971 "syuron.dvi" "syuron.pdf" "syuron" 1768572309.81825 0
+  "syuron.dvi" 1768572308.62222 73592 07293c4cf82770449b49d087d99d80f0 "latex"
   (generated)
   "syuron.pdf"
   (rewritten before read)
-["latex"] 1768564389.49929 "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/syuron.tex" "syuron.dvi" "syuron" 1768564392.35339 0
-  "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/syuron.tex" 1768564385.88428 53807 561a6f4e895b7064c1d2c1de59643c4e ""
+["latex"] 1768572307.15922 "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/syuron.tex" "syuron.dvi" "syuron" 1768572309.81327 0
+  "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/syuron.tex" 1768572303.30689 54123 da841029073cbe22eab3952b97b4a8e7 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -226,10 +226,10 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "syuron.aux" 1768564391.15084 3143 8086b19c06e32c0d28584a20ce3510f3 "latex"
-  "syuron.out" 1768564391.15368 1346 8c738039945473719061396385466833 "latex"
-  "syuron.tex" 1768564385.88428 53807 561a6f4e895b7064c1d2c1de59643c4e ""
-  "syuron.toc" 1768564391.15426 599 5839680bda4cef24492640fa801b7d30 "latex"
+  "syuron.aux" 1768572308.61861 3239 c1146dcea83770a862aa4c49a79241e5 "latex"
+  "syuron.out" 1768572308.62149 1346 8c738039945473719061396385466833 "latex"
+  "syuron.tex" 1768572303.30689 54123 da841029073cbe22eab3952b97b4a8e7 ""
+  "syuron.toc" 1768572308.62207 599 5839680bda4cef24492640fa801b7d30 "latex"
   "syuron2.sty" 1287550710 4101 374aba698b6271bbcc9ea842b1cf67f0 ""
   (generated)
   "syuron.aux"

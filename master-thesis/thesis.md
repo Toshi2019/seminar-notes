@@ -1,6 +1,6 @@
 # 修論
 
-修論（01/09 21:18 更新）[(pdf)](syuron/utf8/syuron.pdf)
+修論（01/16 23:10 更新）[(pdf)](syuron/utf8/syuron.pdf)
 
 概要 [(pdf)](syron/utf8/gaiyo.pdf)
 
@@ -98,3 +98,9 @@ truncated noncharacteristic deformation の定式化と証明.
 仮定を弱めた truncated noncharacteristic deformation lemma の
 証明？を書き下した．
 切断の，特に全射性のところでガンマが well-defined のところはきちんと説明できるかというと微妙．
+
+## 01/16 にやったこと
+
+切断の全射性の証明をきちんと書き下した．
+
+family の例を書いた（図は必要？）

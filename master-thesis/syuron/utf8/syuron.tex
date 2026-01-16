@@ -1115,56 +1115,48 @@ The following is called Kashiwara's lemma.
     a section of \(\mres[F]{Z_{s}\cup U_{s}}\). 
     By the isomorphism \(\psi\) above, 
     we can extend \(\mres[\sigma]{Z_{s}}\) to 
-    an open neighborhood \(U\) of \(Z_{s}\). 
+    an open neighborhood \(U\) of \(Z_{s}\) in \(X\). 
     More precisely, there exists a section 
-    \(\sigma'\) on \(U\) such that \[
-      \mres[\sigma']{Z_{s}}=\mres[\sigma]{Z_{s}}. 
-    \]
-    For this \(\sigma'\), there exists an open subset \(W\) of \(Z_{s}\cup U_{s}\) such that .
-
-
-
-
-
-
-
-
-
-
-
-
-    Similarly, there exists a family \(
-      \left(\beta^{V}\right)_{V}
-      \in 
-      \indlim[V\supset Z_{s}]\Gamma(V;F)
-    \) such that \[
-      \mres[\beta^{V}]{U_{s}}=\mres[\sigma]{U_{s}}
-    \] for all \(V\). 
-    These \((\alpha^{U})_{U}\) and \((\beta^{V})_{V}\) satisfy
-    \[
-      \mres[\alpha^{U}]{_{U\cap U_{s}}}
+    \(\tau\) on \(U\) such that \(
+      \mres[\tau]{Z_{s}}=\mres[\sigma]{Z_{s}}
+    \). 
+    Now we see that \(
+      \mres[\tau]{Z_{s}}
       =
-      \mres[\beta^{V}]{_{U\cap U_{s}}}. 
-    \]
-    Therefore, by the definition of a sheaf, 
-    there exists a unique section \(
-      \gamma\in\Gamma(U\cup U_{s};F)
-    \) such that \[
-      \mres[\gamma]{U} =\alpha^{U},
-      \quad
-      \mres[\gamma]{U_{s}}= \beta^{U_{s}}.
-    \]
-    For this \(\gamma\), we have \[
-      \mres[\gamma]{Z_{s}\cup U_{s}}=\sigma
-    \]
-    and it follows that 
+      \mres[{(\mres[\tau]{(Z_{s}\cup U_{s})\cap U})}]{Z_{s}}
+    \), and by the definition of a section 
+    on the closed subset \(Z_{s}\) of 
+    \((Z_{s}\cup U_{s})\cap U\), 
+    we can find an open subset \(W\) of 
+    \((Z_{s}\cup U_{s})\cap U\) 
+    such that 
+    \begin{equation}\label{eq:clm-glue}
+      \mres[\tau]{W}=\mres[\sigma]{W}. 
+    \end{equation}
+    By the definition of the induced topology 
+    of \((Z_{s}\cup U_{s})\cap U\), 
+    there exists an open set \(\widetilde{W}\) of \(X\) 
+    such that
     \[
-      \indlim[U\supset Z_{s}]
-      \Gamma(U\cup U_{s};F)
-      \to
-      \Gamma(Z_{s}\cup U_{s};F)
+      W=((Z_{s}\cup U_{s})\cap U)\cap \widetilde{W}
+      \quad\text{and}\quad
+      \widetilde{W}\subset U.
+    \] 
+    Thus we have \(W= ((Z_{s}\cup U_{s}))\cap \widetilde{W}\). 
+    For this \(\widetilde{W}\), 
+    the pair \(
+      \left(Z_{s}\cup U_{s}, \widetilde{W}\right)
+    \) is an open covering of \(\widetilde{W}\cup U_{s}\). 
+    Thus by \eqref{eq:clm-glue}, we can 
+    glue \(\sigma\) and \(\mres[\tau]{\widetilde{W}}\) together 
+    to get a section \(\widetilde{\sigma}\) such that \[
+      \mres[\widetilde{\sigma}]{Z_{s}\cup U_{s}} 
+      =\sigma, 
+      \quad
+      \mres[\widetilde{\sigma}]{\widetilde{W}}
+      =\mres[\tau]{\widetilde{W}}.
     \]
-    is an isomorphism. 
+    This proves the surjectivity of \(\phi\). 
 
     Next Let \(F\in\Dompl(\kk_X)\). 
     Let \(I^{\bm{\bullet}}\) be a complex of flabby sheaves 
