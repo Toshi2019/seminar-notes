@@ -1,4 +1,4 @@
-﻿\documentclass[a4paper,leqno]{jsarticle}
+﻿\documentclass[a4paper,leqno,dvipdfmx]{jsarticle}
 \usepackage{syuron2}
 
 %\usepackage{amsmath}
@@ -585,6 +585,8 @@
 
 \newcommand{\smid}{\mathrel{;}}
 
+%\figre名を英語にする
+\renewcommand{\figurename}{Fig.}
 
 %\theoremstyle{definition}
 \newtheorem{defn}{定義}
@@ -605,15 +607,16 @@
 }
 \author{大柴寿浩}
 \date{
-  \today
-  %2026.3
+  %\today
+  2026.3
 } % 例. 2024年3月卒業の場合は「2024.3」を記入する．
 
 \begin{document}
 
 %表紙の作成
 \maketitle
-
+\pagestyle{myheadings}
+\markright{\today\quad\texttt{\jobname.tex}}
 %目次の作成
 \tableofcontents
 \section{Introduction}\label{sec:intro}
@@ -635,10 +638,14 @@ In Section \ref{sec:t-nonchar},
 we prove a truncated version of 
 the noncharacteristic deformation lemma. 
 
-\section{Notations and Reviews}\label{sec:review}
+\section{Background Material}\label{sec:review}
+
+In this section, 
+we recall some definitions and results from \cite{KS90}, 
+following its notations with slight modifications. 
 
 We consider a commutative unital ring \(\kk\) 
-of finite global dimension (e.g. \(\zz\) or a field). 
+of finite global dimension (e.g.\ \(\zz\) or a field). 
 Let \(X\) be a topological space. 
 We denote by \(\Dompb(\kk_X)\) the bounded derived category of 
 sheaves of \(\kk\)-modules on \(X\). 
@@ -703,36 +710,7 @@ the natural projections. \(f'\) is defined by
 \((x;v)\mapsto (x;df_{x}v)\), 
 and \(\mdiff[f]\) is induced by the transposition of \(f'\). 
 
-\section{Truncated Microsupport}
-
-\begin{Definition+}
-  Let \(F\in\Dompb(\kk_X)\). 
-  The closed conic subset \(\muS[k](F)\) of \(\cotb[X]\) 
-  is defined by: \(p\notin \muS[k](F)\) 
-  if and only if 
-  there exists an open conic neighborhood \(U\) of \(p\) 
-  such that for any \(x\in \pi(U)\) and 
-  for any real-valued \(C^{1}\)-function \(\varphi\) 
-  defined on a neighborhood of \(x\) such that 
-  \(\varphi(x)=0\), \(d\varphi(x)\in U\), 
-  one has \begin{equation}
-    H^{j}_{\{\varphi\geqq0\}}(F)_x=0
-    \quad \text{for any \(j\leqq k\).}
-  \end{equation}
-\end{Definition+}
-
-\subsection*{Functorial Properties} 
-\begin{Proposition+}
-  Let \(f\colon X\to Y\) be a morphism of real analytic manifolds and let \(F\in\Dompb(\kk_X)\) such that \(f\) is proper on \(\supp(F)\). 
-  Then for any \(k\in\zz\), 
-  \begin{equation}\label{eq:t-push}
-    \muS[k](\Rder{f_{\ast}}F)\subset
-    \mpb[f]\mdiff[f]^{-1}(\muS[k](F)).
-  \end{equation}
-  The equality holds in case \(f\) is a closed embedding.
-\end{Proposition+}
-
-\section{Lemmas from {\cite{KS90}}}\label{sec:lemmas}
+\subsection{The Mittag-Leffler Condition}\label{ssec:ML}
 
 Consider a projective system of abelian groups \(
   \left(M_n,\rho_{n,p}\right)_n
@@ -793,7 +771,7 @@ The following is called Kashiwara's lemma.
   injective (resp. surjective).
 \end{Proposition+}
 
-\subsection*{ML procedure for sheaves}
+\subsubsection*{ML procedure for sheaves}
 
 \begin{Proposition+}[{\cite[Proposition 2.7.1]{KS90}}]\label{prop:ks2.7.1}
   Let \(X\) be a topological space and let \(F\in\Dompl(\zz_X)\). 
@@ -826,8 +804,36 @@ The following is called Kashiwara's lemma.
   \end{enumerate}
 \end{Proposition+}
 
+\section{Truncated Microsupport}
 
-\section{Truncated Noncharacteristic Deformation Lemma}
+\begin{Definition+}
+  Let \(F\in\Dompb(\kk_X)\). 
+  The closed conic subset \(\muS[k](F)\) of \(\cotb[X]\) 
+  is defined by: \(p\notin \muS[k](F)\) 
+  if and only if 
+  there exists an open conic neighborhood \(U\) of \(p\) 
+  such that for any \(x\in \pi(U)\) and 
+  for any real-valued \(C^{1}\)-function \(\varphi\) 
+  defined on a neighborhood of \(x\) such that 
+  \(\varphi(x)=0\), \(d\varphi(x)\in U\), 
+  one has \begin{equation}
+    H^{j}_{\{\varphi\geqq0\}}(F)_x=0
+    \quad \text{for any \(j\leqq k\).}
+  \end{equation}
+\end{Definition+}
+
+\subsection*{Functorial Properties} 
+\begin{Proposition+}
+  Let \(f\colon X\to Y\) be a morphism of real analytic manifolds and let \(F\in\Dompb(\kk_X)\) such that \(f\) is proper on \(\supp(F)\). 
+  Then for any \(k\in\zz\), 
+  \begin{equation}\label{eq:t-push}
+    \muS[k](\Rder{f_{\ast}}F)\subset
+    \mpb[f]\mdiff[f]^{-1}(\muS[k](F)).
+  \end{equation}
+  The equality holds in case \(f\) is a closed embedding.
+\end{Proposition+}
+
+\section{Truncated Noncharacteristic Deformation Lemma}\label{sec:t-nonchar}
 
 \begin{Proposition+}\label{prp:t-nonchar}
   Let \(X\) be a Hausdorff space. 
@@ -868,14 +874,102 @@ The following is called Kashiwara's lemma.
   \] 
 \end{Proposition+}
 
-\begin{Example+}
-  Let us give examples of \(\left(U_{t}\right)_{t}\) 
-  satisfying the condition \ref{item:t-nonchar4}, 
-  which is not contained in the original version 
-  of the proposition (\cite[Proposition 2.7.2]{KS90}). 
+\begin{Example+}\label{eg:t-nonchar}
+  The condition \eqref{item:t-nonchar4} of 
+  Proposition \ref{prp:t-nonchar} is not contained 
+  in the original version (\cite[Proposition 2.7.2]{KS90}). 
+  Therefore let us give an example of \(\left(U_{t}\right)_{t}\) 
+  that does not satisfy the condition \eqref{item:t-nonchar4}. 
+  \begin{enumerate}[(i)]
+    \item \label{item:not-gentle} 
+    Let \(X=\rr^2\), and for a real number \(t\) define the 
+    function\[
+      \varphi_{t}(x)\coloneqq\begin{cases}
+        \max\left(0,t(2-\left|x\right|)\right)&(\left|x\right| < 2),\\
+        0& (\left|x\right|\geqq 2).
+      \end{cases}
+    \]
+    Then let us denote by \(U_{t}\) the open subset of \(X\)
+    \[
+      U_{t}\coloneqq
+      \left\{
+        (x,y)\in X;\ y<\varphi_{t}(x)
+      \right\}. 
+    \]
+    \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.75]
+        \def\t{1}
+        \def\xmax{3.5}
+        \def\ymin{-1}
+        \def\ymax{3}
+
+        %------------------
+        % 塗りつぶし
+        %------------------
+
+        % y<0 の部分
+        \fill[black!25] (-\xmax,0) rectangle (\xmax,\ymin);
+
+        % 三角形部分 y < t(2-|x|)
+        \fill[black!25]
+          (-2,0) -- (0,{2*\t}) -- (2,0) -- cycle;
+
+        %------------------
+        % 境界（点線）
+        %------------------
+
+        % 折れ線
+        \draw[very thick,dashed] (-2,0)--(0,{2*\t})--(2,0);
+
+        % x軸（|x|>=2）
+        \draw[very thick,dashed] (-\xmax,0)--(-2,0);
+        \draw[very thick,dashed] (2,0)--(\xmax,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+        % ラベル
+        \node at (2.4,0.8) {\(U_t\)};
+      \end{tikzpicture}
+      \begin{tikzpicture}[scale=0.75]
+        \def\t{1}
+        \def\xmax{3.5}
+        \def\ymin{-1}
+        \def\ymax{3}
+
+        %------------------
+        % 境界（点線）
+        %------------------
+
+        % 折れ線
+        \draw[ultra thick] (-2,0)--(0,{2*\t})--(2,0);
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+        % ラベル
+        \node at (2.4,0.8) {\(U_t\)};
+      \end{tikzpicture}
+      \caption{example \eqref{item:not-gentle}}
+      \label{fig:not-gentle}
+    \end{figure}
+  \end{enumerate}
+  Let us, in turn, give three examples 
+  of \(\left(U_{t}\right)_{t}\) 
+  satisfying the condition \eqref{item:t-nonchar4}. 
   In all the examples below, \(X\) is \(\rr^{2}\). 
   \begin{enumerate}[(i)]
-    \item For a real number \(t\), 
+    \setcounter{enumi}{1}
+    \item \label{item:gentle1}
+    For a real number \(t\), 
     define the open set \(U_{t}\) by \[
       U_{t}\coloneqq
       \begin{cases}
@@ -883,7 +977,41 @@ The following is called Kashiwara's lemma.
       \varnothing&(t\leqq0).         
       \end{cases}
     \]
-    \item For a real number \(t\), 
+    \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.75]
+        \def\t{1.5} % 半径 t > 0
+
+        % 塗りつぶし
+        \fill[black!25] (0,0) circle (\t);
+
+        % 境界
+        \draw[dashed, very thick] (0,0) circle (\t);
+
+        % 軸
+        \draw[->,>=stealth,semithick] (-3.5,0)--(3.5,0) node[below]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,-2)--(0,2) node[right]{\(y\)};
+        \node at (2.3,-0.6) {\(U_t\)};
+      \end{tikzpicture}
+      \begin{tikzpicture}[scale=0.75]
+        \def\t{1.5} % 半径 t > 0
+
+        % 塗りつぶし
+        %\fill[black!25] (0,0) circle (\t);
+
+        % 境界
+        \draw[ultra thick] (0,0) circle (\t);
+
+        % 軸
+        \draw[->,>=stealth,semithick] (-3.5,0)--(3.5,0) node[below]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,-2)--(0,2) node[right]{\(y\)};
+        \node at (2.3,-0.6) {\(Z_t\)};
+      \end{tikzpicture}
+      \caption{example \eqref{item:gentle1}}
+      \label{fig:gentle1}
+    \end{figure}
+    \item \label{item:gentle2}
+    For a real number \(t\), 
     define the function \(\varphi_{t}\colon \rr\to \rr\) as follows.
     If \(t\leqq 0\), set \(\varphi_{t}(x)\equiv 0\). 
     If \(t> 0\), set \[
@@ -896,7 +1024,93 @@ The following is called Kashiwara's lemma.
       U_{t}\coloneqq
       \left\{(x,y)\in X;\ y<\varphi_{t}(x)\right\}. 
     \]
-    \item For a real number \(t\), 
+    \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.75]
+        \def\t{1.5}
+
+        %------------------
+        % 塗りつぶし領域
+        %------------------
+
+        % 半円の下側 y < sqrt(t^2 - x^2)
+        \fill[black!25,domain=-\t:\t,samples=200]
+          (-\t,0)
+          -- plot(\x,{sqrt(\t*\t-\x*\x)})
+          -- (\t,0)
+          -- cycle;
+        \draw[dashed, very thick](0,0) ellipse (1.5 and 1.5);
+
+        % y < 0 の部分
+        \fill[black!25] (-3.5,0) rectangle (3.5,-2);
+
+        %------------------
+        % 境界
+        %------------------
+
+        % 半円（上半分）
+        %\draw[thick,domain=-\t:\t,samples=300]
+        %  plot(\x,{sqrt(\t*\t-\x*\x)});
+
+        % x軸（|x|>=t の境界として）
+        \draw[dashed, very thick] (-3.5,0)--(-\t,0);
+        \draw[dashed, very thick] (\t,0)--(3.5,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-3.5,0)--(3.5,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,-2)--(0,2) node[right]{\(y\)};
+
+        % ラベル
+        \node at (2.3,-0.6) {\(U_t\)};
+      \end{tikzpicture}
+      \begin{tikzpicture}[scale=0.75]
+        \def\t{1.5}
+
+        %------------------
+        % 塗りつぶし領域
+        %------------------
+
+        % 半円の下側 y < sqrt(t^2 - x^2)
+        \fill[black!0,domain=-\t:\t,samples=200]
+          (-\t,0)
+          -- plot(\x,{sqrt(\t*\t-\x*\x)})
+          -- (\t,0)
+          -- cycle;
+        \draw[ultra thick](0,0) ellipse (1.5 and 1.5);
+
+        % y < 0 の部分
+        \fill[black!0] (-3.5,0) rectangle (3.5,-2);
+
+        %------------------
+        % 境界
+        %------------------
+
+        % 半円（上半分）
+        %\draw[thick,domain=-\t:\t,samples=300]
+        %  plot(\x,{sqrt(\t*\t-\x*\x)});
+
+        % x軸（|x|>=t の境界として）
+        %\draw[dashed, very thick] (-3.5,0)--(-\t,0);
+        %\draw[dashed, very thick] (\t,0)--(3.5,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-3.5,0)--(3.5,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,-2)--(0,2) node[right]{\(y\)};
+
+        % ラベル
+        \node at (2.1,0.6) {\(Z_t\)};
+      \end{tikzpicture}
+      \caption{example \eqref{item:gentle2}}
+      \label{fig:gentle2}
+    \end{figure}
+    \item \label{item:gentle3}
+    For a real number \(t\), 
     define the open set \(U_{t}\) as follows. 
     If \(t\leqq0\), set \[
       U_{t}\coloneqq
@@ -911,9 +1125,78 @@ The following is called Kashiwara's lemma.
         \end{array}
       \right\}. 
     \]
+    \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.75]
+        \def\t{2}
+        \def\a{1/\t}
+        % --- 塗りつぶし部分 ---
+
+        % 中央部分 |x|<1/t, y<t
+        \fill[black!20]
+          (-\a,0) rectangle (\a,\t);
+
+        % 右側 |x|>=1/t
+        \fill[black!20,domain=\a:3,samples=200]
+          (\a,0)
+          -- plot(\x,{1/\x})
+          -- (3,0)
+          -- cycle;
+
+        % 左側 |x|>=1/t
+        \fill[black!20,domain=-3:-\a,samples=200]
+          (-3,0)
+          -- plot(\x,{1/abs(\x)})
+          -- (-\a,0)
+          -- cycle;
+
+        % --- 境界線 ---
+
+        % 水平線 y=t
+        \draw[dashed, thick] (-\a,\t)--(\a,\t);
+
+        % 双曲線
+        \draw[dashed, thick,domain=\a:3,samples=200]
+          plot(\x,{1/\x});
+        \draw[dashed, thick,domain=-3:-\a,samples=200]
+          plot(\x,{1/abs(\x)});
+
+        % 軸
+        \draw[->,>=stealth,semithick] (-3.5,0)--(3.5,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,-0.1)--(0,3) node[right]{\(y\)};
+
+        % 補助線
+        %\draw[dashed] (\a,0)--(\a,2);
+        %\draw[dashed] (-\a,0)--(-\a,2);
+
+        % ラベル
+        \node at (2.1,1) {\(U_t\)};
+      \end{tikzpicture}
+      \begin{tikzpicture}[scale=0.75]
+        \def\t{2}
+        \def\a{1/\t}
+
+        % 軸
+        \draw[->,>=stealth,semithick] (-3.5,0)--(3.5,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,-0.1)--(0,3) node[right]{\(y\)};
+
+        % --- 塗りつぶし部分 ---
+
+        % --- 境界線 ---
+
+        % 水平線 y=t
+        \draw[ultra thick] (-\a,\t)--(\a,\t);
+        % ラベル
+        \node at (2,2) {\(Z_t\)};
+      \end{tikzpicture}
+      \caption{example \eqref{item:gentle3}}
+      \label{fig:gentle3}
+    \end{figure}
   \end{enumerate}
-  These families are visualized as Figure \ref{fig:1}.
+  %These families are visualized as in Figure \ref{fig:1}.
 \end{Example+}
+
+
 
 \begin{proof}
   Consider the following conditions for 

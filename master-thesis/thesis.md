@@ -1,10 +1,8 @@
 # 修論
 
-修論（01/16 23:10 更新）[(pdf)](syuron/utf8/syuron.pdf)
+修論（01/17 13:50 更新）[(pdf)](syuron/utf8/oshiba-syuron.pdf)
 
-概要 [(pdf)](syron/utf8/gaiyo.pdf)
-
-truncated noncharacteristic deformation lemma （01/14 00:21 更新）[(pdf)](t-nonchar.pdf)
+概要 [(pdf)](syuron/utf8/gaiyo.pdf)
 
 ## 12/03に話したこと
 

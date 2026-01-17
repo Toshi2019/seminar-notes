@@ -1,10 +1,10 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  17 JAN 2026 10:56
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  17 JAN 2026 13:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/syuron.tex
-(/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/syuron.tex
+**/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/oshiba-syuron.tex
+(/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/oshiba-syuron.tex
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -193,9 +193,9 @@ Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
  (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: dvips.def on input line 149.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/dvips.def
-File: dvips.def 2022/09/22 v3.1e Graphics/color driver for dvips
+Package color Info: Driver file: dvipdfmx.def on input line 149.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
+File: dvipdfmx.def 2022/09/22 v5.0m Graphics/color driver for dvipdfmx
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/enumerate.sty
@@ -234,7 +234,7 @@ Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: dvips.def on input line 107.
+Package graphics Info: Driver file: dvipdfmx.def on input line 107.
 )
 \Gin@req@height=\dimen183
 \Gin@req@width=\dimen184
@@ -409,13 +409,14 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
-Driver file for pgf: pgfsys-dvips.def
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.def
-File: pgfsys-dvips.def 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-postscript.def
-File: pgfsys-common-postscript.def 2023-01-15 v3.1.10 (3.1.10)
-\pgf@objectcount=\count304
-))) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+Driver file for pgf: pgfsys-dvipdfmx.def
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)
+\pgfsys@objnum=\count304
+)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfsyssoftpath@smallbuffer@items=\count305
 \pgfsyssoftpath@bigbuffer@items=\count306
@@ -426,7 +427,7 @@ Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
  (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: dvips.def on input line 274.
+Package xcolor Info: Driver file: dvipdfmx.def on input line 274.
 LaTeX Info: Redefining \color on input line 758.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
@@ -624,7 +625,7 @@ Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
 Package: xy 2013/10/06 Xy-pic version 3.8.9
- (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xyall.tex  Xy-pic option: All features v.3.8 (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xycurve.tex  Xy-pic option: Curve and Spline extension v.3.12 curve,
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xypdf.tex  Xy-pic option: PDF driver v.1.7 loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xyall.tex  Xy-pic option: All features v.3.8 (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xycurve.tex  Xy-pic option: Curve and Spline extension v.3.12 curve,
 \crv@cnt@=\count325
 \crvpts@=\toks57
 \splinebox@=\box103
@@ -634,9 +635,9 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
 \splinelength@=\dimen357
  circles,
 \L@=\dimen358
- loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xyframe.tex  Xy-pic option: Frame and Bracket extension v.3.14 loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xycmtip.tex  Xy-pic option: Computer Modern tip extension v.3.7 (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xytips.tex  Xy-pic option: More Tips extension v.3.11 loaded) loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xyline.tex  Xy-pic option: Line styles extension v.3.10
+ loaded) Xy-pic pdf driver: `curve' extension support (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xypdf-cu.tex loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xyframe.tex  Xy-pic option: Frame and Bracket extension v.3.14 loaded) Xy-pic pdf driver: `frame' extension support (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xypdf-fr.tex loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xycmtip.tex  Xy-pic option: Computer Modern tip extension v.3.7 (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xytips.tex  Xy-pic option: More Tips extension v.3.11 loaded) loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xyline.tex  Xy-pic option: Line styles extension v.3.10
 \xylinethick@=\dimen359
- loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xyrotate.tex  Xy-pic option: Rotate and Scale extension v.3.8 loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xycolor.tex  Xy-pic option: Colour extension v.3.11 loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xymatrix.tex  Xy-pic option: Matrix feature v.3.14
+ loaded) Xy-pic pdf driver: `line' extension support (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xypdf-li.tex loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xyrotate.tex  Xy-pic option: Rotate and Scale extension v.3.8 loaded) Xy-pic pdf driver: `rotate' extension support (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xypdf-ro.tex loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xycolor.tex  Xy-pic option: Colour extension v.3.11 loaded) Xy-pic pdf driver: `color' extension support (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xypdf-co.tex loaded) (/usr/local/texlive/2024/texmf-dist/tex/generic/xypic/xymatrix.tex  Xy-pic option: Matrix feature v.3.14
 \Row=\count326
 \Col=\count327
 \queue@=\toks58
@@ -763,8 +764,12 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip69
 )
+
+LaTeX Warning: Package "xcolor" has already been loaded: ignoring load-time
+(LaTeX)        option "dvipdfmx".
+
 Package hyperref Info: Option `colorlinks' set `true' on input line 55.
- (/usr/local/texlive/2024/texmf-dist/tex/platex/pxjahyper/pxjahyper.sty
+(/usr/local/texlive/2024/texmf-dist/tex/platex/pxjahyper/pxjahyper.sty
 Package: pxjahyper 2023/03/01 v1.3
  (/usr/local/texlive/2024/texmf-dist/tex/platex/pxjahyper/pxjahyper-enc.sty
 Package: pxjahyper-enc 2023/03/01 v1.3
@@ -794,162 +799,160 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 )
 \c@defn=\count350
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 612.
+(Font)              scaled to size 9.24683pt on input line 614.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 612.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
-File: l3backend-dvips.def 2024-02-20 L3 backend support: dvips
+(Font)              scaled to size 9.24683pt on input line 614.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-dvipdfmx.def
+File: l3backend-dvipdfmx.def 2024-02-20 L3 backend support: dvipdfmx
+\g__graphics_track_int=\count351
 \l__pdf_internal_box=\box105
-\g__pdf_backend_object_int=\count351
-\l__pdf_backend_content_box=\box106
-\l__pdf_backend_model_box=\box107
-\g__pdf_backend_annotation_int=\count352
-\g__pdf_backend_link_int=\count353
-\g__pdf_backend_link_sf_int=\count354
-) (./syuron.aux)
-\openout1 = `syuron.aux'.
+\g__pdf_backend_object_int=\count352
+\g__pdf_backend_annotation_int=\count353
+\g__pdf_backend_link_int=\count354
+) (./oshiba-syuron.aux)
+\openout1 = `oshiba-syuron.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 612.
-LaTeX Font Info:    ... okay on input line 612.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 612.
-LaTeX Font Info:    ... okay on input line 612.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 612.
-LaTeX Font Info:    ... okay on input line 612.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 612.
-LaTeX Font Info:    ... okay on input line 612.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 612.
-LaTeX Font Info:    ... okay on input line 612.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 612.
-LaTeX Font Info:    ... okay on input line 612.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 612.
-LaTeX Font Info:    ... okay on input line 612.
-LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 612.
-LaTeX Font Info:    ... okay on input line 612.
-LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 612.
-LaTeX Font Info:    ... okay on input line 612.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 612.
-LaTeX Font Info:    ... okay on input line 612.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 612.
-LaTeX Font Info:    ... okay on input line 612.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 614.
+LaTeX Font Info:    ... okay on input line 614.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 614.
+LaTeX Font Info:    ... okay on input line 614.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 614.
+LaTeX Font Info:    ... okay on input line 614.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 614.
+LaTeX Font Info:    ... okay on input line 614.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 614.
+LaTeX Font Info:    ... okay on input line 614.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 614.
+LaTeX Font Info:    ... okay on input line 614.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 614.
+LaTeX Font Info:    ... okay on input line 614.
+LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 614.
+LaTeX Font Info:    ... okay on input line 614.
+LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 614.
+LaTeX Font Info:    ... okay on input line 614.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 614.
+LaTeX Font Info:    ... okay on input line 614.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 614.
+LaTeX Font Info:    ... okay on input line 614.
 \c@lstlisting=\count355
-Package hyperref Info: Link coloring ON on input line 612.
- (./syuron.out) (./syuron.out)
-\@outlinefile=\write6
-\openout6 = `syuron.out'.
-
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 616.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 616.
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 23.0061pt on input line 616.
+(Font)              scaled to size 6.47278pt on input line 614.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 23.0061pt on input line 616.
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 19.17792pt on input line 616.
-LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 19.17792pt on input line 616.
- [1
-
-] [1]
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 619.
-LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 619.
-LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <20.74> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 619.
-LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 19.17792pt on input line 619.
-LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <20.74> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 619.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 19.17792pt on input line 619.
- (./syuron.toc
-LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 1.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 1.
-LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 2.
-LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 2.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+(Font)              scaled to size 4.62341pt on input line 614.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 614.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 614.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 2.
+(Font)              scaled to size 9.24683pt on input line 614.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 2.
+(Font)              scaled to size 6.47278pt on input line 614.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 2.
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 2.
+(Font)              scaled to size 4.62341pt on input line 614.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 614.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-))
-\tf@toc=\write7
-\openout7 = `syuron.toc'.
+)
+Package xypdf Info: Line width: 0.39998pt on input line 614.
+Package hyperref Info: Link coloring ON on input line 614.
+ (./oshiba-syuron.out) (./oshiba-syuron.out)
+\@outlinefile=\write6
+\openout6 = `oshiba-syuron.out'.
 
-LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 620.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 620.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 632.
+(Font)              scaled to size 13.31541pt on input line 618.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 632.
+(Font)              scaled to size 13.31541pt on input line 618.
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 23.0061pt on input line 618.
+LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
+(Font)              scaled to size 23.0061pt on input line 618.
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 19.17792pt on input line 618.
+LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
+(Font)              scaled to size 19.17792pt on input line 618.
+ [1
+
+] [1]
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 15.9785pt on input line 621.
+LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
+(Font)              scaled to size 15.9785pt on input line 621.
+LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <20.74> not available
+(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 621.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 632.
+(Font)              scaled to size 19.17792pt on input line 621.
+LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <20.74> not available
+(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 621.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 632.
+(Font)              scaled to size 19.17792pt on input line 621.
+ (./oshiba-syuron.toc
+LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 1.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 1.
+)
+\tf@toc=\write7
+\openout7 = `oshiba-syuron.toc'.
+
+LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
+(Font)              scaled to size 13.31541pt on input line 622.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 13.31541pt on input line 622.
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 634.
+LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 634.
+LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 634.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 634.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 647.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 4.62341pt on input line 647.
+ [1] <xymatrix 6x2
+
+Package xypdf Warning: The produced DVI file is NOT PORTABLE. Convert it with
+dvipdfm(x) to the PDF format but do not expect the DVI file itself to be
+displayed correctly.
+
+637>
 LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 635.
+(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 749.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 635.
+(Font)              scaled to size 9.24683pt on input line 749.
 LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 635.
+(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 749.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 635.
-
-
-LaTeX Warning: Reference `sec:t-nonchar' on page 1 undefined on input line 635.
-
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 641.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 641.
-[1] <xymatrix 6x2 637>
+(Font)              scaled to size 9.24683pt on input line 749.
+ [2]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 721.
+(Font)              scaled to size 6.47278pt on input line 821.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 721.
+(Font)              scaled to size 4.62341pt on input line 821.
+ [3]
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 8.32214pt on input line 961.
+LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
+(Font)              scaled to size 8.32214pt on input line 961.
+ [4] [5] <xymatrix 3x2 138> [6] <xymatrix 2x3 230> [7] [8] <xymatrix 2x2 150> <xymatrix 2x2 150> [9] <xymatrix 6x2 578> [10]
 
+LaTeX Warning: Reference `prop:t-nonchar' on page 11 undefined on input line 1809.
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 736.
-
-[2] [3]
-
-LaTeX Warning: Reference `fig:1' on page 4 undefined on input line 916.
-
-[4] <xymatrix 3x2 138> [5] <xymatrix 2x3 230> [6] [7] <xymatrix 2x2 150> <xymatrix 2x2 150> [8] <xymatrix 6x2 578>
-
-LaTeX Warning: Reference `prop:t-nonchar' on page 9 undefined on input line 1527.
-
-[9]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1557.
+(Font)              No change on input line 1839.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1561.
+(Font)              No change on input line 1843.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1565.
+(Font)              No change on input line 1847.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1568.
- [10] (./syuron.aux)
+(Font)              No change on input line 1850.
+[11] (./oshiba-syuron.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
@@ -959,16 +962,16 @@ L3 programming layer <2024-02-20>
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `syuron.out' has not changed.
-(rerunfilecheck)             Checksum: 8C738039945473719061396385466833;1346.
+Package rerunfilecheck Info: File `oshiba-syuron.out' has not changed.
+(rerunfilecheck)             Checksum: E12CCBB5095E0D514B6CA735F44E79E1;1407.
  ) 
 Here is how much of TeX's memory you used:
- 29694 strings out of 474774
- 521463 string characters out of 5758801
- 1959032 words of memory out of 5000000
- 51533 multiletter control sequences out of 15000+600000
- 608182 words of font info for 135 fonts, out of 8000000 for 9000
+ 31463 strings out of 474774
+ 555383 string characters out of 5758801
+ 1961032 words of memory out of 5000000
+ 53284 multiletter control sequences out of 15000+600000
+ 608795 words of font info for 138 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 84i,28n,93p,599b,1075s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,28n,93p,3278b,1081s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on syuron.dvi (12 pages, 74148 bytes).
+Output written on oshiba-syuron.dvi (13 pages, 126292 bytes).
