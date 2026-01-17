@@ -638,9 +638,17 @@ We prove this functorial property under non proper direct images.
 \subsection{Organization}
 
 This paper is organized as follows. 
+In Section \ref{sec:review}, 
+we review the notations and results from \cite{KS90}. 
+In Section \ref{sec:t-nonchar}, 
+we define truncated microsupport of sheaves, 
+due to \cite{KFS03}. 
 In Section \ref{sec:t-nonchar}, 
 we prove a truncated version of 
 the noncharacteristic deformation lemma. 
+Finally in Section \ref{sec:t-morse}, 
+we apply the result in Section \ref{sec:t-nonchar} 
+to the microlocal Morse theory. 
 
 \section{Background Material}\label{sec:review}
 
@@ -1378,7 +1386,7 @@ The following is called Kashiwara's lemma.
     }}
     \] 
     
-    We show the morphism  
+    Let us begin by showing that the morphism  
     \[
       \tilde{\phi}\colon\indlim[t>s]
       \Gamma(U_{t};F)
@@ -1414,23 +1422,28 @@ The following is called Kashiwara's lemma.
     \end{align*}
     Therefore, since \(\overline{U_{t}\smallsetminus U_{s}}\) is 
     compact, we have \(\bigcap_{s<r<t}\overline{A_{r}}\ne\varnothing\). 
-    However, for any \(r\), we have 
-    \begin{align*}
-      \overline{A_{r}}
-      &=\overline{U_{r}\smallsetminus(U\cup U_{s})}\\
-      &=\overline{U_{r}}\cap 
-      \overline{X \smallsetminus(U\cup U_{s})}\\
-      &=\overline{U_{r}}\cap (X \smallsetminus(U\cup U_{s}))
-    \end{align*}
-    and 
+    However, 
+    %for any \(r\), 
+    we have from the hypothesis \(Z_{s}\subset U\) that 
+    %\begin{align*}
+    %  \overline{A_{r}}
+    %  &=\overline{U_{r}\smallsetminus(U\cup U_{s})}\\
+    %  &=\overline{U_{r}}\cap 
+    %  \overline{X \smallsetminus(U\cup U_{s})}\\
+    %  &=\overline{U_{r}}\cap (X \smallsetminus(U\cup U_{s}))
+    %\end{align*}
+    %and 
     \begin{align*}
       \varnothing 
       \ne
       \bigcap_{s<r<t}\overline{A_{r}}
-      &=\bigcap_{s<r<t}\overline{U_{r}}\cap (X \smallsetminus(U\cup U_{s}))\\
-      &=\bigcap_{s<r<t}\overline{U_{r}\smallsetminus U_{s}}\cap \overline{U_{r} \smallsetminus U}\\
+      &=\bigcap_{s<r<t}\overline{U_{r}\smallsetminus(U\cup U_{s})}\\
+      &=\bigcap_{s<r<t}(\overline{U_{r}\smallsetminus U_{s}}\cap \overline{U_{r} \smallsetminus U})\\
+      &=\bigcap_{s<r<t}\overline{U_{r}\smallsetminus U_{s}}\cap \bigcap_{s<r<t}\overline{U_{r} \smallsetminus U}\\
       &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r} \smallsetminus U}\\
+      &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r}}\cap \overline{X\smallsetminus U}\\
       &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r}}\cap (X\smallsetminus U)\\
+      &=Z_{s}\cap (X\smallsetminus U)\cap \bigcap_{s<r<t}\overline{U_{r}}\\
       &=\varnothing. 
     \end{align*}
     This is a contradiction, 
@@ -1599,10 +1612,11 @@ The following is called Kashiwara's lemma.
   This completes the proof. 
 \end{proof}
 
-\section{An Application to Microlocal Morse Theory}
+\section{An Application to Microlocal Morse Theory}\label{sec:t-morse}
 
 In this section, 
-let \(M\) be a manifold of class \(C^\infty\).
+let \(M\) be a manifold of class \(C^\infty\). 
+If \(t\in\rr\), we denote the open interval \((-\infty,t)\) by \(I_{t}\). 
 
 \begin{Lemma+}\label{Lem:1d-t-morse}
   Let \(-\infty<a<b<+\infty\) be real numbers 
@@ -1737,7 +1751,7 @@ let \(M\) be a manifold of class \(C^\infty\).
 
 \section*{Acknowledgement}
 
-We would like to thank Naofumi Honda, Our Superviser for 
+We would like to thank Naofumi Honda, our superviser for 
 teaching us all the important things about mathematics. 
 
 %===============================================
