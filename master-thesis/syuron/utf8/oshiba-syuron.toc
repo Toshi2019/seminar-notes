@@ -4,4 +4,4 @@
 \contentsline {subsection}{\numberline {2.1}The Mittag-Leffler Condition}{2}{subsection.2.1}%
 \contentsline {section}{\numberline {3}Truncated Microsupport}{3}{section.3}%
 \contentsline {section}{\numberline {4}Truncated Noncharacteristic Deformation Lemma}{4}{section.4}%
-\contentsline {section}{\numberline {5}Relative Microlocal Morse Theory via Truncated Microsupport}{9}{section.5}%
+\contentsline {section}{\numberline {5}An Application to Microlocal Morse Theory}{9}{section.5}%
