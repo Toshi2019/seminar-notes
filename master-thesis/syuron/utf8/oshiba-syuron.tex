@@ -1359,38 +1359,83 @@ The following is called Kashiwara's lemma.
     \[\vcenter{\xymatrix{
       \indlim[t>s]\Gamma(U_t;F)
       \ar[rd]
-      \ar[d]
+      \ar[d]_-{\tilde{\phi}}
       &
       \\
       \indlim[U\supset Z_{s}]
       \Gamma(U\cup U_{s};F)
       \ar[d]
-      \ar[r]
+      \ar[r]_-{\phi}
       &
       \Gamma(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
       \ar[d]
       \\
       \indlim[U\supset Z_{s}]
       \Gamma(U;F)
-      \ar[r]
+      \ar[r]_-{\psi}
       &
       \Gamma(Z_{s};\mres[F]{Z_{s}})
     }}
     \] 
-    Note that 
-    \(\left(U_{t}\right)_{t>s}\) is a 
-    cofinal family of \((U\cup U_{s})_{U\supset Z_{s}}\). 
-    %Indeed, 
-    %\textcolor{red}{かく．}
-
-    Therefore, we have 
+    
+    We show the morphism  
     \[
-      \indlim[t>s]
+      \tilde{\phi}\colon\indlim[t>s]
       \Gamma(U_{t};F)
-      \simarr
+      \to 
       \indlim[U\supset Z_{s}]
-      \Gamma(U\cup U_{s};F).  
+      \Gamma(U\cup U_{s};F) 
     \]
+    is an isomorphism. 
+    To prove this, it is enough to show that \(
+      \left(U_{t}\right)_{t>s}
+    \) is a cofinal family of \((U\cup U_{s})_{U\supset Z_{s}}\). 
+    Let \(U\) be an open neighborhood of \(Z_{s}\). 
+    Then we shall show by contradiction that 
+    there exists a real number \(t>s\) such that 
+    \(U_{t}\subset U\cup U_{s}\). 
+    Let us assume that 
+    \(U_{t}\smallsetminus(U\cup U_{s})\ne \varnothing\) 
+    for any \(t>s\). 
+    Then define the family of subsets \(
+      \left(A_{r}\right)_{s<r<t}
+    \) of \(\overline{U_{t}\smallsetminus U_{s}}\) by \(
+      A_{r}\coloneqq U_{r}\smallsetminus (U\cup U_{s})
+    \). 
+    This \(\left(A_{r}\right)_{s<r<t}\) satisfies 
+    the finite intersection property. 
+    Indeed, for finite real numbers \(s<r_{0}<\dots<r_{m}<t\), 
+    it follows from the hypothesis that
+    \begin{align*}
+      A_{r_{0}}\cap \dots \cap A_{r_{m}}
+      &= A_{r_{0}}\\
+      &= U_{r_{0}}\smallsetminus (U\cup U_{s})\\
+      &\ne \varnothing.
+    \end{align*}
+    Therefore, since \(\overline{U_{t}\smallsetminus U_{s}}\) is 
+    compact, we have \(\bigcap_{s<r<t}\overline{A_{r}}\ne\varnothing\). 
+    However, for any \(r\), we have 
+    \begin{align*}
+      \overline{A_{r}}
+      &=\overline{U_{r}\smallsetminus(U\cup U_{s})}\\
+      &=\overline{U_{r}}\cap 
+      \overline{X \smallsetminus(U\cup U_{s})}\\
+      &=\overline{U_{r}}\cap (X \smallsetminus(U\cup U_{s}))
+    \end{align*}
+    and 
+    \begin{align*}
+      \varnothing 
+      \ne
+      \bigcap_{s<r<t}\overline{A_{r}}
+      &=\bigcap_{s<r<t}\overline{U_{r}}\cap (X \smallsetminus(U\cup U_{s}))\\
+      &=\bigcap_{s<r<t}\overline{U_{r}\smallsetminus U_{s}}\cap \overline{U_{r} \smallsetminus U}\\
+      &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r} \smallsetminus U}\\
+      &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r}}\cap (X\smallsetminus U)\\
+      &=\varnothing. 
+    \end{align*}
+    This is a contradiction, 
+    and it follows that \(\tilde{\phi}\) is an isomorphism. 
+
     By this isomorphism, it is enough to show that
     \[
       \phi\colon\indlim[U\supset Z_{s}]
