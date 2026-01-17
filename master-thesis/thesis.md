@@ -1,6 +1,6 @@
 # 修論
 
-修論（01/17 16:55 更新）[(pdf)](syuron/utf8/oshiba-syuron.pdf)
+修論（01/18 08:00 更新）[(pdf)](syuron/utf8/oshiba-syuron.pdf)
 
 概要 [(pdf)](syuron/utf8/gaiyo.pdf)
 
