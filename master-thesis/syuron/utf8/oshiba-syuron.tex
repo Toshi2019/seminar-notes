@@ -920,6 +920,16 @@ The following is called Kashiwara's lemma.
         (x,y)\in X;\ y<\varphi_{t}(x)
       \right\}. 
     \]
+    This family \((U_{t})_{t}\) does not satisfy 
+    the condition \eqref{item:t-nonchar4}. 
+    Indeed, if \(s<t\), 
+    we have 
+    \[
+      Z_{s}=\left\{
+        (x,y)\in X;\ y=\varphi_{s}(x)
+      \right\}
+    \] and the point \((2,0)\in Z_{s}\) is 
+    not contained in \(U_{t}\). 
     \begin{figure}[htb]
       \centering
       \begin{tikzpicture}[scale=0.75]
@@ -980,7 +990,7 @@ The following is called Kashiwara's lemma.
         \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
 
         % ラベル
-        \node at (2.4,0.8) {\(U_t\)};
+        \node at (2.4,0.8) {\(Z_t\)};
       \end{tikzpicture}
       \caption{example \eqref{item:not-gentle}}
       \label{fig:not-gentle}

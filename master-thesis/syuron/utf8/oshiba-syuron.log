@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  17 JAN 2026 15:32
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  17 JAN 2026 16:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -937,19 +937,19 @@ LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 (Font)              scaled to size 4.62341pt on input line 845.
  [3]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 985.
+(Font)              scaled to size 8.32214pt on input line 995.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 985.
+(Font)              scaled to size 8.32214pt on input line 995.
  [4] [5] [6] <xymatrix 2x3 230> [7] [8] [9]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1689.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1693.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1697.
+(Font)              No change on input line 1699.
  [10]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1700.
+(Font)              No change on input line 1703.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1707.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1710.
  [11] (./oshiba-syuron.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
@@ -962,10 +962,10 @@ Package rerunfilecheck Info: File `oshiba-syuron.out' has not changed.
 Here is how much of TeX's memory you used:
  31463 strings out of 474774
  555380 string characters out of 5758801
- 1951032 words of memory out of 5000000
+ 1949032 words of memory out of 5000000
  53284 multiletter control sequences out of 15000+600000
  608795 words of font info for 138 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 84i,28n,93p,3278b,1053s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,28n,93p,3278b,1077s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on oshiba-syuron.dvi (13 pages, 116124 bytes).
+Output written on oshiba-syuron.dvi (13 pages, 116624 bytes).
