@@ -1,4 +1,4 @@
-﻿\documentclass[a4paper,leqno,dvipdfmx]{jsarticle}
+﻿\documentclass[a4paper,leqno,dvipdfmx,draft]{jsarticle}
 \usepackage{syuron2}
 
 %\usepackage{amsmath}
@@ -619,8 +619,13 @@
 
 %表紙の作成
 \maketitle
+%=======================================================================================================
+% 添削用ヘッダ（提出時に消す）
+% 一番上のdraft も消すこと
+% 添削時に色をつけた場合はそれも消すこと
 \pagestyle{myheadings}
 \markright{\today\quad\texttt{\jobname.tex}}
+%============================================================================
 %目次の作成
 \tableofcontents
 \section{Introduction}\label{sec:intro}
@@ -987,9 +992,29 @@ before the proof.
       \right\}
     \] and the point \((2,0)\in Z_{s}\) is 
     not contained in \(U_{t}\). 
+    Moreover, let us denote by \(Z\) the locally closed subset
+    \[
+      Z\coloneqq \left\{(x,y)\in X;\ (x+2)^{2}+(y-1)^{2}=1\right\}\setminus \left\{(-1,0)\right\}. 
+    \]
+    Then we denote by \(\kk_{Z}\) the sheaf on \(X\). 
+    If \(j\leqq0\), we have \(
+      H^{j}_{X\smallsetminus U_{t}}(\kk_{Z})_{x}=0
+    \) for all \(t>s\) and \(x\in Z_{s}\smallsetminus U_{t}\), 
+    but the morhism \(
+      H^{0}(U_{1};\kk_{Z})=\kk
+      \to 
+      0 = H^{0}(U_{0};\kk_{Z})
+    \) is not injective. 
+    This give an example that 
+    satisfies the conditions 
+    \eqref{item:t-nonchar1}--\eqref{item:t-nonchar3} but 
+    not \eqref{item:t-nonchar4}, 
+    which result in that 
+    the consequence of the proposition does not hold. 
+    Hence the condition \eqref{item:t-nonchar4} is necessary. 
     \begin{figure}[htb]
       \centering
-      \begin{tikzpicture}[scale=0.75]
+      \begin{tikzpicture}[scale=0.66]
         \def\t{1}
         \def\xmax{3.5}
         \def\ymin{-1}
@@ -1027,7 +1052,7 @@ before the proof.
         % ラベル
         \node at (2.4,0.8) {\(U_t\)};
       \end{tikzpicture}
-      \begin{tikzpicture}[scale=0.75]
+      \begin{tikzpicture}[scale=0.66]
         \def\t{1}
         \def\xmax{3.5}
         \def\ymin{-1}
@@ -1047,7 +1072,52 @@ before the proof.
         \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
 
         % ラベル
-        \node at (2.4,0.8) {\(Z_t\)};
+        \node at (1.4,1.2) {\(Z_t\)};
+      \end{tikzpicture}
+      \begin{tikzpicture}[scale=0.66]
+        \def\t{1}
+        \def\xmax{3.5}
+        \def\ymin{-1}
+        \def\ymax{3}
+
+        %------------------
+        % 塗りつぶし
+        %------------------
+
+        % y<0 の部分
+        \fill[black!25] (-\xmax,0) rectangle (\xmax,\ymin);
+
+        % 三角形部分 y < t(2-|x|)
+        \fill[black!25]
+          (-2,0) -- (0,{2*\t}) -- (2,0) -- cycle;
+
+        %------------------
+        % 境界（点線）
+        %------------------
+
+        % 折れ線
+        \draw[very thick,dashed] (-2,0)--(0,{2*\t})--(2,0);
+
+        % x軸（|x|>=2）
+        \draw[very thick,dashed] (-\xmax,0)--(-2,0);
+        \draw[very thick,dashed] (2,0)--(\xmax,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+        % 円
+        \def\s{1} % 半径 t > 0
+        \draw[thick] (-2,1) circle (\s);
+        \fill[black!0](-2,0) circle (0.1);
+        \draw (-2,0) circle (0.1);
+
+        % ラベル
+        \node at (2.4,0.8) {\(U_t\)};
+        \node at (-1.4,2.4) {\(Z\)};
       \end{tikzpicture}
       \caption{example \eqref{item:not-gentle}}
       \label{fig:not-gentle}
@@ -1278,7 +1348,7 @@ before the proof.
         % 水平線 y=t
         \draw[ultra thick] (-\a,\t)--(\a,\t);
         % ラベル
-        \node at (2,2) {\(Z_t\)};
+        \node at (1.2,2) {\(Z_t\)};
       \end{tikzpicture}
       \caption{example \eqref{item:gentle3}}
       \label{fig:gentle3}

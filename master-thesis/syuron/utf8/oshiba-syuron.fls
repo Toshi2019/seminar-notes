@@ -395,13 +395,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
-INPUT ./oshiba-syuron.out
-INPUT ./oshiba-syuron.out
-INPUT oshiba-syuron.out
-INPUT oshiba-syuron.out
-INPUT ./oshiba-syuron.out
-INPUT ./oshiba-syuron.out
-OUTPUT oshiba-syuron.out
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlminr-v.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlminr-h.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
@@ -446,5 +439,3 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlminr
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT oshiba-syuron.aux
-INPUT ./oshiba-syuron.out
-INPUT ./oshiba-syuron.out
