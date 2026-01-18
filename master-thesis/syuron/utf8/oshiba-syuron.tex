@@ -630,12 +630,37 @@ We study microlocal Morse theory, which is presented,
 for instance, in \cite{GKS12}. 
 However, we replace the notion of microsupports with
 that of truncatd microsupprts, introduced by 
-Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KFS03}.
-In \cite{KFS03}, they do not study the functorial property of 
-truncated microsupport of direct images of non proper morphisms. 
-We prove this functorial property under non proper direct images. 
+Kashiwara, Monteiro-Fernandes, and Schapira in \cite{KFS03}, 
+in course of the study of solutions of 
+boundary value problems of \(\mcal{D}\)-modules.
+It was in the context of such kinds of analytic problems 
+that they studied truncated microsupports. 
+However, we shall apply them to study some geometrical problems. 
+In particular, we shall first prove a truncated version 
+of the noncharacteristic deformation lemma, that is, 
+if we weaken a hypothesis of the lemma and add 
+a certain topological condition to the family of deformation, 
+we can prove a finer result of it. 
+Then, in turn, we can formulate 
+the celebrated microlocal morse lemma, 
+under the light of truncated microsupport. 
+Note that by using the truncated microsupport, we can gain the 
+information of the unique continuation. 
+More precisely, if \(k\) is an integer and 
+we consider the truncated microsupport \(\muS[k](F)\) of 
+a bounded complex of sheaves \(F\), 
+we can investigate whether 
+the cohomology sheaves \(H^{j}(F)\) propagate or not for \(j<k\), 
+and in particular, 
+whether the continuation \(H^{k}(F)\) is unique or not, 
+if it can be extended. 
 
-\subsection{Organization}
+
+%In \cite{KFS03}, they do not study the functorial property of 
+%truncated microsupport of direct images of non proper morphisms. 
+%We prove this functorial property under non proper direct images. 
+
+%\subsection{Organization}
 
 This paper is organized as follows. 
 In Section \ref{sec:review}, 
@@ -659,24 +684,28 @@ following its notations with slight modifications.
 We consider a commutative unital ring \(\kk\) 
 of finite global dimension (e.g.\ \(\zz\) or a field). 
 Let \(X\) be a topological space. 
-We denote by \(\Dompb(\kk_X)\) the bounded derived category of 
+We denote by \(\Dompb(\kk_X)\) (resp.\ \(\Dompl(\kk_{X})\)) 
+the bounded derived category (resp.\ bounded 
+from below derived category) of 
 sheaves of \(\kk\)-modules on \(X\). 
 
-Let us denote \(Z\) a locally closed set of \(X\) 
-and \(i\colon Z\hookrightarrow X\) an inclusion. 
+Let us denote by \(Z\) a locally closed set of \(X\) 
+and by \(i\colon Z\hookrightarrow X\) an inclusion. 
 We use the following functors: 
 \[
   \RG_{Z}(\blk) \coloneqq \Rder[]{i_{\ast}}i^{!}, 
   \quad
   (\blk)_{Z}\coloneqq \Rder[]{i_{!}}i^{-1}.
 \]
-If there is no risk, 
+If there is no risk of confusion, 
 we will write \(\kk_Z\) rather than \(\kk_{X,Z}\).
 
-\subsection*{Geometrical Notations}
+\subsection*{Geometrical Notions}
 Let \(M\) be a real manifold of class \(C^\infty\). 
-We denote by \(\pi\colon \cotb[M] \to M\) 
+We denote by \(\pi_{M}\colon \cotb[M] \to M\) 
 the cotangent bundle of \(M\). 
+If there is no risk of confusion, 
+we will write \(\pi\) rather than \(\pi_{M}\). 
 If \(f\colon M\to N\) is a morphism of manifolds, 
 then we have the natural diagram. 
 \[\vcenter{\xymatrix{
@@ -746,7 +775,7 @@ and \(\mdiff[f]\) is induced by the transposition of \(f'\).
 
 A paracomact space is by definition a Hausdorff space. 
 
-\subsection{The Mittag-Leffler Condition}\label{ssec:ML}
+\subsection*{The Mittag-Leffler Condition}\label{ssec:ML}
 
 Consider a projective system of abelian groups \(
   \left(M_n,\rho_{n,p}\right)_n
@@ -783,8 +812,8 @@ Denote by
 the natural morphism.
 
 \begin{Proposition+}[{\cite[Proposition 1.12.4]{KS90}}]\label{prop:ks1.12.4}
-  Assume that for each \(j\in\zz\), 
-  the system \(\left(M_{n}^{j-1}\right)_{n}\) satisfies 
+  Assume that for each \(k\in\zz\), 
+  the system \(\left(M_{n}^{k-1}\right)_{n}\) satisfies 
   the ML condition. 
   Then
   \begin{enumerate}[(a)]
@@ -842,6 +871,11 @@ The following is called Kashiwara's lemma.
 
 \section{Truncated Microsupport}
 
+We give in this section 
+the definition of a truncated microsupport 
+and 
+its functorial property under direct images of proper morphisms. 
+
 \begin{Definition+}
   Let \(F\in\Dompb(\kk_X)\). 
   The closed conic subset \(\muS[k](F)\) of \(\cotb[X]\) 
@@ -858,9 +892,10 @@ The following is called Kashiwara's lemma.
   \end{equation}
 \end{Definition+}
 
-\subsection*{Functorial Properties} 
+\subsection*{A Functorial Property under Proper Direct Images} 
 \begin{Proposition+}
-  Let \(f\colon X\to Y\) be a morphism of real analytic manifolds and let \(F\in\Dompb(\kk_X)\) such that \(f\) is proper on \(\supp(F)\). 
+  Let \(f\colon X\to Y\) be a morphism of 
+  manifolds and let \(F\in\Dompb(\kk_X)\) such that \(f\) is proper on \(\supp(F)\). 
   Then for any \(k\in\zz\), 
   \begin{equation}\label{eq:t-push}
     \muS[k](\Rder{f_{\ast}}F)\subset
@@ -871,7 +906,17 @@ The following is called Kashiwara's lemma.
 
 \section{Truncated Noncharacteristic Deformation Lemma}\label{sec:t-nonchar}
 
-\begin{Proposition+}\label{prp:t-nonchar}
+In this section, we prove a truncated version of 
+the noncharacteristic deformation lemma. 
+First we state the result. 
+Because the original proof of the lemma cannot be applied 
+to our truncatd version, we make an additional assumption of 
+the family of deformation. 
+Therefore, to make this assumption acceptable to the reader, 
+we give several examples of families of deformation
+before the proof. 
+
+\begin{Proposition+}[Truncated Noncharacteristic Deformation Lemma]\label{prp:t-nonchar}
   Let \(X\) be a Hausdorff space. 
   Let \(F\in\Dompl(\kk_X)\), and 
   \(\left(U_{t}\right)_{t\in\rr}\) be a family of 
@@ -1615,7 +1660,11 @@ The following is called Kashiwara's lemma.
 \section{An Application to Microlocal Morse Theory}\label{sec:t-morse}
 
 In this section, 
-let \(M\) be a manifold of class \(C^\infty\). 
+we shall apply the result in the previous section to 
+a particular case of a truncated version 
+of microlocal Morse lemma. 
+
+Let \(M\) be a manifold of class \(C^\infty\). 
 If \(t\in\rr\), we denote the open interval \((-\infty,t)\) by \(I_{t}\). 
 
 \begin{Lemma+}\label{Lem:1d-t-morse}
@@ -1677,14 +1726,14 @@ If \(t\in\rr\), we denote the open interval \((-\infty,t)\) by \(I_{t}\).
   we have the isomorphisms for all \(t\in \lclosed a,b\ropen\) and \(j<k\),
   \[
     H^{j}(I_{b};F)
-    =H^{j}(\bigcup_{s}I_{s};F)
+    =H^{j}\left(\bigcup_{s}I_{s};F\right)
     \simar
     H^{j}(I_{t};F)
   \]
   and the injections
   \[
-    H^{k}(I_{b};F)
-    =H^{k}(\bigcup_{s}I_{s};F)
+    H^{k}\left(I_{b};F\right)
+    =H^{k}\left(\bigcup_{s}I_{s};F\right)
     \hookrightarrow
     H^{k}(I_{t};F).
   \]
@@ -1753,7 +1802,12 @@ If \(t\in\rr\), we denote the open interval \((-\infty,t)\) by \(I_{t}\).
 
 We would like to thank Naofumi Honda, our superviser for 
 teaching us all the important things about mathematics. 
-
+We also thank Ryosuke Sakamoto, 
+Kango Ito, Yoshiaki Yamamura for fruitiful discussions. 
+In particular, Sakamoto-san gave us several ideas 
+that is contained in this paper. 
+We would like to thank Yuichi Ike 
+for giving us some fundamental ideas of this paper. 
 %===============================================
 % 参考文献スペース
 %===============================================

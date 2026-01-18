@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  18 JAN 2026 08:39
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  18 JAN 2026 11:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -903,19 +903,19 @@ LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 626.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 626.
-LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 638.
-LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 638.
-LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 638.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 638.
  [1]
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 659.
+(Font)              scaled to size 6.47278pt on input line 684.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 659.
+(Font)              scaled to size 4.62341pt on input line 684.
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 703.
+LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 703.
+LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 703.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 703.
  <xymatrix 6x2
 
 Package xypdf Warning: The produced DVI file is NOT PORTABLE. Convert it with
@@ -924,33 +924,32 @@ displayed correctly.
 
 637>
 LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 727.
+(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 756.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 727.
+(Font)              scaled to size 9.24683pt on input line 756.
 LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 727.
+(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 756.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 727.
+(Font)              scaled to size 9.24683pt on input line 756.
  [2] [3]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 857.
+(Font)              scaled to size 6.47278pt on input line 891.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 857.
+(Font)              scaled to size 4.62341pt on input line 891.
  [4]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 1007.
+(Font)              scaled to size 8.32214pt on input line 1052.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 1007.
- [5] [6] <xymatrix 2x3 260> [7] [8] [9] [10]
+(Font)              scaled to size 8.32214pt on input line 1052.
+ [5] [6] [7] <xymatrix 2x3 260> [8] [9] [10] [11]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1763.
+(Font)              No change on input line 1817.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1767.
- [11]
+(Font)              No change on input line 1821.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1771.
+(Font)              No change on input line 1825.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1774.
+(Font)              No change on input line 1828.
  [12] (./oshiba-syuron.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
@@ -958,15 +957,15 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `oshiba-syuron.out' has not changed.
-(rerunfilecheck)             Checksum: D567DD1B25ADB7F8603C8E9F72F5CF29;1314.
+(rerunfilecheck)             Checksum: 4ECBA3FFF11AE1F0687BE4FC6CBFA172;994.
  ) 
 Here is how much of TeX's memory you used:
- 31464 strings out of 474774
- 555393 string characters out of 5758801
- 1951032 words of memory out of 5000000
- 53285 multiletter control sequences out of 15000+600000
+ 31462 strings out of 474774
+ 555371 string characters out of 5758801
+ 1948032 words of memory out of 5000000
+ 53283 multiletter control sequences out of 15000+600000
  608795 words of font info for 138 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 84i,28n,93p,3278b,1077s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,28n,93p,3278b,1083s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on oshiba-syuron.dvi (14 pages, 121400 bytes).
+Output written on oshiba-syuron.dvi (14 pages, 122204 bytes).
