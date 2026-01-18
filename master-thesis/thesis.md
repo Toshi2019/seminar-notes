@@ -1,6 +1,14 @@
 # 修論
 
-修論（01/18 16:10 更新）[(pdf)](syuron/utf8/oshiba-syuron.pdf)
+修論（01/18 19:05 更新）[(pdf)](syuron/utf8/oshiba-syuron.pdf)
+
+## 更新のあしあと
+
+田邊さんのコメントを反映（赤字）
+
+Intro の拡張の言い換えはどうしよう？
+
+クソデカ補題の置き場所は本多先生と相談．
 
 概要 [(pdf)](syuron/utf8/gaiyo.pdf)
 
