@@ -1,10 +1,10 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  11 JAN 2026 15:41
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  19 JAN 2026 10:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/gaiyo.tex
-(/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/gaiyo.tex
+**/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/gaiyo-oshiba.tex
+(/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/gaiyo-oshiba.tex
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -58,8 +58,8 @@ File: l3backend-dvips.def 2024-02-20 L3 backend support: dvips
 \g__pdf_backend_annotation_int=\count197
 \g__pdf_backend_link_int=\count198
 \g__pdf_backend_link_sf_int=\count199
-) (./gaiyo.aux)
-\openout1 = `gaiyo.aux'.
+) (./gaiyo-oshiba.aux)
+\openout1 = `gaiyo-oshiba.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
@@ -109,7 +109,7 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 9.24683pt on input line 18.
  [1
 
-] (./gaiyo.aux)
+] (./gaiyo-oshiba.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
@@ -118,11 +118,11 @@ L3 programming layer <2024-02-20>
  ) 
 Here is how much of TeX's memory you used:
  706 strings out of 474774
- 12029 string characters out of 5758801
- 1922032 words of memory out of 5000000
+ 12113 string characters out of 5758801
+ 1923032 words of memory out of 5000000
  23141 multiletter control sequences out of 15000+600000
  564290 words of font info for 73 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 43i,5n,51p,216b,230s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 43i,5n,51p,223b,230s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on gaiyo.dvi (1 page, 2208 bytes).
+Output written on gaiyo-oshiba.dvi (1 page, 2732 bytes).

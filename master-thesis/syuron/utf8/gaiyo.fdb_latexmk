@@ -1,29 +1,10 @@
 # Fdb version 4
-["dvipdf"] 1768113711.25026 "gaiyo.dvi" "gaiyo.pdf" "gaiyo" 1768113712.53536 0
-  "gaiyo.dvi" 1768113711.2275 2208 329a3d4d5e0444eb48b4aa9239068e64 "latex"
+["dvipdf"] 0 "gaiyo.dvi" "gaiyo.pdf" "gaiyo" 0 -1
+  "gaiyo.dvi" 0 -1 0 "latex"
   (generated)
   "gaiyo.pdf"
   (rewritten before read)
-["latex"] 1768113710.57946 "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/gaiyo.tex" "gaiyo.dvi" "gaiyo" 1768113712.53449 0
-  "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/gaiyo.tex" 1768113710.2224 2083 7cc519f90a8116fee719eb0a738875f3 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1136768653 1292 296a67155bdbfc32aa9c636f21e91433 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm" 1522271273 812 52bd92aa20c58a398601cda6dd62c8d1 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-v.tfm" 1522271273 536 5f2475e9deb198c23894800d3c5eed00 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-h.tfm" 1522271273 812 52bd92aa20c58a398601cda6dd62c8d1 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-v.tfm" 1522271273 536 5f2475e9deb198c23894800d3c5eed00 ""
-  "/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-dvips.def" 1708463273 35584 26b44d23a997c5fa1bc4461ec5ce39f5 ""
-  "/usr/local/texlive/2024/texmf-dist/tex/platex/jsclasses/jsarticle.cls" 1677186565 61387 1c16fa09f9aa344f6b7ed4a7e2c399b2 ""
-  "/usr/local/texlive/2024/texmf-dist/tex/platex/jsclasses/jslogo.sty" 1601931076 5585 8e4615c54073c390d14154b29cee89cb ""
-  "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
-  "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
-  "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "gaiyo.aux" 1768113711.22676 32 3985256e7290058c681f74d7a3565a19 "latex"
-  "gaiyo.tex" 1768113710.2224 2083 7cc519f90a8116fee719eb0a738875f3 ""
-  "gaiyo2.sty" 1702543289 4025 e383136389b4a8acf55bcc71342bca14 ""
+["latex"] 1768787166.84165 "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/gaiyo" "gaiyo.dvi" "gaiyo" 1768787167.30598 2
   (generated)
   "gaiyo.aux"
   "gaiyo.dvi"
