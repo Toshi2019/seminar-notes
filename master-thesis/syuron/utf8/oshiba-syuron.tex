@@ -671,7 +671,7 @@ the notion of critical points of \(\varphi\) with
 one with respect to \(F\). 
 That is to say, we can define a critical point 
 with respect to \(F\) by the point \(p\) 
-such that \(d\varphi(p)\) does not belongs to \(\muS[](F)\). 
+such that \(d\varphi(p)\) belongs to \(\muS[](F)\). 
 We can then obtain a analogous result of Morse theory in a
 framework of sheaf theory. 
 \textcolor{black}{In Section \ref{sec:t-morse}, we prove a truncated version 
@@ -1922,7 +1922,7 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
     \Gamma(U;F)
     \ar[r]_-{\psi}
     &
-    \Gamma(Z_{s};\mres[F]{Z_{s}})
+    \Gamma(Z_{s};\mres[F]{Z_{s}})\textcolor{darkred}{.}
   }}
   \] 
   
@@ -2016,8 +2016,9 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
   and the injectivities of \(\psi\) and \(\psi'\). 
 
   Let us prove that \(\phi\) is surjective. 
-  Let \(\sigma\in \Gamma(Z_{s};F)\) be 
-  a section of \(\mres[F]{Z_{s}\cup U_{s}}\). 
+  Let \(
+    \sigma\in \Gamma(\textcolor{darkred}{Z_{s}\cup U_{s}};F)
+  \) be a section of \(\mres[F]{Z_{s}\cup U_{s}}\). 
   By the isomorphism \(\psi\) above, 
   we can extend \(\mres[\sigma]{Z_{s}}\) to 
   an open neighborhood \(U\) of \(Z_{s}\) in \(X\). 
@@ -2035,9 +2036,9 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
   we can find an open subset \(W\) of 
   \((Z_{s}\cup U_{s})\cap U\) 
   such that 
-  \begin{equation}\label{eq:clm-glue}
+  \begin{equation*}
     \mres[\tau]{W}=\mres[\sigma]{W}. 
-  \end{equation}
+  \end{equation*}
   By the definition of the induced topology 
   of \((Z_{s}\cup U_{s})\cap U\), 
   there exists an open set \(\widetilde{W}\) of \(X\) 
@@ -2047,13 +2048,20 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
     \quad\text{and}\quad
     \widetilde{W}\subset U.
   \] 
-  Thus we have \(W= ((U\cup U_{s}))\cap \widetilde{W}=U_{s}\cap W\). 
+  Thus we have 
+  \begin{equation}\label{eq:clm-glue}
+    \textcolor{darkred}{U_{s}\cap W = U_{s}\cap \widetilde{W},
+    \quad
+    \mres[\sigma]{U_{s}\cap \widetilde{W}}
+    =\mres[\tau]{U_{s}\cap \widetilde{W}}.}
+  \end{equation}
   For this \(\widetilde{W}\), 
   the pair \(
     \left(U_{s}, \widetilde{W}\right)
   \) is an open covering of \(\widetilde{W}\cup U_{s}\). 
   Thus by \eqref{eq:clm-glue}, we can 
-  glue \(\sigma\) and \(\mres[\tau]{\widetilde{W}}\) together 
+  glue \(\textcolor{darkred}{\mres[\sigma]{U_{s}}}\) 
+  and \(\mres[\tau]{\widetilde{W}}\) together 
   and get a section \(\widetilde{\sigma}\) such that \[
     \mres[\widetilde{\sigma}]{Z_{s}\cup U_{s}} 
     =\sigma, 
@@ -2063,7 +2071,7 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
   \]
   This proves the surjectivity of \(\phi\). 
 
-  Next Let \(F\in\Dompl(\kk_X)\). 
+  Next \textcolor{darkred}{l}et \(F\in\Dompl(\kk_X)\). 
   Let \(I^{\bm{\bullet}}\) be a complex of flabby sheaves 
   quasi-isomorphic to \(F\). 
   Then  it follows from \eqref{eq:qis-claim} that 
