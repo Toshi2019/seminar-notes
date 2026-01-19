@@ -659,8 +659,8 @@ sheaves of \(\kk\)-modules on \(X\).}
 and \(F\) a complex of sheaves, 
 then the microsupport \(\muS[](F)\) of \(F\) is 
 a closed conic (i.e.\ stable 
-under \(\rr^{+}\)-action) subset of 
-the cotangent bundle of \(M\). 
+under \(\rr^{+}\)-action) involutive (i.e.\ coisotropic) subset 
+of the cotangent bundle of \(M\). 
 The precise definition is given in Section \ref{sec:t-ss}, 
 but roughly speaking, \(\muS[](F)\) describes the (co)directions 
 of \(X\) in which the cohomology of \(F\) cannot be extended. 
@@ -740,7 +740,7 @@ the derived functors of the functors of the global section over
 a member of the family.}
 
 \textcolor{black}{
-This lemma is one og the most fundamental result 
+This lemma is one of the most fundamental result 
 in microlocal sheaf theory 
 used all along \cite{KS90}. 
 Thus a truncated version of this lemma 
@@ -819,7 +819,7 @@ the cotangent bundle of \(M\).
 If there is no risk of confusion, 
 we will write \(\pi\) rather than \(\pi_{M}\). 
 If \(f\colon M\to N\) is a morphism of manifolds \textcolor{black}{(i.e.\ a \(C^{\infty}\)-map)}, 
-then we have the natural diagram. 
+then we have the natural diagram\textcolor{darkred}{s}. 
 \[\vcenter{\xymatrix{
   TM
     \ar[r]^-{f'}
@@ -857,7 +857,7 @@ then we have the natural diagram.
   &
   N.
 }}\]
-In this diagram, 
+In \textcolor{darkred}{these diagrams}, 
 \(\mptan[f]\) and \(\mpb[f]\) denote 
 the natural projections\textcolor{black}{,} \(f'\) is defined by 
 \((x;v)\mapsto (x;df_{x}v)\), 
@@ -927,7 +927,7 @@ the natural morphism.
 
 \begin{Proposition+}[{\cite[Proposition 1.12.4]{KS90}}]\label{prop:ks1.12.4}
   Assume that for each \(k\in\zz\), 
-  the system \(\left(M_{n}^{k-1}\right)_{n}\) satisfies 
+  the system \(\left(M_{n}^{\textcolor{darkred}{k}}\right)_{n}\) satisfies 
   the ML condition. 
   Then
   \begin{enumerate}[(a)]
@@ -952,8 +952,11 @@ The following is called Kashiwara's lemma.
 
 \subsection{\textcolor{black}{ML Procedure for Sheaves}}
 
+\textcolor{darkred}{We use the following 
+in the proof of Theorem \ref{prp:t-nonchar}.}
+
 \begin{Proposition+}[{\cite[Proposition 2.7.1]{KS90}}]\label{prop:ks2.7.1}
-  Let \(X\) be a topological space and let \(F\in\Dompl(\zz_X)\). 
+  Let \(X\) be a topological space and let \(F\in\Dompl(\textcolor{darkred}{\kk}_X)\). 
   Let \(\left(U_n\right)_{n\in\nn}\) be an increasing sequence 
   of open subsets of \(X\), \(\left(Z_n\right)_{n\in\nn}\) 
   a decreasing sequence of closed subsets of \(X\). 
@@ -1013,9 +1016,12 @@ and Schapira modified
 this definition and gave the notion of truncated microsupport.}
 
 \begin{Definition+}
-  Let \(F\in\Dompb(\kk_X)\). 
-  The closed conic subset \(\muS[k](F)\) of \(\cotb[X]\) 
-  is defined by: \(p\notin \muS[k](F)\) 
+  Let \(F\in\Dompb(\kk_X)\)\textcolor{darkred}{, and fix an 
+  integer \(k\in\zz\)}. 
+  \textcolor{darkred}{The \emph{truncated microsupport} \(\muS[k](F)\) is} 
+  the closed conic subset of \(\cotb[X]\) 
+  defined by \textcolor{darkred}{the following condition}: 
+  \(p\notin \muS[k](F)\) 
   if and only if 
   there exists an open conic neighborhood \(U\) of \(p\) 
   such that for any \(x\in \pi(U)\) and 
@@ -1052,11 +1058,11 @@ In this section, we prove a truncated version of
 the noncharacteristic deformation lemma. 
 First we state the result. 
 After giving several example, 
-we prove the Theorem \ref{prp:t-nonchar}. 
+we prove Theorem \ref{prp:t-nonchar}. 
 In course of the proof, 
 we use the key lemma (Lemma \ref{clm:ind-nonchar}). 
 Since its proof is rather long, 
-we postpone the proof until in Section \ref{sec:proof-lem}. 
+we postpone the proof until Section \ref{sec:proof-lem}. 
 
 \textcolor{black}{
 Before we state the truncated version, let us review the original 
@@ -1118,7 +1124,7 @@ Our result is as follows.
       \text{for all \(j\leqq k\).}
     \]
     \item \label{item:t-nonchar4} 
-    For all pairs \((s,t)\) with \(s< t\), \(Z_s\subset U_{t}\).
+    For all pairs \((s,t)\) with \(s< t\), \textcolor{darkred}{we have} \(Z_s\subset U_{t}\).
   \end{enumerate}
   Then, for all \(t\in\rr\), we have the isomorphisms\[
     H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
@@ -1126,7 +1132,7 @@ Our result is as follows.
     H^{j}\left(U_{t};F\right)
     \quad \text{for all \(j< k\),} 
   \]
-  and the injections\[
+  and the \textcolor{darkred}{monomorphisms} \[
     H^{k}\left(\bigcup_{s\in\rr}U_{s};F\right)
     \hookrightarrow 
     H^{k}\left(U_{t};F\right).
@@ -1160,11 +1166,11 @@ let us give several examples of families of deformation.
     \]
     This family \((U_{t})_{t}\) does not satisfy 
     the condition \eqref{item:t-nonchar4}. 
-    Indeed, if \(s<t\), 
+    Indeed, if \(\textcolor{darkred}{0<s<t}\), 
     we have 
     \[
       Z_{s}=\left\{
-        (x,y)\in X;\ y=\varphi_{s}(x)
+        (x,y)\in X;\ y=\varphi_{s}(x)\textcolor{darkred}{, \left|x\right|<2}
       \right\}
     \] and the point \((2,0)\in Z_{s}\) is 
     not contained in \(U_{t}\). 
@@ -1173,11 +1179,11 @@ let us give several examples of families of deformation.
     \[
       Z\coloneqq \left\{(x,y)\in X;\ (x+2)^{2}+(y-1)^{2}=1\right\}\setminus \left\{(-1,0)\right\}. 
     \]
-    \textcolor{black}{For this \(Z\)} 
-    we denote by \(\kk_{Z}\) the sheaf on \(X\) \textcolor{black}{as Section \ref{sec:review}}. 
+    For this \(Z\) 
+    we denote by \(\kk_{Z}\) the sheaf on \(X\) as \textcolor{darkred}{in} Section \ref{sec:review}. 
     If \(j\leqq0\), we have \(
       H^{j}_{X\smallsetminus U_{t}}(\kk_{Z})_{x}=0
-    \) for all \(t>s\) and \(x\in Z_{s}\smallsetminus U_{t}\), 
+    \) for all \(\textcolor{darkred}{t \geqq s}\) and \(x\in Z_{s}\smallsetminus U_{t}\), 
     but the morhism \(
       H^{0}(U_{1};\kk_{Z})=\kk
       \to 
@@ -1313,7 +1319,7 @@ let us give several examples of families of deformation.
     by \[
       U_{t}\coloneqq
       \begin{cases}
-      \left\{(x,y)\in X;\ \left\|(x,y)\right\|<t\right\}&(t>0),\\
+      \left\{(x,y)\in X;\ \textcolor{darkred}{x^{2}+y^{2}} <t\right\}&(t>0),\\
       \varnothing&(t\leqq0).         
       \end{cases}
     \]
@@ -1356,8 +1362,8 @@ let us give several examples of families of deformation.
     If \(t\leqq 0\), set \(\varphi_{t}(x)\equiv 0\). 
     If \(t> 0\), set \[
       \varphi_{t}(x)\coloneqq\begin{cases}
-        \sqrt{t^{2}-x^{2}} & (\left|x\right|<s),\\
-        0&(\left|x\right|\geqq s).
+        \sqrt{t^{2}-x^{2}} & (\left|x\right|<\textcolor{darkred}{t}),\\
+        0&(\left|x\right|\geqq \textcolor{darkred}{t}).
       \end{cases}
     \]
     Then define the open set \(U_{t}\) 
@@ -1621,6 +1627,7 @@ let us give several examples of families of deformation.
     H^{k}(U_{s};F).
   \end{align}
   Therefore, if we show Lemma \ref{clm:ind-nonchar} below, 
+  \textcolor{darkred}{whose proof will be given in Section \ref{sec:proof-lem},}
   we have 
   \begin{align*}
     \indlim[t>s]H^{j}(U_t;F)
