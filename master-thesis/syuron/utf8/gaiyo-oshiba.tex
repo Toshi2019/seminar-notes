@@ -1,5 +1,28 @@
 ﻿\documentclass[a4paper]{jsarticle}
 \usepackage{gaiyo2}
+\usepackage{algorithmic}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{fancybox}
+\usepackage[stable]{footmisc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{proof}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[all]{xy}
 
 %\documentclass[a4paper]{jarticle}
 % として jarticle を使う場合は，上の \usepackage の部分を
@@ -37,9 +60,103 @@
   また，修士論文の章立て，各章の内容を簡潔に記述する．
   必要であれば，最後に参考文献を挙げる．
 
-  超局所モース理論は多様体上の層の複体を係数とするコホモロジーの
-  伝播を調べる手法である．
-  
+  超局所層理論は多様体上の層，より一般に層の複体のコホモロジーについて，
+  余接束の情報を用いて解析する理論である．
+  これは，超局所解析の層理論におけるアナロジーであると言ってもよい．
+  この視点から超局所層理論における基本的な考え方を説明しよう．
+
+  古典的な微分方程式の問題を考えよう．
+  \(n\)次元ユークリッド空間内の開集合\(\varOmega\)を考える．
+  \(\varOmega\)の余接束\(
+    T^{\ast}\varOmega=\varOmega\times \mathbf{R}^{n}
+  \)という集合と考えてよい．これは物理学における相空間の数学的なモデルである．
+  簡単のためにここでは第2成分から原点を除いた\(
+    \dot{T}^{\ast}\varOmega=\varOmega\times (\mathbf{R}^{n}-\{0\})
+  \)を考えることにする．
+  このとき，自然な射影\(T^{\ast}\varOmega\to \varOmega\)や
+  その制限\(\dot{T}^{\ast}\varOmega\to \varOmega\)を\(\pi\)で表す．
+  \(\varOmega\)上での
+  微分方程式\(Pu=f\)を考えよう．
+  ここで\(u\)は未知関数，\(f\)は既知関数，\(P\)は実解析関数を係数とする
+  線形微分作用素とする．
+  一般に佐藤超関数 (hyperfunction)
+  %（これはシュワルツのdistributionを
+  %含む超関数概念である）
+  \(u\)に対し，\(u\)の特異台 (singular support) が
+  \(
+    \mathrm{singsupp}(u)
+    =\left\{x\in\varOmega;\ 
+    \text{\(u(x)\)は\(x\)で解析的でない}
+    \right\}
+  \)として定義される．これは定空間の部分集合である．一方，
+  \(u\)の特異性スペクトル (singularity spectrum), 
+  あるいは（解析的）波面集合 ((analytic) wavefront set) と呼ばれる
+  余接束の部分集合\(\mathrm{S.S.}(u)\)が（正確な定義は省くが）\(
+    \pi(\mathrm{S.S.}(u))=\mathrm{singsupp}(u)
+  \)を満たすように定まる．
+  さらに，微分作用素\(P\)に対しても特性多様体 (characteristic variety) と
+  呼ばれる余接束の部分集合\(\mathrm{Char}(P)\)が\(
+    \mathrm{Char}(P)=\left\{
+      (x;\xi)\in\dot{T}^{\ast}\varOmega;\ 
+      \sigma(P)(x;\xi)=0
+    \right\}
+  \)として定義される．ここで\(\sigma(P)(x;\xi)\)は，
+  \(P\)の微分の部分を不定元に置き換えた解析関数係数の多項式である．
+  これを\(P\)の主要表象と呼ぶ．
+  以上の準備のもと，佐藤の基本定理と呼ばれる次の評価が知られている：\(
+    \mathrm{S.S.}(u)\subset \mathrm{Char}(P)\cup\mathrm{S.S.}(u)
+  \). これを\(P\)が楕円型作用素，
+  すなわち\(\mathrm{Char}(P)=\varnothing\)となる
+  作用素と\(f=0\)すなわち斉次方程式に対して適用する．
+  すると\(\pi\)による射影を考えれば
+  \(\mathrm{singsupp}(u)\subset\varnothing\)を得る．
+  これは楕円型斉次方程式の解の内部正則性を意味する．
+
+  このように，対象とする関数に対し余接束の部分集合をなんらかの方法で定義し，
+  それに関する評価を得ることで，その関数の特異性を調べることができる．
+  このような手法が超局所解析であり，1970年台に佐藤スクールにより基礎が確立された．
+
+  層理論における類似が柏原--Schapira により1980年台に開発された．
+  多様体上の層\(F\)に対し，
+  \(F\)の超局所台 (microsupport) \(\mathrm{SS}(F)\)が
+  余接束の部分集合として定義される．超局所台を用いると，
+  \(F\)のコホモロジー\(H^{j}(F)\)の伝播が調べられる．
+  特に層を入力とする関手が同型になる条件が超局所台を用いて述べることができる．
+  例えば，多様体の射\(f\colon X\to Y\)に対し，
+  逆像と双対化複体とのテンソル積\(
+    f^{-1}(\cdot)\otimes \omega_{X/Y}
+  \)とねじれ逆像\(f^{!}(\cdot)\)との間には自然な射\(
+    f^{-1}(\cdot)\otimes \omega_{X/Y}
+    \to f^{!}(\cdot)
+  \)が存在する．これが同型になるためには，
+  \(f\)が\(F\)に関して非特性的であればよいことが知られている．
+  この「非特性的」という条件は，\(f\)が閉うめこみのときには，
+  \(X\)の\(Y\)に関する余法束と\(\mathrm{SS}(F)\)共通部分が
+  零切断に含まれるということになる．
+  このような理論を体系化したのが超局所層理論である．
+
+  超局所層理論は\(\mathcal{D}\)加群へも応用される．
+  \(\mathcal{D}\)加群は線形微分方程式系の一般化である．
+  複素多様体\(X\)を考える．\(X\)上の
+  \(\mathcal{D}_{X}\)加群\(\mathcal{M}\)に対しても
+  特性多様体\(\mathrm{Char}(\mathcal{M})\)が余接束の部分集合として定まる．
+  このとき，\(\mathcal{M}\)の
+  正則関数解の層\(\mathcal{S}ol(\mathcal{M})\)を考えると，
+  \(\mathrm{Char}(\mathcal{M})=\mathrm{SS}(\mathcal{S}ol(\mathcal{M}))\)が成り立つ．
+  さて，上で紹介した\(
+    f^{-1}(\cdot)\otimes \omega_{X/Y}
+    \to f^{!}(\cdot)
+  \)が同型になるための条件を実解析多様体\(M\)から
+  その複素近傍\(X\)への閉うめこみに\(i\colon M\hookrightarrow X\)対して適用しよう．
+  しかも\(\mathcal{M}\)が楕円型，
+  すなわち\(\mathrm{Char}(\mathcal{M})\)と
+  零切断を除いた余法束との共通部分が空であるとする．
+  このとき，\(i\)が\(\mathcal{S}ol(\mathcal{M})\)に関して非特性的ならば，
+  \(
+    i^{-1}\mathcal{S}ol(\mathcal{M})\otimes \omega_{M/X}
+    \overset{\sim}{\to}
+    i^{!}\mathcal{S}ol(\mathcal{M})
+  \)である．これから，実解析関数の解の層と佐藤超関数の解の
 
   本修士論文では，
   非特性変形補題を打切り超局所台と相性の良いものに拡張し，それを証明する．

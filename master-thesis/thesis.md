@@ -2,6 +2,9 @@
 
 修論（01/20 18:50 更新）[(pdf)](syuron/utf8/oshiba-syuron.pdf)
 
+概要（01/20 20:55 更新） [(pdf)](syuron/utf8/gaiyo-oshiba.pdf)
+
+
 ## 更新のあしあと
 
 ### 1/20 更新分
@@ -47,8 +50,6 @@ the notion of のときは microsupport と単数
 Intro の拡張の言い換えはどうしよう？
 
 クソデカ補題の置き場所は本多先生と相談．
-
-概要 [(pdf)](syuron/utf8/gaiyo-oshiba.pdf)
 
 ## 12/03に話したこと
 
