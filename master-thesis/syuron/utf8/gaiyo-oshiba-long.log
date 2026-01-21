@@ -1,10 +1,10 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  21 JAN 2026 23:47
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  21 JAN 2026 23:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/gaiyo-oshiba.tex
-(/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/gaiyo-oshiba.tex
+**/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/gaiyo-oshiba-long.tex
+(/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/gaiyo-oshiba-long.tex
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -803,8 +803,24 @@ File: l3backend-dvips.def 2024-02-20 L3 backend support: dvips
 \g__pdf_backend_annotation_int=\count352
 \g__pdf_backend_link_int=\count353
 \g__pdf_backend_link_sf_int=\count354
-) (./gaiyo-oshiba.aux)
-\openout1 = `gaiyo-oshiba.aux'.
+) (./gaiyo-oshiba-long.aux
+
+LaTeX Warning: Label `item:t-nonchar1' multiply defined.
+
+
+LaTeX Warning: Label `item:t-nonchar2' multiply defined.
+
+
+LaTeX Warning: Label `item:t-nonchar3' multiply defined.
+
+
+LaTeX Warning: Label `item:t-nonchar4' multiply defined.
+
+
+LaTeX Warning: Label `thm:t-morse' multiply defined.
+
+)
+\openout1 = `gaiyo-oshiba-long.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 613.
 LaTeX Font Info:    ... okay on input line 613.
@@ -830,9 +846,9 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 613.
 LaTeX Font Info:    ... okay on input line 613.
 \c@lstlisting=\count355
 Package hyperref Info: Link coloring ON on input line 613.
- (./gaiyo-oshiba.out) (./gaiyo-oshiba.out)
+ (./gaiyo-oshiba-long.out) (./gaiyo-oshiba-long.out)
 \@outlinefile=\write6
-\openout6 = `gaiyo-oshiba.out'.
+\openout6 = `gaiyo-oshiba-long.out'.
 
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 635.
@@ -877,36 +893,44 @@ LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 9.24683pt on input line 635.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 709.
+(Font)              scaled to size 6.47278pt on input line 641.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 709.
+(Font)              scaled to size 4.62341pt on input line 641.
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 662.
+LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
+(Font)              scaled to size 4.62341pt on input line 662.
  [1
 
-]
+] [2] [3] [4]
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 781.
+(Font)              scaled to size 13.31541pt on input line 1004.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 781.
+(Font)              scaled to size 13.31541pt on input line 1004.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 784.
+(Font)              No change on input line 1007.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 788.
- [2] (./gaiyo-oshiba.aux)
+(Font)              No change on input line 1011.
+ [5] (./gaiyo-oshiba-long.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `gaiyo-oshiba.out' has not changed.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `gaiyo-oshiba-long.out' has not changed.
 (rerunfilecheck)             Checksum: 05B9FF7757FE6A446D8F294B02146D28;54.
  ) 
 Here is how much of TeX's memory you used:
- 29582 strings out of 474774
- 519779 string characters out of 5758801
- 1933032 words of memory out of 5000000
- 51429 multiletter control sequences out of 15000+600000
- 605302 words of font info for 120 fonts, out of 8000000 for 9000
+ 29584 strings out of 474774
+ 519900 string characters out of 5758801
+ 1934032 words of memory out of 5000000
+ 51431 multiletter control sequences out of 15000+600000
+ 605546 words of font info for 122 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 84i,8n,93p,605b,1107s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,8n,93p,610b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on gaiyo-oshiba.dvi (2 pages, 24320 bytes).
+Output written on gaiyo-oshiba-long.dvi (5 pages, 41156 bytes).

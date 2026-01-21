@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  21 JAN 2026 18:43
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  21 JAN 2026 23:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -707,7 +707,6 @@ File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `draft' set `true' on input line 4062.
 Package hyperref Info: Hyper figures OFF on input line 4179.
 Package hyperref Info: Link nesting OFF on input line 4184.
 Package hyperref Info: Hyper index ON on input line 4187.
@@ -859,24 +858,24 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 620
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 Package xypdf Info: Line width: 0.39998pt on input line 620.
-
-
-Package hyperref Warning: Draft mode on.
-
 Package hyperref Info: Link coloring ON on input line 620.
+ (./oshiba-syuron.out) (./oshiba-syuron.out)
+\@outlinefile=\write6
+\openout6 = `oshiba-syuron.out'.
+
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 628.
+(Font)              scaled to size 13.31541pt on input line 632.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 628.
+(Font)              scaled to size 13.31541pt on input line 632.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 23.0061pt on input line 628.
+(Font)              scaled to size 23.0061pt on input line 632.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 23.0061pt on input line 628.
+(Font)              scaled to size 23.0061pt on input line 632.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 19.17792pt on input line 628.
+(Font)              scaled to size 19.17792pt on input line 632.
 LaTeX Font Info:    Font shape `JY2/hmc/m/n' will be
-(Font)              scaled to size 19.17792pt on input line 628.
-[1
+(Font)              scaled to size 19.17792pt on input line 632.
+ [1
 
 ] [1]
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
@@ -897,8 +896,8 @@ LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 9.24683pt on input line 1.
 )
-\tf@toc=\write6
-\openout6 = `oshiba-syuron.toc'.
+\tf@toc=\write7
+\openout7 = `oshiba-syuron.toc'.
 
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 633.
@@ -990,14 +989,16 @@ pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+Package rerunfilecheck Info: File `oshiba-syuron.out' has not changed.
+(rerunfilecheck)             Checksum: DD634F88D5E67DD251884A325EFC1ABA;1940.
  ) 
 Here is how much of TeX's memory you used:
- 31463 strings out of 474774
- 555370 string characters out of 5758801
+ 31474 strings out of 474774
+ 555534 string characters out of 5758801
  1950032 words of memory out of 5000000
- 53288 multiletter control sequences out of 15000+600000
- 609493 words of font info for 140 fonts, out of 8000000 for 9000
+ 53295 multiletter control sequences out of 15000+600000
+ 609325 words of font info for 139 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 84i,28n,93p,3278b,1081s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,28n,93p,3278b,1085s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on oshiba-syuron.dvi (16 pages, 131536 bytes).
+Output written on oshiba-syuron.dvi (16 pages, 150904 bytes).
