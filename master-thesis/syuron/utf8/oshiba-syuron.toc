@@ -3,8 +3,8 @@
 \contentsline {subsection}{\numberline {2.1}Geometrical Notions}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Approximation by Inductive Limits}{3}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}\textcolor {black}{Complement of Homological Algebra}}{4}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}\textcolor {black}{ML Procedure for Sheaves}}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}\textcolor {black}{ML Procedure for Sheaves}}{4}{subsection.2.4}%
 \contentsline {section}{\numberline {3}Truncated Microsupport}{5}{section.3}%
-\contentsline {section}{\numberline {4}Truncated Noncharacteristic Deformation Lemma}{6}{section.4}%
+\contentsline {section}{\numberline {4}Truncated Noncharacteristic Deformation Lemma}{5}{section.4}%
 \contentsline {section}{\numberline {5}An Application to Microlocal Morse Theory}{10}{section.5}%
 \contentsline {section}{\numberline {6}Proof of Lemma {\ref {clm:ind-nonchar}}}{12}{section.6}%

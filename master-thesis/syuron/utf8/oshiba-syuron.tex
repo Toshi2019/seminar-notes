@@ -65,7 +65,7 @@
 % --------------------------
 % theoremstyle
 % --------------------------
-\theoremstyle{definition}
+%\theoremstyle{definition}
 
 % --------------------------
 % newtheoem
@@ -121,7 +121,6 @@
 \newtheorem{Theorem+}[Axiom+]{Theorem}
 \newtheorem{Proposition+}[Axiom+]{Proposition}
 \newtheorem{Lemma+}[Axiom+]{Lemma}
-\newtheorem{Example+}[Axiom+]{Example}
 \newtheorem{Corollary+}[Axiom+]{Corollary}
 \newtheorem{Claim+}[Axiom+]{Claim}
 \newtheorem{Property+}[Axiom+]{Property}
@@ -131,6 +130,9 @@
 \newtheorem{Consideration+}[Axiom+]{Consideration}
 \newtheorem{Alert+}{Alert}
 \newtheorem{Fact+}[Axiom+]{Fact}
+
+\theoremstyle{definition}
+\newtheorem{Example+}[Axiom+]{Example}
 \newtheorem{Remark+}[Axiom+]{Remark}
 
 % ----------------------------
@@ -649,18 +651,18 @@ microsupport of a complex of sheaves
 \textcolor{black}{To explain more precisely, 
 \textcolor{darkgreen}{let us} fix some notations. 
 We consider a commutative unital ring \(\kk\) 
-of finite global dimension (e.g.,\(\zz\) or a field). 
+of finite global dimension (e.g., \(\zz\) or a field). 
 Let \(X\) be a topological space. 
 We denote by \(\Dompb(\kk_X)\) (resp.\ \(\Dompl(\kk_{X})\)) 
 the bounded derived category (resp.\ bounded 
-from below derived category) of 
+derived category \textcolor{darkgreen}{from below}) of 
 sheaves of \(\kk\)-modules on \(X\).} 
 
 \textcolor{black}{If \(M\) is a real manifold of class \(C^{\infty}\) 
 and \(F\) a complex of sheaves, 
 then the microsupport \(\muS[](F)\) of \(F\) is 
-a closed conic (i.e.,stable 
-under \(\rr^{+}\)-action) involutive (i.e.,coisotropic) subset 
+a closed conic (i.e., stable 
+under \(\rr^{+}\)-action) involutive (i.e., coisotropic) subset 
 of the cotangent bundle of \(M\). 
 The precise definition is given in Section \ref{sec:t-ss}, 
 but roughly speaking, \(\muS[](F)\) describes the (co)directions 
@@ -694,7 +696,7 @@ Kashiwara, Monteiro-Fernandes, and Schapira
 introduced the notion of truncated microsupport in \cite{KFS03a}}, 
 in the course of the study of solutions of 
 boundary value problems of \(\mcal{D}\)-modules. 
-\textcolor{black}{The difference between 
+The difference between 
 microsupports and truncated microsupports 
 is as follows. 
 \textcolor{black}{On the one hand, 
@@ -706,12 +708,14 @@ On the other hand, the point \(p\) does
 not belong to the truncated microsupport if and only if 
 the same kind of cohomologies of all the degrees less than 
 a fixed number vanish.}
-}
 \textcolor{black}
 {After they introduced truncated microsupports, 
-few properties of truncated microsupports were shown. 
-For example, instead of involutivity, 
-a microsupport has a property called weak involutivity. 
+\textcolor{darkgreen}{some} properties 
+of truncated microsupports were shown. 
+For example, 
+\textcolor{darkgreen}{a truncated microsupport 
+does not satisfy the involutivity, but
+has a property called weak involutivity.} 
 This is shown also 
 by Kashiwara, Monteiro-Fernandes, 
 and Schapira in \cite{KFS03b}. 
@@ -727,20 +731,17 @@ mainly in the context of analytic problems.}
 in contrast to the previous research, 
 we shall apply the truncated microsupport 
 to \textcolor{darkgreen}{the study of} some geometrical problems. 
-First we shall} prove a truncated version (Theorem \ref{prp:t-nonchar})
-of the noncharacteristic deformation lemma (Proposition \ref{prp:nonchar}). 
-\textcolor{black}
-{Consider a family of open sets of a Hausdorff space, and a 
-complex of sheaves on \textcolor{darkgreen}{the} space. 
-Roughly speaking, 
-original version of this theorem asserts that 
-if the family is ``noncharacteristic'', in a sense, 
-with respect to the complex of sheaves, 
-then we can obtain the natural isomorphism 
-between the derived functors of the functors of 
-the global section over the union of the family and 
-the derived functors of the functors of the global section over 
-a member of the family.}
+First we} prove a truncated version of 
+the noncharacteristic deformation lemma. 
+\textcolor{darkgreen}
+{Consider a Hausdorff space a family of open subsets of it. 
+Assume that the family is ``noncharacteristic'' with 
+respect to a complex of sheaves on the space.
+In this case, 
+the original version of the theorem asserts that 
+the global section on a member of the family is 
+is isomorphic to the one on the union of the family. 
+Note that this isomorphism is one between derived functors.}
 
 %\textcolor{black}{
 This lemma is one of the most fundamental 
@@ -786,11 +787,10 @@ More precisely, if \(k\) is an integer and
 we consider the truncated microsupport \(\muS[k](F)\) of 
 a bounded complex of sheaves \(F\), 
 we can investigate whether 
-the cohomology sheaves \(H^{j}(F)\) propagate or not for \(j<k\), 
-and 
+the cohomology sheaves \(H^{j}(F)\) propagate or not for \(j<k\).
 %in particular, 
 \textcolor{darkgreen}
-{furthermore, we can see 
+{Furthermore, we can see 
 whether the cohomology sheaves \(H^k(F)\) of the \(k\)-th degree 
 enjoy the unique continuation property or not.}
 
@@ -814,13 +814,12 @@ we define truncated microsupport of sheaves,
 due to \cite{KFS03a}. 
 In Section \ref{sec:t-nonchar}, 
 we prove a truncated version of 
-the noncharacteristic deformation lemma\textcolor{darkgreen}
-{, where Lemma \ref{clm:ind-nonchar} plays a crucial role. 
+the noncharacteristic deformation lemma. 
+\textcolor{darkgreen}
+{In the proof, Lemma \ref{clm:ind-nonchar} plays a crucial role. 
 However, since the proof of the lemma is long 
 and rather technical, 
-its proof will be given in the last section of our paper.
-}
-
+its proof will be given in Section \ref{sec:proof-lem}.}
 Finally in Section \ref{sec:t-morse}, 
 we apply the result in Section \ref{sec:t-nonchar} 
 to the microlocal Morse theory. 
@@ -850,11 +849,14 @@ we will write \(\kk_Z\) rather than \(\kk_{X,Z}\).
 
 \subsection{Geometrical Notions}
 Let \(M\) be a real manifold of class \(C^\infty\). 
-We denote by \(\pi_{M}\colon \cotb[M] \to M\) 
+We denote by \(\tau_{M}\colon TM\to M\) 
+the tangent bundle of \(M\), 
+and by \(\pi_{M}\colon \cotb[M] \to M\) 
 the cotangent bundle of \(M\). 
 If there is no risk of confusion, 
 we will write \(\pi\) rather than \(\pi_{M}\). 
-If \(f\colon M\to N\) is a morphism of manifolds \textcolor{black}{(i.e.,a \(C^{\infty}\)-map)}, 
+If \(f\colon M\to N\) is a morphism of manifolds 
+\textcolor{black}{(i.e., a \(C^{\infty}\)-map)}, 
 then we have the natural diagram\textcolor{darkred}{s}. 
 \[\vcenter{\xymatrix{
   TM
@@ -922,8 +924,8 @@ and \(\mdiff[f]\) is induced by the transposition of \(f'\).
   \end{enumerate}
 \end{Proposition+}
 
-\textcolor{black}{Note that a} paracompact space 
-is by definition a Hausdorff space. 
+Note that a paracompact space 
+is, by definition, a Hausdorff space. 
 
 \subsection{\textcolor{black}{Complement of Homological Algebra}}\label{ssec:ML}
 
@@ -935,12 +937,10 @@ the Mittag-Leffler condition (ML \textcolor{black}{condition} for short)
 if for any \(n\in\nn\), the decreasing sequence \(
   (\rho_{n,p}(M_p))_p
 \) of subgroups of \(M_n\) is stationary.
-
 For a projective system of abelian groups \((M_{n})_n\), 
 we set \[
   M_{\infty}\coloneqq \prolim[n]M_n.
 \]
-
 Consider a projective system of complexes
 \begin{equation}
   E_n^{\bullet}\colon 
@@ -1051,7 +1051,7 @@ we review the original definition of a microsupport.
 and Schapira modified
 this definition and gave the notion of truncated microsupport.}
 
-\begin{Definition+}
+\begin{Definition+}[{\cite[Definition 3.4]{KFS03a}}]
   Let \(F\in\Dompb(\kk_X)\)\textcolor{darkred}{, and fix an 
   integer \(k\in\zz\)}. 
   \textcolor{darkred}{The \emph{truncated microsupport} \(\muS[k](F)\) is} 
@@ -1083,7 +1083,8 @@ the following functorial property under proper direct images.}
     \muS[k](\Rder{f_{\ast}}F)\subset
     \mpb[f]\mdiff[f]^{-1}(\muS[k](F)).
   \end{equation}
-  The equality holds in case \(f\) is a closed embedding.
+  \textcolor{darkgreen}{Moreover if \(f\) is a closed embedding, 
+  the inclusion above is an equality.}
 \end{Proposition+}
 
 For other functorial properties, see \cite{KFS03a,FM07}. 
@@ -1184,7 +1185,7 @@ let us give several examples of families of deformation.
   The condition \eqref{item:t-nonchar4} of 
   \textcolor{black}{Theorem \ref{prp:t-nonchar}} is not contained 
   in the original version (\textcolor{black}{Proposition \ref{prp:nonchar}}). 
-  Therefore let us give an example of \(\left(U_{t}\right)_{t}\) 
+  Therefore let us give an example of \(\left(U_{t}\right)_{t\in\rr}\) 
   that does not satisfy the condition \eqref{item:t-nonchar4}. 
   \begin{enumerate}[(i)]
     \item \label{item:not-gentle} 
@@ -1208,7 +1209,7 @@ let us give several examples of families of deformation.
     we have 
     \[
       Z_{s}=\left\{
-        (x,y)\in X;\ y=\varphi_{s}(x)\textcolor{darkred}{, \left|x\right|<2}
+        (x,y)\in X;\ y=\varphi_{s}(x)\textcolor{darkred}{, \left|x\right|\leqq 2}
       \right\}
     \] and the point \((2,0)\in Z_{s}\) is 
     not contained in \(U_{t}\). 
@@ -1220,8 +1221,8 @@ let us give several examples of families of deformation.
     For this \(Z\) 
     we denote by \(\kk_{Z}\) the sheaf on \(X\) as \textcolor{darkred}{in} Section \ref{sec:review}. 
     If \(j\leqq0\), we have \(
-      H^{j}_{X\smallsetminus U_{t}}(\kk_{Z})_{x}=0
-    \) for all \(\textcolor{darkred}{t \geqq s}\) and \(x\in Z_{s}\smallsetminus U_{t}\), 
+      H^{j}_{X- U_{t}}(\kk_{Z})_{x}=0
+    \) for all \(\textcolor{darkred}{t \geqq s}\) and \(x\in Z_{s}- U_{t}\), 
     but the morphism \(
       H^{0}(U_{1};\kk_{Z})=\kk
       \to 
@@ -1236,7 +1237,7 @@ let us give several examples of families of deformation.
     Hence the condition \eqref{item:t-nonchar4} is necessary. 
     \begin{figure}[htb]
       \centering
-      \begin{tikzpicture}[scale=0.66]
+      \begin{tikzpicture}[scale=0.60]
         \def\t{1}
         \def\xmax{3.5}
         \def\ymin{-1}
@@ -1274,7 +1275,7 @@ let us give several examples of families of deformation.
         % ラベル
         \node at (2.4,0.8) {\(U_t\)};
       \end{tikzpicture}
-      \begin{tikzpicture}[scale=0.66]
+      \begin{tikzpicture}[scale=0.60]
         \def\t{1}
         \def\xmax{3.5}
         \def\ymin{-1}
@@ -1296,7 +1297,7 @@ let us give several examples of families of deformation.
         % ラベル
         \node at (1.4,1.2) {\(Z_t\)};
       \end{tikzpicture}
-      \begin{tikzpicture}[scale=0.66]
+      \begin{tikzpicture}[scale=0.60]
         \def\t{1}
         \def\xmax{3.5}
         \def\ymin{-1}
@@ -1346,7 +1347,7 @@ let us give several examples of families of deformation.
     \end{figure}
   \end{enumerate}
   Let us, in turn, give three examples 
-  of \(\left(U_{t}\right)_{t}\) 
+  of \(\left(U_{t}\right)_{t\in\rr}\) 
   satisfying the condition \eqref{item:t-nonchar4}. 
   In all the examples below, \(X\) is \(\rr^{2}\). 
   \begin{enumerate}[(i)]
@@ -1629,10 +1630,10 @@ let us give several examples of families of deformation.
   Again applying to this triangle 
   the functor \(\RG(Z_{s}\cup U_{s};\blk)\), 
   we have
-  \begin{equation}
-    \RG(Z_{s}\cup U_{s};\RG_{X\smi U_{s}}(F))
+  \begin{equation}\label{eq:t-nocha-d.t.}
+    \RG(Z_{s}\cup U_{s};\mres[\RG_{X\smi U_{s}}(F)]{Z_{s}\cup U_{s}})
     \to
-    \RG(Z_{s}\cup U_{s};Z_{s}\cup U_{s})
+    \RG(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
     \to
     \RG(U_{s};F)
     \overset{+1}{\longrightarrow}. 
@@ -1643,44 +1644,45 @@ let us give several examples of families of deformation.
   \[
     \mres[H^{j}_{X\smi U_{s}}(F)]{Z_{s}\cup U_{s}}=0
     \quad
-    \text{for any \(j\leqq k\),}
+    \text{for any \(j\leqq k\).}
   \]
-  and then \[
+  \textcolor{darkgreen}{Therefore we}
+  \[
     H^{j}\left(Z_{s}\cup U_{s};
-      \RG_{X\smi U_{s}}(F)
+      \mres[\RG_{X\smi U_{s}}(F)]{Z_{s}\cup U_{s}}
     \right)=0
     \quad
     \text{for any \(j\leqq k\).}
   \]
-  Thus we have
+  Thus we have \textcolor{darkgreen}{from \eqref{eq:t-nocha-d.t.}}
   \begin{align}
     \label{eq:a-iso}
-    H^{j}(Z_{s}\cup U_{s};F)
+    H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
     &\simar
     H^{j}(U_{s};F)\quad
     \text{for any \(j< k\),}\\
     \label{eq:a-inj}
-    H^{k}(Z_{s}\cup U_{s};F)
+    H^{k}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
     &\hookrightarrow
     H^{k}(U_{s};F).
   \end{align}
   Therefore, if we show Lemma \ref{clm:ind-nonchar} below, 
   \textcolor{darkred}{whose proof will be given in Section \ref{sec:proof-lem},}
-  we have 
+  we have \textcolor{darkgreen}{from Lemma \ref{clm:ind-nonchar} and \eqref{eq:a-iso}}
   \begin{align*}
     \indlim[t>s]H^{j}(U_t;F)
     &\cong 
-    H^{j}(Z_{s}\cup U_{s};F)\\
+    H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})\\
     &\simar
     H^{j}(U_s;F)
   \end{align*}
   for any \(j<k\), and \ref{eq:t-nonchar-a} follows. 
   Similarly, 
-  we have
+  we have \textcolor{darkgreen}{from Lemma \ref{clm:ind-nonchar} and \eqref{eq:a-inj}}
   \begin{align*}
     \indlim[t>s]H^{k}(U_t;F)
     &\cong 
-    H^{k}(Z_{s}\cup U_{s};F)\\
+    H^{k}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})\\
     &\hookrightarrow
     H^{k}(U_s;F)
   \end{align*}
@@ -1690,7 +1692,7 @@ let us give several examples of families of deformation.
     \[
       \indlim[t>s]H^{j}(U_t;F)
       \cong 
-      H^{j}(Z_{s}\cup U_{s};F).
+      H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
     \]
   \end{Lemma+}
 
@@ -1769,7 +1771,7 @@ let us give several examples of families of deformation.
 
 In this section, 
 we shall apply the result in the previous section to 
-a particular case of a truncated version 
+\textcolor{darkgreen}{a truncated version of a particular case}
 of microlocal Morse lemma. 
 
 Let \(M\) be a manifold of class \(C^\infty\). 
@@ -1800,7 +1802,7 @@ If \(t\in\rr\), we denote the open interval \((-\infty,t)\) by \(I_{t}\).
   We will use \textcolor{black}{Theorem \ref{prp:t-nonchar}}. 
   Let us put \(X=\lopen-\infty,b\ropen\), 
   \(F=\mres[G]{I_{b}}\), and \(U_t=I_t\), 
-  and verify the hypotheses of the proposition.  
+  and verify the hypotheses of the \textcolor{darkgreen}{theorem}.  
   \begin{enumerate}[(i)]
     \item \(\bigcup_{s<t} I_s
     = \bigcup_{s<t}\lopen-\infty,s\ropen
@@ -1808,7 +1810,7 @@ If \(t\in\rr\), we denote the open interval \((-\infty,t)\) by \(I_{t}\).
     \item If \(s\leqq t\), then \(
       \overline{I_t\smi I_s}\cap\supp{G}
       =\overline{\lclosed s,t\ropen}\cap\supp{G}
-      =\lclosed s,t\rclosed\cap\supp{G}
+      =[s,t]\cap\supp{G}
       \) is compact.
     \item For \(s\in\rr\), we have \[
       Z_{s}
@@ -1821,7 +1823,7 @@ If \(t\in\rr\), we denote the open interval \((-\infty,t)\) by \(I_{t}\).
       Z_s\smi I_s
       =\left\{s\right\}. 
     \]
-    By the hypothesis, 
+    By the hypothesis \textcolor{darkgreen}{of the lemma}, 
     we have 
     \[
       H^{j}_{X\smi I_s}(F)_{s}
@@ -1838,7 +1840,7 @@ If \(t\in\rr\), we denote the open interval \((-\infty,t)\) by \(I_{t}\).
     \simar
     H^{j}(I_{t};F)
   \]
-  and the injections
+  and the \textcolor{darkgreen}{monomorphisms}
   \[
     H^{k}\left(I_{b};F\right)
     =H^{k}\left(\bigcup_{s}I_{s};F\right)
@@ -1848,7 +1850,7 @@ If \(t\in\rr\), we denote the open interval \((-\infty,t)\) by \(I_{t}\).
 \end{proof}
 
 \textcolor{black}{We will prove a truncated version of the following proposition.
-\begin{Proposition+}\label{prp:mu-morse}
+\begin{Proposition+}[{\cite[Proposition 1.8]{GKS12}}]\label{prp:mu-morse}
     Let \(F \in \Dompb(\kk_M)\), and 
   \(\psi\colon M\to \rr\) be a function of 
   class \(C^1\), 
@@ -1901,7 +1903,7 @@ A truncated version of this assertion is the following.}
   \) holds. Hence we have\[
     \left(H^{j}_{\left[\psi(x),+\infty\right)}(\Rder{\psi}_{\ast}F)\right)_{\psi(x)}=0
   \]for each \(j\leqq k\). 
-  Then we can apply Lemma \ref{Lem:1d-t-morse} and have
+  Then we can apply Lemma \ref{Lem:1d-t-morse} and \textcolor{darkgreen}{obtain}
   \[
     H^{j}(\left(-\infty,b\right);\Rder{\psi_{\ast}}F)
     \simarr
@@ -1958,7 +1960,7 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
     \\
     \indlim[U\supset Z_{s}]
     \Gamma(U;F)
-    \ar[r]_-{\psi}
+    \ar[r]_-{\psi}^-{\sim}
     &
     \Gamma(Z_{s};\mres[F]{Z_{s}})\textcolor{darkred}{.}
   }}
@@ -1973,7 +1975,7 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
     \Gamma(U\cup U_{s};F) 
   \]
   is an isomorphism. 
-  To prove this, it is enough to show that \(
+  It is enough to show that \(
     \left(U_{t}\right)_{t>s}
   \) is a cofinal family of \((U\cup U_{s})_{U\supset Z_{s}}\). 
   Let \(U\) be an open neighborhood of \(Z_{s}\). 
@@ -1981,53 +1983,56 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
   there exists a real number \(t>s\) such that 
   \(U_{t}\subset U\cup U_{s}\). 
   Let us assume that 
-  \(U_{t}\smallsetminus(U\cup U_{s})\ne \varnothing\) 
+  \(U_{t}-(U\cup U_{s})\ne \varnothing\) 
   for any \(t>s\). 
   Then define the family of subsets \(
     \left(A_{r}\right)_{s<r<t}
-  \) of \(\overline{U_{t}\smallsetminus U_{s}}\) by \(
-    A_{r}\coloneqq U_{r}\smallsetminus (U\cup U_{s})
+  \) of \(\overline{U_{t}- U_{s}}\) by \(
+    A_{r}\coloneqq U_{r}- (U\cup U_{s})
   \). 
   This \(\left(A_{r}\right)_{s<r<t}\) satisfies 
   the finite intersection property. 
   Indeed, for finite real numbers \(s<r_{0}<\dots<r_{m}<t\), 
-  it follows from the hypothesis that
+  it follows from 
+  \textcolor{darkgreen}{the assumption for contradiction}
+  that
   \begin{align*}
     A_{r_{0}}\cap \dots \cap A_{r_{m}}
     &= A_{r_{0}}\\
-    &= U_{r_{0}}\smallsetminus (U\cup U_{s})\\
+    &= U_{r_{0}}- (U\cup U_{s})\\
     &\ne \varnothing.
   \end{align*}
-  Therefore, since \(\overline{U_{t}\smallsetminus U_{s}}\) is 
+  Therefore, since \(\overline{U_{t}- U_{s}}\) is 
   compact, we have \(\bigcap_{s<r<t}\overline{A_{r}}\ne\varnothing\). 
   However, 
   %for any \(r\), 
   we have from the hypothesis \(Z_{s}\subset U\) that 
   %\begin{align*}
   %  \overline{A_{r}}
-  %  &=\overline{U_{r}\smallsetminus(U\cup U_{s})}\\
+  %  &=\overline{U_{r}-(U\cup U_{s})}\\
   %  &=\overline{U_{r}}\cap 
-  %  \overline{X \smallsetminus(U\cup U_{s})}\\
-  %  &=\overline{U_{r}}\cap (X \smallsetminus(U\cup U_{s}))
+  %  \overline{X -(U\cup U_{s})}\\
+  %  &=\overline{U_{r}}\cap (X -(U\cup U_{s}))
   %\end{align*}
   %and 
   \begin{align*}
     \varnothing 
     \ne
     \bigcap_{s<r<t}\overline{A_{r}}
-    &=\bigcap_{s<r<t}\overline{U_{r}\smallsetminus(U\cup U_{s})}\\
-    &=\bigcap_{s<r<t}(\overline{U_{r}\smallsetminus U_{s}}\cap \overline{U_{r} \smallsetminus U})\\
-    &=\bigcap_{s<r<t}\overline{U_{r}\smallsetminus U_{s}}\cap \bigcap_{s<r<t}\overline{U_{r} \smallsetminus U}\\
-    &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r} \smallsetminus U}\\
-    &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r}}\cap \overline{X\smallsetminus U}\\
-    &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r}}\cap (X\smallsetminus U)\\
-    &=Z_{s}\cap (X\smallsetminus U)\cap \bigcap_{s<r<t}\overline{U_{r}}\\
+    &=\bigcap_{s<r<t}\overline{U_{r}-(U\cup U_{s})}\\
+    &=\bigcap_{s<r<t}(\overline{U_{r}- U_{s}}\cap \overline{U_{r} - U})\\
+    &=\bigcap_{s<r<t}\overline{U_{r}- U_{s}}\cap \bigcap_{s<r<t}\overline{U_{r} - U}\\
+    &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r} - U}\\
+    &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r}}\cap \overline{X- U}\\
+    &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r}}\cap (X- U)\\
+    &=Z_{s}\cap (X- U)\cap \bigcap_{s<r<t}\overline{U_{r}}\\
     &=\varnothing. 
   \end{align*}
   This is a contradiction, 
   and it follows that \(\tilde{\phi}\) is an isomorphism. 
 
-  By this isomorphism, it is enough to show that
+  \textcolor{darkgreen}{Since \(\tilde{\phi}\) is an} isomorphism, 
+  it is enough to show that
   \[
     \phi\colon\indlim[U\supset Z_{s}]
     \Gamma(U\cup U_{s};F)
@@ -2064,11 +2069,15 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
   \(\tau\) on \(U\) such that \(
     \mres[\tau]{Z_{s}}=\mres[\sigma]{Z_{s}}
   \). 
-  Now we see that \(
+  \textcolor{darkgreen}{On the other hand, 
+  it follows from the compatibility of restrictions of a section} 
+  that \(
     \mres[\tau]{Z_{s}}
     =
     \mres[{(\mres[\tau]{(Z_{s}\cup U_{s})\cap U})}]{Z_{s}}
-  \), and by the definition of a section 
+  \). 
+  \textcolor{darkgreen}
+  {B}y the definition of a section 
   on the closed subset \(Z_{s}\) of 
   \((Z_{s}\cup U_{s})\cap U\), 
   we can find an open subset \(W\) of 
