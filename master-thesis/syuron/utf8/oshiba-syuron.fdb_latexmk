@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1769006999.42619 "oshiba-syuron.dvi" "oshiba-syuron.pdf" "oshiba-syuron" 1769007001.49389 0
-  "oshiba-syuron.dvi" 1769006998.94946 150904 199c14c90e70c5a33cd450b81c09aa8a "latex"
+["dvipdf"] 1769059635.43366 "oshiba-syuron.dvi" "oshiba-syuron.pdf" "oshiba-syuron" 1769059636.51345 0
+  "oshiba-syuron.dvi" 1769059635.30359 151088 c3058be1d3e4fa19f3f9aa6fc6926497 "latex"
   (generated)
   "oshiba-syuron.pdf"
   (rewritten before read)
-["latex"] 1769006995.63532 "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/oshiba-syuron.tex" "oshiba-syuron.dvi" "oshiba-syuron" 1769007001.48343 0
-  "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/oshiba-syuron.tex" 1769006988.7029 77249 b7734177c6e0e020917b507eb000d3d4 ""
+["latex"] 1769059632.67135 "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/oshiba-syuron.tex" "oshiba-syuron.dvi" "oshiba-syuron" 1769059636.50704 0
+  "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/oshiba-syuron.tex" 1769059626.1517 77418 2b66917792a7460ebcb08373a3065f89 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -234,10 +234,10 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "oshiba-syuron.aux" 1769006998.94655 6047 fd52bfa1ca885a473100f93d23e25635 "latex"
-  "oshiba-syuron.out" 1769006998.94876 1940 dd634f88d5e67dd251884a325efc1aba "latex"
-  "oshiba-syuron.tex" 1769006988.7029 77249 b7734177c6e0e020917b507eb000d3d4 ""
-  "oshiba-syuron.toc" 1769006998.94935 929 3a28fcdbd135c686d75338161fa219b5 "latex"
+  "oshiba-syuron.aux" 1769059635.29891 6047 fd52bfa1ca885a473100f93d23e25635 "latex"
+  "oshiba-syuron.out" 1769059635.30288 1940 dd634f88d5e67dd251884a325efc1aba "latex"
+  "oshiba-syuron.tex" 1769059626.1517 77418 2b66917792a7460ebcb08373a3065f89 ""
+  "oshiba-syuron.toc" 1769059635.30347 929 3a28fcdbd135c686d75338161fa219b5 "latex"
   "syuron2.sty" 1768637918.67813 4129 f691f2717ff7b77bb5b237d6eb855e49 ""
   (generated)
   "oshiba-syuron.aux"

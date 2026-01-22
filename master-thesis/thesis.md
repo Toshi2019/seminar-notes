@@ -1,14 +1,18 @@
 # 修論
 
-修論（01/20 23:47 更新）[(pdf)](syuron/utf8/oshiba-syuron.pdf)
+修論（01/21 14:30 更新）[(pdf)](syuron/utf8/oshiba-syuron.pdf)
 
-概要（01/21 00:15 更新） [(pdf)](syuron/utf8/gaiyo-oshiba.pdf)
+概要（01/21 14:30 更新） [(pdf)](syuron/utf8/gaiyo-oshiba.pdf)
 
 ## 更新のあしあと
 
 ### 1/21 更新分
 
 00:15 タイポ修正
+
+15:30 概要のタイポを修正
+
+修論の謝辞を追加
 
 ### 1/20 更新分
 

@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  15 JAN 2026 17:57
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  22 JAN 2026 01:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1164,7 +1164,14 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 
 ] [17
 
-] [18
+]
+
+LaTeX Warning: Citation `Sato69' on page 18 undefined on input line 792.
+
+
+LaTeX Warning: Citation `Sato70' on page 18 undefined on input line 792.
+
+[18
 
 ] [19
 
@@ -1204,15 +1211,15 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ]
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1034.
+(Font)              No change on input line 1019.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1034.
+(Font)              No change on input line 1019.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1034.
+(Font)              No change on input line 1019.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1034.
+(Font)              No change on input line 1019.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1034.
+(Font)              No change on input line 1019.
  [30
 
 ] Excluding 'comment' comment.
@@ -1231,16 +1238,20 @@ pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `20250204master-slides.out' has not changed.
 (rerunfilecheck)             Checksum: B4862527122B2BA27F4A7114BF60D95A;679.
  ) 
 Here is how much of TeX's memory you used:
- 34103 strings out of 474774
- 637649 string characters out of 5758801
+ 34101 strings out of 474774
+ 637617 string characters out of 5758801
  1937032 words of memory out of 5000000
- 55746 multiletter control sequences out of 15000+600000
- 616451 words of font info for 157 fonts, out of 8000000 for 9000
+ 55745 multiletter control sequences out of 15000+600000
+ 616283 words of font info for 156 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  128i,16n,123p,3306b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 20250204master-slides.dvi (30 pages, 113180 bytes).
+Output written on 20250204master-slides.dvi (30 pages, 112344 bytes).
