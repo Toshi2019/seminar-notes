@@ -1158,35 +1158,33 @@ File: ts1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 
 ] [16
 
-] [17
-
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\translate ' on input line 885.
+(hyperref)                removing `\translate ' on input line 871.
 
-[18
+[17
 
 ]
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 923.
+(Font)              No change on input line 909.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 923.
+(Font)              No change on input line 909.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 923.
+(Font)              No change on input line 909.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 923.
+(Font)              No change on input line 909.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 923.
+(Font)              No change on input line 909.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 923.
+(Font)              No change on input line 909.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 923.
+(Font)              No change on input line 909.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 923.
- [19
+(Font)              No change on input line 909.
+ [18
 
-] [20
+] [19
 
 
 ] Excluding 'comment' comment.
@@ -1209,12 +1207,12 @@ Package rerunfilecheck Info: File `20250204master-slides.out' has not changed.
 (rerunfilecheck)             Checksum: AD91910E5F8BE84A1EF3D5F251FC6D2C;530.
  ) 
 Here is how much of TeX's memory you used:
- 33716 strings out of 474774
- 630041 string characters out of 5758801
+ 33714 strings out of 474774
+ 630025 string characters out of 5758801
  1939032 words of memory out of 5000000
- 55386 multiletter control sequences out of 15000+600000
+ 55384 multiletter control sequences out of 15000+600000
  605480 words of font info for 110 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  128i,16n,123p,3306b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 20250204master-slides.dvi (20 pages, 78800 bytes).
+Output written on 20250204master-slides.dvi (19 pages, 75472 bytes).
