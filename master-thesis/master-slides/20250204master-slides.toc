@@ -1,4 +1,4 @@
-\beamer@sectionintoc {1}{Background}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Microlocal Sheaf Theory}{4}{0}{1}
-\beamer@sectionintoc {2}{層の超局所台}{15}{0}{2}
-\beamer@sectionintoc {3}{層のモース理論}{25}{0}{3}
+\beamer@sectionintoc {1}{背景}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{層理論}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{超局所層理論}{7}{0}{1}
+\beamer@sectionintoc {2}{主結果}{14}{0}{2}
