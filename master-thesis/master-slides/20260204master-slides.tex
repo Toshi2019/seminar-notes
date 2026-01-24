@@ -539,13 +539,40 @@
 %\setcounter{section}{3}
 %\section*{はじめに}
 \begin{frame}
-    \frametitle{発表内容}
-    \tableofcontents
+    \frametitle{研究の概要}
+    \[\vcenter{\xymatrix@C=42pt@R=42pt{
+        \txt{\(\muS[](F)\)\\
+        \cite{KS82}}
+        %\ar[dd]
+        &
+        \txt{超局所モースの補題\\
+        \cite{KS90}}
+        %\ar[dd]
+        &
+        \txt{非特性変形補題\\
+        \cite{KS90}}
+        %\ar[dd]
+        \\
+        %\ar[r] 
+        &
+        &
+        %\ar[l]
+        \\
+        \txt{\(\muS[k](F)\)\\
+        \cite{KFS03a}}
+        &
+        \txt{打切り超局所モースの補題\\主結果1}
+        &\txt{打切り非特性変形補題\\主結果2}
+    }}\]
 \end{frame}
+%\begin{frame}
+%    \frametitle{発表内容}
+%    \tableofcontents
+%\end{frame}
 
 \section[背景]{背景}
 \subsection{層理論}
-
+\begin{comment}
 \begin{frame}
     \frametitle{（前）層の定義}
     \begin{DFN}[層]\label{def:sheaf}
@@ -601,24 +628,7 @@
         \Omega_X^n\ar[r]&0
     }}\]
 \end{frame}
-
-\begin{frame}
-    \frametitle{完全三角}
-    導来圏では完全三角 (distinguished triangle) が完全列の代わりになる．
-    \[
-        F\to G\to H\to+1\quad\mathrm{d.t.}
-    \]
-    とかいたとき，長完全列
-    \begin{align*}
-        0&\to H^0(F)\to H^0(G)\to H^0(H)\\
-        &\to H^1(F)\to H^1(G)\to H^1(H)\\
-        &\to \cdots
-    \end{align*}
-    が得られる．つまり，上の完全三角で\(H=0\)なら，
-    \[
-    F\simarr G\quad \mathrm{qis}
-    \]となる．
-\end{frame}
+\end{comment}
 
 \subsection{超局所層理論}
 \newcommand{\Char}{\mathop{\mathrm{Ch}}\nolimits}
@@ -626,6 +636,7 @@
 \newcommand{\SingSpec}{\mathop{\mathrm{S.S.}}\nolimits}
 %\newcommand{\SingSpec}{\mathop{\mathrm{WF}_{\mathrm{A}}}\nolimits}
 
+\begin{comment}
 \begin{frame}\frametitle{``超局所''？--- 超局所解析からの復習}
     \[
         \text{``超局所''}=\text{余接束上で局所}
@@ -673,158 +684,154 @@
     このように，底空間の対象を余接束上に持ち上げる（超局所的に考える）と，
     その対象の特異性が分析できる．
 \end{frame}
+\end{comment}
 
-\begin{frame}\frametitle{層の超局所台 --- 定義の動機づけ}
-    %\(\Dompb(\kk_X)\ni F\mapsto \SS(F)\subset T^{\ast}X\)
-    以上の層理論における類似が超局所層理論である．
 
-    \(F\in\Dompb(\kk_M)\)の超局所台\(\muS(F)\)を定義したい．
-
-    \(p=(x_0;\xi_0)\in\cotb[M]\)とする．
-    \(M\)上の実\(C^1\)級関数\(\varphi\)で\(
-        d\varphi(x_0)=\xi_0
-    \)となるものを考える．
-
-    \(j\)次コホモロジーにおける``方向\(p\)への制限''
-    \[
-        H^{j}F_{x_{0}}\cong \indlim[U\ni x_{0}]H^{j}(U;F)
-        \to
-        \indlim[U\ni x_{0}]H^j(U\cap\{x;\varphi(x)<\varphi(x_0)\};F).
-    \]
-    が同型になるというのが，\(p\)の方向にコホモロジーが伝播するということ．\\
-    長完全列を考えると次の定義になる．
+\begin{frame}
+    \frametitle{\(\text{「超局所」}=\text{「余接束上で局所」}\)}
+    \begin{exampleblock}{超局所解析における例}
+        微分方程式\(Pu=0\)を考える．余接束の部分集合
+        \begin{itemize}
+            \item 超関数\(u\)の波面集合（特異性スペクトル）
+            \item 微分作用素\(P\)の特性多様体
+        \end{itemize}
+        を用いると，解\(u\)の特異性が分析できる（楕円型正則性など）．
+    \end{exampleblock}
+    多様体\(M\)上の層（の複体）\(F\in\Dompb(\kk_{M})\)に対して，
+    余接束の部分集合\(\muS[](F)\)を次で定める．
+    \begin{DFN}[層の超局所台]
+        \(p\notin \muS(F)\)であるとは，
+        \(p\)の\(\cotb[M]\)における開近傍\(U\)で，任意の\(x_1\in X\)と
+        \(x_1\)の近傍上で定義された\(C^{1}\)関数\(\varphi\)に対し，
+        次をみたすものが存在することをいう．
+        \[
+            \varphi(x_1)=0,\ d\varphi(x_1)\in U
+            \Longrightarrow
+            H^{j}_{\{\varphi\geqq0\}}(F)_{x_1}=0
+            \ (j\in\zz).
+        \]
+    \end{DFN}
 \end{frame}
 
-
-\begin{frame}\frametitle{層の超局所台 --- 定義}
+\begin{frame}\frametitle{層に関する臨界点 --- モース理論との類似}
     %\(\Dompb(\kk_X)\ni F\mapsto \SS(F)\subset T^{\ast}X\)    
-    \begin{DFN}[層の超局所台]
-        \(p=(x_0;\xi_0)\notin \muS(F)\)となるのは，
-        \(U\in I_{p}\)で，任意の\(x_1\in X\)と
-        \(x_1\)の近傍で定義された，\(
-            d\varphi(x_1)\in U
-        \)となる\(\varphi\)に対し，\[
-            \RG_{\{\varphi\geqq\varphi(x_0)\}}(F)_{x_1}=0
-        \]
-        となるものが存在するときであるとする．
-    \end{DFN}
     超局所台を用いると，関数の臨界点を層係数に一般化することができる．
     \begin{DFN}
-        \(\varphi\colon M\to \rr\)の臨界点とは
-        \(d\varphi(p)=0\)となる点\(p\in M\)のこと．
-
-        \(F\)に関する\(\varphi\colon M\to \rr\)の臨界点とは
-        \(d\varphi(p)\in\muS[](F)\)となる点\(p\in M\)のこと．
+        \begin{itemize}
+            \item \(x\in M\)が\(\varphi\colon M\to \rr\)の臨界点
+            であるとは\(d\varphi(x)=0\)となること．
+            \item \(x\in M\)が\(\varphi\colon M\to \rr\)の
+            \textcolor{brown}{\(F\)に関する}臨界点であるとは\(d\varphi(x)\in\muS[](F)\)となること．
+        \end{itemize}
     \end{DFN}
+    \begin{alertblock}{注意}
+        超局所台は，すべての次数のコホモロジーが延長できるか否かを判定する概念．
+    \end{alertblock}
+    \vspace{60pt}
 \end{frame}
 
-\begin{frame}\frametitle{打切り超局所台 --- 定義}
+\begin{frame}\frametitle{打切り超局所台 --- \(k\)次までの特異性}
     \begin{alertblock}{問題点}
         境界値問題など，超局所台では捉えきれない現象がある．
     \end{alertblock}
     
-    柏原--Monteiro-Fernandes--Schapira \cite{KFS03a}は，
+    柏原--Fernandes--Schapira \cite{KFS03a}は，
     このような現象を扱うために
     超局所台を精密化した．
     \begin{DFN}[{\cite[Definition 3.4]{KFS03a}}]
         \(k\in\zz\)とする．
-        \(p=(x_0;\xi_0)\notin \muS[k](F)\)となるのは，
-        \(p\)の錐状開近傍\(U\)で，任意の\(x_1\in \pi(U)\)と
-        \(x_1\)の近傍で定義された，\(
-            d\varphi(x_1)\in U
-        \)となる\(\varphi\)に対し，任意の次数\(j\leqq k\)で\[
+        \(p\notin \muS[k](F)\)であるとは，
+        \(p\)の\(\cotb[M]\)における錐状開近傍\(U\)で，
+        任意の\(x_1\in \pi(U)\)と
+        \(x_1\)の近傍上で定義された\(C^{1}\)関数\(\varphi\)に対し，
+        次をみたすものが存在することをいう．
+        \[
+            \varphi(x_1)=0,\ d\varphi(x_1)\in U
+            \Longrightarrow
             H^{j}_{\{\varphi\geqq\varphi(x_0)\}}(F)_{x_1}=0
+            \quad
+            (j\leqq k).
         \]
-        となるものが存在するときであるとする．
     \end{DFN}
 \end{frame}
-
-
-\begin{frame}\frametitle{（余）接束の基本図式}
-    \(f\colon M\to N\)を多様体の射とする．次の図式が基本的．
-    \[\vcenter{\xymatrix@C=22pt@R=26pt{
-        TM
-        \ar[rd]_-{\tau_M}
-        \ar[r]^-{f'}
-        &
-        M\pb[N] TN
-        %\ar@{}[dr]|\square
-        \ar[d]_-{}
-        \ar[r]^-{\mptan[f]}
-        \ar@{}[dr]|\square
-        &
-        TN
-        \ar[d]^-{\tau_N}
-        &
-        \cotb[M]
-        \ar[rd]_-{\pi_M}
-        &
-        M\pb[N] \cotb[N]
-        %\ar@{}[dr]|\square
-        \ar[d]_-{}
-        \ar[r]^-{\mpb[f]}
-        \ar[l]_-{\mdiff[f]}
-        \ar@{}[dr]|\square
-        &
-        \cotb[N]
-        \ar[d]^-{\pi_N}
-        \\
-        &
-        M
-        \ar[r]^-{f}
-        %\ar@{}[dr]|\square
-        &
-        N,
-        &
-        &
-        M
-        \ar[r]^-{f}
-        %\ar@{}[dr]|\square
-        &
-        N.
-    }}\]
-    \begin{itemize}
-        \item \(\mptan[f], \mpb[f]\)は標準射影
-        \item \(f'\)は接空間の間の微分写像から定まる射
-        \item \(\mdiff[f]\)はその転置から定まる射
-    \end{itemize}
-\end{frame}
-\begin{frame}
-    \frametitle{打切り超局所台の関手的性質}
-    \begin{PRP}[{\cite[Proposition 5.4.4]{KS90}}]\label{prp:img}
-        \(f\colon M\to N\)を多様体の射とし，
-        \(F\in\Dompb(\kk_M)\)とする．
-        \(f\)が\(\supp(F)\)上固有ならば，
-        \[
-            \muS[](\Rder{f_{\ast}})
-            \subset
-            \mpb[f]\mdiff[f]^{-1}\muS[](F)
-        \]である．
-    \end{PRP}
-    打切り版でも同様の事実が成り立つ．
-    \begin{PRP}[{\cite[Proposition 4.3]{KFS03a}}]\label{prp:t-img}
-        \(f\colon M\to N\)を多様体の射とし，
-        \(F\in\Dompb(\kk_M)\)とする．\(k\in\zz\)とする．
-        \(f\)が\(\supp(F)\)上固有ならば，
-        \[
-            \muS[k](\Rder{f_{\ast}})
-            \subset
-            \mpb[f]\mdiff[f]^{-1}\muS[k](F)
-        \]である．
-    \end{PRP}
-\end{frame}
-
 
 
 
 \section{主結果}
 \begin{frame}
-    %\frametitle{主結果1}
+    \frametitle{元の主張}
+    設定は次のとおり．
+    \begin{itemize}
+        \item \(M\): \(C^{\infty}\)多様体．
+        \item \(F\in\Dompb(\kk_{M})\).
+        \item \(\psi\colon M\to \rr\)と\(t\in\rr\)に対し，\(M_{t}\coloneqq \psi^{-1}((-\infty,t))\).
+    \end{itemize}
+    \begin{THM}[超局所モースの補題]
+        \(\psi\colon M\to \rr\)を\(a\leqq\psi(x)< b\)で
+        \(d\psi(x)\notin\muS[](F)\)となる\(C^1\)級関数で
+        \(\supp(F)\)上固有なものとする．
+        このとき制限射\[
+            H^{j}(M_b;F)\longrightarrow H^{j}(M_a;F)
+        \]は各\(j\in\zz\)について同型である．
+    \end{THM}    
+    これを\(\muS[k](F)\)を用いて拡張したのが次の主結果1.
+\end{frame}
+
+\begin{frame}
+    \frametitle{主結果1}
+    \begin{THM}[O., 打切り版超局所モースの補題]
+        \textcolor{brown}{\(k\in\zz\)とする．}
+        \(\psi\colon M\to \rr\)を\(a\leqq\psi(x)< b\)で
+        \(d\psi(x)\notin\muS[\textcolor{brown}{k}](F)\)となる\(C^1\)級関数で
+        \(\supp(F)\)上固有なものとする．
+        このとき制限射\[
+            H^{j}(M_b;F)\longrightarrow H^{j}(M_a;F)
+        \]は\textcolor{brown}{\(j<k\)ならば同型}であり，
+        \textcolor{brown}{\(j=k\)ならば単射}である．
+    \end{THM}    
+    証明には，もう一つの主定理を用いる．
+\end{frame}
+\begin{frame}
+    \frametitle{主結果2の元の結果}
+    主結果2は次のオリジナルの結果を打切り版に精密化したもの．
+  \begin{THM}[非特性変形補題]
+    \(X\)をハウスドルフ空間とする．
+    \(F\in\Dompl(\kk_X)\)とし，
+    \(\left(U_{t}\right)_{t\in\rr}\)を\(X\)の開集合の族とする．
+    %\(k\in\zz\)とする．
+    \(
+      Z_{s}\coloneqq \bigcap_{t>s}\overline{U_t- U_s}\ (s\in\rr)
+    \)とおく．
+    次を仮定する．%\vspace{-8pt}
+    \begin{enumerate}[(i)]
+      \setlength{\leftskip}{10pt}
+      \item \label{item:nonchar1}
+      任意の\(t\in\rr\)に対し\(U_{t}=\bigcup_{s<t}U_{s}\)である．
+      \item \label{item:nonchar2}
+      任意の実数\(s\leqq t\)に対し\(
+        \overline{U_{t}- U_{s}}\cap \supp{F}
+      \)はコンパクトである．
+      \item \label{item:nonchar3}
+      任意の実数\(s\leqq t\)と任意の点\(x\in Z_{s}- U_{t}\)に対し，
+      \(
+        (H^{j}_{X- U_{s}}(F))_{x}=0\quad (j\in\zz). 
+      \)
+    \end{enumerate}
+    このとき，任意の\(t\in\rr\)に対し，次の射は同型である．\[
+      H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
+      \to
+      H^{j}\left(U_{t};F\right)\quad(j\in\zz).
+    \]
+  \end{THM}
+\end{frame}
+
+\begin{frame}
+    \frametitle{主結果2}
   \begin{THM}[O., 打切り版非特性変形補題]
     \(X\)をハウスドルフ空間とする．
     \(F\in\Dompl(\kk_X)\)とし，
     \(\left(U_{t}\right)_{t\in\rr}\)を\(X\)の開集合の族とする．
-    \(k\in\zz\)とする．
+    \textcolor{brown}{\(k\in\zz\)とする．}
     \(
       Z_{s}\coloneqq \bigcap_{t>s}\overline{U_t- U_s}\ (s\in\rr)
     \)とおく．
@@ -838,35 +845,364 @@
         \overline{U_{t}- U_{s}}\cap \supp{F}
       \)はコンパクトである．
       \item \label{item:t-nonchar3}
-      任意の実数\(s\in\rr\)と任意の点\(x\in Z_{s}- U_{s}\)に対し，
-      \(j\leqq k\)ならば
+      任意の実数\textcolor{brown}{\(s\in\rr\)}と
+      任意の点\(x\in Z_{s}- U_{\textcolor{brown}{s}}\)に対し，
+      \textcolor{brown}{\(j\leqq k\)ならば}
       \(
         (H^{j}_{X- U_{s}}(F))_{x}=0. 
       \)
-      \item \label{item:t-nonchar4} 
-      任意の実数\(s< t\)に対し，\(Z_s\subset U_{t}\)が成り立つ．
+      \textcolor{brown}{\item \label{item:t-nonchar4} 
+      任意の実数\(s< t\)に対し，\(Z_s\subset U_{t}\)が成り立つ．}
     \end{enumerate}
-    このとき，任意の\(t\in\rr\)に対し，制限射\[
+    このとき，任意の\(t\in\rr\)に対し，
+    次の射は\textcolor{brown}{\(j<k\)ならば同型}であり，
+    \textcolor{brown}{\(j=k\)ならば単射}である．
+    \[
       H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
       \to
-      H^{j}\left(U_{t};F\right)
-    \]は\(j<k\)ならば同型であり，\(j=k\)ならば単射である．
+      H^{j}\left(U_{t};F\right).
+    \]
   \end{THM}
 \end{frame}
 
 \begin{frame}
-    \frametitle{打切り版への拡張}
-    \begin{THM}[O., 打切り超局所モースの補題]
-        \(k\in\zz\)とする．
-        \(\psi\colon M\to \rr\)を\(a\leqq\psi(x)< b\)で
-        \(d\psi(x)\notin\muS[k](F)\)となる\(C^1\)級関数で
-        \(\supp(F)\)上固有なものとする．
-        このとき制限射\[
-            H^{j}(M_b;F)\longrightarrow H^{j}(M_a;F)
-        \]は\(j\leqq k\)のとき同型であり，\(j=k\)のとき単射である．
-    \end{THM}    
+  \frametitle{仮定 (iv) をみたさない例}
+    \(X=\rr^2\)とする．実数\(t\)に対し関数\(\varphi_{t}\)を次で定める．
+    \[
+      \varphi_{t}(x)\coloneqq\begin{cases}
+        \max\left(0,t(2-\left|x\right|)\right)&(\left|x\right| < 2),\\
+        0& (\left|x\right|\geqq 2).
+      \end{cases}
+    \]
+    このとき\(X\)の開集合\(U_{t}\)を
+    \(
+      U_{t}\coloneqq
+      \left\{
+        (x,y)\in X;\ y<\varphi_{t}(x)
+      \right\}
+    \)とすると
+    \((U_{t})_{t}\)は\eqref{item:t-nonchar4}をみたさない．
+      \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.50]
+        \def\t{1}
+        \def\xmax{3.5}
+        \def\ymin{-1}
+        \def\ymax{3}
+
+        %------------------
+        % 塗りつぶし
+        %------------------
+
+        % y<0 の部分
+        \fill[black!25] (-\xmax,0) rectangle (\xmax,\ymin);
+
+        % 三角形部分 y < t(2-|x|)
+        \fill[black!25]
+          (-2,0) -- (0,{2*\t}) -- (2,0) -- cycle;
+
+        %------------------
+        % 境界（点線）
+        %------------------
+
+        % 折れ線
+        \draw[very thick,dashed] (-2,0)--(0,{2*\t})--(2,0);
+
+        % x軸（|x|>=2）
+        \draw[very thick,dashed] (-\xmax,0)--(-2,0);
+        \draw[very thick,dashed] (2,0)--(\xmax,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+        % ラベル
+        \node at (2.4,0.8) {\(U_t\)};
+      \end{tikzpicture}
+      \begin{tikzpicture}[scale=0.50]
+        \def\t{1}
+        \def\xmax{3.5}
+        \def\ymin{-1}
+        \def\ymax{3}
+
+        %------------------
+        % 境界（点線）
+        %------------------
+
+        % 折れ線
+        \draw[ultra thick] (-2,0)--(0,{2*\t})--(2,0);
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+        % ラベル
+        \node at (1.4,1.2) {\(Z_t\)};
+      \end{tikzpicture}
+      %\caption{example \eqref{item:not-gentle}}
+      %\label{fig:not-gentle}
+    \end{figure}
 \end{frame}
 
+\begin{frame}
+  \frametitle{仮定 (iv) をみたさない例（続）}
+    \(X\)の閉集合\(Z\)を次で定める．
+    \[
+      Z\coloneqq \left\{(x,y)\in X;\ (x+2)^{2}+(y-1)^{2}=1\right\}- \left\{(-1,0)\right\}. 
+    \]
+    \(Z\)上の定数層の\(X\)への零による延長\(\kk_{Z}\)を考える．
+
+    \(j\leqq0\)のとき，
+    任意の実数\(s\leqq t\)と任意の点\(x\in Z_{s}- U_{t}\)に対し\(
+      H^{j}_{X- U_{t}}(\kk_{Z})_{x}=0
+    \). 
+
+    しかし\(
+      H^{0}(U_{1};\kk_{Z})=\kk
+      \to 
+      0 = H^{0}(U_{0};\kk_{Z})
+    \)は単射ではない．
+      \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.50]
+        \def\t{1}
+        \def\xmax{3.5}
+        \def\ymin{-1}
+        \def\ymax{3}
+
+        %------------------
+        % 塗りつぶし
+        %------------------
+
+        % y<0 の部分
+        \fill[black!25] (-\xmax,0) rectangle (\xmax,\ymin);
+
+        % 三角形部分 y < t(2-|x|)
+        \fill[black!25]
+          (-2,0) -- (0,{2*\t}) -- (2,0) -- cycle;
+
+        %------------------
+        % 境界（点線）
+        %------------------
+
+        % 折れ線
+        \draw[very thick,dashed] (-2,0)--(0,{2*\t})--(2,0);
+
+        % x軸（|x|>=2）
+        \draw[very thick,dashed] (-\xmax,0)--(-2,0);
+        \draw[very thick,dashed] (2,0)--(\xmax,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+        % 円
+        \def\s{1} % 半径 t > 0
+        \draw[thick] (-2,1) circle (\s);
+        \fill[black!0](-2,0) circle (0.1);
+        \draw (-2,0) circle (0.1);
+
+        % ラベル
+        \node at (2.4,0.8) {\(U_t\)};
+        \node at (-1.4,2.4) {\(Z\)};
+      \end{tikzpicture}
+      %\caption{example \eqref{item:not-gentle}}
+      %\label{fig:not-gentle}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{仮定 (iv) をみたす例}
+    実数\(t\)に対し関数\(\varphi_{t}\)を次で定める．
+    \(t\leqq 0\)のとき\(\varphi_{t}(x)\equiv 0\)とする．
+    
+    \(t> 0\)のときは以下のように定める．\[
+      \varphi_{t}(x)\coloneqq\begin{cases}
+        \sqrt{t^{2}-x^{2}} & (\left|x\right|<\textcolor{black}{t}),\\
+        0&(\left|x\right|\geqq \textcolor{black}{t}).
+      \end{cases}
+    \]
+    このとき，\(\rr^2\)の開集合\(U_{t}\)を次で定める． 
+    \[
+      U_{t}\coloneqq
+      \left\{(x,y)\in X;\ y<\varphi_{t}(x)\right\}. 
+    \]
+    \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.6]
+        \def\t{1.5}
+
+        %------------------
+        % 塗りつぶし領域
+        %------------------
+
+        % 半円の下側 y < sqrt(t^2 - x^2)
+        \fill[black!25,domain=-\t:\t,samples=200]
+          (-\t,0)
+          -- plot(\x,{sqrt(\t*\t-\x*\x)})
+          -- (\t,0)
+          -- cycle;
+        \draw[dashed, very thick](0,0) ellipse (1.5 and 1.5);
+
+        % y < 0 の部分
+        \fill[black!25] (-3.5,0) rectangle (3.5,-2);
+
+        %------------------
+        % 境界
+        %------------------
+
+        % 半円（上半分）
+        %\draw[thick,domain=-\t:\t,samples=300]
+        %  plot(\x,{sqrt(\t*\t-\x*\x)});
+
+        % x軸（|x|>=t の境界として）
+        \draw[dashed, very thick] (-3.5,0)--(-\t,0);
+        \draw[dashed, very thick] (\t,0)--(3.5,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-3.5,0)--(3.5,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,-2)--(0,2) node[right]{\(y\)};
+
+        % ラベル
+        \node at (2.3,-0.6) {\(U_t\)};
+      \end{tikzpicture}
+      \begin{tikzpicture}[scale=0.6]
+        \def\t{1.5}
+
+        %------------------
+        % 塗りつぶし領域
+        %------------------
+
+        % 半円の下側 y < sqrt(t^2 - x^2)
+        \fill[black!0,domain=-\t:\t,samples=200]
+          (-\t,0)
+          -- plot(\x,{sqrt(\t*\t-\x*\x)})
+          -- (\t,0)
+          -- cycle;
+        \draw[ultra thick](0,0) ellipse (1.5 and 1.5);
+
+        % y < 0 の部分
+        \fill[black!0] (-3.5,0) rectangle (3.5,-2);
+
+        %------------------
+        % 境界
+        %------------------
+
+        % 半円（上半分）
+        %\draw[thick,domain=-\t:\t,samples=300]
+        %  plot(\x,{sqrt(\t*\t-\x*\x)});
+
+        % x軸（|x|>=t の境界として）
+        %\draw[dashed, very thick] (-3.5,0)--(-\t,0);
+        %\draw[dashed, very thick] (\t,0)--(3.5,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-3.5,0)--(3.5,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,-2)--(0,2) node[right]{\(y\)};
+
+        % ラベル
+        \node at (2.1,0.6) {\(Z_t\)};
+      \end{tikzpicture}
+      %\caption{example \eqref{item:gentle2}}
+      %\label{fig:gentle2}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{証明の概要 (1/2)}
+  ある補題を用いると，
+  次を示すことに帰着される．
+  \begin{align}
+    \tag*{\((a)^j_s\)}\label{eq:t-nonchar-a}
+    \mu_{s}^{j}&\colon
+    \indlim[t>s] H^{j}(U_t;F) \simar H^{j}(U_s;F),\\
+    \tag*{\((a')^k_s\)}\label{eq:t-nonchar-a'}
+    \mu_{s}^{k}&\colon
+    \indlim[t>s] H^{k}(U_t;F) \hookrightarrow H^{k}(U_s;F),\\
+    \tag*{\((b)^j_s\)}\label{eq:t-nonchar-b}
+    \lambda_{s}^{j}&\colon
+    H^{j}(U_s;F)\simarr \prolim[r<s] H^{j}(U_r;F).
+  \end{align}
+  \ref{eq:t-nonchar-a}を示すには，次の射の列を考える．
+  \begin{equation*}%\label{eq:t-nocha-d.t.}
+    \RG(Z_{s}\cup U_{s};\mres[\RG_{X- U_{s}}(F)]{Z_{s}\cup U_{s}})
+    \to
+    \RG(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
+    \to
+    \RG(U_{s};F)
+    \overset{+1}{\longrightarrow}. 
+  \end{equation*}
+  仮定\eqref{item:t-nonchar3}から第1項が\(0\)であることがわかる．
+\end{frame}
+
+\begin{frame}
+  \frametitle{証明の概要 (2/2)}
+  したがって，次が成り立つ．
+  \begin{align*}
+    %\label{eq:a-iso}
+    H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
+    &\simar
+    H^{j}(U_{s};F)\quad
+    \text{for any \(j< k\),}\\
+    %\label{eq:a-inj}
+    H^{k}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
+    &\hookrightarrow
+    H^{k}(U_{s};F).
+  \end{align*}
+  次の補題を示せば，
+  \ref{eq:t-nonchar-a}と\ref{eq:t-nonchar-a'}がわかる．
+  \begin{LMM}%\label{clm:ind-nonchar}
+    任意の\(j\in\zz\)と\(s\in\rr\)に対し，次の自然な射は同型である．
+    \[
+      \indlim[t>s]H^{j}(U_t;F)
+      \cong 
+      H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
+    \]
+  \end{LMM}
+  \ref{eq:t-nonchar-b}は\(j\)に関する帰納法とMittag-Leffler条件を用いることで示される．
+\end{frame}
+
+\begin{frame}
+    \frametitle{まとめ}
+    \[\vcenter{\xymatrix@C=42pt@R=32pt{
+        \txt{\(\muS[](F)\)\\
+        \cite{KS82}}
+        %\ar[dd]
+        &
+        \txt{超局所モースの補題\\
+        \cite{KS90}}
+        %\ar[dd]
+        &
+        \txt{非特性変形補題\\
+        \cite{KS90}}
+        %\ar[dd]
+        \\
+        %\ar[r] 
+        &
+        &
+        %\ar[l]
+        \\
+        \txt{\(\muS[k](F)\)\\
+        \cite{KFS03a}}
+        &
+        \txt{打切り超局所モースの補題\\主結果1}
+        &\txt{打切り非特性変形補題\\主結果2}
+    }}\]
+\end{frame}
 
 \appendix
 \section*{参考文献}

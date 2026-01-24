@@ -1,12 +1,18 @@
 # 修論
 
-修論（01/21 14:30 更新）[(pdf)](syuron/utf8/oshiba-syuron.pdf)
+修論（01/25 02:40 更新）[(pdf)](syuron/utf8/oshiba-syuron.pdf)
 
 概要（01/21 14:30 更新） [(pdf)](syuron/utf8/gaiyo-oshiba.pdf)
 
-修論審査会スライド (01/23 21:55) [(pdf)](master-slides/20250204master-slides.pdf)
+修論審査会スライド (01/25 02:40) [(pdf)](master-slides/20260204master-slides.pdf)
 
 ## 更新のあしあと
+
+### 1/25 更新分
+
+02:40 修論のタイポ修正
+
+スライドをとりあえず作った．明日しゃべってみる．
 
 ### 1/21 更新分
 
