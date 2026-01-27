@@ -532,6 +532,12 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmss.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmss.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmss.fd
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcss1000.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/ueus.fd
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/ueus.fd
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/ueus.fd
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm10.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm7.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm5.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
@@ -561,6 +567,9 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm10.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm10.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm7.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/latex-fonts/lasy8.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm
