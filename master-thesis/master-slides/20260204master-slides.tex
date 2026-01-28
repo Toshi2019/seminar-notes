@@ -459,6 +459,7 @@
 \newtheorem{AXM}{公理}%[section]
 \newtheorem{DFN}[AXM]{定義}
 \newtheorem{THM}[AXM]{定理}
+\newtheorem{HM}[AXM]{定理もどき}
 \newtheorem*{THM*}{定理}
 \newtheorem{PRP}[AXM]{命題}
 \newtheorem{LMM}[AXM]{補題}
@@ -701,7 +702,7 @@
         微分方程式\(Pu=0\)を考える．余接束の部分集合
         \begin{itemize}
             \item 超関数\(u\)の波面集合（特異性スペクトル）
-            \item 微分作用素\(P\)の特性多様体
+            \item 線形微分作用素\(P\)の特性多様体
         \end{itemize}
         を用いると，解\(u\)の特異性が分析できる（楕円型正則性など）．
     \end{exampleblock}
@@ -781,7 +782,7 @@
         \[
             \varphi(x_1)=0,\ d\varphi(x_1)\in U
             \Longrightarrow
-            H^{j}_{\{\varphi\geqq\varphi(x_0)\}}(F)_{x_1}=0
+            H^{j}_{\{\varphi\geqq0\}}(F)_{x_1}=0
             \quad
             (\textcolor{brown}{j\leqq k}).
         \]
@@ -819,7 +820,7 @@
         \item \(\psi\colon M\to \rr\)：\(C^1\)級関数で
         \(\supp(F)\)上固有なものと\(t\in\rr\)に対し，\(M_{t}\coloneqq \psi^{-1}((-\infty,t))\).
     \end{itemize}
-    \begin{THM}[O., 打切り版超局所モースの補題]
+    \begin{THM}[大柴, 打切り版超局所モースの補題]
         \textcolor{brown}{\(k\in\zz\)とする．}
         \(a\leqq\psi(x)< b\)ならば
         \(d\psi(x)\notin\muS[\textcolor{brown}{k}](F)\)であるとする．
@@ -868,8 +869,219 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{期待される打切り版}
+  \begin{HM}[打切り版？非特性変形補題]
+    \(X\)をハウスドルフ空間とする．
+    \(F\in\Dompl(\kk_X)\)とし，
+    \(\left(U_{t}\right)_{t\in\rr}\)を\(X\)の開集合の族とする．
+    \textcolor{brown}{\(k\in\zz\)とする．}
+    \(
+      Z_{s}\coloneqq \bigcap_{t>s}\overline{U_t\setminus U_s}\ (s\in\rr)
+    \)とおく．
+    次を仮定する．%\vspace{-8pt}
+    \begin{enumerate}[(i)]
+      \setlength{\leftskip}{10pt}
+      \item \label{item:t-nonchar1}
+      任意の\(t\in\rr\)に対し\(U_{t}=\bigcup_{s<t}U_{s}\)である．
+      \item \label{item:t-nonchar2}
+      任意の実数\(s\leqq t\)に対し\(
+        \overline{U_{t}\setminus U_{s}}\cap \supp{F}
+      \)はコンパクトである．
+      \item \label{item:t-nonchar3}
+      任意の実数\(s\leqq t\)と
+      任意の点\(x\in Z_{s}\setminus U_{t}\)に対し，
+      \textcolor{brown}{\(j\leqq k\)ならば}
+      \(
+        (H^{j}_{X\setminus U_{t}}(F))_{x}=0. 
+      \)
+    \end{enumerate}
+    このとき，任意の\(t\in\rr\)に対し，
+    次の射は\textcolor{brown}{\(j<k\)ならば同型}であり，
+    \textcolor{brown}{\(j=k\)ならば単射}である．
+    \[
+      H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
+      \to
+      H^{j}\left(U_{t};F\right).
+    \]
+  \end{HM}
+\end{frame}
+
+\begin{frame}
+  \frametitle{うまくいかない例}
+  \begin{alertblock}{問題点}
+    条件\eqref{item:t-nonchar1}--\eqref{item:t-nonchar3}を
+    みたしているのにうまくいかないことがある．
+  \end{alertblock}
+    \(X=\rr^2\)とする．実数\(t\)に対し関数\(\varphi_{t}\)を次で定める．
+    \[
+      \varphi_{t}(x)\coloneqq\begin{cases}
+        \max\left(0,t(2-\left|x\right|)\right)&(\left|x\right| < 2),\\
+        0& (\left|x\right|\geqq 2).
+      \end{cases}
+    \]
+    このとき\(X\)の開集合\(U_{t}\)を
+    \(
+      U_{t}\coloneqq
+      \left\{
+        (x,y)\in X;\ y<\varphi_{t}(x)
+      \right\}
+    \)とする．次ページのように層\(\kk_{Z}\)を定めると，
+    \((U_{t})_{t}\)と\(\kk_{Z}\)は\eqref{item:t-nonchar1}--\eqref{item:t-nonchar3}をみたす．
+      \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.50]
+        \def\t{0.7}
+        \def\u{1.4}
+        \def\xmax{3.5}
+        \def\ymin{-1}
+        \def\ymax{3.3}
+
+        %------------------
+        % 塗りつぶし
+        %------------------
+
+        % y<0 の部分
+        \fill[green!30] (-\xmax,0) rectangle (\xmax,\ymin);
+        \fill[blue!25] (-\xmax,0) rectangle (\xmax,\ymin);
+
+        % 三角形部分 y < t(2-|x|)
+        \fill[green!30]
+          (-2,0) -- (0,{2*\u}) -- (2,0) -- cycle;
+
+        \fill[blue!25]
+          (-2,0) -- (0,{2*\t}) -- (2,0) -- cycle;
+
+
+
+        %------------------
+        % 境界（点線）
+        %------------------
+
+        % 折れ線
+        \draw[very thick,dashed] (-2,0)--(0,{2*\u})--(2,0);
+        % 折れ線
+        \draw[very thick,dashed] (-2,0)--(0,{2*\t})--(2,0);
+
+        % x軸（|x|>=2）
+        \draw[very thick,dashed] (-\xmax,0)--(-2,0);
+        \draw[very thick,dashed] (2,0)--(\xmax,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+        % ラベル
+        \node at (2.4,0.8) {\(U_t\)};
+      \end{tikzpicture}
+      \begin{tikzpicture}[scale=0.50]
+        \def\t{0.7}
+        \def\xmax{3.5}
+        \def\ymin{-1}
+        \def\ymax{3}
+
+        %------------------
+        % 境界（点線）
+        %------------------
+
+        % 折れ線
+        \draw[ultra thick] (-2,0)--(0,{2*\t})--(2,0);
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+        % ラベル
+        \node at (1.4,1.2) {\(Z_t\)};
+      \end{tikzpicture}
+      %\caption{example \eqref{item:not-gentle}}
+      %\label{fig:not-gentle}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{うまくいかない例（続）}
+    \(X\)の閉集合\(Z\)を次で定める．
+    \[
+      Z\coloneqq \left\{(x,y)\in X;\ (x+2)^{2}+(y-1)^{2}=1\right\}\setminus \left\{(-1,0)\right\}. 
+    \]
+    \(Z\)上の定数層の\(X\)への零による延長\(\kk_{Z}\)を考える．
+
+    \(j\leqq0\)のとき，
+    任意の実数\(s\leqq t\)と任意の点\(x\in Z_{s}\setminus U_{t}\)に対し\(
+      H^{j}_{X\setminus U_{t}}(\kk_{Z})_{x}=0
+    \). 
+
+    しかし\(
+      H^{0}(U_{1};\kk_{Z})=\kk
+      \to 
+      0 = H^{0}(U_{0};\kk_{Z})
+    \)は単射ではない．
+      \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.50]
+        \def\t{0.9}
+        \def\xmax{3.5}
+        \def\ymin{-1}
+        \def\ymax{3}
+
+        %------------------
+        % 塗りつぶし
+        %------------------
+
+        % y<0 の部分
+        \fill[blue!25] (-\xmax,0) rectangle (\xmax,\ymin);
+
+        % 三角形部分 y < t(2-|x|)
+        \fill[blue!25]
+          (-2,0) -- (0,{2*\t}) -- (2,0) -- cycle;
+
+        %------------------
+        % 境界（点線）
+        %------------------
+        % 折れ線
+        \draw[ultra thick] (-2,0)--(0,{2*\t})--(2,0);
+        
+        % 折れ線
+        \draw[very thick,dashed] (-2,0)--(0,{2*\t})--(2,0);
+
+        % x軸（|x|>=2）
+        \draw[very thick,dashed] (-\xmax,0)--(-2,0);
+        \draw[very thick,dashed] (2,0)--(\xmax,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+        % 円
+        \def\s{1} % 半径 t > 0
+        \draw[thick] (-2,1) circle (\s);
+        \fill[black!0](-2,0) circle (0.1);
+        \draw (-2,0) circle (0.1);
+
+        % ラベル
+        \node at (2.2,0.8) {\(Z_t\)};
+        \node at (2.4,-0.6) {\(U_t\)};
+        \node at (-1.4,2.4) {\(Z\)};
+      \end{tikzpicture}
+      %\caption{example \eqref{item:not-gentle}}
+      %\label{fig:not-gentle}
+    \end{figure}
+    \begin{alertblock}{工夫}
+      「端点が移動する」という条件を付け加える．
+    \end{alertblock} 
+\end{frame}
+
+\begin{frame}
     \frametitle{主結果2}
-  \begin{THM}[O., 打切り版非特性変形補題]
+  \begin{THM}[大柴, 打切り版非特性変形補題]
     \(X\)をハウスドルフ空間とする．
     \(F\in\Dompl(\kk_X)\)とし，
     \(\left(U_{t}\right)_{t\in\rr}\)を\(X\)の開集合の族とする．
@@ -906,6 +1118,7 @@
     \]
   \end{THM}
 \end{frame}
+
 
 \begin{frame}
   \frametitle{仮定 (iv) をみたす例}
@@ -1013,229 +1226,10 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}
-  \frametitle{仮定 (iv) をみたさない例}
-  \begin{center}
-    \eqref{item:t-nonchar4}：任意の実数\(s< t\)に対し\(Z_s\subset U_{t}\)．
-  \end{center}
-    \(X=\rr^2\)とする．実数\(t\)に対し関数\(\varphi_{t}\)を次で定める．
-    \[
-      \varphi_{t}(x)\coloneqq\begin{cases}
-        \max\left(0,t(2-\left|x\right|)\right)&(\left|x\right| < 2),\\
-        0& (\left|x\right|\geqq 2).
-      \end{cases}
-    \]
-    このとき\(X\)の開集合\(U_{t}\)を
-    \(
-      U_{t}\coloneqq
-      \left\{
-        (x,y)\in X;\ y<\varphi_{t}(x)
-      \right\}
-    \)とすると
-    \((U_{t})_{t}\)は\eqref{item:t-nonchar4}をみたさない．
-      \begin{figure}[htb]
-      \centering
-      \begin{tikzpicture}[scale=0.50]
-        \def\t{0.7}
-        \def\u{1.4}
-        \def\xmax{3.5}
-        \def\ymin{-1}
-        \def\ymax{3.3}
 
-        %------------------
-        % 塗りつぶし
-        %------------------
-
-        % y<0 の部分
-        \fill[green!30] (-\xmax,0) rectangle (\xmax,\ymin);
-        \fill[blue!25] (-\xmax,0) rectangle (\xmax,\ymin);
-
-        % 三角形部分 y < t(2-|x|)
-        \fill[green!30]
-          (-2,0) -- (0,{2*\u}) -- (2,0) -- cycle;
-
-        \fill[blue!25]
-          (-2,0) -- (0,{2*\t}) -- (2,0) -- cycle;
-
-
-
-        %------------------
-        % 境界（点線）
-        %------------------
-
-        % 折れ線
-        \draw[very thick,dashed] (-2,0)--(0,{2*\u})--(2,0);
-        % 折れ線
-        \draw[very thick,dashed] (-2,0)--(0,{2*\t})--(2,0);
-
-        % x軸（|x|>=2）
-        \draw[very thick,dashed] (-\xmax,0)--(-2,0);
-        \draw[very thick,dashed] (2,0)--(\xmax,0);
-
-        %------------------
-        % 軸
-        %------------------
-
-        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
-        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
-
-        % ラベル
-        \node at (2.4,0.8) {\(U_t\)};
-      \end{tikzpicture}
-      \begin{tikzpicture}[scale=0.50]
-        \def\t{0.7}
-        \def\xmax{3.5}
-        \def\ymin{-1}
-        \def\ymax{3}
-
-        %------------------
-        % 境界（点線）
-        %------------------
-
-        % 折れ線
-        \draw[ultra thick] (-2,0)--(0,{2*\t})--(2,0);
-        %------------------
-        % 軸
-        %------------------
-
-        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
-        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
-
-        % ラベル
-        \node at (1.4,1.2) {\(Z_t\)};
-      \end{tikzpicture}
-      %\caption{example \eqref{item:not-gentle}}
-      %\label{fig:not-gentle}
-    \end{figure}
-\end{frame}
-
-\begin{frame}
-  \frametitle{仮定 (iv) をみたさない例（続）}
-    \(X\)の閉集合\(Z\)を次で定める．
-    \[
-      Z\coloneqq \left\{(x,y)\in X;\ (x+2)^{2}+(y-1)^{2}=1\right\}\setminus \left\{(-1,0)\right\}. 
-    \]
-    \(Z\)上の定数層の\(X\)への零による延長\(\kk_{Z}\)を考える．
-
-    \(j\leqq0\)のとき，
-    任意の実数\(s\leqq t\)と任意の点\(x\in Z_{s}\setminus U_{t}\)に対し\(
-      H^{j}_{X\setminus U_{t}}(\kk_{Z})_{x}=0
-    \). 
-
-    しかし\(
-      H^{0}(U_{1};\kk_{Z})=\kk
-      \to 
-      0 = H^{0}(U_{0};\kk_{Z})
-    \)は単射ではない．
-      \begin{figure}[htb]
-      \centering
-      \begin{tikzpicture}[scale=0.50]
-        \def\t{0.9}
-        \def\xmax{3.5}
-        \def\ymin{-1}
-        \def\ymax{3}
-
-        %------------------
-        % 塗りつぶし
-        %------------------
-
-        % y<0 の部分
-        \fill[black!25] (-\xmax,0) rectangle (\xmax,\ymin);
-
-        % 三角形部分 y < t(2-|x|)
-        \fill[black!25]
-          (-2,0) -- (0,{2*\t}) -- (2,0) -- cycle;
-
-        %------------------
-        % 境界（点線）
-        %------------------
-
-        % 折れ線
-        \draw[very thick,dashed] (-2,0)--(0,{2*\t})--(2,0);
-
-        % x軸（|x|>=2）
-        \draw[very thick,dashed] (-\xmax,0)--(-2,0);
-        \draw[very thick,dashed] (2,0)--(\xmax,0);
-
-        %------------------
-        % 軸
-        %------------------
-
-        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
-        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
-
-        % 円
-        \def\s{1} % 半径 t > 0
-        \draw[thick] (-2,1) circle (\s);
-        \fill[black!0](-2,0) circle (0.1);
-        \draw (-2,0) circle (0.1);
-
-        % ラベル
-        \node at (2.4,0.8) {\(U_t\)};
-        \node at (-1.4,2.4) {\(Z\)};
-      \end{tikzpicture}
-      %\caption{example \eqref{item:not-gentle}}
-      %\label{fig:not-gentle}
-    \end{figure}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{主結果2の証明の概要 (1/2)}
-  \(\dip 
-    H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
-    \to
-    H^{j}\left(U_{t};F\right)
-  \)の\(j<k\)での同型と\(j=k\)での単射性を示したい．
-
-  ある補題\cite[Proposition 1.12.6]{KS90}を用いると，
-  次を示すことに帰着される．
-  \begin{align}
-    \tag*{\((a)^j_s\)}\label{eq:t-nonchar-a}
-    \mu_{s}^{j}&\colon
-    \indlim[t>s] H^{j}(U_t;F) \simar H^{j}(U_s;F),\\
-    \tag*{\((a')^k_s\)}\label{eq:t-nonchar-a'}
-    \mu_{s}^{k}&\colon
-    \indlim[t>s] H^{k}(U_t;F) \hookrightarrow H^{k}(U_s;F),\\
-    \tag*{\((b)^j_s\)}\label{eq:t-nonchar-b}
-    \lambda_{s}^{j}&\colon
-    H^{j}(U_s;F)\simarr \prolim[r<s] H^{j}(U_r;F).
-  \end{align}
-  \ref{eq:t-nonchar-a}を示すには，次の射の列を考える．
-  \begin{equation*}%\label{eq:t-nocha-d.t.}
-    \RG(Z_{s}\cup U_{s};\mres[\RG_{X- U_{s}}(F)]{Z_{s}\cup U_{s}})
-    \to
-    \RG(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
-    \to
-    \RG(U_{s};F)
-    \overset{+1}{\longrightarrow}. 
-  \end{equation*}
-  仮定\eqref{item:t-nonchar3}から第1項が\(0\)であることがわかる．
-\end{frame}
-
-\begin{frame}
-  \frametitle{主結果2の証明の概要 (2/2)}
-  したがって，次の制限射は\(j<k\)なら同型，\(j=k\)なら単射である．
-  \[
-    H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
-    \to
-    H^{j}(U_{s};F).
-  \]
-  次の補題を示せば，
-  \ref{eq:t-nonchar-a}と\ref{eq:t-nonchar-a'}がわかる．
-  \begin{LMM}%\label{clm:ind-nonchar}
-    任意の\(j\in\zz\)と\(s\in\rr\)に対し，次の自然な射は同型である．
-    \[
-      \indlim[t>s]H^{j}(U_t;F)
-      \cong 
-      H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
-    \]
-  \end{LMM}
-  \ref{eq:t-nonchar-b}は\(j\)に関する帰納法とMittag-Leffler条件を用いることで示される．
-\end{frame}
 \begin{frame}
     \frametitle{主結果2（再掲）}
-  \begin{THM}[O., 打切り版非特性変形補題]
+  \begin{THM}[大柴, 打切り版非特性変形補題]
     \(X\)をハウスドルフ空間とする．
     \(F\in\Dompl(\kk_X)\)とし，
     \(\left(U_{t}\right)_{t\in\rr}\)を\(X\)の開集合の族とする．
@@ -1311,7 +1305,7 @@
         }}\]
     \vspace{10pt}
     \begin{center}
-      まとめ：層のコホモロジーの延長可能性を次数に関して精密化した．
+      結果：層のコホモロジーの延長可能性を次数に関して精密化した．
     \end{center}
 
 \end{frame}
@@ -1356,6 +1350,59 @@
 \end{thebibliography}
 \end{frame}
 
+\begin{frame}
+  \frametitle{主結果2の証明の概要 (1/2)}
+  \(\dip 
+    H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
+    \to
+    H^{j}\left(U_{t};F\right)
+  \)の\(j<k\)での同型と\(j=k\)での単射性を示したい．
+
+  ある補題\cite[Proposition 1.12.6]{KS90}を用いると，
+  次を示すことに帰着される．
+  \begin{align}
+    \tag*{\((a)^j_s\)}\label{eq:t-nonchar-a}
+    \mu_{s}^{j}&\colon
+    \indlim[t>s] H^{j}(U_t;F) \simar H^{j}(U_s;F),\\
+    \tag*{\((a')^k_s\)}\label{eq:t-nonchar-a'}
+    \mu_{s}^{k}&\colon
+    \indlim[t>s] H^{k}(U_t;F) \hookrightarrow H^{k}(U_s;F),\\
+    \tag*{\((b)^j_s\)}\label{eq:t-nonchar-b}
+    \lambda_{s}^{j}&\colon
+    H^{j}(U_s;F)\simarr \prolim[r<s] H^{j}(U_r;F).
+  \end{align}
+  \ref{eq:t-nonchar-a}を示すには，次の射の列を考える．
+  \begin{equation*}%\label{eq:t-nocha-d.t.}
+    \RG(Z_{s}\cup U_{s};\mres[\RG_{X- U_{s}}(F)]{Z_{s}\cup U_{s}})
+    \to
+    \RG(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
+    \to
+    \RG(U_{s};F)
+    \overset{+1}{\longrightarrow}. 
+  \end{equation*}
+  仮定\eqref{item:t-nonchar3}から第1項が\(0\)であることがわかる．
+\end{frame}
+
+\begin{frame}
+  \frametitle{主結果2の証明の概要 (2/2)}
+  したがって，次の制限射は\(j<k\)なら同型，\(j=k\)なら単射である．
+  \[
+    H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
+    \to
+    H^{j}(U_{s};F).
+  \]
+  次の補題を示せば，
+  \ref{eq:t-nonchar-a}と\ref{eq:t-nonchar-a'}がわかる．
+  \begin{LMM}%\label{clm:ind-nonchar}
+    任意の\(j\in\zz\)と\(s\in\rr\)に対し，次の自然な射は同型である．
+    \[
+      \indlim[t>s]H^{j}(U_t;F)
+      \cong 
+      H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
+    \]
+  \end{LMM}
+  \ref{eq:t-nonchar-b}は\(j\)に関する帰納法とMittag-Leffler条件を用いることで示される．
+\end{frame}
 
 \begin{comment}
 \begin{frame}[noframenumbering]

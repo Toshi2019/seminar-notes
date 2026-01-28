@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1769519702.09687 "20260204master-slides.dvi" "20260204master-slides.pdf" "20260204master-slides" 1769519703.2859 0
-  "20260204master-slides.dvi" 1769519701.92599 110160 23bb193f50ee41ed01908d0f797f23a8 "latex"
+["dvipdf"] 1769585218.68223 "20260204master-slides.dvi" "20260204master-slides.pdf" "20260204master-slides" 1769585219.82136 0
+  "20260204master-slides.dvi" 1769585218.40083 117996 fbb9b666822ff2a728d5d051a31f01da "latex"
   (generated)
   "20260204master-slides.pdf"
   (rewritten before read)
-["latex"] 1769519698.55027 "/Users/giuseppe/seminar-notes/master-thesis/master-slides/20260204master-slides.tex" "20260204master-slides.dvi" "20260204master-slides" 1769519703.27673 0
-  "/Users/giuseppe/seminar-notes/master-thesis/master-slides/20260204master-slides.tex" 1769519693.34625 46042 f3eea829eb4c456288dd14e8c1018ac6 ""
+["latex"] 1769585214.85781 "/Users/giuseppe/seminar-notes/master-thesis/master-slides/20260204master-slides.tex" "20260204master-slides.dvi" "20260204master-slides" 1769585219.81079 0
+  "/Users/giuseppe/seminar-notes/master-thesis/master-slides/20260204master-slides.tex" 1769585209.85319 47836 71708433ecc862fe027a333f2398cfc9 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcss1000.tfm" 1136768653 1536 293044035fd171bb1d18cf655049b101 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -304,10 +304,10 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "20260204master-slides.aux" 1769519701.92047 6894 55f4af454a5032e301e06efce3e795ce "latex"
-  "20260204master-slides.nav" 1769519701.92579 2383 371b3d65a78f284b32037ba97be61dd0 "latex"
-  "20260204master-slides.out" 1769519701.92516 218 076cacf15249c0250004bebfe4267522 "latex"
-  "20260204master-slides.tex" 1769519693.34625 46042 f3eea829eb4c456288dd14e8c1018ac6 ""
+  "20260204master-slides.aux" 1769585218.39511 7559 26c61a5cc40a23985be6298fb55c6000 "latex"
+  "20260204master-slides.nav" 1769585218.40067 2474 82c3b2517cb5174e93349ab21059fc44 "latex"
+  "20260204master-slides.out" 1769585218.40002 218 076cacf15249c0250004bebfe4267522 "latex"
+  "20260204master-slides.tex" 1769585209.85319 47836 71708433ecc862fe027a333f2398cfc9 ""
   (generated)
   "20260204master-slides.aux"
   "20260204master-slides.dvi"
