@@ -4,7 +4,7 @@
 
 概要（01/21 14:30 更新） [(pdf)](syuron/utf8/gaiyo-oshiba.pdf)
 
-修論審査会スライド (01/28 16:30) [(pdf)](master-slides/20260204master-slide.pdf)
+修論審査会スライド (01/28 16:30) [(pdf)](master-slides/20260204master-slides.pdf)
 
 ## 更新のあしあと
 
