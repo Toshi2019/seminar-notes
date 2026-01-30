@@ -47,8 +47,18 @@
 \headcommand {\beamer@framepages {19}{19}}
 \headcommand {\slideentry {1}{0}{4}{20/20}{}{1}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\beamer@partpages {16}{20}}
-\headcommand {\beamer@subsectionpages {16}{20}}
-\headcommand {\beamer@sectionpages {16}{20}}
-\headcommand {\beamer@documentpages {20}}
-\headcommand {\gdef \inserttotalframenumber {19}}
+\headcommand {\slideentry {1}{0}{5}{21/21}{}{1}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\slideentry {1}{0}{6}{22/22}{}{1}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\slideentry {1}{0}{7}{23/23}{}{1}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\slideentry {1}{0}{8}{24/24}{}{1}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\beamer@partpages {16}{24}}
+\headcommand {\beamer@subsectionpages {16}{24}}
+\headcommand {\beamer@sectionpages {16}{24}}
+\headcommand {\beamer@documentpages {24}}
+\headcommand {\gdef \inserttotalframenumber {8}}
+\headcommand {\gdef \inserttotalframenumber {15}}
+\headcommand {\gdef \appendixtotalframenumber {8}}

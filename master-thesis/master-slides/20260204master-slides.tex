@@ -23,6 +23,7 @@
 \setbeamertemplate{navigaton symbols}{\false}
 \setbeamertemplate{footline}[frame number]
 %\usepackage{graphicx,xcolor}
+\usepackage{appendixnumberbeamer}
 
 
 
@@ -338,7 +339,10 @@
 \newcommand{\muS}[1][]{\mathop{\mathrm{SS}}\nolimits_{#1}}
 \newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
 \newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
-\newcommand{\Rder}{\mathrm{R}}
+%\newcommand{\Rder}{\mathrm{R}}
+
+\newcommand{\Rder}[1][]{\mathop{\mathrm{R}^{#1}\hspace{-2pt}}\nolimits}
+
 
 \newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
 \newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
@@ -468,6 +472,7 @@
 \newtheorem*{EG*}{例}
 \newtheorem{RMK}[AXM]{注意}
 \newtheorem{CNV}[AXM]{約束}
+\newtheorem{CNJ}[AXM]{予想}
 \newtheorem{CMT}[AXM]{コメント}
 \newtheorem*{CMT*}{コメント}
 \newtheorem{NTN}[AXM]{記号}
@@ -1350,6 +1355,118 @@
 \end{thebibliography}
 \end{frame}
 
+
+\begin{frame}
+  \frametitle{仮定 (iv) をみたす例（追加）}
+    \begin{center}
+    \eqref{item:t-nonchar4}：任意の実数\(s< t\)に対し\(Z_s\subset U_{t}\)．
+    \end{center}
+    \(\rr^2\)の開集合\(U_{t}\)を次のように定める．
+    \begin{itemize}
+      \item \(t\leqq 0\)のときは\(U_{t}\coloneqq \left\{(x,y)\in X;\ y<0\right\}\). 
+      \item \(t> 0\)のときは\(
+        U_{t}\coloneqq
+        \left\{(x,y)\in X;\ 
+        \begin{array}{cc}
+          \text{\(\left|x\right|<\tfrac{1}{t}\)ならば，}&y<t.\vspace{2pt}\\
+          \text{そうでないとき，}&y<\tfrac{1}{\left|x\right|}.
+        \end{array}
+        \right\}\).
+    \end{itemize}
+    このとき，\((U_{t})\)は\eqref{item:t-nonchar4}をみたす．
+    \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.6]
+        \def\t{2}
+        \def\s{1.5}
+        \def\a{1/\t}
+        \def\b{1/\s}
+        % --- 塗りつぶし部分1 ---
+
+        % 中央部分 |x|<1/t, y<t
+        \fill[green!20]
+          (-\a,0) rectangle (\a,\t);
+
+        % 右側 |x|>=1/t
+        \fill[green!20,domain=\a:3,samples=200]
+          (\a,0)
+          -- plot(\x,{1/\x})
+          -- (3,0)
+          -- cycle;
+
+        % 左側 |x|>=1/t
+        \fill[green!20,domain=-3:-\a,samples=200]
+          (-3,0)
+          -- plot(\x,{1/abs(\x)})
+          -- (-\a,0)
+          -- cycle;
+
+        % --- 塗りつぶし部分2 ---
+
+        % 中央部分 |x|<1/s, y<s
+        \fill[blue!30]
+          (-\b,0) rectangle (\b,\s);
+
+        % 右側 |x|>=1/t
+        \fill[blue!30,domain=\b:3,samples=200]
+          (\b,0)
+          -- plot(\x,{1/\x})
+          -- (3,0)
+          -- cycle;
+
+        % 左側 |x|>=1/t
+        \fill[blue!30,domain=-3:-\b,samples=200]
+          (-3,0)
+          -- plot(\x,{1/abs(\x)})
+          -- (-\b,0)
+          -- cycle;
+
+
+        % --- 境界線 ---
+
+        % 水平線 y=t
+        \draw[dashed, thick] (-\a,\t)--(\a,\t);
+        % 水平線 y=s
+        \draw[dashed, thick] (-\b,\s)--(\b,\s);
+
+        % 双曲線
+        \draw[dashed, thick,domain=\a:3,samples=200]
+          plot(\x,{1/\x});
+        \draw[dashed, thick,domain=-3:-\a,samples=200]
+          plot(\x,{1/abs(\x)});
+
+        % 軸
+        \draw[->,>=stealth,semithick] (-3.5,0)--(3.5,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,-0.1)--(0,3) node[right]{\(y\)};
+
+        % 補助線
+        %\draw[dashed] (\a,0)--(\a,2);
+        %\draw[dashed] (-\a,0)--(-\a,2);
+
+        % ラベル
+        \node at (2.1,1) {\(U_t\)};
+      \end{tikzpicture}
+      \begin{tikzpicture}[scale=0.6]
+        \def\t{1.5}
+        \def\a{1/\t}
+
+        % 軸
+        \draw[->,>=stealth,semithick] (-3.5,0)--(3.5,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,-0.1)--(0,3) node[right]{\(y\)};
+
+        % --- 塗りつぶし部分 ---
+
+        % --- 境界線 ---
+
+        % 水平線 y=t
+        \draw[ultra thick] (-\a,\t)--(\a,\t);
+        % ラベル
+        \node at (1.2,\t) {\(Z_t\)};
+      \end{tikzpicture}
+      %\caption{example \eqref{item:gentle3}}
+      %\label{fig:gentle3}
+    \end{figure}
+\end{frame}
 \begin{frame}
   \frametitle{主結果2の証明の概要 (1/2)}
   \(\dip 
@@ -1402,6 +1519,60 @@
     \]
   \end{LMM}
   \ref{eq:t-nonchar-b}は\(j\)に関する帰納法とMittag-Leffler条件を用いることで示される．
+\end{frame}
+\begin{frame}
+  \frametitle{証明の補足}
+
+  ある補題\cite[Proposition 1.12.6]{KS90}というのは，
+  柏原の補題と呼ばれる次の主張．
+  \begin{PRP}[{\cite[Proposition 1.12.6]{KS90}}]
+    \(
+      \left(X_s,\rho_{s,t}\colon X_t\to X_s\right)_{(s,(s\leqq t))}
+    \)を\(\rr\)で添字づけられた射影系とする．
+    各\(s\in\rr\)に対し，次の自然な写像がどちらも単射（全射）であると仮定する．
+    \[
+      \lambda_s\colon X_s\to\prolim[r<s]X_r
+      ,\quad
+      \mu_s\colon \indlim[t>s]X_t\to X_s.
+    \]
+    このとき，すべての射\(
+      \rho_{s_{0},s_{1}}\) \((s_0\leqq s_1)
+    \)は単射（全射）となる．
+  \end{PRP}
+\end{frame}
+
+\begin{frame}
+  \frametitle{展望：相対版打切り超局所モースの補題}
+  \begin{itemize}
+    \item \(f\colon Y\to X\)：多様体の射．
+    \item \(\varphi\colon Y\to \rr\)：\(C^{1}\)級関数で
+    \(Y_{t}\coloneqq \varphi^{-1}((-\infty,t))\), 
+    \(\widetilde{Y}_{t}\coloneqq \varphi^{-1}((-\infty,t])\)とし，\(j_{t}\colon Y_{t}\hookrightarrow Y\).
+    \item \(G\in\Dompb(Y)\)で
+    \(f_{t}\colon \supp(G)\cap \overline{Y_t}\to X\)はすべての\(t\in\rr\)に対し固有．
+  \end{itemize}
+  \(k\in\zz\)とし\(t_{\circ}\in\rr\)とする．
+  \(y\in Y\setminus \widetilde{Y}_{t_{\circ}}\)ならば
+  次が成り立つとする．\[
+      d\varphi(y)\notin \left(
+        \muS[k](G)+ \mdiff[f]\left(
+          Y\pb[X]\cotb[X]
+        \right)
+      \right).
+    \]
+  このとき，\(t>t_{\circ}\)に対して，次が成り立つと期待される．
+  \begin{CNJ}
+    次の層の射は\(j<k\)ならば同型，\(j=k\)ならば単射である．
+    \[
+      \Rder[k]{f_{\ast}}G
+      \to
+      \Rder[k]{{f_{t}}_{\ast}}j^{-1}_{t}G.
+    \]
+  \end{CNJ}
+\end{frame}
+\begin{frame}
+    \frametitle{主結果2の設定について}
+    実は修論中では「任意の開集合がパラコンパクト」を課していたが，不要であることが提出後に分かった．
 \end{frame}
 
 \begin{comment}

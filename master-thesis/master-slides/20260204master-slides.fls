@@ -321,6 +321,8 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamercolorthemerose.s
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamercolorthemerose.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerfontthemeprofessionalfonts.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerfontthemeprofessionalfonts.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/appendixnumberbeamer/appendixnumberbeamer.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/appendixnumberbeamer/appendixnumberbeamer.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/bxdpx-beamer/bxdpx-beamer.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/bxdpx-beamer/bxdpx-beamer.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmr.fd
