@@ -861,7 +861,7 @@
       \item \label{item:nonchar3}
       任意の実数\(s\leqq t\)と任意の点\(x\in Z_{s}\setminus U_{t}\)に対し，
       \(
-        (H^{j}_{X\setminus U_{s}}(F))_{x}=0\quad (j\in\zz). 
+        (H^{j}_{X\setminus U_{t}}(F))_{x}=0\quad (j\in\zz). 
       \)
     \end{enumerate}
     このとき，任意の\(t\in\rr\)とすべての\(j\in\zz\)に対し，
@@ -1327,6 +1327,9 @@
   Masaki Kashiwara, Pierre Schapira, 
   \textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
   Duke. Math. J. 161, No. 2, pp.201--245, 2012.  
+  \bibitem[Hor90]{Hor90} Lars H\"ormander, 
+  \textit{The Analysis of Linear Pertial Differential Operators I}, Second Edition,
+  Grundlehren der Mathematischen Wissenschaften, 256, Springer, 1989.
   \bibitem[KFS03a]{KFS03a} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
   \textit{Truncated Microsupport and Holomorphic Solutions 
   of \(D\)-modules}, 
@@ -1355,6 +1358,30 @@
 \end{thebibliography}
 \end{frame}
 
+\begin{frame}
+  \frametitle{単射性に関する補足}
+  \begin{THM}[Holmgrenの一意性定理 (例えば{\cite[Theorem 8.6.5]{Hor90}})]
+    \(u\)を\(X\)上で（実解析係数）線形偏微分方程式\(Pu=0\)をみたす超関数とする．
+    \(P\)に関する非特性\(C^1\)曲面の近傍を考える．
+    曲面の片側において\(u=0\)ならば，近傍全体で\(u=0\)である．
+  \end{THM}
+  すなわち，初期面が\(P\)に関して非特性的なら，
+  \(Pu=0\)の局所解は，あったとすればただ一つ！
+  
+  層係数コホモロジーの言葉で言うと，
+  超関数解の層\(F=\RHOM_{\cD_{X}}(\cM,\cB_{M})\)に対し，
+  \(x\in X\)の近くで
+  \[
+    H^{0}(B;F)\to H^{0}(B\cap \left\{\varphi<0\right\};F)
+  \]
+  が単射ということ．（\(B\)は\(x\)の開近傍，\(\varphi\)は近傍上の\(C^{1}\)関数）
+
+  打切り超局所台の言葉で言うと，
+  \[
+    \muS[0](F)\subset \Char(\cM)\cap \cotb[M].
+  \]
+  ということ（主結果2から\textcolor{red}{一意性を半大域化}できる）．
+\end{frame}
 
 \begin{frame}
   \frametitle{仮定 (iv) をみたす例（追加）}
@@ -1539,6 +1566,17 @@
       \rho_{s_{0},s_{1}}\) \((s_0\leqq s_1)
     \)は単射（全射）となる．
   \end{PRP}
+  これを用いると，
+  \ref{eq:t-nonchar-a}と\ref{eq:t-nonchar-b}より，
+  制限射
+  \[
+    H^{j}\left(U_{t};F\right)
+    \to
+    H^{j}\left(U_{s};F\right)\quad  (s\leqq t)
+  \]
+  が\(j<k\)で同型，\(j=k\)で単射となることがわかる．
+
+  最後に，もういちどMittag-Leffler条件を用いることで証明が終わる．
 \end{frame}
 
 \begin{frame}
@@ -1570,10 +1608,65 @@
     \]
   \end{CNJ}
 \end{frame}
+
 \begin{frame}
-    \frametitle{主結果2の設定について}
-    実は修論中では「任意の開集合がパラコンパクト」を課していたが，不要であることが提出後に分かった．
+  \frametitle{主結果2の設定について}
+  修論中では「任意の開集合がパラコンパクト」を課していたが，不要であることが分かった．
+
+  \begin{alertblock}{注意}
+    \(X\)を位相空間とする．
+    一般の部分空間\(S\)と自然な連続写像\(
+      i\colon S\hookrightarrow X
+    \)を考える．
+    \(F\in\Dompl(\kk_{X})\)とする．
+    自然な射\[
+      \Rder[]\left(\Gamma(S;\blk)\circ i^{-1}\right)(F)
+      \to
+      \Rder[]{(\Gamma(S;\blk))}\circ i^{-1}(F)
+    \]は一般には同型でない．    
+  \end{alertblock}
+  次が言えることがわかったので，今の設定では問題ない．
+  \begin{PRP}
+    \(X\)をハウスドルフ空間とする．
+    \(U\subset X\)を開集合，\(Z\subset X\)をコンパクト集合とする．
+    \(U\cap Z=\varnothing\)ならば，
+    \(F\in\Dompl(\kk_{X})\)と\(S=U\cup Z\)に対し上の射は同型．
+  \end{PRP}
 \end{frame}
+
+\begin{frame}
+  \frametitle{主結果2の設定について（続）}
+  \begin{PRP}
+    \(X\)をハウスドルフ空間とする．
+    \(U\subset X\)を開集合，\(Z\subset X\)をコンパクト集合とする．
+    \(U\cap Z=\varnothing\)ならば，
+    \(F\in\Dompl(\kk_{X})\)に対し次の射は同型．\[
+      \Rder[]\left(\Gamma(U\cup Z;\blk)\circ i^{-1}\right)(F)
+      \to
+      \Rder[]{(\Gamma(U\cup Z;\blk))}\circ i^{-1}(F).
+    \]
+  \end{PRP}
+  これの証明の方針は，「少し膨らませてからMayer--Vietris三角を比較」．
+  すなわち，
+  \[
+    \Rder(\Gamma(U\cup Z;\blk)\circ i^{-1})(F)
+    \to \RG(U;F)\oplus\RG(Z;F)
+    \to \RG(Z;\RG_{U}F)
+    \overset{+1}{\longrightarrow}
+  \]
+  と\(\mres[F]{U\cup Z}\)に対して定まる三角
+  \[
+    \RG(U\cup Z;\mres[F]{U\cup Z})
+    \to \RG(U;F)\oplus\RG(Z;F)
+    \to \RG(Z;\RG_{U}F)
+    \overset{+1}{\longrightarrow}
+  \]を比較することで\(
+    \Rder(\Gamma(U\cup Z;\blk)\circ i^{-1})(F)
+    \simar
+    \RG(U\cup Z;\mres[F]{U\cup Z})
+  \)となる．
+\end{frame}
+
 
 \begin{comment}
 \begin{frame}[noframenumbering]

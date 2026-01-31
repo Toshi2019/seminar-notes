@@ -55,10 +55,14 @@
 \headcommand {\beamer@framepages {23}{23}}
 \headcommand {\slideentry {1}{0}{8}{24/24}{}{1}}
 \headcommand {\beamer@framepages {24}{24}}
-\headcommand {\beamer@partpages {16}{24}}
-\headcommand {\beamer@subsectionpages {16}{24}}
-\headcommand {\beamer@sectionpages {16}{24}}
-\headcommand {\beamer@documentpages {24}}
-\headcommand {\gdef \inserttotalframenumber {8}}
+\headcommand {\slideentry {1}{0}{9}{25/25}{}{1}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\slideentry {1}{0}{10}{26/26}{}{1}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\beamer@partpages {16}{26}}
+\headcommand {\beamer@subsectionpages {16}{26}}
+\headcommand {\beamer@sectionpages {16}{26}}
+\headcommand {\beamer@documentpages {26}}
+\headcommand {\gdef \inserttotalframenumber {10}}
 \headcommand {\gdef \inserttotalframenumber {15}}
-\headcommand {\gdef \appendixtotalframenumber {8}}
+\headcommand {\gdef \appendixtotalframenumber {10}}

@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  30 JAN 2026 21:51
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  31 JAN 2026 16:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1207,21 +1207,23 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ]
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1356.
+(Font)              No change on input line 1359.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1356.
+(Font)              No change on input line 1359.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1356.
+(Font)              No change on input line 1359.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1356.
+(Font)              No change on input line 1359.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1356.
+(Font)              No change on input line 1359.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1356.
+(Font)              No change on input line 1359.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1356.
+(Font)              No change on input line 1359.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1356.
+(Font)              No change on input line 1359.
+LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
+(Font)              No change on input line 1359.
  [17
 
 ] [18
@@ -1238,6 +1240,10 @@ LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
 ] [23
 
 ] [24
+
+] [25
+
+] [26
 
 ] Excluding 'comment' comment.
 \tf@nav=\write9
@@ -1263,12 +1269,12 @@ Package rerunfilecheck Info: File `20260204master-slides.out' has not changed.
 (rerunfilecheck)             Checksum: 076CACF15249C0250004BEBFE4267522;218.
  ) 
 Here is how much of TeX's memory you used:
- 35705 strings out of 474774
- 671256 string characters out of 5758801
+ 35712 strings out of 474774
+ 671320 string characters out of 5758801
  1942032 words of memory out of 5000000
- 57353 multiletter control sequences out of 15000+600000
+ 57360 multiletter control sequences out of 15000+600000
  614881 words of font info for 151 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  128i,28n,123p,3306b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 20260204master-slides.dvi (24 pages, 175096 bytes).
+Output written on 20260204master-slides.dvi (26 pages, 187752 bytes).
