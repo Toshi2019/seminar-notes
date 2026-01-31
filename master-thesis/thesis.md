@@ -6,7 +6,7 @@
 
 修論審査会スライド (01/28 16:30更新) [(pdf)](master-slides/20260204master-slides01281630.pdf)
 
-修論審査会スライド（書き込みなし） (01/30 21:55更新) [(pdf)](master-slides/20260204master-slides.pdf)
+修論審査会スライド（書き込みなし） (01/31 16:20更新) [(pdf)](master-slides/20260204master-slides.pdf)
 
 ## 更新のあしあと
 
