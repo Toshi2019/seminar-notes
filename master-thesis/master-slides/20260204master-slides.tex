@@ -6,13 +6,15 @@
 \documentclass[dvipdfmx,10pt,aspectratio=169,leqno]{beamer}% dvipdfmxしたい
 \title{Microlocal Morse Theory and Truncated Microsupport\\
 （超局所モース理論と打切り超局所台）
-\subtitle{修論審査会}}
-\date{2026年2月4日}
+}
+%\subtitle{}
+\date{2026年2月4日 \\令和7年度数学専攻修士論文審査会}
 \author{大柴 寿浩}
 
 \institute[NITech]
 {
-北海道大学大学院理学院数学専攻
+北海道大学大学院理学院数学専攻\\
+指導教員：本多尚文
 }
 
 
@@ -533,6 +535,7 @@
 
 \begin{frame}
     \titlepage
+    %\insertsubtitle
 \end{frame}
 \begin{comment}
     \begin{frame}\frametitle{書くこと}
@@ -1148,21 +1151,30 @@
       \centering
       \begin{tikzpicture}[scale=0.6]
         \def\t{1.5}
+        \def\s{1}
 
         %------------------
         % 塗りつぶし領域
         %------------------
 
         % 半円の下側 y < sqrt(t^2 - x^2)
-        \fill[black!25,domain=-\t:\t,samples=200]
+        \fill[green!25,domain=-\t:\t,samples=200]
           (-\t,0)
           -- plot(\x,{sqrt(\t*\t-\x*\x)})
           -- (\t,0)
           -- cycle;
         \draw[dashed, very thick](0,0) ellipse (1.5 and 1.5);
 
+        % 半円の下側 y < sqrt(s^2 - x^2)
+        \fill[blue!25,domain=-\s:\s,samples=200]
+          (-\s,0)
+          -- plot(\x,{sqrt(\s*\s-\x*\x)})
+          -- (\s,0)
+          -- cycle;
+        \draw[dashed, very thick](0,0) ellipse (1 and 1);
+
         % y < 0 の部分
-        \fill[black!25] (-3.5,0) rectangle (3.5,-2);
+        \fill[blue!25] (-3.5,0) rectangle (3.5,-2);
 
         %------------------
         % 境界
@@ -1173,8 +1185,8 @@
         %  plot(\x,{sqrt(\t*\t-\x*\x)});
 
         % x軸（|x|>=t の境界として）
-        \draw[dashed, very thick] (-3.5,0)--(-\t,0);
-        \draw[dashed, very thick] (\t,0)--(3.5,0);
+        \draw[dashed, very thick] (-3.5,0)--(-\s,0);
+        \draw[dashed, very thick] (\s,0)--(3.5,0);
 
         %------------------
         % 軸
@@ -1187,7 +1199,7 @@
         \node at (2.3,-0.6) {\(U_t\)};
       \end{tikzpicture}
       \begin{tikzpicture}[scale=0.6]
-        \def\t{1.5}
+        \def\t{1}
 
         %------------------
         % 塗りつぶし領域
@@ -1199,7 +1211,7 @@
           -- plot(\x,{sqrt(\t*\t-\x*\x)})
           -- (\t,0)
           -- cycle;
-        \draw[ultra thick](0,0) ellipse (1.5 and 1.5);
+        \draw[ultra thick](0,0) ellipse (1 and 1);
 
         % y < 0 の部分
         \fill[black!0] (-3.5,0) rectangle (3.5,-2);
@@ -1224,7 +1236,7 @@
         \draw[->,>=stealth,semithick] (0,-2)--(0,2) node[right]{\(y\)};
 
         % ラベル
-        \node at (2.1,0.6) {\(Z_t\)};
+        \node at (1.6,0.6) {\(Z_t\)};
       \end{tikzpicture}
       %\caption{example \eqref{item:gentle2}}
       %\label{fig:gentle2}
@@ -1524,7 +1536,7 @@
     \RG(U_{s};F)
     \overset{+1}{\longrightarrow}. 
   \end{equation*}
-  仮定\eqref{item:t-nonchar3}から第1項が\(0\)であることがわかる．
+  仮定\eqref{item:t-nonchar3}から\(j\leqq k\)で第1項が\(0\)であることがわかる．
 \end{frame}
 
 \begin{frame}
@@ -1585,7 +1597,8 @@
     \item \(f\colon Y\to X\)：多様体の射．
     \item \(\varphi\colon Y\to \rr\)：\(C^{1}\)級関数で
     \(Y_{t}\coloneqq \varphi^{-1}((-\infty,t))\), 
-    \(\widetilde{Y}_{t}\coloneqq \varphi^{-1}((-\infty,t])\)とし，\(j_{t}\colon Y_{t}\hookrightarrow Y\).
+    \(\widetilde{Y}_{t}\coloneqq \varphi^{-1}((-\infty,t])\)とし，
+    \(\iota_{t}\colon Y_{t}\hookrightarrow Y\).
     \item \(G\in\Dompb(Y)\)で
     \(f_{t}\colon \supp(G)\cap \overline{Y_t}\to X\)はすべての\(t\in\rr\)に対し固有．
   \end{itemize}
@@ -1602,10 +1615,11 @@
   \begin{CNJ}
     次の層の射は\(j<k\)ならば同型，\(j=k\)ならば単射である．
     \[
-      \Rder[k]{f_{\ast}}G
+      \Rder[j]{f_{\ast}}G
       \to
-      \Rder[k]{{f_{t}}_{\ast}}j^{-1}_{t}G.
+      \Rder[j]{{f_{t}}_{\ast}}\iota^{-1}_{t}G.
     \]
+    ただし\(f_{t}=f\circ \iota_{t}\)とおいた．
   \end{CNJ}
 \end{frame}
 
