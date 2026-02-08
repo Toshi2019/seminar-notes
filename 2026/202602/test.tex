@@ -1,0 +1,104 @@
+\documentclass{article}
+%\usepackage{stix2} % これで \mathscr が利用可能
+\usepackage{amsmath}
+
+%\usepackage[scr=dutchcal]{mathalpha}
+\usepackage[scr=boondox]{mathalpha}
+%\usepackage[scr=boondoxo]{mathalpha}
+
+\DeclareMathOperator{\Hom}{\mathrm{Hom}} % Hom set
+\newcommand{\Rder}[1][]{\mathop{\mathrm{R}^{#1}\!}\nolimits}
+\newcommand{\RHom}[1][]{\Rder[#1]\!\Hom}
+%\DeclareMathOperator{\HOM}{\mathscr{H\!o\!m}} % Hom sheaf
+%\DeclareMathOperator{\HOM}{\mathcal{H}\!\mathscr{o\!m}} % Hom sheaf
+\DeclareMathOperator{\HOMZ}{\mathcal{H}\!\mathit{o\!m}} % Hom sheaf
+\newcommand{\RHOMZ}[1][]{\Rder[#1]\!\HOMZ}
+\DeclareMathOperator{\glsec}{\Gamma}
+\newcommand{\RG}[1][]{\Rder[#1]\glsec}
+\newcommand{\G}[1][]{\glsec_{#1}}
+
+%\newcommand{\HOM}{\mathop{\mathscr{H\!o\!m}}\nolimits}
+% Source - https://tex.stackexchange.com/a/156701
+% Posted by Daniel Miller
+% Retrieved 2026-02-08, License - CC BY-SA 3.0
+
+%\documentclass{article}
+\usepackage{calligra}
+\usepackage{mathrsfs}
+
+\DeclareMathOperator{\HOMB}{\mathcal{H}\mathit{om}} % Hom sheaf
+\newcommand{\RHOMB}[1][]{\Rder[#1]\!\HOMB}
+
+\DeclareMathOperator{\HOMA}{%
+    \mathscr{H}\!\!\text{\!{\calligra\large om}}\,%
+}
+\newcommand{\RHOMA}[1][]{\Rder[#1]\!\HOMA}
+
+\DeclareMathOperator{\HOMC}{%
+    \mathscr{H}\!\!\text{\!{\calligra\large om}}\,%
+}
+\newcommand{\RHOMC}[1][]{\Rder[#1]\HOMC}
+
+\DeclareMathOperator{\HOM}{\mathcal{H}\!\mathit{o\!m}}
+\newcommand{\RHOM}[1][]{\Rder[#1]\mkern-1mu\HOM}
+
+\DeclareMathOperator{\HOME}{%
+    \mathscr{H}\!\!\text{\!{\calligra\large om}}\,%
+}
+\newcommand{\RHOME}[1][]{\Rder[#1]\mkern-1.25mu\HOME}
+
+\newcommand{\sheaf}[1]{\mathcal{#1}}
+\newcommand{\structuresheaf}[1]{\sheaf{R}_{#1}}
+
+
+\begin{document}
+
+\[
+    \Hom_{\structuresheaf{X}}(F,G), \RHom[]_{\structuresheaf{X}}(F,G), \RHom[j]_{\structuresheaf{X}}(F,G)
+\]
+
+\begin{align}
+    \HOMB_{\structuresheaf{X}}(F,G),&& \RHOMB[]_{\structuresheaf{X}}(F,G),&& \RHOMB[k]_{\structuresheaf{X}}(F,G)\\
+    \HOMZ_{\structuresheaf{X}}(F,G),&& \RHOMZ[]_{\structuresheaf{X}}(F,G),&&\RHOMZ[k]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[k]_{\structuresheaf{X}}(F,G)\label{eq:good-hom}\\
+    \HOMA_{\structuresheaf{X}}(F,G),&& \RHOMA[]_{\structuresheaf{X}}(F,G),&& \RHOMA[k]_{\structuresheaf{X}}(F,G)\\
+    \HOMC_{\structuresheaf{X}}(F,G),&& \RHOMC[]_{\structuresheaf{X}}(F,G),&& \RHOMC[k]_{\structuresheaf{X}}(F,G)\\
+    \HOME_{\structuresheaf{X}}(F,G),&& \RHOME[]_{\structuresheaf{X}}(F,G),&& \RHOME[k]_{\structuresheaf{X}}(F,G)
+\end{align}
+\eqref{eq:good-hom}が良さげ
+
+\begin{align}
+    \G[Z](F),&&\G[](X;F),&&\G[Z](X;F),&&\G[](X;\G[Z]F)\\
+    \Rder[n]\G[Z](F),&&\Rder[n]\G[](X;F),&&\Rder[n]\G[Z](X;F),&&\Rder[n]\G[](X;\G[Z]F)\\
+    \RG[](F),&&\Rder[n]\G[](X;F),&&\Rder[n]\G[Z](X;F),&&\Rder[n]\G[](X;\Rder[]\G[Z]F)
+\end{align}
+
+\begin{align}
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[d]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[i]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[j]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[k]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[l]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[m]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[n]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[p]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[q]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[r]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[s]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[t]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[u]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[v]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[w]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[x]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[y]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[z]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[\alpha]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[\beta]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[\chi]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[\delta]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[\epsilon]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[\phi]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[\gamma]_{\structuresheaf{X}}(F,G)\\
+    \HOM_{\structuresheaf{X}}(F,G),&& \RHOM[]_{\structuresheaf{X}}(F,G),&& \RHOM[\eta]_{\structuresheaf{X}}(F,G)
+\end{align}
+\end{document}

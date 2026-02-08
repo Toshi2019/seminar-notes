@@ -1,0 +1,42 @@
+# Fdb version 4
+["dvipdf"] 1770550658.79816 "test.dvi" "test.pdf" "test" 1770550659.73155 0
+  "test.dvi" 1770550658.76291 9836 19abf686274b493c9cfed9caa5d37695 "latex"
+  (generated)
+  "test.pdf"
+  (rewritten before read)
+["latex"] 1770550658.31358 "/Users/giuseppe/seminar-notes/2026/202602/test.tex" "test.dvi" "test" 1770550659.73046 0
+  "/Users/giuseppe/seminar-notes/2026/202602/test.tex" 1770550657.40061 5800 4cd3dcdf07affc68c72c579aae5e6a2e ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/calligra/callig15.tfm" 1226968898 1764 a631feda95871737229ffed8be8acf5c ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti7.tfm" 1136768653 1492 86331993fe614793f5e7e755835c31c5 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1229303445 688 37338d6ab346c2f1466b29e195316aa4 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm" 1229303445 684 3a51bd4fd9600428d5264cf25f04bb9a ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm" 1229303445 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/generic/xkeyval/keyval.tex" 1655411236 2725 1a42bd9e7e57e25fc7763c445f4b785b ""
+  "/usr/local/texlive/2024/texmf-dist/tex/generic/xkeyval/xkeyval.tex" 1655411236 19231 27205ee17aaa2902aea3e0c07a3cfc65 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/generic/xkeyval/xkvutils.tex" 1655411236 7677 9cb1a74d945bc9331f2181c0a59ff34a ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1686341992 2222 499d61426192c39efd8f410ee1a52b9c ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsgen.sty" 1686341992 4173 82ac04dfb1256038fad068287fbb4fe6 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty" 1686341992 88371 d84032c0f422c3d1e282266c01bef237 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty" 1686341992 4474 b811654f4bf125f11506d13d13647efb ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amstext.sty" 1686341992 2444 0d0c1ee65478277e8015d65b86983da2 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls" 1705352648 20144 147463a6a579f4597269ef9565205cfe ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/base/size10.clo" 1705352648 8448 dbc0dbf4156c0bb9ba01a1c685d3bad0 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/fundus-calligra/calligra.sty" 1334709462 2329 9b6efb7033ac4e81c6d0aa3aaa8bb7f1 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/mathrsfs.sty" 1137110241 300 12fa6f636b617656f2810ee82cb05015 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd" 1137110241 548 cc4e3557704bfed27c7002773fad6c90 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-dvips.def" 1708463273 35584 26b44d23a997c5fa1bc4461ec5ce39f5 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/mathalpha/mathalpha.sty" 1637269094 57446 690f30dbdc513bfa750709d825c1de12 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1655411236 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
+  "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
+  "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
+  "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
+  "test.aux" 1770550658.76078 69 ee619a131df4160a271a5f34329ca44f "latex"
+  "test.tex" 1770550657.40061 5800 4cd3dcdf07affc68c72c579aae5e6a2e ""
+  (generated)
+  "test.aux"
+  "test.dvi"
+  "test.log"
+  (rewritten before read)
