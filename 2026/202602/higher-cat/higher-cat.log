@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  13 FEB 2026 22:24
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  15 FEB 2026 01:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -937,26 +937,29 @@ LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 6.47278pt on input line 669.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 4.62341pt on input line 669.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 678.
  [1
 
-] (./higher-cat.aux)
+]
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 703.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 704.
+ [2] (./higher-cat.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `higher-cat.out' has not changed.
-(rerunfilecheck)             Checksum: A0057CD4578B643730F51D30A8B70A59;222.
+(rerunfilecheck)             Checksum: 22C1E2789B468CBC54A95D6DFFB9F19E;315.
  ) 
 Here is how much of TeX's memory you used:
- 30576 strings out of 474774
- 535382 string characters out of 5758801
- 1930032 words of memory out of 5000000
- 52366 multiletter control sequences out of 15000+600000
+ 30577 strings out of 474774
+ 535388 string characters out of 5758801
+ 1931032 words of memory out of 5000000
+ 52367 multiletter control sequences out of 15000+600000
  614714 words of font info for 160 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  84i,8n,93p,3272b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on higher-cat.dvi (1 page, 4564 bytes).
+Output written on higher-cat.dvi (2 pages, 7284 bytes).
