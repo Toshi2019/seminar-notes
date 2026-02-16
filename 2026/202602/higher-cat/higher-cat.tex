@@ -624,6 +624,8 @@
 \newcommand{\Cat}{\mathsf{Cat}}
 \newcommand{\Anima}{\mathsf{Anima}}
 
+\DeclareMathOperator{\QCoh}{QCoh}
+
 
 % ----------------------------
 % documenet 
@@ -633,14 +635,14 @@
 % begin document and end document.
 % ---------------------------
 
-\title{高次元圏メモ}
+\title{\(\infty\)圏メモ}
 \author{Toshi2019}
 \date{\today 更新}
 \begin{document}
 \maketitle
 \tableofcontents
 \section{はじめに}
-高次元圏の勉強メモ．
+\(\infty\)圏の勉強メモ．
 
 \section{2026/02/13}
 前川さんのページ\footnote{\url{https://animaegawa.github.io/blog/oo-cat}}を読んだ．
@@ -711,13 +713,56 @@
 Mannが最近，いいとこ取りをした定義を与えた．
 このMannの方法を解説するのが目的．
 
+\section{2026/02/16}
+\subsection{Gaitsgory--Rozenbryum}
+\cite{GR17}のメモ．
+
+\paragraph{ モチベ}
+
+外在的なものと内在的なものをそれぞれ挙げている．
+
+\subparagraph{外在的な動機}
+圏の図式の極限を考えるには，\(\infty\)圏を持ち出さないといけない．
+
+例として，はりあわせの問題を挙げている．
+例えば，スキーム\(X\)上の準連接層の\(\infty\)圏あるいは
+三角圏\(\QCoh(X)\)をアフィン被覆をはりあわせて作りたいとする．
+このとき，三角圏でははりあわせがうまくいかないが，
+\(\infty\)圏ではうまくいく．
+
+\subparagraph{内在的な動機}
+こちらも極限に関するもの．
+ただし，今度はひとつの\(\infty\)/\(\triangle\)圏の中での極限に関するものである．
+
+極限の例としてファイバー積を考える．
+これを三角圏で実現するときには，
+写像錐として考えたい（ただし\([-1]\)シフトも込みの）．
+ところが，写像錐は三角剣の枠組みでは，カノニカルには定まらない．
+
+カノニカルではないが存在するという立場では，
+より一般のホモトピー余極限を定義できない．
+これでは例えば単体的対象の幾何的実現も扱えないし，
+（オペラッドやリー代数，リー亜代数といった）代数も行えない．
+
+\subsection{何となくの方針}
+安定\(\infty\)圏を理解したい．\cite{GR17}に沿うことになるだろうが，
+準圏，というか単体的集合の基本的なことは知っておきたいので，
+\cite{L21}や\cite{G15}辺りをさらおうかなと．
+
+ところで，\(\infty\)圏とかくのと無限圏とかくのではどちらがよいだろうか．
+\(1\)圏・\(2\)圏のようにかくのと
+同じだとすると\(\infty\)圏がよい気がするが（それと\((\infty,1)\)圏の
+略記というのも踏まえるとこちらの方がよいか？），
+三角圏と並列するときは無限圏のほうがよい気もする．
 
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
     \bibitem[HTT]{HTT} Lurie, \textit{Higher Topos Theory}, 2009.
+    \bibitem[G15]{G15} Groth, \textit{A Short Corse on \(\infty\)-categories}, 2015.
     \bibitem[GR17]{GR17} Gaitsgory, Rozenbryum, \textit{A Study in Derived Algebraic Geometry I}, 2017.
+    \bibitem[L21]{L21} Land, \textit{Introduction to Infinity-Categories}, 2021.
     \bibitem[Sch6FF]{Sch6FF} Scholze, \textit{Six-Functor Formalisms}, preprint 2025.
 \end{thebibliography}
 

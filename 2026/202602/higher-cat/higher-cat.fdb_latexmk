@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1771087480.30131 "higher-cat.dvi" "higher-cat.pdf" "higher-cat" 1771087481.45498 0
-  "higher-cat.dvi" 1771087480.17185 11372 43be0d064d5c1aa412d2e0eeb8b3989e "latex"
+["dvipdf"] 1771261969.06318 "higher-cat.dvi" "higher-cat.pdf" "higher-cat" 1771261970.00334 0
+  "higher-cat.dvi" 1771261968.93109 17472 73e5448fd3ef3369a5127fad3a8282fb "latex"
   (generated)
   "higher-cat.pdf"
   (rewritten before read)
-["latex"] 1771087478.74706 "/Users/giuseppe/seminar-notes/2026/202602/higher-cat/higher-cat.tex" "higher-cat.dvi" "higher-cat" 1771087481.44898 0
-  "/Users/giuseppe/seminar-notes/2026/202602/higher-cat/higher-cat.tex" 1771087474.44264 23733 9a83e6b4c17eaa93e11baa476ff8bf7f ""
+["latex"] 1771261967.58792 "/Users/giuseppe/seminar-notes/2026/202602/higher-cat/higher-cat.tex" "higher-cat.dvi" "higher-cat" 1771261969.99721 0
+  "/Users/giuseppe/seminar-notes/2026/202602/higher-cat/higher-cat.tex" 1771261960.78936 26011 8ea6d1b7ac8e8390897d3eaefe478ae1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -256,10 +256,10 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "higher-cat.aux" 1771087480.16959 1398 fd7f2a3ce1446f4da112803738c874cf "latex"
-  "higher-cat.out" 1771087480.17112 567 c672cc13120056c8d3ecc351f9848bb2 "latex"
-  "higher-cat.tex" 1771087474.44264 23733 9a83e6b4c17eaa93e11baa476ff8bf7f ""
-  "higher-cat.toc" 1771087480.17173 657 0579af346dfce371160a74aeda43b2fa "latex"
+  "higher-cat.aux" 1771261968.92836 2169 5673df24bb88a3e2c0e5bc685056a439 "latex"
+  "higher-cat.out" 1771261968.93037 933 195be754926253c865700a542690d1bf "latex"
+  "higher-cat.tex" 1771261960.78936 26011 8ea6d1b7ac8e8390897d3eaefe478ae1 ""
+  "higher-cat.toc" 1771261968.93097 1082 389c43df29536578c8601da68dfbe3ce "latex"
   (generated)
   "higher-cat.aux"
   "higher-cat.dvi"

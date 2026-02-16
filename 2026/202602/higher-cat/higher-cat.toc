@@ -9,3 +9,9 @@
 \contentsline {paragraph}{}{2}{section*.6}%
 \contentsline {subsection}{\numberline {3.2}Scholze}{2}{subsection.3.2}%
 \contentsline {paragraph}{Lecture II}{2}{section*.7}%
+\contentsline {section}{\numberline {4}2026/02/16}{2}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Gaitsgory--Rozenbryum}{2}{subsection.4.1}%
+\contentsline {paragraph}{ モチベ}{3}{section*.8}%
+\contentsline {subparagraph}{外在的な動機}{3}{section*.9}%
+\contentsline {subparagraph}{内在的な動機}{3}{section*.10}%
+\contentsline {subsection}{\numberline {4.2}何となくの方針}{3}{subsection.4.2}%
