@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1769059107.98306 "gaiyo-oshiba.dvi" "gaiyo-oshiba.pdf" "gaiyo-oshiba" 1769059109.06377 0
-  "gaiyo-oshiba.dvi" 1769059107.86248 24564 05fde05302cb8705f2e56c69188501dc "latex"
+["dvipdf"] 1772289444.52939 "gaiyo-oshiba.dvi" "gaiyo-oshiba.pdf" "gaiyo-oshiba" 1772289445.95102 0
+  "gaiyo-oshiba.dvi" 1772289444.39596 24568 5f53df8c679f93386e0452c9a99b66f9 "latex"
   (generated)
   "gaiyo-oshiba.pdf"
   (rewritten before read)
-["latex"] 1769059106.47756 "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/gaiyo-oshiba.tex" "gaiyo-oshiba.dvi" "gaiyo-oshiba" 1769059109.05529 0
-  "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/gaiyo-oshiba.tex" 1769059104.26717 30987 273bd31f0201ff060f6c01f72908ba82 ""
+["latex"] 1772289443.08051 "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/gaiyo-oshiba.tex" "gaiyo-oshiba.dvi" "gaiyo-oshiba" 1772289445.94531 0
+  "/Users/giuseppe/seminar-notes/master-thesis/syuron/utf8/gaiyo-oshiba.tex" 1772289439.78325 30990 235ebb120204c23c4000596d202a5980 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -224,9 +224,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "gaiyo-oshiba.aux" 1769059107.86051 442 4d5f8650a57060893af7936082142a03 "latex"
-  "gaiyo-oshiba.out" 1769059107.86183 54 05b9ff7757fe6a446d8f294b02146d28 "latex"
-  "gaiyo-oshiba.tex" 1769059104.26717 30987 273bd31f0201ff060f6c01f72908ba82 ""
+  "gaiyo-oshiba.aux" 1772289444.39428 442 4d5f8650a57060893af7936082142a03 "latex"
+  "gaiyo-oshiba.out" 1772289444.39534 54 05b9ff7757fe6a446d8f294b02146d28 "latex"
+  "gaiyo-oshiba.tex" 1772289439.78325 30990 235ebb120204c23c4000596d202a5980 ""
   "gaiyo2.sty" 1702543289 4025 e383136389b4a8acf55bcc71342bca14 ""
   (generated)
   "gaiyo-oshiba.aux"

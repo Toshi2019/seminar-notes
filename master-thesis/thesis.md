@@ -1,14 +1,20 @@
 # 修論
 
-修論（01/25 02:40 更新）[(pdf)](syuron/utf8/oshiba-syuron.pdf)
+修論（02/28 更新）[(pdf)](syuron/utf8/oshiba-syuron.pdf)
 
-概要（01/21 14:30 更新） [(pdf)](syuron/utf8/gaiyo-oshiba.pdf)
+概要（02/28 更新） [(pdf)](syuron/utf8/gaiyo-oshiba.pdf)
 
 修論審査会スライド (02/03 17:20更新) [(pdf)](master-slides/20260204master-slides02031720.pdf)
 
 修論審査会スライド（書き込みなし） (01/31 16:20更新) [(pdf)](master-slides/20260204master-slides.pdf)
 
 ## 更新のあしあと
+
+### 2/28 更新分
+
+p.9 l.7 の have の色を赤から黒にした
+
+概要の誤字を修正
 
 ### 2/3 更新分
 
