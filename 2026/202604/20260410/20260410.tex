@@ -1,6 +1,6 @@
 %=====================================
-%   ha77.tex
-%   Algebraic Geometry 
+%   rel-t-morse.tex
+%   Truncated Microlocal Morse Theory
 %   toshi2019
 %=====================================
 
@@ -19,7 +19,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[leqno, 10pt, a4paper, dvipdfmx]{jsarticle}
+\documentclass[leqno, 12pt, a4paper, dvipdfmx]{jsarticle}
 
 % ------------------------
 % usepackage
@@ -62,24 +62,19 @@
 \definecolor{darkblue}{rgb}{0,0,0.6} 
 \hypersetup{
     colorlinks=true,
-    citecolor=darkgreen,
-    linkcolor=darkred,
-    urlcolor=darkblue,
+    %citecolor=darkgreen,
+    %linkcolor=darkred,
+    %urlcolor=darkblue,
+    citecolor=black,
+    linkcolor=black,
+    urlcolor=black,
 }
 \usepackage{pxjahyper}
 
 %\usepackage[mathscr]{euscript} % mathscr のフォントを変更
 
 %\usepackage{mmasym}
-\usepackage{calligra}
-\usepackage{mathrsfs}
-%\usepackage{boondox-cal} % \mathcal と \mathscr を置き換える
 
-% mathalpha パッケージで mathscr を置き換え
-\usepackage[scr=boondox]{mathalpha}
-%\usepackage{stix2}
-
-\usepackage{manfnt}
 %=================================
 
 
@@ -98,7 +93,7 @@
 % Attention!
 % All theorem enivironment numbers depend on 
 % only section numbers.
-\newtheorem{Axiom}{公理}[section]
+\newtheorem{Axiom}{公理}%[section]
 \newtheorem{Definition}[Axiom]{定義}
 \newtheorem{Theorem}[Axiom]{定理}
 \newtheorem{Proposition}[Axiom]{命題}
@@ -137,7 +132,7 @@
 % 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
 %　If you want to use theorem environment in English, You can use these code.
 %all theorem enivironment number depend on only section number.
-\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Axiom+}{Axiom}%[section]
 \newtheorem{Definition+}[Axiom+]{Definition}
 \newtheorem{Theorem+}[Axiom+]{Theorem}
 \newtheorem{Proposition+}[Axiom+]{Proposition}
@@ -225,22 +220,28 @@
 
 
 % 射の集合など
-
-\DeclareMathOperator{\Map}{\mathrm{Map}} % 写像の集合
-\DeclareMathOperator{\Hom}{\mathrm{Hom}} % Hom set
-\DeclareMathOperator{\Mor}{\mathrm{Mor}} % Morphism set
-\DeclareMathOperator{\End}{\mathrm{End}} % End 環
-\DeclareMathOperator{\Aut}{\mathrm{Aut}} % Aut 群
-\DeclareMathOperator{\Ker}{\mathrm{Ker}} % Kernel
-\DeclareMathOperator{\Img}{\mathrm{Im}} % Image
-\DeclareMathOperator{\Coker}{\mathrm{Coker}} % Cokernel
-\DeclareMathOperator{\Coim}{\mathrm{Coim}} % Coimage
-
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits} % 写像の集合
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits} % 射集合
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits} % 自己準同型の集合
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits} % 自己同型の集合
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits} % 射集合
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits} % 核
+\newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
+\newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
+\newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
 
 % その他便利なコマンド
 \newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
 \newcommand{\op}{{\rm op}} % 双対を取る記号
 \newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
 
 
 
@@ -267,7 +268,7 @@
 }
 \makeatother
 
-\renewcommand{\proofname}{証明.}
+\renewcommand{\proofname}{Proof.}
 
 
 
@@ -294,15 +295,15 @@
 \newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
 %\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
 \newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
-%\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
-%\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
 \newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
 \newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
 \newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
 \newcommand{\colim}{\mathop{\mathrm{colim}}}
 \newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
 
-\newcommand{\category}{\mathsf{C}}
+\newcommand{\cat}{\mathscr{C}}
 
 %筆記体
 \newcommand{\cA}{\mcal{A}}
@@ -389,37 +390,25 @@
 \newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
 \newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
 \newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
-%\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
 \newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
 \newcommand{\Domplb}{\mathop{\mathsf{D}^\mathrm{lb}}\nolimits}
 
-\newcommand{\Dompb}[2][]{%
-  \mathop{\mathsf{D}^\mathrm{b}_{#1}}\nolimits(#2)%
-}
-\newcommand{\Dbconic}[1][]{\Dompb[\rrp]{#1}}
-\newcommand{\Dbconstr}[1][]{\Dompb[\mathrm{c}]{#1}}
 
 
 
-
-
-\newcommand{\CCat}{\Comp(\category)}
-\newcommand{\KCat}{\Komp(\category)}
-\newcommand{\DCat}{\Domp(\category)}%圏Cの複体のホモトピー圏
-
-
-% 導来関手まわり
-\newcommand{\Rder}[1][]{\mathop{\mathrm{R}^{#1}\!}\nolimits}
-\newcommand{\RHom}[1][]{\Rder[#1]\Hom}
-\DeclareMathOperator{\glsec}{\Gamma}
-\newcommand{\RG}[1][]{\Rder[#1]\glsec}
-
-\DeclareMathOperator{\HOM}{\mathcal{H}\!\mathit{o\!m}}
-\newcommand{\RHOM}[1][]{\Rder[#1]\mkern-1mu\HOM}
-
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
 
 %\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
 \newcommand{\muS}[1][]{\mathop{\mathrm{SS}}\nolimits_{#1}}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+%\newcommand{\Rder}{\mathrm{R}}
+\newcommand{\Rder}[1][]{\mathop{\mathrm{R}^{#1}\hspace{-2pt}}\nolimits}
 
 \newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
 \newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
@@ -487,7 +476,6 @@
 \newcommand{\dpb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
 \newcommand{\tpb}[1][]{\mathbin{\mathop{\times}\nolimits_{#1}}}
 
-\newcommand{\clsub}{\mathbin{\underset{\text{closed}}{\subset}}}
 
 
 
@@ -525,42 +513,16 @@
 % 定理環境ここまで
 %====================================================
 
-% tcolorbox パッケージの読み込み（高度な装飾とページ跨ぎのライブラリを追加）
-\usepackage{tcolorbox}
-\tcbuselibrary{skins, breakable}
-
+\usepackage{framed}
 \definecolor{lightgray}{rgb}{0.75,0.75,0.75}
-
-% DFN環境を直接tcolorboxで装飾する（leftbarの再現）
-\tcolorboxenvironment{DFN}{
-  blanker,                              % 背景色やデフォルトの枠線を透明にする
-  breakable,                            % ページ跨ぎを許可する（framedの代わり）
-  left=14pt,                            % 左側の余白（線の太さ4pt + 隙間10pt）
-  borderline west={4pt}{0pt}{lightgray},% 左側(west)に太さ4ptのlightgrayの線を引く
-  before skip=10pt,                     % 環境の上の余白
-  after skip=10pt                       % 環境の下の余白
-}
-
-% 参考：例(EG)環境に redleftbar（細い線）を適用する場合
-\tcolorboxenvironment{EG}{
-  blanker,
-  breakable,
-  left=11pt,                            % 左側の余白（線の太さ1pt + 隙間10pt）
-  borderline west={1pt}{0pt}{lightgray},% 左側に太さ1ptの線を引く
-  before skip=10pt,
-  after skip=10pt
-}
-
-%\usepackage{framed}
-%\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
-%\renewenvironment{leftbar}{%
-%  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
-%  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
-%{\endMakeFramed}
-%\newenvironment{redleftbar}{%
-%  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
-%  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
-% {\endMakeFramed}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
 
 
 
@@ -624,25 +586,22 @@
 \newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
 
 
-%\newcommand{\lopen}{\mathopen{]}}
-%\newcommand{\lclosed}{\mathopen{[}}
-%\newcommand{\ropen}{\mathclose{[}}
-%\newcommand{\rclosed}{\mathopen{]}}
-\newcommand{\lopen}{\mathopen{(}}
+\newcommand{\lopen}{\mathopen{]}}
 \newcommand{\lclosed}{\mathopen{[}}
-\newcommand{\ropen}{\mathclose{)}}
+\newcommand{\ropen}{\mathclose{[}}
 \newcommand{\rclosed}{\mathopen{]}}
 
+% 4種類の区間をすべて定義
+\DeclarePairedDelimiter{\openintvl}{]}{[}     % ]a, b[
+\DeclarePairedDelimiter{\closedintvl}{[}{]}       % [a, b]
+\DeclarePairedDelimiter{\lopenrclosedintvl}{]}{]}    % ]a, b] (左半開)
+\DeclarePairedDelimiter{\lcosedropenintvl}{[}{[}    % [a, b[ (右半開)
+
+
 \newcommand{\sm}{\raisebox{2.33pt}{~\rule{6.4pt}{1.3pt}~}}
-%\newcommand{\smi}{\mathbin{\raisebox{2.33pt}{\rule{6.4pt}{1.3pt}}}}
-\newcommand{\smi}{-}
+\newcommand{\smi}{\smallsetminus}
 
 \newcommand{\smid}{\mathrel{;}}
-
-\newcommand{\torus}{\mathbf{T}}
-\newcommand{\eu}{\mathbf{e}}
-\newcommand{\rrp}{\rr^{+}}
-
 
 
 % ----------------------------
@@ -653,169 +612,354 @@
 % begin document and end document.
 % ---------------------------
 
-\title{ゼミノート（2026/02/08）}
-\author{Toshi2019}
-\date{\today}
+\title{ゼミノート (2026/04/10)}
+\author{Toshihiro Oshiba}
+\date{\today\footnote{First draft: 2026/03/29}}
 \begin{document}
 \maketitle
-\tableofcontents
-\setcounter{section}{1}
-\section[射影多様体]{射影多様体{\cite[Sec.1.2]{Ha77}}}
-\section[多様体の射]{多様体の射{\cite[Sec.1.3]{Ha77}}}
+\section{Truncated microsupport}
+\subsection*{Functorial Properties} 
+\begin{Proposition+}
+  Let \(f\colon X\to Y\) be a morphism of real analytic manifolds and let \(F\in\Dompb(\kk_X)\) such that \(f\) is proper on \(\supp(F)\). 
+  Then for any \(k\in\zz\), 
+  \begin{equation}\label{eq:t-push}
+    \muS[k](\Rder{f_{\ast}}F)\subset
+    \mpb[f]\mdiff[f]^{-1}(\muS[k](F)).
+  \end{equation}
+  The equality holds in case \(f\) is a closed embedding.
+\end{Proposition+}
 
-\section[有理写像]{有理写像{\cite[Sec.1.4]{Ha77}}}
+\section{Truncated microlocal Morse theory}
 
-有理写像：ある開集合でのみ定義された射．
-開集合は稠密なので，そのままでも情報が多い．
+Let \(f\colon Y\to X\) be a morphism of manifolds, and 
+\(\varphi\) a real valued function of class \(C^1\). 
+For a real number \(t\in \rr\), we set 
+\begin{align*}
+  Y_t
+  &\coloneqq \left\{y\in Y\smid \varphi(y)< t\right\} 
+  = \varphi^{-1}(\lopen-\infty,t\ropen),\\
+  \widetilde{Y_t}
+  &\coloneqq \left\{y\in Y\smid \varphi(y)\leqq t\right\} 
+  = \varphi^{-1}(\lopen-\infty,t\rclosed).
+\end{align*}
+Let us define the following morphisms:
+\[\xymatrix{
+  Y_t\ar[r]^-{j_t}
+  \ar[rd]_-{f_t}
+  &
+  Y
+  \ar[d]^-{f}\\
+  &X,
+}\quad\xymatrix{
+  \widetilde{Y_t}\ar[r]^-{\tilde{j}_t}
+  \ar[rd]_-{f_t}
+  &
+  Y
+  \ar[d]^-{f}\\
+  &X.
+}\]
 
-微分幾何やトポロジーよりも堅い．
-特に，双有理同値は代数幾何特有の概念．
-
-\begin{LMM}\label{lmm:1.4.1}
-  \(X\)と\(Y\)を\(k\)上の代数多様体とする．
-  \(\varphi\)と\(\psi\)を射\(X\to Y\)とする．
-  \(X\)の空でない開集合\(U\)で\(
-    \mres[\varphi]{U}=\mres[\psi]{U}
-  \)となるものが存在するとする．
-  このとき，\(\varphi=\psi\)が成り立つ．
-\end{LMM}
+\begin{Proposition+}
+  Let \(G\in\Dompb(Y)\), and assume \(
+    f_{t}\colon \supp(G)\cap \overline{Y_t}\to X
+  \) is proper for all \(t\in\rr\). 
+  Let \(k\) be an integer and \(t_\circ\) a real number.
+  \begin{enumerate}[(i)]
+    \item Assume that, 
+    for any \(y\in Y\smi \widetilde{Y}_{t_{\circ}}\), 
+    we have \[
+      d\varphi(y)\notin \left(
+        \muS[k](G)+ \mdiff[f]\left(
+          Y\pb[X]\cotb[X]
+        \right)
+      \right).
+    \]
+    Then the following statements hold.
+    \begin{enumerate}[(a)]
+        \item For \(t>t_\circ\), the natural morphism
+        \[
+          \Rder[j]{f_{\ast}}G \to \Rder[j]{{f_{t}}_{\ast}}j^{-1}_{t}G
+        \]
+        is isomorphic for \(j<k\) and injective for \(j=k\). 
+        \item[(a\('\))] For \(t\geqq t_\circ\), the natural morphism
+        \[
+          \Rder[j]{\tilde{f}_{\ast}}G 
+          \to 
+          \Rder[j]\tilde{f_{t}}_{\ast}\tilde{j}^{-1}_{t}G
+        \]
+        is isomorphic for \(j<k\) and injective for \(j=k\). 
+        \item We have \begin{align*}
+          \muS[k](\Rder[]{f_{\ast}}G)
+          &\subset
+          \mpb[f]\left(\mdiff[f]^{-1}\left(
+            \muS[k](G)\cap \pi^{-1}(\widetilde{Y}_{t_{\circ}})
+          \right)\right)\\
+          &=\mpb[f]\mdiff[f]^{-1}\left(
+          \muS[k](G)
+          \right).
+        \end{align*}
+    \end{enumerate}
+    \item Assume that, 
+    for any \(y\in Y\smi \widetilde{Y}_{t_{\circ}}\), 
+    we have \[
+      -d\varphi(y)\notin \left(
+        \muS[k](G)+ \mdiff[f]\left(
+          Y\pb[X]\cotb[X]
+        \right)
+      \right).
+    \]
+    Then \begin{align}
+      \tag{c}
+      \Rder[j]{f_{!}}G
+      &\cong
+      \Rder[j]{{f_{t}}_{!}}j^{-1}_{t}G
+      \quad
+      \text{ for \(j<k\) and \(t>t_\circ\)},\\
+      \tag{c\(_k\)}
+      \Rder[k]{f_{!}}G
+      &\hookrightarrow
+      \Rder[k]{{f_{t}}_{!}}j^{-1}_{t}G
+      \quad
+      \text{ for \(t>t_\circ\)},\\
+      \tag{c\('\)}
+      \Rder[j]{\tilde{f}_{!}}G
+      &\cong
+      \Rder[j]\tilde{f_{t}}_{\ast}\tilde{j}^{!}_{t}G
+      \quad
+      \text{ for \(j<k\) and \(t\geqq t_\circ\)},\\
+      \tag{c\(_k'\)}
+      \Rder[k]{\tilde{f}_{!}}G
+      &\hookrightarrow
+      \Rder[k]\tilde{f_{t}}_{\ast}\tilde{j}^{!}_{t}G
+      \quad
+      \text{ for \(t\geqq t_\circ\)},\\
+      \tag{d}
+      \muS[k](\Rder[]{f_{!}}G)
+      &\subset
+      \mpb[f]\left(\mdiff[f]^{-1}\left(
+        \muS[k](G)\cap \pi^{-1}(\widetilde{Y}_{t_{\circ}})
+      \right)\right)\\
+      %&
+      \notag&=\mpb[f]\mdiff[f]^{-1}\left(
+        \muS[k](G)
+      \right).
+    \end{align}
+  \end{enumerate}
+\end{Proposition+}
 
 \begin{proof}
-  \(X\to Y\hookrightarrow \pp^{n}\)の合成を考えることで，
-  \(Y=\pp^{n}\)としてよい．
-
-  積多様体\(\pp^{n}\times \pp^{n}\)を考える（セグレ埋め込み）．
-  \(x\in X\)に対し，\((\varphi(x),\psi(x))\)を対応させることで，
-  \(\varphi\times\psi\colon X\to\pp^{n}\times\pp^{n}\)という
-  射が定まる．
-  \(\Delta\subset \pp^{n}\times\pp^{n}\)を対角集合とする．
-  \begin{align*}
-    \Delta
-    &=\left\{(P,P)\smid P\in\pp^{n}\right\}\\
-    &=\left\{
-        \left(
-          \left[x_{0}:\dots:x_{n}\right],
-          \left[y_{0}:\dots:y_{n}\right]
-        \right)
-        \smid 
-        x_{i}y_{j}=x_{j}y_{i}\in\pp^{n}
-      \right\}
-  \end{align*}
-  で\(\Delta\clsub\pp^{n}\times\pp^{n}\)である．
-  いま，\(\varphi\times\psi(U)\subset \Delta\)であり，
-  \(U\)は\(X\)において稠密なので，
+  Let \(\tilde{f}\) be the morphism \(
+    (f,\varphi)\colon Y\to X\times \rr
+  \), and let \(q\) and \(\tilde{\varphi}\) be 
+  the first and second projections 
+  defined on \(X\times \rr\) respectively. 
+  Then \(\tilde{f}\) is proper on \(\supp(G)\) and 
+  \(f=q\circ \tilde{f}\). 
+  \begin{proof}
+    Let \(K\) be a compact subset of \(X\times \rr\). 
+    If one sets \(K_{1}\coloneqq q(K)\) and \(K_{2}\coloneqq \tilde{\varphi}(K)\), 
+    then \(K\subset K_{1}\times K_{2}\) and 
+    we have \[
+        \tilde{f}^{-1}(K)
+        \subset 
+        \tilde{f}^{-1}(K_{1}\times K_{2}).
+    \]
+    Thus it suffices to show that \(
+        \tilde{f}^{-1}(K_{1}\times K_{2})\cap \supp{G}
+    \) is compact. 
+    Now we have \(
+        \tilde{f}^{-1}(K_{1}\times K_{2})
+        =
+        f^{-1}(K_{1})\cap \varphi^{-1}(K_{2})
+    \). Since \(K_{2}\) is a compact subset of \(\rr\), 
+    we may assume \(K_{2}=\closedintvl{a,b}\) 
+    for some \(a\leqq b\). 
+    In this case, it follows that
+    \[
+        f^{-1}(K_1)\cap \varphi^{-1}(\closedintvl{a,b})\cap \supp{G}
+        \subset
+        f^{-1}(K_1)\cap \varphi^{-1}(\lopenrclosedintvl{-\infty,b})\cap \supp{G}
+    \]
+    and by the hypothesis that \(\overline{Y_{b}}\cap \supp{G}\) is proper over \(X\), 
+    \(f^{-1}(K_{1})\cap \overline{Y_{b}}\cap \supp{G}\) is compact. 
+    Then the result follows. 
+  \end{proof}
+  Let us denote by \(i_t\) the open embedding \(
+    X\times\lopen -\infty, t\ropen\hookrightarrow X\times \rr
+  \) and by \(\tilde{i}_t\) the closed embedding \(
+    X\times\lopen -\infty, t\rclosed\hookrightarrow X\times \rr
+  \). Set \(q_t=q\circ i_t\) and \(\tilde{q}_t=q\circ\tilde{i}_t\). 
+  These morphisms can be visualized 
+  by the following diagrams, in both of which the left squares are cartesian.
+  % これらの図式は tikz-cd を使うと自動で美しい余白が取れます
   \[
-    \varphi\times\psi(X)
-    =\varphi\times\psi(\overline{U})
-    \subset\overline{\varphi\times\psi(U)}
-    \subset\Delta.
+  \begin{tikzcd}[row sep=30pt, column sep=30pt]
+    Y
+      \arrow[r, "\tilde{f}"]
+      \arrow[rd, phantom, "\square"]
+    &
+    X\times\rr
+      \arrow[r, "q"]
+    &
+    X\\
+    Y_{t}
+      \arrow[u, hook, "j_t"]
+      \arrow[r, "\hat{f}_{t}"]
+    &
+    X\times \openintvl{-\infty,t}
+      \arrow[u, hook, "i_{t}"']
+      \arrow[ur, "q_{t}"']
+    &
+  \end{tikzcd}
+  \quad
+  \begin{tikzcd}[row sep=30pt, column sep=30pt]
+    Y
+      \arrow[r, "\tilde{f}"]
+      \arrow[rd, phantom, "\square"]
+    &
+    X\times\rr
+      \arrow[r, "q"]
+    &
+    X\\
+    \widetilde{Y}_{t}
+      \arrow[u, hook, "\tilde{j}_t"]
+      \arrow[r, "\check{f}_{t}"]
+    &
+    X\times \lopenrclosedintvl{-\infty,t}
+      \arrow[u, hook, "\tilde{i}_{t}"']
+      \arrow[ur, "\tilde{q}_{t}"']
+    &
+  \end{tikzcd}
   \]
-  よって，\(\varphi=\psi\)である．
+  Then, setting \(\widetilde{G}\coloneqq \Rder[]{f_{\ast}}G\), 
+  we have \begin{align*}
+    \Rder[]{f_{\ast}}G
+    &\cong 
+    \Rder[]{q_{\ast}}\widetilde{G},
+    &
+    \Rder[]{\tilde{f}_{\ast}}G
+    &\cong 
+    \Rder[]{\tilde{q}_{\ast}}\widetilde{G},
+    \\
+    \Rder[]{{f_{t}}_{\ast}}j_{t}^{-1}G
+    &\cong 
+    \Rder[]{{q_{t}}_{\ast}}i_{t}^{-1}\widetilde{G},
+    &
+    \Rder[]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{-1}G
+    &\cong 
+    \Rder[]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{-1}\widetilde{G},
+    \\
+    \Rder[]{{f_{t}}_{!}}j_{t}^{-1}G
+    &\cong 
+    \Rder[]{{q_{t}}_{!}}i_{t}^{-1}\widetilde{G},
+    &
+    \Rder[]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{!}G
+    &\cong 
+    \Rder[]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{!}\widetilde{G}.
+  \end{align*}
+  Thus taking \(j\)-th cohomology, we have\begin{align*}
+    \Rder[j]{f_{\ast}}G
+    &\cong 
+    \Rder[j]{q_{\ast}}\widetilde{G},
+    &
+    \Rder[j]{\tilde{f}_{\ast}}G
+    &\cong 
+    \Rder[j]{\tilde{q}_{\ast}}\widetilde{G},
+    \\
+    \Rder[j]{{f_{t}}_{\ast}}j_{t}^{-1}G
+    &\cong 
+    \Rder[j]{{q_{t}}_{\ast}}i_{t}^{-1}\widetilde{G},
+    &
+    \Rder[j]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{-1}G
+    &\cong 
+    \Rder[j]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{-1}\widetilde{G},
+    \\
+    \Rder[j]{{f_{t}}_{!}}j_{t}^{-1}G
+    &\cong 
+    \Rder[j]{{q_{t}}_{!}}i_{t}^{-1}\widetilde{G},
+    &
+    \Rder[j]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{!}G
+    &\cong 
+    \Rder[j]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{!}\widetilde{G}.    
+  \end{align*}
+  Therefore, it is enough to prove the result for \(\widetilde{G}\), \(q\), \(i_t\), \(\tilde{\varphi}\) instead of \(G\), \(f\), \(j_t\), \(\varphi\). 
+
+  (i) 
+  It follows from the hypothesis that
+  \begin{equation}\label{eq:tilde-estimate}
+    \muS[k](\widetilde{G})\cap\left(
+      \cotb[X]\times\left\{(t;\tau);t>t_{\circ}\right\}
+    \right)
+    \subset
+    \cotb[X]\times\left\{(t;\tau);\tau\leqq0\right\}.
+  \end{equation}
+  Indeed, by hypothesis, 
+  for any \((y;\eta)\in\muS[k](G)\) 
+  and \((f(x);\xi)\in Y\tpb[X]\cotb[X]\), 
+  we have \begin{equation}\label{eq:pb-conic}
+    d\varphi(y)\neq \eta + f^{\ast}\xi.
+  \end{equation}
+  If \((x,t;\xi,\tau)\) is a point of \(
+    \muS[k](\widetilde{G})\cap\left(
+      \cotb[X]\times\left\{(t;\tau);t>t_{\circ}\right\}
+  \right)\), 
+  then, by the formula \eqref{eq:t-push}, 
+  there exists \((y;\eta)\in\muS[k](G)\) such that \[
+    \tilde{f}(y)=(x,t) 
+    \text{ and } 
+    \eta=\tilde{f}^{\ast}(\xi,\tau).
+  \] For this \(\eta\), we have \[
+    \eta
+    =\tilde{f}^{\ast}(\xi,\tau)
+    =f^{\ast}\xi +\varphi^{\ast}\tau
+    =f^{\ast}\xi +\tau d\varphi(y).
+  \]
+  If \(\tau>0\), we get \[
+    d\varphi(y)=\frac{1}{\tau}\eta-\frac{1}{\tau}f^{\ast}\xi
+  \] and this contradicts \eqref{eq:pb-conic} 
+  because \(\muS[k](G)\) is conic. 
+
+  By \eqref{eq:tilde-estimate}, 
+  Let \(U\) be an open subset of \(X\) contained 
+  in a local chart, and convex in such a chart. 
+
+  このとき，
+  \(U_t\colon U\times \openintvl{-\infty,t}\)として\((U_t)\)を
+  考えても打切り版非特性変形補題は使えない．
 \end{proof}
 
 
-\begin{DFN}\label{dfn:1.4.2}
-  \(X\)と\(Y\)を多様体とする．
-  有理写像\(\varphi\colon X\to Y\)を次のように定める．
-  \(U\)と\(V\)を\(X\)の空でない開集合とし，
-  \(\varphi_{U}\colon U\to Y\)を\(U\)から\(Y\)への
-  射，
-  \(\varphi_{V}\colon V\to Y\)を\(V\)から\(Y\)への
-  射とする．
-  このとき，\((U,\varphi_{U})\)と\((V,\varphi_{V})\)が
-  同値であることを次で定める．
-  \[
-    (U,\varphi_{U})\sim(V,\varphi_{V})
-    \Leftrightarrow 
-    \mres[\varphi_{U}]{U\cap V}
-    =\mres[\varphi_{V}]{U\cap V}.
-  \]
-  この同値関係に関する同値類を\(X\)から\(Y\)への\textbf{有理写像} (rational map) とよぶ．
-
-  有理写像\(\varphi\)が\textbf{支配的} (dominant) であるとは，
-  \((\varphi_{U},U)\)で\(\Img{\varphi_{U}}\)が\(Y\)で
-  稠密となるものが存在することをいう．
-  これは，任意の\((\varphi_{U},U)\)に対し，
-  \(\Img{\varphi_{U}}\)が\(Y\)で
-  稠密となることと同値である．
-\end{DFN}
 
 
-\begin{proof}[\(\sim\)が同値関係であることの証明．]
-  推移律を示す．
-  \(U\), \(V\), \(W\)を\(U\cap V\cap W\ne\varnothing\)を
-  みたす\(X\)の開集合とし，
-  \((U,\varphi_{U})\sim(V,\varphi_{V})\)かつ
-  \((V,\varphi_{V})\sim(W,\varphi_{W})\)と仮定する．
-  \[
-    \mres[\varphi_{U}]{U\cap V}
-    =
-    \mres[\varphi_{V}]{U\cap V},\quad
-    \mres[\varphi_{V}]{V\cap W}=
-    \mres[\varphi_{W}]{V\cap W}
-  \]
-  であるから，
-  \begin{align*}
-    \mres[\varphi_{U}]{(U\cap V)\cap W}
-    &=
-    \mres[\varphi_{V}]{(U\cap V)\cap W}\\
-    &=
-    \mres[\varphi_{V}]{U\cap (V\cap W)}\\
-    &=
-    \mres[\varphi_{W}]{U\cap (V\cap W)}
-  \end{align*}
-  である．
-  いま，\(U\cap W\)は多様体であり，
-  \(V\cap(U\cap W)\)は\(U\cap W\)の空でない開集合である．
-  したがって，補題\ref{lmm:1.4.1}から，
-  \[
-    \mres[\varphi_{U}]{U\cap W}=
-    \mres[\varphi_{W}]{U\cap W}
-  \]である．
-\end{proof}
 
-\begin{proof}[支配的であることの定義で存在と任意が同値であること．]
-  \(\varphi=\left[ \left( \varphi_{U}, U \right) \right]\)が支配的であるとする．
-  \((\varphi_{V},V)\)を\((\varphi_{U},U)\)と同値な組とする．
-  このとき，\begin{align*}
-    Y&=\Cl[Y]\varphi_{U}(U)\\
-    &=\Cl[Y](\varphi_{U}(\Cl[U](U\cap V)))\\
-    &=\Cl[Y](\varphi_{U}(U\cap V))\\
-    &=\Cl[Y](\varphi_{V}(U\cap V))\\
-    &\subset\Cl[Y](\varphi_{V}(V))
-  \end{align*}
-  である．（間違ってそう）
-\end{proof}
 
-有理写像は写像とは限らない．
 
-支配的有理写像は合成できる．
 
-\(\left.\because\right)\)
-\(\varphi\colon X\to Y\)と\(\psi\colon Y\to Z\)を
-支配的有理写像とし，
-\((\varphi_{U},U)\)を\(\varphi\)の代表元，
-\((\psi_{V},V)\)を\(\psi\)の代表元とする．
-このとき，\(\psi_{V}\colon V\to Z\)は射なので，
-\(Z\)の任意の開集合\(W\)と正則関数\(f\colon W\to k\)に対し，
-\(f\circ\psi_{V}\colon\psi^{-1}(V)\to k\)が正則となる．
-\(U'\coloneqq U\cap \varphi_{U}^{-1}(V)\)とすると，
-\(\varphi_{U}(U')=\varphi_{U}(U)\cap V\subset V\)となる．
-\(\varphi\)が支配的なので，\(\varphi_{U}(U)\)は空でない．
-したがって，\((U',\varphi_{U'}=\mres[\varphi_{U}]{U'})\)に対し，
-\(\psi\circ\varphi=\left[(U',\psi_{V}\circ\varphi_{U'})\right]\)
-とすればよい．
+
+
+
+%\section{a}
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
-  \bibitem[Ha77]{Ha77} 
-  Robin Hartshorne, \textit{Algebraic Geometry}, Springer, 1977.
+  \bibitem[GKS12]{GKS12} St\'ephane Guillermou, 
+  Masaki Kashiwara, Pierre Schapira, 
+  \textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
+  Duke. Math. J. 161, No. 2, pp.201--245, 2012.  
+  \bibitem[KFS03]{KFS03} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
+    \textit{Truncated Microsupport and Holomorphic Solutions 
+    of \(D\)-modules}, 
+    Ann. Scient. \'Ec. Norm. Sup., s\'erie 4, tome 36, 
+    pp.583--399, 2003.
+  \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Sheaves on Manifolds}, 
+    Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+  \bibitem[ST92]{ST92} Pierre Schapira, Nobuyuki Tose, 
+    \textit{Morse Inequalities for \(\rr\)-constructible Sheaves}, 
+    Adv. Math. 93, pp.1--8, 1992. 
 \end{thebibliography}
-
 %===============================================
-
-
 
 
 \end{document}
