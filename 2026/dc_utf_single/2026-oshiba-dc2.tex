@@ -1,0 +1,231 @@
+\documentclass[11pt,a4paper,uplatex,dvipdfmx]{ujarticle} 		% for uplatex
+%\documentclass[11pt,a4j,dvipdfmx]{jarticle} 					% for platex
+\input{pieces/form00_header} % pieces
+\input{pieces/kakenhi7} % pieces
+\input{pieces/form01_dcpd_header} % pieces
+\input{pieces/hook3} % pieces
+%#Name: dc
+\input{pieces/form03_dcpd_headers} % pieces
+\input{pieces/form04_dc_header} % pieces
+% ===== Global definitions for the Kakenhi form ======================
+%　基本情報
+%
+%------ 研究課題名  -------------------------------------------
+\newcommand{\研究課題名}{打切り超局所台を用いた\(\mathcal{D}\)加群のmild超関数解の伝播の評価}
+
+%----- 研究機関名と研究代表者の氏名-----------------------
+\newcommand{\研究機関名}{北海道大学}
+\newcommand{\研究代表者氏名}{大柴寿浩}
+\newcommand{\me}{\underline{\underline{T.~Oshiba}}}
+\input{pieces/inst_general_images} % pieces
+% user07_header
+% ===== my favorite packages ====================================
+% ここに、自分の使いたいパッケージを宣言して下さい。
+\usepackage{wrapfig}
+%\usepackage{amssymb}
+%\usepackage{mb}
+%\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{lineno}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{booktabs}
+
+%\usepackage{amssymb}
+%\usepackage{mb}
+%\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+%\usepackage{lineno}
+\usepackage{color}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.90,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\usepackage{enumerate}
+
+% ===== my personal definitions ==================================
+% ここに、自分のよく使う記号などを定義して下さい。
+\newcommand{\klpionn}{K_L \to \pi^0 \nu \overline{\nu}}
+\newcommand{\kppipnn}{K^+ \to \pi^+ \nu \overline{\nu}}
+
+% ----- 業績リスト用 -------------
+\newcommand{\paper}[6]{%
+	% paper{title}{authors}{journal}{vol}{pages}{year}
+	\item ``#1'', #2, #3 {\bf #4}, #5 (#6).			% お好みに合わせて変えてください。
+}
+
+\newcommand{\etal}{\textit{et al.\ }}
+\newcommand{\ca}[1]{*#1}	% corresponding author;   \ca{\yukawa}  みたいにして使う
+\newcommand{\invitedtalk}{招待講演}
+
+\newcommand{\yukawa}{H.~Yukawa}					% no underline
+%\newcommand{\yukawa}{\underline{\underline{H.~Yukawa}}}	% with 2 underlines
+\newcommand{\tomonaga}{S.~Tomonaga}
+
+\newcommand{\prl}{Phys.\ Rev.\ Lett.\ }		% よく使う雑誌も定義すると楽
+
+% ===== 欄外メモ ==================
+\newcommand{\memo}[1]{\marginpar{#1}}
+%\renewcommand{\memo}[1]{}	% 全てのメモを表示させないようにするには、行頭の"%"を消す
+
+%\input{../../sample/simple/contents}	% skip
+\input{pieces/hook5} % pieces
+
+\begin{document}
+\input{pieces/hook7} % pieces
+%#Split: 01_background  
+%#PieceName: p01_background
+\input{pieces/p01_background_00}
+\section{研究の概要と位置づけ}
+%　　　　＜＜最大　1ページ＞＞
+
+%s03_abst_background
+\noindent
+\underline{\textbf{研究課題名：\研究課題名}}
+
+%begin 研究目的や背景などの概要 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+\paragraph{研究の概要}
+%end 研究目的や背景などの概要 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+%begin 本研究の着想に至った経緯など ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+\paragraph{当該分野の状況や課題等の背景}
+滑らかな曲線や曲面の高次元化である多様体は，
+現代数学の主要な研究対象である．
+多様体を調べる際の手法として，その上の関数を調べることが挙げられる．
+例えば，円周上の連続な関数は一周すると同じ値を取らなければならないので，
+周期関数であることがわかる．逆に言えば，
+周期関数しか持たないような図形は円周のような構造を持つと言える．
+さて，多様体上のひとつの関数だけでなく，
+その上の関数を集めたものも調べることで
+より多くの情報が得られる．
+多様体上で局所的に定義された関数を貼り合わせたものを，
+現代数学の言葉では層と呼ぶ．
+例えば，多様体上の微分方程式の各点の近くでの局所解を集めると層が得られる．
+層の理論は20世紀後半から現代数学に大きな影響を与えた．
+
+他方，1970年代に佐藤幹夫とその周辺人物らにより，
+超局所解析と呼ばれる理論が構築された．
+これは滑らかでない関数，すなわち特異点を持つ関数（超関数）が，
+どの方向に特異的かという点に着目する理論である．
+1980年代に，柏原とSchapiraは
+この超局所解析の層理論における類似である超局所層理論を創始した．
+その中心概念は，層の超局所台である．
+層の超局所台は，層の方向別の特異性を記述する集合である．
+%超局所層理論は層の方向別の特異性に着目する．
+例えば，微分方程式の例でいうと，
+局所的に得られた微分方程式の解を集めて得られる層が，
+どの方向に延長できるかを記述することができる．
+この手法を用いることで，超局所層理論は，
+\(\mathcal{D}\)加群や特異点論，
+シンプレクティック幾何学といった，
+様々な理論へ応用される．
+最近では，トポロジカルデータ解析のような
+応用数理的な理論にも役に立つことが明らかになってきた．
+このように，
+超局所層理論は現代数学における一つの合流地点のような理論である．
+
+超局所台は，層の方向別の特異性を記述すると述べた．
+より正確に述べると，
+超局所台は，コホモロジーという各整数に紐づけられたデータに対して，
+そのすべての次数の方向別の特異性を記述する．
+ところが，微分方程式の境界値問題のような，
+コホモロジーの次数に依存した特異性を持つ現象も知られている．
+すなわち，ある次数までのコホモロジーは延長できるが，
+それより上の次数のコホモロジーは延長できないというような現象が知られている．
+このような，次数に依存した特異性を記述するために，
+柏原，Schapira，Fernandesは打切り超局所台を定義した．
+打切り超局所台を用いることで，微分方程式の境界値問題の解についての
+延長性の問題が調べられる．
+
+微分方程式の境界値問題について，それを取り扱うのに便利な関数のクラスが
+1970--80年代に導入された．片岡のmild超関数である．
+通常の超関数では境界値がうまく定まらないという困難があったが，
+mild超関数を用いることで，境界値を指定することができる．
+このmild超関数を微分方程式の解として考えたときに，
+次数付き・方向別の特異性を記述することは興味ある問題である．
+
+
+\paragraph{本研究計画の着想に至った経緯}
+%end 本研究の着想に至った経緯など ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+\input{pieces/p01_background_01}
+
+%#Split: 02_purpose_plan  
+%#PieceName: p02_purpose_plan
+\input{pieces/p02_purpose_plan_00}
+\section{【２】研究計画（２）研究目的・内容等}
+%　　　　＜＜最大　2ページ＞＞
+
+%s02_purpose_plan_dcpd
+\JSPSInstructions		% <-- 留意事項。これは消すか、コメントアウトしてください。
+%begin 研究目的と研究計画shorter ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+\textbf{\\　　　　　＊＊＊　以下は、あくまで例です。真似しないでください。　＊＊＊\\
+　　　　　＊＊＊　本文はもちろん、節の切り方や論理の組み方は　　　＊＊＊\\
+　　　　　＊＊＊　ご自分の気に入ったスタイルで書いてください。　　＊＊＊}
+
+	象の卵の研究計画は．．．
+
+	\vspace{1cm}
+	\begin{thebibliography}{99}
+		\bibitem{teramura} 寺村輝夫、「ぼくは王様 - ぞうのたまごのたまごやき」.
+	\end{thebibliography}
+%end 研究目的と研究計画shorter ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+\input{pieces/p02_purpose_plan_01}
+
+%#Split: 03_rights  
+%#PieceName: p03_rights
+\input{pieces/p03_rights_00}
+\section{人権の保護及び法令等の遵守への対応}
+%　　　　＜＜最大　1ページ＞＞
+
+% s09_rights
+%begin 人権の保護及び法令等の遵守への対応 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+	象の卵のES細胞の培養、象のクローンの生成などは行わない。
+
+	\LaTeX の便利な機能については、\texttt{egg\_***.tex} や\texttt{sample\_pdf/egg\_***.pdf}をご覧ください。
+%end 人権の保護及び法令等の遵守への対応 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+\input{pieces/p03_rights_01}
+
+%#Split: 04_abilities  
+%#PieceName: p04_abilities
+\input{pieces/p04_abilities_00}
+\section{【４】研究遂行力の自己分析}
+%　　　　＜＜最大　2ページ＞＞
+
+% s14_abilities
+\SelfReviewInstructions\\% <-- 留意事項：これは消すか、コメントアウトしてください。
+\noindent
+\textbf{(1) 研究に関する自身の強み}\\
+%\PapersInstructions\\ %<-- 留意事項：これは消すか、コメントアウトしてください。
+%begin 自己分析 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+\paragraph{成果物一覧}
+\begin{enumerate}
+	\item 研究発表（口頭）：\textit{Microlocal Morse theory and truncated microsupport}, Recent topics in algebraic analysis, 日本大学, 2026年3月.
+	\item T.~Oshiba, Functoriality of truncated microsupport under nonproper direct images, preprint (2026).
+\end{enumerate}
+\paragraph{教育活動}
+\begin{enumerate}
+	\item 北海道大学学部講義TA: 基礎数学B2（位相空間論），2024年後期
+	\item 北海道大学学部講義TA: 幾何学基礎B（単体複体のホモロジー），2025年前期
+	\item 北海道大学学部講義TA: 解析学A（複素解析），2025年後期
+	\item 北海道大学学部講義TA: 幾何学基礎B（単体複体のホモロジー），2026年前期
+	\item 北海道大学ラーニングサポート室チューター，2025年前期--現在
+\end{enumerate}
+%end 自己分析 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+\vspace{5mm}
+\noindent
+\textbf{(2) 今後研究者として更なる発展のため必要と考えている要素}\\
+%begin 今後必要な要素 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+研究費を獲得する術。
+%end 今後必要な要素 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+\input{pieces/p04_abilities_01}
+
+%#Split: 99_tail
+\input{pieces/hook9} % pieces
+\end{document}
+
