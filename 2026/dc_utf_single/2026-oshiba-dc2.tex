@@ -50,6 +50,11 @@
 \newcommand{\klpionn}{K_L \to \pi^0 \nu \overline{\nu}}
 \newcommand{\kppipnn}{K^+ \to \pi^+ \nu \overline{\nu}}
 
+\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}
+
+\newcommand{\HOM}{\mathop{\mathcal{H}\hspace{-2pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
 % ----- 業績リスト用 -------------
 \newcommand{\paper}[6]{%
 	% paper{title}{authors}{journal}{vol}{pages}{year}
@@ -90,7 +95,9 @@
 %end 研究目的や背景などの概要 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
 %begin 本研究の着想に至った経緯など ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-\paragraph{当該分野の状況や課題等の背景}
+%\subsection*{当該分野の状況や課題等の背景}
+\subsubsection*{当該分野の状況や課題等の背景}
+%\paragraph{当該分野の状況や課題等の背景}
 滑らかな曲線や曲面の高次元化である多様体は，
 現代数学の主要な研究対象である．
 多様体を調べる際の手法として，その上の関数を調べることが挙げられる．
@@ -159,18 +166,30 @@ mild超関数を用いることで，境界値を指定することができる�
 %　　　　＜＜最大　2ページ＞＞
 
 %s02_purpose_plan_dcpd
-\JSPSInstructions		% <-- 留意事項。これは消すか、コメントアウトしてください。
+%\JSPSInstructions		% <-- 留意事項。これは消すか、コメントアウトしてください。
 %begin 研究目的と研究計画shorter ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-\textbf{\\　　　　　＊＊＊　以下は、あくまで例です。真似しないでください。　＊＊＊\\
-　　　　　＊＊＊　本文はもちろん、節の切り方や論理の組み方は　　　＊＊＊\\
-　　　　　＊＊＊　ご自分の気に入ったスタイルで書いてください。　　＊＊＊}
+\subsubsection*{\ctext{1} 研究目的，研究方法，研究内容}
+\paragraph{研究目的}
+本研究の目的は，
+連接\(\mathcal{D}\)加群のmild超関数解のなす層の打切り超局所台を
+上から評価することである．
+\paragraph{研究方法，研究内容}
 
-	象の卵の研究計画は．．．
+\subsubsection*{\ctext{2} どのような計画で，何を，どこまで明らかにしようとするのか}
+申請者の応募区分は\textbf{A区分}である．
+以下の年次計画のとおり行う．
+\subsubsection*{\ctext{3} 研究の特色・独創的な点}
+\paragraph{先行研究等との比較}
+\paragraph{本研究の完成時に予想されるインパクト}
+\paragraph{総合知への貢献}
+\paragraph{将来の見通し}
+\subsubsection*{\ctext{4}，\ctext{5}については，申請者は該当しない}
 
-	\vspace{1cm}
-	\begin{thebibliography}{99}
-		\bibitem{teramura} 寺村輝夫、「ぼくは王様 - ぞうのたまごのたまごやき」.
-	\end{thebibliography}
+
+%\vspace{1cm}
+\begin{thebibliography}{99}
+	\bibitem{teramura} 寺村輝夫、「ぼくは王様 - ぞうのたまごのたまごやき」.
+\end{thebibliography}
 %end 研究目的と研究計画shorter ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 \input{pieces/p02_purpose_plan_01}
 
@@ -182,9 +201,9 @@ mild超関数を用いることで，境界値を指定することができる�
 
 % s09_rights
 %begin 人権の保護及び法令等の遵守への対応 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-	象の卵のES細胞の培養、象のクローンの生成などは行わない。
-
-	\LaTeX の便利な機能については、\texttt{egg\_***.tex} や\texttt{sample\_pdf/egg\_***.pdf}をご覧ください。
+%	象の卵のES細胞の培養、象のクローンの生成などは行わない。
+該当しない．
+%	\LaTeX の便利な機能については、\texttt{egg\_***.tex} や\texttt{sample\_pdf/egg\_***.pdf}をご覧ください。
 %end 人権の保護及び法令等の遵守への対応 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
 \input{pieces/p03_rights_01}
@@ -196,7 +215,7 @@ mild超関数を用いることで，境界値を指定することができる�
 %　　　　＜＜最大　2ページ＞＞
 
 % s14_abilities
-\SelfReviewInstructions\\% <-- 留意事項：これは消すか、コメントアウトしてください。
+%\SelfReviewInstructions\\% <-- 留意事項：これは消すか、コメントアウトしてください。
 \noindent
 \textbf{(1) 研究に関する自身の強み}\\
 %\PapersInstructions\\ %<-- 留意事項：これは消すか、コメントアウトしてください。

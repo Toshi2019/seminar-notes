@@ -1,12 +1,13 @@
 # Fdb version 4
-["dvipdf"] 1776653726.18442 "2026-oshiba-dc2.dvi" "2026-oshiba-dc2.pdf" "2026-oshiba-dc2" 1776653727.61193 0
-  "2026-oshiba-dc2.dvi" 1776653726.1071 11432 f70bc96bbddf3418394cec9bc2da7675 "latex"
+["dvipdf"] 1776766645.00173 "2026-oshiba-dc2.dvi" "2026-oshiba-dc2.pdf" "2026-oshiba-dc2" 1776766645.86443 0
+  "2026-oshiba-dc2.dvi" 1776766644.9313 11240 1dc7311b36b1a16151dc04d5eb3e77e3 "latex"
   (generated)
   "2026-oshiba-dc2.pdf"
   (rewritten before read)
-["latex"] 1776653724.74315 "/Users/giuseppe/seminar-notes/2026/dc_utf_single/2026-oshiba-dc2.tex" "2026-oshiba-dc2.dvi" "2026-oshiba-dc2" 1776653727.60887 0
-  "/Users/giuseppe/seminar-notes/2026/dc_utf_single/2026-oshiba-dc2.tex" 1776653723.34865 11180 79f63973460c586b08f6c6af1efa49d6 ""
+["latex"] 1776766644.26597 "/Users/giuseppe/seminar-notes/2026/dc_utf_single/2026-oshiba-dc2.tex" "2026-oshiba-dc2.dvi" "2026-oshiba-dc2" 1776766645.86226 0
+  "/Users/giuseppe/seminar-notes/2026/dc_utf_single/2026-oshiba-dc2.tex" 1776766643.18676 11969 4ccb512236e2753808c5128deb0f014f ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcbx1095.tfm" 1136768653 1536 0adca69c597a47fe7664bf81057bb53b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -14,6 +15,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1246382020 908 2921f8a10601f252058503cc6570e581 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm" 1136768653 1332 1fde11373e221473104d6cc5993f046e ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1136768653 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -25,7 +27,6 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1229303445 688 37338d6ab346c2f1466b29e195316aa4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm" 1229303445 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm" 1522271273 812 52bd92aa20c58a398601cda6dd62c8d1 ""
@@ -77,8 +78,8 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "2026-oshiba-dc2.aux" 1776653726.10602 555 11482ace4865663f6b04e869ae02e9df "latex"
-  "2026-oshiba-dc2.tex" 1776653723.34865 11180 79f63973460c586b08f6c6af1efa49d6 ""
+  "2026-oshiba-dc2.aux" 1776766644.93038 1047 22f8cd14bb07ae19055bf51c36f9ae81 "latex"
+  "2026-oshiba-dc2.tex" 1776766643.18676 11969 4ccb512236e2753808c5128deb0f014f ""
   "pieces/form00_header.tex" 1771246939 2443 898eaa7c178a66c648960fb6dcbf9b36 ""
   "pieces/form01_dcpd_header.tex" 1771246939 1758 6a9fcc89e3fa02f4ede5ec0d3eac3071 ""
   "pieces/form03_dcpd_headers.tex" 1771246939 3352 6b0094984e3e5793f02358931fdd39f2 ""
@@ -105,10 +106,6 @@
   "subject_headers/dc_header_03.xbb" 1771246939 218 2359b7953b73e6bf6295918f1f27702a ""
   "subject_headers/dc_header_04.pdf" 1771246939 45782 f8afde1a466bc8701bc9bd1d13add866 ""
   "subject_headers/dc_header_04.xbb" 1771246939 218 d279188df93677abe9e530e2e55fdca9 ""
-  "subject_headers/inst_general.pdf" 1771246939 146800 48b2709ee5c843a5be610f8705755226 ""
-  "subject_headers/inst_general.xbb" 1771246939 218 77084ce867ba7f1b9a839add7123ada4 ""
-  "subject_headers/inst_self_review.pdf" 1771246939 80317 a48c710fbdc20dccc89f969cc46e16fd ""
-  "subject_headers/inst_self_review.xbb" 1771246939 222 f06f1a69a1489cfc2006abe305974ed4 ""
   "udline.sty" 1771246939 26655 feb90286eb08519723407ab48bc9680d ""
   (generated)
   "2026-oshiba-dc2.aux"
