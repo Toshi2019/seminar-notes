@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  21 APR 2026 19:17
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  29 APR 2026 17:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -496,18 +496,18 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
 File: subject_headers/dc_header_02.pdf Graphic file (type pdf)
 <subject_headers/dc_header_02.pdf>
 )
-Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--167
+Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--171
  []
  []
 
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <8> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 171.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 175.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 171.
+(Font)              scaled to size 7.69775pt on input line 175.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <8> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 171.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 175.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 171.
+(Font)              scaled to size 7.69775pt on input line 175.
 (./pieces/p02_purpose_plan_01.tex [4
 
 ]
@@ -519,7 +519,7 @@ LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
 File: subject_headers/dc_header_03.pdf Graphic file (type pdf)
 <subject_headers/dc_header_03.pdf>
 )
-Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--201
+Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--205
  []
  []
 
@@ -529,12 +529,12 @@ Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--201
 File: subject_headers/dc_header_04.pdf Graphic file (type pdf)
 <subject_headers/dc_header_04.pdf>
 )
-Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--216
+Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--220
  []
  []
 
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 225.
+(Font)              No change on input line 231.
 (./pieces/p04_abilities_01.tex [7
 
 ] [8
@@ -554,10 +554,10 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  5794 strings out of 474774
  86888 string characters out of 5758801
- 1928032 words of memory out of 5000000
+ 1929032 words of memory out of 5000000
  28023 multiletter control sequences out of 15000+600000
  568773 words of font info for 90 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  62i,13n,68p,307b,449s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 2026-oshiba-dc2.dvi (6 pages, 11240 bytes).
+Output written on 2026-oshiba-dc2.dvi (6 pages, 11956 bytes).
