@@ -350,6 +350,75 @@
 
 % 定理環境ここまで
 %====================================================
+%\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+%\renewenvironment{leftbar}{%
+%  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
+%  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+%{\endMakeFramed}
+%\newenvironment{redleftbar}{%
+%  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
+%  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+% {\endMakeFramed}
+
+
+% tcolorbox パッケージの読み込み（高度な装飾とページ跨ぎのライブラリを追加）
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+
+% DFN環境を直接tcolorboxで装飾する（leftbarの再現）
+\tcolorboxenvironment{DFN}{
+  blanker,                              % 背景色やデフォルトの枠線を透明にする
+  breakable,                            % ページ跨ぎを許可する（framedの代わり）
+  left=14pt,                            % 左側の余白（線の太さ4pt + 隙間10pt）
+  borderline west={4pt}{0pt}{lightgray},% 左側(west)に太さ4ptのlightgrayの線を引く
+  before skip=10pt,                     % 環境の上の余白
+  after skip=10pt                       % 環境の下の余白
+}
+
+% DFN環境を直接tcolorboxで装飾する（leftbarの再現）
+\tcolorboxenvironment{PRP}{
+  enhanced,                             % 高度な装飾を有効化（skinsライブラリが必要）
+  breakable,                            % 箱のページまたぎを許す
+  boxrule=0pt,                          % デフォルトの枠線をすべて消す（emptyの代わり）
+  frame hidden,                         % デフォルトの枠を非表示にする
+  sharp corners,                        % 角を直角にする（デフォルトの丸みを消す）
+  colback=black!5,                      % 背景色を塗る（\fillの代わり）
+  borderline west={2pt}{0pt}{black},    % 左側に2ptの黒線を引く（\drawの代わり）
+  left=12pt,                            % 左側の余白（線の太さ2pt + 隙間10pt）
+  before skip=10pt,                     % 環境の上の余白
+  after skip=10pt                       % 環境の下の余白
+}
+
+\tcolorboxenvironment{THM}{
+  enhanced,                             % 高度な装飾を有効化（skinsライブラリが必要）
+  breakable,                            % 箱のページまたぎを許す
+  boxrule=0pt,                          % デフォルトの枠線をすべて消す（emptyの代わり）
+  frame hidden,                         % デフォルトの枠を非表示にする
+  sharp corners,                        % 角を直角にする（デフォルトの丸みを消す）
+  colback=black!5,                      % 背景色を塗る（\fillの代わり）
+  borderline west={2pt}{0pt}{black},    % 左側に2ptの黒線を引く（\drawの代わり）
+  left=12pt,                            % 左側の余白（線の太さ2pt + 隙間10pt）
+  before skip=10pt,                     % 環境の上の余白
+  after skip=10pt                       % 環境の下の余白
+}
+
+
+% 参考：例(EG)環境に redleftbar（細い線）を適用する場合
+\tcolorboxenvironment{EG}{
+  blanker,
+  breakable,
+  left=11pt,                            % 左側の余白（線の太さ1pt + 隙間10pt）
+  borderline west={1pt}{0pt}{lightgray},% 左側に太さ1ptの線を引く
+  before skip=10pt,
+  after skip=10pt
+}
+
+
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+
 
 % ---------------------------
 % new definition macro
@@ -392,7 +461,7 @@ Zernerの方法について調べたノート．
     なんらかの族$(a_i)_{i\in I}$を$(a_i)_i$とか$(a_i)$と
     略記することがある．
 \end{itemize}
-\section{\cite[1--2章]{Sch00}の和訳}
+\section{\cite[1--2章]{Sch14}の和訳}
 \subsection{導入}
 ジャン・ルレーによる『科学著作集』が最近出版された．
 それは次の3巻に分かれている．
@@ -403,15 +472,16 @@ Zernerの方法について調べたノート．
     \'equations aux d\'eriv\'ees partielles holomorphes (線形偏微分方程式, 以下，LPDE).
 \end{enumerate}
 
-(a)と(c)は密接に関係しており，
-ホモロジー代数のを用いた層の言葉に翻訳すると相補的ともいえる．
-層の理論は，スペクトル系列という単語で知られる
-ホモロジー代数における重要な道具とともに
+以下で見るように(a)と(c)は密接に関係しており，
+ホモロジー代数を用いて層の言葉に翻訳すれば，これらは相補的ともいえる．
+層の理論も，「スペクトル系列」という言葉で知られる
+ホモロジー代数における重要な道具も
 40年代にルレーによって導入されたのであった．
-この分野へのルレーによる重要な貢献に関する詳細なサーベイをするつもりはない．
-ただ，彼のアイデアが，グロタンディークや佐藤のものと結びついて，
-線形解析の代数的・幾何的な描像，すなわち佐藤の言う代数解析学に結実した
-という事実を．いくつかの例によって述べたい．
+この分野へのルレーによる重要な貢献に関する詳細な
+サーベイをするつもりはない．ここでは単に
+ただ，彼のアイデアがグロタンディークや佐藤のものと結びついて，
+線形解析の代数・幾何版，すなわち佐藤の言う代数解析学に結実した
+という事実を．いくつか例で示したい．
 \subsection{コーシー・コワレフスキーの定理再考}
 
 LPDEの核心はコーシー・コワレフスキーの定理 (以下，C-K定理) である．
@@ -436,7 +506,7 @@ LPDEを扱うための唯一の解析的な道具である．
 \(\partial_z^\alpha\)は微分\(\dfrac{\partial}{\partial z_i}\)を
 表す単項式である．
 
-\(Y\)が非特性的であるとは，
+\(Y\)が（\(P\)に関して）非特性的であるとは，
 \(\partial_{z_1}^m\)の係数\(a_{(m,0,\dots,0)}\)が
 常に0にならないことをいう．
 
@@ -445,10 +515,10 @@ LPDEを扱うための唯一の解析的な道具である．
 正則関数\(h=(h_0,\dots,h_{m-1})\)に対して，
 \(X\)における\(Y\)の近傍の関数\(f\)で
 \begin{equation}
-    \begin{cases}
+    \begin{dcases}
         Pf=g,\\
         \gamma_Y(f)=(h),
-    \end{cases}
+    \end{dcases}
 \end{equation}
 を満たすものを求めよ．
 ここで\(\gamma_Y(f)
@@ -472,8 +542,10 @@ $Y$が$P$に関して非特性的ならばコーシー問題は$Y$の近傍で�
     において\(g\)が正則であり\(B(a,R)\cap Y\)で\((h)\)が正則ならば
     半径\(\delta R\)の球体\(B(a,\delta R)\)において\(f\)が正則となるものが存在する．
 \end{THM}
-この結果は純技術的に見え，その面白みは明らかではない．
-しかし，後述のゼルネールの結果で示すように，
+この結果はただ技術的に見えて，その面白みは明らかではない．
+しかし，後述のゼルネール\footnote{
+    発音はシャピラの講演の6:50あたり (\url{https://youtu.be/pbrEaUQuP_0?si=YzlT70W9A6Idwf-k&t=410}) を参考にした．
+}の結果で示すように，
 これは伝播の研究において重要な役割を担う．
 
 これを述べるためには座標によらない議論をしなければならない．
@@ -484,8 +556,9 @@ $P$の主要表象\(\sigma(P)\)を
 \]
 で定める．
 これは実は$X$の余接束$T^\ast X$上の関数になっている．
-$X$を下部の実多様体$X_\rr$と同一視すると，
-$(T^\ast X)_\rr$と$T^\ast(X_\rr)$の間を自然に同一視できる．
+$X$をその下の実多様体$X_\rr$と同一視すると，
+$(T^\ast X)_\rr$と実余接束$T^\ast(X_\rr)$の
+間の自然な同一視が存在する．
 $Y$が$P$に関して非特性的であることは，
 $\sigma(P)$が$Y$の余法束から0切断を取り除いたものの上で0にならないと言い換えられ，
 同様に実超曲面に対しても非特性的であるという概念を定義できる．
@@ -497,7 +570,7 @@ $\sigma(P)$が$Y$の余法束から0切断を取り除いたものの上で0に�
     \(S\)は\(P\)について非特性的とする．
     \(f\)は\(\Omega\)で正則であるとし，
     \(Pf\)は境界\(S\)を通って解析接続できるとする．
-    このとき\(f\)自体も境界\(S\)を通って解析接続できる．
+    このとき\(f\)自体も境界\(S\)をまたいで解析接続できる．
 \end{PRP}
 
 証明は非常にシンプルである（\cite{Hor83}も参照\footnote{\cite[Theorem 9.4.7]{Hor83}あたり}）．
@@ -515,7 +588,9 @@ $\sigma(P)$が$Y$の余法束から0切断を取り除いたものの上で0に�
 そして，もう少し議論をすれば次が示せる．
 \begin{THM}
     \(\partial\Omega\)が\(P\)に関して非特性的であるとする．
-    このとき各\(k\in\NN\)に対して\(P\)は\(H^{k}_{X\setminus\Omega}(\mathcal{O}_{X})\rvert_{\partial\Omega}\)上の同型をひきおこす．
+    このとき各\(k\in\NN\)に対して\(P\)は\(
+        H^{k}_{X\setminus\Omega}(\mathcal{O}_{X})\rvert_{\partial\Omega}
+    \)上の同型をひきおこす．
 \end{THM}
 
 \subsection{超局所台}
@@ -934,7 +1009,7 @@ $\cc^n$の点を\(z=(z_1,\dots,z_n)\)で表し，
         \textit{Categories and Sheaves}, 
         Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
     \bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
-    \bibitem[Sch00]{Sch00} Pierre Schapira, \textit{Sheaves: from Leray to Grothendieck and Sato}, 2000.
+    \bibitem[Sch14]{Sch14} Pierre Schapira, \textit{Sheaves: from Leray to Grothendieck and Sato}, 2000.
     \bibitem[Zer71]{Zer71}M. Zerner, \textit{Domaine d'holomorphie des \'equations v\'erifiant une \'equation aux d\'eriv\'ees partielles}, 
     C. R. Acad. Sci. Paris 272 (1971), p. 1646--1648.
 \end{thebibliography}

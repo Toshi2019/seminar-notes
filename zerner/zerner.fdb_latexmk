@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1730550203.38504 "zerner.dvi" "zerner.pdf" "zerner" 1730550204.41887 0
-  "zerner.dvi" 1730550203.24481 46296 3eb497c149ee56ce79a95ff8fea5ac06 "latex"
+["dvipdf"] 1777874512.48337 "zerner.dvi" "zerner.pdf" "zerner" 1777874514.05861 0
+  "zerner.dvi" 1777874512.3332 78728 c30c11af663d2c137d33437468666fd6 "latex"
   (generated)
   "zerner.pdf"
   (rewritten before read)
-["latex"] 1730550201.71567 "/Users/giuseppe/seminar-notes/zerner/zerner.tex" "zerner.dvi" "zerner" 1730550204.41265 0
-  "/Users/giuseppe/seminar-notes/zerner/zerner.tex" 1730550199.13542 36154 9388591868ceee3f516e036cdbea8f0e ""
+["latex"] 1777874510.41009 "/Users/giuseppe/seminar-notes/zerner/zerner.tex" "zerner.dvi" "zerner" 1777874514.05161 0
+  "/Users/giuseppe/seminar-notes/zerner/zerner.tex" 1777874505.79595 39918 10335a01fe388f9e995251962ffe03d4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -39,6 +39,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm" 1136768653 768 d7b9a2629a0c353102ad947dc9221d49 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlgothr-h.tfm" 1645134245 868 d00a8d6d9ddcb5aa8cde656e259e4d35 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlgothr-v.tfm" 1645134245 588 e1ae0e7b22becffa2385cb523a787c37 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/japanese-otf/upnmlminr-h.tfm" 1645134245 868 d00a8d6d9ddcb5aa8cde656e259e4d35 ""
@@ -169,6 +170,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty" 1705352648 5319 2b738d02ce36ada6dcdd9534940db0ee ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/leqno.clo" 1705352648 1958 fd4c49bb58706659140a05db86f351f5 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/bxjatoucs/bxjatoucs.sty" 1571867428 9159 ebd68ea70b64dbc04bdc806c9afa9ea1 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/environ/environ.sty" 1399239813 4378 f429f0da968c278653359293040a8f52 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/fancybox/fancybox.sty" 1274111957 27261 5ae6156674330dc345adb79b6e5d8966 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
@@ -201,6 +203,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/lkproof/proof.sty" 1160589855 7239 5298517cd8c2fb2070e3c760cf0b8bf7 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/mathtools/mathtools.sty" 1710187076 62672 9ff036bc89365461cc2bd482cc1e4879 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/mathtools/mhsetup.sty" 1616101747 5582 a43dedf8e5ec418356f1e9dfe5d29fc3 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/pdfcol/pdfcol.sty" 1663877585 8086 ac143843b6ea88d172677dc3ed532925 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty" 1601326656 1090 bae35ef70b3168089ef166db3e66f5b2 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty" 1673816307 373 00b204b1d7d095b892ad31a7494b0373 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty" 1601326656 21013 f4ff83d25bb56552493b030f27c075ae ""
@@ -218,9 +221,17 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657483315 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/subfigure/subfigure.cfg" 1167176009 2062 a0e7d66e09e508f51289a656aec06ed2 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/subfigure/subfigure.sty" 1167176009 15188 91281c7ddbccfa54a8e0c3b56ab5aa72 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex" 1704919444 34667 aedede1f84e908a7a38dccbeea73e77f ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex" 1704919444 84115 4b15eb64e93c3991d815e8170f8d1a95 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex" 1704919444 10040 27e9c9197a2de0b5b4144c323ddb740a ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty" 1704919444 103614 1ca07ac773e16c641eabdcbf98c7511d ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty" 1691524336 2573 42712c9e0a2df004e43df5b3c95f0c1e ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty" 1691524336 1120 ba535da48caa03bf1fd3f03ea87779f8 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.tex" 1691524336 10931 717eb52299f416934beb8b2b7cd8cee6 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/tools/calc.sty" 1698869629 10214 547fd4d29642cb7c80bf54b49d447f01 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/tools/enumerate.sty" 1698869629 3468 0ef513f22d965f96b06adb5cff671cd7 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/tools/verbatim.sty" 1700689882 7500 db31c3d04f8bc9010e47a5efbbace9ff ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/trimspaces/trimspaces.sty" 1253232110 1380 971a51b00a14503ddf754cab24c3f209 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty" 1700082560 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "/usr/local/texlive/2024/texmf-dist/tex/platex/japanese-otf/ajmacros.sty" 1554418559 31169 82da95c56dec9c45e5b9734751394461 ""
@@ -234,9 +245,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "zerner.aux" 1730550203.24299 2839 03d51fb935d8196b6b56d88731f7b75a "latex"
-  "zerner.out" 1730550203.24423 1685 2119272720cf7e23fb31eb0cf0f579b8 "latex"
-  "zerner.tex" 1730550199.13542 36154 9388591868ceee3f516e036cdbea8f0e ""
+  "zerner.aux" 1777874512.33026 2839 7abc7902ae82b090da3955875c271863 "latex"
+  "zerner.out" 1777874512.3326 1685 74bbf4aa7fc71da35d42e7395b187e07 "latex"
+  "zerner.tex" 1777874505.79595 39918 10335a01fe388f9e995251962ffe03d4 ""
   (generated)
   "zerner.aux"
   "zerner.dvi"

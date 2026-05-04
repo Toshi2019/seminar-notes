@@ -43,3 +43,5 @@ Poincaré-Verdier双対性[(pdf)](grad-seminar/PV-duality.pdf)
 位相空間[(pdf)](topo/topo.pdf)
 
 しーまに演習[(pdf)](grad-seminar/KS90-exercises/ks90-exercises.pdf)
+
+コーシー・コワレフスカヤの定理[(pdf)](zerner/zerner.pdf)
