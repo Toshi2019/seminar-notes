@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1770563159.38699 "bony-schapira1972.dvi" "bony-schapira1972.pdf" "bony-schapira1972" 1770563160.28874 0
-  "bony-schapira1972.dvi" 1770563159.25242 9024 16bbd0cf583e35d8e6953d44de6bbc14 "latex"
+["dvipdf"] 1777883276.03984 "bony-schapira1972.dvi" "bony-schapira1972.pdf" "bony-schapira1972" 1777883276.91775 0
+  "bony-schapira1972.dvi" 1777883275.90598 11852 f64c557d99dac4d43cde4fc1c184e1ed "latex"
   (generated)
   "bony-schapira1972.pdf"
   (rewritten before read)
-["latex"] 1770563157.85767 "/Users/giuseppe/seminar-notes/2026/202602/bony-schapira1972/bony-schapira1972.tex" "bony-schapira1972.dvi" "bony-schapira1972" 1770563160.2827 0
-  "/Users/giuseppe/seminar-notes/2026/202602/bony-schapira1972/bony-schapira1972.tex" 1770563155.99943 24703 11c02c81db03350e9c9cc8641eb39fac ""
+["latex"] 1777883274.57336 "/Users/giuseppe/seminar-notes/2026/202602/bony-schapira1972/bony-schapira1972.tex" "bony-schapira1972.dvi" "bony-schapira1972" 1777883276.91219 0
+  "/Users/giuseppe/seminar-notes/2026/202602/bony-schapira1972/bony-schapira1972.tex" 1777883272.64879 26464 ea4794317f1ea5aa1b944623dc5e41bf ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -251,9 +251,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "bony-schapira1972.aux" 1770563159.24951 796 d7948044ad16dc7c1e62a70c1ae3ad59 "latex"
-  "bony-schapira1972.out" 1770563159.25164 386 032813b9862082d9472407e0907b55a7 "latex"
-  "bony-schapira1972.tex" 1770563155.99943 24703 11c02c81db03350e9c9cc8641eb39fac ""
+  "bony-schapira1972.aux" 1777883275.90436 1148 d15d01200f752fcea46035127b1e7e2b "latex"
+  "bony-schapira1972.out" 1777883275.90532 576 b8c37b646ff93d2399e0c4d44e27bbd4 "latex"
+  "bony-schapira1972.tex" 1777883272.64879 26464 ea4794317f1ea5aa1b944623dc5e41bf ""
   (generated)
   "bony-schapira1972.aux"
   "bony-schapira1972.dvi"
