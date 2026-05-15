@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1778821296.78239 "2026-oshiba-dc2.dvi" "2026-oshiba-dc2.pdf" "2026-oshiba-dc2" 1778821298.20454 0
-  "2026-oshiba-dc2.dvi" 1778821296.69855 30324 92e430fb730f4ad3ec977368fc03c23f "latex"
+["dvipdf"] 1778833203.13459 "2026-oshiba-dc2.dvi" "2026-oshiba-dc2.pdf" "2026-oshiba-dc2" 1778833204.38141 0
+  "2026-oshiba-dc2.dvi" 1778833203.04027 30228 9c8482e9ba48a1e4ccd69111e33212bd "latex"
   (generated)
   "2026-oshiba-dc2.pdf"
   (rewritten before read)
-["latex"] 1778821295.77366 "/Users/giuseppe/seminar-notes/2026/dc_utf_single/2026-oshiba-dc2.tex" "2026-oshiba-dc2.dvi" "2026-oshiba-dc2" 1778821298.20003 0
-  "/Users/giuseppe/seminar-notes/2026/dc_utf_single/2026-oshiba-dc2.tex" 1778821294.0467 35981 60bcf221583390876e1b0f041938ee7d ""
+["latex"] 1778833201.97496 "/Users/giuseppe/seminar-notes/2026/dc_utf_single/2026-oshiba-dc2.tex" "2026-oshiba-dc2.dvi" "2026-oshiba-dc2" 1778833204.37525 0
+  "/Users/giuseppe/seminar-notes/2026/dc_utf_single/2026-oshiba-dc2.tex" 1778833196.22775 36351 7456ab49ecce2ea387883b541bb46c0e ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcbx1095.tfm" 1136768653 1536 0adca69c597a47fe7664bf81057bb53b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -61,6 +61,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amstext.sty" 1686341992 2444 0d0c1ee65478277e8015d65b86983da2 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty" 1705352648 5319 2b738d02ce36ada6dcdd9534940db0ee ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/booktabs/booktabs.sty" 1579038678 6078 f1cb470c9199e7110a27851508ed7a5c ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/comment/comment.sty" 1472166125 10197 204f75d5d8d88aa345a8c402e879e63b ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty" 1668028059 18450 88279bf67c81e69f8e3f1c1bad1a26c5 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty" 1578002852 41601 9cf6c5257b1bc7af01a58859749dd37a ""
@@ -91,8 +92,8 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "2026-oshiba-dc2.aux" 1778821296.69729 1490 f225f95107fabe2c790d114f82613f8d "latex"
-  "2026-oshiba-dc2.tex" 1778821294.0467 35981 60bcf221583390876e1b0f041938ee7d ""
+  "2026-oshiba-dc2.aux" 1778833203.03776 1527 b2dbdb6c66bf17d0c943c58bd2a876d4 "latex"
+  "2026-oshiba-dc2.tex" 1778833196.22775 36351 7456ab49ecce2ea387883b541bb46c0e ""
   "figs/Fig-SS.pdf" 1778817681.26925 544158 256682b0de140d2ba7c1b8d1fcf84b51 ""
   "pieces/form00_header.tex" 1771246939 2443 898eaa7c178a66c648960fb6dcbf9b36 ""
   "pieces/form01_dcpd_header.tex" 1771246939 1758 6a9fcc89e3fa02f4ede5ec0d3eac3071 ""
