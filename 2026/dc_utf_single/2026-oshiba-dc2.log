@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  16 MAY 2026 14:25
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  16 MAY 2026 18:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -395,11 +395,7 @@ File: l3backend-dvipdfmx.def 2024-02-20 L3 backend support: dvipdfmx
 LaTeX Warning: Unused global option(s):
     [uplatex].
 
-(./2026-oshiba-dc2.aux
-
-LaTeX Warning: Label `KMS03' multiply defined.
-
-)
+(./2026-oshiba-dc2.aux)
 \openout1 = `2026-oshiba-dc2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
@@ -487,37 +483,37 @@ LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10.95> not available
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 10.53629pt on input line 93.
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 139.
+(Font)              scaled to size 11.54663pt on input line 146.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 139.
+(Font)              scaled to size 11.54663pt on input line 146.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 139.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 146.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 139.
+(Font)              scaled to size 11.54663pt on input line 146.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 139.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 146.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 139.
+(Font)              scaled to size 11.54663pt on input line 146.
 File: figs/DC2-fig2.pdf Graphic file (type pdf)
 <figs/DC2-fig2.pdf>
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 355.
+(Font)              scaled to size 8.65997pt on input line 365.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 355.
-LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 364.
-LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 364.
-LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <9> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 374.
-LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 374.
-LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <9> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 374.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 374.
+(Font)              scaled to size 8.65997pt on input line 365.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
 (Font)              No change on input line 374.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 4.8111pt on input line 374.
+LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <9> not available
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 384.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 8.65997pt on input line 384.
+LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <9> not available
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 384.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 8.65997pt on input line 384.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 384.
  (./pieces/p01_background_01.tex
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
 (Font)              scaled to size 10.1033pt on input line 2.
@@ -534,31 +530,31 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
 File: subject_headers/dc_header_02.pdf Graphic file (type pdf)
 <subject_headers/dc_header_02.pdf>
 )
-Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--386
+Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--396
  []
  []
 
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <8> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 391.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 401.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 391.
+(Font)              scaled to size 7.69775pt on input line 401.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <8> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 391.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 401.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 391.
+(Font)              scaled to size 7.69775pt on input line 401.
 [4
 
 ]
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 620.
+(Font)              No change on input line 690.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 623.
+(Font)              No change on input line 695.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 627.
+(Font)              No change on input line 698.
 LaTeX Font Info:    Kanji font shape `JY2/gt/m/it' undefined
-(Font)              No change on input line 629.
+(Font)              No change on input line 704.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 632.
+(Font)              No change on input line 707.
  (./pieces/p02_purpose_plan_01.tex
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
 (Font)              scaled to size 7.69775pt on input line 2.
@@ -566,7 +562,7 @@ LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
 File: subject_headers/dc_header_03.pdf Graphic file (type pdf)
 <subject_headers/dc_header_03.pdf>
 )
-Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--646
+Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--721
  []
  []
 
@@ -576,16 +572,18 @@ Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--646
 File: subject_headers/dc_header_04.pdf Graphic file (type pdf)
 <subject_headers/dc_header_04.pdf>
 )
-Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--661
+Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--738
  []
  []
 
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 693.
+(Font)              No change on input line 750.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 710.
+(Font)              No change on input line 751.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 730.
+(Font)              No change on input line 768.
+LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
+(Font)              No change on input line 788.
 [7
 
 ] (./pieces/p04_abilities_01.tex [8]) (./pieces/hook9.tex) (./2026-oshiba-dc2.aux)
@@ -599,17 +597,14 @@ L3 programming layer <2024-02-20>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.45pt have occurred.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 5914 strings out of 474774
- 88871 string characters out of 5758801
+ 5908 strings out of 474774
+ 88762 string characters out of 5758801
  1933032 words of memory out of 5000000
- 28122 multiletter control sequences out of 15000+600000
- 574086 words of font info for 112 fonts, out of 8000000 for 9000
+ 28118 multiletter control sequences out of 15000+600000
+ 573436 words of font info for 110 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  62i,13n,68p,307b,449s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 2026-oshiba-dc2.dvi (6 pages, 32264 bytes).
+Output written on 2026-oshiba-dc2.dvi (6 pages, 36608 bytes).
