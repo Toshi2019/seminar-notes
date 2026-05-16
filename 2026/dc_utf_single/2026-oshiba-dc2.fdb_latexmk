@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1778833203.13459 "2026-oshiba-dc2.dvi" "2026-oshiba-dc2.pdf" "2026-oshiba-dc2" 1778833204.38141 0
-  "2026-oshiba-dc2.dvi" 1778833203.04027 30228 9c8482e9ba48a1e4ccd69111e33212bd "latex"
+["dvipdf"] 1778909113.31429 "2026-oshiba-dc2.dvi" "2026-oshiba-dc2.pdf" "2026-oshiba-dc2" 1778909114.61401 0
+  "2026-oshiba-dc2.dvi" 1778909113.20436 32264 db76c37ed8efb74508e1a19c3a31e301 "latex"
   (generated)
   "2026-oshiba-dc2.pdf"
   (rewritten before read)
-["latex"] 1778833201.97496 "/Users/giuseppe/seminar-notes/2026/dc_utf_single/2026-oshiba-dc2.tex" "2026-oshiba-dc2.dvi" "2026-oshiba-dc2" 1778833204.37525 0
-  "/Users/giuseppe/seminar-notes/2026/dc_utf_single/2026-oshiba-dc2.tex" 1778833196.22775 36351 7456ab49ecce2ea387883b541bb46c0e ""
+["latex"] 1778909111.95674 "/Users/giuseppe/seminar-notes/2026/dc_utf_single/2026-oshiba-dc2.tex" "2026-oshiba-dc2.dvi" "2026-oshiba-dc2" 1778909114.61027 0
+  "/Users/giuseppe/seminar-notes/2026/dc_utf_single/2026-oshiba-dc2.tex" 1778909110.56281 38547 cb14259345218da300ffacfa11b2702c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcbx1095.tfm" 1136768653 1536 0adca69c597a47fe7664bf81057bb53b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -92,9 +92,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "2026-oshiba-dc2.aux" 1778833203.03776 1527 b2dbdb6c66bf17d0c943c58bd2a876d4 "latex"
-  "2026-oshiba-dc2.tex" 1778833196.22775 36351 7456ab49ecce2ea387883b541bb46c0e ""
-  "figs/Fig-SS.pdf" 1778817681.26925 544158 256682b0de140d2ba7c1b8d1fcf84b51 ""
+  "2026-oshiba-dc2.aux" 1778909113.20322 1714 4664afd7e046f8a8cc29c6a3ce00cfac "latex"
+  "2026-oshiba-dc2.tex" 1778909110.56281 38547 cb14259345218da300ffacfa11b2702c ""
+  "figs/DC2-fig2.pdf" 1778906721.3357 211612 1c3883616ec69998b0ad7c2636977b0b ""
   "pieces/form00_header.tex" 1771246939 2443 898eaa7c178a66c648960fb6dcbf9b36 ""
   "pieces/form01_dcpd_header.tex" 1771246939 1758 6a9fcc89e3fa02f4ede5ec0d3eac3071 ""
   "pieces/form03_dcpd_headers.tex" 1771246939 3352 6b0094984e3e5793f02358931fdd39f2 ""
