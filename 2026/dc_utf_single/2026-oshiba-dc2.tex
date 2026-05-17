@@ -179,16 +179,16 @@
 %そして，\textbf{層係数コホモロジー}を調べることで
 %多様体の情報を得ることができる．
 
-\begin{wrapfigure}{r}{7.8cm}
-	\vspace{-44pt}
-	\begin{center}
-		\includegraphics[width=7.8cm]{figs/DC2-fig2.pdf}
-		\vspace{-28pt}
-		\caption{超局所層理論とシンプレクティック幾何}
-		\label{fig:DC2-fig}
-	\end{center}
-	\vspace{-22pt}
-\end{wrapfigure}
+%\begin{wrapfigure}{r}{7.8cm}
+%	\vspace{-44pt}
+%	\begin{center}
+%		\includegraphics[width=7.8cm]{figs/DC2-fig2.pdf}
+%		\vspace{-28pt}
+%		\caption{超局所層理論とシンプレクティック幾何}
+%		\label{fig:DC2-fig}
+%	\end{center}
+%	\vspace{-22pt}
+%\end{wrapfigure}
 
 %超局所層理論は，層の
 %コホモロジー%を局所的に考えたときに，
@@ -250,37 +250,44 @@
 1つ目は
 %超局所層理論において中心的な役割を果たすのが，
 \textbf{超局所台}と呼ばれる余接束の部分集合である．
-多様体\(X\)上の層\(F\)の超局所台\(\mathrm{SS}(F)\)とは，
-\(X\)の各点で\(F\)のコホモロジーが変化する方向を集めた
-余接束の部分集合\(\mathrm{SS}(F)\subset T^{\ast}X\)である．
+多様体\(M\)上の層\(F\)の超局所台\(\mathrm{SS}(F)\)とは，
+\(M\)の各点で\(F\)のコホモロジーが変化する方向を集めた
+余接束の部分集合\(\mathrm{SS}(F)\subset T^{\ast}M\)である．
 重要な概念の2つ目は層の\textbf{積分変換と畳み込み}という，
 フーリエ変換の層理論での類似に当たる操作である．
-層の積分変換は，多様体\(X\)と\(Y\)の直積\(X\times Y\)上の層\(K\)と\(X\)上の層\(F\)に対し\(Y\)上の層\(K\circ F\)を対応させる操作である．
+層の積分変換は，多様体\(M\)と\(N\)の直積\(M\times N\)上の
+層\(K\)と\(M\)上の層\(F\)に対し\(N\)上の層\(K\circ F\)を
+対応させる操作である．
 層の畳み込みは，ベクトル空間\(V\)上の層\(F\)と\(G\)に対し，
 \(V\)上の層\(F\ast G\)を対応させる操作である．
-
 \cite{GKS12}は余接束\(T^{\ast}M\)上の
-ハミルトンイソトピー\((\phi^{t})\)に対し，
-\(M\times M\)上の層の族\((K_{t})\)であって，積分変換\(K_{t}\circ{\text{--}}\)が
-ハミルトン微分同相写像の，適切な意味で実現になっているものを構成した．
-
+ハミルトンイソトピーと呼ばれる
+シンプレクティック微分同相写像の族\(
+	(\phi^{t})_{t\in\mathbf{R}}
+\)に対し，
+\(M\times M\)上の層の族\((K_{t})\)であって，
+各積分変換\(K_{t}\circ{\text{--}}\)が
+ハミルトン微分同相写像\(\phi^{t}\)の
+適切な意味での実現になっているものを構成した．
 一方
 \cite{AI20}は層の畳み込みを\(V=\mathbf{R}\)の場合に用いて，
-余接束の部分集合\(A\)と\(B\)の分離可能性を測る定量的な指標を定義した．
-
-
+余接束の部分集合\(A\)と\(B\)がハミルトンイソトピーで
+分離できるかを測る
+定量的な指標を定義した．
+これらの仕事で，超局所台は，層の特異性を制御する
+装置として有効に用いられている．
 %これら2つは，層の積分変換や畳み込みの特異性を
 %超局所台を用いて調べるという方法で結びつく．
 %そのテクニック
-これら%の道具
-を
+%これら%の道具
+%を
 %有効に
-用いることで，
-圧縮不能性定理や分離不能性定理
+%用いることで，
+%圧縮不能性定理や分離不能性定理
 %といった，
-など，
-シンプレクティック幾何における
-重要な結果を証明できることが知られている（図\ref{fig:DC2-fig}）．
+%など，
+%シンプレクティック幾何における
+%重要な結果を証明できることが知られている（図\ref{fig:DC2-fig}）．
 
 さて，余接束のある点が超局所台に含まれるかどうかは，
 全ての次数のコホモロジーがある方向に延長できるかどうかで判定される．
@@ -417,7 +424,7 @@
     \vspace{-6pt}   
 	\bibitem[Osh26]{Osh26} \underbar{\textbf{T.~Oshiba}}, \textit{Microlocal Morse theory and truncated microsupport}, in preparation.
     \vspace{-6pt}   
-	\bibitem[Tam18]{Tam18} D.~Tamarkin, \textit{Microlocal condition for non-displaceability}, in Algebaic and Analytic Microlocal Analysis, pp99--223, Springer, 2018.
+%	\bibitem[Tam18]{Tam18} D.~Tamarkin, \textit{Microlocal condition for non-displaceability}, in Algebaic and Analytic Microlocal Analysis, pp99--223, Springer, 2018.
 \end{thebibliography}}
 \endgroup % 設定終了
 %end 参考文献 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
