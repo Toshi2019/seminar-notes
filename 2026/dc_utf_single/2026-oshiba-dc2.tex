@@ -117,13 +117,16 @@
 打切り超局所台という概念が解析の文脈で知られている．
 そこで本研究では，
 層の積分変換と畳み込みの
-打切り超局所台に関する振る舞いを
+打切り超局所台
+%に関する振る舞い
+を
 調べる．
 まず基本的な補題である超局所切り落とし補題を
 打切り超局所台に合う形に精密化する．
 次に層の積分変換と畳み込みをより基本的な操作に分解し，
 %その特異性
-その打切り超局所台に関する振る舞い
+その打切り超局所台
+%に関する振る舞い
 を調べる．
 最後に，上の2つを統合して層の積分変換と畳み込みの特異性を記述する．
 具体例として，余接束
@@ -241,18 +244,35 @@
 %では
 シンプレクティック幾何とのつながりが著しい．
 %とりわけ，
-とくに，
-次の2つの道具が超局所層理論のシンプレクティック幾何学への応用で
+特に
+次の2つの概念が超局所層理論のシンプレクティック幾何学への応用で
 重要である．
 1つ目は
 %超局所層理論において中心的な役割を果たすのが，
 \textbf{超局所台}と呼ばれる余接束の部分集合である．
-2つ目はフーリエ変換の層理論における類似である
-層の\textbf{積分変換と畳み込み}である．
+多様体\(X\)上の層\(F\)の超局所台\(\mathrm{SS}(F)\)とは，
+\(X\)の各点で\(F\)のコホモロジーが変化する方向を集めた
+余接束の部分集合\(\mathrm{SS}(F)\subset T^{\ast}X\)である．
+重要な概念の2つ目は層の\textbf{積分変換と畳み込み}という，
+フーリエ変換の層理論での類似に当たる操作である．
+層の積分変換は，多様体\(X\)と\(Y\)の直積\(X\times Y\)上の層\(K\)と\(X\)上の層\(F\)に対し\(Y\)上の層\(K\circ F\)を対応させる操作である．
+層の畳み込みは，ベクトル空間\(V\)上の層\(F\)と\(G\)に対し，
+\(V\)上の層\(F\ast G\)を対応させる操作である．
+
+\cite{GKS12}は余接束\(T^{\ast}M\)上の
+ハミルトンイソトピー\((\phi^{t})\)に対し，
+\(M\times M\)上の層の族\((K_{t})\)であって，積分変換\(K_{t}\circ{\text{--}}\)が
+ハミルトン微分同相写像の，適切な意味で実現になっているものを構成した．
+
+一方
+\cite{AI20}は層の畳み込みを\(V=\mathbf{R}\)の場合に用いて，
+余接束の部分集合\(A\)と\(B\)の分離可能性を測る定量的な指標を定義した．
+
+
 %これら2つは，層の積分変換や畳み込みの特異性を
 %超局所台を用いて調べるという方法で結びつく．
 %そのテクニック
-この2つ%の道具
+これら%の道具
 を
 %有効に
 用いることで，
@@ -264,13 +284,15 @@
 
 さて，余接束のある点が超局所台に含まれるかどうかは，
 全ての次数のコホモロジーがある方向に延長できるかどうかで判定される．
-したがって，次数に依存した方向別の特異性は扱えない．
+従って，次数に依存した方向別の特異性は扱えない．
 そのような特異性を記述するために，
 柏原，Schapira，Fernandesは超局所台
 の精密化にあたる\textbf{打切り超局所台}を
-定義した\cite{KMS03}．
-彼らは打切り超局所台を用いることで，微分方程式の
-境界値問題の解の，次数つきの伝播現象を記述した．
+定義し，
+解析学において重要な応用を得
+た\cite{KMS03}．
+%彼らは打切り超局所台を用いることで，微分方程式の
+%境界値問題の解の，次数つきの伝播現象を記述した．
 一方で，積分変換と畳み込みについては，
 打切り超局所台の振る舞いがわかっておらず，
 シンプレクティック幾何への応用可能性が希薄であるというのが現状である．
@@ -314,18 +336,21 @@
 %cut-off lemmaもできる
 %関手的性質の精密化とその証明が簡単にできる
 
-申請者は文献調査の結果，打切り超局所台の理論には，重要だが
-明らかになって
+%申請者は文献調査の結果，打切り超局所台の理論には，重要だが
+%明らかになって
 %わかって
-いないことが多いことに気づいた．
+%いないことが多いことに気づいた．
+打切り超局所台は重要な理論であるにも関わらず，
+未解明なことが多い．
 特に
 シンプレクティック幾何への応用で
 重要である，層の積分変換と畳み込みに関する
 打切り超局所台の振る舞いが明らかになっていない．
-これが明らかになると，
-シンプレクティック幾何に用いられる層理論に関して，
+%これが明らかになると，
+これを明らかにすれば，
+シンプレクティック幾何に用いられる層理論に関して
 コホモロジーの次数に着目した
-より精密なアプローチができるのではないかと考えた．
+一層精密なアプローチができるのではないかと考えた．
 また，超局所層理論において最も基礎的な役割を果たす
 非特性変形補題も，打切り超局所台との相性が良くなかった．
 申請者は実用上問題のない条件を付け加えることで，
@@ -333,7 +358,10 @@
 この新技法を用いることで，打切り超局所台の理論を
 基礎から再構築し，種々の性質を証明できそうだと考えた．
 とりわけ，積分変換と畳み込みに関する
-打切り超局所台の振る舞いもうまく評価できると確信し，
+打切り超局所台の振る舞いも
+%うまく評価できる
+扱える
+と確信し，
 本研究計画の着想に至った．
 %KS90の焼き増しのようなアプローチでなくより基礎的なところからやり直さなければいけないと考えた
 %色々な主張の大元になっているのが，非特性変形補題と呼ばれる主張
@@ -365,23 +393,31 @@
 {\footnotesize
 \begin{thebibliography}{99}
     \vspace{-4pt}   
+	\bibitem[GKS12]{GKS12} S.~Guillermou, M.~Kashiwara, 
+	P.~Schapira, \textit{Sheaf quantization of 
+	Hamiltonian isotopies and applications 
+	to nondisplaceability problems}, 
+	Duke. Math. J. 161, No.2, pp.201--245, 2012.  
 	%\bibitem[GS14]{GS14} S.~Guillermou, P.~Schapira, 
 	%\textit{Microlocal theory of sheaves and Tamarkin's non displaceability theorem}, 2014.  
     %\vspace{-6pt}   
+    \vspace{-6pt}   
     \bibitem[KMS03]{KMS03} M.~Kashiwara, T.~M.-Fernandes, 
     P.~Schapira, 
     \textit{Truncated Microsupport and Holomorphic Solutions 
-    of \(D\)-modules}, 2003.
-	%Ann. Scient. \'Ec. Norm. Sup., s\'erie 4, tome 36, 
-	%pp.583--399, 2003.
+    of \(D\)-modules}, Ann. Scient. \'Ec. Norm. Sup., s\'erie 4, tome 36, 
+	pp.583--399, 
+	2003.
     %\vspace{-6pt}   
     %\bibitem[KS90]{KS90} M.~Kashiwara, P.~Schapira, \emph{Sheaves on manifolds}, Grundl. math. Wiss., vol. 292, Springer, 1990.
     %\vspace{-6pt}   
 	%\bibitem[MM07]{MM07} T.~M.-Fernandes, A.~R.-Martins. 
     %\textit{Truncated Microsupport and Hyperbolic Inequalities}, 
     %Nagoya Mathematical Journal, 2007, Vol.\ 185, pp.63--91. 
-    \vspace{-5pt}   
+    \vspace{-6pt}   
 	\bibitem[Osh26]{Osh26} \underbar{\textbf{T.~Oshiba}}, \textit{Microlocal Morse theory and truncated microsupport}, in preparation.
+    \vspace{-6pt}   
+	\bibitem[Tam18]{Tam18} D.~Tamarkin, \textit{Microlocal condition for non-displaceability}, in Algebaic and Analytic Microlocal Analysis, pp99--223, Springer, 2018.
 \end{thebibliography}}
 \endgroup % 設定終了
 %end 参考文献 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -455,7 +491,7 @@
 \paragraph*{\underbar{(1) 打切り版超局所切り落とし補題の証明}}
 超局所台の評価には，
 超局所切り落とし補題と呼ばれる基本的な主張が中心的な役割を果たす．
-したがって，打切り超局所台の評価にも
+従って，打切り超局所台の評価にも
 この補題の打切り版があれば便利である．
 実際，\cite{MM07}では，それにあたる主張が示され，
 種々の命題を示すのに用いられている．
@@ -511,14 +547,14 @@
 局所コホモロジーに関する層の列を考える．
 その極限の層に対する超局所台の評価が畳み込みの超局所台
 の評価に用いられるのである．
-したがって，ここでも零延長層と
+従って，ここでも零延長層と
 局所コホモロジーに関する層の列に関する打切り超局所台を評価する．
 ここで(1)で示した打切り版超局所切り落とし補題
 が中心的な役割を果たす．
 ただし，これらをそのまま評価することが難しい場合，
 それをWhitney錐と呼ばれる集合を用いて評価する方法があるので，
 そちらによる評価を試みる．
-\vspace{-11pt}
+\vspace{-15pt}
 \paragraph*{\underbar{(3) 打切り超局所台の評価の統合と具体例の計算}}
 最後に(1) と (2) で得られた評価をもとに
 \textbf{積分変換と畳み込みの
@@ -547,7 +583,7 @@
 その打切り超局所台を調べることで，
 ハミルトン微分同相写像の情報を
 コホモロジーの次数ごとに調べることができるはずである．
-%したがって
+%従って
 %ここでは
 %そこで
 %積分変換に関する打切り超局所台
@@ -562,10 +598,10 @@
 %この変形は積分変換を用いて実現できることが知られている．
 %これはシンプレクティック幾何におけるハミルトン微分同相写像を
 %層の積分変換で実現したものである．
-%したがってこの平行移動で変形した層に関する打切り超局所台を計算し，
+%従ってこの平行移動で変形した層に関する打切り超局所台を計算し，
 %打切り超局所台のシンプレクティック幾何への応用の雛形とする．
 
-\vspace{-20pt}
+\vspace{-22pt}
 \subsubsection*{\underbar{\ctext{3} 研究の特色・独創的な点}}
 \vspace{-10pt}
 \paragraph{\underbar{先行研究等との比較}}
@@ -667,10 +703,10 @@
 %begin 参考文献 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 % --- 参考文献のカスタマイズ ---
 \begingroup % 設定をこの範囲内に限定する
-\renewcommand{\refname}{\textbf{参考文献}} % 見出しを太字に
+\renewcommand{\refname}{\small \textbf{参考文献}} % 見出しを太字に
 \renewenvironment{thebibliography}[1]{%
     \subsubsection*{\refname}% 見出しをsubsubsectionレベルにする（お好みで）
-    \vspace{-5pt} % 見出し下の微調整
+    \vspace{-9pt} % 見出し下の微調整
     \begin{list}{\relax}{%
         \setlength{\leftmargin}{15pt} % ★左側のインデント量（ここを調整）
         \setlength{\itemindent}{0pt}  % 各行の開始位置
@@ -685,26 +721,22 @@
 }
 {\footnotesize
 \begin{thebibliography}{99}
-    \vspace{-4pt}   
+    %\vspace{-4pt}   
 	\bibitem[AI20]{AI20} T.~Asano, Y.~Ike, 
-	\textit{Persistence-like distance on Tamarkin's category and symplectic displacement energy}, 2020. 
-    \vspace{-5pt}   
-	\bibitem[GKS12]{GKS12} S.~Guillermou, M.~Kashiwara, 
-	P.~Schapira, \textit{Sheaf quantization of 
-	Hamiltonian isotopies and applications 
-	to nondisplaceability problems}, 2012.
+	\textit{Persistence-like distance on Tamarkin's category and symplectic displacement energy}, Journal of Symplectic Geometry, vol.18, No.3, 613--649, 2020. 
 	\vspace{-6pt}
 	\bibitem[GS14]{GS14} S.~Guillermou, P.~Schapira, 
-	\textit{Microlocal theory of sheaves and Tamarkin's non displaceability theorem}, 2014.  
+	\textit{Microlocal theory of sheaves and Tamarkin's non displaceability theorem}, in Homological Mirror Symmetry and Tropical Geometry, pp.~43--85, Springer, 2014.  
     %\vspace{-5pt}   
     %\vspace{-6pt}   
     %\bibitem[KMS03]{KMS03} M.~Kashiwara, T.~M.-Fernandes, P.~Schapira, 
     %\textit{Truncated microsupport and holomorphic solutions of \(D\)-modules}, 2003.
 	\vspace{-5pt}   
-    \bibitem[KS90]{KS90} M.~Kashiwara, P.~Schapira, \emph{Sheaves on manifolds}, 1990.
+    \bibitem[KS90]{KS90} M.~Kashiwara, P.~Schapira, \textit{Sheaves on manifolds}, Grundl. math. Wiss., vol. 292, Springer, 1990.
     \vspace{-5pt}   
 	\bibitem[MM07]{MM07} T.~M.-Fernandes, A.~R.-Martins. 
-    \textit{Truncated microsupport and hyperbolic inequalities}, 2007. 
+    \textit{Truncated microsupport and hyperbolic inequalities}, 
+	Nagoya Mathematical Journal, Vol.\ 185, pp.63--91, 2007. 
     %\vspace{-5pt}   
 	%\bibitem[Osh26]{Osh26} \underbar{\textbf{T.~Oshiba}}, \textit{Microlocal Morse theory and truncated microsupport}, in preparation.
 \end{thebibliography}}
