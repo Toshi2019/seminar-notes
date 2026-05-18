@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  19 MAY 2026 06:23
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  19 MAY 2026 07:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -483,33 +483,33 @@ LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10.95> not available
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 10.53629pt on input line 93.
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 161.
+(Font)              scaled to size 11.54663pt on input line 162.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 161.
+(Font)              scaled to size 11.54663pt on input line 162.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 161.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 162.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 161.
+(Font)              scaled to size 11.54663pt on input line 162.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 161.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 162.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 161.
+(Font)              scaled to size 11.54663pt on input line 162.
 File: figs/SS-newfig.pdf Graphic file (type pdf)
 <figs/SS-newfig.pdf>
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 491.
+(Font)              scaled to size 8.65997pt on input line 490.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 491.
+(Font)              scaled to size 8.65997pt on input line 490.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 521.
+(Font)              scaled to size 4.8111pt on input line 520.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <9> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 521.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 520.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 521.
+(Font)              scaled to size 8.65997pt on input line 520.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <9> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 521.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 520.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 8.65997pt on input line 521.
+(Font)              scaled to size 8.65997pt on input line 520.
  (./pieces/p01_background_01.tex
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
 (Font)              scaled to size 10.1033pt on input line 2.
@@ -526,29 +526,29 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
 File: subject_headers/dc_header_02.pdf Graphic file (type pdf)
 <subject_headers/dc_header_02.pdf>
 )
-Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--537
+Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--536
  []
  []
 
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <8> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 542.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 541.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 542.
+(Font)              scaled to size 7.69775pt on input line 541.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <8> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 542.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 541.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 542.
+(Font)              scaled to size 7.69775pt on input line 541.
 [4
 
 ] Excluding 'comment' comment. Excluding 'comment' comment.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 943.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 947.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 943.
+(Font)              scaled to size 9.6222pt on input line 947.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 943.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 947.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 943.
+(Font)              scaled to size 9.6222pt on input line 947.
  (./pieces/p02_purpose_plan_01.tex
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
 (Font)              scaled to size 7.69775pt on input line 2.
@@ -556,7 +556,7 @@ LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
 File: subject_headers/dc_header_03.pdf Graphic file (type pdf)
 <subject_headers/dc_header_03.pdf>
 )
-Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--969
+Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--973
  []
  []
 
@@ -566,14 +566,14 @@ Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--969
 File: subject_headers/dc_header_04.pdf Graphic file (type pdf)
 <subject_headers/dc_header_04.pdf>
 )
-Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--986
+Overfull \hbox (51.23788pt too wide) in paragraph at lines 2--990
  []
  []
 
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 999.
+(Font)              No change on input line 1003.
 LaTeX Font Info:    Kanji font shape `JY2/mc/m/it' undefined
-(Font)              No change on input line 1020.
+(Font)              No change on input line 1024.
 [7
 
 ] (./pieces/p04_abilities_01.tex [8]) (./pieces/hook9.tex) (./2026-oshiba-dc2.aux)
@@ -595,6 +595,6 @@ Here is how much of TeX's memory you used:
  28123 multiletter control sequences out of 15000+600000
  573087 words of font info for 109 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 62i,13n,68p,307b,449s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 62i,13n,68p,307b,445s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 2026-oshiba-dc2.dvi (6 pages, 40496 bytes).
+Output written on 2026-oshiba-dc2.dvi (6 pages, 40644 bytes).

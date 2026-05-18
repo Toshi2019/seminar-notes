@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1779139387.77839 "2026-oshiba-dc2.dvi" "2026-oshiba-dc2.pdf" "2026-oshiba-dc2" 1779139389.11712 0
-  "2026-oshiba-dc2.dvi" 1779139387.67633 40496 c78bb5f7c7675cb17c25c7be0d8f0c7f "latex"
+["dvipdf"] 1779145031.80157 "2026-oshiba-dc2.dvi" "2026-oshiba-dc2.pdf" "2026-oshiba-dc2" 1779145032.87275 0
+  "2026-oshiba-dc2.dvi" 1779145031.73051 40644 585e27c2d8560f45ea649878c919dac8 "latex"
   (generated)
   "2026-oshiba-dc2.pdf"
   (rewritten before read)
-["latex"] 1779139386.0616 "/Users/giuseppe/seminar-notes/2026/dc_utf_single/2026-oshiba-dc2.tex" "2026-oshiba-dc2.dvi" "2026-oshiba-dc2" 1779139389.11385 0
-  "/Users/giuseppe/seminar-notes/2026/dc_utf_single/2026-oshiba-dc2.tex" 1779139384.2951 56301 a6e034ee8adbcb1e873e6eaa2ab96139 ""
+["latex"] 1779145030.66751 "/Users/giuseppe/seminar-notes/2026/dc_utf_single/2026-oshiba-dc2.tex" "2026-oshiba-dc2.dvi" "2026-oshiba-dc2" 1779145032.87029 0
+  "/Users/giuseppe/seminar-notes/2026/dc_utf_single/2026-oshiba-dc2.tex" 1779145029.34567 56479 18f3fd217beab04038e5e05407ae199c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcbx1095.tfm" 1136768653 1536 0adca69c597a47fe7664bf81057bb53b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -88,8 +88,8 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "2026-oshiba-dc2.aux" 1779139387.67513 1506 f4343d84a54888699c178f5bdb2f269d "latex"
-  "2026-oshiba-dc2.tex" 1779139384.2951 56301 a6e034ee8adbcb1e873e6eaa2ab96139 ""
+  "2026-oshiba-dc2.aux" 1779145031.72933 1506 de03b395efe4d597fda3a2ffacfb47e9 "latex"
+  "2026-oshiba-dc2.tex" 1779145029.34567 56479 18f3fd217beab04038e5e05407ae199c ""
   "figs/SS-newfig.pdf" 1779138528.5474 129934 4b4bacac603714986bc69eb73e97a945 ""
   "pieces/form00_header.tex" 1771246939 2443 898eaa7c178a66c648960fb6dcbf9b36 ""
   "pieces/form01_dcpd_header.tex" 1771246939 1758 6a9fcc89e3fa02f4ede5ec0d3eac3071 ""
