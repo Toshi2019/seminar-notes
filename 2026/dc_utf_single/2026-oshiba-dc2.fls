@@ -194,6 +194,10 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT ./figs/SS-newfig.pdf
+INPUT ./figs/SS-newfig.pdf
+INPUT ./figs/SS-newfig.pdf
+INPUT extractbb -B cropbox -O figs/SS-newfig.pdf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-v.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-h.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
@@ -262,7 +266,6 @@ INPUT ./subject_headers/dc_header_04.pdf
 INPUT ./subject_headers/dc_header_04.pdf
 INPUT subject_headers/dc_header_04.xbb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
 INPUT ./pieces/p04_abilities_01.tex
 INPUT ./pieces/p04_abilities_01.tex
 INPUT ./pieces/p04_abilities_01.tex
