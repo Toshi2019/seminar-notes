@@ -510,6 +510,8 @@
 \newtheorem*{CMT*}{コメント}
 \newtheorem{NTN}[AXM]{記号}
 \newtheorem{PRB}[AXM]{問題}
+\newtheorem{OBS}[AXM]{観察}
+\newtheorem{CNJ}[AXM]{予想}
 
 % 定理環境ここまで
 %====================================================
@@ -544,6 +546,19 @@
 
 % DFN環境を直接tcolorboxで装飾する（leftbarの再現）
 \tcolorboxenvironment{PRP}{
+  enhanced,                             % 高度な装飾を有効化（skinsライブラリが必要）
+  breakable,                            % 箱のページまたぎを許す
+  boxrule=0pt,                          % デフォルトの枠線をすべて消す（emptyの代わり）
+  frame hidden,                         % デフォルトの枠を非表示にする
+  sharp corners,                        % 角を直角にする（デフォルトの丸みを消す）
+  colback=black!5,                      % 背景色を塗る（\fillの代わり）
+  borderline west={2pt}{0pt}{black},    % 左側に2ptの黒線を引く（\drawの代わり）
+  left=12pt,                            % 左側の余白（線の太さ2pt + 隙間10pt）
+  before skip=10pt,                     % 環境の上の余白
+  after skip=10pt                       % 環境の下の余白
+}
+% DFN環境を直接tcolorboxで装飾する（leftbarの再現）
+\tcolorboxenvironment{THM}{
   enhanced,                             % 高度な装飾を有効化（skinsライブラリが必要）
   breakable,                            % 箱のページまたぎを許す
   boxrule=0pt,                          % デフォルトの枠線をすべて消す（emptyの代わり）
@@ -657,6 +672,11 @@
 \newcommand{\Dbconic}{\mathop{\mathsf{D}^\mathrm{b}_{\rrp}}\nolimits}
 \newcommand{\iu}{\sqrt{-1}}
 
+\DeclareMathOperator{\WFa}{\mathrm{WF}_\mathrm{A}} % 解析的波面集合
+\DeclareMathOperator{\WF}{\mathrm{WF}} % 波面集合
+\DeclareMathOperator{\SingSpec}{\mathrm{S}\text{.}\mathrm{S}\text{.}} % 特異性スペクトル
+\DeclareMathOperator{\SingSupp}{\mathrm{singsupp}} % 特異台
+\newcommand{\Char}{\mathop{\mathrm{Char}}\nolimits}
 
 % ----------------------------
 % documenet 
@@ -672,7 +692,7 @@
 \begin{document}
 \maketitle
 
-\section{はじめに}
+\section*{はじめに}
 2026/06/26に実施された北大数学オムニバス発表会のノート．
 \section{複素関数論}
 \(D\)を複素平面\(\cc\)の開集合，
@@ -695,11 +715,170 @@
 すなわち\[
     S^1\coloneqq \bd{D}=\left\{z\in\cc\smid \left|z\right|=1\right\}
 \]である．次の問題を考える．
-\begin{PRB}
+\begin{PRB}[境界値問題（ディリクレ問題）]
     \(f\)を\(S^1\)上の\(C^\infty\)級関数とする．
     このとき\(f\)を境界値とする\(D\)上の調和関数\(u\)を求めよ．
+    すなわち，次をみたす関数\(u\)を求めよ．
+    \[
+      \begin{cases*}
+        \Delta u=0&on \(D\),\\
+        \mres[u]{S^1}=f.
+      \end{cases*}
+    \]
 \end{PRB}
-\section{佐藤超関数の定義}
+
+この問題の解法のひとつにPoisson積分によるものがある．
+\(f\in C^\infty(S^{1})\)に対し，\(D\)上の関数\(\cP{f}\)を
+\[
+  \cP{f}(z)\coloneqq
+  \frac{1}{2\pi}\int_{0}^{2\pi}\frac{1-\left|z\right|^2}{\left|e^{\sqrt{-1}\theta}-z\right|}f(\theta) d\theta
+\]
+で定める．\(\cP{f}\)を\(f\)のポアソン積分とよぶ．
+\[
+  K_{z}=\frac{1-\left|z\right|^2}{\left|e^{\sqrt{-1}\theta}-z\right|}
+\]
+とおいて，\(K_z\)をポアソン核とよぶこともある．
+\(\cP{f}\)は\(D\)上の調和関数である．
+
+\(\cP\)は線型写像
+\[
+  \cP\colon C^{\infty}(S^{1})\to \cH(D)
+\]
+を定める．ただし
+\[
+  \cH(D)\coloneqq \left\{\text{\(D\)上の調和関数}\right\}
+\]
+である．
+
+\begin{OBS}
+  \(f,g\in C^{\infty}(S^1)\)に対し\(cP{f}=\cP{g}\)とすると，
+  境界値の定義により，\(f=\mres[\cP{f}]{S^{1}}=\mres[\cP{g}]{S^{1}}=g\)である．
+  したがって，\(\cP\)は単射である．
+
+  関数\(\dfrac{1}{1-z}\)を考える．
+  \(\dfrac{1}{1-z}\in \cH(D)\)である．
+  \(\mres[\dfrac{1}{1-z}]{S^{1}}\)は\(1\in S^1\)で微分できずポアソン積分で表せない．
+  すなわち，\(\cP\)は全射ではない．
+\end{OBS}
+
+以上の観察から次のような問題が考えられる．
+\begin{PRB}
+  \(\cP\)が同型となるような ``関数'' のクラスを決定せよ．
+\end{PRB}
+\section{シュヴァルツ分布}
+\subsection{定義}
+
+\(n\in\nn\)を自然数とする．
+\(f\in C^{\infty}(S^{1})\)に対し
+\[
+  \nu_{n}(f)\coloneqq
+  \sum_{k=0}^{n}\max_{0\leqq\theta<2\pi}\left|\frac{d^k}{d\theta^k}f(\theta)\right|
+\]
+とおく．このとき，
+\[
+  d(f,g)=\sum_{n=0}^{\infty}\frac{1}{2^n}\frac{\nu_{n}(f-g)}{1+\nu_{n}(f-g)}
+\]
+は\(C^{\infty}(S^1)\)上の距離を定める．
+この距離で\(C^{\infty}(S^1)\)を線形位相空間とみなす．
+
+連続線型写像\(T\colon C^{\infty}(S^1)\to \cc\)を
+\emph{シュヴァルツ分布} (Schwartz distribution) とよぶ．
+\[
+  \Db(S^1)\coloneqq \left\{\text{\(S^1\)上のシュヴァルツ分布}\right\}
+\]
+とおく．
+
+\begin{RMK}
+  実数直線\(\rr\)上の分布は\(C^{\infty}_{c}(\rr)\)の
+  （位相的な）双対空間
+  の元として定める．
+\end{RMK}
+
+分布\(T\)の\(f\)での値\(T(f)\)をペアリング
+\[
+  \inner<T,f>
+\]
+で表すこともある．
+\subsection{例や演算・性質}
+
+\begin{EG}
+  ディラックのデルタ関数を
+  \[
+    \delta(f)=f(0)
+  \]
+  で定める．これは\(S^1\)上の分布である．
+\end{EG}
+
+分布の立場では微分を引数（テスト関数）の微分に押し付けて定義する．
+\begin{DFN}
+  \(T\in\Db(\rr)\)とする．
+  \(T\)の微分を
+  \[
+    T'(f)=-T(f')=-\inner<T,f'>
+  \]
+  で定める．
+\end{DFN}
+\begin{EG}
+    ヘヴィサイド関数\(Y\)を
+  \[
+    \inner<Y,f>\coloneqq
+    \int_{0}^{\infty}f(x)dx
+  \]
+  で定める．\(Y(x)\)の微分を求める．
+  \begin{align*}
+    \inner<Y',f>
+    &=-\inner<Y,f'>\\
+    &=-\int_{0}^{\infty}f'(x)dx\\
+    &=-\left[f(x)\right]_{0}^{\infty}\\
+    &=f(0)-0=\delta(f).
+  \end{align*}
+  よって，\(Y'=\delta\)である．
+\end{EG}
+\(C^\infty\)級関数は分布とみなせる．
+\begin{DFN}
+  \(C^\infty\)級関数\(f\in C^\infty(S^1)\)に対し，
+  \(T_{f}\)を
+  \[
+    T_{f}(g)=\frac{1}{2\pi}\int_{0}^{2\pi}f(\theta)f(\theta)d\theta
+  \]
+  で定める．\(T_{f}\)は\(S^1\)上の分布である．
+\end{DFN}
+
+\begin{PRP}
+  \(T_{\blk}\colon C^{\infty}(S^1)\hookrightarrow \Db(S^1)\)は連続な線形単射である．
+\end{PRP}
+\subsection{問題について}
+
+\begin{OBS}
+  \(T\)に対し，
+  \[
+    \tilde{\cP}(T)=T(K_{z})=\inner<T,K_{z}>
+  \]
+  とおく．ただし，\(K_z\)はポアソン核
+  である．
+  このとき，\(\tilde{\cP}(T)\)は\(D\)上の調和関数になる．
+  また，\(f\in C^{\infty}\)に対し
+  \[
+    \tilde{\cP}(T_{f})=\frac{1}{2\pi}\int_{0}^{2\pi}\frac{1-\left|z\right|^2}{\left|e^{\sqrt{-1}\theta}-z\right|}f(\theta) d\theta=\cP{f}
+  \]
+  であり，\(\tilde{\cP}\)は\(\cP\)の\(\Db(S^1)\)への拡張になっている．
+  \(\tilde{\cP}\)も\(\cP\)で表す．
+
+  \(T\in \Db(S^1)\)とする．\(\cP(T)=0\)とする．
+  このとき，フーリエ級数が全て0になることが示せて，\(T=0\)となる．
+  よって\(\cP\)は単射である．
+
+  \(e^{\frac{1}{1-z}}\)は調和関数である．
+  \(\cP(T)=e^{\frac{1}{1-z}}\)となる\(T\in \Db(S^1)\)が
+  存在したと仮定する．
+  これをフーリエ級数展開すると
+  \(T\notin \Db(S^1)\)であることが示せる．
+  したがって，\(\cP\colon \Db(S^1)\to \cH(D)\)は全射でない．
+\end{OBS}
+
+
+\section{佐藤超関数}
+\subsection{定義}
 \(I\)を実数直線内の開区間とする．
 \(\varOmega\)を\(I\)を閉集合として含む複素平面の開集合とする．
 このとき，\(I\)上の佐藤超関数の空間\(\cB(I)\)を
@@ -725,16 +904,292 @@
 \]とかける．これを\[
     f(x)=F_{+}(x+\iu 0)-F_{-}(x-\iu 0)
 \]ともかく．
+\subsection{例や演算・性質}
+
+\begin{EG}
+  ディラックのデルタ関数を
+  \[
+    \delta(x)=\left[-\frac{1}{2\pi\sqrt{-1}}\frac{1}{z}\right]
+  \]
+  で定める．
+\end{EG}
+
+微分は定義関数の微分の類として定める．
+\begin{EG}
+  ヘヴィサイド関数\(Y\)を
+  \[
+    Y(x)=\left[-\frac{1}{2\pi\sqrt{-1}}\log(-z)\right]
+  \]
+  で定める．\(Y(x)\)の微分を求める．
+  \begin{align*}
+    Y'(x)
+    &=\left[-\frac{1}{2\pi\sqrt{-1}}\log(-z)\right]\\
+    &=\left[-\frac{1}{2\pi\sqrt{-1}}\frac{1}{-z}\times(-1)\right]\\
+    &=\left[-\frac{1}{2\pi\sqrt{-1}}\frac{1}{z}\right]\\
+    &=\delta(x)
+  \end{align*}
+  となる．
+\end{EG}
+
+\begin{EG}
+  \((x+\sqrt{-1}0)^\alpha\)を
+  \[
+    (x+\sqrt{-1}0)^\alpha\coloneqq
+    \left[z^{\alpha},0\right]
+  \]
+  で定める．
+\end{EG}
+
+\begin{EG}
+  \(f\)を実解析関数とする．このとき
+  \[
+    [(f,0)]
+  \]
+  とすると超関数が定まる．よって\(\cA\hookrightarrow\cB\)が定まる．
+\end{EG}
+
+
+\subsection{問題について}
+
+コンパクトな実解析多様体，例えば\(S^1\)上では，
+\(\cB(S^1)\)は\(\cA(S^1)\)の双対空間と
+同型であることが知られている．
+\begin{THM}
+  \(\cP\)は\[
+    \cP\colon \cB(S^1)\to \cH(D)
+  \]
+  に拡張される．さらにこれは同型である．
+\end{THM}
 \section{応用：Helgason予想}
+\(C^{\infty}(S^1)\)に対し，
+\[
+  \cP_{s}f(z)\coloneqq \frac{1}{2\pi}\int_{0}^{2\pi}K_{z}^{s}f(\theta)d\theta
+\]
+とおく．
+\[
+  \cH_{\lambda}(D)
+  \coloneqq
+  \left\{
+    u\in C^{\infty}(D)\smid
+    (1-x^2-y^2)^2\Delta{u}(z)=\lambda u(z)
+  \right\}
+\]
+とするとき，線型写像
+\[
+  \cP_{s}\colon C^{\infty}(S^1)\to
+  \cH_{\lambda}(D)
+\]
+が定まる．
+
+Helgasonは次を示した．
+\begin{THM}[Helgason, 1970]
+  \(\cP_{s}\)は\[
+    \cP\colon \cB(S^1)\to \cH_{4s(s-1)}(D)
+  \]
+  に拡張される．さらにこれは同型である．
+\end{THM}
+
+Helgasonはさらに次の予想を提示した．
+\begin{CNJ}[Helgason予想]
+  一般のリーマン対称空間上の``球関数''は，
+  ``境界''上の佐藤超関数のポアソン積分を用いて表せるであろう．
+\end{CNJ}
+
+\begin{THM}[Kashiwara--Kowata--Minemura--Okamoto--Oshima--Tanaka]
+  Helgason予想は正しい．
+\end{THM}
+この予想の解決には超局所解析の理論が用いられた．
 
 \section{超局所解析（佐藤・H\"ormanderの基本定理）}
+
+関数の特異性を方向別に調べる．
+まず
+\[
+  \SingSupp(f)\coloneqq\left\{
+    x\in\varOmega\smid 
+    \text{\(f\)は\(x\)で解析的でない}
+  \right\}
+\]
+とおく．
+
+\begin{DFN}
+  \(f=[F_{+},F_{-}]\in\cB(\varOmega)\)を
+  超関数とする．
+  \((x;\xi)\in\sqrt{-1}\cotn[\varOmega]\)とする．
+  \(f\)が\((x;\xi)\)で\emph{超局所解析的} (microanalytic) で
+  あるとは，
+  \((x;\xi)\)の錐状，すなわち\(\rrp\)不変な開近傍\(U\)で，
+  \(F_{+}\)と\(F_{-}\)が\(U\)に解析接続できるものが存在する
+  ことをいう．
+
+  \(f\)の\emph{特異性スペクトル} (singularity 
+  spectrum) 
+  \(\SingSpec(f)\)あるいは
+  \emph{波面集合} (wavefront set) \(\WF(f)\)を
+  \[
+    \SingSpec(f)\coloneqq
+    \left\{
+      (x;\xi)\in\sqrt{-1}\cotn[\varOmega]
+      \smid
+      \text{\(f\)は\((x;\xi)\)で超局所解析的でない}
+    \right\}\cup \supp(f)
+  \]
+  と定義する．
+\end{DFN}
+
+\(\pi\colon \cotb[\varOmega]\to \varOmega\)を
+射影\(\pi(x,\xi)=x\)とする．
+\(\dot{\pi}\)を\(\pi\)の\(\cotn[\varOmega]\)への制限とする．
+このとき，
+\[
+  \dot{\pi}(\SingSpec(f))=\SingSupp(f)
+\]
+が成り立つ．
+
+\begin{EG}
+  \begin{itemize}
+    \item \(\SingSpec{\delta}=\dot{\pi}^{-1}(0)\)
+    \item \(\SingSpec{Y}=\dot{\pi}^{-1}(0)\)
+    \item \(\SingSpec{\dfrac{1}{x+\sqrt{-1}0}}
+    =\left\{(0;\sqrt{-1}\xi)\in\sqrt{-1}\cotn[\rr]\smid
+    \xi>0\right\}\)
+    \item \(\SingSpec{\dfrac{1}{\inner<x,a>+\sqrt{-1}0}}
+    =\left\{(x;\sqrt{-1}\xi)\in\sqrt{-1}\cotn[\rr^n]\smid
+    \inner<x,a>,\ \xi\in\rrp a\right\}\)
+    \item 
+    \begin{align*}
+    \SingSpec{
+      \dfrac{1}{(x_{1}+\sqrt{-1}0)(x_{2}+\sqrt{-1}0)}
+    }
+    &=\left\{
+      (0;\sqrt{-1}\xi)\in\sqrt{-1}\cotn[\rr^2]\smid
+      \xi\geqq0
+    \right\}\\
+    &\cup 
+    \left\{
+      (0,x_2;\sqrt{-1}\xi_1,0)
+      \in\sqrt{-1}\cotn[\rr^2]\smid
+      \xi_1\geqq0
+    \right\}\\
+    &\cup 
+    \left\{
+      (x_1,0;0,\sqrt{-1}\xi_2)
+      \in\sqrt{-1}\cotn[\rr^2]\smid
+      \xi_2\geqq0
+    \right\}  
+    \end{align*}
+  \end{itemize}
+\end{EG}
+
+微分作用素に対しても余接束の部分集合を考えることができる．
+
+\begin{DFN}
+  \(P\)をを実解析関数を係数とする\(\varOmega\)上の線形編微分作用素とする．
+  \(P\)の階数が\(m\)であり，\(P\)が
+  \[
+    P(x,\partial_x)
+    =
+    \sum_{\left|\alpha\right|\leqq m}^{}
+    a_{\alpha}(x)\partial_{x}^{\alpha}
+  \]
+  と表されているとする．
+  このとき，
+  \(P\)の\emph{主要表象} (principal symbol) \(\sigma(P)\)を
+  \[
+    \sigma(P)(x,\xi)
+    =\sum_{\left|\alpha\right|= m}^{}
+    a_{\alpha}(x)\xi^{\alpha}
+  \]で定める．
+  \(P\)の\emph{特性多様体} (characteristic variety) 
+  \(\Char(P)\)を
+  \[
+    \Char(P)
+    \coloneqq
+    \left\{(x;\xi)\in \sqrt{-1}\cotn[\varOmega]\smid
+      \sigma(P)(x,\xi)=0
+    \right\}
+  \]
+  で定める．
+
+  \(\Char{P}=\varnothing\)のとき，\(P\)は\emph{楕円型} (elliptic) であるという．
+\end{DFN}
+
+次が主定理．
+
+\begin{THM}[佐藤--H\"ormanderの基本定理]
+  \(\varOmega\)を\(\rr^n\)の開集合とする．
+  \(P\)を実解析関数を係数とする\(\varOmega\)上の線形編微分作用素とする．
+  \(f\)を\(\varOmega\)上の超関数とする．
+  \(u\)を微分方程式
+  \[
+    Pu=f
+  \]
+  の超関数解とする．このとき次が成り立つ．
+  \[
+    \SingSpec(u)\subset\Char(P)\cup\SingSpec(f).
+  \]
+\end{THM}
+
+\begin{EG}
+  \(\varOmega=\Int[]D^2\subset\rr^2\)とする．
+  \(P=\Delta=\partial_{x}^{2}+\partial_{y}^{2}\)とする．
+  微分方程式
+  \[
+    \Delta u=0
+  \]
+  を考える．
+  \(\sigma(\Delta)=\xi_{1}^2+\xi_{2}^2\)であるから
+  \begin{align*}
+    \Char{P}= \varnothing.
+  \end{align*}
+  すなわち\(\Delta\)は楕円型である．
+  また，\(\SingSpec0=\varnothing\)であるから，
+  \[
+    \SingSpec u\subset \varnothing\cup \varnothing =\varnothing
+  \]
+  したがって，\(\SingSpec {u}=\varnothing\)である．
+  底空間に射影して
+  \[
+    \SingSupp{u}=\varnothing.
+  \]
+  すなわち，調和関数は実解析的である．
+\end{EG}
+
+もっと一般に，次も示された．
+\begin{THM}
+  楕円型微分方程式
+  \(Pu=0\)
+  の解は実解析的である．
+\end{THM}
+これは\emph{楕円型正則性} (elliptic regularity) 定理と呼ばれる，
+偏微分方程式論における基本定理である．
+
+\begin{RMK}
+  余接束（余法束）上の層\(\cC\)と層の射\(
+    \mathrm{sp}\colon \cB\to \dot{\pi}_{\ast}\cC
+  \)であって
+  \[
+    0
+    \to 
+    \cA
+    \to 
+    \cB
+    \overset{\mathrm{sp}}{\longrightarrow} 
+    \dot{\pi}_{\ast}
+    \cC
+    \to 0
+  \]
+  が完全となるものがある．
+  \(\cC\)の切断を超局所関数とよぶ．
+  \(\SingSpec {u}\)は\(\supp \mathrm{sp}(u)\)とみなせる．
+\end{RMK}
 %\section{a}
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
   \bibitem[J95]{J95} 神保道夫, 
-  \emph{複素関数入門}, 岩波講座 現代数学への入門 4, 岩波書店, 1995. 
+  \emph{複素関数入門}, 岩波講座 現代数学への入門 4, 岩波書店, 1995; 新装版, 2024. 
   \bibitem[Kat80]{Kat80} Kiy\^omi Kataoka, 
   \textit{Micro-local theory of boundary value problems I}, 1980.
   \bibitem[Kat81]{Kat81} Kiy\^omi Kataoka, 

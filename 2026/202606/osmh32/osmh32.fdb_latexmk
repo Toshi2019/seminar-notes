@@ -1,15 +1,16 @@
 # Fdb version 4
-["dvipdf"] 1781866387.39067 "osmh32.dvi" "osmh32.pdf" "osmh32" 1781866388.43182 0
-  "osmh32.dvi" 1781866387.2036 9188 4b5679f68795e333261302059e40a690 "latex"
+["dvipdf"] 1782400230.04962 "osmh32.dvi" "osmh32.pdf" "osmh32" 1782400231.33621 0
+  "osmh32.dvi" 1782400229.83465 69692 deeab3254ea8e9e1cafa444319d2b06a "latex"
   (generated)
   "osmh32.pdf"
   (rewritten before read)
-["latex"] 1781866385.72883 "/Users/giuseppe/seminar-notes/2026/202606/osmh32/osmh32.tex" "osmh32.dvi" "osmh32" 1781866388.42411 0
-  "/Users/giuseppe/seminar-notes/2026/202606/osmh32/osmh32.tex" 1781866379.85715 26607 ca1a3781c4956bade2643306f4fe6ea8 ""
+["latex"] 1782400227.91366 "/Users/giuseppe/seminar-notes/2026/202606/osmh32/osmh32.tex" "osmh32.dvi" "osmh32" 1782400231.32875 0
+  "/Users/giuseppe/seminar-notes/2026/202606/osmh32/osmh32.tex" 1782400219.93514 39982 3269775887b5a0b97a69e996d16fb6a4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1136768653 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -258,9 +259,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "osmh32.aux" 1781866387.20172 1044 11a58f977aeb84f9e29bc93a3eabf15e "latex"
-  "osmh32.out" 1781866387.20283 832 c130467c4bc922d63b87e1eb199654c4 "latex"
-  "osmh32.tex" 1781866379.85715 26607 ca1a3781c4956bade2643306f4fe6ea8 ""
+  "osmh32.aux" 1782400229.83154 1779 85df934a28b6dc429cfa223188b26d18 "latex"
+  "osmh32.out" 1782400229.8341 1425 d3464f6b23530f2cc8787ccacc1146bf "latex"
+  "osmh32.tex" 1782400219.93514 39982 3269775887b5a0b97a69e996d16fb6a4 ""
   (generated)
   "osmh32.aux"
   "osmh32.dvi"
