@@ -704,10 +704,53 @@
     \bar{\partial}f(z)=0
 \]
 がなりたつことをいう．
-\(\cO(D)\coloneqq\left\{\text{\(D\)上の正則関数}\right\}\)とおく．
-正則関数の実軸への制限として表される関数を実解析関数とよぶ．
-\(\cA(D)\coloneqq\left\{\text{\(D\)上の実解析関数}\right\}\)とおく．
-\section{フーリエ解析・境界値問題からの動機}
+\begin{itemize}
+  \item \(\cO(D)\coloneqq\left\{\text{\(D\)上の正則関数}\right\}\)とおく．
+  \item 正則関数の実軸への制限として表される関数を実解析関数とよぶ．
+  \item \(\cA(D)\coloneqq\left\{\text{\(D\)上の実解析関数}\right\}\)とおく．
+\end{itemize}
+
+\begin{THM}[コーシーの積分定理]
+  \(D\)を\(\cc\)内の単連結な領域，例えば\(D^2\)とする．
+  \(f\in\cO(D)\)とし，
+  \(C\)を\(D\)内の区分的に\(C^1\)級な単純閉曲線，
+  例えば半径\(0<r<1\)の円周とする．
+  このとき，
+  \[
+    \int_{C}f(\zeta)d\zeta=0
+  \]
+  である．
+\end{THM}
+\begin{THM}[コーシーの積分定理]
+  \(D\)を\(\cc\)内の単連結な領域，例えば\(D^2\)とする．
+  \(f\in\cO(D)\)とし，
+  \(C\)を\(D\)内の区分的に\(C^1\)級な単純閉曲線，
+  例えば半径\(0<r<1\)の円周とする．
+  このとき，\(C\)に囲まれる点\(z_0\)に対し，
+  \[
+    f(z_0)=\frac{1}{2\pi\sqrt{-1}}\int_{C}\frac{1}{\zeta-z_0}f(\zeta)d\zeta=0
+  \]
+  がなりたつ．
+\end{THM}
+
+\(f\)が\(z_0\)で正則であることと，\(f\)が\(z_0\)の近傍でテイラー展開
+\[
+  f(z)=\sum_{n=0}^{\infty}a_n(z-z_0)^n
+\]
+を持つことは同値である．
+
+\begin{DFN}
+  \(D_{1}\subset D_{2}\)を\(\cc\)内の領域とする．
+  \(f_{1}\in D_{1}\)，
+  \(f_{2}\in D_{2}\)とする．\(f_{1}=\mres[f_{2}]{D_{1}}\)のとき，
+  \(f_{2}\)は\(f_{1}\)の\(D_{2}\)への解析接続であるという．
+\end{DFN}
+\begin{THM}[一致の定理]
+  \(D_{1}\subset D_{2}\)を\(\cc\)内の開集合とする．
+  制限射\(\cO(D_2)\to \cO(D_1)\)は単射である．
+\end{THM}
+
+\section{境界値問題からの動機}
 2次元開円盤を\(D\)で表す．すなわち
 \[
     D\coloneqq\left\{z\in\cc\smid \left|z\right|<1\right\}
@@ -751,7 +794,7 @@
 である．
 
 \begin{OBS}
-  \(f,g\in C^{\infty}(S^1)\)に対し\(cP{f}=\cP{g}\)とすると，
+  \(f,g\in C^{\infty}(S^1)\)に対し\(\cP{f}=\cP{g}\)とすると，
   境界値の定義により，\(f=\mres[\cP{f}]{S^{1}}=\mres[\cP{g}]{S^{1}}=g\)である．
   したがって，\(\cP\)は単射である．
 
@@ -807,6 +850,19 @@
     \delta(f)=f(0)
   \]
   で定める．これは\(S^1\)上の分布である．
+\end{EG}
+\begin{EG}
+  実数直線上のディラックのデルタ関数を
+  \[
+    \delta(f)=f(0)
+  \]
+  で定める．これは\(\rr\)上の分布である．
+
+  ところで，ペアリングの表示から
+  \[
+    \inner<\delta,f>=\int_{-\infty}^{\infty}\delta(x)f(x)dx
+  \]
+  ともかける．
 \end{EG}
 
 分布の立場では微分を引数（テスト関数）の微分に押し付けて定義する．
@@ -878,6 +934,44 @@
 
 
 \section{佐藤超関数}
+
+\subsection{デルタ関数再論}
+実数直線上のディラックのデルタ関数の定義を思い出す．
+\[
+  \inner<\delta,f>=\int_{-\infty}^{\infty}\delta(x)f(x)dx
+\]
+だった．これは原点周りの円周\(C\)をとると
+コーシーの積分公式
+\[
+  f(0)=\frac{1}{2\pi\sqrt{-1}}\int_{C}\frac{1}{z}f(z)dz
+\]
+と似ている．
+そこで次のようにしてみる．
+\(C\)の上を\(C_+\)，下を\(C_{-}\)とすると，
+\begin{align*}
+  \frac{1}{2\pi\sqrt{-1}}\int_{C}\frac{1}{z}f(z)dz
+  &=
+  \frac{1}{2\pi\sqrt{-1}}\int_{C_{+}}\frac{1}{z}f(z)dz
+  +\frac{1}{2\pi\sqrt{-1}}\int_{C_{-}}\frac{1}{z}f(z)dz\\
+  &=
+  \frac{1}{2\pi\sqrt{-1}}\int_{-C_{+}}-\frac{1}{z}f(z)dz
+  -\frac{1}{2\pi\sqrt{-1}}\int_{C_{-}}-\frac{1}{z}f(z)dz\\
+  &=
+  \frac{1}{2\pi\sqrt{-1}}\left(
+  \int_{-1+\sqrt{-1}0}^{+1+\sqrt{-1}0}-\frac{1}{z}f(z)dz
+  -\int_{-1-\sqrt{-1}0}^{+1-\sqrt{-1}0}-\frac{1}{z}f(z)dz\right)\\
+  &=
+  \int_{-1}^{+1}\left(-\frac{1}{2\pi\sqrt{-1}}\right)\left(
+  \frac{1}{x+\sqrt{-1}0}
+  -\frac{1}{x-\sqrt{-1}0}\right)f(x)dx
+\end{align*}
+デルタ関数の式と比較すれば
+\[
+  \delta(x)=\left(-\frac{1}{2\pi\sqrt{-1}}\right)\left(
+  \frac{1}{x+\sqrt{-1}0}
+  -\frac{1}{x-\sqrt{-1}0}\right)
+\]
+と解釈できる．
 \subsection{定義}
 \(I\)を実数直線内の開区間とする．
 \(\varOmega\)を\(I\)を閉集合として含む複素平面の開集合とする．
@@ -984,7 +1078,7 @@
 Helgasonは次を示した．
 \begin{THM}[Helgason, 1970]
   \(\cP_{s}\)は\[
-    \cP\colon \cB(S^1)\to \cH_{4s(s-1)}(D)
+    \cP_{s}\colon \cB(S^1)\to \cH_{4s(s-1)}(D)
   \]
   に拡張される．さらにこれは同型である．
 \end{THM}
@@ -1000,7 +1094,7 @@ Helgasonはさらに次の予想を提示した．
 \end{THM}
 この予想の解決には超局所解析の理論が用いられた．
 
-\section{超局所解析（佐藤・H\"ormanderの基本定理）}
+\section{超局所解析}
 
 関数の特異性を方向別に調べる．
 まず
@@ -1017,9 +1111,9 @@ Helgasonはさらに次の予想を提示した．
   超関数とする．
   \((x;\xi)\in\sqrt{-1}\cotn[\varOmega]\)とする．
   \(f\)が\((x;\xi)\)で\emph{超局所解析的} (microanalytic) で
-  あるとは，
-  \((x;\xi)\)の錐状，すなわち\(\rrp\)不変な開近傍\(U\)で，
-  \(F_{+}\)と\(F_{-}\)が\(U\)に解析接続できるものが存在する
+  あるとは，実数\(\varepsilon\)で，\(\xi>0\)なら
+  \(F_{+}\)が，\(\xi<0\)なら\(F_{-}\)が，
+  \((x;-\varepsilon\xi)\)の近傍に解析接続できるものが存在する
   ことをいう．
 
   \(f\)の\emph{特異性スペクトル} (singularity 
@@ -1184,30 +1278,88 @@ Helgasonはさらに次の予想を提示した．
   \(\SingSpec {u}\)は\(\supp \mathrm{sp}(u)\)とみなせる．
 \end{RMK}
 %\section{a}
+
+\section{おまけ}
+
+多変数の超関数は次のようになる．
+\(M\)を\(n\)次元実解析多様体，\(X\)を複素近傍とする．
+\[
+  \cB_{M}\coloneqq
+  \RG_{M}(\cO_{X})\tens[\cc]\ori_{M}[n]
+\]
+同値な定義として
+\begin{equation*}\label{eq:B-def2}
+  \cB_{M}\coloneqq
+  \RHOM_{\cc_X}(\rmD_{X}'{\cc_X}_{M},\cO_X)
+\end{equation*}
+というものが得られる．
+実際，ポワンカレ・ヴェルディエ双対から，
+\[
+  \rmD'_{X}(\cc_M)\cong \ori_{M}[-n]
+\]
+が成り立つ．
+これに\(\RHOM_{\cc_{X}}(\blk,\cO_X)\)を当てると
+\begin{align*}
+  \RHOM_{\cc_X}(\rmD_{X}'{\cc_X}_{M},\cO_X)
+  &=\RHOM_{\cc_X}(\ori_{M}[-n],\cO_X)\\
+  &=\RHOM_{\cc_X}(\cc_{M}\tens[]\ori_{M}[-n],\cO_X)\\
+  &=\RHOM_{\cc_X}(\cc_{M},\cO_X)\tens[]\ori_{M}[n]\\
+  &=\RG_{M}\cO_X\tens[]\ori_{M}[n]\\
+  &=\cB_M
+\end{align*}
+である．
+
+実解析函数は
+\[
+  \cA_{M}=\mres[\cO_{X}]{M}
+\]
+だが
+\[
+  \cA_{M}=\cO_{X}\tens[]\cc_{M}
+\]と書いてもよい．
+このとき，
+\(\rmD'_{X}=\RHOM_{\cc_{X}}(\blk,\cc_X)\)とおくと
+\[
+  \cc_M\cong\rmD'_{X}\rmD'_{X}\cc_{M}
+\]
+が成り立つから，
+\begin{align*}
+  \cA_{M}
+  &\cong \cO_{X}\tens[]\cc_{M}\\
+  &\cong \cO_{X}\tens[]\rmD'_{X}\rmD'_{X}\cc_{M}\\
+  &\cong \RHOM_{\cc_{X}}(\rmD'_{X}\cc_{M},\cc_{X})\tens[]\cO_{X}\\
+  &\to \RHOM_{\cc_{X}}(\rmD'_{X}\cc_{M},\cc_{X})\tens[]\cO_{X}\\
+  &\cong\cB_M
+\end{align*}
+である．
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
   \bibitem[J95]{J95} 神保道夫, 
-  \emph{複素関数入門}, 岩波講座 現代数学への入門 4, 岩波書店, 1995; 新装版, 2024. 
-  \bibitem[Kat80]{Kat80} Kiy\^omi Kataoka, 
-  \textit{Micro-local theory of boundary value problems I}, 1980.
-  \bibitem[Kat81]{Kat81} Kiy\^omi Kataoka, 
-  \textit{Micro-local theory of boundary value problems II}, 1981.
-  \bibitem[KFS03]{KFS03} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
-    \textit{Truncated Microsupport and Holomorphic Solutions 
-    of \(D\)-modules}, 
-    Ann. Scient. \'Ec. Norm. Sup., s\'erie 4, tome 36, 
-    pp.583--399, 2003.
+  {複素関数入門}, 岩波講座 現代数学への入門 4, 岩波書店, 1995; 新装版, 2024. 
+  \bibitem[Kan96]{Kan96} 金子晃, 新版 超函数入門, 東京大学出版会, 1996. 
+  \bibitem[KKK80]{KKK80} 柏原正樹, 河合隆裕, 木村達雄, 
+  代数解析学の基礎, 紀伊國屋数学叢書 18, 紀伊國屋書店, 1980.
+  \bibitem[KKKOOT78]{KKKOOT78} M.~Kashiwara, 
+  A.~Kowata,K.~Minemura, K.~Okamoto, T.~Oshima, M.~Tanaka, 
+  \emph{Eigenfunctions of invariant differential operators on a symmetric space}, Ann. of Math., 107 (1978), pp.1--39.
   \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
     \textit{Sheaves on Manifolds}, 
     Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
-  \bibitem[Sch88]{Sch88} Pierre Schapira, 
-    \textit{Microfunctions for Boundary Value Problems}, 
-    in Algebraic Analysis, volume II, Academic Press (1988), 809--819. 
-  \bibitem[SZ88]{SZ88} Pierre Schapira, Giuseppe Zamieri, 
-    \textit{Microfunctions at the Boundary and Mild Microfunctions}, 
-    Publ.~RIMS~Kyoto Univ.~24 (1988), 495--503. 
+  \bibitem[Mori76]{Mori76} 森本光生, 佐藤超函数入門, 共立出版, 1976. 
+  \bibitem[Ok97]{Ok97} 岡本清郷, 
+  {フーリエ解析の展望}, すうがくぶっくす 17, 朝倉書店, 1997.
+  \bibitem[Sato58]{Sato58} 佐藤幹夫, 超函数の理論, 数学 10 (1958) pp.1--27. 
+  \bibitem[Sato69]{Sato69} Mikio Sato, 
+  \textit{Hyperfuncitons and 
+  Partial Differential equations}, 
+  Proc. Int. Conf. on Functional Analysis, Tokyo, pp.91--94, 1969.
+  \bibitem[Sato70]{Sato70} Mikio Sato, 
+  \textit{Regularity of Hyperfunciton Solutions of 
+  Partial Differential equations}, 
+  Actes, Congres intern. Math., 
+  Tome 2, pp.785--794, 1970.
 \end{thebibliography}
 %===============================================
 
