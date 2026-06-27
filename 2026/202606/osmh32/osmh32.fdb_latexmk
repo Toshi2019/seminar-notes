@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1782454487.4818 "osmh32.dvi" "osmh32.pdf" "osmh32" 1782454488.58992 0
-  "osmh32.dvi" 1782454487.34116 87444 ec922f8e0a85ab863a788c1d46472e9f "latex"
+["dvipdf"] 1782558430.54688 "osmh32.dvi" "osmh32.pdf" "osmh32" 1782558431.58185 0
+  "osmh32.dvi" 1782558430.41285 89912 8ee17be274bb33644c6893a9fc5256c7 "latex"
   (generated)
   "osmh32.pdf"
   (rewritten before read)
-["latex"] 1782454485.50175 "/Users/giuseppe/seminar-notes/2026/202606/osmh32/osmh32.tex" "osmh32.dvi" "osmh32" 1782454488.58385 0
-  "/Users/giuseppe/seminar-notes/2026/202606/osmh32/osmh32.tex" 1782454479.18062 44566 31ba5e89dab784b552c8a3de743f6257 ""
+["latex"] 1782558428.55732 "/Users/giuseppe/seminar-notes/2026/202606/osmh32/osmh32.tex" "osmh32.dvi" "osmh32" 1782558431.57419 0
+  "/Users/giuseppe/seminar-notes/2026/202606/osmh32/osmh32.tex" 1782558425.94228 46783 bd87f5eb9ce98054537785cccd38ff8b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -259,9 +259,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "osmh32.aux" 1782454487.33689 2088 8af4e8a77861615bee986f55b0e71124 "latex"
-  "osmh32.out" 1782454487.33947 1423 64c5b1d405c724ff3a4f67488db8fc4c "latex"
-  "osmh32.tex" 1782454479.18062 44566 31ba5e89dab784b552c8a3de743f6257 ""
+  "osmh32.aux" 1782558430.40935 2266 4276ebb363f31aa45bf12f074a67f1df "latex"
+  "osmh32.out" 1782558430.41209 1355 66c209a53c90a3972c526bfb32e04e96 "latex"
+  "osmh32.tex" 1782558425.94228 46783 bd87f5eb9ce98054537785cccd38ff8b ""
   (generated)
   "osmh32.aux"
   "osmh32.dvi"

@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  26 JUN 2026 15:14
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  27 JUN 2026 20:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -937,58 +937,60 @@ LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 695.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 698.
+(Font)              scaled to size 9.24683pt on input line 711.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 698.
+(Font)              scaled to size 6.47278pt on input line 711.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 698.
+(Font)              scaled to size 4.62341pt on input line 711.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 708.
+(Font)              scaled to size 6.47278pt on input line 721.
 LaTeX Font Info:    Font shape `JT2/hmc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 708.
+(Font)              scaled to size 4.62341pt on input line 721.
 LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 713.
+(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 726.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 713.
+(Font)              scaled to size 9.24683pt on input line 726.
 LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <10> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 713.
+(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 726.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 713.
+(Font)              scaled to size 9.24683pt on input line 726.
  [1
 
 ] [2]
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 812.
+(Font)              scaled to size 11.09619pt on input line 825.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 812.
+(Font)              scaled to size 11.09619pt on input line 825.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 828.
+(Font)              No change on input line 841.
  [3] [4] [5] [6]
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1113.
+(Font)              No change on input line 1136.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1119.
+(Font)              No change on input line 1142.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1122.
+(Font)              No change on input line 1145.
  [7]
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1191.
+(Font)              No change on input line 1214.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1197.
+(Font)              No change on input line 1220.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1208.
+(Font)              No change on input line 1231.
  [8]
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1258.
+(Font)              No change on input line 1281.
  [9]
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 1385.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 1346.
+(Font)              No change on input line 1394.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1348.
+(Font)              No change on input line 1396.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1356.
+(Font)              No change on input line 1408.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1360.
+(Font)              No change on input line 1412.
  [10] (./osmh32.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
@@ -996,15 +998,15 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `osmh32.out' has not changed.
-(rerunfilecheck)             Checksum: 64C5B1D405C724FF3A4F67488DB8FC4C;1423.
+(rerunfilecheck)             Checksum: 66C209A53C90A3972C526BFB32E04E96;1355.
  ) 
 Here is how much of TeX's memory you used:
- 33781 strings out of 474774
- 628210 string characters out of 5758801
+ 33786 strings out of 474774
+ 628295 string characters out of 5758801
  1939032 words of memory out of 5000000
- 55558 multiletter control sequences out of 15000+600000
+ 55563 multiletter control sequences out of 15000+600000
  617257 words of font info for 170 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 84i,14n,93p,3264b,1196s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,13n,93p,3264b,1196s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on osmh32.dvi (10 pages, 87444 bytes).
+Output written on osmh32.dvi (10 pages, 89912 bytes).

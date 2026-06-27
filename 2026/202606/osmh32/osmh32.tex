@@ -694,7 +694,20 @@
 
 \section*{はじめに}
 2026/06/26に実施された北大数学オムニバス発表会のノート．
+第1章で複素関数論の準備を行う．
+第2章で偏微分方程式からの動機づけを述べる．
+第3章と第4章でそれぞれSchwartzと佐藤幹夫による超関数の理論を紹介する．
+第5章でHelgason予想への応用を述べる．
+第6章で超局所解析を紹介する．
+
+色々な設定が暗黙のうちに変わっていたり，
+一変数の場合しか定義していない概念を多変数の場合に
+用いたりすることがあるが，
+ご寛恕されたい．
 \section{複素関数論}
+
+参考文献は\cite{J95}など．
+
 \(D\)を複素平面\(\cc\)の開集合，
 %\(z\in D\)を\(D\)の点とする．
 \(f\)を\(D\)上の\(C^1\)級関数とする．すなわち
@@ -1055,7 +1068,7 @@
   に拡張される．さらにこれは同型である．
 \end{THM}
 \section{応用：Helgason予想}
-\(C^{\infty}(S^1)\)に対し，
+\(s\in\cc\)と\(C^{\infty}(S^1)\)に対し，
 \[
   \cP_{s}f(z)\coloneqq \frac{1}{2\pi}\int_{0}^{2\pi}K_{z}^{s}f(\theta)d\theta
 \]
@@ -1071,7 +1084,7 @@
 とするとき，線型写像
 \[
   \cP_{s}\colon C^{\infty}(S^1)\to
-  \cH_{\lambda}(D)
+  \cH_{4s(s-1)}(D)
 \]
 が定まる．
 
@@ -1085,11 +1098,11 @@ Helgasonは次を示した．
 
 Helgasonはさらに次の予想を提示した．
 \begin{CNJ}[Helgason予想]
-  一般のリーマン対称空間上の``球関数''は，
-  ``境界''上の佐藤超関数のポアソン積分を用いて表せるであろう．
+  一般の比コンパクト型リーマン対称空間上の同次固有関数の空間は，
+  ``境界''上の佐藤超関数の空間とポアソン積分で同形であろう．
 \end{CNJ}
 
-\begin{THM}[Kashiwara--Kowata--Minemura--Okamoto--Oshima--Tanaka]
+\begin{THM}[\cite{KKKOOT78}]
   Helgason予想は正しい．
 \end{THM}
 この予想の解決には超局所解析の理論が用いられた．
@@ -1097,6 +1110,8 @@ Helgasonはさらに次の予想を提示した．
 \section{超局所解析}
 
 関数の特異性を方向別に調べる．
+\(\varOmega\)を\(\rr^n\)の開集合とする．
+
 まず
 \[
   \SingSupp(f)\coloneqq\left\{
@@ -1105,7 +1120,15 @@ Helgasonはさらに次の予想を提示した．
   \right\}
 \]
 とおく．
-
+\(\varOmega\)の余接束\(\cotb[\varOmega]\)を
+\[
+  \cotb[\varOmega]\coloneqq \varOmega \times \rr^n
+\]
+で定める．また，
+\[
+  \cotb[\varOmega]\coloneqq \varOmega \times (\rr^n\smi \left\{0\right\})
+\]
+とおく．
 \begin{DFN}
   \(f=[F_{+},F_{-}]\in\cB(\varOmega)\)を
   超関数とする．
@@ -1210,7 +1233,7 @@ Helgasonはさらに次の予想を提示した．
 
 次が主定理．
 
-\begin{THM}[佐藤--H\"ormanderの基本定理]
+\begin{THM}[{佐藤の基本定理\cite{Sato69,Sato70}}]
   \(\varOmega\)を\(\rr^n\)の開集合とする．
   \(P\)を実解析関数を係数とする\(\varOmega\)上の線形編微分作用素とする．
   \(f\)を\(\varOmega\)上の超関数とする．
@@ -1279,6 +1302,7 @@ Helgasonはさらに次の予想を提示した．
 \end{RMK}
 %\section{a}
 
+\begin{comment}
 \section{おまけ}
 
 多変数の超関数は次のようになる．
@@ -1332,10 +1356,34 @@ Helgasonはさらに次の予想を提示した．
   &\cong\cB_M
 \end{align*}
 である．
+\end{comment}
+
+\section*{おわりに}
+参考文献の紹介をする．
+前半の第2, 3, 5節は\cite{Ok97}に沿って述べた．
+複素関数論について，\cite{J95}を挙げる．
+\cite{J95}には佐藤超関数についての記述もある．
+佐藤超関数については，
+\cite{Kan96,Mori76}が有名な入門書である．
+佐藤幹夫本人によるもの\cite{Sato58}も
+ぜひ目を通すとよいと思う．
+超局所解析も理論的に勉強するには\cite{KKK80}が挙げられる．
+
+代数解析全般を導来圏の立場から述べるには，
+層の超局所理論を用いるのが基本的である．
+導来圏や層の（超局所）理論の専門書として，\cite{KS90}を挙げる．
+
+Schwartzの分布の立場からの超局所解析については
+\cite{ALPDO}を挙げる．
+Helgason予想については，原論文\cite{KKKOOT78}の他に
+\cite{MO77,Os85}も参考にした．
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
+  \bibitem[ALPDO]{ALPDO} Lars H\"ormander,
+    \textit{The analysis of linear partial differential operators I}, 
+    Grundlehren der Mathematischen Wissenschaften, 256, Springer, 1983.
   \bibitem[J95]{J95} 神保道夫, 
   {複素関数入門}, 岩波講座 現代数学への入門 4, 岩波書店, 1995; 新装版, 2024. 
   \bibitem[Kan96]{Kan96} 金子晃, 新版 超函数入門, 東京大学出版会, 1996. 
@@ -1348,12 +1396,16 @@ Helgasonはさらに次の予想を提示した．
     \textit{Sheaves on Manifolds}, 
     Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
   \bibitem[Mori76]{Mori76} 森本光生, 佐藤超函数入門, 共立出版, 1976. 
+  \bibitem[MO77]{MO77} 峰村勝弘, 大島利雄, 
+  確定特異点型境界値問題と表現論, 数学 29 (1977), pp.243--253. 
   \bibitem[Ok97]{Ok97} 岡本清郷, 
   {フーリエ解析の展望}, すうがくぶっくす 17, 朝倉書店, 1997.
+  \bibitem[Os85]{Os85} 大島利雄, 
+  半単純対称空間上の調和解析, 数学 37 (1985), pp.97--112. 
   \bibitem[Sato58]{Sato58} 佐藤幹夫, 超函数の理論, 数学 10 (1958) pp.1--27. 
   \bibitem[Sato69]{Sato69} Mikio Sato, 
   \textit{Hyperfuncitons and 
-  Partial Differential equations}, 
+  partial differential equations}, 
   Proc. Int. Conf. on Functional Analysis, Tokyo, pp.91--94, 1969.
   \bibitem[Sato70]{Sato70} Mikio Sato, 
   \textit{Regularity of Hyperfunciton Solutions of 
