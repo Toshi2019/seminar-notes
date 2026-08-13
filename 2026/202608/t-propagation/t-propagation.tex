@@ -1,6 +1,8 @@
-%================================================
-%    層理論まとめノート
-%================================================
+%=====================================
+%   t-propagation.tex
+%   打切り版伝播定理
+%   toshi2019
+%=====================================
 
 % -----------------------
 % preamble
@@ -17,7 +19,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[10pt, b5paper, dvipdfmx, leqno, draft]{jsbook}
+\documentclass[leqno, 10pt, a4paper, dvipdfmx]{jsarticle}
 
 % ------------------------
 % usepackage
@@ -46,27 +48,33 @@
 \usepackage{tikz}
 \usepackage{verbatim}
 \usepackage[all]{xy}
-\usepackage{url}
-\usetikzlibrary{cd}
 
+\usetikzlibrary{cd}
+\usetikzlibrary{arrows.meta}
 
 
 % ================================
 % パッケージを追加する場合のスペース 
-%\usepackage{calligra}
 \usepackage[dvipdfmx]{hyperref}
-\usepackage{xcolor}
+%\usepackage{xcolor}
 \definecolor{darkgreen}{rgb}{0,0.45,0} 
 \definecolor{darkred}{rgb}{0.75,0,0}
 \definecolor{darkblue}{rgb}{0,0,0.6} 
 \hypersetup{
     colorlinks=true,
-    citecolor=darkgreen,
-    linkcolor=darkred,
-    urlcolor=darkblue,
+    %citecolor=darkgreen,
+    %linkcolor=darkred,
+    %urlcolor=darkblue,
+    citecolor=black,
+    linkcolor=black,
+    urlcolor=black,
 }
 \usepackage{pxjahyper}
-\usepackage{layout}
+
+%\usepackage[mathscr]{euscript} % mathscr のフォントを変更
+
+%\usepackage{mmasym}
+
 %=================================
 
 
@@ -85,7 +93,7 @@
 % Attention!
 % All theorem enivironment numbers depend on 
 % only section numbers.
-\newtheorem{Axiom}{公理}[section]
+\newtheorem{Axiom}{公理}%[section]
 \newtheorem{Definition}[Axiom]{定義}
 \newtheorem{Theorem}[Axiom]{定理}
 \newtheorem{Proposition}[Axiom]{命題}
@@ -100,7 +108,6 @@
 \newtheorem{Consideration}[Axiom]{考察}
 \newtheorem{Alert}[Axiom]{警告}
 \newtheorem{Fact}[Axiom]{事実}
-\newtheorem{com}[Axiom]{コメント}
 
 
 % 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
@@ -119,15 +126,13 @@
 \newtheorem*{Problem*}{問題}
 \newtheorem*{Consideration*}{考察}
 \newtheorem*{Alert*}{警告}
-\newtheorem*{Fact*}{事実}
-\newtheorem*{com*}{コメント}
-
+\newtheorem{Fact*}{事実}
 
 
 % 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
 %　If you want to use theorem environment in English, You can use these code.
 %all theorem enivironment number depend on only section number.
-\newtheorem{Axiom+}{Axiom}[section]
+\newtheorem{Axiom+}{Axiom}%[section]
 \newtheorem{Definition+}[Axiom+]{Definition}
 \newtheorem{Theorem+}[Axiom+]{Theorem}
 \newtheorem{Proposition+}[Axiom+]{Proposition}
@@ -395,9 +400,7 @@
 \newcommand{\CCat}{\Comp(\cat)}
 \newcommand{\KCat}{\Komp(\cat)}
 \newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
-%\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
-%\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
-\newcommand{\HOM}{\mathop{\mathcal{H}\hspace{-0.5pt}om}\nolimits}%内部Hom
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-2pt}om}\nolimits}%内部Hom
 \newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
 
 %\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
@@ -445,11 +448,9 @@
 \newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
 \newcommand{\detens}{\underline{\etens}}
 \newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
-%\newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
-\newcommand{\dtens}{\mathbin{\overset{D}\otimes}}
+\newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
 
-%\newcommand{\blk}{\mathord{\ \cdot\ }}
-\newcommand{\blk}{~\mathord{\vcenter{\hbox{\scalebox{0.6}{$\bullet$}}}}~}% blank (needs grphicx)
+\newcommand{\blk}{\mathord{\ \cdot\ }}
 \newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
 
 
@@ -478,6 +479,7 @@
 
 
 
+
 %================================================
 % 自前の定理環境
 %   https://mathlandscape.com/latex-amsthm/
@@ -494,22 +496,100 @@
 
 \theoremstyle{mystyle}
 \newtheorem{AXM}{公理}[section]
-\newtheorem{DFN}[Axiom]{定義}
-\newtheorem{THM}[Axiom]{定理}
+\newtheorem{DFN}[AXM]{定義}
+\newtheorem{THM}[AXM]{定理}
 \newtheorem*{THM*}{定理}
-\newtheorem{PRP}[Axiom]{命題}
-\newtheorem{LMM}[Axiom]{補題}
-\newtheorem{CRL}[Axiom]{系}
-\newtheorem{EG}[Axiom]{例}
-\newtheorem{CNV}[Axiom]{規約}
-
+\newtheorem{PRP}[AXM]{命題}
+\newtheorem{LMM}[AXM]{補題}
+\newtheorem{CRL}[AXM]{系}
+\newtheorem{EG}[AXM]{例}
+\newtheorem*{EG*}{例}
+\newtheorem{RMK}[AXM]{注意}
+\newtheorem{CNV}[AXM]{約束}
+\newtheorem{CMT}[AXM]{コメント}
+\newtheorem*{CMT*}{コメント}
+\newtheorem{NTN}[AXM]{記号}
+\newtheorem{PRB}[AXM]{問題}
+\newtheorem{OBS}[AXM]{観察}
+\newtheorem{CNJ}[AXM]{予想}
 
 % 定理環境ここまで
 %====================================================
 
-%レイアウト
-%\setlength{\oddsidemargin}{-10pt}
-%\setlength{\evensidemargin}{10pt}
+%\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+%\renewenvironment{leftbar}{%
+%  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
+%  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+%{\endMakeFramed}
+%\newenvironment{redleftbar}{%
+%  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
+%  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+% {\endMakeFramed}
+
+
+% tcolorbox パッケージの読み込み（高度な装飾とページ跨ぎのライブラリを追加）
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+
+% DFN環境を直接tcolorboxで装飾する（leftbarの再現）
+\tcolorboxenvironment{DFN}{
+  blanker,                              % 背景色やデフォルトの枠線を透明にする
+  breakable,                            % ページ跨ぎを許可する（framedの代わり）
+  left=14pt,                            % 左側の余白（線の太さ4pt + 隙間10pt）
+  borderline west={4pt}{0pt}{lightgray},% 左側(west)に太さ4ptのlightgrayの線を引く
+  before skip=10pt,                     % 環境の上の余白
+  after skip=10pt                       % 環境の下の余白
+}
+
+% DFN環境を直接tcolorboxで装飾する（leftbarの再現）
+\tcolorboxenvironment{PRP}{
+  enhanced,                             % 高度な装飾を有効化（skinsライブラリが必要）
+  breakable,                            % 箱のページまたぎを許す
+  boxrule=0pt,                          % デフォルトの枠線をすべて消す（emptyの代わり）
+  frame hidden,                         % デフォルトの枠を非表示にする
+  sharp corners,                        % 角を直角にする（デフォルトの丸みを消す）
+  colback=black!5,                      % 背景色を塗る（\fillの代わり）
+  borderline west={2pt}{0pt}{black},    % 左側に2ptの黒線を引く（\drawの代わり）
+  left=12pt,                            % 左側の余白（線の太さ2pt + 隙間10pt）
+  before skip=10pt,                     % 環境の上の余白
+  after skip=10pt                       % 環境の下の余白
+}
+% DFN環境を直接tcolorboxで装飾する（leftbarの再現）
+\tcolorboxenvironment{THM}{
+  enhanced,                             % 高度な装飾を有効化（skinsライブラリが必要）
+  breakable,                            % 箱のページまたぎを許す
+  boxrule=0pt,                          % デフォルトの枠線をすべて消す（emptyの代わり）
+  frame hidden,                         % デフォルトの枠を非表示にする
+  sharp corners,                        % 角を直角にする（デフォルトの丸みを消す）
+  colback=black!5,                      % 背景色を塗る（\fillの代わり）
+  borderline west={2pt}{0pt}{black},    % 左側に2ptの黒線を引く（\drawの代わり）
+  left=12pt,                            % 左側の余白（線の太さ2pt + 隙間10pt）
+  before skip=10pt,                     % 環境の上の余白
+  after skip=10pt                       % 環境の下の余白
+}
+
+% 参考：例(EG)環境に redleftbar（細い線）を適用する場合
+\tcolorboxenvironment{EG}{
+  blanker,
+  breakable,
+  left=11pt,                            % 左側の余白（線の太さ1pt + 隙間10pt）
+  borderline west={1pt}{0pt}{lightgray},% 左側に太さ1ptの線を引く
+  before skip=10pt,
+  after skip=10pt
+}
+
+
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+
+
+% =================================
+
+
+
+
 
 % ---------------------------
 % new definition macro
@@ -522,13 +602,81 @@
 
 % ================================
 % マクロを追加する場合のスペース 
-\def\ind<#1>{\mathop{\text{``}\hspace{-0.7pt}#1\limits\hspace{-1.5pt}\text{''}}}
 
 %=================================
 
 
 
+% 位相空間
+\newcommand{\Int}[1][]{\mathop{\mathrm{Int}}\nolimits_{#1}}
+\newcommand{\Cl}[1][]{\mathop{\mathrm{Cl}}\nolimits_{#1}}
+\newcommand{\Bd}[1][]{\mathop{\mathrm{Bd}}\nolimits_{#1}}
+\newcommand{\bd}{\mathord{\partial}}
+\newcommand{\Fr}[1][]{\mathop{\mathrm{Fr}}\nolimits_{#1}}
 
+
+\newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
+\newcommand{\mtp}[1][]{{}^{t\!}{#1}} % transpose of the morphism
+%\newcommand{\mpb}[1][]{{}^{t\!}{#1}'} % pull-back of the morphism
+\newcommand{\mpb}[1][]{{#1}_{\pi}} % pull-back of the morphism
+\newcommand{\mdiff}[1][]{{#1}_{d}} % pull-back of the morphism
+\newcommand{\mptan}[1][]{{#1}_{\tau}} % pull-back of the morphism
+
+
+%\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+
+\newcommand{\cotb}[1][]{T^{\ast}{#1}}
+\newcommand{\conm}[2][]{T_{#1}^{\hspace{0.7pt}\ast}{#2}}
+\newcommand{\norb}[2][]{T_{#1}{#2}}
+
+\newcommand{\cotz}[1][]{T^{\ast}_{#1}{#1}}
+
+\newcommand{\cotn}[1][]{\dot{T}^{\ast}{#1}}
+\newcommand{\conmn}[2][]{\dot{T}_{#1}^{\hspace{0.7pt}\ast}{#2}}
+
+
+\newcommand{\muhom}{\mu hom}
+\newcommand{\muHom}[1][]{\mathrm{Hom}^\mu_{\raise1.5ex\hbox to.1em{}#1}}
+
+\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+%\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+
+\newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
+
+
+\newcommand{\lopen}{\mathopen{]}}
+\newcommand{\lclosed}{\mathopen{[}}
+\newcommand{\ropen}{\mathclose{[}}
+\newcommand{\rclosed}{\mathopen{]}}
+
+% 4種類の区間をすべて定義
+\DeclarePairedDelimiter{\openintvl}{]}{[}     % ]a, b[
+\DeclarePairedDelimiter{\closedintvl}{[}{]}       % [a, b]
+\DeclarePairedDelimiter{\lopenrclosedintvl}{]}{]}    % ]a, b] (左半開)
+\DeclarePairedDelimiter{\lcosedropenintvl}{[}{[}    % [a, b[ (右半開)
+
+
+\newcommand{\sm}{\raisebox{2.33pt}{~\rule{6.4pt}{1.3pt}~}}
+\newcommand{\smi}{\smallsetminus}
+
+\newcommand{\smid}{\mathrel{;}}
+
+\newcommand{\hfun}[1][]{\mathcal{B}_{#1}}
+\newcommand{\mfun}[1][]{\mathcal{C}_{#1}}
+\newcommand{\mildhfun}[1][]{\widehat{\mathcal{B}}_{#1}}
+\newcommand{\mildmfun}[1][]{\widehat{\mathcal{C}}_{#1}}
+
+\newcommand{\micro}[1]{\mu_{#1}\hspace{0pt}}
+
+\newcommand{\rrp}{\rr^{+}}
+\newcommand{\Dbconic}{\mathop{\mathsf{D}^\mathrm{b}_{\rrp}}\nolimits}
+\newcommand{\iu}{\sqrt{-1}}
+
+\DeclareMathOperator{\WFa}{\mathrm{WF}_\mathrm{A}} % 解析的波面集合
+\DeclareMathOperator{\WF}{\mathrm{WF}} % 波面集合
+\DeclareMathOperator{\SingSpec}{\mathrm{S}\text{.}\mathrm{S}\text{.}} % 特異性スペクトル
+\DeclareMathOperator{\SingSupp}{\mathrm{singsupp}} % 特異台
+\newcommand{\Char}{\mathop{\mathrm{Char}}\nolimits}
 
 % ----------------------------
 % documenet 
@@ -538,168 +686,45 @@
 % begin document and end document.
 % ---------------------------
 
-\title{D加群まとめノート}
-\author{Toshi2019}
-%\date{}
+\title{打切り版伝播定理}
+\author{Toshihiro Oshiba}
+\date{\today}
 \begin{document}
 \maketitle
-\frontmatter
-\tableofcontents
-\layout
-\mainmatter
-\chapter{ミルナーメモ}
-まず，明日 (2023/09/27) のアブスト：
-\begin{quotation}
-b関数および, その根に付随して定義されるホロノミーD加群は,
-超曲面の特異性と深く係わる重要な概念である. 
-しかし, 与えられた超曲面に対し, 
-そのb関数やホロノミーD加群を実際に求めることは非常に困難である. 
-現時点ではこの問題に対しては, 
-非可換環におけるグレブナ基底計算を行うのが標準的な解法であるが, 
-この方法で得られるホロノミーD加群は, 
-偏微分作用素環におけるグレブナ基底であり, 
-そのため出力のサイズが極めて大きい. 
-基底をなすひとつひとつの作用素は階数も高く, 複雑であり
-通常, その個数も多い. 
-そのため得られた方程式系の構造を解析すること自体
-現実には困難となることが多い. 
-本講演では, 非可換環におけるグレブナ基底計算をなるたけ回避し, 
-ホロノミーD加群を定めるイデアルの生成元を構成する新たな計算法を導入する. 
-この計算法の基本的アイデアは, local cohomology に対するネター作用素の
-概念を利用することにある. 
-b関数もそれに付随するホロノミーD加群も共に
-特異点の複素解析的不変量を見做すことができる. 
-不変量として微妙な性格をもつため, 
-これらを求め, 解析するための計算技法も必要となる. 
-時間が許せば, これらについても紹介したい.
-特異点論への応用として, 
-D. Siersmaのvertical monodromyや
-D. MasseyのLe numbersとの関係等について紹介したい.
-\end{quotation}
+\section*{はじめに}
+\section{{\cite[Theorem~5.2.1]{KS90}}について}
+\(E\)を有限次元実ベクトル空間とし，\(X\)を\(E\)の開集合とする．
+\(F\in\Dompb(X)\)とする．
 
-ミルナーの本を見つつ予習する．
+\begin{PRP}
+  \(U\)を\(X\)の開集合とする．\(\gamma\)を\(E\)の閉固有凸錐で\(0\)を含むものとする．
+  \(\varOmega_{0}\)，\(\varOmega_{1}\)を\(E\)の\(\gamma\)~開集合で次をみたすものとする．
+  \begin{align}
+      \muS[k](F)\cap (U\times\Int[]\gamma^{\circ a})=\varnothing,\\
+      \varOmega_{0}\subset \varOmega_{1}\quad\text{かつ}\quad \varOmega_{1}\smi \varOmega_{0}\subset U,\\
+      \text{任意の\(x\in\varOmega_{1}\)に対し\((x+\gamma)\smi \varOmega_{0}\)がコンパクトである．}
+  \end{align}
+\end{PRP}
+\begin{LMM}
+  \(\varOmega_{0}\)が次の形の半空間とする．
+  \[
+    \varOmega_{0}\coloneqq\left\{x\in E\smid \inner<x,\xi_{0}><c\right\}.
+  \]
+  このとき，上の命題の結論は正しい．
+\end{LMM}
 
-\paragraph{2023/09/26}
-まずミルナー
-\cite[日本語版のための解説 3.14]{M03}をみると次のように書いてある．
-\begin{quotation}
-    微分作用素の研究で顔を出すD加群 (D-module) の理論（代数的手法を
-    中心として解析学を研究する分野で，
-    \textbf{代数解析学} (algebraic analysis) とも呼ばれる）と，
-    複素超曲面の特異点の理論の間に密接な関係があることが知られている．
-    実際，そういった作用その言葉で定義される\textbf{ベルンシュタイン-佐藤
-    多項式} (Bernstein-Sato polynomial) の根によって
-    モノドロミーの固有値が記述できることが知られている．
-    詳細は[103]\footnote{
-        B. Malgrange, 
-        ``Int\'egrals asymptotiques et monodromie'', 
-        Ann Sci. \'Ecole Norm. Sup. (4) \textbf{7} (1974), 
-        405--430\label{paper103}
-    }, [70]\footnote{
-            M. Kashiwara, 
-            ``B-functions and holonomic systems. 
-            Rationality of B-functions'', 
-            Invent. Math. \textbf{38} (1976/77), 33--53.
-    }, [71]\footnote{
-            柏原正樹, 河合隆裕 
-            ``極大過剰決定系の理論'' 
-            数学 \textbf{34} (1982), 243--257.
-    }等を参照していただきたい．
-
-    なお，このあたりの話題は，
-    \textbf{振動積分} (oscillatory integral) の理論と
-    密接な関わりがある．
-    これについては，[69]\footnote{
-        金子晃『ニュートン図形・特異点・振動積分』
-        上智大学講究録, No. 11, 1981.
-    }, [103]\footnote{
-        \ref{paper103}と同様．
-    }, [9]\footnote{
-        D. Barlet, 
-        ``D\'evelopment asymptotique des fonctions obtenues 
-        par int\'egration sur les fibres'', 
-        Invent. Math. \textbf{68} (1982), 129--174.
-    }等を参照されたい．
-\end{quotation}
-
-まず，\cite{KK82}を見てみる．
-
-\section{\cite{KK82}のメモ}
-\cite[\S6応用]{KK82}
-が$b$関数と局所モノドロミーとなっている．ここから見てみる．
-
-\(f(x)\)を\(n\)変数正則関数，\(x_0\)をその零点とする．
-\(U\coloneqq\left\{x;\lvert x-x_0\rvert<\delta\right\}\), 
-\(0<c\ll \delta\ll1\)に対して，
-\(H^k(U\cap f^{-1}(c); \cc)\)は\(\delta\), \(c\)によらない．
-
-\chapter{六則演算}
-D加群の圏における六則演算をまとめる．
-
-\section{テンソル積}
-\(\cD_X\tens[\cO_{X}]\cD_X\in\Mod(\cD_X,\cD_X\tens[\cO_{X}]\cD_X)\)である．
-\(\cM,\cN\in\Mod(\cD_X)\)に対して，
-\[
-    \cM\tens[\cO_X]\cN\cong
-    \left(\cD_X\tens[\cO_{X}]\cD_X\right)
-    \tens[{\cD_X\tens[]\cD_X}]
-    \left(\cM\tens[\cO_X]\cN\right)
-\]
-この作用で\(\cD_X\)加群とみたものを
-\[
-    \cM\dtens\cN
-\]
-とかく．これで関手
-\[
-    \blk\dtens\blk
-    \colon 
-    \Mod(\cD^{\op}_X)\times\Mod(\cD_X)\to\Mod(\cD_X)
-\]が定まる．
-
-\section{内部Hom}
-\(\cM, \cN\in\Mod(\cD_X)\)のとき
-\[
-    \HOM_{\cO_X}(\cM,\cN)\in\Mod(\cD_X).
-\]
-\(\cD_X\)作用は
-\[
-    \varTheta_X\times \HOM_{\cO_X}(\cM,\cN)
-    \to\HOM_{\cO_X}(\cM,\cN);
-    (v,\varphi)\mapsto v\varphi,
-\]
-ただし\(v\varphi(u)=v(\varphi(u))-\varphi(v\cdot u)\)と定める．
-
-これで関手
-\[
-    \HOM_{\cO_X}(\blk,\blk)
-    \colon 
-    \Mod(\cD_X)^{\op}\times\Mod(\cD_X)\to\Mod(\cD_X)
-\]が定まる．
-\section{順像と逆像}
-
+\(\)
 %===============================================
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
-    \bibitem[AMR]{AMR} R. Abraham, J. E. Marsden, T. Ratiu,
-        \textit{Manifolds, Tensor Analysis, and Applications}, 
-        Second ed. Applied Mathematical Sciences, 75, Springer, 1988.
-    \bibitem[B01]{B01} Jean-Michel Bony, 
-        \textit{Cours d'analyse}, 
-        l'ecole polytechnique, 2001.
-    \bibitem[KK82]{KK82}柏原正樹, 河合隆裕 ``極大過剰決定系の理論'' 
-        数学 \textbf{34} (1982), 243--257.
-    \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
-        \textit{Sheaves on Manifolds}, 
-        Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
-    \bibitem[KS06]{KS06} Masaki Kashiwara, Pierre Schapira, 
-        \textit{Categories and Sheaves}, 
-        Grundlehren der Mathematischen Wissenschaften, 332, Springer, 2006.
-    \bibitem[M03]{M03} ミルナー, 複素超曲面の特異点, 原著1968, シュプリンガー, 2003.
-    \bibitem[Sh16]{Sh16} 志甫淳, 層とホモロジー代数, 共立出版, 2016.
-    %\bibitem[Og02]{Og02} 小木曽啓示, 代数曲線論, 朝倉書店, 2022.
+  \bibitem[ALPDO]{ALPDO} Lars H\"ormander,
+    \textit{The analysis of linear partial differential operators I}, 
+    Grundlehren der Mathematischen Wissenschaften, 256, Springer, 1983.
+  \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+    \textit{Sheaves on Manifolds}, 
+    Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
 \end{thebibliography}
-
 %===============================================
 
 

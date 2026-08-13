@@ -1,0 +1,2684 @@
+%=====================================
+%   20260204-summer-seminar.tex
+%   打切り超局所台による相対版超局所Morse理論の精密化
+%   toshi2019
+%=====================================
+\documentclass[dvipdfmx,10pt,aspectratio=169,leqno]{beamer}% dvipdfmxしたい
+\title{打切り超局所台による相対版超局所Morse理論の精密化}
+%\subtitle{}
+\date{2026年8月19日 \\2026年度函数方程式論サマーセミナー}
+\author{大柴 寿浩}
+
+\institute[NITech]
+{
+北海道大学 大学院 理学院 数学専攻
+}
+
+
+\usetheme{metropolis}
+%\usetheme{Singapore}
+\usecolortheme{rose}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{navigaton symbols}{\false}
+\setbeamertemplate{footline}[frame number]
+%\usepackage{graphicx,xcolor}
+\usepackage{appendixnumberbeamer}
+
+
+
+
+
+\usepackage{bxdpx-beamer}% dvipdfmxなので必要
+\usepackage{pxjahyper}% 日本語で'しおり'したい
+\usepackage{minijs}% min10ヤダ
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+\renewcommand{\emph}[1]{{\upshape\bfseries #1}}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{color}
+\usepackage{ascmac}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage[mathscr]{eucal}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{enumerate}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{proof}
+\usepackage{listings}
+\usepackage{otf}
+\usepackage[all]{xy}
+\usepackage{amscd}
+%\usepackage[dvipdfmx]{hyperref}
+
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0,0.45,0} 
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6} 
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkgreen,
+    linkcolor=darkblue,
+    urlcolor=darkblue,
+}
+
+\usetikzlibrary{positioning}
+
+
+\usepackage{latexsym}
+\usepackage{wrapfig}
+\usepackage{layout}
+\usepackage{url}
+
+\usepackage{okumacro}
+
+\usepackage{comment}
+
+\usetikzlibrary{cd}
+\usetikzlibrary{arrows.meta}
+
+%\usepackage{jdash}
+%\usepackage{pxjahyper}
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{k}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+%\newcommand{\Ring}{{\bf Ring}}
+\newcommand{\Ab}{{\mathsf{Ab}}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\Modf}{\mathop{\mathrm{Mod}^\mathrm{f}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits} % 写像の集合
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits} % 射集合
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits} % 自己準同型の集合
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits} % 自己同型の集合
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits} % 射集合
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits} % 核
+\newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
+\newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
+\newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+%\newcommand{\OO}{\mcal{O}}
+
+
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+%        \itshape
+         \bfseries
+%    #1\@addpunct{.}]\ignorespaces
+    {#1}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
+\renewcommand{\proofname}{\textrm{Proof.}}
+
+
+
+%\renewcommand\proofname{\bf 証明} % 証明
+\numberwithin{equation}{subsection}
+\newcommand{\cTop}{\textsf{Top}}
+%\newcommand{\cOpen}{\textsf{Open}}
+\newcommand{\Op}{\mathop{\textsf{Op}}\nolimits}
+\newcommand{\Ob}{\mathop{\textrm{Ob}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\pt}{\mathop{\mathrm{pt}}\nolimits}
+\newcommand{\res}{\mathop{\rho}\nolimits}
+\newcommand{\A}{\mcal{A}}
+\newcommand{\B}{\mcal{B}}
+\newcommand{\C}{\mcal{C}}
+\newcommand{\D}{\mcal{D}}
+\newcommand{\E}{\mcal{E}}
+\newcommand{\G}{\mcal{G}}
+%\newcommand{\H}{\mcal{H}}
+\newcommand{\I}{\mcal{I}}
+\newcommand{\J}{\mcal{J}}
+\newcommand{\OO}{\mcal{O}}
+\newcommand{\Ring}{\mathop{\textsf{Ring}}\nolimits}
+\newcommand{\cAb}{\mathop{\textsf{Ab}}\nolimits}
+%\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\im}{\mathop{\mathrm{Im}}\nolimits}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}\nolimits}
+\newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
+\newcommand{\Ht}{\mathop{\mathrm{Ht}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
+\newcommand{\colim}{\mathop{\mathrm{colim}}}
+\newcommand{\Tor}{\mathop{\mathrm{Tor}}\nolimits}
+
+\newcommand{\cat}{\mathscr{C}}
+
+%筆記体
+\newcommand{\cA}{\mcal{A}}
+\newcommand{\cB}{\mcal{B}}
+\newcommand{\cC}{\mcal{C}}
+\newcommand{\cD}{\mcal{D}}
+\newcommand{\cE}{\mcal{E}}
+\newcommand{\cF}{\mcal{F}}
+\newcommand{\cG}{\mcal{G}}
+\newcommand{\cH}{\mcal{H}}
+\newcommand{\cI}{\mcal{I}}
+\newcommand{\cJ}{\mcal{J}}
+\newcommand{\cK}{\mcal{K}}
+\newcommand{\cL}{\mcal{L}}
+\newcommand{\cM}{\mcal{M}}
+\newcommand{\cN}{\mcal{N}}
+\newcommand{\cO}{\mcal{O}}
+\newcommand{\cP}{\mcal{P}}
+\newcommand{\cQ}{\mcal{Q}}
+\newcommand{\cR}{\mcal{R}}
+\newcommand{\cS}{\mcal{S}}
+\newcommand{\cT}{\mcal{T}}
+\newcommand{\cU}{\mcal{U}}
+\newcommand{\cV}{\mcal{V}}
+\newcommand{\cW}{\mcal{W}}
+\newcommand{\cX}{\mcal{X}}
+\newcommand{\cY}{\mcal{Y}}
+\newcommand{\cZ}{\mcal{Z}}
+
+
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+\newcommand{\scN}{\mathscr{N}}
+\newcommand{\scO}{\mathscr{O}}
+\newcommand{\scV}{\mathscr{V}}
+\newcommand{\scU}{\mathscr{U}}
+
+
+\newcommand{\ibA}{\mathop{\text{\textit{\textbf{A}}}}}
+\newcommand{\ibB}{\mathop{\text{\textit{\textbf{B}}}}}
+\newcommand{\ibC}{\mathop{\text{\textit{\textbf{C}}}}}
+\newcommand{\ibD}{\mathop{\text{\textit{\textbf{D}}}}}
+\newcommand{\ibE}{\mathop{\text{\textit{\textbf{E}}}}}
+\newcommand{\ibF}{\mathop{\text{\textit{\textbf{F}}}}}
+\newcommand{\ibG}{\mathop{\text{\textit{\textbf{G}}}}}
+\newcommand{\ibH}{\mathop{\text{\textit{\textbf{H}}}}}
+\newcommand{\ibI}{\mathop{\text{\textit{\textbf{I}}}}}
+\newcommand{\ibJ}{\mathop{\text{\textit{\textbf{J}}}}}
+\newcommand{\ibK}{\mathop{\text{\textit{\textbf{K}}}}}
+\newcommand{\ibL}{\mathop{\text{\textit{\textbf{L}}}}}
+\newcommand{\ibM}{\mathop{\text{\textit{\textbf{M}}}}}
+\newcommand{\ibN}{\mathop{\text{\textit{\textbf{N}}}}}
+\newcommand{\ibO}{\mathop{\text{\textit{\textbf{O}}}}}
+\newcommand{\ibP}{\mathop{\text{\textit{\textbf{P}}}}}
+\newcommand{\ibQ}{\mathop{\text{\textit{\textbf{Q}}}}}
+\newcommand{\ibR}{\mathop{\text{\textit{\textbf{R}}}}}
+\newcommand{\ibS}{\mathop{\text{\textit{\textbf{S}}}}}
+\newcommand{\ibT}{\mathop{\text{\textit{\textbf{T}}}}}
+\newcommand{\ibU}{\mathop{\text{\textit{\textbf{U}}}}}
+\newcommand{\ibV}{\mathop{\text{\textit{\textbf{V}}}}}
+\newcommand{\ibW}{\mathop{\text{\textit{\textbf{W}}}}}
+\newcommand{\ibX}{\mathop{\text{\textit{\textbf{X}}}}}
+\newcommand{\ibY}{\mathop{\text{\textit{\textbf{Y}}}}}
+\newcommand{\ibZ}{\mathop{\text{\textit{\textbf{Z}}}}}
+
+\newcommand{\ibx}{\mathop{\text{\textit{\textbf{x}}}}}
+
+%\newcommand{\Comp}{\mathop{\mathrm{C}}\nolimits}
+%\newcommand{\Komp}{\mathop{\mathrm{K}}\nolimits}
+%\newcommand{\Domp}{\mathop{\mathsf{D}}\nolimits}%複体のホモトピー圏
+%\newcommand{\Comp}{\mathrm{C}}
+%\newcommand{\Komp}{\mathrm{K}}
+%\newcommand{\Domp}{\mathsf{D}}%複体のホモトピー圏
+
+\newcommand{\Comp}{\mathsf{C}}
+\newcommand{\Komp}{\mathsf{K}}
+\newcommand{\Domp}{\mathsf{D}}
+\newcommand{\Kompl}{\mathop{\mathsf{K}^\mathrm{+}}\nolimits}
+\newcommand{\Kompu}{\mathop{\mathsf{K}^\mathrm{-}}\nolimits}
+\newcommand{\Kompb}{\mathop{\mathsf{K}^\mathrm{b}}\nolimits}
+\newcommand{\Dompl}{\mathop{\mathsf{D}^\mathrm{+}}\nolimits}
+\newcommand{\Dompu}{\mathop{\mathsf{D}^\mathrm{-}}\nolimits}
+\newcommand{\Dompb}{\mathop{\mathsf{D}^\mathrm{b}}\nolimits}
+\newcommand{\Dompbf}{\mathop{\mathsf{D}_\mathrm{f}^\mathrm{b}}\nolimits}
+
+
+
+
+\newcommand{\CCat}{\Comp(\cat)}
+\newcommand{\KCat}{\Komp(\cat)}
+\newcommand{\DCat}{\Domp(\cat)}%圏Cの複体のホモトピー圏
+\newcommand{\HOM}{\mathop{\mathscr{H}\hspace{-1.5pt}om}\nolimits}%内部Hom
+\newcommand{\RHOM}{\mathop{\mathrm{R}\hspace{-1.5pt}\HOM}\nolimits}
+
+%\newcommand{\muS}{\mathop{\mathrm{SS}}\nolimits}
+\newcommand{\muS}[1][]{\mathop{\mathrm{SS}}\nolimits_{#1}}
+\newcommand{\RG}{\mathop{\mathrm{R}\hspace{-0pt}\Gamma}\nolimits}
+\newcommand{\RHom}{\mathop{\mathrm{R}\hspace{-1.5pt}\Hom}\nolimits}
+%\newcommand{\Rder}{\mathrm{R}}
+
+\newcommand{\Rder}[1][]{\mathop{\mathrm{R}^{#1}\hspace{-2pt}}\nolimits}
+
+
+\newcommand{\simar}{\mathrel{\overset{\sim}{\rightarrow}}}%同型右矢印
+\newcommand{\simarr}{\mathrel{\overset{\sim}{\longrightarrow}}}%同型右矢印
+\newcommand{\simra}{\mathrel{\overset{\sim}{\leftarrow}}}%同型左矢印
+\newcommand{\simrra}{\mathrel{\overset{\sim}{\longleftarrow}}}%同型左矢印
+
+\newcommand{\hocolim}{{\mathrm{hocolim}}}
+\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+\newcommand{\Pro}{\mathrm{Pro}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+
+\newcommand{\Sh}{\mathrm{Sh}}
+\newcommand{\PSh}{\mathrm{PSh}}
+
+\newcommand{\rmD}{\mathrm{D}}
+
+\newcommand{\Lloc}[1][]{\mathord{\mathcal{L}^1_{\mathrm{loc},{#1}}}}
+\newcommand{\ori}{\mathord{\mathrm{or}}}
+\newcommand{\Db}{\mathord{\mathscr{D}b}}
+
+\newcommand{\codim}{\mathop{\mathrm{codim}}\nolimits}
+
+
+
+\newcommand{\gld}{\mathop{\mathrm{gld}}\nolimits}
+\newcommand{\wgld}{\mathop{\mathrm{wgld}}\nolimits}
+
+
+\newcommand{\tens}[1][]{\mathbin{\otimes_{\raise1.5ex\hbox to-.1em{}{#1}}}}
+\newcommand{\etens}{\mathbin{\boxtimes}}
+\newcommand{\ltens}[1][]{\mathbin{\overset{\mathrm{L}}\tens}_{#1}}
+\newcommand{\mtens}[1][]{\mathbin{\overset{\mathrm{\mu}}\tens}_{#1}}
+\newcommand{\lltens}[1][]{{\mathop{\tens}\limits^{\mathrm{L}}_{#1}}}
+\newcommand{\letens}{\overset{\mathrm{L}}{\etens}}
+\newcommand{\detens}{\underline{\etens}}
+\newcommand{\ldetens}{\overset{\mathrm{L}}{\underline{\etens}}}
+\newcommand{\dtens}[1][]{{\overset{\mathrm{L}}{\underline{\otimes}}}_{#1}}
+
+\newcommand{\blk}{\mathord{\ \cdot\ }}
+\newcommand{\mres}[2][]{{\left.{#1}\right\rvert}_{#2}}
+
+
+%\newcommand{\hocolim}{{\mathrm{hocolim}}}
+%\newcommand{\indlim}[1][]{\mathop{\varinjlim}\limits_{#1}}
+%\newcommand{\sindlim}[1][]{\smash{\mathop{\varinjlim}\limits_{#1}}\,}
+%\newcommand{\Pro}{\mathrm{Pro}}
+%\newcommand{\Ind}{\mathrm{Ind}}
+%\newcommand{\prolim}[1][]{\mathop{\varprojlim}\limits_{#1}}
+%\newcommand{\sprolim}[1][]{\smash{\mathop{\varprojlim}\limits_{#1}}\,}
+\newcommand{\proolim}[1][]{\mathop{\text{\rm``{$\varprojlim$}''}}\limits_{#1}}
+\newcommand{\sproolim}[1][]{\smash{\mathop{\rm``{\varprojlim}''}\limits_{#1}}}
+\newcommand{\inddlim}[1][]{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}
+\newcommand{\sinddlim}[1][]{\smash{\mathop{\text{\rm``{$\varinjlim$}''}}\limits_{#1}}\,}
+\newcommand{\ooplus}{\mathop{\text{\rm``{$\oplus$}''}}\limits}
+\newcommand{\bbigsqcup}{\mathop{``\bigsqcup''}\limits}
+\newcommand{\bsqcup}{\mathop{``\sqcup''}\limits}
+\newcommand{\dsum}[1][]{\mathbin{\oplus_{#1}}}
+
+\newcommand{\Fct}{\mathop{\mathsf{Fct}}\nolimits}
+\newcommand{\Red}{\mathop{\mathsf{Red}}\nolimits}
+\newcommand{\Cone}{\mathop{\mathsf{Cone}}\nolimits}
+\newcommand{\epi}{\mathop{\mathsf{epi}}\nolimits}
+
+
+
+
+\newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
+\newcommand{\mtp}[1][]{{}^{t\!}{#1}} % transpose of the morphism
+%\newcommand{\mpb}[1][]{{}^{t\!}{#1}'} % pull-back of the morphism
+\newcommand{\mpb}[1][]{{#1}_{\pi}} % pull-back of the morphism
+\newcommand{\mdiff}[1][]{{#1}_{d}} % pull-back of the morphism
+\newcommand{\mptan}[1][]{{#1}_{\tau}} % pull-back of the morphism
+
+
+%\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+
+\newcommand{\cotb}[1][]{T^{\ast}{#1}}
+\newcommand{\conm}[2][]{T_{#1}^{\hspace{0.7pt}\ast}{#2}}
+\newcommand{\norb}[2][]{T_{#1}{#2}}
+
+\newcommand{\cotz}[1][]{T^{\ast}_{#1}{#1}}
+
+\newcommand{\cotn}[1][]{\dot{T}^{\ast}{#1}}
+
+
+\newcommand{\muhom}{\mu hom}
+\newcommand{\muHom}[1][]{\mathrm{Hom}^\mu_{\raise1.5ex\hbox to.1em{}#1}}
+
+\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+%\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+
+\newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
+
+\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+
+\newcommand{\Sol}[2][]{\mathop{\mathcal{S}ol}\nolimits_{#1}(#2)}
+
+
+
+%================================================
+% 自前の定理環境
+%   https://mathlandscape.com/latex-amsthm/
+% を参考にした
+\newtheoremstyle{mystyle}%   % スタイル名
+    {5pt}%                   % 上部スペース
+    {5pt}%                   % 下部スペース
+    {}%              % 本文フォント
+    {}%                  % 1行目のインデント量
+    {\bfseries}%                      % 見出しフォント
+    {.}%                     % 見出し後の句読点
+    {12pt}%                     % 見出し後のスペース
+    {\thmname{#1}\thmnumber{ #2}\thmnote{{\hspace{2pt}\normalfont (#3)}}}% % 見出しの書式
+
+\theoremstyle{mystyle}
+\newtheorem{AXM}{公理}%[section]
+\newtheorem{DFN}[AXM]{定義}
+\newtheorem{THM}[AXM]{定理}
+\newtheorem{HM}[AXM]{定理もどき}
+\newtheorem*{THM*}{定理}
+\newtheorem{PRP}[AXM]{命題}
+\newtheorem{LMM}[AXM]{補題}
+\newtheorem{CRL}[AXM]{系}
+\newtheorem{EG}[AXM]{例}
+\newtheorem*{EG*}{例}
+\newtheorem{RMK}[AXM]{注意}
+\newtheorem{CNV}[AXM]{約束}
+\newtheorem{CNJ}[AXM]{予想}
+\newtheorem{CMT}[AXM]{コメント}
+\newtheorem*{CMT*}{コメント}
+\newtheorem{NTN}[AXM]{記号}
+\newtheorem{CLM}[AXM]{Claim}
+\newtheorem{Prop}[AXM]{Proposition}
+
+% 定理環境ここまで
+%====================================================
+
+\usepackage{framed}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\renewenvironment{leftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 4pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+{\endMakeFramed}
+\newenvironment{redleftbar}{%
+  \def\FrameCommand{\textcolor{lightgray}{\vrule width 1pt} \hspace{10pt}}% 
+  \MakeFramed {\advance\hsize-\width \FrameRestore}}%
+ {\endMakeFramed}
+
+
+
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+
+\newcommand{\smid}{\mathrel{;}}
+\usetikzlibrary{arrows.meta}
+% =================================
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+
+
+
+\def\fracinline#1/#2{\mbox{\raise0.5ex\hbox{\footnotesize$#1$}{\hskip-.1em$/$\hskip-.1em}\raise-0.5ex\hbox{\footnotesize$#2$}}}
+
+\begin{document}
+
+
+
+
+\begin{frame}
+    \titlepage
+    %\insertsubtitle
+\end{frame}
+\begin{comment}
+    \begin{frame}\frametitle{書くこと}
+    \begin{itemize}
+        \item 特に興味を持った定理や理論の背景
+        \item それを記述するための記号や概念の導入
+        \item 正確な主張の紹介
+        \item 証明の基本的なアイデアやアウトラインの紹介
+        \item または定理の過程を満たす具体例や定理の応用例の紹介
+    \end{itemize}
+    \end{frame}
+\end{comment}
+%\setcounter{section}{3}
+%\section*{はじめに}
+\begin{frame}
+    \frametitle{研究の概要}
+    \begin{center}
+      動機：「層のコホモロジーの延長可能性を調べたい」
+    \end{center}
+    \vspace{10pt}
+    \[\vcenter{\xymatrix@C=42pt@R=26pt{
+        \txt{\(\muS[](F)\)\\
+        \cite{KS82}}
+        %\ar[dd]
+        &
+        \txt{超局所Morseの補題\\
+        \cite{KS90}}
+        %\ar[dd]
+        &
+        \txt{非特性変形補題\\
+        \cite{KS90}}
+        %\ar[dd]
+        \\
+        %\ar[r] 
+        &
+        &
+        %\ar[l]
+        \\
+        \txt{\(\muS[k](F)\)\\
+        \cite{KFS03a}}
+        &
+        \txt{打切り超局所Morseの補題\\主結果１}
+        &\txt{打切り非特性変形補題\\主結果２}
+    }}\]
+\end{frame}
+%\begin{frame}
+%    \frametitle{発表内容}
+%    \tableofcontents
+%\end{frame}
+
+%\section[背景]{背景}
+%\subsection{層理論}
+\begin{comment}
+\begin{frame}
+    \frametitle{（前）層の定義}
+    \begin{DFN}[層]\label{def:sheaf}
+        位相空間\(X\)上の\(\kk\)加群の前層\(F\)とは，
+        \(\kk\)加群の族と\(\kk\)加群の射の族の組\[\left(
+        \left(F(U)\right)_{U\subset X},
+        \left(\rho_{VU}\colon F(U)\to F(V)\right)_{(V\hookrightarrow U)}
+        \right)\]で次をみたすもののこと．
+        簡単のため\(\kk\)は\(\zz\)か体とする．
+        \vspace*{-5pt}
+        \begin{enumerate}
+            %\renewcommand{\labelenumi}{({\arabic{enumi}})}
+            \item $\rho_{UU} = \id_{F(U)}$. 
+            \item $W \subset V \subset U$ ならば, 
+            $\rho_{WU} = \rho_{WV} \circ \rho_{VU}$.\label{enum:res}
+        \end{enumerate}
+        \vspace*{-5pt}
+        \(F\)が\textbf{層}であるとは，
+        \(X\)の任意の開集合\(U\)と
+        その開被覆\(\left(U_i\right)_{i\in I}\)に対して，
+        次が成り立つこと．
+        \vspace*{-5pt}
+        \begin{enumerate}[(S1)]
+            \setcounter{enumi}{-1}
+            \setlength{\leftskip}{10pt}
+            \item \(F(\varnothing)=0\).
+            \item \(s\in F(U)\)が各\(i\in I\)に対して\(U_i\)上\(s\rvert_{U_{i}}=0\)ならば，
+            \(s=0\).\label{sheaf-cond1}
+            \item \(\left(s_i\right)_i\in\prod_{i}F(U_i)\)が
+            各\(i,j\in I\)で\(U_i\cap U_j\ne\varnothing\)となるものに対して\(U_i\cap U_j\)上\(s_i\rvert_{U_i\cap U_j}-s_j\rvert_{U_i\cap U_j}=0\)ならば，
+            \(s\in F(U)\)で各\(U_i\)上\(s\rvert_i=s_i\)となるものが存在する．\label{sheaf-cond2}
+        \end{enumerate}
+    \end{DFN}
+\end{frame}
+
+\begin{frame}
+    \frametitle{層の導来圏}
+    導来圏の理論を用いると見通しがよい
+    \begin{NTN}
+        層の有界な複体を対象とし，
+        コホモロジー間の同型を誘導する射（擬同型）を可逆にした
+        圏を\(\Dompb(\kk_X)\)で表す．
+    \end{NTN}
+    \(\Dompb(\cc_X)\)では例えば定数層のド・ラーム分解が同型になる：
+    \[\vcenter{\xymatrix{
+        0\ar[r]&
+        \cc_X \ar[r] \ar[d]^-{\mathrm{qis}}&
+        0\\
+        0\ar[r]&
+        \Omega_X^0\ar[r]&
+        \Omega_X^1\ar[r]&
+        \cdots\ar[r]&
+        \Omega_X^n\ar[r]&0
+    }}\]
+\end{frame}
+\end{comment}
+
+%\subsection{超局所層理論}
+\newcommand{\Char}{\mathop{\mathrm{Char}}\nolimits}
+\newcommand{\singsupp}{\mathop{\mathrm{singsupp}}\nolimits}
+\newcommand{\SingSpec}{\mathop{\mathrm{S.S.}}\nolimits}
+%\newcommand{\SingSpec}{\mathop{\mathrm{WF}_{\mathrm{A}}}\nolimits}
+
+\begin{comment}
+\begin{frame}\frametitle{``超局所''？--- 超局所解析からの復習}
+    \[
+        \text{``超局所''}=\text{余接束上で局所}
+    \]
+    いったん，古典的な微分方程式の問題で説明する．
+    \begin{itemize}
+        \item 余接束：開集合\(\varOmega\subset \rr^n\)に対し
+        \(\dot{\pi}\colon\cotn[\varOmega]\coloneqq \cotb[\varOmega]-\cotz[\varOmega]\cong \varOmega\times(\rr^n-\{0\})\to \varOmega\). 
+        \item 超函数\(u\)に対し特異台\(
+            \singsupp(u)\coloneqq\left\{
+                x\in\varOmega;\ \text{\(u(x)\)は\(x\)で解析的でない}
+            \right\}\). 
+        \item 微分作用素\(P\)に対し\(
+            \Char(P)\coloneqq\{(x;\xi)\in\cotn[\varOmega];\ 
+                \sigma(P)(x;\xi)=0\}.
+            \)\\（ただし\(\sigma(P)\)は\(P\)の``主要表象''）
+        \item \(u\)の特異性スペクトル：\(\SingSpec(u)\subset\cotn[\varOmega]\)は\(
+            \pi(\SingSpec(u))=\singsupp(u)
+        \)をみたす集合．
+    \end{itemize}
+    それぞれ
+    \(\singsupp{u}\subset\varOmega\)
+    と
+    \(\Char(P), \SingSpec(u)\subset \cotn[\varOmega]\)に注意．
+\end{frame}
+
+\begin{frame}\frametitle{超局所解析における定理} 
+    \begin{THM}[佐藤の基本定理{\cite{Sato69,Sato70}}]
+        \(f\)：既知函数，
+        \(P\)：実解析的係数微分作用素とする．
+        \(u\)が微分方程式\(Pu=f\)の超函数解のとき
+        \[
+            \SingSpec(u)\subset \Char(P)\cup\SingSpec(f).
+        \]
+    \end{THM}
+    これを\(f=0\), \(P\)：楕円型の場合に適用すると
+    \[
+        \Char(P)\cup \SingSpec(f)=\varnothing
+    \]
+    なので\(\singsupp(u)=\pi(\SingSpec(u))=\varnothing\)．
+    すなわち，
+    \begin{alertblock}{楕円型正則性定理}
+        実解析的係数の楕円型方程式の解は解析的である．
+    \end{alertblock}
+    このように，底空間の対象を余接束上に持ち上げる（超局所的に考える）と，
+    その対象の特異性が分析できる．
+\end{frame}
+\end{comment}
+
+\section[層]{層理論}
+\subsection{定義}
+
+\begin{frame}
+  \frametitle{層の動機：簡単な例}
+
+  \begin{itemize}
+    \item \(M\)：\(C^{\infty}\)多様体
+    \item \(U, V, W\)：\(M\)の開集合
+  \end{itemize}
+  のとき，\(U\)上の\(C^{\infty}\)函数のなす加群\(C^{\infty}(U)\)は自然な対象．
+  
+
+  \textbf{\(C^{\infty}\)函数に対する２つの操作}：
+  \begin{description}
+    \item[\underbar{\textbf{制限}}]\(f\in C^{\infty}(U)\)の
+    \(V\subset U\)上への制限の\(f\rvert_V\in C^{\infty}(V)\)．
+    \[
+        \text{\(U\supset V\supset W\)ならば，}
+        \left.({f\rvert_V})\right\rvert_W=f\rvert_W.
+    \]
+    \item[\underbar{\textbf{はりあわせ}}]
+    \(U=\bigcup_{i}U_{i}\)：開被覆で，各\(U_i\)上
+    の\(f_{i}\in C^{\infty}(U_i)\)が
+    \[f_i=f_j\quad \text{on}\quad U_i\cap U_j\]
+    をみたすとき，
+    \(f\rvert_{U_i}=f_i\)として\(f\in C^{\infty}(U)\)が定まる．
+  \end{description}
+
+  を公理化したものが層．
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{層の定義}
+  \begin{definition}[層]
+    \(X\)：位相空間，\(\kk\)：（単位元のある可換な）環．
+    \(\kk\)加群の\textbf{\textcolor{brown}{層}}\(F\)とは，
+    \[
+      (
+        \left(F(U)\right)_{U\in\Op_{X}},
+        \left(\rho_{VU}\colon F(U)\to F(V)\right)_{(V\hookrightarrow U)}
+      )
+      \colon
+      \text{\(\kk\)加群の族と\(\kk\)加群の射の族の組}
+    \]で次をみたすもののこと．
+  \begin{enumerate}
+      \setlength{\leftskip}{10pt}
+      %\renewcommand{\labelenumi}{({\arabic{enumi}})}
+      \item $\rho_{UU} = \id_{F(U)}$. 
+      \item $W \subset V \subset U$ ならば, 
+      $\rho_{WU} = \rho_{WV} \circ \rho_{VU}$，\label{enum:res}
+  \end{enumerate}
+  さらに，\(F(\varnothing)=0\)かつ
+  任意の開集合\(U\subset X\)と
+  その開被覆\(\left(U_i\right)_{i\in I}\)に対して，
+  \begin{enumerate}[S1.]
+      %\setcounter{enumi}{-1}
+      \setlength{\leftskip}{10pt}
+      \item \(s\in F(U)\)が各\(i\in I\)に対して\(U_i\)上\(s\rvert_{U_{i}}=0\)ならば，
+      \(s=0\).\label{sheaf-cond1}
+      \item \(\left(s_i\right)_i\in\prod_{i}F(U_i)\)が
+      各\(i,j\in I\)で\(U_i\cap U_j\ne\varnothing\)となるものに対して\(U_i\cap U_j\)上\(s_i\rvert_{U_i\cap U_j}-s_j\rvert_{U_i\cap U_j}=0\)ならば，
+      \(s\in F(U)\)で各\(U_i\)上\(s\rvert_i=s_i\)となるものが存在する．\label{sheaf-cond2}
+  \end{enumerate}
+  \end{definition}
+\end{frame}
+\begin{frame}
+    \frametitle{層の例}
+\begin{exampleblock}{例}
+  \(M\)：\(C^\infty\)級多様体のとき，
+  \[
+    \cC_{M}^{\infty}\colon U\mapsto 
+    C_{M}^{\infty}(U)\coloneqq
+    \left\{\text{\(U\)上の\(C^{\infty}\)級函数}\right\}
+  \]は\(M\)上の層．
+\end{exampleblock}
+\begin{exampleblock}{例}
+  \(X\)：複素多様体．次は\(X\)上の層．
+  \begin{enumerate}
+    \item \(
+        \mathscr{O}_X\colon U\mapsto 
+        \mathscr{O}_X(U)\coloneqq\left\{\text{\(U\)上の正則函数}\right\}
+    \)，
+    \item 
+    \(
+        \mathscr{D}_X\colon U\mapsto 
+        \mathscr{D}_X(U)\coloneqq\left\{\text{\(U\)上の正則函数係数線形偏微分作用素}\right\}
+    \)，
+    \item 
+    \(\cM\)：\(X\)上の正則函数係数線形偏微分方程式系のとき，
+    \[
+      \Sol[X]{\cM}\colon U\mapsto 
+      \Sol[X]{\cM}(U)\coloneqq\left\{u\in\cO_{X}(U)\smid \text{\(u\)は\(\cM\)の解}\right\}.
+    \]
+  \end{enumerate}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{層係数コホモロジー}
+  空間\(X\)に対し，そのコホモロジー
+  \[
+      H^{j}(X;G)\quad\text{（\(G\)はアーベル群）}
+  \]は重要な量．
+  
+  場所によって係数\(G\)を取り替えると，
+  局所系や層を係数とするコホモロジー
+  \[
+      H^{j}(X;F)
+  \]が出てくる．
+  （\(
+      \text{局所系}
+      \leftrightarrow
+      \text{局所定数層}
+      \subset\text{層}
+  \)）
+  \begin{exampleblock}{層係数コホモロジーの例}
+    \begin{itemize}
+      \item 普通のコホモロジーは定数層\(\kk_M\)係数コホモロジー．
+      \item 佐藤超函数の層\(\cB_M\)は局所コホモロジー\(H^{n}_{M}(\cO_X)\)を用いて定義．
+    \end{itemize}
+  \end{exampleblock}
+
+\end{frame}
+
+\begin{comment}
+  \begin{frame}
+  \frametitle{層係数コホモロジー}
+  例えば，切断関手\(\Gamma(U;\blk)\)は左完全：
+  \[\vcenter{\xymatrix{
+      0\ar[r]& F\ar[r]& G\ar[r]\ar@{=>}[d]& H\ar[r]& 0& \text{exact in \(\Sh(X)\)}
+      \\
+      0\ar[r]&\Gamma(U;F)\ar[r]&\Gamma(U;G)\ar[r]&\Gamma(U;H)& & \text{exact in \(\Ab\)}
+  }}\]
+  したがって，その完全でない度合いを測る，
+  右導来関手\(\RG(U;\blk)\)が定まる．
+  
+  この\(i\)次の部分\(\Rder^i\Gamma(U;F)\)などが
+  層係数の\(H^i(U;F)\)など．
+
+  \begin{exampleblock}{種数}
+    コンパクトリーマン面\(X\)の種数\(g\)は\(g=\dim H^{1}(X;\cO_{X})\)として定義される．
+  \end{exampleblock}
+\end{frame}
+\end{comment}
+\begin{frame}
+  \frametitle{層の導来圏}
+  導来圏の理論を用いると見通しがよい
+  \begin{NTN}[{\cite{KS90}など}]
+    圏\(\Dompb(\kk_X)\)（と\(\Dompl(\kk_X)\)）を次で定める．
+    \begin{description}
+      \item[対象] \(X\)上の\(\kk\)加群の層の有界な複体（下に有界な複体）
+      \item[射] コホモロジー間の同型を誘導する射（擬同型）が可逆な複体の射
+    \end{description}
+  \end{NTN}
+  \(M\)：\(C^{\infty}\)多様体のとき，
+  \(\Dompb(\cc_M)\)では例えば定数層のド・ラーム分解が同型になる：
+  \[\vcenter{\xymatrix{
+    0\ar[r]&
+    \cc_X \ar[r] \ar[d]^-{\mathrm{qis}}&
+    0\\
+    0\ar[r]&
+    \Omega_M^0\ar[r]&
+    \Omega_M^1\ar[r]&
+    \cdots\ar[r]&
+    \Omega_M^n\ar[r]&0.
+  }}\]
+\end{frame}
+
+\begin{frame}
+  \frametitle{\(\text{「超局所」}=\text{「余接束上で局所」}\)}
+
+  実解析係数線形偏微分方程式\(Pu=0\)を考える．余接束の部分集合
+  \begin{itemize}
+      \item 超函数\(u\)の波面集合（特異性スペクトル）\(\SingSpec(u)\)
+      \item 線形微分作用素\(P\)の特性多様体\(\Char(P)\)
+  \end{itemize}
+  を用いると，解\(u\)の特異性が方向別に分析できる．
+
+  \begin{exampleblock}{例：特性多様体}
+    \((x,y)\)平面上のラプラス作用素\(
+      \Delta=\partial^2_x+\partial^2_y
+    \)の主要表象は\[
+      \sigma(\Delta)=\xi_1^2+\xi_2^2.
+    \]
+    特性多様体は\[
+      \Char(\Delta)
+      =\left\{
+        (x_1,x_2;\xi_1,\xi_2)
+        \in \rr^{2}\times(\rr^2\setminus \{0\})
+        \smid\xi_1^2+\xi_2^2=0
+      \right\}
+      =\varnothing.
+    \]
+  \end{exampleblock}
+  %以上の層理論での類似が超局所層理論．
+
+  %多様体\(M\)上の層（の複体）\(F\in\Dompb(\kk_{M})\)に対し，
+  %余接束の部分集合\(\muS[](F)\subset \cotb[M]\)を定める．
+\end{frame}
+
+\begin{frame}\frametitle{超局所解析における定理} 
+    \begin{THM}[佐藤の基本定理{\cite{Sato69,Sato70}}]
+        \(f\)：既知関数，
+        \(P\)：実解析的係数微分作用素とする．
+        \(u\)が微分方程式\(Pu=0\)の解のとき
+        \[
+            \SingSpec(u)\subset \Char(P).
+        \]
+    \end{THM}
+    これを\(P\)：楕円型の場合に適用すると
+    \[
+        \Char(P)=\varnothing
+    \]
+    なので\(\singsupp(u)\coloneqq\left\{\text{\(u\)が解析的でない点}\right\}=\pi(\SingSpec(u))=\varnothing\)．
+    すなわち，
+    \begin{alertblock}{楕円型正則性定理}
+        実解析的係数の楕円型方程式の解は解析的である．
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}\frametitle{層の超局所台 --- 定義の動機づけ}
+  %\(\Dompb(\kk_X)\ni F\mapsto \SS(F)\subset T^{\ast}X\)
+  \(F\in\Dompb(\kk_M)\)の超局所台\(\muS(F)\)を定義したい．
+
+  \(p=(x_0;\xi_0)\in\cotb[M]\)とする．
+  \(M\)上の実\(C^1\)級関数\(\varphi\)で\(
+      d\varphi(x_0)=\xi_0
+  \)となるものを考える．
+
+  \(j\)次コホモロジーにおける``方向\(p\)の定める半空間への制限''
+  \[
+      H^{j}F_{x_0}\cong \indlim[U\in I_{x_0}]H^{j}(U;F)
+      \to
+      \indlim[U\in I_{x_0}]H^{j}(U\cap\{x\smid\varphi(x)<\varphi(x_0)\};F).
+  \]
+  が同型になるというのが，\(p\)の方向にコホモロジーが伝播するということ．
+  %三角で考えると，次の定義になる．
+  \begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}[scale=0.5]
+  \def\t{1.5}
+  \def\xmax{3.5}
+  \def\ymin{-3}
+  \def\ymax{3}
+  \def\s{1}
+
+  %------------------
+  % 塗りつぶし領域
+  %------------------
+
+  % 半近傍
+  \fill[blue!25, domain=(-\t-3):(\t-3), samples=200]
+    (-\t-3, 0)
+    -- plot (\x, {-sqrt(\t*\t - (\x+3)*(\x+3))})
+    -- (\t-3, 0)
+    -- cycle;
+  \draw[dashed, very thick] (-3,0) circle (1.5);
+
+  % 近傍
+  \fill[blue!25] (3,0) circle (\t);
+  \draw[dashed, very thick] (3,0) circle (1.5);
+
+  %------------------
+  % 軸・ラベル
+  %------------------
+
+  \node at (-3,0) [below] {\(x_0\)};
+  \node at (5.2,-0.5) [below] {\(U\)};
+  \node at (-7.5,-0.5) [below] {\(U\cap\{\varphi(x)<\varphi(x_0)\}\)};
+  \draw[->, >=stealth,very thick] (-3,0)--(-3,\t+0.5) node[above]{\(\xi_0\)};
+  \draw[->, >=stealth,semithick] (-1,0)--(1,0);
+  \node at (0,0) [below] {延長？};
+  \node at (3,0) [below] {\(x_0\)};
+  \draw[->, >=stealth,very thick] (3,0)--(3,\t+0.5) node[above]{\(\xi_0\)};
+
+\end{tikzpicture}
+  \end{figure}
+
+\end{frame}
+
+\begin{frame}\frametitle{層の超局所台 --- 延長可能性の判定}
+    \begin{DFN}[層の超局所台]
+        \(p\notin \muS(F)\)であるとは，
+        \(p\)の\(\cotb[M]\)における開近傍\(U\)で，任意の\(x_1\in X\)と
+        \(x_1\)の近傍上で定義された実\(C^{1}\)函数\(\varphi\)に対し，
+        次をみたすものが存在することをいう．
+        \[
+            \varphi(x_1)=0,\ (x_1;d\varphi(x_1))\in U
+            \Longrightarrow
+            H^{j}_{\{\varphi\geqq0\}}(F)_{x_1}=0
+            \ (\textcolor{red}{\forall} j\in\zz).
+        \]
+    \end{DFN}
+    微分方程式との関係は次の通り．ただし\(\cM=\cD_{X}/\cD_{X}P\)とおいた．
+    \[\vcenter{\xymatrix@C=36pt@R=20pt{
+      \txt{\(Pu=0\)の解}
+      \ar@{.>}[r]
+      \ar@{<->}[d]
+      &
+      \txt{\(x\)で\(\xi\)方向に一意に延長可能}
+      &
+      \ldots\txt{微分方程式論}\\
+      \Sol[X]{\cM}
+      \ar@{|->}[r]
+      &
+      \muS[](\Sol[X]{\cM})\not\ni (x;\xi)
+      \ar@{<=>}[u]
+      &
+      \ldots\txt{超局所層理論}
+    }}\]
+    %\(\Dompb(\kk_X)\ni F\mapsto \SS(F)\subset T^{\ast}X\)    
+    %超局所台を用いると，函数の臨界点を層係数に一般化することができる．
+    %\begin{DFN}
+    %    \begin{itemize}
+    %        \item \(x\in M\)が\(\varphi\colon M\to \rr\)の臨界点
+    %        であるとは\(d\varphi(x)=0\)となること．
+    %        \item \(x\in M\)が\(\varphi\colon M\to \rr\)の
+    %        \textcolor{brown}{\(F\)に関する}臨界点であるとは\(d\varphi(x)\in\muS[](F)\)となること．
+    %    \end{itemize}
+    %\end{DFN}
+    %\vspace{60pt}
+\end{frame}
+
+\begin{frame}
+
+  \frametitle{
+    超局所台の例：\(Z\coloneqq\{y\leqq0\}\subset\rr^2\)に
+    台を持つ定数層\(\kk_{\rr^2,Z}\)の場合
+  }
+  原点\((0,0)\)での余接ベクトル\(\xi_{0}=(0,1)\)を調べる．
+  \begin{columns}
+    \begin{column}{0.45\hsize}
+      \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.8]
+      \def\t{1}
+      \def\xmax{3.5}
+      \def\ymin{-3}
+      \def\ymax{3}
+      \def\s{1}
+
+      %------------------
+      % 塗りつぶし領域
+      %------------------
+
+      % 半近傍
+      \fill[blue!25] (-\xmax,0) rectangle (\xmax,\ymin);
+      %\draw[dashed, very thick] (-3,0) circle (1.5);
+      \fill[purple!25, domain=(-\t):(\t), samples=200]
+        (-\t, 0)
+        -- plot (\x, {-sqrt(\t*\t - (\x)*(\x))})
+        -- (\t, 0)
+        -- cycle;
+      \draw[dashed, very thick] (0,0) circle (\t);
+
+      \draw[->, >=stealth,ultra thick] (0,0)--(0,1.5) node[right]{\(\xi_0\)};
+
+      %------------------
+      % 軸・ラベル
+      %------------------
+      \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+      \draw[->,>=stealth] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+      \node at (\xmax-1,-\ymax+1) [below]{\(Z\)};
+      \node at (0.2,0) [below]{\(0\)};
+
+      \end{tikzpicture}
+        %\caption{\(\muS[](\kk_{\rr,[-1,\infty)})\)}
+        %\label{fig:not-gentle}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.45\hsize}
+      近傍\(U\)をとると
+      \[
+        H^{j}(U;\kk_{Z})=\kk
+      \]
+      であり，
+      \[
+        H^{j}(U\cap \left\{y <0\right\};\kk_{Z})=\kk
+      \]
+      なので
+      \[
+        (0;(0,1))\notin \muS[](\kk_{Z}).
+      \]
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+
+  \frametitle{
+    超局所台の例：\(Z\coloneqq\{y\leqq0\}\subset\rr^2\)に
+    台を持つ定数層\(\kk_{\rr^2,Z}\)の場合
+  }
+  原点\((0,0)\)での余接ベクトル\(\xi_{0}=(0,-1)\)を調べる．
+  \begin{columns}
+    \begin{column}{0.45\hsize}
+      \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.8]
+      \def\t{1}
+      \def\xmax{3.5}
+      \def\ymin{-3}
+      \def\ymax{3}
+      \def\s{1}
+
+      %------------------
+      % 塗りつぶし領域
+      %------------------
+
+      % 半近傍
+      \fill[blue!25] (-\xmax,0) rectangle (\xmax,\ymin);
+      %\draw[dashed, very thick] (-3,0) circle (1.5);
+      \fill[purple!25, domain=(-\t):(\t), samples=200]
+        (-\t, 0)
+        -- plot (\x, {sqrt(\t*\t - (\x)*(\x))})
+        -- (\t, 0)
+        -- cycle;
+      \draw[dashed, very thick] (0,0) circle (\t);
+
+      \draw[->, >=stealth,ultra thick] (0,0)--(0,-1.5) node[right]{\(\xi_0\)};
+
+      %------------------
+      % 軸・ラベル
+      %------------------
+      \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+      \draw[->,>=stealth] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+      \node at (\xmax-1,-\ymax+1) [below]{\(Z\)};
+      \node at (0.2,0) [below]{\(0\)};
+
+      \end{tikzpicture}
+        %\caption{\(\muS[](\kk_{\rr,[-1,\infty)})\)}
+        %\label{fig:not-gentle}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.45\hsize}
+      近傍\(U\)をとると
+      \[
+        H^{j}(U;\kk_{Z})=\kk
+      \]
+      であり，
+      \[
+        H^{j}(U\cap \left\{y >0\right\};\kk_{Z})=0
+      \]
+      なので
+      \[
+        (0;\xi_0)\in \muS[](\kk_{Z}).
+      \]
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}
+
+  \frametitle{
+    超局所台の例：\(Z\coloneqq\{y\leqq0\}\subset\rr^2\)に
+    台を持つ定数層\(\kk_{\rr^2,Z}\)の場合
+  }
+  他の方向は\(\muS[](\kk_{Z})\)に入らないので，
+  結局
+  \[
+    \muS[](\kk_{Z})=
+    \left(Z\times \left\{0\right\}\right)
+    \cup 
+    \left(
+      \left\{(x,0)\smid x\in\rr\right\}\times 
+      \left\{(0,\xi_2)\smid\xi_2\leqq0\right\}
+    \right)
+  \]
+  \begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}[scale=0.8]
+    \def\t{1}
+    \def\xmax{3.5}
+    \def\ymin{-3}
+    \def\ymax{3}
+    \def\s{1}
+
+    %------------------
+    % 塗りつぶし領域
+    %------------------
+
+    % 半近傍
+    \fill[blue!25] (-\xmax,0) rectangle (\xmax,\ymin);
+    %\draw[dashed, very thick] (-3,0) circle (1.5);
+    \draw[->, >=stealth,ultra thick] (-3,0)--(-3,-1);
+    \draw[->, >=stealth,ultra thick] (-2,0)--(-2,-1);
+    \draw[->, >=stealth,ultra thick] (-1,0)--(-1,-1);
+    \draw[->, >=stealth,ultra thick] (0,0)--(0,-1);
+    \draw[->, >=stealth,ultra thick] (1,0)--(1,-1);
+    \draw[->, >=stealth,ultra thick] (2,0)--(2,-1);
+    \draw[->, >=stealth,ultra thick] (3,0)--(3,-1);
+
+    %------------------
+    % 軸・ラベル
+    %------------------
+    \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+    \draw[->,>=stealth] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+    \node at (\xmax-1,-\ymax+1) [below]{\(Z\)};
+    \node at (0.2,0) [below]{\(0\)};
+
+    \end{tikzpicture}
+      %\caption{\(\muS[](\kk_{\rr,[-1,\infty)})\)}
+      %\label{fig:not-gentle}
+  \end{figure}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{
+    超局所台の例：区間に
+    台を持つ定数層の零延長
+  }
+  \begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}[scale=0.75]
+      \def\t{0.7}
+      \def\xmax{3.5}
+      \def\ymin{-3}
+      \def\ymax{3}
+
+      %------------------
+      % 境界（点線）
+      %------------------
+
+      % 折れ線
+      %\draw[ultra thick] (-1,3)--(-1,0);
+      \draw[ultra thick] (-1,0)--(3,0);
+      \draw[ultra thick] (-1,0)--(-1,3);
+      %------------------
+      % 軸
+      %------------------
+
+      \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(\rr\)};
+      \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(\conm[x]{\rr}\)};
+
+      % ラベル
+      \node at (0,-3.5) {\(\muS[](\kk_{\rr,{[-1,\infty)}})\)};
+      %\node at (1,0) [below]{\(1\)};
+      \node at (-1,0) [below]{\(-1\)};
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=0.75]
+      \def\t{0.7}
+      \def\xmax{3.5}
+      \def\ymin{-3}
+      \def\ymax{3}
+
+      %------------------
+      % 境界（点線）
+      %------------------
+
+      % 折れ線
+      %\draw[ultra thick] (-1,3)--(-1,0);
+      \draw[ultra thick] (-1,0)--(3,0);
+      \draw[ultra thick] (-1,0)--(-1,-3);
+      %------------------
+      % 軸
+      %------------------
+
+      \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(\rr\)};
+      \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(\conm[x]{\rr}\)};
+
+      % ラベル
+      \node at (0,-3.5) {\(\muS[](\kk_{\rr,{(-1,\infty)}})\)};
+      %\node at (1,0) [below]{\(1\)};
+      \node at (-1,0) [above]{\(-1\)};
+    \end{tikzpicture}
+    %\caption{\(\muS[](\kk_{\rr,[-1,\infty)})\)}
+    %\label{fig:not-gentle}
+  \end{figure}
+  境界で特異性が発生：閉集合では内向き，開集合では外向き余法ベクトル
+\end{frame}
+
+\begin{frame}\frametitle{打切り超局所台 --- \(k\)次までの特異性}
+    \begin{alertblock}{注意}
+        超局所台は，\textcolor{red}{すべての次数}のコホモロジーが延長できるか否かを判定する概念．
+    \end{alertblock}
+    \begin{alertblock}{問題点}
+      コホモロジーの次数に依存する伝播現象は超局所台\(\muS[](F)\)では
+      捉えられない．
+    \end{alertblock}
+    
+    そこで，超局所台を精密化することで次の定義を得る．
+    \begin{DFN}[{\cite[Definition 3.4]{KFS03a}}]
+        \textcolor{brown}{\(k\in\zz\)とする．}
+        \(p\notin \muS[\textcolor{brown}{k}](F)\)であるとは，
+        \(p\)の\(\cotb[M]\)における錐状開近傍\(U\)で，
+        任意の\(x_1\in \pi(U)\)と
+        \(x_1\)の近傍上で定義された実\(C^{1}\)函数\(\varphi\)に対し，
+        次をみたすものが存在することをいう．
+        \[
+            \varphi(x_1)=0,\ (x_1;d\varphi(x_1))\in U
+            \Longrightarrow
+            H^{j}_{\{\varphi\geqq0\}}(F)_{x_1}=0
+            \quad
+            (\textcolor{brown}{j\leqq k}).
+        \]
+    \end{DFN}
+\end{frame}
+\begin{frame}
+  \frametitle{
+    打切り超局所台の例：閉区間に
+    台を持つ定数層の零延長
+  }
+  \begin{itemize}
+    \item \(k\leqq-1\)のとき，\(\muS[k](\kk_{[-1,\infty)})=\varnothing\),
+    \item \(k\geqq0\)のとき，\(\muS[k](\kk_{[-1,\infty)})=\muS[](\kk_{[-1,\infty)})\).
+  \end{itemize}
+  \begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}[scale=0.75]
+      \def\t{0.7}
+      \def\xmax{3.5}
+      \def\ymin{-3}
+      \def\ymax{3}
+
+      %------------------
+      % 境界（点線）
+      %------------------
+
+      % 折れ線
+      %\draw[ultra thick] (-1,3)--(-1,0);
+      %\draw[ultra thick] (-1,0)--(3,0);
+      %\draw[ultra thick] (-1,0)--(-1,3);
+      %------------------
+      % 軸
+      %------------------
+
+      \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(\rr\)};
+      \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(\conm[x]{\rr}\)};
+
+      % ラベル
+      \node at (0,-3.5) {\(\muS[-1](\kk_{{[-1,\infty)}})\)};
+      %\node at (1,0) [below]{\(1\)};
+      \node at (-1,0) [below]{\(-1\)};
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=0.75]
+      \def\t{0.7}
+      \def\xmax{3.5}
+      \def\ymin{-3}
+      \def\ymax{3}
+
+      %------------------
+      % 境界（点線）
+      %------------------
+
+      % 折れ線
+      %\draw[ultra thick] (-1,3)--(-1,0);
+      \draw[ultra thick] (-1,0)--(3,0);
+      \draw[ultra thick] (-1,0)--(-1,3);
+      %------------------
+      % 軸
+      %------------------
+
+      \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(\rr\)};
+      \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(\conm[x]{\rr}\)};
+
+      % ラベル
+      \node at (0,-3.5) {\(\muS[0](\kk_{{[-1,\infty)}})\)};
+      %\node at (1,0) [below]{\(1\)};
+      \node at (-1,0) [below]{\(-1\)};
+    \end{tikzpicture}
+    %\caption{\(\muS[](\kk_{\rr,[-1,\infty)})\)}
+    %\label{fig:not-gentle}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{
+    打切り超局所台の例：開区間に
+    台を持つ定数層の零延長
+  }
+  \begin{itemize}
+    \item \(k\leqq-1\)のとき，\(\muS[k](\kk_{(-1,\infty)})=\varnothing\),
+    \item \(k=0\)のとき，\(\muS[k](\kk_{(-1,\infty)})=\supp(\kk_{(-1,\infty)})=[-1,\infty)\).
+    \item \(k\geqq1\)のとき，\(\muS[k](\kk_{(-1,\infty)})=\muS[](\kk_{(-1,\infty)})\).
+  \end{itemize}
+
+  \begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}[scale=0.5]
+      \def\t{0.7}
+      \def\xmax{3.5}
+      \def\ymin{-3}
+      \def\ymax{3}
+
+      %------------------
+      % 境界（点線）
+      %------------------
+
+      % 折れ線
+      %\draw[ultra thick] (-1,3)--(-1,0);
+      %\draw[ultra thick] (-1,0)--(3,0);
+      %\draw[ultra thick] (-1,0)--(-1,-3);
+      %------------------
+      % 軸
+      %------------------
+
+      \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(\rr\)};
+      \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(\conm[x]{\rr}\)};
+
+      % ラベル
+      \node at (0,-3.5) {\(\muS[-1](\kk_{{(-1,\infty)}})\)};
+      %\node at (1,0) [below]{\(1\)};
+      \node at (-1,0) [above]{\(-1\)};
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=0.5]
+      \def\t{0.7}
+      \def\xmax{3.5}
+      \def\ymin{-3}
+      \def\ymax{3}
+
+      %------------------
+      % 境界（点線）
+      %------------------
+
+      % 折れ線
+      %\draw[ultra thick] (-1,3)--(-1,0);
+      \draw[ultra thick] (-1,0)--(3,0);
+      %\draw[ultra thick] (-1,0)--(-1,-3);
+      %------------------
+      % 軸
+      %------------------
+
+      \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(\rr\)};
+      \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(\conm[x]{\rr}\)};
+
+      % ラベル
+      \node at (0,-3.5) {\(\muS[0](\kk_{{(-1,\infty)}})\)};
+      %\node at (1,0) [below]{\(1\)};
+      \node at (-1,0) [above]{\(-1\)};
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=0.5]
+      \def\t{0.7}
+      \def\xmax{3.5}
+      \def\ymin{-3}
+      \def\ymax{3}
+
+      %------------------
+      % 境界（点線）
+      %------------------
+
+      % 折れ線
+      %\draw[ultra thick] (-1,3)--(-1,0);
+      \draw[ultra thick] (-1,0)--(3,0);
+      \draw[ultra thick] (-1,0)--(-1,-3);
+      %------------------
+      % 軸
+      %------------------
+
+      \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(\rr\)};
+      \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(\conm[x]{\rr}\)};
+
+      % ラベル
+      \node at (0,-3.5) {\(\muS[1](\kk_{{(-1,\infty)}})\)};
+      %\node at (1,0) [below]{\(1\)};
+      \node at (-1,0) [above]{\(-1\)};
+    \end{tikzpicture}
+    %\caption{\(\muS[](\kk_{\rr,[-1,\infty)})\)}
+    %\label{fig:not-gentle}
+  \end{figure}
+\end{frame}
+
+\section{主結果}
+\begin{frame}\frametitle{接束の基本図式}
+    次の図式が基本的．
+    \[\vcenter{\xymatrix@C=22pt@R=26pt{
+        TM
+        \ar[rd]^-{\tau_M}
+        \ar[r]^-{f'}
+        &
+        M\pb[N] TN
+        %\ar@{}[dr]|\square
+        \ar[d]_-{}
+        \ar[r]^-{\mptan[f]}
+        &
+        TN
+        \ar[d]^-{\tau_N}
+        &
+        \\
+        &
+        M
+        \ar[r]^-{f}
+        %\ar@{}[dr]|\square
+        &
+        N.
+    }}\]
+\end{frame}
+\begin{frame}\frametitle{余接束の基本図式}
+    次の図式が基本的．
+    \[\vcenter{\xymatrix@C=22pt@R=26pt{
+        \cotb[M]
+        \ar[rd]^-{\pi_M}
+        &
+        M\pb[N] \cotb[N]
+        %\ar@{}[dr]|\square
+        \ar[d]_-{}
+        \ar[r]^-{\mpb[f]}
+        \ar[l]_-{\mdiff[f]}
+        &
+        \cotb[N]
+        \ar[d]^-{\pi_N}
+        \\
+        &
+        M
+        \ar[r]^-{f}
+        %\ar@{}[dr]|\square
+        &
+        N.
+    }}\]
+\end{frame}
+
+\begin{frame}
+    \frametitle{古典的なMorse理論（定数層係数）の結果}
+    \begin{itemize}
+      \item \(M\)：コンパクト\(C^\infty\)多様体．
+      \item \(M_{<t}\coloneqq\left\{x\in M\smid\psi(x)<t\right\}\)．
+    \end{itemize}
+
+    \begin{THM}
+        \(\psi\colon M\to \rr\)を\(a\leqq\psi(x)< b\)で
+        臨界値をとらない\(C^\infty\)関数とする．
+        このとき，
+        \[
+          H^j(M_{<b};\rr)\simarr H^j(M_{<a};\rr).
+          \quad (j\in\zz)
+        \]
+    \end{THM}
+
+    % 図を右寄せに配置（figure環境を使わず上下余白を削減）
+    \vspace{-0.3em}
+    \hfill
+    \begin{tikzpicture}[scale=0.5, >=stealth]
+
+      %------------------
+      % 領域の塗りつぶし (M_a および M_b)
+      %------------------
+      % 1. M_a (y < -0.4) の塗りつぶし（青）
+      \begin{scope}
+        \clip (-2.2, -2.7) rectangle (2.2, -0.4);
+        \fill[even odd rule, blue!25] (0,0) ellipse (1.6 and 2.6) (0,0) ellipse (0.6 and 1.0);
+      \end{scope}
+
+      % 2. M_b \ M_a (-0.4 < y < 0.4) の塗りつぶし（グリーン）
+      \begin{scope}
+        \clip (-2.2, -0.4) rectangle (2.2, 0.4);
+        \fill[even odd rule, teal!20] (0,0) ellipse (1.6 and 2.6) (0,0) ellipse (0.6 and 1.0);
+      \end{scope}
+
+      %------------------
+      % 立てたトーラスの輪郭
+      %------------------
+      \draw[thick] (0,0) ellipse (1.6 and 2.6); % 外側の輪郭
+      \draw[thick] (0,0) ellipse (0.6 and 1.0); % 内側の穴
+
+      % 赤道線（立体感）
+      \draw[gray!50, dashed] (-1.6, 0) arc (180:0:1.6 and 0.4);
+      \draw[gray!50] (-1.6, 0) arc (180:360:1.6 and 0.4);
+      \draw[gray!50, dashed] (-0.6, 0) arc (180:0:0.6 and 0.15);
+      \draw[gray!50] (-0.6, 0) arc (180:360:0.6 and 0.15);
+
+      %------------------
+      % 断面 (レベルセット y = a, y = b) の立体キャップ
+      %------------------
+      % y = a (-0.4) の断面
+      \draw[blue!80!black, thick, fill=blue!40, fill opacity=0.7] (-1.065, -0.4) ellipse (0.515 and 0.12);
+      \draw[blue!80!black, thick, fill=blue!40, fill opacity=0.7] (1.065, -0.4) ellipse (0.515 and 0.12);
+      \draw[blue!80!black, dashed] (-2.2, -0.4) -- (3.2, -0.4);
+
+      % y = b (0.4) の断面
+      \draw[teal!80!black, thick, fill=teal!40, fill opacity=0.7] (-1.065, 0.4) ellipse (0.515 and 0.12);
+      \draw[teal!80!black, thick, fill=teal!40, fill opacity=0.7] (1.065, 0.4) ellipse (0.515 and 0.12);
+      \draw[teal!80!black, dashed] (-2.2, 0.4) -- (3.2, 0.4);
+
+      %------------------
+      % 臨界点 (Critical Points)
+      %------------------
+      \coordinate (p0) at (0, -2.6);
+      \coordinate (p1) at (0, -1.0);
+      \coordinate (p2) at (0, 1.0);
+      \coordinate (p3) at (0, 2.6);
+
+      \draw[gray!40, dashed] (-2.2, -2.6) -- (3.2, -2.6);
+      \draw[gray!40, dashed] (-2.2, -1.0) -- (3.2, -1.0);
+      \draw[gray!40, dashed] (-2.2, 1.0) -- (3.2, 1.0);
+      \draw[gray!40, dashed] (-2.2, 2.6) -- (3.2, 2.6);
+
+      \fill[red!70!black] (p0) circle (2.5pt);
+      \fill[red!70!black] (p1) circle (2.5pt);
+      \fill[red!70!black] (p2) circle (2.5pt);
+      \fill[red!70!black] (p3) circle (2.5pt);
+
+      %------------------
+      % 勾配流の矢印と領域ラベル
+      %------------------
+      \draw[->, very thick, teal!80!black] (-1.1, -0.25) -- (-1.1, 0.25);
+      \draw[->, very thick, teal!80!black] (1.1, -0.25) -- (1.1, 0.25);
+
+      \node[teal!80!black, font=\small] at (-2.8, -0.3) {$M_{<b}$};
+      \node[blue!80!black, font=\small] at (-2.0, -1.6) {$M_{<a}$};
+
+      %------------------
+      % 高さ軸 (psi軸)
+      %------------------
+      \draw[->, thick] (3.2, -3.0) -- (3.2, 3.0) node[right] {$\psi$};
+      
+      \node[blue!80!black, right, font=\small] at (3.2, -0.4) {$a$};
+      \node[teal!80!black, right, font=\small] at (3.2, 0.4) {$b$};
+
+    \end{tikzpicture}
+    \hspace*{3em} % 右端の配置微調整
+
+    \vspace{-1.2em}
+    これは層係数コホモロジーに一般化できることが知られている．
+\end{frame}%\section{主結果}
+\begin{frame}
+    \frametitle{主結果１の元の主張}
+    設定は次のとおり．
+    \begin{itemize}
+        \item \(M\): \(C^{\infty}\)多様体．
+        \item \(F\in\Dompb(\kk_{M})\)（\(M\)上の層の複体）.
+        \item \(\psi\colon M\to \rr\)：\(C^1\)級函数で
+        \(\supp(F)\)上固有．
+    \end{itemize}
+    \begin{THM}[超局所Morseの補題 {\cite{KS90}}]
+        \(a\leqq\psi(x)< b\)ならば
+        \((x;d\psi(x))\notin\muS[](F)\)であるとする．
+        このとき制限射\[
+            H^{j}(M_{<b};F)\longrightarrow H^{j}(M_{<a};F)
+        \]はすべての\(j\in\zz\)について同型である．
+    \end{THM}    
+    これを\(\muS[k](F)\)を用いて拡張したのが次の主結果１．
+\end{frame}
+
+\begin{frame}
+    \frametitle{主結果１}
+    設定は先ほどと同じ．
+    \begin{itemize}
+        \item \(M\): \(C^{\infty}\)多様体，
+        \item \(F\in\Dompb(\kk_{M})\)（\(M\)上の層の複体），
+        \item \(\psi\colon M\to \rr\)：\(C^1\)級函数で
+        \(\supp(F)\)上固有．
+    \end{itemize}
+    \begin{THM}[O., 打切り版超局所Morseの補題]
+        \textcolor{brown}{\(k\in\zz\)とする．}
+        \(a\leqq\psi(x)< b\)ならば
+        \((x;d\psi(x))\notin\muS[\textcolor{brown}{k}](F)\)であるとする．
+        このとき制限射\[
+            H^{j}(M_{<b};F)\longrightarrow H^{j}(M_{<a};F)
+        \]は\textcolor{brown}{\(j<k\)ならば同型}であり，
+        \textcolor{brown}{\(j=k\)ならば単射}である．
+    \end{THM}    
+    \(k\gg0\)とすれば，元の主張が復元される．
+
+    ひとつの多様体だけでなく，多様体間の射に関する相対的な主張も得た．
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{主結果１（相対版）の元の主張}
+  \begin{columns}
+    \begin{column}{0.7\hsize}
+      \begin{itemize}
+        \item \(f\colon M\to N\)：多様体の射，
+        \quad\(\varphi\colon M\to \rr\)：\(C^{1}\)級函数．
+        \item \(M_{<t}\coloneqq \varphi^{-1}((-\infty,t))\)，\quad
+        \(M_{\leqq t}\coloneqq \varphi^{-1}((-\infty,t])\).
+        \item \(\iota_{t}\colon M_{<t}\hookrightarrow M\)，
+        \quad\(f_{t}=f\circ \iota_{t}\)．
+        \item \(F\in\Dompb(M)\)で
+        \(f_{t}\colon \supp(F)\cap \overline{M_{<t}}\to N\)は固有（\(t\in\rr\)）．
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.2\hsize}
+      \begin{tikzcd}
+        M \arrow[r,"f"] & N \\
+        M_{<t}\arrow[ru,"f_t"']\arrow[u,hookrightarrow,"\iota_t"]
+      \end{tikzcd}
+    \end{column}
+  \end{columns}
+  \begin{THM}[相対版超局所Morseの補題 {\cite{KS90}}]
+    \(t_{0}\in\rr\)とする．
+    \(x\in M\setminus M_{\leqq t_{0}}\)に対し，
+    次が成り立つとする（\(\mdiff[f]\)は微分の転置から定まる射）．
+    \[
+      (x;d\varphi(x))\notin \left(
+        \muS[](F)+ \mdiff[f]\left(
+          M\pb[N]\cotb[N]
+        \right)
+      \right).
+    \]
+    このとき，任意の\(t>t_{\circ}\)に対して，
+    次の層の射は\(j\in\zz\)に対し同型．
+    \[
+      \Rder[j]{f_{\ast}}F
+      \to
+      \Rder[j]{{f_{t}}_{\ast}}\iota^{-1}_{t}F.
+    \]
+  \end{THM}    
+  これも\(\muS[k](F)\)を用いて拡張した.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{主結果１ --- 相対版超局所Morseの補題（打切り版）}
+  %設定は次のとおり．
+  \begin{columns}
+    \begin{column}{0.7\hsize}
+      \begin{itemize}
+        \item \(f\colon M\to N\)：多様体の射，
+        \quad\(\varphi\colon M\to \rr\)：\(C^{1}\)級函数．
+        \item \(M_{<t}\coloneqq \varphi^{-1}((-\infty,t))\)，\quad
+        \(M_{\leqq t}\coloneqq \varphi^{-1}((-\infty,t])\).
+        \item \(\iota_{t}\colon M_{<t}\hookrightarrow M\)，
+        \quad\(f_{t}=f\circ \iota_{t}\)．
+        \item \(F\in\Dompb(M)\)で
+        \(f_{t}\colon \supp(F)\cap \overline{M_{<t}}\to N\)は固有（\(t\in\rr\)）．
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.2\hsize}
+      \begin{tikzcd}
+        M \arrow[r,"f"] & N \\
+        M_{<t}\arrow[ru,"f_t"']\arrow[u,hookrightarrow,"\iota_t"]
+      \end{tikzcd}
+    \end{column}
+  \end{columns}
+  \begin{THM}[O., 相対版打切り超局所Morseの補題]
+    \(\textcolor{brown}{k\in\zz}\)とし\(t_{0}\in\rr\)とする．
+    \(x\in M\setminus M_{\leqq t_{0}}\)に対し，
+    次が成り立つとする．\[
+        (x;d\varphi(x))\notin \left(
+          \muS[\textcolor{brown}{k}](F)+ \mdiff[f]\left(
+            M\pb[N]\cotb[N]
+          \right)
+        \right).
+      \]
+    このとき，任意の\(t>t_{\circ}\)に対して，
+    次の層の射は\textcolor{brown}{\(j<k\)ならば同型}，\textcolor{brown}{\(j=k\)ならば単射}．
+    \[
+      \Rder[j]{f_{\ast}}F
+      \to
+      \Rder[j]{{f_{t}}_{\ast}}\iota^{-1}_{t}F.
+    \]
+  \end{THM}
+\end{frame}
+\begin{frame}
+  \frametitle{主結果１の相対版から絶対版への帰着}
+  \(N=\pt\)（1点）のとき，\(f=a_M\colon M\to \pt\)に関する順像が\[
+    \Rder[j]{f_{\ast}}F=H^{j}(M;F),
+    \quad
+    \Rder[j]{{f_{t}}_{\ast}}\iota^{-1}_{t}G
+    =H^{j}(Y_{t};F)
+  \]
+  であることに注意すると，通常の層係数Morseの補題が得られる．
+  \begin{THM}[O., 打切り版超局所Morseの補題]
+    \textcolor{brown}{\(k\in\zz\)とする．}
+    \(a\leqq\psi(x)< b\)ならば
+    \(d\psi(x)\notin\muS[\textcolor{brown}{k}](F)\)であるとする．
+    このとき制限射\[
+        H^{j}(M_b;F)\longrightarrow H^{j}(M_a;F)
+    \]は\textcolor{brown}{\(j<k\)ならば同型}であり，
+    \textcolor{brown}{\(j=k\)ならば単射}である．
+    \end{THM}    
+    主結果１はもっと一般の場合に成り立つ，主結果２から従う．
+\end{frame}
+
+\begin{frame}
+  \frametitle{単射は「接続の一意性」}
+  \begin{THM}[Holmgrenの一意性定理 (例えば{\cite[Theorem 8.6.5]{Hor90}})]
+    \(u\)を\(X\)上で（実解析係数）線形偏微分方程式\(Pu=0\)をみたす超函数とする．
+    \(P\)に関する非特性\(C^1\)曲面の近傍を考える．
+    曲面の片側において\(u=0\)ならば，近傍全体で\(u=0\)である．
+  \end{THM}
+  すなわち，初期面が\(P\)に関して非特性的なら，
+  \(Pu=0\)の局所解は，あったとすればただ一つ！
+  
+  層係数コホモロジーの言葉で言うと，
+  超函数解の層\(F=\RHOM_{\cD_{X}}(\cM,\cB_{M})\)に対し，
+  \(x\in X\)の近くで
+  \[
+    H^{0}(B;F)\to H^{0}(B\cap \left\{\varphi<0\right\};F)
+  \]
+  が単射ということ．（\(B\)は\(x\)の開近傍，\(\varphi\)は近傍上の\(C^{1}\)函数）
+
+  打切り超局所台の言葉で言うと，
+  \[
+    \muS[0](F)\subset \Char(\cM)\cap \cotb[M].
+  \]
+  ということ（我々の主結果１から\textcolor{red}{一意性定理を大域化}できる）．
+\end{frame}
+
+\begin{frame}
+    \frametitle{主結果２の元の結果}
+    %主結果２は次のオリジナルの結果を打切り版に精密化したもの．
+  \begin{THM}[非特性変形補題 {\cite{KS90}}]
+    \(X\)をハウスドルフ空間とする．
+    \(F\in\Dompl(\kk_X)\)とし，
+    \(\left(U_{t}\right)_{t\in\rr}\)を\(X\)の開集合の族とする．
+    %\(k\in\zz\)とする．
+    \(
+      Z_{s}\coloneqq \bigcap_{t>s}\overline{U_t\setminus U_s}\ (s\in\rr)
+    \)とおく．
+    次を仮定する．%\vspace{-8pt}
+    \begin{enumerate}[(i)]
+      \setlength{\leftskip}{10pt}
+      \item \label{item:nonchar1}
+      任意の\(t\in\rr\)に対し\(U_{t}=\bigcup_{s<t}U_{s}\)である．
+      \item \label{item:nonchar2}
+      任意の実数\(s\leqq t\)に対し\(
+        \overline{U_{t}\setminus U_{s}}\cap \supp{F}
+      \)はコンパクトである．
+      \item \label{item:nonchar3}
+      任意の実数\(s\leqq t\)と任意の点\(x\in Z_{s}\setminus U_{t}\)に対し，
+      \(
+        (H^{j}_{X\setminus U_{t}}(F))_{x}=0\quad (j\in\zz). 
+      \)
+    \end{enumerate}
+    このとき，任意の\(t\in\rr\)とすべての\(j\in\zz\)に対し，
+    次の射は同型である．\[
+      H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
+      \to
+      H^{j}\left(U_{t};F\right).
+    \]
+  \end{THM}
+\end{frame}
+
+\begin{frame}
+    \frametitle{期待される打切り版}
+  \begin{HM}[打切り版？非特性変形補題]
+    \(X\)をハウスドルフ空間とする．
+    \(F\in\Dompl(\kk_X)\)とし，
+    \(\left(U_{t}\right)_{t\in\rr}\)を\(X\)の開集合の族とする．
+    \textcolor{brown}{\(k\in\zz\)とする．}
+    \(
+      Z_{s}\coloneqq \bigcap_{t>s}\overline{U_t\setminus U_s}\ (s\in\rr)
+    \)とおく．
+    次を仮定する．%\vspace{-8pt}
+    \begin{enumerate}[(i)]
+      \setlength{\leftskip}{10pt}
+      \item \label{item:t-nonchar1}
+      任意の\(t\in\rr\)に対し\(U_{t}=\bigcup_{s<t}U_{s}\)である．
+      \item \label{item:t-nonchar2}
+      任意の実数\(s\leqq t\)に対し\(
+        \overline{U_{t}\setminus U_{s}}\cap \supp{F}
+      \)はコンパクトである．
+      \item \label{item:t-nonchar3}
+      任意の実数\(s\leqq t\)と
+      任意の点\(x\in Z_{s}\setminus U_{t}\)に対し，
+      \textcolor{brown}{\(j\leqq k\)ならば}
+      \(
+        (H^{j}_{X\setminus U_{t}}(F))_{x}=0. 
+      \)
+    \end{enumerate}
+    このとき，任意の\(t\in\rr\)に対し，
+    次の射は\textcolor{brown}{\(j<k\)ならば同型}であり，
+    \textcolor{brown}{\(j=k\)ならば単射}である．
+    \[
+      H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
+      \to
+      H^{j}\left(U_{t};F\right).
+    \]
+  \end{HM}
+\end{frame}
+
+\begin{frame}
+  \frametitle{うまくいかない例}
+  \begin{alertblock}{問題点}
+    条件\eqref{item:t-nonchar1}--\eqref{item:t-nonchar3}を
+    みたしているのにうまくいかないことがある．
+  \end{alertblock}
+    \(X=\rr^2\)とする．実数\(t\)に対し函数\(\varphi_{t}\)を次で定める．
+    \[
+      \varphi_{t}(x)\coloneqq\begin{cases}
+        \max\left(0,t(2-\left|x\right|)\right)&(\left|x\right| < 2),\\
+        0& (\left|x\right|\geqq 2).
+      \end{cases}
+    \]
+    このとき\(X\)の開集合\(U_{t}\)を
+    \(
+      U_{t}\coloneqq
+      \left\{
+        (x,y)\in X;\ y<\varphi_{t}(x)
+      \right\}
+    \)とする．次ページのように層\(\kk_{Z}\)を定めると，
+    \((U_{t})_{t}\)と\(\kk_{Z}\)は\eqref{item:t-nonchar1}--\eqref{item:t-nonchar3}をみたす．
+      \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.50]
+        \def\t{0.7}
+        \def\u{1.4}
+        \def\xmax{3.5}
+        \def\ymin{-1}
+        \def\ymax{3.3}
+
+        %------------------
+        % 塗りつぶし
+        %------------------
+
+        % y<0 の部分
+        \fill[green!30] (-\xmax,0) rectangle (\xmax,\ymin);
+        \fill[blue!25] (-\xmax,0) rectangle (\xmax,\ymin);
+
+        % 三角形部分 y < t(2-|x|)
+        \fill[green!30]
+          (-2,0) -- (0,{2*\u}) -- (2,0) -- cycle;
+
+        \fill[blue!25]
+          (-2,0) -- (0,{2*\t}) -- (2,0) -- cycle;
+
+
+
+        %------------------
+        % 境界（点線）
+        %------------------
+
+        % 折れ線
+        \draw[very thick,dashed] (-2,0)--(0,{2*\u})--(2,0);
+        % 折れ線
+        \draw[very thick,dashed] (-2,0)--(0,{2*\t})--(2,0);
+
+        % x軸（|x|>=2）
+        \draw[very thick,dashed] (-\xmax,0)--(-2,0);
+        \draw[very thick,dashed] (2,0)--(\xmax,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+        % ラベル
+        \node at (2.4,0.8) {\(U_t\)};
+      \end{tikzpicture}
+      \begin{tikzpicture}[scale=0.50]
+        \def\t{0.7}
+        \def\xmax{3.5}
+        \def\ymin{-1}
+        \def\ymax{3}
+
+        %------------------
+        % 境界（点線）
+        %------------------
+
+        % 折れ線
+        \draw[ultra thick] (-2,0)--(0,{2*\t})--(2,0);
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+        % ラベル
+        \node at (1.4,1.2) {\(Z_t\)};
+      \end{tikzpicture}
+      %\caption{example \eqref{item:not-gentle}}
+      %\label{fig:not-gentle}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{うまくいかない例（続）}
+    \(X\)の閉集合\(Z\)を次で定める．
+    \[
+      Z\coloneqq \left\{(x,y)\in X;\ (x+2)^{2}+(y-1)^{2}=1\right\}\setminus \left\{(-1,0)\right\}. 
+    \]
+    \(Z\)上の定数層の\(X\)への零による延長\(\kk_{Z}\)を考える．
+
+    \(j\leqq0\)のとき，
+    任意の実数\(s\leqq t\)と任意の点\(x\in Z_{s}\setminus U_{t}\)に対し\(
+      H^{j}_{X\setminus U_{t}}(\kk_{Z})_{x}=0
+    \). 
+
+    しかし\(
+      H^{0}(U_{1};\kk_{Z})=\kk
+      \to 
+      0 = H^{0}(U_{0};\kk_{Z})
+    \)は単射ではない．
+      \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.50]
+        \def\t{0.9}
+        \def\xmax{3.5}
+        \def\ymin{-1}
+        \def\ymax{3}
+
+        %------------------
+        % 塗りつぶし
+        %------------------
+
+        % y<0 の部分
+        \fill[blue!25] (-\xmax,0) rectangle (\xmax,\ymin);
+
+        % 三角形部分 y < t(2-|x|)
+        \fill[blue!25]
+          (-2,0) -- (0,{2*\t}) -- (2,0) -- cycle;
+
+        %------------------
+        % 境界（点線）
+        %------------------
+        % 折れ線
+        \draw[ultra thick] (-2,0)--(0,{2*\t})--(2,0);
+        
+        % 折れ線
+        \draw[very thick,dashed] (-2,0)--(0,{2*\t})--(2,0);
+
+        % x軸（|x|>=2）
+        \draw[very thick,dashed] (-\xmax,0)--(-2,0);
+        \draw[very thick,dashed] (2,0)--(\xmax,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+        % 円
+        \def\s{1} % 半径 t > 0
+        \draw[thick] (-2,1) circle (\s);
+        \fill[black!0](-2,0) circle (0.1);
+        \draw (-2,0) circle (0.1);
+
+        % ラベル
+        \node at (2.2,0.8) {\(Z_t\)};
+        \node at (2.4,-0.6) {\(U_t\)};
+        \node at (-1.4,2.4) {\(Z\)};
+      \end{tikzpicture}
+      %\caption{example \eqref{item:not-gentle}}
+      %\label{fig:not-gentle}
+    \end{figure}
+    \begin{alertblock}{工夫}
+      「端点が移動する」という条件を付け加える．
+    \end{alertblock} 
+\end{frame}
+
+\begin{frame}
+    \frametitle{主結果２}
+  \begin{THM}[大柴, 打切り版非特性変形補題]
+    \(X\)をハウスドルフ空間とする．
+    \(F\in\Dompl(\kk_X)\)とし，
+    \(\left(U_{t}\right)_{t\in\rr}\)を\(X\)の開集合の族とする．
+    \textcolor{brown}{\(k\in\zz\)とする．}
+    \(
+      Z_{s}\coloneqq \bigcap_{t>s}\overline{U_t\setminus U_s}\ (s\in\rr)
+    \)とおく．
+    次を仮定する．%\vspace{-8pt}
+    \begin{enumerate}[(i)]
+      \setlength{\leftskip}{10pt}
+      \item \label{item:t-nonchar1}
+      任意の\(t\in\rr\)に対し\(U_{t}=\bigcup_{s<t}U_{s}\)である．
+      \item \label{item:t-nonchar2}
+      任意の実数\(s\leqq t\)に対し\(
+        \overline{U_{t}\setminus U_{s}}\cap \supp{F}
+      \)はコンパクトである．
+      \item \label{item:t-nonchar3}
+      任意の実数\textcolor{brown}{\(s\in\rr\)}と
+      任意の点\(x\in Z_{s}\setminus U_{\textcolor{brown}{s}}\)に対し，
+      \textcolor{brown}{\(j\leqq k\)ならば}
+      \(
+        (H^{j}_{X\setminus U_{s}}(F))_{x}=0. 
+      \)
+      \textcolor{darkred}{\item \label{item:t-nonchar4} 
+      任意の実数\(s< t\)に対し，\(Z_s\subset U_{t}\)が成り立つ．}
+    \end{enumerate}
+    このとき，任意の\(t\in\rr\)に対し，
+    次の射は\textcolor{brown}{\(j<k\)ならば同型}であり，
+    \textcolor{darkred}{\(j=k\)ならば単射}である．
+    \[
+      H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
+      \to
+      H^{j}\left(U_{t};F\right).
+    \]
+  \end{THM}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{仮定 (iv) をみたす例}
+    \begin{center}
+    \eqref{item:t-nonchar4}：任意の実数\(s< t\)に対し\(Z_s\subset U_{t}\)．
+    \end{center}
+    実数\(t\)に対し函数\(\varphi_{t}\)を次で定める．
+    \(t\leqq 0\)のとき\(\varphi_{t}(x)\equiv 0\)とする．
+    
+    \(t> 0\)のときは以下のように定める．\[
+      \varphi_{t}(x)\coloneqq\begin{cases}
+        \sqrt{t^{2}-x^{2}} & (\left|x\right|<\textcolor{black}{t}),\\
+        0&(\left|x\right|\geqq \textcolor{black}{t}).
+      \end{cases}
+    \]
+    このとき，\(\rr^2\)の開集合\(U_{t}\)を 
+    \(
+      U_{t}\coloneqq
+      \left\{(x,y)\in X;\ y<\varphi_{t}(x)\right\}
+    \)で定めると\eqref{item:t-nonchar4}をみたす．
+    \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.6]
+        \def\t{1.5}
+        \def\s{1}
+
+        %------------------
+        % 塗りつぶし領域
+        %------------------
+
+        % 半円の下側 y < sqrt(t^2 - x^2)
+        \fill[green!25,domain=-\t:\t,samples=200]
+          (-\t,0)
+          -- plot(\x,{sqrt(\t*\t-\x*\x)})
+          -- (\t,0)
+          -- cycle;
+        \draw[dashed, very thick](0,0) ellipse (1.5 and 1.5);
+
+        % 半円の下側 y < sqrt(s^2 - x^2)
+        \fill[blue!25,domain=-\s:\s,samples=200]
+          (-\s,0)
+          -- plot(\x,{sqrt(\s*\s-\x*\x)})
+          -- (\s,0)
+          -- cycle;
+        \draw[dashed, very thick](0,0) ellipse (1 and 1);
+
+        % y < 0 の部分
+        \fill[blue!25] (-3.5,0) rectangle (3.5,-2);
+
+        %------------------
+        % 境界
+        %------------------
+
+        % 半円（上半分）
+        %\draw[thick,domain=-\t:\t,samples=300]
+        %  plot(\x,{sqrt(\t*\t-\x*\x)});
+
+        % x軸（|x|>=t の境界として）
+        \draw[dashed, very thick] (-3.5,0)--(-\s,0);
+        \draw[dashed, very thick] (\s,0)--(3.5,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-3.5,0)--(3.5,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,-2)--(0,2) node[right]{\(y\)};
+
+        % ラベル
+        \node at (2.3,-0.6) {\(U_t\)};
+      \end{tikzpicture}
+      \begin{tikzpicture}[scale=0.6]
+        \def\t{1}
+
+        %------------------
+        % 塗りつぶし領域
+        %------------------
+
+        % 半円の下側 y < sqrt(t^2 - x^2)
+        \fill[black!0,domain=-\t:\t,samples=200]
+          (-\t,0)
+          -- plot(\x,{sqrt(\t*\t-\x*\x)})
+          -- (\t,0)
+          -- cycle;
+        \draw[ultra thick](0,0) ellipse (1 and 1);
+
+        % y < 0 の部分
+        \fill[black!0] (-3.5,0) rectangle (3.5,-2);
+
+        %------------------
+        % 境界
+        %------------------
+
+        % 半円（上半分）
+        %\draw[thick,domain=-\t:\t,samples=300]
+        %  plot(\x,{sqrt(\t*\t-\x*\x)});
+
+        % x軸（|x|>=t の境界として）
+        %\draw[dashed, very thick] (-3.5,0)--(-\t,0);
+        %\draw[dashed, very thick] (\t,0)--(3.5,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-3.5,0)--(3.5,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,-2)--(0,2) node[right]{\(y\)};
+
+        % ラベル
+        \node at (1.6,0.6) {\(Z_t\)};
+      \end{tikzpicture}
+      %\caption{example \eqref{item:gentle2}}
+      %\label{fig:gentle2}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{主結果２（再掲）}
+  \begin{THM}[大柴, 打切り版非特性変形補題]
+    \(X\)をハウスドルフ空間とする．
+    \(F\in\Dompl(\kk_X)\)とし，
+    \(\left(U_{t}\right)_{t\in\rr}\)を\(X\)の開集合の族とする．
+    \textcolor{brown}{\(k\in\zz\)とする．}
+    \(
+      Z_{s}\coloneqq \bigcap_{t>s}\overline{U_t\setminus U_s}\ (s\in\rr)
+    \)とおく．
+    次を仮定する．%\vspace{-8pt}
+    \begin{enumerate}[(i)]
+      \setlength{\leftskip}{10pt}
+      \item \label{item:t-nonchar1}
+      任意の\(t\in\rr\)に対し\(U_{t}=\bigcup_{s<t}U_{s}\)である．
+      \item \label{item:t-nonchar2}
+      任意の実数\(s\leqq t\)に対し\(
+        \overline{U_{t}\setminus U_{s}}\cap \supp{F}
+      \)はコンパクトである．
+      \item \label{item:t-nonchar3}
+      任意の実数\textcolor{brown}{\(s\in\rr\)}と
+      任意の点\(x\in Z_{s}\setminus U_{\textcolor{brown}{s}}\)に対し，
+      \textcolor{brown}{\(j\leqq k\)ならば}
+      \(
+        (H^{j}_{X\setminus U_{s}}(F))_{x}=0. 
+      \)
+      \textcolor{darkred}{\item \label{item:t-nonchar4} 
+      任意の実数\(s< t\)に対し，\(Z_s\subset U_{t}\)が成り立つ．}
+    \end{enumerate}
+    このとき，任意の\(t\in\rr\)に対し，
+    次の射は\textcolor{brown}{\(j<k\)ならば同型}であり，
+    \textcolor{darkred}{\(j=k\)ならば単射}である．
+    \[
+      H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
+      \to
+      H^{j}\left(U_{t};F\right).
+    \]
+  \end{THM}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{まとめ}
+    \[\vcenter{\xymatrix@C=36pt@R=10pt{
+        \txt{\(\muS[](F)\)\\
+        \cite{KS82}}
+        %\ar[dd]
+        &
+        \txt{超局所Morseの補題\\
+        \cite{KS90}\\\(H^{j}(M_b;F)\cong H^{j}(M_a;F)\)}
+        %\ar[dd]
+        &
+        \txt{非特性変形補題\\
+        \cite{KS90}\\
+        \(H^{j}\left(\bigcup\limits_{s\in\rr}U_{s};F\right)
+        \cong
+        H^{j}\left(U_{t};F\right)\)}
+        %\ar[dd]
+        \\
+        %\ar[r] 
+        &
+        &
+        %\ar[l]
+        \\
+        \txt{\(\muS[k](F)\)\\
+        \cite{KFS03a}}
+        &
+        \txt{打切り超局所Morseの補題\\
+        主結果１\\
+        \(H^{j}(M_b;F)\to H^{j}(M_a;F)\)\\
+        \(j<k\)で同型，\(j=k\)で単射}
+        &\txt{打切り非特性変形補題\\主結果２\\\(
+        H^{j}\left(\bigcup\limits_{s\in\rr}U_{s};F\right)
+        \to
+        H^{j}\left(U_{t};F\right)\)\\\(
+        j<k\)で同型，\(j=k\)で単射}
+        }}\]
+    \vspace{5pt}
+    \begin{center}
+      結果：層のコホモロジーの延長可能性を次数に関して精密化した．
+      さらに相対化もした．
+    \end{center}
+
+\end{frame}
+
+\appendix
+\section*{参考文献}
+
+\begin{frame}[allowframebreaks]{参考文献}
+  \begin{thebibliography}{90}\beamertemplatetextbibitems
+  \bibitem[FM07]{FM07} Teresa Monteiro Fernandes, Ana Rita Martins. 
+  \textit{Truncated Microsupport and Hyperbolic Inequalities}, 
+  Nagoya Mathematical Journal, 2007, Vol.\ 185, pp.63--91. 
+  \bibitem[GKS12]{GKS12} St\'ephane Guillermou, 
+  Masaki Kashiwara, Pierre Schapira, 
+  \textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
+  Duke. Math. J. 161, No. 2, pp.201--245, 2012.  
+  \bibitem[Hor90]{Hor90} Lars H\"ormander, 
+  \textit{The Analysis of Linear Pertial Differential Operators I}, Second Edition,
+  Grundlehren der Mathematischen Wissenschaften, 256, Springer, 1989.
+  \bibitem[KFS03a]{KFS03a} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
+  \textit{Truncated Microsupport and Holomorphic Solutions 
+  of \(D\)-modules}, 
+  Ann. Scient. \'Ec. Norm. Sup., s\'erie 4, tome 36, 
+  pp.583--399, 2003.
+  \bibitem[KFS03b]{KFS03b} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
+  \textit{Involutivity of Truncated microsupports}, 
+  Bull. Soc. math. France, 131 (2), 2003, 
+  pp.259--266.
+  \bibitem[KS82]{KS82} Masaki Kashiwara and Pierre Schapira,
+  \textit{Micro-support des faisceaux: applications 
+  aux modules diff{\'e}rentiels,}
+  C.~R.~Acad.\ Sci.\ Paris s{\'e}rie I Math 295 8, 487--490 France (1982).
+  \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
+  \textit{Sheaves on Manifolds}, 
+  Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+  \bibitem[Sato69]{Sato69} Mikio Sato, 
+  \textit{Hyperfuncitons and 
+  Partial Differential equations}, 
+  Proc. Int. Conf. on Functional Analysis, Tokyo, 1969.
+  \bibitem[Sato70]{Sato70} Mikio Sato, 
+  \textit{Regularity of Hyperfunciton Solutions of 
+  Partial Differential equations}, 
+  Actes, Congres intern. Math., 
+  Tome 2, pp.785--794, 1970.
+\end{thebibliography}
+\end{frame}
+
+\begin{frame}
+  \frametitle{主結果１ 相対版（再掲）}
+  %設定は次のとおり．
+  \begin{itemize}
+    \item \(f\colon M\to N\)：多様体の射，\quad
+    \(\varphi\colon M\to \rr\)：\(C^{1}\)級函数
+    \item \(M_{t}\coloneqq \varphi^{-1}((-\infty,t))\)，\quad
+    \(\widetilde{M}_{t}\coloneqq \varphi^{-1}((-\infty,t])\)
+    \item \(\iota_{t}\colon M_{t}\hookrightarrow Y\)，
+    \quad\(f_{t}=f\circ \iota_{t}\)．
+    \item \(F\in\Dompb(M)\)で
+    \(f_{t}\colon \supp(F)\cap \overline{M_t}\to N\)はすべての\(t\in\rr\)に対し固有．
+  \end{itemize}
+  \begin{THM}[O., 相対版打切り超局所Morseの補題]
+    \(\textcolor{brown}{k\in\zz}\)とし\(t_{0}\in\rr\)とする．
+    \(x\in M\setminus \widetilde{M}_{t_{0}}\)に対し，
+    次が成り立つとする．\[
+        d\varphi(x)\notin \left(
+          \muS[\textcolor{brown}{k}](F)+ \mdiff[f]\left(
+            M\pb[N]\cotb[N]
+          \right)
+        \right).
+      \]
+    このとき，任意の\(t>t_{\circ}\)に対して，
+    次の層の射は\textcolor{brown}{\(j<k\)ならば同型}，\textcolor{brown}{\(j=k\)ならば単射}．
+    \[
+      \Rder[j]{f_{\ast}}F
+      \to
+      \Rder[j]{{f_{t}}_{\ast}}\iota^{-1}_{t}F.
+    \]
+  \end{THM}
+\end{frame}
+
+\begin{frame}
+  \frametitle{主結果１の証明の概要 (1/3)}
+  まず\(f\colon M\to N\)を次のように分解する．
+  \[
+    \xymatrix@C=30pt@R=30pt{
+    M
+      \ar[r]^-{\tilde{f}=(f,\varphi)}
+      \ar@{}[rd]|\square
+    &
+    N\times\rr
+      \ar[r]^-{q}
+    &
+    N\\
+    M_{t}
+      \ar@{^(->}[u]^-{\iota_t}
+      \ar[r]^-{\hat{f}_{t}}
+    &
+    N\times (-\infty,t). 
+      \ar@{^(->}[u]_-{i_{t}}
+      \ar[ur]_-{q_{t}}
+    &
+  }
+  \]
+  \(\widetilde{F}\coloneqq \Rder[]\tilde{f}_{\ast}F\)とおくと
+  \[
+    \Rder[j]{f_{\ast}}F
+    \to
+    \Rder[j]{{f_{t}}_{\ast}}\iota^{-1}_{t}F
+  \]
+  に関する主張は
+  \[
+    \Rder[j]{q_{\ast}}\widetilde{F}
+    \to
+    \Rder[j]{{q_{t}}_{\ast}}i^{-1}_{t}\widetilde{F}
+  \]  
+  に関する主張に帰着される．
+\end{frame}
+\begin{frame}
+  \frametitle{主結果１の証明の概要 (2/3)}
+  仮定\[
+        d\varphi(x)\notin \left(
+          \muS[\textcolor{brown}{k}](F)+ \mdiff[f]\left(
+            M\pb[N]\cotb[N]
+          \right)
+        \right)
+  \]から次が成り立つ．
+  \[
+    \muS[k](\widetilde{F})\cap\left(
+      \cotb[N]\times\left\{(t;\tau);t>t_{\circ}\right\}
+    \right)
+    \subset
+    \cotb[N]\times\left\{(t;\tau);\tau\leqq0\right\}.
+  \]
+  各開集合\(U\)で，単位球体と同相なものに対し
+  \[
+    H^{j}(U\times\rr;\widetilde{F})=H^{j}(q^{-1}(U);\widetilde{F})
+    \to
+    H^{j}({q_{t}}^{-1}(U);\widetilde{F})
+    =H^{j}(U\times(-\infty,t);\widetilde{F})
+  \]
+  の同型と単射を示せばよい．
+\end{frame}
+\begin{frame}
+  \frametitle{主結果１の証明の概要 (3/3)}
+  主結果２を使って，
+  \[
+    H^{j}(U\times\rr;\widetilde{F})
+    \to
+    H^{j}(U\times(-\infty,t);\widetilde{F})
+  \]
+  の同型と単射を示す．
+  次の変形族\((U_{s})_{s\in\rr}\)を用いればよい．
+  \begin{itemize}
+    \item 関数\(\chi_{s}\colon U\to \rr\)を
+    次で定め\(\gamma_{s}\coloneqq\left\{
+      (x,x')\smid \chi_{s}(x)\leqq x'
+    \right\}\)とおく．\[
+      \chi_{s}(x)\coloneqq
+      \begin{cases}
+        t & (s\leqq t),\\
+        -4\left|x\right|+2(s-t)& (t\leqq s\leqq t+1),\\
+        -\frac{s-2}{1-1/2s}\left|x\right|+(s-2)& (s\geqq t+1).
+      \end{cases}
+    \]
+    \item 開集合\(U_{s}\)を次で定める．
+    \[
+      U_{s}\coloneqq \begin{cases}
+        \left\{(x,x')\smid 
+          (\mathrm{dist}((x,x'),\gamma_{s}),x')\in W_{1/8s}
+        \right\}& (s\geqq t),\\
+        U\times (-\infty,t) &(s\leqq t).
+      \end{cases}
+    \]
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{主結果１の証明の概要 (3+α/3)}
+  \(W_{t}\)は次のように定義される．
+  \begin{multline*}
+    W_{t}\coloneqq
+    \left\{(x,y)\in\rr^2\smid x<t\right\}
+    \cup    
+    \left\{(x,y)\in\rr^2\smid y<0\right\}\\
+    \cup
+    \left\{(x,y)\in\rr^2\smid x<2t, y<t, (x-2t)^2+(y-t)^2>t^2\right\}.
+  \end{multline*}
+\begin{figure}
+    \begin{tikzpicture}[scale=0.7, >=stealth]
+  % パラメータ設定
+  \def\t{1.8}
+  \def\xmin{-2.2}
+  \def\xmax{4.8}
+  \def\ymin{-2.2}
+  \def\ymax{3.2}
+
+  %------------------
+  % 領域 W_t の塗りつぶし
+  %------------------
+  \fill[blue!20] 
+    (\t, \ymax) -- (\t, \t) arc (180:270:\t) -- (\xmax, 0)
+    -- (\xmax, \ymin) -- (\xmin, \ymin) -- (\xmin, \ymax) -- cycle;
+
+  %------------------
+  % 円 (x-2t)^2 + (y-t)^2 = t^2 のガイド（参考用）
+  %------------------
+  \draw[gray!40, dashed] (2*\t, \t) circle (\t);
+  \fill[gray!60] (2*\t, \t) circle (2pt) node[above right, font=\small, gray!80!black] {$(2t, t)$};
+
+  %------------------
+  % 補助線
+  %------------------
+  \draw[gray!50, dashed] (0, \t) -- (2*\t, \t);
+  \draw[gray!50, dashed] (\t, 0) -- (\t, \t);
+  \draw[gray!50, dashed] (2*\t, 0) -- (2*\t, \t);
+
+  %------------------
+  % 座標軸
+  %------------------
+  \draw[->, thick] (\xmin, 0) -- (\xmax, 0) node[right] {$x$};
+  \draw[->, thick] (0, \ymin) -- (0, \ymax) node[above] {$y$};
+  \node[below left] at (0,0) {$O$};
+
+  %------------------
+  % W_t の境界線（開集合のため赤の破線）
+  %------------------
+  \draw[red!80!black, very thick, dashed] 
+    (\t, \ymax) -- (\t, \t) arc (180:270:\t) -- (\xmax, 0);
+
+  %------------------
+  % 目盛りとラベル
+  %------------------
+  % x軸目盛り
+  \node[below] at (\t, 0) {$t$};
+  \node[below right] at (2*\t, 0) {$2t$};
+  \fill (\t, 0) circle (1.5pt);
+  \fill (2*\t, 0) circle (1.5pt);
+
+  % y軸目盛り
+  \node[left] at (0, \t) {$t$};
+  \fill (0, \t) circle (1.5pt);
+
+  % 領域名ラベル
+  \node[blue!80!black, font=\large] at (-1.0, -1.0) {$W_t$};
+
+\end{tikzpicture}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{主結果２の証明の概要 (1/2)}
+  \(\dip 
+    H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
+    \to
+    H^{j}\left(U_{t};F\right)
+  \)の\(j<k\)での同型と\(j=k\)での単射性を示したい．
+
+  ある補題\cite[Proposition 1.12.6]{KS90}を用いると，
+  次を示すことに帰着される．
+  \begin{align}
+    \tag*{\((a)^j_s\)}\label{eq:t-nonchar-a}
+    \mu_{s}^{j}&\colon
+    \indlim[t>s] H^{j}(U_t;F) \simar H^{j}(U_s;F),\\
+    \tag*{\((a')^k_s\)}\label{eq:t-nonchar-a'}
+    \mu_{s}^{k}&\colon
+    \indlim[t>s] H^{k}(U_t;F) \hookrightarrow H^{k}(U_s;F),\\
+    \tag*{\((b)^j_s\)}\label{eq:t-nonchar-b}
+    \lambda_{s}^{j}&\colon
+    H^{j}(U_s;F)\simarr \prolim[r<s] H^{j}(U_r;F).
+  \end{align}
+  \ref{eq:t-nonchar-a}を示すには，次の射の列を考える．
+  \begin{equation*}%\label{eq:t-nocha-d.t.}
+    \RG(Z_{s}\cup U_{s};\mres[\RG_{X- U_{s}}(F)]{Z_{s}\cup U_{s}})
+    \to
+    \RG(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
+    \to
+    \RG(U_{s};F)
+    \overset{+1}{\longrightarrow}. 
+  \end{equation*}
+  仮定\eqref{item:t-nonchar3}から\(j\leqq k\)で第1項が\(0\)であることがわかる．
+\end{frame}
+
+\begin{frame}
+  \frametitle{主結果２の証明の概要 (2/2)}
+  したがって，次の制限射は\(j<k\)なら同型，\(j=k\)なら単射である．
+  \[
+    H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
+    \to
+    H^{j}(U_{s};F).
+  \]
+  次の補題を示せば，
+  \ref{eq:t-nonchar-a}と\ref{eq:t-nonchar-a'}がわかる．
+  \begin{LMM}%\label{clm:ind-nonchar}
+    任意の\(j\in\zz\)と\(s\in\rr\)に対し，次の自然な射は同型である．
+    \[
+      \indlim[t>s]H^{j}(U_t;F)
+      \cong 
+      H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
+    \]
+  \end{LMM}
+  \ref{eq:t-nonchar-b}は\(j\)に関する帰納法とMittag-Leffler条件を用いることで示される．
+\end{frame}
+
+\begin{frame}
+  \frametitle{証明の補足}
+
+  ある補題\cite[Proposition 1.12.6]{KS90}というのは，
+  柏原の補題と呼ばれる次の主張．
+  \begin{PRP}[{\cite[Proposition 1.12.6]{KS90}}]
+    \(
+      \left(X_s,\rho_{s,t}\colon X_t\to X_s\right)_{(s,(s\leqq t))}
+    \)を\(\rr\)で添字づけられた射影系とする．
+    各\(s\in\rr\)に対し，次の自然な写像がどちらも単射（全射）であると仮定する．
+    \[
+      \lambda_s\colon X_s\to\prolim[r<s]X_r
+      ,\quad
+      \mu_s\colon \indlim[t>s]X_t\to X_s.
+    \]
+    このとき，すべての射\(
+      \rho_{s_{0},s_{1}}\) \((s_0\leqq s_1)
+    \)は単射（全射）となる．
+  \end{PRP}
+  これを用いると，
+  \ref{eq:t-nonchar-a}と\ref{eq:t-nonchar-b}より，
+  制限射
+  \[
+    H^{j}\left(U_{t};F\right)
+    \to
+    H^{j}\left(U_{s};F\right)\quad  (s\leqq t)
+  \]
+  が\(j<k\)で同型，\(j=k\)で単射となることがわかる．
+
+  最後に，もういちどMittag-Leffler条件を用いることで証明が終わる．
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{主結果２の設定について}
+  「任意の開集合がパラコンパクト」のような仮定は不要．
+
+  \begin{alertblock}{注意}
+    \(X\)を位相空間とする．
+    一般の部分空間\(S\)と自然な連続写像\(
+      i\colon S\hookrightarrow X
+    \)を考える．
+    \(F\in\Dompl(\kk_{X})\)とする．
+    自然な射\[
+      \Rder[]\left(\Gamma(S;\blk)\circ i^{-1}\right)(F)
+      \to
+      \Rder[]{(\Gamma(S;\blk))}\circ i^{-1}(F)
+    \]は一般には同型でない．    
+  \end{alertblock}
+  次が言えることがわかったので，今の設定では問題ない．
+  \begin{PRP}
+    \(X\)をハウスドルフ空間とする．
+    \(U\subset X\)を開集合，\(Z\subset X\)をコンパクト集合とする．
+    \(U\cap Z=\varnothing\)ならば，
+    \(F\in\Dompl(\kk_{X})\)と\(S=U\cup Z\)に対し上の射は同型．
+  \end{PRP}
+\end{frame}
+
+\begin{frame}
+  \frametitle{主結果２の設定について（続）}
+  \begin{PRP}
+    \(X\)をハウスドルフ空間とする．
+    \(U\subset X\)を開集合，\(Z\subset X\)をコンパクト集合とする．
+    \(U\cap Z=\varnothing\)ならば，
+    \(F\in\Dompl(\kk_{X})\)に対し次の射は同型．\[
+      \Rder[]\left(\Gamma(U\cup Z;\blk)\circ i^{-1}\right)(F)
+      \to
+      \Rder[]{(\Gamma(U\cup Z;\blk))}\circ i^{-1}(F).
+    \]
+  \end{PRP}
+  これの証明の方針は，「少し膨らませてからMayer--Vietris三角を比較」．
+  すなわち，
+  \[
+    \Rder(\Gamma(U\cup Z;\blk)\circ i^{-1})(F)
+    \to \RG(U;F)\oplus\RG(Z;F)
+    \to \RG(Z;\RG_{U}F)
+    \overset{+1}{\longrightarrow}
+  \]
+  と\(\mres[F]{U\cup Z}\)に対して定まる三角
+  \[
+    \RG(U\cup Z;\mres[F]{U\cup Z})
+    \to \RG(U;F)\oplus\RG(Z;F)
+    \to \RG(Z;\RG_{U}F)
+    \overset{+1}{\longrightarrow}
+  \]を比較することで\(
+    \Rder(\Gamma(U\cup Z;\blk)\circ i^{-1})(F)
+    \simar
+    \RG(U\cup Z;\mres[F]{U\cup Z})
+  \)となる．
+\end{frame}
+
+
+
+\begin{comment}
+\begin{frame}[noframenumbering]
+aaa
+\end{frame}
+\end{comment}
+
+\end{document}

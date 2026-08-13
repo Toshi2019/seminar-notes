@@ -1,0 +1,106 @@
+\documentclass[11pt,reqno]{amsart}
+
+% -------------------------------------------------------------------
+% Packages
+% -------------------------------------------------------------------
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usetikzlibrary{cd,arrows.meta}
+
+% Hyperref (Always load near the end)
+\usepackage{color}
+\definecolor{darkgreen}{rgb}{0,0.45,0}
+\definecolor{darkred}{rgb}{0.75,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.6}
+\usepackage[colorlinks=true,citecolor=darkblue,linkcolor=darkblue,urlcolor=darkblue]{hyperref}
+
+% -------------------------------------------------------------------
+% Theorem Styles & Environments
+% -------------------------------------------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{claim}[theorem]{Claim}
+
+\numberwithin{equation}{section}
+
+% -------------------------------------------------------------------
+% Custom Macros
+% -------------------------------------------------------------------
+% Sets
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+% Operators & Symbols
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Img}{Im}
+\DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\supp}{supp}
+
+\newcommand{\RG}{\mathrm{R}\Gamma}
+\newcommand{\Rder}[1][]{\mathrm{R}^{#1}\!}
+\newcommand{\muS}[1][]{\mathrm{SS}_{#1}}
+\newcommand{\blk}{\,\cdot\,}
+
+% -------------------------------------------------------------------
+% Metadata
+% -------------------------------------------------------------------
+\title{Truncated Microlocal Morse Theory}
+
+\author{Toshihiro Oshiba}
+\address{Department of Mathematics, ... University, City, Country}
+\email{email@example.com}
+
+\subjclass[2020]{Primary 35A27; Secondary 58J15, 18G80}
+\keywords{Microlocal analysis, Sheaf theory, Morse theory}
+\date{\today}
+
+% -------------------------------------------------------------------
+% Document Body
+% -------------------------------------------------------------------
+\begin{document}
+
+\begin{abstract}
+We study truncated microlocal Morse theory and its applications...
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+\section{Background Material}\label{sec:review}
+
+In this section, we recall some definitions and results of homological algebra and sheaf theory from \cite{KS90}.
+
+\begin{proposition}[{\cite[Proposition 2.5.1]{KS90}}]\label{prop:ks2.5.1}
+Let $X$ be a topological space, $Z$ a subspace, and $F$ a sheaf on $X$.
+\end{proposition}
+
+\begin{thebibliography}{99}
+\bibitem{KS90}
+M.~Kashiwara and P.~Schapira,
+\textit{Sheaves on Manifolds},
+Grundlehren der Mathematischen Wissenschaften, vol.~292, Springer-Verlag, Berlin, 1990.
+\end{thebibliography}
+
+\end{document}

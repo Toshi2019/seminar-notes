@@ -19,8 +19,8 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[leqno, 12pt, a4paper, dvipdfmx]{article}
-
+\documentclass[leqno, 11pt, dvipdfmx]{article}
+%\documentclass{smfart}
 % ------------------------
 % usepackage
 % ------------------------
@@ -75,6 +75,7 @@
 
 %\usepackage{mmasym}
 
+%\usepackage{bull}
 %=================================
 
 
@@ -93,7 +94,7 @@
 % Attention!
 % All theorem enivironment numbers depend on 
 % only section numbers.
-\newtheorem{Axiom}{公理}%[section]
+\newtheorem{Axiom}{公理}[section]
 \newtheorem{Definition}[Axiom]{定義}
 \newtheorem{Theorem}[Axiom]{定理}
 \newtheorem{Proposition}[Axiom]{命題}
@@ -132,7 +133,7 @@
 % 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
 %　If you want to use theorem environment in English, You can use these code.
 %all theorem enivironment number depend on only section number.
-\newtheorem{Axiom+}{Axiom}%[section]
+\newtheorem{Axiom+}{Axiom}[section]
 \newtheorem{Definition+}[Axiom+]{Definition}
 \newtheorem{Theorem+}[Axiom+]{Theorem}
 \newtheorem{Proposition+}[Axiom+]{Proposition}
@@ -610,17 +611,870 @@
 \date{\today\footnote{First draft: 2026/03/29}}
 \begin{document}
 \maketitle
-\section{Truncated microsupport}
-\subsection*{Functorial Properties} 
+\section{Introduction}\label{sec:intro}
+\section{Background Material}\label{sec:review}
+
+In this section, 
+we recall some definitions and results \textcolor{black}{of 
+homological algebra and sheaf theory including 
+the theory of derived categories} from \cite{KS90}, 
+following its notations with slight modifications. 
+
+Let \(X\) be a topological space, 
+and \(Z\) a locally closed set of \(X\). 
+Let us denote by \(i\colon Z\hookrightarrow X\) \textcolor{black}{the} inclusion. 
+We use the following functors: 
+\[
+  \RG_{Z}(\blk) \coloneqq \Rder[]{i_{\ast}}i^{!}, 
+  \quad
+  (\blk)_{Z}\coloneqq \Rder[]{i_{!}}i^{-1}.
+\]
+If there is no risk of confusion, 
+we will write \(\kk_Z\) rather than \(\kk_{X,Z}\).
+
+\subsection{Geometrical Notions}
+Let \(M\) be a real manifold of class \(C^\infty\). 
+We denote by \(\tau_{M}\colon TM\to M\) 
+the tangent bundle of \(M\), 
+and by \(\pi_{M}\colon \cotb[M] \to M\) 
+the cotangent bundle of \(M\). 
+If there is no risk of confusion, 
+we will write \(\pi\) rather than \(\pi_{M}\). 
+If \(f\colon M\to N\) is a morphism of manifolds 
+\textcolor{black}{(i.e., a \(C^{\infty}\)-map)}, 
+then we have the natural diagram\textcolor{black}{s}. 
+\[\vcenter{\xymatrix{
+  TM
+    \ar[r]^-{f'}
+    \ar[rd]_-{\tau_M} 
+  &
+  M\dpb[N]TN
+    \ar[r]^-{\mptan[f]}
+    \ar[d]
+    \ar@{}[dr]|\square
+  & 
+  TN
+    \ar[d]^-{\tau_N}
+  &
+  \cotb[M]
+    \ar[rd]_-{\pi_M}
+  &
+  M\dpb[N]\cotb[N]
+    \ar[l]_-{\mdiff[f]}
+    \ar[r]^-{\mpb[f]}
+    \ar[d]
+    \ar@{}[dr]|\square
+  &
+  \cotb[N]
+    \ar[d]^{\pi_N}
+  \\
+  &
+  M
+    \ar[r]_-{f}
+  &
+  N,
+  &
+  &
+  M
+    \ar[r]_-{f}
+  &
+  N.
+}}\]
+In \textcolor{black}{these diagrams}, 
+\(\mptan[f]\) and \(\mpb[f]\) denote 
+the natural projections\textcolor{black}{,} \(f'\) is defined by 
+\((x;v)\mapsto (x;df_{x}v)\), 
+and \(\mdiff[f]\) is induced by the transposition of \(f'\). 
+
+\subsection{Approximation by Inductive Limits}
+
+\begin{Proposition+}[{\cite[Proposition 2.5.1]{KS90}}]\label{prop:ks2.5.1}
+  Let \(X\) be a topological space, 
+  \(Z\) a subspace, and \(F\) a sheaf on \(X\). 
+  Consider the canonical morphism:
+  \[
+    \psi\colon \indlim[U]\Gamma(U;F)
+    \to 
+    \Gamma(Z;F),
+  \]
+  where \(U\) ranges through the family of 
+  open neighborhoods of \(Z\) in \(X\). 
+  \textcolor{black}{Then the following hold.}
+  \begin{enumerate}[(i)]
+    \item The morphism \(\psi\) is injective. 
+    \item Assume that \(X\) is Hausdorff and \(Z\) is compact. 
+    Then \(\psi\) is an isomorphism.
+    \item Assume that \(X\) is paracompact and \(Z\) is closed. 
+    Then \(\psi\) is an isomorphism.
+  \end{enumerate}
+\end{Proposition+}
+
+Note that a paracompact space 
+is, by definition, a Hausdorff space. 
+
+\subsection{\textcolor{black}{Complement of Homological Algebra}}\label{ssec:ML}
+
+Consider a projective system of abelian groups \(
+  \left(M_n,\rho_{n,p}\right)_n
+\) indexed by \(\nn\). 
+One says that this system satisfies 
+the Mittag-Leffler condition (ML \textcolor{black}{condition} for short) 
+if for any \(n\in\nn\), the decreasing sequence \(
+  (\rho_{n,p}(M_p))_p
+\) of subgroups of \(M_n\) is stationary.
+For a projective system of abelian groups \((M_{n})_n\), 
+we set \[
+  M_{\infty}\coloneqq \prolim[n]M_n.
+\]
+Consider a projective system of complexes
+\begin{equation}
+  E_n^{\bullet}\colon 
+  \cdots\to M_{n}^{j-1}\to M_{n}^{j}\to M_{n}^{j+1}\to\cdots,
+\end{equation}
+and \textcolor{black}{its} projective limit
+\begin{equation}
+  E_{\infty}^{\bullet}\colon 
+  \cdots
+  \to M_{\infty}^{j-1}
+  \to M_{\infty}^{j}
+  \to M_{\infty}^{j+1}
+  \to\cdots.
+\end{equation}
+Denote by 
+\begin{equation}
+  \varPhi_{k}\colon H^{k}(E_{\infty}^{\bullet})\to \prolim[n]H^{k}(E_{n}^{\bullet})
+\end{equation}
+the natural morphism.
+
+\begin{Proposition+}[{\cite[Proposition 1.12.4]{KS90}}]\label{prop:ks1.12.4}
+  Assume that for each \(k\in\zz\), 
+  the system \(\left(M_{n}^{\textcolor{black}{k}}\right)_{n}\) satisfies 
+  the ML condition. 
+  Then
+  \begin{enumerate}[(a)]
+    \item for each \(k\in \zz\), the map \(\varPhi_k\) is surjective,
+    \item if moreover, for a given \(i\) the system \(\left(H^{i-1}(E_{n}^{\bullet})\right)_{n}\) satisfies the ML condition, then \(\varPhi_i\) is bijective.
+  \end{enumerate} 
+\end{Proposition+}
+
+The following is called Kashiwara's lemma.
+
+\begin{Proposition+}[{\cite[Proposition 1.12.6]{KS90}}]\label{prop:ks1.12.6}
+  Let \(\left(X_s,\rho_{s,t}\right)\) be 
+  a projective system of sets indexed by \(\rr\). 
+  Assume that for each \(s\in\rr\), the canonical maps\[
+    \lambda_s\colon X_s\to\prolim[r<s]X_r
+  \] and \[
+    \mu_s\colon \indlim[t>s]X_t\to X_s
+  \] are both injective (resp. surjective). 
+  Then all the maps \(\rho_{s_{0},s_{1}}\) \((s_0\leqq s_1)\) are 
+  injective (resp. surjective).
+\end{Proposition+}
+
+\subsection{\textcolor{black}{ML Procedure for Sheaves}}
+
+\textcolor{black}{We use the following 
+in the proof of Theorem \ref{prp:t-nonchar}.}
+
+\begin{Proposition+}[{\cite[Proposition 2.7.1]{KS90}}]\label{prop:ks2.7.1}
+  Let \(X\) be a topological space and let \(F\in\Dompl(\textcolor{black}{\kk}_X)\). 
+  Let \(\left(U_n\right)_{n\in\nn}\) be an increasing sequence 
+  of open subsets of \(X\), \(\left(Z_n\right)_{n\in\nn}\) 
+  a decreasing sequence of closed subsets of \(X\). 
+  Set \(U\coloneqq\bigcup_{n}U_{n}\), 
+  \(Z\coloneqq\bigcap_{n}Z_{n}\). 
+  \textcolor{black}{Then the following hold.}
+  \begin{enumerate}[(i)]
+    \item \label{item:ks2.7.1.1} For any \(j\), the natural map \(
+      \varphi_j\colon H^{j}_{Z}(U;F)
+      \to 
+      \prolim[n]H^{j}_{Z_{n}}(U_{n};F)
+    \) is surjective. 
+    \item \label{item:ks2.7.1.2} Assume that for a given \(j\), 
+    the projective system \(
+      (H^{j-1}_{Z_{n}}(U_{n};F))_{n}
+    \) satisfies the ML condition. 
+    Then \(\varphi_{j}\) is bijective. 
+    \item \label{item:ks2.7.1.3} Let now \(\left(X_{n}\right)_{n\in\nn}\) be 
+    an increasing family of subsets of \(X\) satisfying \(
+      X=\bigcup_{n}X_n\) and \(X_{n}\subset \Int[](X_{n+1})
+    \) for all \(n\). 
+    Assume that for a given \(j\), the projective system \(
+      \left(H^{j-1}(X_{n};F)\right)_{n}
+    \) satisfies the ML condition. 
+    Then the natural map \(
+      H^{j}(X;F)\to \prolim[n]H^{j}(X_{n};F)
+    \) is bijective. 
+  \end{enumerate}
+\end{Proposition+}
+
+\section{Truncated Microsupport}\label{sec:t-ss}
+
+In this section, we review 
+the definition of a truncated microsupport 
+and 
+its functorial property under direct images of 
+proper morphisms. 
+First, we review the original definition 
+of a microsupport. 
+\begin{Definition+}[{\cite[Definition 5.1.2]{KS90}}]
+  Let \(F\in\Dompb(\kk_X)\). 
+  The closed conic subset \(\muS[](F)\) of \(\cotb[X]\) 
+  is defined by following condition: \(p\notin \muS[](F)\) 
+  if and only if 
+  there exists an open neighborhood \(U\) of \(p\) 
+  such that for any \(x\in \pi(U)\) and 
+  for any real-valued \(C^{1}\)-function \(\varphi\) 
+  defined on a neighborhood of \(x\) such that 
+  \(\varphi(x)=0\), \(d\varphi(x)\in U\), 
+  one has \begin{equation}
+    \RG_{\{\varphi\geqq0\}}(F)_x=0.
+  \end{equation}
+\end{Definition+}
+
+\textcolor{black}{Kashiwara, Monteiro-Fernandes, 
+and Schapira modified
+this definition and gave the notion of truncated microsupport.}
+
+\begin{Definition+}[{\cite[Definition 3.4]{KFS03a}}]
+  Let \(F\in\Dompb(\kk_X)\)\textcolor{black}{, and fix an 
+  integer \(k\in\zz\)}. 
+  \textcolor{black}{The \emph{truncated microsupport} \(\muS[k](F)\) is} 
+  the closed conic subset of \(\cotb[X]\) 
+  defined by \textcolor{black}{the following condition}: 
+  \(p\notin \muS[k](F)\) 
+  if and only if 
+  there exists an open conic neighborhood \(U\) of \(p\) 
+  such that for any \(x\in \pi(U)\) and 
+  for any real-valued \(C^{1}\)-function \(\varphi\) 
+  defined on a neighborhood of \(x\) such that 
+  \(\varphi(x)=0\), \(d\varphi(x)\in U\), 
+  one has \begin{equation}
+    H^{j}_{\{\varphi\geqq0\}}(F)_x=0
+    \quad \text{for any \(j\leqq k\).}
+  \end{equation}
+\end{Definition+}
+
+\textcolor{black}{For other equivalent conditions of 
+the definition, see \cite{KFS03a}. 
+Truncated microsupports satisfy 
+the following functorial property under proper direct images.}
+
 \begin{Proposition+}
-  Let \(f\colon X\to Y\) be a morphism of real analytic manifolds and let \(F\in\Dompb(\kk_X)\) such that \(f\) is proper on \(\supp(F)\). 
+  Let \(f\colon X\to Y\) be a morphism of 
+  manifolds and let \(F\in\Dompb(\kk_X)\) such that \(f\) is proper on \(\supp(F)\). 
   Then for any \(k\in\zz\), 
   \begin{equation}\label{eq:t-push}
     \muS[k](\Rder{f_{\ast}}F)\subset
     \mpb[f]\mdiff[f]^{-1}(\muS[k](F)).
   \end{equation}
-  The equality holds in case \(f\) is a closed embedding.
+  \textcolor{black}{Moreover if \(f\) is a closed embedding, 
+  the inclusion above is an equality.}
 \end{Proposition+}
+
+For other functorial properties, see \cite{KFS03a,FM07}. 
+
+
+\section{Truncated Noncharacteristic Deformation Lemma}\label{sec:t-nonchar}
+
+In this section, we prove a truncated version of 
+the noncharacteristic deformation lemma. 
+First we state the result. 
+After giving several examples, 
+we prove Theorem \ref{prp:t-nonchar}. 
+In the course of the proof, 
+we use the key lemma (Lemma \ref{clm:ind-nonchar}). 
+Since its proof is rather long, 
+we postpone the proof to Section \ref{sec:proof-lem}. 
+
+\textcolor{black}{
+Before we state the truncated version, let us review the original 
+version of the noncharacteristic deformation lemma.   
+%This lemma is originally stated as follows.
+\begin{Proposition+}[{\cite[Proposition 2.7.2]{KS90}}]\label{prp:nonchar}
+  Let \(X\) be a Hausdorff space. 
+  Let \(F\in\Dompl(\kk_X)\), and let
+  \(\left(U_{t}\right)_{t\in\rr}\) be a family of 
+  open subsets of \(X\). 
+  We assume the following conditions. 
+  \begin{enumerate}[(i)]
+    \item \label{item:nonchar1}
+    \(U_{t}=\bigcup_{s<t}U_{s}\), for all \(t\in\rr\). 
+    \item \label{item:nonchar2}
+    For all pairs \((s,t)\) with \(s\leqq t\), 
+    the set \(\overline{U_{t}\smi U_{s}}\cap \supp{F}\) is compact.
+    \item \label{item:nonchar3}
+    Setting \(
+      Z_{s}\coloneqq \bigcap_{t>s}\overline{U_t\smi U_s}
+    \), we have
+    for all pairs \((s,t)\) with \(s\leqq t\) and 
+    all \(x\in Z_{s}\smi U_{t}\), 
+    \[
+      (\RG_{X\smi U_{t}}(F))_{x}=0.
+    \]
+  \end{enumerate}
+  Then, for all \(t\in\rr\), we have the isomorphisms\[
+    \RG\left(\bigcup_{s\in\rr}U_{s};F\right)
+    \simar 
+    \RG\left(U_{t};F\right).
+  \]
+\end{Proposition+}
+}
+
+Our result is as follows. 
+
+\begin{Theorem+}[Truncated Noncharacteristic Deformation Lemma]\label{prp:t-nonchar}
+  Let \(X\) be a Hausdorff space 
+  %\textcolor{black}{such that 
+  %all the open subsets are paracompact}
+  . 
+  Let \(F\in\Dompl(\kk_X)\), and let
+  \(\left(U_{t}\right)_{t\in\rr}\) be a family of 
+  open subsets of \(X\). 
+  Let \(k\in\zz\). 
+  \textcolor{black}{For \(s\in\rr\)}, set \(
+    Z_{s}\coloneqq \bigcap_{t>s}\overline{U_t\smi U_s}
+  \). 
+  We assume the following conditions. 
+  \begin{enumerate}[(i)]
+    \item \label{item:t-nonchar1}
+    \(U_{t}=\bigcup_{s<t}U_{s}\), for all \(t\in\rr\). 
+    \item \label{item:t-nonchar2}
+    For all pairs \((s,t)\) with \(s\leqq t\), 
+    the set \(\overline{U_{t}\smi U_{s}}\cap \supp{F}\) is compact.
+    \item \label{item:t-nonchar3}
+    For all \(s\in\rr\) and all \(x\in Z_{s}\smi U_{s}\), 
+    we have\[
+      (H^{j}_{X\smi U_{s}}(F))_{x}=0
+      \quad 
+      \text{for all \(j\leqq k\).}
+    \]
+    \item \label{item:t-nonchar4} 
+    For all pairs \((s,t)\) with \(s< t\), \textcolor{black}{we have} \(Z_s\subset U_{t}\).
+  \end{enumerate}
+  Then, for all \(t\in\rr\), we have the isomorphisms\[
+    H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
+    \simar 
+    H^{j}\left(U_{t};F\right)
+    \quad \text{for all \(j< k\),} 
+  \]
+  and the \textcolor{black}{monomorphisms} \[
+    H^{k}\left(\bigcup_{s\in\rr}U_{s};F\right)
+    \hookrightarrow 
+    H^{k}\left(U_{t};F\right).
+  \] 
+\end{Theorem+}
+
+\textcolor{black}{Before we prove Theorem \ref{prp:t-nonchar}, 
+let us give several examples of families of deformation. 
+}
+\begin{Example+}\label{eg:t-nonchar}
+  The condition \eqref{item:t-nonchar4} of 
+  \textcolor{black}{Theorem \ref{prp:t-nonchar}} is not contained 
+  in the original version (\textcolor{black}{Proposition \ref{prp:nonchar}}). 
+  Therefore let us give an example of \(\left(U_{t}\right)_{t\in\rr}\) 
+  that does not satisfy the condition \eqref{item:t-nonchar4}. 
+  \begin{enumerate}[(i)]
+    \item \label{item:not-gentle} 
+    Let \(X=\rr^2\), and for a real number \(t\) define the 
+    function\[
+      \varphi_{t}(x)\coloneqq\begin{cases}
+        \max\left(0,t(2-\left|x\right|)\right)&(\left|x\right| < 2),\\
+        0& (\left|x\right|\geqq 2).
+      \end{cases}
+    \]
+    Then let us define the open subset \(U_t\)
+    of \(X\) by
+    \[
+      U_{t}\coloneqq
+      \left\{
+        (x,y)\in X\smid y<\varphi_{t}(x)
+      \right\}. 
+    \]
+    Then the family \((U_{t})_{t}\) does not satisfy 
+    the condition \eqref{item:t-nonchar4}. 
+    Indeed, if \(\textcolor{black}{0<s<t}\), 
+    we have 
+    \[
+      Z_{s}=\left\{
+        (x,y)\in X;\ y=\varphi_{s}(x)\textcolor{black}{, \left|x\right|\leqq 2}
+      \right\}
+    \] and the point \((2,0)\in Z_{s}\) is 
+    not contained in \(U_{t}\). 
+    Moreover, let us \textcolor{black}{define 
+    a locally closed subset \(S\) of \(X\) by}
+    \[
+      S\coloneqq 
+      \left\{(x,y)\in X;\ (x+2)^{2}+(y-1)^{2}=1\right\}
+      \smi 
+      \left\{(-1,0)\right\}. 
+    \]
+    %For this \(S\) 
+    We denote by \(\kk_{S}\) 
+    the sheaf on \(X\) as in Section \ref{sec:review}. 
+    If \(j\leqq0\), we have \(
+      H^{j}_{X\smi U_{t}}(\kk_{S})_{x}=0
+    \) for all \(t \geqq s\) and \(x\in Z_{s}\smi U_{t}\), 
+    but the morphism \(
+      H^{0}(U_{1};\kk_{S})=\kk
+      \to 
+      0 = H^{0}(U_{0};\kk_{S})
+    \) is not injective. 
+    This gives an example that 
+    satisfies the conditions 
+    \eqref{item:t-nonchar1}--\eqref{item:t-nonchar3} but 
+    not \eqref{item:t-nonchar4}, 
+    which results in that 
+    the consequence of the proposition does not hold. 
+    Hence the condition \eqref{item:t-nonchar4} is 
+    necessary. 
+    \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.40]
+        \def\t{1}
+        \def\xmax{3.5}
+        \def\ymin{-1}
+        \def\ymax{3}
+
+        %------------------
+        % 塗りつぶし
+        %------------------
+
+        % y<0 の部分
+        \fill[black!25] (-\xmax,0) rectangle (\xmax,\ymin);
+
+        % 三角形部分 y < t(2-|x|)
+        \fill[black!25]
+          (-2,0) -- (0,{2*\t}) -- (2,0) -- cycle;
+
+        %------------------
+        % 境界（点線）
+        %------------------
+
+        % 折れ線
+        \draw[very thick,dashed] (-2,0)--(0,{2*\t})--(2,0);
+
+        % x軸（|x|>=2）
+        \draw[very thick,dashed] (-\xmax,0)--(-2,0);
+        \draw[very thick,dashed] (2,0)--(\xmax,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+        % ラベル
+        \node at (2.4,0.8) {\(U_t\)};
+      \end{tikzpicture}
+      \begin{tikzpicture}[scale=0.40]
+        \def\t{1}
+        \def\xmax{3.5}
+        \def\ymin{-1}
+        \def\ymax{3}
+
+        %------------------
+        % 境界（点線）
+        %------------------
+
+        % 折れ線
+        \draw[ultra thick] (-2,0)--(0,{2*\t})--(2,0);
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+        % ラベル
+        \node at (1.4,1.2) {\(Z_t\)};
+      \end{tikzpicture}
+      \begin{tikzpicture}[scale=0.40]
+        \def\t{1}
+        \def\xmax{3.5}
+        \def\ymin{-1}
+        \def\ymax{3}
+
+        %------------------
+        % 塗りつぶし
+        %------------------
+
+        % y<0 の部分
+        \fill[black!25] (-\xmax,0) rectangle (\xmax,\ymin);
+
+        % 三角形部分 y < t(2-|x|)
+        \fill[black!25]
+          (-2,0) -- (0,{2*\t}) -- (2,0) -- cycle;
+
+        %------------------
+        % 境界（点線）
+        %------------------
+
+        % 折れ線
+        \draw[very thick,dashed] (-2,0)--(0,{2*\t})--(2,0);
+
+        % x軸（|x|>=2）
+        \draw[very thick,dashed] (-\xmax,0)--(-2,0);
+        \draw[very thick,dashed] (2,0)--(\xmax,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-\xmax,0)--(\xmax,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,\ymin)--(0,\ymax) node[right]{\(y\)};
+
+        % 円
+        \def\s{1} % 半径 t > 0
+        \draw[thick] (-2,1) circle (\s);
+        \fill[black!0](-2,0) circle (0.1);
+        \draw (-2,0) circle (0.1);
+
+        % ラベル
+        \node at (2.4,0.8) {\(U_t\)};
+        \node at (-1.4,2.4) {\(S\)};
+      \end{tikzpicture}
+      \caption{example \eqref{item:not-gentle}}
+      \label{fig:not-gentle}
+    \end{figure}
+  \end{enumerate}
+  Let us, in turn, give two examples 
+  of \(\left(U_{t}\right)_{t\in\rr}\) 
+  satisfying the condition \eqref{item:t-nonchar4}. 
+  In all the examples below, \(X\) is \(\rr^{2}\). 
+  \begin{enumerate}[(i)]
+    \setcounter{enumi}{1}
+    \item \label{item:gentle1}
+    For a real number \(t\), 
+    define the open set \(U_{t}\) \textcolor{black}{of \(X\)} 
+    by \[
+      U_{t}\coloneqq
+      \begin{cases}
+      \left\{(x,y)\in X;\ \textcolor{black}{x^{2}+y^{2}} <t\right\}&(t>0),\\
+      \varnothing&(t\leqq0).         
+      \end{cases}
+    \]
+    \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.75]
+        \def\t{1.5} % 半径 t > 0
+
+        % 塗りつぶし
+        \fill[black!25] (0,0) circle (\t);
+
+        % 境界
+        \draw[dashed, very thick] (0,0) circle (\t);
+
+        % 軸
+        \draw[->,>=stealth,semithick] (-3.5,0)--(3.5,0) node[below]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,-2)--(0,2) node[right]{\(y\)};
+        \node at (2.3,-0.6) {\(U_t\)};
+      \end{tikzpicture}
+      \begin{tikzpicture}[scale=0.75]
+        \def\t{1.5} % 半径 t > 0
+
+        % 塗りつぶし
+        %\fill[black!25] (0,0) circle (\t);
+
+        % 境界
+        \draw[ultra thick] (0,0) circle (\t);
+
+        % 軸
+        \draw[->,>=stealth,semithick] (-3.5,0)--(3.5,0) node[below]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,-2)--(0,2) node[right]{\(y\)};
+        \node at (2.3,-0.6) {\(Z_t\)};
+      \end{tikzpicture}
+      \caption{example \eqref{item:gentle1}}
+      \label{fig:gentle1}
+    \end{figure}
+    \item \label{item:gentle2}
+    For a real number \(t\), 
+    define the function \(\varphi_{t}\colon \rr\to \rr\) as follows.
+    If \(t\leqq 0\), set \(\varphi_{t}(x)\equiv 0\). 
+    If \(t> 0\), set \[
+      \varphi_{t}(x)\coloneqq\begin{cases}
+        \sqrt{t^{2}-x^{2}} & (\left|x\right|<\textcolor{black}{t}),\\
+        0&(\left|x\right|\geqq \textcolor{black}{t}).
+      \end{cases}
+    \]
+    Then define the open set \(U_{t}\) 
+    \textcolor{black}{of \(X\)} by \[
+      U_{t}\coloneqq
+      \left\{(x,y)\in X;\ y<\varphi_{t}(x)\right\}. 
+    \]
+    \begin{figure}[htb]
+      \centering
+      \begin{tikzpicture}[scale=0.75]
+        \def\t{1.5}
+
+        %------------------
+        % 塗りつぶし領域
+        %------------------
+
+        % 半円の下側 y < sqrt(t^2 - x^2)
+        \fill[black!25,domain=-\t:\t,samples=200]
+          (-\t,0)
+          -- plot(\x,{sqrt(\t*\t-\x*\x)})
+          -- (\t,0)
+          -- cycle;
+        \draw[dashed, very thick](0,0) ellipse (1.5 and 1.5);
+
+        % y < 0 の部分
+        \fill[black!25] (-3.5,0) rectangle (3.5,-2);
+
+        %------------------
+        % 境界
+        %------------------
+
+        % 半円（上半分）
+        %\draw[thick,domain=-\t:\t,samples=300]
+        %  plot(\x,{sqrt(\t*\t-\x*\x)});
+
+        % x軸（|x|>=t の境界として）
+        \draw[dashed, very thick] (-3.5,0)--(-\t,0);
+        \draw[dashed, very thick] (\t,0)--(3.5,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-3.5,0)--(3.5,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,-2)--(0,2) node[right]{\(y\)};
+
+        % ラベル
+        \node at (2.3,-0.6) {\(U_t\)};
+      \end{tikzpicture}
+      \begin{tikzpicture}[scale=0.75]
+        \def\t{1.5}
+
+        %------------------
+        % 塗りつぶし領域
+        %------------------
+
+        % 半円の下側 y < sqrt(t^2 - x^2)
+        \fill[black!0,domain=-\t:\t,samples=200]
+          (-\t,0)
+          -- plot(\x,{sqrt(\t*\t-\x*\x)})
+          -- (\t,0)
+          -- cycle;
+        \draw[ultra thick](0,0) ellipse (1.5 and 1.5);
+
+        % y < 0 の部分
+        \fill[black!0] (-3.5,0) rectangle (3.5,-2);
+
+        %------------------
+        % 境界
+        %------------------
+
+        % 半円（上半分）
+        %\draw[thick,domain=-\t:\t,samples=300]
+        %  plot(\x,{sqrt(\t*\t-\x*\x)});
+
+        % x軸（|x|>=t の境界として）
+        %\draw[dashed, very thick] (-3.5,0)--(-\t,0);
+        %\draw[dashed, very thick] (\t,0)--(3.5,0);
+
+        %------------------
+        % 軸
+        %------------------
+
+        \draw[->,>=stealth,semithick] (-3.5,0)--(3.5,0) node[right]{\(x\)};
+        \draw[->,>=stealth,semithick] (0,-2)--(0,2) node[right]{\(y\)};
+
+        % ラベル
+        \node at (2.1,0.6) {\(Z_t\)};
+      \end{tikzpicture}
+      \caption{example \eqref{item:gentle2}}
+      \label{fig:gentle2}
+    \end{figure}
+  \end{enumerate}
+  %These families are visualized as in Figure \ref{fig:1}.
+\end{Example+}
+
+
+
+\begin{proof}[{\textcolor{black}{Proof of Theorem \ref{prp:t-nonchar}}}]
+  Consider the following conditions for 
+  \(j\in\zz\) and \(s\in\rr\):
+  \begin{align}
+      \tag*{\((a)^j_s\)}\label{eq:t-nonchar-a}
+      \mu_{s}^{j}&\colon
+      \indlim[t>s] H^{j}(U_t;F) \simar H^{j}(U_s;F),\\
+      \tag*{\((a')^k_s\)}\label{eq:t-nonchar-a'}
+      \mu_{s}^{k}&\colon
+      \indlim[t>s] H^{k}(U_t;F) \hookrightarrow H^{k}(U_s;F),\\
+      \tag*{\((b)^j_s\)}\label{eq:t-nonchar-b}
+      \lambda_{s}^{j}&\colon
+      H^{j}(U_s;F)\simarr \prolim[r<s] H^{j}(U_r;F).
+  \end{align}
+
+  Let us prove, 
+  for all \(s\in \rr\), 
+  \ref{eq:t-nonchar-a} for \(j<k\) and \ref{eq:t-nonchar-a'}. 
+  We may assume that \(\overline{U_{t}\smi U_{s}}\) is compact 
+  for any \(s\leqq t\) by replacing \(X\) by \(\supp{F}\). 
+  Consider the distinguished triangle\[
+    \RG_{X\smi U_{s}}(F)
+    \to
+    F
+    \to
+    \RG_{U_{s}}(F)
+    \overset{+1}{\longrightarrow}.
+  \]
+  Let us endow with \(Z_{s}\cup U_{s}\) the induced topology, and
+  denote by \(
+    i_{s}\colon Z_{s}\cup U_{s}\hookrightarrow X
+  \) the natural continuous map.  
+  Applying the functor \[
+    \mres[(\blk)]{Z_{s}\cup U_{s}}=i_{s}^{-1}
+  \] to the distinguished triangle above, we have \[
+    \mres[\RG_{X\smi U_{s}}(F)]{Z_{s}\cup U_{s}}  
+    \to
+    \mres[F]{Z_{s}\cup U_{s}}  
+    \to
+    \mres[\RG_{U_{s}}(F)]{Z_{s}\cup U_{s}}  
+    \overset{+1}{\longrightarrow}.
+  \]
+  Again applying to this triangle 
+  the functor \(\RG(Z_{s}\cup U_{s};\blk)\), 
+  we have
+  \begin{equation}\label{eq:t-nocha-d.t.}
+    \RG(Z_{s}\cup U_{s};\mres[\RG_{X\smi U_{s}}(F)]{Z_{s}\cup U_{s}})
+    \to
+    \RG(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
+    \to
+    \RG(U_{s};F)
+    \overset{+1}{\longrightarrow}. 
+  \end{equation}
+  By the hypothesis \eqref{item:t-nonchar3} and 
+  the definition of a local cohomology, 
+  we see that
+  \[
+    \mres[H^{j}_{X\smi U_{s}}(F)]{Z_{s}\cup U_{s}}=0
+    \quad
+    \text{for any \(j\leqq k\).}
+  \]
+  Therefore we \textcolor{black}{have}
+  \[
+    H^{j}\left(Z_{s}\cup U_{s};
+      \mres[\RG_{X\smi U_{s}}(F)]{Z_{s}\cup U_{s}}
+    \right)=0
+    \quad
+    \text{for any \(j\leqq k\).}
+  \]
+  Thus we have \textcolor{black}{from \eqref{eq:t-nocha-d.t.}}
+  \begin{align}
+    \label{eq:a-iso}
+    H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
+    &\simar
+    H^{j}(U_{s};F)\quad
+    \text{for any \(j< k\),}\\
+    \label{eq:a-inj}
+    H^{k}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
+    &\hookrightarrow
+    H^{k}(U_{s};F).
+  \end{align}
+  Therefore, if we show Lemma \ref{clm:ind-nonchar} below, 
+  \textcolor{black}{whose proof will be given in Section \ref{sec:proof-lem},}
+  we have \textcolor{black}{from Lemma \ref{clm:ind-nonchar} and \eqref{eq:a-iso}}
+  \begin{align*}
+    \indlim[t>s]H^{j}(U_t;F)
+    &\cong 
+    H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})\\
+    &\simar
+    H^{j}(U_s;F)
+  \end{align*}
+  for any \(j<k\), and \ref{eq:t-nonchar-a} follows. 
+  Similarly, 
+  we have \textcolor{black}{from Lemma \ref{clm:ind-nonchar} and \eqref{eq:a-inj}}
+  \begin{align*}
+    \indlim[t>s]H^{k}(U_t;F)
+    &\cong 
+    H^{k}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})\\
+    &\hookrightarrow
+    H^{k}(U_s;F)
+  \end{align*}
+  and \ref{eq:t-nonchar-a'} follows. 
+  \begin{Lemma+}\label{clm:ind-nonchar}
+    For any \(j\in\zz\) and \(s\in\rr\), there exists a natural isomorphism 
+    \[
+      \indlim[t>s]H^{j}(U_t;F)
+      \cong 
+      H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
+    \]
+  \end{Lemma+}
+
+  %Let us come back to the proof of 
+  %\textcolor{black}{Theorem \ref{prp:t-nonchar}}. 
+  We prove \ref{eq:t-nonchar-b} for 
+  all \(j\in\zz\) and \(s\in\rr\) by induction on \(j\). 
+  Since \(F\in\Dompl(\kk_X)\), 
+  we have \ref{eq:t-nonchar-b} for \(j\ll 0\) and \(s\in\rr\). 
+  Hence there exists an integer \(j_{0}<k\) 
+  such that \((b)_{s}^{j}\) holds 
+  for any \(j<j_{0}\) and \(s\in\rr\).  
+  Then assume \ref{eq:t-nonchar-b} is proved for 
+  all \(j< j_{0}\) and \(s\in\rr\). 
+  Since we have \ref{eq:t-nonchar-a} and \ref{eq:t-nonchar-b} 
+  for each \(j< j_{0}\) and each \(s\in\rr\), 
+  we can apply 
+  Kashiwara's lemma (Proposition \ref{prop:ks1.12.6}) 
+  and have\[
+    H^{j}(U_{t};F)\simar H^{j}(U_{s};F) 
+    \quad
+    \text{ for \(j< j_{0}\) and \(s\leqq t\). }
+  \]
+  Fix \(s\in\rr\) and consider the projective system \(
+    \left(H^{j_{0}-1}(U_{s-1/n})\right)_{n\in\nn}
+  \). This system satisfies ML condition.  
+  Therefore, by applying 
+  Proposition \ref{prop:ks2.7.1} (\ref{item:ks2.7.1.3}), 
+  %\footnote{
+  %  \cite{KS90}の証明だと``by Proposition 1.12.4''
+  %  としているが，Proposition 2.7.1の誤植かもしれない．
+  %  どちらでも良いとは思うが，
+  %  このあと``Again by Proposition 2.7.1'' と書いていることからも，
+  %  誤植だと思う方が自然と思われる．
+  %}, 
+  we have \[
+    H^{j}(U_{s};F)
+    \simar 
+    \prolim[n]H^{j}\left(U_{s-\frac{1}{n}};F\right). 
+  \]
+  Since \((s-1/n)_{n}\) is a cofinal family of \((t)_{s>t}\), 
+  we have \((b)_{s}^{j_{0}}\). 
+  Then by induction on \(j\), 
+  we have \((b)_{s}^{j}\) for \(j<k\) and \(s\in\rr\). 
+  Again by applying Proposition \ref{prop:ks2.7.1} to the 
+  projective system \(\left(H^{j}(U_{n};F)\right)_{n}\), 
+  we obtain 
+  \begin{align*}
+    H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
+    &\cong
+    H^{j}\left(\bigcup_{n\in\nn}U_{n};F\right)\\
+    &\simar 
+    \prolim[n]H^{j}\left(U_{n};F\right)
+    %\quad \text{for all \(j< k\),} 
+  \end{align*}
+  and for each \(n\), we have by Kashiwara's lemma 
+  \textcolor{black}{(Proposition \ref{prop:ks1.12.6})} that
+  \[
+    H^{j}\left(U_{n};F\right)
+    \cong
+    H^{j}(U_{s};F)
+  \]
+  for \(n\geqq s\).
+
+  Finally we replace \ref{eq:t-nonchar-a} by 
+  \ref{eq:t-nonchar-a'} for \(j=k\), and obtain
+  \[
+    H^{k}\left(\bigcup_{s\in\rr}U_{s};F\right)
+    \hookrightarrow
+    H^{j}\left(U_{s};F\right).
+  \]
+  This completes the proof. 
+\end{proof}
 
 \section{Truncated microlocal Morse theory}
 
@@ -886,6 +1740,224 @@ Let us define the following morphisms:
 \end{proof}
 
 
+\section{Proof of Lemma {\ref{clm:ind-nonchar}}}\label{sec:proof-lem}
+
+In this section, 
+we prove Lemma \ref{clm:ind-nonchar}, 
+which is postponed in the proof of Theorem \ref{prp:t-nonchar}. 
+
+\begin{proof}[Proof of Lemma \ref{clm:ind-nonchar}]
+  First we prove that 
+  for \(F\in \Mod(\kk_X)\), 
+  the natural morphism
+  \begin{equation}\label{eq:qis-claim}
+    \indlim[t>s]\Gamma(U_t;F)
+    \simar 
+    \Gamma(Z_{s}\cup U_{s};F).
+  \end{equation}
+  is isomorphic. 
+  Consider the following diagram. 
+  \[\vcenter{\xymatrix{
+    \indlim[t>s]\Gamma(U_t;F)
+    \ar[rd]
+    \ar[d]_-{\tilde{\phi}}
+    &
+    \\
+    \indlim[U\supset Z_{s}]
+    \Gamma(U\cup U_{s};F)
+    \ar[d]
+    \ar[r]_-{\phi}
+    &
+    \Gamma(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
+    \ar[d]
+    \\
+    \indlim[U\supset Z_{s}]
+    \Gamma(U;F)
+    \ar[r]_-{\psi}^-{\sim}
+    &
+    \Gamma(Z_{s};\mres[F]{Z_{s}})\textcolor{black}{.}
+  }}
+  \] 
+  
+  Let us begin by showing that the morphism  
+  \[
+    \tilde{\phi}\colon\indlim[t>s]
+    \Gamma(U_{t};F)
+    \to 
+    \indlim[U\supset Z_{s}]
+    \Gamma(U\cup U_{s};F) 
+  \]
+  is an isomorphism. 
+  It is enough to show that \(
+    \left(U_{t}\right)_{t>s}
+  \) is a cofinal family of \((U\cup U_{s})_{U\supset Z_{s}}\). 
+  Let \(U\) be an open neighborhood of \(Z_{s}\). 
+  Then we shall show by contradiction that 
+  there exists a real number \(t>s\) such that 
+  \(U_{t}\subset U\cup U_{s}\). 
+  Let us assume that 
+  \(U_{t}-(U\cup U_{s})\ne \varnothing\) 
+  for any \(t>s\). 
+  Then define the family of subsets \(
+    \left(A_{r}\right)_{s<r<t}
+  \) of \(\overline{U_{t}- U_{s}}\) by \(
+    A_{r}\coloneqq U_{r}- (U\cup U_{s})
+  \). 
+  This \(\left(A_{r}\right)_{s<r<t}\) satisfies 
+  the finite intersection property. 
+  Indeed, for finite real numbers \(s<r_{0}<\dots<r_{m}<t\), 
+  it follows from 
+  \textcolor{black}{the assumption for contradiction}
+  that
+  \begin{align*}
+    A_{r_{0}}\cap \dots \cap A_{r_{m}}
+    &= A_{r_{0}}\\
+    &= U_{r_{0}}- (U\cup U_{s})\\
+    &\ne \varnothing.
+  \end{align*}
+  Therefore, since \(\overline{U_{t}- U_{s}}\) is 
+  compact, we have \(\bigcap_{s<r<t}\overline{A_{r}}\ne\varnothing\). 
+  However, 
+  %for any \(r\), 
+  we have from the hypothesis \(Z_{s}\subset U\) that 
+  %\begin{align*}
+  %  \overline{A_{r}}
+  %  &=\overline{U_{r}-(U\cup U_{s})}\\
+  %  &=\overline{U_{r}}\cap 
+  %  \overline{X -(U\cup U_{s})}\\
+  %  &=\overline{U_{r}}\cap (X -(U\cup U_{s}))
+  %\end{align*}
+  %and 
+  \begin{align*}
+    \varnothing 
+    \ne
+    \bigcap_{s<r<t}\overline{A_{r}}
+    &=\bigcap_{s<r<t}\overline{U_{r}-(U\cup U_{s})}\\
+    &=\bigcap_{s<r<t}(\overline{U_{r}- U_{s}}\cap \overline{U_{r} - U})\\
+    &=\bigcap_{s<r<t}\overline{U_{r}- U_{s}}\cap \bigcap_{s<r<t}\overline{U_{r} - U}\\
+    &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r} - U}\\
+    &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r}}\cap \overline{X- U}\\
+    &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r}}\cap (X- U)\\
+    &=Z_{s}\cap (X- U)\cap \bigcap_{s<r<t}\overline{U_{r}}\\
+    &=\varnothing. 
+  \end{align*}
+  This is a contradiction, 
+  and it follows that \(\tilde{\phi}\) is an isomorphism. 
+
+  \textcolor{black}{Since \(\tilde{\phi}\) is an} isomorphism, 
+  it is enough to show that
+  \[
+    \phi\colon\indlim[U\supset Z_{s}]
+    \Gamma(U\cup U_{s};F)
+    \to
+    \Gamma(Z_{s}\cup U_{s};F)
+  \]
+  is isomorphic.     
+  Since \(X\) is Hausdorff and \(Z_{s}\) is compact, 
+  the natural morphism 
+  \[
+    \psi\colon\indlim[U\supset Z_{s}]\Gamma(U;F)
+    \to
+    \Gamma(Z_{s};F)
+  \]
+  is isomorphic by Proposition \ref{prop:ks2.5.1}. 
+  Since \(U_{s}\) is open, we have another isomorphism 
+  \[
+    \psi'\colon\indlim[V\supset U_{s}]\Gamma(V;F)
+    \to
+    \Gamma(U_{s};F).
+  \] 
+  The injectivity of \(\phi\) follows from 
+  the definition of a sheaf 
+  and the injectivities of \(\psi\) and \(\psi'\). 
+
+  Let us prove that \(\phi\) is surjective. 
+  Let \(
+    \sigma\in \Gamma(\textcolor{black}{Z_{s}\cup U_{s}};F)
+  \) be a section of \(\mres[F]{Z_{s}\cup U_{s}}\). 
+  By the isomorphism \(\psi\) above, 
+  we can extend \(\mres[\sigma]{Z_{s}}\) to 
+  an open neighborhood \(U\) of \(Z_{s}\) in \(X\). 
+  More precisely, there exists a section 
+  \(\tau\) on \(U\) such that \(
+    \mres[\tau]{Z_{s}}=\mres[\sigma]{Z_{s}}
+  \). 
+  \textcolor{black}{On the other hand, 
+  it follows from the compatibility of restrictions of a section} 
+  that \(
+    \mres[\tau]{Z_{s}}
+    =
+    \mres[{(\mres[\tau]{(Z_{s}\cup U_{s})\cap U})}]{Z_{s}}
+  \). 
+  \textcolor{black}
+  {B}y the definition of a section 
+  on the closed subset \(Z_{s}\) of 
+  \((Z_{s}\cup U_{s})\cap U\), 
+  we can find an open subset \(W\) of 
+  \((Z_{s}\cup U_{s})\cap U\) 
+  such that 
+  \begin{equation*}
+    \mres[\tau]{W}=\mres[\sigma]{W}. 
+  \end{equation*}
+  By the definition of the induced topology 
+  of \((Z_{s}\cup U_{s})\cap U\), 
+  there exists an open set \(\widetilde{W}\) of \(X\) 
+  such that
+  \[
+    W=((Z_{s}\cup U_{s})\cap U)\cap \widetilde{W}
+    \quad\text{and}\quad
+    \widetilde{W}\subset U.
+  \] 
+  Thus we have 
+  \begin{equation}\label{eq:clm-glue}
+    \textcolor{black}{U_{s}\cap W = U_{s}\cap \widetilde{W},
+    \quad
+    \mres[\sigma]{U_{s}\cap \widetilde{W}}
+    =\mres[\tau]{U_{s}\cap \widetilde{W}}.}
+  \end{equation}
+  For this \(\widetilde{W}\), 
+  the pair \(
+    \left(U_{s}, \widetilde{W}\right)
+  \) is an open covering of \(\widetilde{W}\cup U_{s}\). 
+  Thus by \eqref{eq:clm-glue}, we can 
+  glue \(\textcolor{black}{\mres[\sigma]{U_{s}}}\) 
+  and \(\mres[\tau]{\widetilde{W}}\) together 
+  and get a section \(\widetilde{\sigma}\) such that \[
+    \mres[\widetilde{\sigma}]{Z_{s}\cup U_{s}} 
+    =\sigma, 
+    \quad
+    \mres[\widetilde{\sigma}]{\widetilde{W}}
+    =\mres[\tau]{\widetilde{W}}.
+  \]
+  This proves the surjectivity of \(\phi\). 
+
+  \textcolor{red}{We show the the following statement.}
+  
+  Next \textcolor{black}{l}et \(F\in\Dompl(\kk_X)\). 
+  Let \(I^{\bm{\bullet}}\) be a complex of flabby sheaves 
+  quasi-isomorphic to \(F\). 
+  %\textcolor{black}{Note that 
+  %if \(S\) is a subspace of a Hausdorff space such that 
+  %all the open subsets are paracompact, 
+  the restrictions of a flabby sheaf \(F\), 
+  denoting by \(\mres[F]{S}\), is also flabby.%} 
+  Then it follows from \eqref{eq:qis-claim} that 
+  \begin{align*}
+    \indlim[t>s]H^{j}(U_t;F)
+    &\cong 
+    \indlim[t>s]H^{j}\Gamma(U_t;I^{\bullet})\\
+    &\cong 
+    H^{j}\left(\indlim[t>s]\Gamma(U_t;I^{\bullet})\right)\\
+    &\cong
+    H^{j}\Gamma(
+      Z_{s}\cup U_{s};I^{\bullet})\\
+    &\cong
+    H^{j}(Z_{s}\cup U_{s};F).
+  \end{align*}
+  This completes the proof.
+\end{proof}
+
+
 
 
 
@@ -902,21 +1974,25 @@ Let us define the following morphisms:
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
+  \bibitem[FM07]{FM07} Teresa Monteiro Fernandes, Ana Rita Martins. 
+  \textit{Truncated Microsupport and Hyperbolic Inequalities}, 
+  Nagoya Mathematical Journal, 2007, Vol.\ 185, pp.63--91. 
   \bibitem[GKS12]{GKS12} St\'ephane Guillermou, 
   Masaki Kashiwara, Pierre Schapira, 
   \textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
   Duke. Math. J. 161, No. 2, pp.201--245, 2012.  
-  \bibitem[KFS03]{KFS03} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
+  \bibitem[KFS03a]{KFS03a} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
     \textit{Truncated Microsupport and Holomorphic Solutions 
     of \(D\)-modules}, 
     Ann. Scient. \'Ec. Norm. Sup., s\'erie 4, tome 36, 
     pp.583--399, 2003.
+  \bibitem[KFS03b]{KFS03b} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
+		\textit{Involutivity of Truncated microsupports}, 
+		Bull. Soc. math. France, 131 (2), 2003, 
+		pp.259--266.
   \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
     \textit{Sheaves on Manifolds}, 
     Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
-  \bibitem[ST92]{ST92} Pierre Schapira, Nobuyuki Tose, 
-    \textit{Morse Inequalities for \(\rr\)-constructible Sheaves}, 
-    Adv. Math. 93, pp.1--8, 1992. 
 \end{thebibliography}
 %===============================================
 

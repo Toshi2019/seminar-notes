@@ -1,0 +1,3 @@
+\beamer@sectionintoc {1}{層理論}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{定義}{4}{0}{1}
+\beamer@sectionintoc {2}{主結果}{20}{0}{2}

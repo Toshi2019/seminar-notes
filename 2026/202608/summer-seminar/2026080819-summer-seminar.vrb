@@ -1,0 +1,40 @@
+\frametitle{主結果１ --- 相対版超局所Morseの補題（打切り版）}
+  %設定は次のとおり．
+  \begin{columns}
+    \begin{column}{0.7\hsize}
+      \begin{itemize}
+        \item \(f\colon M\to N\)：多様体の射，
+        \quad\(\varphi\colon M\to \rr\)：\(C^{1}\)級函数．
+        \item \(M_{<t}\coloneqq \varphi^{-1}((-\infty,t))\)，\quad
+        \(M_{\leqq t}\coloneqq \varphi^{-1}((-\infty,t])\).
+        \item \(\iota_{t}\colon M_{<t}\hookrightarrow M\)，
+        \quad\(f_{t}=f\circ \iota_{t}\)．
+        \item \(F\in\Dompb(M)\)で
+        \(f_{t}\colon \supp(F)\cap \overline{M_{<t}}\to N\)は固有（\(t\in\rr\)）．
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.2\hsize}
+      \begin{tikzcd}
+        M \arrow[r,"f"] & N \\
+        M_{<t}\arrow[ru,"f_t"']\arrow[u,hookrightarrow,"\iota_t"]
+      \end{tikzcd}
+    \end{column}
+  \end{columns}
+  \begin{THM}[O., 相対版打切り超局所Morseの補題]
+    \(\textcolor{brown}{k\in\zz}\)とし\(t_{0}\in\rr\)とする．
+    \(x\in M\setminus M_{\leqq t_{0}}\)に対し，
+    次が成り立つとする．\[
+        (x;d\varphi(x))\notin \left(
+          \muS[\textcolor{brown}{k}](F)+ \mdiff[f]\left(
+            M\pb[N]\cotb[N]
+          \right)
+        \right).
+      \]
+    このとき，任意の\(t>t_{\circ}\)に対して，
+    次の層の射は\textcolor{brown}{\(j<k\)ならば同型}，\textcolor{brown}{\(j=k\)ならば単射}．
+    \[
+      \Rder[j]{f_{\ast}}F
+      \to
+      \Rder[j]{{f_{t}}_{\ast}}\iota^{-1}_{t}F.
+    \]
+  \end{THM}
