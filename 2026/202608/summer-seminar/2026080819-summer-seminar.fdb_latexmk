@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1786630571.70431 "2026080819-summer-seminar.dvi" "2026080819-summer-seminar.pdf" "2026080819-summer-seminar" 1786630573.048 0
-  "2026080819-summer-seminar.dvi" 1786630571.45481 325368 95a0421c91b180c34e14aeef97c1f1ad "latex"
+["dvipdf"] 1786710895.91815 "2026080819-summer-seminar.dvi" "2026080819-summer-seminar.pdf" "2026080819-summer-seminar" 1786710897.22471 0
+  "2026080819-summer-seminar.dvi" 1786710895.71658 925228 a90167f07c096f51c7b856efa393fb2c "latex"
   (generated)
   "2026080819-summer-seminar.pdf"
   (rewritten before read)
-["latex"] 1786630563.21342 "/Users/giuseppe/seminar-notes/2026/202608/summer-seminar/2026080819-summer-seminar.tex" "2026080819-summer-seminar.dvi" "2026080819-summer-seminar" 1786630573.03855 0
-  "/Users/giuseppe/seminar-notes/2026/202608/summer-seminar/2026080819-summer-seminar.tex" 1786630536.80841 87526 96093973a08afd60e6418a2a15520b3d ""
+["latex"] 1786710883.71816 "/Users/giuseppe/seminar-notes/2026/202608/summer-seminar/2026080819-summer-seminar.tex" "2026080819-summer-seminar.dvi" "2026080819-summer-seminar" 1786710897.2146 0
+  "/Users/giuseppe/seminar-notes/2026/202608/summer-seminar/2026080819-summer-seminar.tex" 1786710869.15529 91663 188602727f5d21ebc1613312fc0408f6 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcss1000.tfm" 1136768653 1536 293044035fd171bb1d18cf655049b101 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -177,6 +177,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty" 1686341992 88371 d84032c0f422c3d1e282266c01bef237 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty" 1686341992 4474 b811654f4bf125f11506d13d13647efb ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amstext.sty" 1686341992 2444 0d0c1ee65478277e8015d65b86983da2 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/aobs-tikz/tikzlibraryoverlay-beamer-styles.code.tex" 1389658833 4047 82a015585c1ef210fb6750d6322afa7f ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/appendixnumberbeamer/appendixnumberbeamer.sty" 1516054793 2503 8b15dc1f244408537b5337bf97f380a6 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/ascmac/ascmac.sty" 1579124881 590 834565f4a016952bf667fd346b7aee71 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/ascmac/tascmac.sty" 1579124881 11463 e16f2fec3bf4db0d4002a155e4cf4467 ""
@@ -316,11 +317,11 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "2026080819-summer-seminar.aux" 1786630571.44683 14159 8f54773f355c8e5f9c08c51f73e2dbf4 "latex"
-  "2026080819-summer-seminar.nav" 1786630571.45401 5850 17603032e4cf5d8cd135ccc477f53535 "latex"
-  "2026080819-summer-seminar.out" 1786630571.45327 425 706eac74646aca2d17684de1dc89fbf2 "latex"
-  "2026080819-summer-seminar.tex" 1786630536.80841 87526 96093973a08afd60e6418a2a15520b3d ""
-  "2026080819-summer-seminar.vrb" 1786630568.68249 1556 5845c8da7c4b387d74810251848a4d15 "latex"
+  "2026080819-summer-seminar.aux" 1786710895.70899 15351 1fa34837ee7cd084dd2637717171ceb0 "latex"
+  "2026080819-summer-seminar.nav" 1786710895.71587 6978 de39bd5b5eea901823f54c6a32fdc3f7 "latex"
+  "2026080819-summer-seminar.out" 1786710895.71534 1287 3e6e2f889b21e282b344dce7752c5585 "latex"
+  "2026080819-summer-seminar.tex" 1786710869.15529 91663 188602727f5d21ebc1613312fc0408f6 ""
+  "2026080819-summer-seminar.vrb" 1786710893.1219 1556 5845c8da7c4b387d74810251848a4d15 "latex"
   (generated)
   "2026080819-summer-seminar.aux"
   "2026080819-summer-seminar.dvi"
