@@ -885,8 +885,8 @@
 
   実解析係数線形偏微分方程式\(Pu=0\)を考える．余接束\(\pi\colon\cotb[M]\to M\)の部分集合
   \begin{itemize}
-      \item 超函数\(u\)の波面集合（特異性スペクトル）\(\SingSpec(u)\)
-      \item 線形微分作用素\(P\)の特性多様体\(\Char(P)\)
+    \item 超函数\(u\)の波面集合（特異性スペクトル）\(\SingSpec(u)\)
+    \item 線形微分作用素\(P\)の特性多様体\(\Char(P)\)
   \end{itemize}
   を用いると，解\(u\)の特異性が方向別に分析できる．
   \pause
@@ -914,25 +914,25 @@
 \end{frame}
 
 \begin{frame}\frametitle{超局所解析における定理} 
-    \begin{THM}[佐藤の基本定理{\cite{Sato69,Sato70}}]
-        \(f\)：既知関数，
-        \(P\)：実解析的係数微分作用素とする．
-        \(u\)が微分方程式\(Pu=0\)の解のとき
-        \[
-            \SingSpec(u)\subset \Char(P)\cup\SingSpec(f).
-        \]
-    \end{THM}\pause
-    これを楕円型斉次方程式\(Pu=0\)の場合に適用すると
+  \begin{THM}[佐藤の基本定理{\cite{Sato69,Sato70}}]
+    \(f\)：既知関数，
+    \(P\)：実解析的係数微分作用素とする．
+    \(u\)が微分方程式\(Pu=f\)の超函数解のとき
     \[
-        \Char(P)=\varnothing,
-        \quad
-        \SingSpec(0)=\varnothing
+      \SingSpec(u)\subset \Char(P)\cup\SingSpec(f).
     \]
-    なので\(\singsupp(u)\coloneqq\left\{\text{\(u\)が解析的でない点}\right\}=\pi(\SingSpec(u))=\varnothing\)．
-    すなわち，\pause
-    \begin{alertblock}{楕円型正則性定理}
-        実解析的係数の楕円型方程式の解は解析的である．
-    \end{alertblock}
+  \end{THM}\pause
+  これを楕円型斉次方程式\(Pu=0\)の場合に適用すると
+  \[
+    \Char(P)=\varnothing,
+    \quad
+    \SingSpec(0)=\varnothing
+  \]
+  なので\(\singsupp(u)\coloneqq\left\{\text{\(u\)が解析的でない点}\right\}=\pi(\SingSpec(u))=\varnothing\)．
+  すなわち，\pause
+  \begin{alertblock}{楕円型正則性定理}
+    実解析的係数の楕円型方程式の解は解析的である．
+  \end{alertblock}
 \end{frame}
 \subsection{超局所台}
 \begin{frame}\frametitle{層の超局所台 --- 方向別の特異性}
@@ -1268,7 +1268,7 @@
       %\node at (1,0) [below]{\(1\)};
       \node at (-1,0) [below]{\(-1\)};
     \end{tikzpicture}
-    \begin{tikzpicture}[scale=0.75]
+    \begin{tikzpicture}[scale=0.75, visible on =<2->]
       \def\t{0.7}
       \def\xmax{3.5}
       \def\ymin{-3}
@@ -1297,7 +1297,8 @@
     %\caption{\(\muS[](\kk_{\rr,[-1,\infty)})\)}
     %\label{fig:not-gentle}
   \end{figure}
-  境界で特異性が発生：閉集合では内向き，開集合では外向き余法ベクトル
+  %境界で特異性が発生：閉集合では内向き，開集合では外向き余法ベクトル
+  余接束の各ファイバーを立てて描いていることに注意．
 \end{frame}
 \subsection{打切り超局所台}
 
@@ -1644,170 +1645,7 @@
 
     ひとつの多様体だけでなく，多様体間の射に関する相対的な主張も得た．
 \end{frame}
-\begin{frame}[fragile]
-  \frametitle{幾何的準備：接束の基本図式}
-    次の図式が基本的．
-    \[
-    \begin{tikzcd}[column sep=22pt, row sep=26pt, ampersand replacement=\&]
-      |[visible on=<2->]| TM
-        \arrow[rr, "df", bend left=30, visible on=<3->]
-        \arrow[r, "f'", visible on=<5->]
-        \arrow[rd, "\tau"', visible on=<2->]
-      \& |[visible on=<4->]| {M\pb[N]TM} % ← ここを中括弧 {} で囲むのが非常に重要です
-        \arrow[r, "f_{\tau}", visible on=<4->]
-        \arrow[d, "\tau", visible on=<4->]
-        \arrow[dr, phantom, "\square"{description,pos=0.4}, visible on=<4->]
-        %\arrow[dr, phantom, "\square", visible on=<3->]
-      \& |[visible on=<2->]| TN
-        \arrow[d, "\tau", visible on=<2->]
-      \\
-      \& M \arrow[r, "f"'] \& N.
-    \end{tikzcd}
-    \]\pause
-    ここで，
-    \begin{itemize}
-      \item<2-> \(\tau(x;v)=x\)：底空間への射影，
-      \item<3-> \(df(x;v)=(f(x);df_{x}(v))\)：底空間の射\(f\)と，\(f\)の\(x\)における微分の対，
-      \item<4-> \(f_{\tau}(x,(f(x);w))=(f(x);w)\)：第\(2\)射影（\(M\tpb[N]TN\)は\(f^{\ast}TN\)ともかく），
-      \item<5-> \(f'(x;v)=(x,f(x);df_{x}(v))\)：\(M\)上のベクトル束の射．
-    \end{itemize}
-\end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{幾何的準備：余接束の基本図式}
-    余接束では\(M\)上のベクトル束の射を転置する．
-    \[
-    \begin{tikzcd}[column sep=22pt, row sep=26pt, ampersand replacement=\&]
-      |[visible on=<2->]| {\cotb[M]}
-        %\arrow[rr, "df", bend left=30, visible on=<3->]
-        \arrow[rd, "\pi"', visible on=<2->]
-      \& |[visible on=<3->]| {M\pb[N]\cotb[N]} % ← ここを中括弧 {} で囲むのが非常に重要です
-        \arrow[l, "{\mdiff[f]}"', visible on=<4->]
-        \arrow[r, "{\mpb[f]}", visible on=<3->]
-        \arrow[d, "\pi", visible on=<3->]
-        \arrow[dr, phantom, "\square"{description,pos=0.4}, visible on=<3->]
-        %\arrow[dr, phantom, "\square", visible on=<3->]
-      \& |[visible on=<2->]| {\cotb[N]}
-        \arrow[d, "\pi", visible on=<2->]
-      \\
-      \& M \arrow[r, "f"'] \& N.
-    \end{tikzcd}
-    \]\pause
-    ここで，
-    \begin{itemize}
-      \item<2-> \(\pi(x;\xi)=x\)：底空間への射影，
-      %\item<3-> \(df(x;v)=(f(x);df_{x}(v))\)：底空間の射\(f\)と，\(f\)の\(x\)における微分の対，
-      \item<3-> \(\mpb[f](x,(f(x);\eta))=(f(x);\eta)\)：第\(2\)射影（\(M\tpb[N]\cotb[N]\)は\(f^{\ast}\cotb[N]\)ともかく），
-      \item<4-> \(\mdiff[f](x,f(x);\eta)=(x;f^{\ast}\eta)\)：各点\(x\)での微分の転置．
-    \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{主結果１（相対版）の元の主張}
-  \begin{columns}
-    \begin{column}{0.7\hsize}
-      \begin{itemize}
-        \item \(f\colon M\to N\)：多様体の射，
-        \quad\(\varphi\colon M\to \rr\)：\(C^{1}\)級函数．
-        \item \(M_{<t}\coloneqq \varphi^{-1}((-\infty,t))\)，\quad
-        \(M_{\leqq t}\coloneqq \varphi^{-1}((-\infty,t])\).
-        \item \(\iota_{t}\colon M_{<t}\hookrightarrow M\)，
-        \quad\(f_{t}=f\circ \iota_{t}\)．
-        \item \(F\in\Dompb(M)\)で
-        \(f_{t}\colon \supp(F)\cap \overline{M_{<t}}\to N\)は固有（\(t\in\rr\)）．
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.2\hsize}
-      \begin{tikzcd}
-        M \arrow[r,"f"] & N \\
-        M_{<t}\arrow[ru,"f_t"']\arrow[u,hookrightarrow,"\iota_t"]
-      \end{tikzcd}
-    \end{column}
-  \end{columns}\pause
-  \begin{THM}[相対版超局所Morseの補題 {\cite{KS90}}]
-    \(t_{0}\in\rr\)とする．
-    \(x\in M\setminus M_{\leqq t_{0}}\)に対し，
-    次が成り立つとする．
-    \[
-      (x;d\varphi(x))\notin \left(
-        \muS[](F)+ \mdiff[f]\left(
-          M\pb[N]\cotb[N]
-        \right)
-      \right).
-    \]
-    このとき，任意の\(t>t_{\circ}\)に対して，
-    次の層の射は\(j\in\zz\)に対し同型．
-    \[
-      \Rder[j]{f_{\ast}}F
-      \to
-      \Rder[j]{{f_{t}}_{\ast}}\iota^{-1}_{t}F.
-    \]
-  \end{THM}\pause
-  これも\(\muS[k](F)\)を用いて拡張した.
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{主結果１ --- 相対版超局所Morseの補題（打切り版）}
-  %設定は次のとおり．
-  \begin{columns}
-    \begin{column}{0.7\hsize}
-      \begin{itemize}
-        \item \(f\colon M\to N\)：多様体の射，
-        \quad\(\varphi\colon M\to \rr\)：\(C^{1}\)級函数．
-        \item \(M_{<t}\coloneqq \varphi^{-1}((-\infty,t))\)，\quad
-        \(M_{\leqq t}\coloneqq \varphi^{-1}((-\infty,t])\).
-        \item \(\iota_{t}\colon M_{<t}\hookrightarrow M\)，
-        \quad\(f_{t}=f\circ \iota_{t}\)．
-        \item \(F\in\Dompb(M)\)で
-        \(f_{t}\colon \supp(F)\cap \overline{M_{<t}}\to N\)は固有（\(t\in\rr\)）．
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.2\hsize}
-      \begin{tikzcd}
-        M \arrow[r,"f"] & N \\
-        M_{<t}\arrow[ru,"f_t"']\arrow[u,hookrightarrow,"\iota_t"]
-      \end{tikzcd}
-    \end{column}
-  \end{columns}
-  \begin{THM}[O., 相対版打切り超局所Morseの補題]
-    \(\textcolor{brown}{k\in\zz}\)とし\(t_{0}\in\rr\)とする．
-    \(x\in M\setminus M_{\leqq t_{0}}\)に対し，
-    次が成り立つとする．\[
-        (x;d\varphi(x))\notin \left(
-          \muS[\textcolor{brown}{k}](F)+ \mdiff[f]\left(
-            M\pb[N]\cotb[N]
-          \right)
-        \right).
-      \]
-    このとき，任意の\(t>t_{\circ}\)に対して，
-    次の層の射は\textcolor{brown}{\(j<k\)ならば同型}，\textcolor{brown}{\(j=k\)ならば単射}．
-    \[
-      \Rder[j]{f_{\ast}}F
-      \to
-      \Rder[j]{{f_{t}}_{\ast}}\iota^{-1}_{t}F.
-    \]
-  \end{THM}
-\end{frame}
-\begin{frame}
-  \frametitle{主結果１の相対版から絶対版への帰着}
-  \(N=\pt\)（1点）のとき，定値写像\(f\colon M\to \pt\)に関する順像が\[
-    \Rder[j]{f_{\ast}}F=H^{j}(M;F),
-    \quad
-    \Rder[j]{{f_{t}}_{\ast}}\iota^{-1}_{t}G
-    =H^{j}(M_{t};F)
-  \]
-  であることに注意すると，主結果１の絶対版が得られる．
-  \begin{THM}[O., 打切り版超局所Morseの補題]
-    \textcolor{brown}{\(k\in\zz\)とする．}
-    \(a\leqq\psi(x)< b\)ならば
-    \((x;d\psi(x))\notin\muS[\textcolor{brown}{k}](F)\)であるとする．
-    このとき制限射\[
-        H^{j}(M_b;F)\longrightarrow H^{j}(M_a;F)
-    \]は\textcolor{brown}{\(j<k\)ならば同型}であり，
-    \textcolor{brown}{\(j=k\)ならば単射}である．
-    \end{THM}    
-    主結果１はもっと一般の場合に成り立つ，主結果２から従う．
-\end{frame}
 
 \begin{frame}
   \frametitle{単射は「接続の一意性」}
@@ -2283,48 +2121,238 @@
 
 
 \begin{frame}
-    \frametitle{まとめ}
-    \[\vcenter{\xymatrix@C=36pt@R=10pt{
-        \txt{\(\muS[](F)\)\\
-        \cite{KS82}}
-        %\ar[dd]
-        &
-        \txt{超局所Morseの補題\\
-        \cite{KS90}\\\(H^{j}(M_b;F)\cong H^{j}(M_a;F)\)}
-        %\ar[dd]
-        &
-        \txt{非特性変形補題\\
-        \cite{KS90}\\
-        \(H^{j}\left(\bigcup\limits_{s\in\rr}U_{s};F\right)
-        \cong
-        H^{j}\left(U_{t};F\right)\)}
-        %\ar[dd]
-        \\
-        %\ar[r] 
-        &
-        &
-        %\ar[l]
-        \\
-        \txt{\(\muS[k](F)\)\\
-        \cite{KFS03a}}
-        &
-        \txt{打切り超局所Morseの補題\\
-        主結果１[\textcolor{darkblue}{O.}]\\
-        \(H^{j}(M_b;F)\to H^{j}(M_a;F)\)\\
-        \(j<k\)で同型，\(j=k\)で単射}
-        &\txt{打切り非特性変形補題\\主結果２[\textcolor{darkblue}{O.}]\\\(
-        H^{j}\left(\bigcup\limits_{s\in\rr}U_{s};F\right)
-        \to
-        H^{j}\left(U_{t};F\right)\)\\\(
-        j<k\)で同型，\(j=k\)で単射}
-        }}\]
-    \vspace{5pt}
-    \begin{center}
-      結果：層のコホモロジーの延長可能性を次数に関して精密化した．
-      さらに相対化もした．
-    \end{center}
-
+  \frametitle{ここまでのまとめ}
+  \[\vcenter{\xymatrix@C=36pt@R=10pt{
+    \txt{\(\muS[](F)\)\\
+    \cite{KS82}}
+    %\ar[dd]
+    &
+    \txt{超局所Morseの補題\\
+    \cite{KS90}\\\(H^{j}(M_b;F)\cong H^{j}(M_a;F)\)}
+    %\ar[dd]
+    &
+    \txt{非特性変形補題\\
+    \cite{KS90}\\
+    \(H^{j}\left(\bigcup\limits_{s\in\rr}U_{s};F\right)
+    \cong
+    H^{j}\left(U_{t};F\right)\)}
+    %\ar[dd]
+    \\
+    %\ar[r] 
+    &
+    &
+    %\ar[l]
+    \\
+    \txt{\(\muS[k](F)\)\\
+    \cite{KFS03a}}
+    &
+    \txt{打切り超局所Morseの補題\\
+    主結果１[\textcolor{darkblue}{O.}]\\
+    \(H^{j}(M_b;F)\to H^{j}(M_a;F)\)\\
+    \(j<k\)で同型，\(j=k\)で単射}
+    &\txt{打切り非特性変形補題\\主結果２[\textcolor{darkblue}{O.}]\\\(
+    H^{j}\left(\bigcup\limits_{s\in\rr}U_{s};F\right)
+    \to
+    H^{j}\left(U_{t};F\right)\)\\\(
+    j<k\)で同型，\(j=k\)で単射}
+  }}\]
+  \vspace{5pt}
+  \begin{center}
+    結果：層のコホモロジーの延長可能性を次数に関して精密化した．
+    さらに相対化もした．
+  \end{center}
 \end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{相対版の準備：接束の基本図式}
+    次の図式が基本的．
+    \[
+    \begin{tikzcd}[column sep=22pt, row sep=26pt, ampersand replacement=\&]
+      |[visible on=<2->]| TM
+        \arrow[rr, "df", bend left=30, visible on=<3->]
+        \arrow[r, "f'", visible on=<5->]
+        \arrow[rd, "\tau"', visible on=<2->]
+      \& |[visible on=<4->]| {M\pb[N]TM} % ← ここを中括弧 {} で囲むのが非常に重要です
+        \arrow[r, "f_{\tau}", visible on=<4->]
+        \arrow[d, "\tau", visible on=<4->]
+        \arrow[dr, phantom, "\square"{description,pos=0.4}, visible on=<4->]
+        %\arrow[dr, phantom, "\square", visible on=<3->]
+      \& |[visible on=<2->]| TN
+        \arrow[d, "\tau", visible on=<2->]
+      \\
+      \& M \arrow[r, "f"'] \& N.
+    \end{tikzcd}
+    \]\pause
+    ここで，
+    \begin{itemize}
+      \item<2-> \(\tau(x;v)=x\)：底空間への射影，
+      \item<3-> \(df(x;v)=(f(x);df_{x}(v))\)：底空間の射\(f\)と，\(f\)の\(x\)における微分の対，
+      \item<4-> \(f_{\tau}(x,(f(x);w))=(f(x);w)\)：第\(2\)射影（\(M\tpb[N]TN\)は\(f^{\ast}TN\)ともかく），
+      \item<5-> \(f'(x;v)=(x,f(x);df_{x}(v))\)：\(M\)上のベクトル束の射．
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{相対版の準備：余接束の基本図式}
+    余接束では\(M\)上のベクトル束の射を転置する．
+    \[
+    \begin{tikzcd}[column sep=22pt, row sep=26pt, ampersand replacement=\&]
+      |[visible on=<2->]| {\cotb[M]}
+        %\arrow[rr, "df", bend left=30, visible on=<3->]
+        \arrow[rd, "\pi"', visible on=<2->]
+      \& |[visible on=<3->]| {M\pb[N]\cotb[N]} % ← ここを中括弧 {} で囲むのが非常に重要です
+        \arrow[l, "{\mdiff[f]}"', visible on=<4->]
+        \arrow[r, "{\mpb[f]}", visible on=<3->]
+        \arrow[d, "\pi", visible on=<3->]
+        \arrow[dr, phantom, "\square"{description,pos=0.4}, visible on=<3->]
+        %\arrow[dr, phantom, "\square", visible on=<3->]
+      \& |[visible on=<2->]| {\cotb[N]}
+        \arrow[d, "\pi", visible on=<2->]
+      \\
+      \& M \arrow[r, "f"'] \& N.
+    \end{tikzcd}
+    \]\pause
+    ここで，
+    \begin{itemize}
+      \item<2-> \(\pi(x;\xi)=x\)：底空間への射影，
+      %\item<3-> \(df(x;v)=(f(x);df_{x}(v))\)：底空間の射\(f\)と，\(f\)の\(x\)における微分の対，
+      \item<3-> \(\mpb[f](x,(f(x);\eta))=(f(x);\eta)\)：第\(2\)射影（\(M\tpb[N]\cotb[N]\)は\(f^{\ast}\cotb[N]\)ともかく），
+      \item<4-> \(\mdiff[f](x,f(x);\eta)=(x;f^{\ast}\eta)\)：各点\(x\)での微分の転置．
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{相対版の準備：順像}
+  多様体の射に沿って，もとの層をおしだすことができる．
+  \begin{exampleblock}{順像}
+    \(F\in\Dompb(\kk_M)\)と多様体の射\(f\colon M\to N\)に対して，
+    \[
+      \Rder[j]{f_{\ast}}F\in \Mod(\kk_{N})
+    \]
+    は，\(
+      V\mapsto H^{j}(f^{-1}(V);F),\ (V\subset N)
+    \)
+    から定まる層．
+  \end{exampleblock}\pause
+  逆像は開うめこみの場合，次のようになる．
+  \begin{exampleblock}{開うめこみの逆像}
+    開うめこみ\(
+    \iota\colon U\hookrightarrow M
+    \)に対し，逆像\(\iota^{-1}F\)を次で定義．
+    \[
+      V\mapsto \iota^{-1}F(V)\coloneqq F(V),\ (V\subset U).
+    \]
+  \end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{主結果１（相対版）の元の主張}
+  \begin{columns}
+    \begin{column}{0.7\hsize}
+      \begin{itemize}
+        \item \(f\colon M\to N\)：多様体の射，
+        \quad\(\varphi\colon M\to \rr\)：\(C^{1}\)級函数．
+        \item \(M_{<t}\coloneqq \varphi^{-1}((-\infty,t))\)，\quad
+        \(M_{\leqq t}\coloneqq \varphi^{-1}((-\infty,t])\).
+        \item \(\iota_{t}\colon M_{<t}\hookrightarrow M\)，
+        \quad\(f_{t}=f\circ \iota_{t}\)．
+        \item \(F\in\Dompb(M)\)で
+        \(f_{t}\colon \supp(F)\cap \overline{M_{<t}}\to N\)は固有\((t\in\rr).\)
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.2\hsize}
+      \begin{tikzcd}
+        M \arrow[r,"f"] & N \\
+        M_{<t}\arrow[ru,"f_t"']\arrow[u,hookrightarrow,"\iota_t"]
+      \end{tikzcd}
+    \end{column}
+  \end{columns}\pause
+  \begin{THM}[相対版超局所Morseの補題 {\cite{KS90}}]
+    \(t_{0}\in\rr\)とする．
+    \(x\in M\setminus M_{\leqq t_{0}}\)に対し，
+    次が成り立つとする．
+    \[
+      (x;d\varphi(x))\notin \left(
+        \muS[](F)+ \mdiff[f]\left(
+          M\pb[N]\cotb[N]
+        \right)
+      \right).
+    \]
+    このとき，任意の\(t>t_{\circ}\)に対して，
+    次の層の射は\(j\in\zz\)に対し同型．
+    \[
+      \Rder[j]{f_{\ast}}F
+      \to
+      \Rder[j]{{f_{t}}_{\ast}}\iota^{-1}_{t}F.
+    \]
+  \end{THM}\pause
+  これも\(\muS[k](F)\)を用いて拡張した.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{主結果１ --- 相対版超局所Morseの補題（打切り版）}
+  %設定は次のとおり．
+  \begin{columns}
+    \begin{column}{0.7\hsize}
+      \begin{itemize}
+        \item \(f\colon M\to N\)：多様体の射，
+        \quad\(\varphi\colon M\to \rr\)：\(C^{1}\)級函数．
+        \item \(M_{<t}\coloneqq \varphi^{-1}((-\infty,t))\)，\quad
+        \(M_{\leqq t}\coloneqq \varphi^{-1}((-\infty,t])\).
+        \item \(\iota_{t}\colon M_{<t}\hookrightarrow M\)，
+        \quad\(f_{t}=f\circ \iota_{t}\)．
+        \item \(F\in\Dompb(M)\)で
+        \(f_{t}\colon \supp(F)\cap \overline{M_{<t}}\to N\)は固有（\(t\in\rr\)）．
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.2\hsize}
+      \begin{tikzcd}
+        M \arrow[r,"f"] & N \\
+        M_{<t}\arrow[ru,"f_t"']\arrow[u,hookrightarrow,"\iota_t"]
+      \end{tikzcd}
+    \end{column}
+  \end{columns}
+  \begin{THM}[O., 相対版打切り超局所Morseの補題]
+    \(\textcolor{brown}{k\in\zz}\)とし\(t_{0}\in\rr\)とする．
+    \(x\in M\setminus M_{\leqq t_{0}}\)に対し，
+    次が成り立つとする．\[
+        (x;d\varphi(x))\notin \left(
+          \muS[\textcolor{brown}{k}](F)+ \mdiff[f]\left(
+            M\pb[N]\cotb[N]
+          \right)
+        \right).
+      \]
+    このとき，任意の\(t>t_{\circ}\)に対して，
+    次の層の射は\textcolor{brown}{\(j<k\)ならば同型}，\textcolor{brown}{\(j=k\)ならば単射}．
+    \[
+      \Rder[j]{f_{\ast}}F
+      \to
+      \Rder[j]{{f_{t}}_{\ast}}\iota^{-1}_{t}F.
+    \]
+  \end{THM}
+\end{frame}
+\begin{frame}
+  \frametitle{主結果１の相対版から絶対版への帰着}
+  \(N=\pt\)（1点）のとき，定値写像\(f\colon M\to \pt\)に関する順像が\[
+    \Rder[j]{f_{\ast}}F=H^{j}(M;F),
+    \quad
+    \Rder[j]{{f_{t}}_{\ast}}\iota^{-1}_{t}G
+    =H^{j}(M_{t};F)
+  \]
+  であることに注意すると，主結果１の絶対版が得られる．
+  \begin{THM}[O., 打切り版超局所Morseの補題]
+    \textcolor{brown}{\(k\in\zz\)とする．}
+    \(a\leqq\psi(x)< b\)ならば
+    \((x;d\psi(x))\notin\muS[\textcolor{brown}{k}](F)\)であるとする．
+    このとき制限射\[
+        H^{j}(M_b;F)\longrightarrow H^{j}(M_a;F)
+    \]は\textcolor{brown}{\(j<k\)ならば同型}であり，
+    \textcolor{brown}{\(j=k\)ならば単射}である．
+  \end{THM}    
+  主結果２から主結果１従う．
+\end{frame}
+
 
 \appendix
 \section*{参考文献}
