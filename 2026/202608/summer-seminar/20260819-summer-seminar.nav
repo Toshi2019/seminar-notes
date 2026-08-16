@@ -83,55 +83,59 @@
 \headcommand {\beamer@framepages {78}{78}}
 \headcommand {\slideentry {3}{3}{8}{79/79}{主結果２}{0}}
 \headcommand {\beamer@framepages {79}{79}}
-\headcommand {\slideentry {3}{3}{9}{80/84}{主結果２}{0}}
+\headcommand {\beamer@subsectionpages {64}{79}}
+\headcommand {\beamer@subsectionentry {0}{3}{4}{80}{主結果１の相対化}}
+\headcommand {\slideentry {3}{4}{1}{80/84}{主結果１の相対化}{0}}
 \headcommand {\beamer@framepages {80}{84}}
-\headcommand {\slideentry {3}{3}{10}{85/88}{主結果２}{0}}
+\headcommand {\slideentry {3}{4}{2}{85/88}{主結果１の相対化}{0}}
 \headcommand {\beamer@framepages {85}{88}}
-\headcommand {\slideentry {3}{3}{11}{89/90}{主結果２}{0}}
+\headcommand {\slideentry {3}{4}{3}{89/90}{主結果１の相対化}{0}}
 \headcommand {\beamer@framepages {89}{90}}
-\headcommand {\slideentry {3}{3}{12}{91/93}{主結果２}{0}}
+\headcommand {\slideentry {3}{4}{4}{91/93}{主結果１の相対化}{0}}
 \headcommand {\beamer@framepages {91}{93}}
-\headcommand {\slideentry {3}{3}{13}{94/94}{主結果２}{0}}
+\headcommand {\slideentry {3}{4}{5}{94/94}{主結果１の相対化}{0}}
 \headcommand {\beamer@framepages {94}{94}}
-\headcommand {\slideentry {3}{3}{14}{95/95}{主結果２}{0}}
+\headcommand {\slideentry {3}{4}{6}{95/95}{主結果１の相対化}{0}}
 \headcommand {\beamer@framepages {95}{95}}
-\headcommand {\gdef \insertmainframenumber {36}}
-\headcommand {\partentry {\translate {Appendix}}{1}}
-\headcommand {\beamer@partpages {1}{95}}
-\headcommand {\beamer@sectionpages {52}{95}}
-\headcommand {\beamer@subsectionpages {64}{95}}
-\headcommand {\beamer@appendixpages {96}}
-\headcommand {\beamer@sectionpages {96}{95}}
-\headcommand {\beamer@subsectionpages {96}{95}}
-\headcommand {\sectionentry {4}{参考文献}{96}{参考文献}{1}}
-\headcommand {\slideentry {4}{0}{1}{96/96}{}{1}}
+\headcommand {\slideentry {3}{4}{7}{96/96}{主結果１の相対化}{0}}
 \headcommand {\beamer@framepages {96}{96}}
-\headcommand {\slideentry {4}{0}{1}{96/97}{}{1}}
-\headcommand {\beamer@framepages {96}{97}}
-\headcommand {\slideentry {4}{0}{2}{98/98}{}{1}}
-\headcommand {\beamer@framepages {98}{98}}
-\headcommand {\slideentry {4}{0}{3}{99/99}{}{1}}
+\headcommand {\gdef \insertmainframenumber {37}}
+\headcommand {\partentry {\translate {Appendix}}{1}}
+\headcommand {\beamer@partpages {1}{96}}
+\headcommand {\beamer@sectionpages {52}{96}}
+\headcommand {\beamer@subsectionpages {80}{96}}
+\headcommand {\beamer@appendixpages {97}}
+\headcommand {\beamer@sectionpages {97}{96}}
+\headcommand {\beamer@subsectionpages {97}{96}}
+\headcommand {\sectionentry {4}{参考文献}{97}{参考文献}{1}}
+\headcommand {\slideentry {4}{0}{1}{97/97}{}{1}}
+\headcommand {\beamer@framepages {97}{97}}
+\headcommand {\slideentry {4}{0}{1}{97/98}{}{1}}
+\headcommand {\beamer@framepages {97}{98}}
+\headcommand {\slideentry {4}{0}{2}{99/99}{}{1}}
 \headcommand {\beamer@framepages {99}{99}}
-\headcommand {\slideentry {4}{0}{4}{100/101}{}{1}}
-\headcommand {\beamer@framepages {100}{101}}
-\headcommand {\slideentry {4}{0}{5}{102/104}{}{1}}
-\headcommand {\beamer@framepages {102}{104}}
-\headcommand {\slideentry {4}{0}{6}{105/105}{}{1}}
-\headcommand {\beamer@framepages {105}{105}}
-\headcommand {\slideentry {4}{0}{7}{106/106}{}{1}}
+\headcommand {\slideentry {4}{0}{3}{100/100}{}{1}}
+\headcommand {\beamer@framepages {100}{100}}
+\headcommand {\slideentry {4}{0}{4}{101/102}{}{1}}
+\headcommand {\beamer@framepages {101}{102}}
+\headcommand {\slideentry {4}{0}{5}{103/105}{}{1}}
+\headcommand {\beamer@framepages {103}{105}}
+\headcommand {\slideentry {4}{0}{6}{106/106}{}{1}}
 \headcommand {\beamer@framepages {106}{106}}
-\headcommand {\slideentry {4}{0}{8}{107/107}{}{1}}
+\headcommand {\slideentry {4}{0}{7}{107/107}{}{1}}
 \headcommand {\beamer@framepages {107}{107}}
-\headcommand {\slideentry {4}{0}{9}{108/108}{}{1}}
+\headcommand {\slideentry {4}{0}{8}{108/108}{}{1}}
 \headcommand {\beamer@framepages {108}{108}}
-\headcommand {\slideentry {4}{0}{10}{109/109}{}{1}}
+\headcommand {\slideentry {4}{0}{9}{109/109}{}{1}}
 \headcommand {\beamer@framepages {109}{109}}
-\headcommand {\slideentry {4}{0}{11}{110/110}{}{1}}
+\headcommand {\slideentry {4}{0}{10}{110/110}{}{1}}
 \headcommand {\beamer@framepages {110}{110}}
-\headcommand {\beamer@partpages {96}{110}}
-\headcommand {\beamer@subsectionpages {96}{110}}
-\headcommand {\beamer@sectionpages {96}{110}}
-\headcommand {\beamer@documentpages {110}}
+\headcommand {\slideentry {4}{0}{11}{111/111}{}{1}}
+\headcommand {\beamer@framepages {111}{111}}
+\headcommand {\beamer@partpages {97}{111}}
+\headcommand {\beamer@subsectionpages {97}{111}}
+\headcommand {\beamer@sectionpages {97}{111}}
+\headcommand {\beamer@documentpages {111}}
 \headcommand {\gdef \inserttotalframenumber {12}}
-\headcommand {\gdef \inserttotalframenumber {36}}
+\headcommand {\gdef \inserttotalframenumber {37}}
 \headcommand {\gdef \appendixtotalframenumber {12}}

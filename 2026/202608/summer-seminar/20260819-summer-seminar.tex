@@ -950,9 +950,9 @@
   つまり，}
  %各次数のコホモロジーにおける``方向\(p\)の定める半空間への制限''
   \uncover<4->{\[
-      H^{j}F_{x_0}\cong \indlim[B\ni x_{0}]H^{j}(U;F)
-      \to
-      \indlim[B\ni x_{0}]H^{j}(B\cap\{x\smid\varphi(x)<\varphi(x_0)\};F).
+    H^{j}F_{x_0}\cong \indlim[B\ni x_{0}]H^{j}(B;F)
+    \to
+    \indlim[B\ni x_{0}]H^{j}(B\cap\{x\smid\varphi(x)<\varphi(x_0)\};F).
   \]
   が同型になるというのが，\(p\)の方向に特異的でないということ．}
   %三角で考えると，次の定義になる．
@@ -1912,7 +1912,7 @@
         % ラベル
         \node at (2.2,0.8) {\(Z_t\)};
         \node at (2.4,-0.6) {\(U_t\)};
-        \node at (-1.4,2.4) {\(Z\)};
+        \node at (-1.4,2.4) {\(S\)};
       \end{tikzpicture}
       %\caption{example \eqref{item:not-gentle}}
       %\label{fig:not-gentle}
@@ -2159,9 +2159,11 @@
   \vspace{5pt}
   \begin{center}
     結果：層のコホモロジーの延長可能性を次数に関して精密化した．
-    さらに相対化もした．
+    残り：主結果１の相対化．
   \end{center}
 \end{frame}
+
+\subsection{主結果１の相対化}
 
 \begin{frame}[fragile]
   \frametitle{相対版の準備：接束の基本図式}
@@ -2279,7 +2281,7 @@
         \right)
       \right).
     \]
-    このとき，任意の\(t>t_{\circ}\)に対して，
+    このとき，任意の\(t>t_{0}\)に対して，
     次の層の射は\(j\in\zz\)に対し同型．
     \[
       \Rder[j]{f_{\ast}}F
@@ -2323,7 +2325,7 @@
           \right)
         \right).
       \]
-    このとき，任意の\(t>t_{\circ}\)に対して，
+    このとき，任意の\(t>t_{0}\)に対して，
     次の層の射は\textcolor{brown}{\(j<k\)ならば同型}，\textcolor{brown}{\(j=k\)ならば単射}．
     \[
       \Rder[j]{f_{\ast}}F
@@ -2334,25 +2336,69 @@
 \end{frame}
 \begin{frame}
   \frametitle{主結果１の相対版から絶対版への帰着}
-  \(N=\pt\)（1点）のとき，定値写像\(f\colon M\to \pt\)に関する順像が\[
+  \(N=\pt\)（1点）のとき，
+  定値写像\(f\colon M\to \pt\)に関する順像は次のようになる．\[
     \Rder[j]{f_{\ast}}F=H^{j}(M;F),
     \quad
     \Rder[j]{{f_{t}}_{\ast}}\iota^{-1}_{t}G
     =H^{j}(M_{t};F)
   \]
-  であることに注意すると，主結果１の絶対版が得られる．
+  \(\mres[f]{M_{<b}}\colon M_{<b}\to \pt\)
+  を考えれば，主結果１の絶対版が得られる．
   \begin{THM}[O., 打切り版超局所Morseの補題]
     \textcolor{brown}{\(k\in\zz\)とする．}
     \(a\leqq\psi(x)< b\)ならば
     \((x;d\psi(x))\notin\muS[\textcolor{brown}{k}](F)\)であるとする．
     このとき制限射\[
-        H^{j}(M_b;F)\longrightarrow H^{j}(M_a;F)
+        H^{j}(M_{<b};F)\longrightarrow H^{j}(M_{<a};F)
     \]は\textcolor{brown}{\(j<k\)ならば同型}であり，
     \textcolor{brown}{\(j=k\)ならば単射}である．
   \end{THM}    
   主結果２から主結果１従う．
 \end{frame}
 
+\begin{frame}
+  \frametitle{まとめ}
+  \[\vcenter{\xymatrix@C=36pt@R=10pt{
+    \txt{\(\muS[](F)\)\\
+    \cite{KS82}}
+    %\ar[dd]
+    &
+    \txt{超局所Morseの補題\\
+    \cite{KS90}\\\(H^{j}(M_b;F)\cong H^{j}(M_a;F)\)}
+    %\ar[dd]
+    &
+    \txt{非特性変形補題\\
+    \cite{KS90}\\
+    \(H^{j}\left(\bigcup\limits_{s\in\rr}U_{s};F\right)
+    \cong
+    H^{j}\left(U_{t};F\right)\)}
+    %\ar[dd]
+    \\
+    %\ar[r] 
+    &
+    &
+    %\ar[l]
+    \\
+    \txt{\(\muS[k](F)\)\\
+    \cite{KFS03a}}
+    &
+    \txt{打切り超局所Morseの補題\\
+    主結果１[\textcolor{darkblue}{O.}]\\
+    \(H^{j}(M_b;F)\to H^{j}(M_a;F)\)\\
+    \(j<k\)で同型，\(j=k\)で単射}
+    &\txt{打切り非特性変形補題\\主結果２[\textcolor{darkblue}{O.}]\\\(
+    H^{j}\left(\bigcup\limits_{s\in\rr}U_{s};F\right)
+    \to
+    H^{j}\left(U_{t};F\right)\)\\\(
+    j<k\)で同型，\(j=k\)で単射}
+  }}\]
+  \vspace{5pt}
+  \begin{center}
+    結果：層のコホモロジーの延長可能性を次数に関して精密化した．
+    さらに相対化もした．
+  \end{center}
+\end{frame}
 
 \appendix
 \section*{参考文献}

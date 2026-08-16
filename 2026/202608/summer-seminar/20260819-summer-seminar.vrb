@@ -30,7 +30,7 @@
           \right)
         \right).
       \]
-    このとき，任意の\(t>t_{\circ}\)に対して，
+    このとき，任意の\(t>t_{0}\)に対して，
     次の層の射は\textcolor{brown}{\(j<k\)ならば同型}，\textcolor{brown}{\(j=k\)ならば単射}．
     \[
       \Rder[j]{f_{\ast}}F

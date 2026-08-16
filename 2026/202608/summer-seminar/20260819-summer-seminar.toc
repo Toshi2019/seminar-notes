@@ -9,3 +9,4 @@
 \beamer@subsectionintoc {3}{1}{Morse理論の復習}{52}{0}{3}
 \beamer@subsectionintoc {3}{2}{主結果１}{55}{0}{3}
 \beamer@subsectionintoc {3}{3}{主結果２}{64}{0}{3}
+\beamer@subsectionintoc {3}{4}{主結果１の相対化}{80}{0}{3}

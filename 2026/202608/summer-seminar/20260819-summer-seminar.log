@@ -1,10 +1,10 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  15 AUG 2026 17:47
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  16 AUG 2026 22:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/giuseppe/seminar-notes/2026/202608/summer-seminar/2026080819-summer-seminar.tex
-(/Users/giuseppe/seminar-notes/2026/202608/summer-seminar/2026080819-summer-seminar.tex
+**/Users/giuseppe/seminar-notes/2026/202608/summer-seminar/20260819-summer-seminar.tex
+(/Users/giuseppe/seminar-notes/2026/202608/summer-seminar/20260819-summer-seminar.tex
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -974,8 +974,8 @@ File: l3backend-dvipdfmx.def 2024-02-20 L3 backend support: dvipdfmx
 \g__pdf_backend_object_int=\count413
 \g__pdf_backend_annotation_int=\count414
 \g__pdf_backend_link_int=\count415
-) (./2026080819-summer-seminar.aux)
-\openout1 = `2026080819-summer-seminar.aux'.
+) (./20260819-summer-seminar.aux)
+\openout1 = `20260819-summer-seminar.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 537.
 LaTeX Font Info:    ... okay on input line 537.
@@ -1034,9 +1034,9 @@ LaTeX Font Info:    ... okay on input line 537.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 537.
-(./2026080819-summer-seminar.out) (./2026080819-summer-seminar.out)
+(./20260819-summer-seminar.out) (./20260819-summer-seminar.out)
 \@outlinefile=\write8
-\openout8 = `2026080819-summer-seminar.out'.
+\openout8 = `20260819-summer-seminar.out'.
 
  (/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
@@ -1069,7 +1069,7 @@ LaTeX Font Info:    Trying to load font information for U+lasy on input line 537
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 Package xypdf Info: Line width: 0.39998pt on input line 537.
- (./2026080819-summer-seminar.nav)
+ (./20260819-summer-seminar.nav)
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
 (Font)              scaled to size 4.62341pt on input line 537.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
@@ -1314,94 +1314,94 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 ] <xymatrix 3x3 38> [79
 
 ]
-\openout4 = `2026080819-summer-seminar.vrb'.
+\openout4 = `20260819-summer-seminar.vrb'.
 
- (./2026080819-summer-seminar.vrb) [80
+ (./20260819-summer-seminar.vrb) [80
 
-] (./2026080819-summer-seminar.vrb) [81
+] (./20260819-summer-seminar.vrb) [81
 
-] (./2026080819-summer-seminar.vrb) [82
+] (./20260819-summer-seminar.vrb) [82
 
-] (./2026080819-summer-seminar.vrb) [83
+] (./20260819-summer-seminar.vrb) [83
 
-] (./2026080819-summer-seminar.vrb) [84
+] (./20260819-summer-seminar.vrb) [84
 
 ]
-\openout4 = `2026080819-summer-seminar.vrb'.
+\openout4 = `20260819-summer-seminar.vrb'.
 
- (./2026080819-summer-seminar.vrb) [85
+ (./20260819-summer-seminar.vrb) [85
 
-] (./2026080819-summer-seminar.vrb) [86
+] (./20260819-summer-seminar.vrb) [86
 
-] (./2026080819-summer-seminar.vrb) [87
+] (./20260819-summer-seminar.vrb) [87
 
-] (./2026080819-summer-seminar.vrb) [88
+] (./20260819-summer-seminar.vrb) [88
 
 ] [89
 
 ] [90
 
 ]
-\openout4 = `2026080819-summer-seminar.vrb'.
+\openout4 = `20260819-summer-seminar.vrb'.
 
- (./2026080819-summer-seminar.vrb)
-Overfull \vbox (6.65189pt too high) detected at line 2291
+ (./20260819-summer-seminar.vrb)
+Overfull \vbox (6.65189pt too high) detected at line 2293
  []
 
 [91
 
-] (./2026080819-summer-seminar.vrb)
-Overfull \vbox (6.65189pt too high) detected at line 2291
+] (./20260819-summer-seminar.vrb)
+Overfull \vbox (6.65189pt too high) detected at line 2293
  []
 
 [92
 
-] (./2026080819-summer-seminar.vrb)
-Overfull \vbox (6.65189pt too high) detected at line 2291
+] (./20260819-summer-seminar.vrb)
+Overfull \vbox (6.65189pt too high) detected at line 2293
  []
 
 [93
 
 ]
-\openout4 = `2026080819-summer-seminar.vrb'.
+\openout4 = `20260819-summer-seminar.vrb'.
 
- (./2026080819-summer-seminar.vrb) [94
+ (./20260819-summer-seminar.vrb) [94
 
 ] [95
+
+] <xymatrix 3x3 38> [96
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\translate ' on input line 2357.
+(hyperref)                removing `\translate ' on input line 2403.
 
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 2398.
+(Font)              No change on input line 2444.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 2398.
+(Font)              No change on input line 2444.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 2398.
+(Font)              No change on input line 2444.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 2398.
+(Font)              No change on input line 2444.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 2398.
+(Font)              No change on input line 2444.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 2398.
+(Font)              No change on input line 2444.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 2398.
+(Font)              No change on input line 2444.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 2398.
+(Font)              No change on input line 2444.
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 2398.
-[96
-
-] [97
-
+(Font)              No change on input line 2444.
+[97
 
 ] [98
 
-] <xymatrix 3x2 331> [99
 
-] [100
+] [99
+
+] <xymatrix 3x2 331> [100
 
 ] [101
 
@@ -1423,32 +1423,34 @@ LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
 
 ] [110
 
+] [111
+
 ] Excluding 'comment' comment.
 \tf@nav=\write9
-\openout9 = `2026080819-summer-seminar.nav'.
+\openout9 = `20260819-summer-seminar.nav'.
 
 \tf@toc=\write10
-\openout10 = `2026080819-summer-seminar.toc'.
+\openout10 = `20260819-summer-seminar.toc'.
 
 \tf@snm=\write11
-\openout11 = `2026080819-summer-seminar.snm'.
+\openout11 = `20260819-summer-seminar.snm'.
 
- (./2026080819-summer-seminar.aux)
+ (./20260819-summer-seminar.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `2026080819-summer-seminar.out' has not changed.
-(rerunfilecheck)             Checksum: F98C41B41B79851C5160CC1BF4A1E1E8;1287.
+Package rerunfilecheck Info: File `20260819-summer-seminar.out' has not changed.
+(rerunfilecheck)             Checksum: 404DA64DEAFD5F4857E12A506D2985A1;1410.
  ) 
 Here is how much of TeX's memory you used:
- 37251 strings out of 474774
- 715173 string characters out of 5758801
+ 37255 strings out of 474774
+ 715103 string characters out of 5758801
  1939032 words of memory out of 5000000
- 58844 multiletter control sequences out of 15000+600000
+ 58848 multiletter control sequences out of 15000+600000
  617205 words of font info for 161 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 128i,28n,123p,3309b,1303s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,28n,123p,3307b,1303s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 2026080819-summer-seminar.dvi (110 pages, 942932 bytes).
+Output written on 20260819-summer-seminar.dvi (111 pages, 947468 bytes).
