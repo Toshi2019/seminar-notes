@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  5 AUG 2026 21:23
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  30 SEP 2026 15:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -864,64 +864,69 @@ LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <12> not available
 (Font)              Font shape `JY2/hgt/m/n' tried instead on input line 635.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
 (Font)              scaled to size 11.54663pt on input line 635.
+LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <10.95> not available
+(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 636.
+LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
+(Font)              scaled to size 10.53629pt on input line 636.
+LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <10.95> not available
+(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 636.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 10.53629pt on input line 636.
  <xymatrix 6x2
 
 Package xypdf Warning: The produced DVI file is NOT PORTABLE. Convert it with
 dvipdfm(x) to the PDF format but do not expect the DVI file itself to be
 displayed correctly.
 
-637>
-LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <10.95> not available
-(Font)              Font shape `JT2/hgt/m/n' tried instead on input line 691.
-LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 10.53629pt on input line 691.
-LaTeX Font Info:    Font shape `JY2/hmc/bx/n' in size <10.95> not available
-(Font)              Font shape `JY2/hgt/m/n' tried instead on input line 691.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 10.53629pt on input line 691.
- [1
+637> [1
 
 ] [2] [3]
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
-(Font)              No change on input line 842.
-
-Overfull \hbox (12.43127pt too wide) in paragraph at lines 878--878
+(Font)              No change on input line 852.
+ [4]
+Overfull \hbox (12.43127pt too wide) in paragraph at lines 888--888
 []\OT1/cmr/bx/n/14.4 Truncated Non-char-ac-ter-is-tic De-for-ma-tion Lemma 
  []
 
-[4] [5] [6] [7] [8] [9] <xymatrix 2x2 150> <xymatrix 2x2 150> [10] <xymatrix 3x2 331> <xymatrix 3x2 331> [11] [12] <xymatrix 2x3 270> [13] [14]
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1978.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1982.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1986.
- [15]
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1990.
-LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 1994.
+[5] [6] [7] [8] [9] <xymatrix 2x2 150> <xymatrix 2x2 150> [10] <xymatrix 3x2 331> <xymatrix 3x2 331> [11] [12]
+Overfull \hbox (50.69046pt too wide) detected at line 1859
+[]
+ []
 
-Underfull \hbox (badness 4819) in paragraph at lines 1993--1996
+[13] <xymatrix 2x3 270> [14] [15] [16]
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 2119.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 2123.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 2127.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 2131.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 2135.
+
+Underfull \hbox (badness 4819) in paragraph at lines 2134--2137
 []\OT1/cmr/m/n/10.95 Masaki Kashi-wara, Pierre Schapira, \OT1/cmr/m/it/10.95 Sheaves on Man-i-folds\OT1/cmr/m/n/10.95 ,
  []
 
-[16] (./rel-t-morse.aux)
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 2137.
+[17] (./rel-t-morse.aux)
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `rel-t-morse.out' has not changed.
-(rerunfilecheck)             Checksum: 0117AD938BC505C7A8E4644829FDAC4C;1894.
+(rerunfilecheck)             Checksum: 21B0601B6C785D4ABB4BFA820CCC1970;2364.
  ) 
 Here is how much of TeX's memory you used:
- 30737 strings out of 474774
- 541532 string characters out of 5758801
- 1954032 words of memory out of 5000000
- 52548 multiletter control sequences out of 15000+600000
+ 30747 strings out of 474774
+ 541738 string characters out of 5758801
+ 1948032 words of memory out of 5000000
+ 52558 multiletter control sequences out of 15000+600000
  615296 words of font info for 157 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 84i,28n,93p,3267b,1177s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,28n,93p,3267b,1102s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on rel-t-morse.dvi (16 pages, 113892 bytes).
+Output written on rel-t-morse.dvi (17 pages, 123820 bytes).

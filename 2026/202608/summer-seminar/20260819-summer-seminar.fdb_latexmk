@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1786886191.68089 "20260819-summer-seminar.dvi" "20260819-summer-seminar.pdf" "20260819-summer-seminar" 1786886192.89021 0
-  "20260819-summer-seminar.dvi" 1786886191.48976 947468 da1fece210b9e30ff57e02421d6414c8 "latex"
+["dvipdf"] 1787095788.06425 "20260819-summer-seminar.dvi" "20260819-summer-seminar.pdf" "20260819-summer-seminar" 1787095789.72561 0
+  "20260819-summer-seminar.dvi" 1787095787.66692 984904 7f6f813c0adf959a579ee6edb8dfead0 "latex"
   (generated)
   "20260819-summer-seminar.pdf"
   (rewritten before read)
-["latex"] 1786886177.18715 "/Users/giuseppe/seminar-notes/2026/202608/summer-seminar/20260819-summer-seminar.tex" "20260819-summer-seminar.dvi" "20260819-summer-seminar" 1786886192.88288 0
-  "/Users/giuseppe/seminar-notes/2026/202608/summer-seminar/20260819-summer-seminar.tex" 1786886161.68343 93472 fc821bbdd61da4b30b86e09c3e6e138f ""
+["latex"] 1787095773.48665 "/Users/giuseppe/seminar-notes/2026/202608/summer-seminar/20260819-summer-seminar.tex" "20260819-summer-seminar.dvi" "20260819-summer-seminar" 1787095789.71866 0
+  "/Users/giuseppe/seminar-notes/2026/202608/summer-seminar/20260819-summer-seminar.tex" 1787095753.99929 95062 c700aac433f823cfca9c3d173e429244 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcss1000.tfm" 1136768653 1536 293044035fd171bb1d18cf655049b101 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -317,11 +317,11 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "20260819-summer-seminar.aux" 1786886191.48419 16257 9df13d7904c9702b572bf47bd5c661e8 "latex"
-  "20260819-summer-seminar.nav" 1786886191.48942 7407 0ba7878e2a9307295aa42f10d8077ffd "latex"
-  "20260819-summer-seminar.out" 1786886191.48882 1410 404da64deafd5f4857e12a506d2985a1 "latex"
-  "20260819-summer-seminar.tex" 1786886161.68343 93472 fc821bbdd61da4b30b86e09c3e6e138f ""
-  "20260819-summer-seminar.vrb" 1786886190.51394 1552 58cacaffb87708918346e143e3dcbd54 "latex"
+  "20260819-summer-seminar.aux" 1787095787.66109 16696 ec671cd6053bfa99b59f203b9e00c039 "latex"
+  "20260819-summer-seminar.nav" 1787095787.66658 7683 d0a15b197163ab7b174bc7b06b7f94b4 "latex"
+  "20260819-summer-seminar.out" 1787095787.66583 1410 a5a40266577e53bba04ceea643bca100 "latex"
+  "20260819-summer-seminar.tex" 1787095753.99929 95062 c700aac433f823cfca9c3d173e429244 ""
+  "20260819-summer-seminar.vrb" 1787095786.7722 1552 58cacaffb87708918346e143e3dcbd54 "latex"
   (generated)
   "20260819-summer-seminar.aux"
   "20260819-summer-seminar.dvi"

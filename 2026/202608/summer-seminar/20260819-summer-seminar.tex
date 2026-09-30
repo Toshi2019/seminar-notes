@@ -806,7 +806,6 @@
 \end{exampleblock}
 \end{frame}
 \subsection{層係数コホモロジー}
-
 \begin{frame}
   \frametitle{層係数コホモロジー}
   空間\(X\)に対し，そのコホモロジー
@@ -831,29 +830,68 @@
       \item 佐藤超函数の層\(\cB_M\)は局所コホモロジー\(H^{n}_{M}(\cO_X)\)を用いて定義．
     \end{itemize}
   \end{exampleblock}
-
 \end{frame}
 
-\begin{comment}
-  \begin{frame}
-  \frametitle{層係数コホモロジー}
-  例えば，切断関手\(\Gamma(U;\blk)\)は左完全：
+\begin{frame}
+  \frametitle{コホモロジーの復習}
+  加群や層の列
+  \[
+    F\colon\quad \dots \to
+    F^{j-1} \overset{d^{j-1}}{\longrightarrow}
+    F^{j} \overset{d^{j}}{\longrightarrow} 
+    F^{j+1} \to \cdots
+  \]
+  が
+  \begin{itemize}
+    \item \(
+      \text{\textbf{\textcolor{brown}{完全}}} 
+      \mathrel{:\iff}
+      \Ker{d^{j}}\cong\Img{d^{j-1}}\ (j\in\zz)
+    \).
+    \item \(
+      \text{\textbf{\textcolor{brown}{複体}}} 
+      \mathrel{:\iff}
+      d^{j}\circ d^{j-1}=0\ (j\in\zz)
+    \).（つまり\(\Img{d^{j-1}}\subset\Ker{d^{j}}\)）
+  \end{itemize}\pause
+  複体が完全でない度合いを測るのが\textcolor{brown}{コホモロジー}
+  \(
+    H^{j}(F)\coloneqq \Ker{d^{j}}/\Img{d^{j-1}}
+  \)．\pause
+  \begin{exampleblock}{単射・全射・同型の完全列による言い換え}
+    \begin{itemize}
+      \item \(\varphi\colon F^{1}\to F^{2}\)：単射\(\Longleftrightarrow\) \(0\to F^{1}\overset{\varphi}{\longrightarrow}F^{2}\)：完全，
+      \item \(\varphi\colon F^{1}\to F^{2}\)：全射\(\Longleftrightarrow\) \(F^{1}\overset{\varphi}{\longrightarrow}F^{2}\to0\)：完全，
+      \item \(\varphi\colon F^{1}\to F^{2}\)：同型\(\Longleftrightarrow\) \(0\to F^{1}\overset{\varphi}{\longrightarrow}F^{2}\to0\)：完全．
+    \end{itemize}
+  \end{exampleblock}
+\end{frame}
+\begin{frame}
+  \frametitle{層係数コホモロジーの気分}
+  例えば，切断関手\(\Gamma(U;\blk);\ F\mapsto F(U)\)は左完全：
   \[\vcenter{\xymatrix{
-      0\ar[r]& F\ar[r]& G\ar[r]\ar@{=>}[d]& H\ar[r]& 0& \text{exact in \(\Sh(X)\)}
-      \\
-      0\ar[r]&\Gamma(U;F)\ar[r]&\Gamma(U;G)\ar[r]&\Gamma(U;H)& & \text{exact in \(\Ab\)}
+    0\ar[r]& F\ar[r]& G\ar[r]\ar@{=>}[d]& H\ar[r]& 0& \text{層の完全列}
+    \\
+    0\ar[r]&\Gamma(U;F)\ar[r]&\Gamma(U;G)\ar[r]&\Gamma(U;H)& & \text{\(\kk\)加群の完全列}
   }}\]
+
+  しかし一般に完全でない．\pause
+
+  例えば微分方程式\(du/dz=0\)は局所的には解けるので，
+  \(d/dz\colon \cO_X\to \cO_X\)は全射．\pause
+
+  しかし\(1/z\in \Gamma(\cc\setminus\{0\};\cO_{\cc})\)に対し，
+  \(\log(z)\notin\Gamma(\cc\setminus\{0\};\cO_{\cc})\)なので，
+  \(d/dz\colon\Gamma(\cc\setminus\{0\};\cO_{\cc})\to \Gamma(\cc\setminus\{0\};\cO_{\cc})\)は全射でない．\pause
+
   したがって，その完全でない度合いを測る，
   右導来関手\(\RG(U;\blk)\)が定まる．
   
   この\(i\)次の部分\(\Rder^i\Gamma(U;F)\)などが
   層係数の\(H^i(U;F)\)など．
-
-  \begin{exampleblock}{種数}
-    コンパクトリーマン面\(X\)の種数\(g\)は\(g=\dim H^{1}(X;\cO_{X})\)として定義される．
-  \end{exampleblock}
 \end{frame}
-\end{comment}
+
+
 \begin{frame}
   \frametitle{層の導来圏}
   導来圏の理論を用いると見通しがよい

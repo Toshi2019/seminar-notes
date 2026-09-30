@@ -62,12 +62,12 @@
 \definecolor{darkblue}{rgb}{0,0,0.6} 
 \hypersetup{
     colorlinks=true,
-    %citecolor=darkgreen,
-    %linkcolor=darkred,
-    %urlcolor=darkblue,
-    citecolor=black,
-    linkcolor=black,
-    urlcolor=black,
+    citecolor=darkgreen,
+    linkcolor=darkred,
+    urlcolor=darkblue,
+    %citecolor=black,
+    %linkcolor=black,
+    %urlcolor=black,
 }
 \usepackage{pxjahyper}
 
@@ -587,10 +587,10 @@
 \newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
 
 
-\newcommand{\lopen}{\mathopen{]}}
-\newcommand{\lclosed}{\mathopen{[}}
-\newcommand{\ropen}{\mathclose{[}}
-\newcommand{\rclosed}{\mathopen{]}}
+\newcommand{\lopen}{\left]}
+\newcommand{\lclosed}{\left[}
+\newcommand{\ropen}{\right[}
+\newcommand{\rclosed}{\right]}
 
 \newcommand{\sm}{\raisebox{2.33pt}{~\rule{6.4pt}{1.3pt}~}}
 \newcommand{\smi}{\smallsetminus}
@@ -633,6 +633,16 @@ If there is no risk of confusion,
 we will write \(\kk_Z\) rather than \(\kk_{X,Z}\).
 
 \subsection{Geometrical Notions}
+\subsubsection{Proper Morphisms}
+We use the following proposition in the proof of Proposition\ref{prop:rel-t-morse}
+\begin{Proposition+}[see {\cite[Proposition 1.32]{Wed16}}]\label{prop:surj-proper}
+  Let \(X\), \(Y\), and \(Z\) be
+  locally compact (Hausdorff, by definition) spaces, 
+  and \(f\), \(g\) continuous. 
+  If \(g\circ f\) is proper and \(f\) surjective, then \(g\) is proper.
+\end{Proposition+}
+
+\subsubsection{The Fundamental Diagram of (co)tangent bundles}
 Let \(M\) be a real manifold of class \(C^\infty\). 
 We denote by \(\tau_{M}\colon TM\to M\) 
 the tangent bundle of \(M\), 
@@ -642,7 +652,7 @@ If there is no risk of confusion,
 we will write \(\pi\) rather than \(\pi_{M}\). 
 If \(f\colon M\to N\) is a morphism of manifolds 
 \textcolor{black}{(i.e., a \(C^{\infty}\)-map)}, 
-then we have the natural diagram\textcolor{black}{s}. 
+then we have the following natural diagram\textcolor{black}{s}. 
 \[\vcenter{\xymatrix{
   TM
     \ar[r]^-{f'}
@@ -1506,21 +1516,22 @@ Let us define the following morphisms:
   &X.
 }\]
 
-\begin{Proposition+}
+\begin{Proposition+}\label{prop:rel-t-morse}
   Let \(G\in\Dompb(Y)\), and assume \(
     f_{t}\colon \supp(G)\cap \overline{Y_t}\to X
   \) is proper for all \(t\in\rr\). 
   Let \(k\) be an integer and \(t_\circ\) a real number.
-  \begin{enumerate}[(i)]
-    \item Assume that, 
+  %\begin{enumerate}[(i)]
+    %\item 
+    Assume that, 
     for any \(y\in Y\smi \widetilde{Y}_{t_{\circ}}\), 
-    we have \[
+    we have \begin{equation}\label{eq:hyp-morse}
       d\varphi(y)\notin \left(
         \muS[k](G)+ \mdiff[f]\left(
           Y\pb[X]\cotb[X]
         \right)
       \right).
-    \]
+    \end{equation}
     Then the following statements hold.
     \begin{enumerate}[(a)]
         \item For \(t>t_\circ\), the natural morphism
@@ -1528,13 +1539,13 @@ Let us define the following morphisms:
           \Rder[j]{f_{\ast}}G \to \Rder[j]{{f_{t}}_{\ast}}j^{-1}_{t}G
         \]
         is isomorphic for \(j<k\) and injective for \(j=k\). 
-        \item[(a\('\))] For \(t\geqq t_\circ\), the natural morphism
-        \[
-          \Rder[j]{\tilde{f}_{\ast}}G 
-          \to 
-          \Rder[j]\tilde{f_{t}}_{\ast}\tilde{j}^{-1}_{t}G
-        \]
-        is isomorphic for \(j<k\) and injective for \(j=k\). 
+        %\item[(a\('\))] For \(t\geqq t_\circ\), the natural morphism
+        %\[
+        %  \Rder[j]{\tilde{f}_{\ast}}G 
+        %  \to 
+        %  \Rder[j]\tilde{f_{t}}_{\ast}\tilde{j}^{-1}_{t}G
+        %\]
+        %is isomorphic for \(j<k\) and injective for \(j=k\). 
         \item We have \begin{align*}
           \muS[k](\Rder[]{f_{\ast}}G)
           &\subset
@@ -1546,6 +1557,7 @@ Let us define the following morphisms:
           \right).
         \end{align*}
     \end{enumerate}
+    \begin{comment}
     \item Assume that, 
     for any \(y\in Y\smi \widetilde{Y}_{t_{\circ}}\), 
     we have \[
@@ -1592,12 +1604,13 @@ Let us define the following morphisms:
       \right).
     \end{align}
   \end{enumerate}
+  \end{comment}
 \end{Proposition+}
 
 \begin{proof}
-  Let \(\tilde{f}\) be the morphism \(
+  Following \cite{KS90}, let \(\tilde{f}\) be the morphism \(
     (f,\varphi)\colon Y\to X\times \rr
-  \), and let \(q\) and \(\tilde{\varphi}\) be 
+  \), and \(q\) and \(\tilde{\varphi}\) be 
   the first and second projections 
   defined on \(X\times \rr\) respectively. 
   Then \(\tilde{f}\) is proper on \(\supp(G)\) and 
@@ -1645,7 +1658,7 @@ Let us define the following morphisms:
       \ar[ur]_-{\tilde{q}_{t}}
     &
   }.\]
-  Then, setting \(\widetilde{G}\coloneqq \Rder[]{f_{\ast}}G\), 
+  Then, setting \(\widetilde{G}\coloneqq \Rder[]{\tilde{f}_{\ast}}G\), 
   we have \begin{align*}
     \Rder[]{f_{\ast}}G
     &\cong 
@@ -1671,35 +1684,11 @@ Let us define the following morphisms:
     &\cong 
     \Rder[]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{!}\widetilde{G}.
   \end{align*}
-  Thus taking \(j\)-th cohomology, we have\begin{align*}
-    \Rder[j]{f_{\ast}}G
-    &\cong 
-    \Rder[j]{q_{\ast}}\widetilde{G},
-    &
-    \Rder[j]{\tilde{f}_{\ast}}G
-    &\cong 
-    \Rder[j]{\tilde{q}_{\ast}}\widetilde{G},
-    \\
-    \Rder[j]{{f_{t}}_{\ast}}j_{t}^{-1}G
-    &\cong 
-    \Rder[j]{{q_{t}}_{\ast}}i_{t}^{-1}\widetilde{G},
-    &
-    \Rder[j]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{-1}G
-    &\cong 
-    \Rder[j]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{-1}\widetilde{G},
-    \\
-    \Rder[j]{{f_{t}}_{!}}j_{t}^{-1}G
-    &\cong 
-    \Rder[j]{{q_{t}}_{!}}i_{t}^{-1}\widetilde{G},
-    &
-    \Rder[j]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{!}G
-    &\cong 
-    \Rder[j]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{!}\widetilde{G}.    
-  \end{align*}
-  Therefore, it is enough to prove the result for \(\widetilde{G}\), \(q\), \(i_t\), \(\tilde{\varphi}\) instead of \(G\), \(f\), \(j_t\), \(\varphi\). 
+  Therefore, it is enough to prove the result 
+  for \(\widetilde{G}\), \(q\), \(i_t\), \(\tilde{\varphi}\) instead of \(G\), \(f\), \(j_t\), \(\varphi\). 
 
   (i) 
-  It follows from the hypothesis that
+  It follows from the hypothesis \eqref{eq:hyp-morse} that
   \begin{equation}\label{eq:tilde-estimate}
     \muS[k](\widetilde{G})\cap\left(
       \cotb[X]\times\left\{(t;\tau);t>t_{\circ}\right\}
@@ -1733,12 +1722,164 @@ Let us define the following morphisms:
   \] and this contradicts \eqref{eq:pb-conic} 
   because \(\muS[k](G)\) is conic. 
 
-  By \eqref{eq:tilde-estimate}, 
-  Let \(U\) be an open subset of \(X\) contained 
-  in a local chart, and convex in such a chart. 
+  We shall show that for all \(x\in X\)
+  \[
+    \Rder[j]{q_{\ast}}\widetilde{G}_{x}\to
+    \Rder[j]{{q_{t}}_{\ast}}i_{t}^{-1}\widetilde{G}_{x}\
+  \]
+  is isomorphic if \(j<k\) and injective if \(j=k\). 
+  By definition, it suffices to show the statement for the morphism
+  \[
+    \indlim[x\in U]H^{j}\left(U\times \rr;\widetilde{G}\right)
+    \to
+    \indlim[x\in U]H^{j}\left(U\times \lopen-\infty,t\ropen ;\widetilde{G}\right).
+  \]
+  Let \(U\) be a neighborhood of \(x\), open in \(X\) contained 
+  in a local chart, and diffeomorphic to the unit open ball, centered at \(0\). 
+  Such open sets form a fundamental system of neighborhoods of \(x\). 
+  Thus we show the result for the morphism
+  \[
+    H^{j}\left(U\times \rr;\widetilde{G}\right)
+    \to
+    H^{j}\left(U\times \lopen-\infty,t\ropen ;\widetilde{G}\right).
+  \]
+  when \(U\) is in the form as above.
 
+  We shall construct a deformation family \((U_s)_{s\in\rr}\) 
+  and apply Theorem~\ref{prp:t-nonchar} to it. 
+  First, Define a function \(\chi_{s}\colon U\to \rr\) by 
+  \[
+    \chi_{s}(x)\coloneqq
+    \begin{cases}
+      t & (s\leqq t),\\
+      -4\left|x\right|+2(s-t)& (t< s\leqq t+1),\\
+      -\frac{s-2}{1-1/2s}\left|x\right|+(s-2)& (s\geqq t+1).
+    \end{cases}
+  \]
+  Then, set
+  \[
+    \gamma_{s}\coloneqq\left\{
+      (x,x')\in U\times \rr \smid \chi_{s}(x)\leqq x'
+    \right\}.
+  \]
+  Note that \(\gamma_s\) is a half space when \(s\leqq t\) and 
+  is a closed proper cone when \(s>t\).
+  For a real number \(r>0\), writing a set 
+  \begin{multline*}
+    W_{r}\coloneqq
+    \left\{(x,y)\in\rr^2\smid x<r\right\}
+    \cup    
+    \left\{(x,y)\in\rr^2\smid y<0\right\}\\
+    \cup
+    \left\{(x,y)\in\rr^2\smid x<2r, y<r, (x-2r)^2+(y-r)^2>r^2\right\},
+  \end{multline*}
+  define an open set \(U_{s}\) in \(U\times \rr\)
+  \[
+    U_{s}\coloneqq \begin{cases}
+      \left\{(x,x')\in U\times \rr \smid 
+        (\mathrm{dist}((x,x'),\gamma_{s}),x')\in W_{1/8s}
+      \right\}& (s\geqq t),\\
+      U\times (-\infty,t) &(s\leqq t).
+    \end{cases}
+  \]
+  Then the family \((U_{s})_{s\in\rr}\) satisfies 
+  the conditions~\eqref{item:t-nonchar1}--\eqref{item:t-nonchar4} of 
+  Theorem~\ref{prp:t-nonchar}.
+  Indeed, 
+  for any pair \(s<s'\), we have \(U_s\subset U_{s'}\) and the condition \eqref{item:t-nonchar1} holds. 
+  The condition~\eqref{item:t-nonchar2} and \eqref{item:t-nonchar4} follow 
+  by the definition of \(W_{r}\). 
+  \(U_{s}\) has \(C^1\)-boundary and 
+  its outer conormals belong to 
+  \(\gamma_{s}^{\circ a}\), 
+  which does not intersect 
+  with \(\muS[k](\widetilde{G})\) because 
+  of \eqref{eq:tilde-estimate}. 
+  Therefore \((U_{s})\) satisfies the condition \eqref{item:t-nonchar3}. 
+  Applying Theorem~\ref{prp:t-nonchar}, we have the result for the morphism
+  \[
+    H^{j}\left(U\times \rr;\widetilde{G}\right)
+    =
+    H^{j}\left(\bigcup_{s\in\rr}U_{s};\widetilde{G}\right)
+    \to
+    H^{j}\left(U_{t};\widetilde{G}\right)
+    =
+    H^{j}\left(U\times \lopen-\infty,t\ropen ;\widetilde{G}\right),
+  \]
+  and the result follows.
+  
+  (b)
+  First, we show the following lemma.
+  \begin{Lemma+}
+    \(q\) is proper 
+    on \(\supp (\Rder{{i_{t}}_{\ast}}i_{t}^{-1}\widetilde{G})\).
+  \end{Lemma+}
+  \begin{proof}
+    Since \(f\) 
+    %and \(\tilde{f}\) are 
+    is proper  
+    on \(\supp{G}\cap \overline{Y_{t}}\), 
+    %and \(\supp{G}\), 
+    %respectively, 
+    Proppsition~\ref{prop:surj-proper} implies that it suffices to 
+    show that \(
+      \supp(\Rder{{i_{t}}_{\ast}}i_{t}^{-1}\widetilde{G})
+      \subset 
+      \tilde{f}(\supp{G}\cap\overline{Y_{t}})
+    \). 
+    We have 
+    \begin{align*}
+      \supp(\Rder{{i_{t}}_{\ast}}i_{t}^{-1}\widetilde{G})
+      &=\supp(\Rder{\tilde{f}_{\ast}}\Rder{{j_{t}}_{\ast}}j_{t}^{-1}G)\\
+      &\subset\tilde{f}(\supp\Rder{{j_{t}}_{\ast}}j_{t}^{-1}G)\\
+      &=\tilde{f}\left(\overline{j_{t}(\supp j_{t}^{-1}G)}\right)\\
+      &=\tilde{f}\left(\overline{j_{t}(\supp G\cap Y_{t})}\right)\\
+      &=\tilde{f}\left(\overline{\supp G\cap Y_{t}}\right)\\
+      &=\tilde{f}(\supp G\cap \overline{Y_{t}}).
+    \end{align*}
+  \end{proof}
+  By the lemma, we have
+  \begin{align*}
+    \muS[k](\Rder[]{q_{\ast}}\Rder[]{{i_{t}}_{\ast}}i_{t}^{-1}\widetilde{G})
+    &\subset\mpb[q]\mdiff[q]^{-1}\muS[k](\Rder[]{{i_{t}}_{\ast}}i_{t}^{-1}\widetilde{G})\\
+    &=\left\{(x;\xi)\in \cotb[X]\smid\exists(x,t';\xi,0)\in \muS[k](\Rder[]{{i_{t}}_{\ast}}i_{t}^{-1}\widetilde{G})\right\}.
+  \end{align*}
+  It follows from \cite[Proposition 5.2]{FM07} that
+  \begin{align*}
+    \muS[k](\Rder[]{{i_{t}}_{\ast}}i_{t}^{-1}\widetilde{G})
+    &\subset \muS[k](\widetilde{G})+N^{\ast}\left(X\times \lopen-\infty,t\ropen\right)\\
+    &= \muS[k](\widetilde{G})+\cotz[X]\times \left\{(t;\tau)\smid\tau\leqq0\right\}.
+  \end{align*} 
+  Thus, for \(t>t_{\circ}\), one can show
+  \begin{align*}
+    \muS[k](\Rder[]{q_{\ast}}\Rder[]{{i_{t}}_{\ast}}i_{t}^{-1}\widetilde{G})
+    &\subset\left\{(x;\xi)\in \cotb[X]\smid\exists(x,t';\xi,0)\in \muS[k](\Rder[]{{i_{t}}_{\ast}}i_{t}^{-1}\widetilde{G})\right\}\\
+    &\subset\left\{(x;\xi)\in \cotb[X]\smid\exists(x,t';\xi,0)\in \muS[k](\widetilde{G})+\cotz[X]\times \left\{(t;\tau)\smid\tau\leqq0\right\}\right\}\\
+    &\subset\left\{(x;\xi)\in \cotb[X]\smid\exists(x,t';\xi,0)\in \muS[k](\widetilde{G})\right\}
+  \end{align*}
+  and the result follows.
 \end{proof}
 
+Considering the case \(X=\{\pt\}\), 
+one has the absolute version of the microlocal Morse lemma.
+
+\begin{Theorem+}\label{thm:t-morse}
+  Let \(F\) in \(\Dompb(\kk_M)\), and 
+  \(\psi\colon M\to \rr\) be a real-valued function of 
+  class \(C^1\), 
+  proper on \(\supp(F)\). 
+  Let \(a<b\) be real numbers, and \(k\in\zz\).
+  We assume \(d\psi(x)\notin \muS[k](F)\) for \(
+    a\leqq \psi(x)<b
+  \). For \(t\in \rr\), we set \(
+    M_t\coloneqq\psi^{-1}\left(\lopen-\infty,t\ropen\right)
+  \). 
+  Then, the restriction morphism \[
+    H^{j}(M_{b};F)\to H^{j}(M_{a};F)
+  \]
+  is isomorphic for each \(j< k\), and 
+  injective for \(j=k\).
+\end{Theorem+}
 
 \section{Proof of Lemma {\ref{clm:ind-nonchar}}}\label{sec:proof-lem}
 
@@ -1993,6 +2134,7 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
   \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
     \textit{Sheaves on Manifolds}, 
     Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+  \bibitem[Wed16]{Wed16} T. Wedhorn, \textit{ Manifolds, sheaves, and cohomology}, Springer Studium Mathematik---Master, Springer Spektrum, Wiesbaden, 2016; MR3560225
 \end{thebibliography}
 %===============================================
 
