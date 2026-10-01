@@ -1,6 +1,6 @@
 ---
 ---
-@import "{{ site.theme }}";
+{@import "{{ site.theme }}";
 
 /* ボタンやヘッダーのダウンロードリンクをまとめて消す */
 .btn,
@@ -8,4 +8,4 @@
 #downloads,
 header .btn {
   display: none !important;
-}
+}}
