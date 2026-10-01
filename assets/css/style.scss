@@ -1,9 +1,11 @@
 ---
 ---
-{@import "{{ site.theme }}";
+@import "{{ site.theme }}";
 
-/* View on GitHub ボタンを非表示にする */
-.btn-github {
+/* ボタンやヘッダーのダウンロードリンクをまとめて消す */
+.btn,
+.btn-github,
+#downloads,
+header .btn {
   display: none !important;
-}
 }
