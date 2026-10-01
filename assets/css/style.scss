@@ -1,0 +1,8 @@
+---
+---
+@import "{{ site.theme }}";
+
+/* View on GitHub ボタンを非表示にする */
+.btn-github {
+  display: none !important;
+}
