@@ -612,17 +612,199 @@
 \begin{document}
 \maketitle
 \section{Introduction}\label{sec:intro}
+Microlocal Morse theory is machinery 
+to study the propagation of cohomology 
+of complexes of sheaves. 
+More generally, this theory is considered as 
+a part of microlocal sheaf theory, 
+due to Kashiwara and Schapira. 
+They defined the notion of 
+microsupport of a complex of sheaves 
+in the 1980's. 
+
+To explain more precisely, 
+let us fix some notations. 
+We consider a commutative unital ring \(\kk\) 
+of finite global dimension (e.g., \(\zz\) or a field). 
+Let \(X\) be a topological space. 
+We denote by \(\Dompb(\kk_X)\) (resp.\ \(\Dompl(\kk_{X})\)) 
+the bounded derived category (resp.\ bounded 
+derived category from below) of 
+sheaves of \(\kk\)-modules on \(X\).
+
+If \(M\) is a real manifold of class \(C^{\infty}\) 
+and \(F\) a complex of sheaves, 
+then the microsupport \(\muS[](F)\) of \(F\) is 
+a closed conic (i.e., stable 
+under \(\rr^{+}\)-action) involutive (i.e., coisotropic) subset 
+of the cotangent bundle of \(M\). 
+The precise definition is given in Section \ref{sec:t-ss}, 
+but roughly speaking, \(\muS[](F)\) describes the (co)directions 
+of \(X\) in which the cohomology of \(F\) cannot be extended. 
+This notion can be interpreted by analogy with Morse theory. 
+Let \(\varphi\) be a real-valued function of class \(C^1\). 
+Then we can replace 
+the notion of critical points of \(\varphi\) with 
+the one with respect to \(F\). 
+That is to say, we can define a critical point 
+with respect to \(F\) by the point \(p\) 
+such that \(d\varphi(p)\) belongs to \(\muS[](F)\). 
+We can then obtain an analogous result 
+of Morse theory in a
+framework of sheaf theory. 
+In Section \ref{sec:t-morse}, we prove a truncated version 
+of (a particular case of) 
+the microlocal Morse lemma (cf.\ \cite[Proposition 1.8]{GKS12} 
+or \cite[Corollary 5.4.19]{KS90}). 
+Roughly speaking, this asserts that 
+if there is no critical point with respect 
+to a complex of sheaves, 
+we have the natural isomorphism of the cohomologies 
+of the sublevel sets of the manifold.
+
+%\subsection{Truncated Microsupport}}
+
+%However, we replace the notion of microsupports with
+In 2003, 
+Kashiwara, Monteiro-Fernandes, and Schapira
+introduced the notion of truncated microsupport in \cite{KMS03a}, 
+in the course of the study of solutions of 
+boundary value problems of \(\mcal{D}\)-modules. 
+The difference between 
+microsupports and truncated microsupports 
+is as follows. 
+On the one hand, 
+a point \(p\) in the cotangent bundle \(\cotb[M]\) does 
+not belong to the microsupport if and only if 
+a certain kind of cohomologies of 
+all the degrees vanish. 
+On the other hand, the point \(p\) does 
+not belong to the truncated microsupport if and only if 
+the same kind of cohomologies of all the degrees less than 
+a fixed number vanish.
+
+After they introduced truncated microsupports, 
+some properties 
+of truncated microsupports were shown. 
+For example, 
+a truncated microsupport 
+is not involutive, but
+has a property called weak involutivity. 
+This is shown also 
+by Kashiwara, Monteiro-Fernandes, 
+and Schapira in \cite{KMS03b}. 
+Some functorial properties of truncated microsupport are 
+studied by several authors. See \cite{KMS03a,FM07}. 
+These authors studied truncated microsupports
+mainly in the context of analytic problems.
+
+%\subsection{Results}}
+
+In this paper, 
+in contrast to the previous research, 
+we shall apply the truncated microsupport 
+to the study of some geometrical problems. 
+First we prove a truncated version of 
+the noncharacteristic deformation lemma. 
+Consider a Hausdorff space and a family of open subsets of it. 
+Assume that the family is ``noncharacteristic'' with 
+respect to a complex of sheaves on the space.
+In this case, 
+the original version of the theorem asserts that 
+the global section on a member of the family 
+is isomorphic to the one on the union of the family. 
+Note that this isomorphism is one between derived functors.
+
+%
+This lemma is one of the most fundamental 
+results in microlocal sheaf theory, and 
+used throughout \cite{KS90}.
+Thus a truncated version of this lemma 
+is also the key result in this paper. 
+However, one should notice that 
+the original proof of the lemma cannot be applied 
+to our truncated version. 
+To prove the result, 
+we make three modifications 
+to the lemma. 
+First, we add an assumption on a total space. 
+That is, 
+we assume that the space is not only Hausdorff, but also 
+satisfies the condition that 
+all the open subspaces are paracompact.
+Second, we weaken the hypothesis of vanishing of 
+cohomologies. In the original lemma, we assume that 
+the cohomologies of all degrees vanish. However, in our version, 
+we assume that the cohomologies of not all degrees 
+but degrees less than a certain number vanish.
+Third, we make an additional assumption on 
+the family of deformation.
+Therefore, 
+to make, in particular, the third
+assumption acceptable to the reader, 
+we give several examples of families of deformation with figures. 
+Then, in turn, we formulate 
+a truncated version (Theorem \ref{thm:t-morse}) of
+the microlocal Morse lemma (\cite[Proposition 5.4.17]{KS90}), 
+under the light of truncated microsupport. 
+Note that we can also study 
+the unique continuation property of 
+cohomology groups of sheaves 
+through the truncated microsupport.
+%Note that by using the truncated microsupport, we can gain the 
+%information of the unique continuation. 
+More precisely, if \(k\) is an integer and 
+we consider the truncated microsupport \(\muS[k](F)\) of 
+a bounded complex of sheaves \(F\), 
+we can investigate whether 
+the cohomology sheaves \(H^{j}(F)\) propagate or not for \(j<k\).
+%in particular, 
+Furthermore, we can see 
+whether the cohomology sheaves \(H^k(F)\) of the \(k\)-th degree 
+enjoy the unique continuation property or not.
+
+
+%whether the continuation \(H^{k}(F)\) is unique or not, 
+%if it can be extended. 
+
+%In \cite{KMS03a}, they do not study the functorial property of 
+%truncated microsupport of direct images of non proper morphisms. 
+%We prove this functorial property under non proper direct images. 
+
+%\subsection{Organization}
+%\subsection{Organization}}
+
+The paper is organized as follows. 
+In Section \ref{sec:review}, 
+we review the notations and results from \cite{KS90}. 
+In Section \ref{sec:t-ss}, 
+we define truncated microsupport of sheaves, 
+due to \cite{KMS03a}. 
+In Section \ref{sec:t-nonchar}, 
+we prove a truncated version of 
+the noncharacteristic deformation lemma. 
+In the proof, Lemma \ref{clm:ind-nonchar} plays a crucial role. 
+However, since the proof of the lemma is long 
+and rather technical, 
+its proof will be given in Section \ref{sec:proof-lem}.
+Finally in Section \ref{sec:t-morse}, 
+we apply the result in Section \ref{sec:t-nonchar} 
+to the microlocal Morse theory. 
+%In Section \ref{sec:t-nonchar}, 
+%we prove Lemma \ref{clm:ind-nonchar}, which is too long to 
+%write in the proof of Theorem \ref{prp:t-nonchar}. 
+
 \section{Background Material}\label{sec:review}
 
 In this section, 
-we recall some definitions and results \textcolor{black}{of 
+we recall some definitions and results of 
 homological algebra and sheaf theory including 
-the theory of derived categories} from \cite{KS90}, 
+the theory of derived categories from \cite{KS90}, 
 following its notations with slight modifications. 
 
 Let \(X\) be a topological space, 
 and \(Z\) a locally closed set of \(X\). 
-Let us denote by \(i\colon Z\hookrightarrow X\) \textcolor{black}{the} inclusion. 
+Let us denote by \(i\colon Z\hookrightarrow X\) the inclusion. 
 We use the following functors: 
 \[
   \RG_{Z}(\blk) \coloneqq \Rder[]{i_{\ast}}i^{!}, 
@@ -634,11 +816,11 @@ we will write \(\kk_Z\) rather than \(\kk_{X,Z}\).
 
 \subsection{Geometrical Notions}
 \subsubsection{Proper Morphisms}
-We use the following proposition in the proof of Proposition\ref{prop:rel-t-morse}
+We use the following proposition in the proof of Proposition~\ref{prop:rel-t-morse}
 \begin{Proposition+}[see {\cite[Proposition 1.32]{Wed16}}]\label{prop:surj-proper}
   Let \(X\), \(Y\), and \(Z\) be
   locally compact (Hausdorff, by definition) spaces, 
-  and \(f\), \(g\) continuous. 
+  and let \(f\), \(g\) be continuous. 
   If \(g\circ f\) is proper and \(f\) surjective, then \(g\) is proper.
 \end{Proposition+}
 
@@ -651,8 +833,8 @@ the cotangent bundle of \(M\).
 If there is no risk of confusion, 
 we will write \(\pi\) rather than \(\pi_{M}\). 
 If \(f\colon M\to N\) is a morphism of manifolds 
-\textcolor{black}{(i.e., a \(C^{\infty}\)-map)}, 
-then we have the following natural diagram\textcolor{black}{s}. 
+(i.e., a \(C^{\infty}\)-map), 
+then we have the following natural diagrams. 
 \[\vcenter{\xymatrix{
   TM
     \ar[r]^-{f'}
@@ -690,9 +872,9 @@ then we have the following natural diagram\textcolor{black}{s}.
   &
   N.
 }}\]
-In \textcolor{black}{these diagrams}, 
+In these diagrams, 
 \(\mptan[f]\) and \(\mpb[f]\) denote 
-the natural projections\textcolor{black}{,} \(f'\) is defined by 
+the natural projections, \(f'\) is defined by 
 \((x;v)\mapsto (x;df_{x}v)\), 
 and \(\mdiff[f]\) is induced by the transposition of \(f'\). 
 
@@ -709,7 +891,7 @@ and \(\mdiff[f]\) is induced by the transposition of \(f'\).
   \]
   where \(U\) ranges through the family of 
   open neighborhoods of \(Z\) in \(X\). 
-  \textcolor{black}{Then the following hold.}
+  Then the following hold.
   \begin{enumerate}[(i)]
     \item The morphism \(\psi\) is injective. 
     \item Assume that \(X\) is Hausdorff and \(Z\) is compact. 
@@ -722,13 +904,13 @@ and \(\mdiff[f]\) is induced by the transposition of \(f'\).
 Note that a paracompact space 
 is, by definition, a Hausdorff space. 
 
-\subsection{\textcolor{black}{Complement of Homological Algebra}}\label{ssec:ML}
+\subsection{Complement of Homological Algebra}\label{ssec:ML}
 
 Consider a projective system of abelian groups \(
   \left(M_n,\rho_{n,p}\right)_n
 \) indexed by \(\nn\). 
 One says that this system satisfies 
-the Mittag-Leffler condition (ML \textcolor{black}{condition} for short) 
+the Mittag-Leffler condition (ML condition for short) 
 if for any \(n\in\nn\), the decreasing sequence \(
   (\rho_{n,p}(M_p))_p
 \) of subgroups of \(M_n\) is stationary.
@@ -741,7 +923,7 @@ Consider a projective system of complexes
   E_n^{\bullet}\colon 
   \cdots\to M_{n}^{j-1}\to M_{n}^{j}\to M_{n}^{j+1}\to\cdots,
 \end{equation}
-and \textcolor{black}{its} projective limit
+and its projective limit
 \begin{equation}
   E_{\infty}^{\bullet}\colon 
   \cdots
@@ -758,7 +940,7 @@ the natural morphism.
 
 \begin{Proposition+}[{\cite[Proposition 1.12.4]{KS90}}]\label{prop:ks1.12.4}
   Assume that for each \(k\in\zz\), 
-  the system \(\left(M_{n}^{\textcolor{black}{k}}\right)_{n}\) satisfies 
+  the system \(\left(M_{n}^{k}\right)_{n}\) satisfies 
   the ML condition. 
   Then
   \begin{enumerate}[(a)]
@@ -781,19 +963,19 @@ The following is called Kashiwara's lemma.
   injective (resp. surjective).
 \end{Proposition+}
 
-\subsection{\textcolor{black}{ML Procedure for Sheaves}}
+\subsection{ML Procedure for Sheaves}
 
-\textcolor{black}{We use the following 
-in the proof of Theorem \ref{prp:t-nonchar}.}
+We use the following 
+in the proof of Theorem \ref{prp:t-nonchar}.
 
 \begin{Proposition+}[{\cite[Proposition 2.7.1]{KS90}}]\label{prop:ks2.7.1}
-  Let \(X\) be a topological space and let \(F\in\Dompl(\textcolor{black}{\kk}_X)\). 
+  Let \(X\) be a topological space and let \(F\in\Dompl(\kk_X)\). 
   Let \(\left(U_n\right)_{n\in\nn}\) be an increasing sequence 
   of open subsets of \(X\), \(\left(Z_n\right)_{n\in\nn}\) 
   a decreasing sequence of closed subsets of \(X\). 
   Set \(U\coloneqq\bigcup_{n}U_{n}\), 
   \(Z\coloneqq\bigcap_{n}Z_{n}\). 
-  \textcolor{black}{Then the following hold.}
+  Then the following hold.
   \begin{enumerate}[(i)]
     \item \label{item:ks2.7.1.1} For any \(j\), the natural map \(
       \varphi_j\colon H^{j}_{Z}(U;F)
@@ -830,7 +1012,7 @@ of a microsupport.
 \begin{Definition+}[{\cite[Definition 5.1.2]{KS90}}]
   Let \(F\in\Dompb(\kk_X)\). 
   The closed conic subset \(\muS[](F)\) of \(\cotb[X]\) 
-  is defined by following condition: \(p\notin \muS[](F)\) 
+  is defined by the following condition: \(p\notin \muS[](F)\) 
   if and only if 
   there exists an open neighborhood \(U\) of \(p\) 
   such that for any \(x\in \pi(U)\) and 
@@ -842,16 +1024,16 @@ of a microsupport.
   \end{equation}
 \end{Definition+}
 
-\textcolor{black}{Kashiwara, Monteiro-Fernandes, 
+Kashiwara, Monteiro-Fernandes, 
 and Schapira modified
-this definition and gave the notion of truncated microsupport.}
+this definition and gave the notion of truncated microsupport.
 
-\begin{Definition+}[{\cite[Definition 3.4]{KFS03a}}]
-  Let \(F\in\Dompb(\kk_X)\)\textcolor{black}{, and fix an 
-  integer \(k\in\zz\)}. 
-  \textcolor{black}{The \emph{truncated microsupport} \(\muS[k](F)\) is} 
+\begin{Definition+}[{\cite[Definition 3.4]{KMS03a}}]
+  Let \(F\in\Dompb(\kk_X)\), and fix an 
+  integer \(k\in\zz\). 
+  The \emph{truncated microsupport} \(\muS[k](F)\) is
   the closed conic subset of \(\cotb[X]\) 
-  defined by \textcolor{black}{the following condition}: 
+  defined by the following condition: 
   \(p\notin \muS[k](F)\) 
   if and only if 
   there exists an open conic neighborhood \(U\) of \(p\) 
@@ -865,10 +1047,10 @@ this definition and gave the notion of truncated microsupport.}
   \end{equation}
 \end{Definition+}
 
-\textcolor{black}{For other equivalent conditions of 
-the definition, see \cite{KFS03a}. 
+For other equivalent conditions of 
+the definition, see \cite{KMS03a}. 
 Truncated microsupports satisfy 
-the following functorial property under proper direct images.}
+the following functorial property under proper direct images.
 
 \begin{Proposition+}
   Let \(f\colon X\to Y\) be a morphism of 
@@ -878,11 +1060,11 @@ the following functorial property under proper direct images.}
     \muS[k](\Rder{f_{\ast}}F)\subset
     \mpb[f]\mdiff[f]^{-1}(\muS[k](F)).
   \end{equation}
-  \textcolor{black}{Moreover if \(f\) is a closed embedding, 
-  the inclusion above is an equality.}
+  Moreover if \(f\) is a closed embedding, 
+  the inclusion above is an equality.
 \end{Proposition+}
 
-For other functorial properties, see \cite{KFS03a,FM07}. 
+For other functorial properties, see \cite{KMS03a,FM07}. 
 
 
 \section{Truncated Noncharacteristic Deformation Lemma}\label{sec:t-nonchar}
@@ -897,7 +1079,7 @@ we use the key lemma (Lemma \ref{clm:ind-nonchar}).
 Since its proof is rather long, 
 we postpone the proof to Section \ref{sec:proof-lem}. 
 
-\textcolor{black}{
+
 Before we state the truncated version, let us review the original 
 version of the noncharacteristic deformation lemma.   
 %This lemma is originally stated as follows.
@@ -929,20 +1111,16 @@ version of the noncharacteristic deformation lemma.
     \RG\left(U_{t};F\right).
   \]
 \end{Proposition+}
-}
 
 Our result is as follows. 
 
 \begin{Theorem+}[Truncated Noncharacteristic Deformation Lemma]\label{prp:t-nonchar}
-  Let \(X\) be a Hausdorff space 
-  %\textcolor{black}{such that 
-  %all the open subsets are paracompact}
-  . 
+  Let \(X\) be a Hausdorff space. 
   Let \(F\in\Dompl(\kk_X)\), and let
   \(\left(U_{t}\right)_{t\in\rr}\) be a family of 
   open subsets of \(X\). 
   Let \(k\in\zz\). 
-  \textcolor{black}{For \(s\in\rr\)}, set \(
+  For \(s\in\rr\), set \(
     Z_{s}\coloneqq \bigcap_{t>s}\overline{U_t\smi U_s}
   \). 
   We assume the following conditions. 
@@ -960,7 +1138,7 @@ Our result is as follows.
       \text{for all \(j\leqq k\).}
     \]
     \item \label{item:t-nonchar4} 
-    For all pairs \((s,t)\) with \(s< t\), \textcolor{black}{we have} \(Z_s\subset U_{t}\).
+    For all pairs \((s,t)\) with \(s< t\), we have \(Z_s\subset U_{t}\).
   \end{enumerate}
   Then, for all \(t\in\rr\), we have the isomorphisms\[
     H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
@@ -968,20 +1146,19 @@ Our result is as follows.
     H^{j}\left(U_{t};F\right)
     \quad \text{for all \(j< k\),} 
   \]
-  and the \textcolor{black}{monomorphisms} \[
+  and the monomorphisms \[
     H^{k}\left(\bigcup_{s\in\rr}U_{s};F\right)
     \hookrightarrow 
     H^{k}\left(U_{t};F\right).
   \] 
 \end{Theorem+}
 
-\textcolor{black}{Before we prove Theorem \ref{prp:t-nonchar}, 
+Before we prove Theorem \ref{prp:t-nonchar}, 
 let us give several examples of families of deformation. 
-}
 \begin{Example+}\label{eg:t-nonchar}
   The condition \eqref{item:t-nonchar4} of 
-  \textcolor{black}{Theorem \ref{prp:t-nonchar}} is not contained 
-  in the original version (\textcolor{black}{Proposition \ref{prp:nonchar}}). 
+  Theorem \ref{prp:t-nonchar} is not contained 
+  in the original version (Proposition \ref{prp:nonchar}). 
   Therefore let us give an example of \(\left(U_{t}\right)_{t\in\rr}\) 
   that does not satisfy the condition \eqref{item:t-nonchar4}. 
   \begin{enumerate}[(i)]
@@ -1003,16 +1180,16 @@ let us give several examples of families of deformation.
     \]
     Then the family \((U_{t})_{t}\) does not satisfy 
     the condition \eqref{item:t-nonchar4}. 
-    Indeed, if \(\textcolor{black}{0<s<t}\), 
+    Indeed, if \(0<s<t\), 
     we have 
     \[
       Z_{s}=\left\{
-        (x,y)\in X;\ y=\varphi_{s}(x)\textcolor{black}{, \left|x\right|\leqq 2}
+        (x,y)\in X;\ y=\varphi_{s}(x), \left|x\right|\leqq 2
       \right\}
     \] and the point \((2,0)\in Z_{s}\) is 
     not contained in \(U_{t}\). 
-    Moreover, let us \textcolor{black}{define 
-    a locally closed subset \(S\) of \(X\) by}
+    Moreover, let us define 
+    a locally closed subset \(S\) of \(X\) by
     \[
       S\coloneqq 
       \left\{(x,y)\in X;\ (x+2)^{2}+(y-1)^{2}=1\right\}
@@ -1034,8 +1211,7 @@ let us give several examples of families of deformation.
     satisfies the conditions 
     \eqref{item:t-nonchar1}--\eqref{item:t-nonchar3} but 
     not \eqref{item:t-nonchar4}, 
-    which results in that 
-    the consequence of the proposition does not hold. 
+    which results in the consequence of the proposition does not hold. 
     Hence the condition \eqref{item:t-nonchar4} is 
     necessary. 
     \begin{figure}[htb]
@@ -1157,11 +1333,11 @@ let us give several examples of families of deformation.
     \setcounter{enumi}{1}
     \item \label{item:gentle1}
     For a real number \(t\), 
-    define the open set \(U_{t}\) \textcolor{black}{of \(X\)} 
+    define the open set \(U_{t}\) of \(X\)
     by \[
       U_{t}\coloneqq
       \begin{cases}
-      \left\{(x,y)\in X;\ \textcolor{black}{x^{2}+y^{2}} <t\right\}&(t>0),\\
+      \left\{(x,y)\in X;\ x^{2}+y^{2} <t\right\}&(t>0),\\
       \varnothing&(t\leqq0).         
       \end{cases}
     \]
@@ -1204,12 +1380,12 @@ let us give several examples of families of deformation.
     If \(t\leqq 0\), set \(\varphi_{t}(x)\equiv 0\). 
     If \(t> 0\), set \[
       \varphi_{t}(x)\coloneqq\begin{cases}
-        \sqrt{t^{2}-x^{2}} & (\left|x\right|<\textcolor{black}{t}),\\
-        0&(\left|x\right|\geqq \textcolor{black}{t}).
+        \sqrt{t^{2}-x^{2}} & (\left|x\right|<t),\\
+        0&(\left|x\right|\geqq t).
       \end{cases}
     \]
     Then define the open set \(U_{t}\) 
-    \textcolor{black}{of \(X\)} by \[
+    of \(X\) by \[
       U_{t}\coloneqq
       \left\{(x,y)\in X;\ y<\varphi_{t}(x)\right\}. 
     \]
@@ -1304,7 +1480,7 @@ let us give several examples of families of deformation.
 
 
 
-\begin{proof}[{\textcolor{black}{Proof of Theorem \ref{prp:t-nonchar}}}]
+\begin{proof}[{Proof of Theorem \ref{prp:t-nonchar}}]
   Consider the following conditions for 
   \(j\in\zz\) and \(s\in\rr\):
   \begin{align}
@@ -1332,7 +1508,7 @@ let us give several examples of families of deformation.
     \RG_{U_{s}}(F)
     \overset{+1}{\longrightarrow}.
   \]
-  Let us endow with \(Z_{s}\cup U_{s}\) the induced topology, and
+  Let us endow \(Z_{s}\cup U_{s}\) with the induced topology, and
   denote by \(
     i_{s}\colon Z_{s}\cup U_{s}\hookrightarrow X
   \) the natural continuous map.  
@@ -1365,7 +1541,7 @@ let us give several examples of families of deformation.
     \quad
     \text{for any \(j\leqq k\).}
   \]
-  Therefore we \textcolor{black}{have}
+  Therefore we have
   \[
     H^{j}\left(Z_{s}\cup U_{s};
       \mres[\RG_{X\smi U_{s}}(F)]{Z_{s}\cup U_{s}}
@@ -1373,7 +1549,7 @@ let us give several examples of families of deformation.
     \quad
     \text{for any \(j\leqq k\).}
   \]
-  Thus we have \textcolor{black}{from \eqref{eq:t-nocha-d.t.}}
+  Thus we have from \eqref{eq:t-nocha-d.t.}
   \begin{align}
     \label{eq:a-iso}
     H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}})
@@ -1386,8 +1562,8 @@ let us give several examples of families of deformation.
     H^{k}(U_{s};F).
   \end{align}
   Therefore, if we show Lemma \ref{clm:ind-nonchar} below, 
-  \textcolor{black}{whose proof will be given in Section \ref{sec:proof-lem},}
-  we have \textcolor{black}{from Lemma \ref{clm:ind-nonchar} and \eqref{eq:a-iso}}
+  whose proof will be given in Section \ref{sec:proof-lem},
+  we have from Lemma \ref{clm:ind-nonchar} and \eqref{eq:a-iso}
   \begin{align*}
     \indlim[t>s]H^{j}(U_t;F)
     &\cong 
@@ -1397,7 +1573,7 @@ let us give several examples of families of deformation.
   \end{align*}
   for any \(j<k\), and \ref{eq:t-nonchar-a} follows. 
   Similarly, 
-  we have \textcolor{black}{from Lemma \ref{clm:ind-nonchar} and \eqref{eq:a-inj}}
+  we have from Lemma \ref{clm:ind-nonchar} and \eqref{eq:a-inj}
   \begin{align*}
     \indlim[t>s]H^{k}(U_t;F)
     &\cong 
@@ -1416,7 +1592,7 @@ let us give several examples of families of deformation.
   \end{Lemma+}
 
   %Let us come back to the proof of 
-  %\textcolor{black}{Theorem \ref{prp:t-nonchar}}. 
+  %Theorem \ref{prp:t-nonchar}}. 
   We prove \ref{eq:t-nonchar-b} for 
   all \(j\in\zz\) and \(s\in\rr\) by induction on \(j\). 
   Since \(F\in\Dompl(\kk_X)\), 
@@ -1436,8 +1612,8 @@ let us give several examples of families of deformation.
     \text{ for \(j< j_{0}\) and \(s\leqq t\). }
   \]
   Fix \(s\in\rr\) and consider the projective system \(
-    \left(H^{j_{0}-1}(U_{s-1/n})\right)_{n\in\nn}
-  \). This system satisfies ML condition.  
+    \left(H^{j_{0}-1}(U_{s-1/n});F\right)_{n\in\nn}
+  \). This system satisfies the ML condition.  
   Therefore, by applying 
   Proposition \ref{prop:ks2.7.1} (\ref{item:ks2.7.1.3}), 
   %\footnote{
@@ -1468,7 +1644,7 @@ let us give several examples of families of deformation.
     %\quad \text{for all \(j< k\),} 
   \end{align*}
   and for each \(n\), we have by Kashiwara's lemma 
-  \textcolor{black}{(Proposition \ref{prop:ks1.12.6})} that
+  (Proposition \ref{prop:ks1.12.6}) that
   \[
     H^{j}\left(U_{n};F\right)
     \cong
@@ -1486,7 +1662,7 @@ let us give several examples of families of deformation.
   This completes the proof. 
 \end{proof}
 
-\section{Truncated microlocal Morse theory}
+\section{Truncated microlocal Morse theory}\label{sec:t-morse}
 
 Let \(f\colon Y\to X\) be a morphism of manifolds, and 
 \(\varphi\) a real valued function of class \(C^1\). 
@@ -1538,7 +1714,8 @@ Let us define the following morphisms:
         \[
           \Rder[j]{f_{\ast}}G \to \Rder[j]{{f_{t}}_{\ast}}j^{-1}_{t}G
         \]
-        is isomorphic for \(j<k\) and injective for \(j=k\). 
+        is an isomorphism for \(j<k\) 
+        and injective for \(j=k\). 
         %\item[(a\('\))] For \(t\geqq t_\circ\), the natural morphism
         %\[
         %  \Rder[j]{\tilde{f}_{\ast}}G 
@@ -1727,7 +1904,8 @@ Let us define the following morphisms:
     \Rder[j]{q_{\ast}}\widetilde{G}_{x}\to
     \Rder[j]{{q_{t}}_{\ast}}i_{t}^{-1}\widetilde{G}_{x}\
   \]
-  is isomorphic if \(j<k\) and injective if \(j=k\). 
+  is an isomorphism if \(j<k\) 
+  and injective if \(j=k\). 
   By definition, it suffices to show the statement for the morphism
   \[
     \indlim[x\in U]H^{j}\left(U\times \rr;\widetilde{G}\right)
@@ -1791,10 +1969,10 @@ Let us define the following morphisms:
   by the definition of \(W_{r}\). 
   \(U_{s}\) has \(C^1\)-boundary and 
   its outer conormals belong to 
-  \(\gamma_{s}^{\circ a}\), 
-  which does not intersect 
-  with \(\muS[k](\widetilde{G})\) because 
-  of \eqref{eq:tilde-estimate}. 
+  \(-\gamma_{s}^{\circ}\), 
+  where \(\circ\) means the polar cone (see \cite[(3.7.6)]{KS90}).
+  This does not intersect \(\muS[k](\widetilde{G})\) 
+  because of \eqref{eq:tilde-estimate}. 
   Therefore \((U_{s})\) satisfies the condition \eqref{item:t-nonchar3}. 
   Applying Theorem~\ref{prp:t-nonchar}, we have the result for the morphism
   \[
@@ -1821,7 +1999,7 @@ Let us define the following morphisms:
     on \(\supp{G}\cap \overline{Y_{t}}\), 
     %and \(\supp{G}\), 
     %respectively, 
-    Proppsition~\ref{prop:surj-proper} implies that it suffices to 
+    Proposition~\ref{prop:surj-proper} implies that it suffices to 
     show that \(
       \supp(\Rder{{i_{t}}_{\ast}}i_{t}^{-1}\widetilde{G})
       \subset 
@@ -1864,7 +2042,7 @@ Considering the case \(X=\{\pt\}\),
 one has the absolute version of the microlocal Morse lemma.
 
 \begin{Theorem+}\label{thm:t-morse}
-  Let \(F\) in \(\Dompb(\kk_M)\), and 
+  Let \(F\) \(\in\) \(\Dompb(\kk_M)\), and 
   \(\psi\colon M\to \rr\) be a real-valued function of 
   class \(C^1\), 
   proper on \(\supp(F)\). 
@@ -1877,7 +2055,7 @@ one has the absolute version of the microlocal Morse lemma.
   Then, the restriction morphism \[
     H^{j}(M_{b};F)\to H^{j}(M_{a};F)
   \]
-  is isomorphic for each \(j< k\), and 
+  is an isomorphism for each \(j< k\), and 
   injective for \(j=k\).
 \end{Theorem+}
 
@@ -1896,7 +2074,7 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
     \simar 
     \Gamma(Z_{s}\cup U_{s};F).
   \end{equation}
-  is isomorphic. 
+  is an isomorphism. 
   Consider the following diagram. 
   \[\vcenter{\xymatrix{
     \indlim[t>s]\Gamma(U_t;F)
@@ -1916,8 +2094,8 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
     \Gamma(U;F)
     \ar[r]_-{\psi}^-{\sim}
     &
-    \Gamma(Z_{s};\mres[F]{Z_{s}})\textcolor{black}{.}
-  }}
+    \Gamma(Z_{s};\mres[F]{Z_{s}}).}
+  }
   \] 
   
   Let us begin by showing that the morphism  
@@ -1948,7 +2126,7 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
   the finite intersection property. 
   Indeed, for finite real numbers \(s<r_{0}<\dots<r_{m}<t\), 
   it follows from 
-  \textcolor{black}{the assumption for contradiction}
+  the assumption for contradiction
   that
   \begin{align*}
     A_{r_{0}}\cap \dots \cap A_{r_{m}}
@@ -1985,15 +2163,15 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
   This is a contradiction, 
   and it follows that \(\tilde{\phi}\) is an isomorphism. 
 
-  \textcolor{black}{Since \(\tilde{\phi}\) is an} isomorphism, 
+  Since \(\tilde{\phi}\) is an isomorphism, 
   it is enough to show that
-  \[
+  \begin{equation}\label{eq:isom-union}
     \phi\colon\indlim[U\supset Z_{s}]
     \Gamma(U\cup U_{s};F)
     \to
-    \Gamma(Z_{s}\cup U_{s};F)
-  \]
-  is isomorphic.     
+    \Gamma(Z_{s}\cup U_{s};F)    
+  \end{equation}
+  is an isomorphism.     
   Since \(X\) is Hausdorff and \(Z_{s}\) is compact, 
   the natural morphism 
   \[
@@ -2001,7 +2179,7 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
     \to
     \Gamma(Z_{s};F)
   \]
-  is isomorphic by Proposition \ref{prop:ks2.5.1}. 
+  is an isomorphism by Proposition \ref{prop:ks2.5.1}. 
   Since \(U_{s}\) is open, we have another isomorphism 
   \[
     \psi'\colon\indlim[V\supset U_{s}]\Gamma(V;F)
@@ -2014,7 +2192,7 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
 
   Let us prove that \(\phi\) is surjective. 
   Let \(
-    \sigma\in \Gamma(\textcolor{black}{Z_{s}\cup U_{s}};F)
+    \sigma\in \Gamma(Z_{s}\cup U_{s};F)
   \) be a section of \(\mres[F]{Z_{s}\cup U_{s}}\). 
   By the isomorphism \(\psi\) above, 
   we can extend \(\mres[\sigma]{Z_{s}}\) to 
@@ -2023,8 +2201,8 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
   \(\tau\) on \(U\) such that \(
     \mres[\tau]{Z_{s}}=\mres[\sigma]{Z_{s}}
   \). 
-  \textcolor{black}{On the other hand, 
-  it follows from the compatibility of restrictions of a section} 
+  On the other hand, 
+  it follows from the compatibility of restrictions of a section
   that \(
     \mres[\tau]{Z_{s}}
     =
@@ -2051,17 +2229,17 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
   \] 
   Thus we have 
   \begin{equation}\label{eq:clm-glue}
-    \textcolor{black}{U_{s}\cap W = U_{s}\cap \widetilde{W},
+    U_{s}\cap W = U_{s}\cap \widetilde{W},
     \quad
     \mres[\sigma]{U_{s}\cap \widetilde{W}}
-    =\mres[\tau]{U_{s}\cap \widetilde{W}}.}
+    =\mres[\tau]{U_{s}\cap \widetilde{W}}.
   \end{equation}
   For this \(\widetilde{W}\), 
   the pair \(
     \left(U_{s}, \widetilde{W}\right)
   \) is an open covering of \(\widetilde{W}\cup U_{s}\). 
   Thus by \eqref{eq:clm-glue}, we can 
-  glue \(\textcolor{black}{\mres[\sigma]{U_{s}}}\) 
+  glue \(\mres[\sigma]{U_{s}}\) 
   and \(\mres[\tau]{\widetilde{W}}\) together 
   and get a section \(\widetilde{\sigma}\) such that \[
     \mres[\widetilde{\sigma}]{Z_{s}\cup U_{s}} 
@@ -2072,43 +2250,144 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
   \]
   This proves the surjectivity of \(\phi\). 
 
-  \textcolor{red}{We show the the following statement.}
+
   
-  Next \textcolor{black}{l}et \(F\in\Dompl(\kk_X)\). 
-  Let \(I^{\bm{\bullet}}\) be a complex of flabby sheaves 
-  quasi-isomorphic to \(F\). 
-  %\textcolor{black}{Note that 
-  %if \(S\) is a subspace of a Hausdorff space such that 
-  %all the open subsets are paracompact, 
-  the restrictions of a flabby sheaf \(F\), 
-  denoting by \(\mres[F]{S}\), is also flabby.%} 
-  Then it follows from \eqref{eq:qis-claim} that 
-  \begin{align*}
+  Next let \(F\in\Dompl(\kk_X)\). 
+  Then it follows from \eqref{eq:qis-claim} and Lemma~\ref{lmm:special-isom} below 
+  that 
+  \[
     \indlim[t>s]H^{j}(U_t;F)
-    &\cong 
-    \indlim[t>s]H^{j}\Gamma(U_t;I^{\bullet})\\
-    &\cong 
-    H^{j}\left(\indlim[t>s]\Gamma(U_t;I^{\bullet})\right)\\
-    &\cong
-    H^{j}\Gamma(
-      Z_{s}\cup U_{s};I^{\bullet})\\
-    &\cong
+    \cong
     H^{j}(Z_{s}\cup U_{s};F).
-  \end{align*}
+  \]
   This completes the proof.
 \end{proof}
 
+\subsection{A Special Isomorphism of Global Sections}
+In this subsection, we shall show a 
+an isomorphism of global sections 
+which is needed in the proof of Theorem~\ref{prp:t-nonchar}.
 
+Let \(X\) be a topological space, 
+and \(S\) a subset of \(X\). 
+we denote the derived functor of 
+the left exact functor \(F \mapsto \Gamma(S; \mres[F]{S})\)
+by \(\RG(S; \blk)\). 
+There exists a morphism of functors
+\[
+  \RG(S; F) \longrightarrow \RG(S; \mres[F]{S}),
+\]
+which is not an isomorphism in general. Suppose the set \(S\) has the following property: for any sheaf \(F\), the canonical morphism
+\[
+  \indlim[S \subset W] \Gamma(W; F) \longrightarrow \Gamma(S; \mres[F]{S})
+\]
+is an isomorphism, where \(W\) runs through the open neighborhoods of \(S\).
 
+Note that in this case, \(\RG(S; \blk)\) can be computed by a flabby resolution. That is, if \(I\) is a flabby resolution of \(F\), then
+\[
+  \RG(S; F) \simeq \Gamma(S; \mres[I]{S}).
+\]
+The right-hand side is generally not equal to \(\RG(S; \mres[F]{S})\), because \(\mres[I]{S}\) is not necessarily a complex consisting of flabby sheaves on the space \(S\). However, in a special case, the following theorem holds.
 
+\begin{Lemma+}\label{lmm:special-isom}
+  Let \(X\) be a Hausdorff topological space, \(Z \subset X\) a compact set, and \(U \subset X\) an open set, and assume \(U \cap Z = \varnothing\). For \(F \in \Dompl(\kk_X)\),
+  \[
+    \RG(U \cup Z; F) \simar \RG(U \cup Z; \mres[F]{U \cup Z}).
+  \]
+  In particular,
+  \[
+    H^k(U \cup Z; F) \simeq \indlim[Z \subset W] H^k(U \cup W; F),
+  \]
+  where \(W\) runs through the open neighborhoods of \(Z\).
+\end{Lemma+}
 
+\begin{proof}
+  First, if \(F\) is a sheaf, 
+  by the completely same argument in the proof of \eqref{eq:isom-union}, 
+  we can show the isomorphism
+  \[
+    \Gamma(U \cup Z; \mres[F]{U \cup Z}) \simeq \indlim[Z \subset W] \Gamma(U \cup W; F).
+  \]
+  Let \(F\) be a sheaf 
+  and \(W\) an open neighborhood of \(Z\). 
+  There exists an exact sequence
+  \[
+    0 \to \Gamma(U \cup W; F) \to \Gamma(U; F) \oplus \Gamma(W; F) \to \Gamma(U \cap W; F) \simeq \Gamma(W; \Gamma_U F).
+  \]
+  Furthermore, if \(F\) is flabby, 
+  the last morphism is surjective. 
+  Then, by letting \(W\) run through 
+  the neighborhoods of \(Z\), we obtain an exact sequence
+  \[
+    0 \to \Gamma(U \cup Z; \mres[F]{U \cup Z}) \to \Gamma(U; F) \oplus \Gamma(Z; \mres[F]{Z}) \to \Gamma(Z; \mres[(\Gamma_U F)]{Z}),
+  \]
+  and moreover, if \(F\) is flabby, 
+  the last morphism is surjective thanks to the exactness 
+  of the inductive limit.
 
+  Therefore, we have a distinguished triangle of derived functors
+  \begin{equation}\label{eq:special-d.t.}
+    \RG(U \cup Z; F) \to \RG(U; F) \oplus \RG(Z; F) \to \RG(Z; \RG_U F) \xrightarrow{+1}.
+  \end{equation}
+  Indeed, if \(F\) is flabby, 
+  so is \(\Gamma_U F\), which implies
+  \[
+    \Rder(\Gamma(Z; \mres[(\Gamma_U(\blk))]{Z})) 
+    \simeq 
+    \RG(Z; \RG_U(\blk)).
+  \]
 
-
-
-
-
-
+  For simplicity, 
+  let \(G = \mres[F]{U \cup Z}\) and 
+  consider the triangle obtained 
+  by applying \eqref{eq:special-d.t.} 
+  assuming the whole space is \(U \cup Z\).  
+  Since \(Z\) is compact and \(U\) is an open set 
+  in \(U \cup Z\), 
+  we can use \eqref{eq:special-d.t.} 
+  to get
+  \[
+    \RG(U \cup Z; G) \to 
+    \RG(U; G) \oplus \RG(Z; G) 
+    \to \RG(Z; \RG_U G) \xrightarrow{+1}.
+  \]
+  Since \(Z\) is compact in \(U \cup Z\), 
+  we have
+  \[
+    \RG(Z; \RG_U G) \simeq \RG(Z; \mres[(\RG_U G)]{Z}).
+  \]
+  On the other hand, 
+  denoting the inclusions by
+  \(j \colon U \hookrightarrow U \cup Z\) and 
+  \(\tilde{j} \colon U \hookrightarrow X\), 
+  we have
+  \[
+    \mres[(\RG_U G)]{Z} 
+    \simeq 
+    \mres[{(\Rder j_{\ast}(\mres[F]{U}))}]{Z} 
+    \simeq 
+    \mres[{(\Rder\tilde{j}_{\ast}(\mres[F]{U}))}]{Z} 
+    \simeq \mres[(\RG_U F)]{Z}
+  \]
+  and obtain
+  \[
+    \RG(Z; \RG_U G) \simeq \RG(Z; \mres[(\RG_U F)]{Z}) \simeq \RG(Z; \RG_U F).
+  \]
+  The last isomorphism uses the fact that \(Z\) is compact in \(X\). Similarly,
+  \[
+    \RG(U; G) \simeq \RG(U; F), \quad \RG(Z; G) \simeq \RG(Z; F).
+  \]
+  From the above, we obtain the triangle
+  \[
+    \RG(U \cup Z; G) \to \RG(U; F) \oplus \RG(Z; F) \to \RG(Z; \RG_U F) \xrightarrow{+1},
+  \]
+  and by comparing it with \eqref{eq:special-d.t.}, 
+  we find that
+  \[
+    \RG(U \cup Z; \mres[F]{U \cup Z}) = \RG(U \cup Z; G) \simeq \RG(U \cup Z; F)
+  \]
+  holds.
+\end{proof}
 
 %\section{a}
 %===============================================
@@ -2122,12 +2401,12 @@ which is postponed in the proof of Theorem \ref{prp:t-nonchar}.
   Masaki Kashiwara, Pierre Schapira, 
   \textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
   Duke. Math. J. 161, No. 2, pp.201--245, 2012.  
-  \bibitem[KFS03a]{KFS03a} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
+  \bibitem[KMS03a]{KMS03a} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
     \textit{Truncated Microsupport and Holomorphic Solutions 
     of \(D\)-modules}, 
     Ann. Scient. \'Ec. Norm. Sup., s\'erie 4, tome 36, 
     pp.583--399, 2003.
-  \bibitem[KFS03b]{KFS03b} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
+  \bibitem[KMS03b]{KMS03b} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
 		\textit{Involutivity of Truncated microsupports}, 
 		Bull. Soc. math. France, 131 (2), 2003, 
 		pp.259--266.
