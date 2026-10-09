@@ -1,0 +1,184 @@
+
+%\section{Introduction}\label{sec:intro}
+
+Microlocal Morse theory is machinery 
+to study the propagation of cohomology 
+of complexes of sheaves. 
+More generally, this theory is considered as 
+a part of microlocal sheaf theory, 
+due to Kashiwara and Schapira. 
+They defined the notion of 
+microsupport of a complex of sheaves 
+in the 1980's. 
+
+To explain more precisely, 
+let us fix some notations. 
+We consider a commutative unital ring \(\kk\) 
+of finite global dimension (e.g., \(\zz\) or a field). 
+Let \(X\) be a topological space. 
+We denote by \(\Dompb(\kk_X)\) (resp.\ \(\Dompl(\kk_{X})\)) 
+the bounded derived category (resp.\ bounded 
+derived category from below) of 
+sheaves of \(\kk\)-modules on \(X\).
+
+If \(M\) is a real manifold of class \(C^{\infty}\) 
+and \(F\) a complex of sheaves, 
+then the microsupport \(\muS[](F)\) of \(F\) is 
+a closed conic (i.e., stable 
+under \(\rr^{+}\)-action) involutive (i.e., coisotropic) subset 
+of the cotangent bundle of \(M\). 
+The precise definition is given in Section \ref{sec:t-ss}, 
+but roughly speaking, \(\muS[](F)\) describes the (co)directions 
+of \(X\) in which the cohomology of \(F\) cannot be extended. 
+This notion can be interpreted by analogy with Morse theory. 
+Let \(\varphi\) be a real-valued function of class \(C^1\). 
+Then we can replace 
+the notion of critical points of \(\varphi\) with 
+the one with respect to \(F\). 
+That is to say, we can define a critical point 
+with respect to \(F\) by the point \(p\) 
+such that \(d\varphi(p)\) belongs to \(\muS[](F)\). 
+We can then obtain an analogous result 
+of Morse theory in a
+framework of sheaf theory. 
+In Section \ref{sec:t-morse}, we prove a truncated version 
+of (a particular case of) 
+the microlocal Morse lemma (cf.\ \cite[Proposition 1.8]{GKS12} 
+or \cite[Corollary 5.4.19]{KS90}). 
+Roughly speaking, this asserts that 
+if there is no critical point with respect 
+to a complex of sheaves, 
+we have the natural isomorphism of the cohomologies 
+of the sublevel sets of the manifold.
+
+%\subsection{Truncated Microsupport}}
+
+%However, we replace the notion of microsupports with
+In 2003, 
+Kashiwara, Monteiro-Fernandes, and Schapira
+introduced the notion of truncated microsupport in \cite{KMS03a}, 
+in the course of the study of solutions of 
+boundary value problems of \(\mcal{D}\)-modules. 
+The difference between 
+microsupports and truncated microsupports 
+is as follows. 
+On the one hand, 
+a point \(p\) in the cotangent bundle \(\cotb[M]\) does 
+not belong to the microsupport if and only if 
+a certain kind of cohomologies of 
+all the degrees vanish. 
+On the other hand, the point \(p\) does 
+not belong to the truncated microsupport if and only if 
+the same kind of cohomologies of all the degrees less than 
+a fixed number vanish.
+
+After they introduced truncated microsupports, 
+some properties 
+of truncated microsupports were shown. 
+For example, 
+a truncated microsupport 
+is not involutive, but
+has a property called weak involutivity. 
+This is shown also 
+by Kashiwara, Monteiro-Fernandes, 
+and Schapira in \cite{KMS03b}. 
+Some functorial properties of truncated microsupport are 
+studied by several authors. See \cite{KMS03a,FM07}. 
+These authors studied truncated microsupports
+mainly in the context of analytic problems.
+
+%\subsection{Results}}
+
+In this paper, 
+in contrast to the previous research, 
+we shall apply the truncated microsupport 
+to the study of some geometrical problems. 
+First we prove a truncated version of 
+the noncharacteristic deformation lemma. 
+Consider a Hausdorff space and a family of open subsets of it. 
+Assume that the family is ``noncharacteristic'' with 
+respect to a complex of sheaves on the space.
+In this case, 
+the original version of the theorem asserts that 
+the global section on a member of the family 
+is isomorphic to the one on the union of the family. 
+Note that this isomorphism is one between derived functors.
+
+%
+This lemma is one of the most fundamental 
+results in microlocal sheaf theory, and 
+used throughout \cite{KS90}.
+Thus a truncated version of this lemma 
+is also the key result in this paper. 
+However, one should notice that 
+the original proof of the lemma cannot be applied 
+to our truncated version. 
+To prove the result, 
+we make three modifications 
+to the lemma. 
+First, we add an assumption on a total space. 
+That is, 
+we assume that the space is not only Hausdorff, but also 
+satisfies the condition that 
+all the open subspaces are paracompact.
+Second, we weaken the hypothesis of vanishing of 
+cohomologies. In the original lemma, we assume that 
+the cohomologies of all degrees vanish. However, in our version, 
+we assume that the cohomologies of not all degrees 
+but degrees less than a certain number vanish.
+Third, we make an additional assumption on 
+the family of deformation.
+Therefore, 
+to make, in particular, the third
+assumption acceptable to the reader, 
+we give several examples of families of deformation with figures. 
+Then, in turn, we formulate 
+a truncated version (Theorem \ref{thm:t-morse}) of
+the microlocal Morse lemma (\cite[Proposition 5.4.17]{KS90}), 
+under the light of truncated microsupport. 
+Note that we can also study 
+the unique continuation property of 
+cohomology groups of sheaves 
+through the truncated microsupport.
+%Note that by using the truncated microsupport, we can gain the 
+%information of the unique continuation. 
+More precisely, if \(k\) is an integer and 
+we consider the truncated microsupport \(\muS[k](F)\) of 
+a bounded complex of sheaves \(F\), 
+we can investigate whether 
+the cohomology sheaves \(H^{j}(F)\) propagate or not for \(j<k\).
+%in particular, 
+Furthermore, we can see 
+whether the cohomology sheaves \(H^k(F)\) of the \(k\)-th degree 
+enjoy the unique continuation property or not.
+
+
+%whether the continuation \(H^{k}(F)\) is unique or not, 
+%if it can be extended. 
+
+%In \cite{KMS03a}, they do not study the functorial property of 
+%truncated microsupport of direct images of non proper morphisms. 
+%We prove this functorial property under non proper direct images. 
+
+%\subsection{Organization}
+%\subsection{Organization}}
+
+The paper is organized as follows. 
+In Section \ref{sec:review}, 
+we review the notations and results from \cite{KS90}. 
+In Section \ref{sec:t-ss}, 
+we define truncated microsupport of sheaves, 
+due to \cite{KMS03a}. 
+In Section \ref{sec:t-nonchar}, 
+we prove a truncated version of 
+the noncharacteristic deformation lemma. 
+In the proof, Lemma \ref{clm:ind-nonchar} plays a crucial role. 
+However, since the proof of the lemma is long 
+and rather technical, 
+its proof will be given in Section \ref{sec:proof-lem}.
+Finally in Section \ref{sec:t-morse}, 
+we apply the result in Section \ref{sec:t-nonchar} 
+to the microlocal Morse theory. 
+%In Section \ref{sec:t-nonchar}, 
+%we prove Lemma \ref{clm:ind-nonchar}, which is too long to 
+%write in the proof of Theorem \ref{prp:t-nonchar}. 
