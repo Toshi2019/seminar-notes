@@ -1,12 +1,13 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {section}{\numberline {2}Background Material}{5}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Geometrical Notions}{5}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Proper Morphisms}{5}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}The Fundamental Diagram of Cotangent Bundles}{5}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}Approximation by Inductive Limits}{6}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Complement of Homological Algebra}{6}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Mittag-Leffler Procedure for Sheaves}{7}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Truncated Microsupport}{8}{section.3}%
-\contentsline {section}{\numberline {4}Truncated Noncharacteristic Deformation Lemma}{9}{section.4}%
-\contentsline {section}{\numberline {5}Truncated Microlocal Morse theory}{16}{section.5}%
-\contentsline {section}{\numberline {A}An Isomorphism of Global Sections in Particular Cases}{21}{appendix.A}%
+\contentsline {paragraph}{Analytic point of view}{2}{section*.2}%
+\contentsline {section}{\numberline {2}Background Material}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Geometrical Notions}{3}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Proper Morphisms}{3}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}The Fundamental Diagram of Cotangent Bundles}{3}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Approximation by Inductive Limits}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Complement of Homological Algebra}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Mittag-Leffler Procedure for Sheaves}{5}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Truncated Microsupport}{6}{section.3}%
+\contentsline {section}{\numberline {4}Truncated Noncharacteristic Deformation Lemma}{7}{section.4}%
+\contentsline {section}{\numberline {5}Truncated Microlocal Morse theory}{14}{section.5}%
+\contentsline {section}{\numberline {A}An Isomorphism of Global Sections in Particular Cases}{19}{appendix.A}%

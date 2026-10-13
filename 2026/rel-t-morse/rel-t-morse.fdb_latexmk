@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1791526033.58122 "rel-t-morse.dvi" "rel-t-morse.pdf" "rel-t-morse" 1791526034.59304 0
-  "rel-t-morse.dvi" 1791526033.44544 150616 7ef0534f7dad8c5fb3df01d37ab04495 "latex"
+["dvipdf"] 1791870464.62408 "rel-t-morse.dvi" "rel-t-morse.pdf" "rel-t-morse" 1791870465.53754 0
+  "rel-t-morse.dvi" 1791870464.48637 142432 8e6b3441c451e6c2a0a6b1ee830aea50 "latex"
   (generated)
   "rel-t-morse.pdf"
   (rewritten before read)
-["latex"] 1791526031.33727 "/Users/giuseppe/seminar-notes/2026/rel-t-morse/rel-t-morse.tex" "rel-t-morse.dvi" "rel-t-morse" 1791526034.58746 0
-  "/Users/giuseppe/seminar-notes/2026/rel-t-morse/rel-t-morse.tex" 1791526018.51144 74783 bdc198358adb57e67f641d4939ad9337 ""
+["latex"] 1791870462.10494 "/Users/giuseppe/seminar-notes/2026/rel-t-morse/rel-t-morse.tex" "rel-t-morse.dvi" "rel-t-morse" 1791870465.5314 0
+  "/Users/giuseppe/seminar-notes/2026/rel-t-morse/rel-t-morse.tex" 1791866957.17457 74784 aa2f65707292400b41abcdd77d7a0985 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -254,16 +254,13 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "intro-a.aux" 1791526032.65284 1225 d1857830fd8d954392d212849db48d3d "latex"
-  "intro-a.tex" 1791458895.25686 6898 2f2fc43da1302101c4e9a441de1a0f6f ""
-  "intro-b.aux" 1791526032.65698 1073 e8e8067a68ca8bcd0aac81f90638a259 "latex"
-  "intro-b.tex" 1791525970.43565 336 1d8b4f51802e5f2f7a9356b428c0dfea ""
-  "rel-t-morse.aux" 1791526033.43881 6926 918aef03c24a807a0d8e65e4b7003a25 "latex"
-  "rel-t-morse.out" 1791526033.44462 2596 96e25c5562cdccc1c7b27fb57032ae47 "latex"
-  "rel-t-morse.tex" 1791526018.51144 74783 bdc198358adb57e67f641d4939ad9337 ""
-  "rel-t-morse.toc" 1791526033.44524 1120 1da0e83bf9713dd9512c39d815fcb662 "latex"
+  "intro-b.aux" 1791870463.68774 1181 54468f4e9c95973b00e29f6ca4f7a273 "latex"
+  "intro-b.tex" 1791870458.67043 2857 c4ee3c42c554c468e5676aafa7920e8d ""
+  "rel-t-morse.aux" 1791870464.48281 6897 3846b2672be84d11d01878b5c4e56605 "latex"
+  "rel-t-morse.out" 1791870464.48561 2596 96e25c5562cdccc1c7b27fb57032ae47 "latex"
+  "rel-t-morse.tex" 1791866957.17457 74784 aa2f65707292400b41abcdd77d7a0985 ""
+  "rel-t-morse.toc" 1791870464.48622 1186 7753ef4adc523ba41a4073c0cfbbfc83 "latex"
   (generated)
-  "intro-a.aux"
   "intro-b.aux"
   "rel-t-morse.aux"
   "rel-t-morse.dvi"
