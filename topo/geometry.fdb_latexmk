@@ -1,11 +1,11 @@
 # Fdb version 4
-["dvipdf"] 1745473670.49898 "geometry.dvi" "geometry.pdf" "geometry" 1745473671.74193 0
-  "geometry.dvi" 1745473670.35998 36056 cf0e78f0c36fd9f6b5c59d67512f5369 "latex"
+["dvipdf"] 1792058553.21 "geometry.dvi" "geometry.pdf" "geometry" 1792058554.26483 0
+  "geometry.dvi" 1792058553.07513 44436 6583e884f5cbad9fe9e8b8aad0cf25a9 "latex"
   (generated)
   "geometry.pdf"
   (rewritten before read)
-["latex"] 1745473668.8342 "/Users/giuseppe/seminar-notes/topo/geometry.tex" "geometry.dvi" "geometry" 1745473671.73535 0
-  "/Users/giuseppe/seminar-notes/topo/geometry.tex" 1745473666.63924 32245 c22c2176b8766ee52c5cc63b297038b5 ""
+["latex"] 1792058551.52276 "/Users/giuseppe/seminar-notes/topo/geometry.tex" "geometry.dvi" "geometry" 1792058554.25906 0
+  "/Users/giuseppe/seminar-notes/topo/geometry.tex" 1792058548.30255 37952 2efb59977e84b53ec0a63b08d6979ec6 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -257,9 +257,9 @@
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/web2c/euptex/uplatex.fmt" 1728536837 8156893 b01469b8f65c51ee295af1e687530245 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "geometry.aux" 1745473670.35661 1805 a290f5d1ecc3297c3a5f366eab67195d "latex"
-  "geometry.out" 1745473670.35812 804 5d91b421a5a39edf4a1bfcbce146537c "latex"
-  "geometry.tex" 1745473666.63924 32245 c22c2176b8766ee52c5cc63b297038b5 ""
+  "geometry.aux" 1792058553.07316 2038 9fc0ad98faaf40984af10c1e064aded3 "latex"
+  "geometry.out" 1792058553.07452 981 4b8718ffa5941d4104d3595e75a0ef44 "latex"
+  "geometry.tex" 1792058548.30255 37952 2efb59977e84b53ec0a63b08d6979ec6 ""
   (generated)
   "geometry.aux"
   "geometry.dvi"

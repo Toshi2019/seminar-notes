@@ -18,7 +18,7 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[10pt, a4paper, dvipdfmx]{jsarticle}
+\documentclass[11pt, a4paper, dvipdfmx]{jsarticle}
 
 % ------------------------
 % usepackage
@@ -537,15 +537,58 @@
 % マクロを追加する場合のスペース 
 
 %=================================
-
-
-
 % 位相空間
 \newcommand{\Int}[1][]{\mathop{\mathrm{Int}}\nolimits_{#1}}
 \newcommand{\Cl}[1][]{\mathop{\mathrm{Cl}}\nolimits_{#1}}
 \newcommand{\Bd}[1][]{\mathop{\mathrm{Bd}}\nolimits_{#1}}
 \newcommand{\bd}{\mathord{\partial}}
 \newcommand{\Fr}[1][]{\mathop{\mathrm{Fr}}\nolimits_{#1}}
+
+
+\newcommand{\mtan}[1][]{T\hspace{-1.75pt}{#1}}
+\newcommand{\mtp}[1][]{{}^{t\!}{#1}} % transpose of the morphism
+%\newcommand{\mpb}[1][]{{}^{t\!}{#1}'} % pull-back of the morphism
+\newcommand{\mpb}[1][]{{#1}_{\pi}} % pull-back of the morphism
+\newcommand{\mdiff}[1][]{{#1}_{d}} % pull-back of the morphism
+\newcommand{\mptan}[1][]{{#1}_{\tau}} % pull-back of the morphism
+
+
+%\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+
+\newcommand{\cotb}[1][]{T^{\ast}{#1}}
+\newcommand{\conm}[2][]{T_{#1}^{\hspace{0.7pt}\ast}{#2}}
+\newcommand{\norb}[2][]{T_{#1}{#2}}
+
+\newcommand{\cotz}[1][]{T^{\ast}_{#1}{#1}}
+
+\newcommand{\cotn}[1][]{\dot{T}^{\ast}{#1}}
+
+
+\newcommand{\muhom}{\mu hom}
+\newcommand{\muHom}[1][]{\mathrm{Hom}^\mu_{\raise1.5ex\hbox to.1em{}#1}}
+
+\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+%\newcommand{\mucat}[2][]{\mathsf{D}^{\mathrm{b}}_{#1}(#2)}
+
+\newcommand{\conv}[1][]{\mathbin{\mathop{\circ}\limits_{#1}}}
+
+
+\newcommand{\lopen}{\left]}
+\newcommand{\lclosed}{\left[}
+\newcommand{\ropen}{\right[}
+\newcommand{\rclosed}{\right]}
+
+\newcommand{\sm}{\raisebox{2.33pt}{~\rule{6.4pt}{1.3pt}~}}
+\newcommand{\smi}{\smallsetminus}
+
+\newcommand{\smid}{\mathrel{;}}
+
+\newcommand{\Sol}[2][]{\mathop{\mathcal{S}ol}\nolimits_{#1}(#2)}
+\newcommand{\Char}{\mathop{\mathrm{Char}}\nolimits}
+
+%\newcommand{\pb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+\newcommand{\dpb}[1][]{\mathbin{\mathop{\times}\limits_{#1}}}
+\newcommand{\tpb}[1][]{\mathbin{\mathop{\times}\nolimits_{#1}}}
 
 
 % ----------------------------
@@ -586,7 +629,26 @@
   \(a,b\)で\(\rr\)の開集合
   と同相な近傍をもたない．
   したがって，
-  \([a,b]\)は局所コンパクト空間であるが位相多様体にならない空間の例である．
+  \([a,b]\)は局所コンパクト空間であるが位相多様体にならない．
+\end{EG}
+
+\begin{EG}
+  平面\(\rr^{2}\)の部分集合\(Z\)を次で定める．
+  \[
+    Z\coloneqq\left\{(x,y)\in\rr^{2}\smid xy=0\right\}.
+  \]
+  このとき，\(Z\)は無限遠で可算な局所コンパクト空間である．
+  実際，局所コンパクトであることは，任意の\((x,y)\in Z\)に対し，
+  相対コンパクトな近傍\(U_{1}(x,y)\)が存在することからわかる．
+  無限遠で可算なことは，\(Z\)のコンパクト集合による被覆として
+  \[
+    K_{n}\coloneqq \Cl[\rr^{2}](U_{n}(0,0))
+  \]が存在することからわかる．
+  ところが，\((0,0)\)には\(\rr^2\)の開集合
+  と同相な近傍が存在しない．そのような近傍\(U\)が存在したとすると，
+  \(\#\pi_{0}(U\smi \left\{(0,0)\right\})=4\ne 1=\#\pi_{0}(\rr^2)\)となり，ムジュン．
+  したがって，
+  \(Z\)は無限遠で可算な局所コンパクト空間であるが位相多様体にならない．
 \end{EG}
 
 
@@ -780,10 +842,11 @@
 が定まる．
 他方で，\(Y\)上の束の射\(
   f'\colon TY\to Y\mathbin{\times_{X}}TX
-\)の双対射\(
-  f_{d}\coloneqq {}^{t\!}f'\colon Y\mathbin{\times_{X}}T^{\ast}X\to T^{\ast}Y
+\)の転置\(
+  \mdiff[f]\coloneqq {}^{t\!}f'\colon Y\mathbin{\times_{X}}T^{\ast}X\to T^{\ast}Y
 \)が定まる．これにより，図式
-\[\xymatrix{
+\begin{equation}\label{diagram:cot}
+\vcenter{\xymatrix{
   T^{\ast}Y
   %\ar@/^2pc/[rr]^-{df}
   \ar[rd]_-{\pi}
@@ -798,10 +861,115 @@
   \ar[d]^-{\pi}
   \\
   &Y\ar[r]^-{f}&X
-}\]
+}}  
+\end{equation}
 を得る．
 この図式を，ここだけの用語で，余接束の基本図式とよぶことにする．
 
+
+\subsection{余接束のシンプレクティック構造}
+
+\subsubsection*{標準1形式}
+
+\eqref{diagram:cot}を射影\(\pi\colon \cotb[X]\to X\)に適用すると
+写像\(
+    \mdiff[\pi]\colon
+    \cotb[X]
+    \tpb[X]
+    \cotb[X]\to\cotb[{\cotb[X]}]
+\)を得る．
+\begin{equation*}%\label{eq:cotcot}
+    \vcenter{\xymatrix{
+      T^{\ast}\cotb[X]
+      %\ar@/^2pc/[rr]^-{df}
+      \ar[rd]_-{\pi}
+      &
+      \cotb[X]\pb[X]\cotb[X]
+      \ar[l]_-{\pi_{d}}
+      \ar[r]^-{\pi_{\pi}}
+      \ar[d]^-{\pi}
+      \ar@{}[dr]|\square
+      &
+      \cotb[X]
+      \ar[d]^-{\pi}
+      \\
+      &\cotb[X]\ar[r]^-{\pi}&X
+}}\end{equation*}
+\(\cotb[X]\tpb[X]\cotb[X]\)の対角集合を\(
+    \varDelta
+\)とする．\(\varDelta\)と\(\cotb[X]\)を同一視した上で，
+\(\pi_{d}\)を\(\varDelta\)に制限することで
+\(\pi\colon\cotb[{\cotb[X]}]\to\cotb[X]\)の切断
+\[
+    \mres[\pi_{d}]{\varDelta}\colon
+    \cotb[X]
+    \cong\varDelta
+    \to\cotb[{\cotb[X]}]
+\]    
+が得られる．
+これを\(\cotb[X]\)の\textbf{標準1形式} (canonical 1-form) あるいは
+リウヴィル形式 (Liouville form) といい，
+\(\alpha_X\)で，あるいは混同する恐れのないときは\(\alpha\)で表す．
+
+\subsubsection*{標準1形式の座標表示}
+
+\((x;\xi)\)を\(\cotb[X]\)の局所座標とする．
+このとき，\(\alpha_X\)は
+\[
+    \alpha_{X}(x;\xi)=((x;\xi);\pi^{\ast}\xi)
+\]
+とかける．ここで，\[
+    \pi^{\ast}\xi\in T^{\ast}_{(x;\xi)}T^{\ast}X
+\]は\(T_{(x;\xi)}T^{\ast}X\)の基底\(
+    \frac{\partial}{\partial x_{1}},
+    \dots,
+    \frac{\partial}{\partial x_{n}},
+    \frac{\partial}{\partial \xi_{1}},
+    \dots,
+    \frac{\partial}{\partial \xi_{n}}
+\)に関して，
+\begin{align*}
+    \left\langle \pi^{\ast}\xi, \frac{\partial}{\partial x_{j}}\right\rangle
+    &=
+    \left\langle \xi, d\pi_{(x;\xi)}\frac{\partial}{\partial x_{j}}\right\rangle\\
+    &=
+    \left\langle \xi, \frac{\partial}{\partial x_{j}}\right\rangle,\\
+    \left\langle \pi^{\ast}\xi, \frac{\partial}{\partial \xi_{j}}\right\rangle
+    &=
+    \left\langle \xi, d\pi_{(x;\xi)}\frac{\partial}{\partial \xi_{j}}\right\rangle\\
+    &=
+    \left\langle \xi, 0\right\rangle=0
+\end{align*}
+をみたす．したがって，\(\alpha_X\)は基底\(dx_{1},\dots,dx_{n},d\xi_{1},\dots,d\xi_{n}\)を用いて，
+\[
+    \alpha_X
+    =\pi^{\ast}\left(
+        \sum_{j=1}^{n}\xi_{j}dx_{j}
+    \right)
+    =\sum_{j=1}^{n}\xi_{j}\pi^{\ast}dx_{j}
+    =\sum_{j=1}^{n}\xi_{j}dx_{j}
+\]
+と表せる．
+
+\subsubsection*{余接束上のシンプレクティック形式}
+以上で構成した\(\alpha_X\)に対し，\[\omega_X=-d\alpha_X\]とおく．
+\(\omega_X\)は\(\cotb[X]\)上のシンプレクティック形式である．したがって，
+\((\cotb[X],\omega_X)\)はシンプレクティック多様体となる．
+
+\(\omega_X\)を座標表示すると，
+\[
+    \omega_X=-d\alpha_{X}
+    =-d\left(\sum_{j=1}^{n}\xi_{j}dx_{j}\right)
+    =-\sum_{j=1}^{n}d(\xi_{j}dx_{j})
+    =\sum_{j=1}^{n}dx_{j}\wedge d\xi_{j} 
+\]
+となる．
+
+\begin{CMT}
+  ここでは標準シンプレクティック形式を\(\omega=-d\alpha\)で定義したが\(\omega=d\alpha\)で定義することもある．
+\end{CMT}
+
+\clearpage
 \section{リー群}
 \begin{EG}
   乗法群\(\rr^{+}\)（\(\rr_{>0}\)ともかく）はリー群である．
