@@ -620,9 +620,9 @@
 \section{Introduction}\label{sec:intro}
 %\include{intro-a}
 
-\include{intro-b}
+\include{intro-a}
 
-\section{Background Material}\label{sec:review}
+\section{Notations and Review}\label{sec:review}
 
 In this section, 
 we recall some definitions and results of 
@@ -1745,15 +1745,17 @@ Let us define the following morphisms:
         \right)
       \right).
     \end{equation}
-    Then the following statements hold.
-    \begin{enumerate}[(a)]
-        \item\label{item:rel-t-morse-a} 
-        For \(t>t_\circ\), the natural morphism
+    Then 
+    for \(t>t_\circ\), the natural morphism
         \[
           \Rder[j]{f_{\ast}}G \to \Rder[j]{{f_{t}}_{\ast}}j^{-1}_{t}G
         \]
         is an isomorphism for \(j<k\) 
-        and a monomorphism for \(j=k\). 
+        and a monomorphism for \(j=k\).    
+    %the following statements hold.
+    \begin{comment}
+    \begin{enumerate}[(a)]
+        \item\label{item:rel-t-morse-a} 
         %\item[(a\('\))] For \(t\geqq t_\circ\), the natural morphism
         %\[
         %  \Rder[j]{\tilde{f}_{\ast}}G 
@@ -1821,6 +1823,7 @@ Let us define the following morphisms:
     \end{align}
   \end{enumerate}
   \end{comment}
+  %\end{comment}
 \end{Proposition+}
 
 \begin{proof}
@@ -1901,7 +1904,7 @@ Let us define the following morphisms:
   Therefore, it is enough to prove the result 
   for \(\widetilde{G}\), \(q\), \(i_t\), \(\tilde{\varphi}\), instead of \(G\), \(f\), \(j_t\), \(\varphi\). 
 
-  Let us show the claim \eqref{item:rel-t-morse-a}.  
+  %Let us show the claim \eqref{item:rel-t-morse-a}.  
   It follows from the hypothesis \eqref{eq:hyp-morse} that
   \begin{equation}\label{eq:tilde-estimate}
     \muS[k](\widetilde{G})\cap\left(
@@ -1964,6 +1967,24 @@ Let us define the following morphisms:
 
   We shall construct a deformation family \((U_s)_{s\in\rr}\) 
   and apply Theorem~\ref{prp:t-nonchar} to it. 
+  %===================================
+  First, define a \(C^{\infty}\) function \(
+    \varphi\colon \lclosed0,-\infty\ropen\to \rr
+  \) satisfying
+  \begin{align*}
+    \varphi(u)&=1&&(0\leqq u\leqq 1/2),\\
+    \varphi'(u)&<0&&(1/2< u< 1),\\
+    \varphi(u)&=0&&(u\geqq 1).
+  \end{align*}
+  Then define an open set \(U_{s}\) of \(U\times \rr\) By
+  \[
+    U_{s}\coloneqq\begin{cases}
+      \left\{(x,x')\in U\times \rr\smid x'<(s-1)\varphi\left(\dfrac{s+1}{s}\left|x\right|\right)\right\},&s\geqq1,\\
+      \left\{(x,x')\in U\times \rr\smid x'<0\right\},&s<1. 
+    \end{cases}
+  \]
+  %==================================
+  \begin{comment}
   First, define a function \(\chi_{s}\colon U\to \rr\) by 
   \[
     \chi_{s}(x)\coloneqq
@@ -1999,6 +2020,7 @@ Let us define the following morphisms:
       U\times (-\infty,t) &(s\leqq t).
     \end{cases}
   \]
+
   Then the family \((U_{s})_{s\in\rr}\) satisfies 
   the conditions~\eqref{item:t-nonchar1}--\eqref{item:t-nonchar4} of 
   Theorem~\ref{prp:t-nonchar}.
@@ -2013,6 +2035,21 @@ Let us define the following morphisms:
   This does not intersect \(\muS[k](\widetilde{G})\) 
   because of \eqref{eq:tilde-estimate}. 
   Therefore \((U_{s})\) satisfies the condition \eqref{item:t-nonchar3}. 
+\end{comment}
+  Then the family \((U_{s})_{s\in\rr}\) satisfies 
+  the conditions~\eqref{item:t-nonchar1}--\eqref{item:t-nonchar4} of 
+  Theorem~\ref{prp:t-nonchar}.
+  
+
+
+
+
+
+
+
+
+
+
   Applying Theorem~\ref{prp:t-nonchar}, 
   we have the desired claims for the morphism
   \[
@@ -2025,7 +2062,7 @@ Let us define the following morphisms:
     H^{j}\left(U\times \lopen-\infty,t\ropen ;\widetilde{G}\right),
   \]
   and the result follows.
-  
+  \begin{comment}
   Now, let us show the claim \eqref{item:rel-t-morse-b}.
   First, we show the following lemma.
   \begin{Lemma+}\label{lmm:q-proper}
@@ -2077,6 +2114,7 @@ Let us define the following morphisms:
     \subset&\left\{(x;\xi)\in \cotb[X]\smid\exists(x,t';\xi,0)\in \muS[k](\widetilde{G})\right\}
   \end{align*}
   and the result follows.
+  \end{comment}
 \end{proof}
 
 Considering the case \(X=\{\pt\}\), 
@@ -2101,22 +2139,27 @@ one has the absolute version of the microlocal Morse lemma.
 \end{Theorem+}
 
 \begin{Example+}
-  Let \(M\) be a real analytic manifold and \(X\) be its complexification.
+  Let \(M\) be a real analytic manifold 
+  and \(X\) be its complexification.
   Let \(P\) be a linear partial differential operator 
   in the analytic coefficient defined locally on \(X\). 
   By \(\cM\coloneqq \cD_{X}/\cD_{X}P\), we denote 
   the coherent \(\cD_{X}\)-module associated with \(P\). 
   For the theory of \(\cD_X\)-modules, one can consult \cite{Kas03}.
-  Set \(F\colon \RHOM_{\cD_{M}}(\cM,\cB_{M})\). 
+  Set \(F\coloneqq \RHOM_{\cD_{M}}(\cM,\cB_{M})\). 
+  Let \(\varphi\) as Theorem~\ref{thm:t-morse}.
   By Holmgren's uniqueness theorem (cf. \cite[Theorem~8.6.5]{Hor83}), 
-  one can show the following estimate:
+  one can show the following estimate (see also \cite[Example 3.8~(iv)]{KMS03a}):
   \[
     \muS[0](F)\subset\Char(\cM)\cap \cotb[M].
   \]
-  By Theorem~\ref{thm:t-morse}, it follows that
+  By Theorem~\ref{thm:t-morse}, 
+  it follows that the restriction morphism
   \[
-    H^{0}(B;F)\to H^{0}(B\cap \left\{\varphi<0\right\};F).
+    H^{0}(M_{b};F)\to H^{0}(M_{a};F).
   \]
+  is injective if all the level hypersurfaces \(\varphi^{-1}(t)\) \((a\leqq t < b)\) are non-characteristic 
+  for \(\cM\).
 \end{Example+}
 
 %\section{Proof of Lemma {\ref{clm:ind-nonchar}}}\label{sec:proof-lem}
@@ -2126,7 +2169,7 @@ one has the absolute version of the microlocal Morse lemma.
 %which was postponed in the proof of Theorem \ref{prp:t-nonchar}. 
 
 \appendix
-\section{An Isomorphism of Global Sections in Particular Cases}
+\section{An Isomorphism of Global Sections in Particular Cases}\label{sec:special-isom}
 In this subsection, we shall show 
 an isomorphism of global sections 
 which is needed in the proof of Theorem~\ref{prp:t-nonchar}.
@@ -2257,6 +2300,9 @@ The right-hand side is generally not equal to \(\RG(S; \mres[F]{S})\), because \
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
+  \bibitem[BS72]{BS72} J.-M. Bony and P. Schapira, 
+  \textit{Existence et prolongement des solutions holomorphes des \'equations aux d\'eriv\'ees partielles}, 
+  Invent. Math. {\bf 17} (1972), 95--105; MR0338541
   \bibitem[FM07]{FM07} Teresa Monteiro Fernandes, Ana Rita Martins. 
   \textit{Truncated Microsupport and Hyperbolic Inequalities}, 
   Nagoya Mathematical Journal, 2007, Vol.\ 185, pp.63--91. 
@@ -2268,6 +2314,9 @@ The right-hand side is generally not equal to \(\RG(S; \mres[F]{S})\), because \
   \textit{The analysis of linear partial differential operators. I}, 
   reprint of the second (1990) edition [Springer, Berlin; MR1065993], 
   Classics in Mathematics, Springer, Berlin, 2003; MR1996773
+  \bibitem[Kas75]{Kas75} M. Kashiwara, 
+  \textit{On the maximally overdetermined system of linear differential equations. I}, 
+  Publ. Res. Inst. Math. Sci. {\bf 10} (1974/75), 563--579; MR0370665
   \bibitem[Kas03]{Kas03} Masaki Kashiwara, 
     \textit{$D$-modules and microlocal calculus}, 
     translated from the 2000 Japanese original by Mutsumi Saito, 
@@ -2283,6 +2332,11 @@ The right-hand side is generally not equal to \(\RG(S; \mres[F]{S})\), because \
 		\textit{Involutivity of Truncated microsupports}, 
 		Bull. Soc. math. France, 131 (2), 2003, 
 		pp.259--266.
+  \bibitem[KS82]{KS82} M. Kashiwara and P. Schapira, 
+  \textit{Micro-support des faisceaux: 
+  application aux modules diff\'erentiels}, 
+  C. R. Acad. Sci. Paris S\'er. I Math. {\bf 295} (1982), 
+  no.~8, 487--490; MR0684086
   \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
     \textit{Sheaves on Manifolds}, 
     Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
@@ -2291,7 +2345,6 @@ The right-hand side is generally not equal to \(\RG(S; \mres[F]{S})\), because \
     \textit{Domaine d’holomorphie des fonctions v\'erifiant 
     une \'equation aux d\'eriv\'ees partielles.} 
     C. R. Acad. Sci. Paris, 272 (1971), 1646--1648.
-
 \end{thebibliography}
 %===============================================
 

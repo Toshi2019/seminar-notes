@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  13 OCT 2026 14:47
+This is e-upTeX, Version 3.141592653-p4.1.1-u1.30-230214-2.6 (utf8.uptex) (TeX Live 2024) (preloaded format=uplatex 2024.10.10)  5 NOV 2026 22:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -780,7 +780,7 @@ File: l3backend-dvipdfmx.def 2024-02-20 L3 backend support: dvipdfmx
 \g__pdf_backend_object_int=\count352
 \g__pdf_backend_annotation_int=\count353
 \g__pdf_backend_link_int=\count354
-) (./rel-t-morse.aux (./intro-b.aux))
+) (./rel-t-morse.aux (./intro-a.aux))
 \openout1 = `rel-t-morse.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 615.
@@ -872,11 +872,11 @@ LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
  [1
 
 ]
-\openout2 = `intro-b.aux'.
+\openout2 = `intro-a.aux'.
 
- (./intro-b.tex) [2
+ (./intro-a.tex [2
 
-]
+]) [3]
 LaTeX Font Info:    Font shape `JT2/hmc/bx/n' in size <12> not available
 (Font)              Font shape `JT2/hgt/m/n' tried instead on input line 645.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
@@ -891,10 +891,10 @@ Package xypdf Warning: The produced DVI file is NOT PORTABLE. Convert it with
 dvipdfm(x) to the PDF format but do not expect the DVI file itself to be
 displayed correctly.
 
-637> [3
+637> [4
 
 
-] [4] [5]
+] [5] [6]
 LaTeX Font Info:    Kanji font shape `JY2/hgt/m/it' undefined
 (Font)              No change on input line 863.
 
@@ -903,43 +903,49 @@ Overfull \hbox (12.43127pt too wide) in paragraph at lines 899--899
  []
 
 
-LaTeX Warning: Reference `sec:proof-lem' on page 6 undefined on input line 909.
+LaTeX Warning: Reference `sec:proof-lem' on page 7 undefined on input line 909.
 
-[6] [7] [8] [9] [10]
+[7] [8] [9] [10] [11]
 
-LaTeX Warning: Reference `sec:proof-lem' on page 11 undefined on input line 1395.
+LaTeX Warning: Reference `sec:proof-lem' on page 12 undefined on input line 1395.
 
-<xymatrix 2x3 270> [11] [12] [13] [14] <xymatrix 2x2 150> <xymatrix 2x2 150> <xymatrix 3x2 331> <xymatrix 3x2 331> [15] [16] [17] [18] [19] [20]
+<xymatrix 2x3 270> [12] [13] [14] [15] <xymatrix 2x2 150> <xymatrix 2x2 150> <xymatrix 3x2 331> <xymatrix 3x2 331> [16] [17] [18] [19] [20]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2261.
+(Font)              No change on input line 2304.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2265.
+(Font)              No change on input line 2307.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2268.
+(Font)              No change on input line 2311.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 2314.
 
-Underfull \hbox (badness 3417) in paragraph at lines 2267--2271
+Underfull \hbox (badness 3417) in paragraph at lines 2313--2317
 \OT1/cmr/m/n/10.95 MR1065993], Clas-sics in Math-e-mat-ics, Springer, Berlin, 2003;
  []
 
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2272.
+(Font)              No change on input line 2318.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2279.
+(Font)              No change on input line 2321.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 2328.
 [21]
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2283.
+(Font)              No change on input line 2332.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2287.
+(Font)              No change on input line 2337.
+LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
+(Font)              No change on input line 2341.
 
-Underfull \hbox (badness 4819) in paragraph at lines 2286--2289
+Underfull \hbox (badness 4819) in paragraph at lines 2340--2343
 []\OT1/cmr/m/n/10.95 Masaki Kashi-wara, Pierre Schapira, \OT1/cmr/m/it/10.95 Sheaves on Man-i-folds\OT1/cmr/m/n/10.95 ,
  []
 
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2289.
+(Font)              No change on input line 2343.
 LaTeX Font Info:    Kanji font shape `JY2/hmc/m/it' undefined
-(Font)              No change on input line 2292.
-[22] (./rel-t-morse.aux (./intro-b.aux))
+(Font)              No change on input line 2346.
+[22] (./rel-t-morse.aux (./intro-a.aux))
  ***********
 pLaTeX2e <2023-02-14u04>+1, based on
 LaTeX2e <2023-11-01> patch level 1
@@ -950,15 +956,15 @@ L3 programming layer <2024-02-20>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `rel-t-morse.out' has not changed.
-(rerunfilecheck)             Checksum: 96E25C5562CDCCC1C7B27FB57032AE47;2596.
+(rerunfilecheck)             Checksum: A4092A94150562008FC3B451343C988C;2604.
  ) 
 Here is how much of TeX's memory you used:
- 30796 strings out of 474774
- 542584 string characters out of 5758801
- 1946032 words of memory out of 5000000
- 52597 multiletter control sequences out of 15000+600000
+ 30795 strings out of 474774
+ 542505 string characters out of 5758801
+ 1949032 words of memory out of 5000000
+ 52596 multiletter control sequences out of 15000+600000
  615296 words of font info for 157 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  84i,28n,93p,3267b,1080s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on rel-t-morse.dvi (22 pages, 142432 bytes).
+Output written on rel-t-morse.dvi (22 pages, 139948 bytes).
