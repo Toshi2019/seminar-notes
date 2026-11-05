@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {paragraph}{Analytic point of view}{3}{section*.2}%
+\contentsline {paragraph}{Organization}{3}{section*.3}%
+\contentsline {section}{\numberline {2}Notations and Review}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Geometrical Notions}{4}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Proper Morphisms}{4}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}The Fundamental Diagram of Cotangent Bundles}{4}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Approximation by Inductive Limits}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Complement of Homological Algebra}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Mittag-Leffler Procedure for Sheaves}{6}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Truncated Microsupport}{7}{section.3}%
+\contentsline {section}{\numberline {4}Truncated Noncharacteristic Deformation Lemma}{8}{section.4}%
+\contentsline {section}{\numberline {5}Truncated Microlocal Morse theory}{15}{section.5}%
+\contentsline {section}{\numberline {A}An Isomorphism of Global Sections in Particular Cases}{20}{appendix.A}%

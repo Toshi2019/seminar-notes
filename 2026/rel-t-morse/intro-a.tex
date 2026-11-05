@@ -4,7 +4,7 @@
 Microlocal sheaf theory allows us to
 study the propagation of cohomology 
 of complexes of sheaves. 
-The most important notion in the theory 
+A central notion in the theory 
 is that of microsupport of a complex of sheaves. 
 It was defined by Kashiwara and Schapira 
 in 1982~\cite{KS82}. 
@@ -13,11 +13,13 @@ Let \(M\) be a real manifold
 and \(F\) a complex of sheaves. 
 Then the microsupport \(\muS[](F)\) of \(F\) is 
 a closed conic (i.e., stable 
-under \(\rr^{+}\)-action) involutive coisotropic subset 
+under \(\rr^{+}\)-action) coisotropic subset 
 of the cotangent bundle of \(M\). 
 Roughly speaking, \(\muS[](F)\) describes the (co)directions 
-of \(M\) in which the cohomology of all the degree of \(F\) cannot be extended. 
-
+of \(M\) in which the cohomology of some degree of \(F\) cannot be extended. 
+Note that we cannnot regain from \(\muS[](F)\) information of
+the cohomological degree of \(F\) where 
+its cohomology does not propagate.
 %This notion can be interpreted by analogy with Morse theory. 
 %Let \(\varphi\) be a real-valued function of class \(C^1\). 
 %Then we can replace 
@@ -38,29 +40,29 @@ of \(M\) in which the cohomology of all the degree of \(F\) cannot be extended.
 
 %\subsection{Truncated Microsupport}}
 However, 
-there are some kind of propagation phenomena which depend on 
+there are certain propagation phenomena which depend on 
 the degree of cohomology. 
 One cannot treat such phenomena by microsupports. 
-To treat this difficultiy, 
-Kashiwara--Monteiro-Fernandes--Schapira~\cite{KMS03a} 
+To address this difficulty, 
+Kashiwara, Monteiro-Fernandes, and Schapira~\cite{KMS03a} 
 introduced the notion of truncated microsupport. 
-This has the information of (co)direction-wise 
-singularity depending on the degree of cohomology. 
+This notion encodes information about singularities 
+in cotangent directions depending on the degree of cohomology. 
 
 Both notions above encode microlocal information. 
-Then how do we deduce 
-the global propagation results from them? 
+Then how can we deduce 
+the global propagation results from this microlocal information? 
 For ordinary microsupport,
 an answer is given by the non-characteristic 
 deformation lemma due to Kashiwara~\cite{Kas75}. 
-This lemma plays the most fundamental roll 
+This lemma plays a fundamental role 
 in microlocal sheaf theory, and 
 is used throughout \cite{KS90}. 
 
 In this paper, we prove a truncated version 
 of the non-characteristic deformation lemma
 with slight modifications. 
-Precisely speaking, 
+More precisely, 
 we make two modifications 
 to the lemma. 
 
@@ -68,19 +70,21 @@ First, we weaken the hypothesis of vanishing of
 cohomologies. In the original lemma, we assume that 
 the cohomologies of all degrees vanish. 
 In our version, 
-we assume that the cohomologies of not all degrees 
-but degrees less than a certain number vanish.
+it is required only in degrees at most a fixed integer.
 
 Second, we make an additional assumption on 
-the family of deformation.
-One should notice that 
+the deformation family.
+Note that 
 we cannot apply the original proof of the lemma
-to our truncated version. Indeed we give an example 
-that the original statement does not hold without the modification.
+to our truncated version. 
+Indeed we give an example 
+showing that 
+the conclusion of the truncated version can fail
+without this additional assumption.
 
 To make the last
 assumption acceptable to the reader, 
-we give several examples of families of deformation 
+we give several examples of deformation families
 with figures. 
 
 
@@ -94,29 +98,27 @@ Holmgren's uniqueness theorem.
 
 \paragraph{Analytic point of view} 
 
-In view of propagation, 
+From the viewpoint of propagation, 
 our results are along the lines of 
 the Cauchy-Kowalevsky theorem. 
-In 1971, Zerner showed a theorem of analytic extension of 
-the solution of a single differential equation 
+In 1971, Zerner showed a theorem on analytic extension of 
+solutions of a single differential equation 
 whose coefficients are holomorphic \cite{Zer71}. 
-In 1972, Bony-Schapira generalized the result to 
+In 1972, Bony and Schapira generalized the result to 
 the case of families of differential operators \cite{BS72}. 
 In 1975, Kashiwara used this method and 
 the Mittag-Leffler argument for sheaves to extend the result 
-to the case of solution complexes to 
+to the case of the solution complex of 
 a coherent \(\mathcal{D}\)-module~\cite{Kas75}. 
-Note that Kashiwara used this method to show the constructibility theorem:  
+Note that Kashiwara used this method to prove 
+the constructibility theorem:  
 if \(\mathcal{M}\) is a holonomic \(\mathcal{D}\)-module,
-the solution complex \(\RHOM_{\mathcal{D}_{X}}(\mathcal{M},\mathcal{O}_{X})\) 
-is constructible.
+the solution complex \(
+    \RHOM_{\mathcal{D}_{X}}(\mathcal{M},\mathcal{O}_{X})
+\) is constructible.
 
 Our result in the case of hyperfunction solutions can be seen 
-as a truncated version of these propagation.
-
-
-
-
+as a truncated version of these propagation results.
 
 
 
@@ -128,18 +130,19 @@ as a truncated version of these propagation.
 
 The paper is organized as follows. 
 In Section \ref{sec:review}, 
-we review the notations and results from \cite{KS90}. 
+we review notation and results from \cite{KS90}. 
 In Section \ref{sec:t-ss}, 
-we define truncated microsupport of sheaves, 
-due to \cite{KMS03a}. 
+we recall the definition of truncated microsupport, 
+introduced in \cite{KMS03a}. 
 In Section \ref{sec:t-nonchar}, 
 we prove a truncated version of 
 the noncharacteristic deformation lemma. 
 In the proof, Lemma \ref{clm:ind-nonchar} plays a crucial role. 
-Finally in Section \ref{sec:t-morse}, 
+In Section \ref{sec:t-morse}, 
 we apply the result in Section \ref{sec:t-nonchar} 
-to the microlocal Morse theory. 
-In Section \ref{sec:special-isom}, we give a some technical results. 
+to microlocal Morse theory. 
+Finally in Appendix \ref{sec:special-isom}, 
+we give some technical results. 
 
 
 

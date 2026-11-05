@@ -620,19 +620,25 @@
 \section{Introduction}\label{sec:intro}
 %\include{intro-a}
 
-\include{intro-a}
+\input{intro-a}
 
-\section{Notations and Review}\label{sec:review}
+\section{Notation and Preliminaries}\label{sec:review}
 
 In this section, 
 we recall some definitions and results of 
 homological algebra and sheaf theory including 
 the theory of derived categories from \cite{KS90}, 
-following its notations with slight modifications. 
+using the notations of \cite{KS90} with slight modifications. 
 
-Let \(X\) be a topological space, 
-and \(Z\) a locally closed set of \(X\). 
-Let us denote by \(i\colon Z\hookrightarrow X\) the inclusion. 
+Let \(X\) be a topological space. 
+Let us denote by \(\Dompb(\kk_X)\) the bounded 
+derived category of sheaves of \(\kk\)-modules on \(X\), 
+where \(\kk\) is a base ring which is commutative, 
+unital, and of finite global dimension. 
+We also write the lower bounded derived category  
+by \(\Dompl(\kk_X)\). 
+If \(Z\) is a locally closed set of \(X\), 
+let us denote by \(i\colon Z\hookrightarrow X\) the inclusion. 
 We use the following functors: 
 \[
   \RG_{Z}(\blk) \coloneqq \Rder[]{i_{\ast}}i^{!}, 
@@ -643,14 +649,17 @@ If there is no risk of confusion,
 we will write \(\kk_Z\) rather than \(\kk_{X,Z}\).
 
 \subsection{Geometrical Notions}
+\begin{comment}
 \subsubsection{Proper Morphisms}
-We use the following proposition in the proof of Proposition~\ref{prop:rel-t-morse}
+We use the following proposition 
+in the proof of Proposition~\ref{prop:rel-t-morse}.
 \begin{Proposition+}[see {\cite[Proposition 1.32]{Wed16}}]\label{prop:surj-proper}
   Let \(X\), \(Y\), and \(Z\) be
   locally compact (Hausdorff, by definition) spaces, 
   and let \(f\), \(g\) be continuous. 
   If \(g\circ f\) is proper and \(f\) surjective, then \(g\) is proper.
 \end{Proposition+}
+\end{comment}
 
 \subsubsection{The Fundamental Diagram of Cotangent Bundles}
 Let \(M\) be a real manifold of class \(C^\infty\) 
@@ -705,7 +714,7 @@ In these diagrams,
 \(\mptan[f]\) and \(\mpb[f]\) denote 
 the natural projections, \(f'\) is defined by 
 \((x;v)\mapsto (x;df_{x}v)\), 
-and \(\mdiff[f]\) is induced by the transposition of \(f'\). 
+and \(\mdiff[f]\) is induced by the transpose of \(f'\). 
 
 \subsection{Approximation by Inductive Limits}
 
@@ -733,7 +742,7 @@ and \(\mdiff[f]\) is induced by the transposition of \(f'\).
 Note that a paracompact space 
 is, by definition, a Hausdorff space. 
 
-\subsection{Complement of Homological Algebra}\label{ssec:ML}
+\subsection{Further Results in Homological Algebra}\label{ssec:ML}
 
 Consider a projective system of abelian groups \(
   \left(M_n,\rho_{n,p}\right)_n
@@ -773,8 +782,12 @@ the natural morphism.
   the ML condition. 
   Then
   \begin{enumerate}[(a)]
-    \item for each \(k\in \zz\), the map \(\varPhi_k\) is surjective,
-    \item if moreover, for a given \(i\) the system \(\left(H^{i-1}(E_{n}^{\bullet})\right)_{n}\) satisfies the ML condition, then \(\varPhi_i\) is bijective.
+    \item for each \(k\in \zz\), 
+    the map \(\varPhi_k\) is surjective,
+    \item if moreover, 
+    the system \(\left(H^{i-1}(E_{n}^{\bullet})\right)_{n}\) 
+    satisfies the ML condition for a given \(i\), 
+    then \(\varPhi_i\) is bijective.
   \end{enumerate} 
 \end{Proposition+}
 
@@ -839,8 +852,10 @@ proper morphisms.
 First, we review the original definition 
 of a microsupport. 
 \begin{Definition+}[{\cite[Definition 5.1.2]{KS90}}]\label{dfn:ss}
+  Let \(X\) be a real manifold of class \(C^{\infty}\).
   Let \(F\in\Dompb(\kk_X)\). 
-  The closed conic subset \(\muS[](F)\) of \(\cotb[X]\) 
+  The closed conic subset \(\muS[](F)\) of \(\cotb[X]\), 
+  called the \textit{microsupport} of \(F\)
   is defined by the following condition: \(p\notin \muS[](F)\) 
   if and only if 
   there exists an open neighborhood \(U\) of \(p\) 
@@ -855,9 +870,11 @@ of a microsupport.
 
 Kashiwara, Monteiro-Fernandes, 
 and Schapira modified
-this definition and gave the notion of truncated microsupport.
+this definition and introduced 
+the notion of truncated microsupport.
 
 \begin{Definition+}[{\cite[Definition 3.4]{KMS03a}}]\label{dfn:t-ss}
+  Let \(X\) be a real manifold of class \(C^{\infty}\).
   Let \(F\in\Dompb(\kk_X)\), and fix an 
   integer \(k\in\zz\). 
   The \emph{truncated microsupport} \(\muS[k](F)\) is
@@ -903,10 +920,10 @@ the noncharacteristic deformation lemma.
 First we state the result. 
 After giving several examples, 
 we prove Theorem \ref{prp:t-nonchar}. 
-In the course of the proof, 
-we use the key lemma (Lemma \ref{clm:ind-nonchar}). 
-Since its proof is rather long, 
-we postpone the proof to Section \ref{sec:proof-lem}. 
+%In the course of the proof, 
+%we use the key lemma (Lemma \ref{clm:ind-nonchar}). 
+%Since its proof is rather long, 
+%we postpone the proof to Section \ref{sec:proof-lem}. 
 
 
 Before we state the truncated version, let us review the original 
@@ -983,7 +1000,7 @@ Our result is as follows.
 \end{Theorem+}
 
 Before we prove Theorem \ref{prp:t-nonchar}, 
-let us give several examples of families of deformation. 
+let us give several examples of deformation families. 
 
 \begin{Example+}\label{eg:t-nonchar}
   The condition \eqref{item:t-nonchar4} of 
@@ -1024,7 +1041,7 @@ let us give several examples of families of deformation.
       S\coloneqq 
       \left\{(x,y)\in X;\ (x+2)^{2}+(y-1)^{2}=1\right\}
       \smi 
-      \left\{(-1,0)\right\}. 
+      \left\{(-2,0)\right\}. 
     \]
     %For this \(S\) 
     We denote by \(\kk_{S}\) 
@@ -1041,7 +1058,8 @@ let us give several examples of families of deformation.
     satisfies the conditions 
     \eqref{item:t-nonchar1}--\eqref{item:t-nonchar3} but 
     not \eqref{item:t-nonchar4}, 
-    which results in the consequence of the proposition does not hold. 
+    for which 
+    the conclusion of Theorem~\ref{prp:t-nonchar} fails. 
     Hence the condition \eqref{item:t-nonchar4} is 
     necessary. 
     \begin{figure}[htb]
@@ -1234,7 +1252,8 @@ let us give several examples of families of deformation.
           -- plot(\x,{sqrt(\t*\t-\x*\x)})
           -- (\t,0)
           -- cycle;
-        \draw[dashed, very thick](0,0) ellipse (1.5 and 1.5);
+        %\draw[dashed, very thick](0,0) ellipse (1.5 and 1.5);
+        \draw[dashed, very thick](\t,0) arc[start angle=0, end angle=180, radius=\t];
 
         % y < 0 の部分
         \fill[black!25] (-3.5,0) rectangle (3.5,-2);
@@ -1310,7 +1329,7 @@ let us give several examples of families of deformation.
 
 
 
-\begin{proof}[{Proof of Theorem \ref{prp:t-nonchar}}]
+\begin{proof}[{Proof of Theorem \ref{prp:t-nonchar}.}]
   Consider the following conditions for 
   \(j\in\zz\) and \(s\in\rr\):
   \begin{align}
@@ -1364,7 +1383,7 @@ let us give several examples of families of deformation.
     \overset{+1}{\longrightarrow}. 
   \end{equation}
   By the hypothesis \eqref{item:t-nonchar3} and 
-  the definition of a local cohomology, 
+  the definition of local cohomology, 
   we see that
   \[
     \mres[H^{j}_{X\smi U_{s}}(F)]{Z_{s}\cup U_{s}}=0
@@ -1392,8 +1411,10 @@ let us give several examples of families of deformation.
     H^{k}(U_{s};F).
   \end{align}
   Therefore, if we show Lemma \ref{clm:ind-nonchar} below, 
-  whose proof will be given in Section \ref{sec:proof-lem},
-  we have from Lemma \ref{clm:ind-nonchar} and \eqref{eq:a-iso}
+  %whose proof will be given in Section \ref{sec:proof-lem},
+  we have from 
+  %Lemma \ref{clm:ind-nonchar} and 
+  \eqref{eq:a-iso}
   \begin{align*}
     \indlim[t>s]H^{j}(U_t;F)
     &\cong 
@@ -1479,7 +1500,8 @@ let us give several examples of families of deformation.
     \). 
     This \(\left(A_{r}\right)_{s<r<t}\) satisfies 
     the finite intersection property. 
-    Indeed, for finite real numbers \(s<r_{0}<\dots<r_{m}<t\), 
+    Indeed, for any finite sequence of 
+    real numbers \(s<r_{0}<\dots<r_{m}<t\), 
     it follows from 
     the assumption for contradiction
     that
@@ -1543,7 +1565,7 @@ let us give several examples of families of deformation.
     \] 
     The injectivity of \(\phi\) follows from 
     the definition of a sheaf 
-    and the injectivities of \(\psi\) and \(\psi'\). 
+    and the injectivities of both \(\psi\) and \(\psi'\). 
 
     Let us prove that \(\phi\) is surjective. 
     Let \(
@@ -1563,8 +1585,7 @@ let us give several examples of families of deformation.
       =
       \mres[{(\mres[\tau]{(Z_{s}\cup U_{s})\cap U})}]{Z_{s}}
     \). 
-    \textcolor{black}
-    {B}y the definition of a section 
+    By the definition of a section 
     on the closed subset \(Z_{s}\) of 
     \((Z_{s}\cup U_{s})\cap U\), 
     we can find an open subset \(W\) of 
@@ -1616,10 +1637,10 @@ let us give several examples of families of deformation.
     This completes the proof.
   \end{proof}
 
-  Let us come back to the proof of 
+  Let us return to the proof of 
   Theorem~\ref{prp:t-nonchar}. 
   We prove \ref{eq:t-nonchar-b} for 
-  all \(j\in\zz\) and \(s\in\rr\) by induction on \(j\). 
+  all \(j\in<k\) and \(s\in\rr\) by induction on \(j\). 
   Since \(F\in\Dompl(\kk_X)\), 
   we have \ref{eq:t-nonchar-b} for \(j\ll 0\) and \(s\in\rr\). 
   Hence there exists an integer \(j_{0}<k\) 
@@ -1637,7 +1658,7 @@ let us give several examples of families of deformation.
     \text{ for \(j< j_{0}\) and \(s\leqq t\). }
   \]
   Fix \(s\in\rr\) and consider the projective system \(
-    \left(H^{j_{0}-1}(U_{s-1/n});F\right)_{n\in\nn}
+    \left(H^{j_{0}-1}(U_{s-1/n};F)\right)_{n\in\nn}
   \). This system satisfies the ML condition.  
   Therefore, by applying 
   Proposition \ref{prop:ks2.7.1} (\ref{item:ks2.7.1.3}), 
@@ -1649,9 +1670,9 @@ let us give several examples of families of deformation.
   %  誤植だと思う方が自然と思われる．
   %}, 
   we have \[
-    H^{j}(U_{s};F)
+    H^{j_{0}}(U_{s};F)
     \simar 
-    \prolim[n]H^{j}\left(U_{s-\frac{1}{n}};F\right). 
+    \prolim[n]H^{j_{0}}\left(U_{s-\frac{1}{n}};F\right). 
   \]
   Since \((s-1/n)_{n}\) is a cofinal family of \((t)_{s>t}\), 
   we have \((b)_{s}^{j_{0}}\). 
@@ -1682,57 +1703,59 @@ let us give several examples of families of deformation.
   \[
     H^{k}\left(\bigcup_{s\in\rr}U_{s};F\right)
     \hookrightarrow
-    H^{j}\left(U_{s};F\right).
+    H^{k}\left(U_{s};F\right).
   \]
   This completes the proof. 
 \end{proof}
 
-\section{Truncated Microlocal Morse theory}\label{sec:t-morse}
+\section{Truncated Microlocal Morse Theory}\label{sec:t-morse}
 
 In this section, we show a truncated version of 
 the relative microlocal Morse lemma as an application of the 
 truncated noncharacteristic deformation lemma. 
-After that, considering the absolute version, 
-we show a more familier statement 
-as the microlocal Morse lemma but, of corse, 
-in a truncated setting. 
-We can consider the last proposition as a global version 
-of famous Holmgren's uniqueness theorem. 
-In order to show it, we give an example at the end of 
-this section.
+We then specialize to the absolute version to 
+a truncated version of the microlocal Morse lemma 
+in a more familiar form. 
+Applied to hyperfunction solutions, this result yields 
+a global version of Holmgren's uniqueness theorem. 
+We illustrate this application in Example~\ref{eg:Holmgren}
 
 Let \(f\colon Y\to X\) be a morphism of manifolds, and 
-\(\varphi\) a real valued function of class \(C^1\) on \(Y\). 
+\(\varphi\) a real-valued function of class \(C^1\) on \(Y\). 
 For a real number \(t\in \rr\), we set 
 \begin{align*}
   Y_t
   &\coloneqq \left\{y\in Y\smid \varphi(y)< t\right\} 
   = \varphi^{-1}(\lopen-\infty,t\ropen),\\
-  \widetilde{Y_t}
-  &\coloneqq \left\{y\in Y\smid \varphi(y)\leqq t\right\} 
-  = \varphi^{-1}(\lopen-\infty,t\rclosed).
+  %\widetilde{Y_t}
+  %&\coloneqq \left\{y\in Y\smid \varphi(y)\leqq t\right\} 
+  %= \varphi^{-1}(\lopen-\infty,t\rclosed).
 \end{align*}
-Let us define the following morphisms:
+Let us denote \(j_{t}\colon Y_{t}\hookrightarrow Y\) the 
+natural embedding, 
+and set \(f_{t}\coloneqq f\circ j_{t}\).
+These morphisms can be illustrated by the following diagram:
 \[\xymatrix{
   Y_t\ar[r]^-{j_t}
   \ar[rd]_-{f_t}
   &
   Y
   \ar[d]^-{f}\\
-  &X,
-}\quad\xymatrix{
-  \widetilde{Y_t}\ar[r]^-{\tilde{j}_t}
-  \ar[rd]_-{f_t}
-  &
-  Y
-  \ar[d]^-{f}\\
   &X.
-}\]
+}%\quad\xymatrix{
+  %\widetilde{Y_t}\ar[r]^-{\tilde{j}_t}
+  %\ar[rd]_-{f_t}
+  %&
+  %Y
+  %\ar[d]^-{f}\\
+  %&X.
+%}
+\]
 
 \begin{Proposition+}\label{prop:rel-t-morse}
-  Let \(G\in\Dompb(\kk_Y)\), and assume \(
-    f_{t}\colon \supp(G)\cap \overline{Y_t}\to X
-  \) is proper for all \(t\in\rr\). 
+  Let \(G\in\Dompb(\kk_Y)\), and assume that 
+  for all \(t\in\rr\), the morphism 
+  \(f_{t}\) is proper on \(\supp(G)\cap \overline{Y_t}\). 
   Let \(k\) be an integer and \(t_\circ\) a real number.
   %\begin{enumerate}[(i)]
     %\item 
@@ -1858,7 +1881,9 @@ Let us define the following morphisms:
       \ar@{^(->}[u]_-{i_{t}}
       \ar[ur]_-{q_{t}}
     &
-  },\quad
+  }.
+  \begin{comment}
+  \quad
   \xymatrix@C=30pt@R=30pt{
     Y
       \ar[r]^-{\tilde{f}}
@@ -1876,30 +1901,30 @@ Let us define the following morphisms:
       \ar@{^(->}[u]_-{\tilde{i}_{t}}
       \ar[ur]_-{\tilde{q}_{t}}
     &
-  }.\]
+  }\end{comment}
+  \]
   Then, setting \(
     \widetilde{G}\coloneqq \Rder[]{\tilde{f}_{\ast}}G
-  \), we have \(
-    \Rder[]{f_{\ast}}G
-    \cong 
-    \Rder[]{q_{\ast}}\widetilde{G}
-  \) and
+  \), we have the following isomorphisms:
   \begin{align*}
+    \Rder[]{f_{\ast}}G
+    &\cong 
+    \Rder[]{q_{\ast}}\widetilde{G},\\
     \Rder[]{{f_{t}}_{\ast}}j_{t}^{-1}G
     &\cong 
     \Rder[]{{q_{t}}_{\ast}}i_{t}^{-1}\widetilde{G},
-    &
-    \Rder[]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{-1}G
-    &\cong 
-    \Rder[]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{-1}\widetilde{G},
+    %&
+    %\Rder[]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{-1}G
+    %&\cong 
+    %\Rder[]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{-1}\widetilde{G},
     \\
     \Rder[]{{f_{t}}_{!}}j_{t}^{-1}G
     &\cong 
-    \Rder[]{{q_{t}}_{!}}i_{t}^{-1}\widetilde{G},
-    &
-    \Rder[]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{!}G
-    &\cong 
-    \Rder[]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{!}\widetilde{G}.
+    \Rder[]{{q_{t}}_{!}}i_{t}^{-1}\widetilde{G}.
+    %&
+    %\Rder[]{\tilde{f_{t}}_{\ast}}\tilde{j}_{t}^{!}G
+    %&\cong 
+    %\Rder[]{\tilde{q_{t}}_{\ast}}\tilde{i}_{t}^{!}\widetilde{G}.
   \end{align*}
   Therefore, it is enough to prove the result 
   for \(\widetilde{G}\), \(q\), \(i_t\), \(\tilde{\varphi}\), instead of \(G\), \(f\), \(j_t\), \(\varphi\). 
@@ -1915,7 +1940,7 @@ Let us define the following morphisms:
   \end{equation}
   Indeed, by hypothesis, 
   for any \((y;\eta)\in\muS[k](G)\) 
-  and \((f(x);\xi)\in Y\tpb[X]\cotb[X]\), 
+  and \((f(y);\xi)\in Y\tpb[X]\cotb[X]\) with \(\varphi>t_{\circ}\), 
   we have 
   \begin{equation}\label{eq:pb-conic}
     d\varphi(y)\neq \eta + f^{\ast}\xi.
@@ -1954,32 +1979,35 @@ Let us define the following morphisms:
     \to
     \indlim[x\in U]H^{j}\left(U\times \lopen-\infty,t\ropen ;\widetilde{G}\right).
   \]
-  Let \(U\) be an open neighborhood of \(x\) in \(X\) contained 
-  in a local chart, and diffeomorphic to the unit open ball, centered at \(0\). 
-  Such open sets form a fundamental system of neighborhoods of \(x\). 
+  Let \(U\) be an open neighborhood 
+  of \(x\) in \(X\) contained in a local chart, 
+  and diffeomorphic to the unit open ball, centered at \(0\). 
+  Such open sets form a fundamental system 
+  of neighborhoods of \(x\). 
   Thus we show the result for the morphism
   \[
     H^{j}\left(U\times \rr;\widetilde{G}\right)
     \to
     H^{j}\left(U\times \lopen-\infty,t\ropen ;\widetilde{G}\right)
   \]
-  when \(U\) is in the form as above.
+  for \(U\) as above.
 
   We shall construct a deformation family \((U_s)_{s\in\rr}\) 
   and apply Theorem~\ref{prp:t-nonchar} to it. 
   %===================================
+  For simplicity, we assume \(t=0\) for a while.
   First, define a \(C^{\infty}\) function \(
-    \varphi\colon \lclosed0,-\infty\ropen\to \rr
+    \rho\colon \lclosed0,\infty\ropen\to \rr
   \) satisfying
   \begin{align*}
-    \varphi(u)&=1&&(0\leqq u\leqq 1/2),\\
-    \varphi'(u)&<0&&(1/2< u< 1),\\
-    \varphi(u)&=0&&(u\geqq 1).
+    \rho(u)&=1&&(0\leqq u\leqq 1/2),\\
+    \rho'(u)&<0&&(1/2< u< 1),\\
+    \rho(u)&=0&&(u\geqq 1).
   \end{align*}
-  Then define an open set \(U_{s}\) of \(U\times \rr\) By
+  Then define an open set \(U_{s}\) of \(U\times \rr\) by
   \[
     U_{s}\coloneqq\begin{cases}
-      \left\{(x,x')\in U\times \rr\smid x'<(s-1)\varphi\left(\dfrac{s+1}{s}\left|x\right|\right)\right\},&s\geqq1,\\
+      \left\{(x,x')\in U\times \rr\smid x'<(s-1)\rho\left(\dfrac{s+1}{s}\left|x\right|\right)\right\},&s\geqq1,\\
       \left\{(x,x')\in U\times \rr\smid x'<0\right\},&s<1. 
     \end{cases}
   \]
@@ -2051,7 +2079,7 @@ Let us define the following morphisms:
 
 
   Applying Theorem~\ref{prp:t-nonchar}, 
-  we have the desired claims for the morphism
+  we obtained the desired conclusion for the morphism
   \[
     H^{j}\left(U\times \rr;\widetilde{G}\right)
     =
@@ -2138,18 +2166,20 @@ one has the absolute version of the microlocal Morse lemma.
   a monomorphism for \(j=k\).
 \end{Theorem+}
 
-\begin{Example+}
+\begin{Example+}\label{eg:Holmgren}
   Let \(M\) be a real analytic manifold 
   and \(X\) be its complexification.
   Let \(P\) be a linear partial differential operator 
-  in the analytic coefficient defined locally on \(X\). 
+  with analytic coefficients, defined locally on \(X\). 
   By \(\cM\coloneqq \cD_{X}/\cD_{X}P\), we denote 
   the coherent \(\cD_{X}\)-module associated with \(P\). 
   For the theory of \(\cD_X\)-modules, one can consult \cite{Kas03}.
   Set \(F\coloneqq \RHOM_{\cD_{M}}(\cM,\cB_{M})\). 
-  Let \(\varphi\) as Theorem~\ref{thm:t-morse}.
-  By Holmgren's uniqueness theorem (cf. \cite[Theorem~8.6.5]{Hor83}), 
-  one can show the following estimate (see also \cite[Example 3.8~(iv)]{KMS03a}):
+  Let \(\psi\) as in Theorem~\ref{thm:t-morse}.
+  By Holmgren's uniqueness theorem 
+  (cf. \cite[Theorem~8.6.5]{Hor83}), 
+  one can show the following 
+  estimate (see also \cite[Example 3.8~(iv)]{KMS03a}):
   \[
     \muS[0](F)\subset\Char(\cM)\cap \cotb[M].
   \]
@@ -2158,7 +2188,9 @@ one has the absolute version of the microlocal Morse lemma.
   \[
     H^{0}(M_{b};F)\to H^{0}(M_{a};F).
   \]
-  is injective if all the level hypersurfaces \(\varphi^{-1}(t)\) \((a\leqq t < b)\) are non-characteristic 
+  is injective 
+  if all the level hypersurfaces 
+  \(\psi^{-1}(t)\) \((a\leqq t < b)\) are non-characteristic 
   for \(\cM\).
 \end{Example+}
 
@@ -2170,13 +2202,13 @@ one has the absolute version of the microlocal Morse lemma.
 
 \appendix
 \section{An Isomorphism of Global Sections in Particular Cases}\label{sec:special-isom}
-In this subsection, we shall show 
+In this appendix, we shall show 
 an isomorphism of global sections 
 which is needed in the proof of Theorem~\ref{prp:t-nonchar}.
 
 Let \(X\) be a topological space, 
 and \(S\) a subset of \(X\). 
-we denote the derived functor of 
+We denote the derived functor of 
 the left exact functor \(F \mapsto \Gamma(S; \mres[F]{S})\)
 by \(\RG(S; \blk)\). 
 There exists a morphism of functors
@@ -2193,7 +2225,11 @@ Note that in this case, \(\RG(S; \blk)\) can be computed by a flabby resolution.
 \[
   \RG(S; F) \simeq \Gamma(S; \mres[I]{S}).
 \]
-The right-hand side is generally not equal to \(\RG(S; \mres[F]{S})\), because \(\mres[I]{S}\) is not necessarily a complex consisting of flabby sheaves on the space \(S\). However, in a special case, the following theorem holds.
+The right-hand side is generally not equal 
+to \(\RG(S; \mres[F]{S})\), 
+because \(\mres[I]{S}\) is not necessarily 
+a complex consisting of flabby sheaves on the space \(S\). 
+However, in a special case, the following lemma holds.
 
 \begin{Lemma+}\label{lmm:special-isom}
   Let \(X\) be a Hausdorff topological space, \(Z \subset X\) a compact set, and \(U \subset X\) an open set, and assume \(U \cap Z = \varnothing\). For \(F \in \Dompl(\kk_X)\),
@@ -2209,7 +2245,8 @@ The right-hand side is generally not equal to \(\RG(S; \mres[F]{S})\), because \
 
 \begin{proof}
   First, if \(F\) is a sheaf, 
-  by the completely same argument in the proof of \eqref{eq:isom-union}, 
+  by exactly the same argument as 
+  in the proof of \eqref{eq:isom-union}, 
   we can show the isomorphism
   \[
     \Gamma(U \cup Z; \mres[F]{U \cup Z}) \simeq \indlim[Z \subset W] \Gamma(U \cup W; F).
@@ -2247,7 +2284,7 @@ The right-hand side is generally not equal to \(\RG(S; \mres[F]{S})\), because \
   let \(G = \mres[F]{U \cup Z}\) and 
   consider the triangle obtained 
   by applying \eqref{eq:special-d.t.} 
-  assuming the whole space is \(U \cup Z\).  
+  with \(U \cup Z\) as the ambient space.  
   Since \(Z\) is compact and \(U\) is an open set 
   in \(U \cup Z\), 
   we can use \eqref{eq:special-d.t.} 
@@ -2300,39 +2337,39 @@ The right-hand side is generally not equal to \(\RG(S; \mres[F]{S})\), because \
 % 参考文献スペース
 %===============================================
 \begin{thebibliography}{20} 
-  \bibitem[BS72]{BS72} J.-M. Bony and P. Schapira, 
+  \bibitem[BS72]{BS72} Jean-Michel Bony and Pierre Schapira, 
   \textit{Existence et prolongement des solutions holomorphes des \'equations aux d\'eriv\'ees partielles}, 
   Invent. Math. {\bf 17} (1972), 95--105; MR0338541
   \bibitem[FM07]{FM07} Teresa Monteiro Fernandes, Ana Rita Martins. 
   \textit{Truncated Microsupport and Hyperbolic Inequalities}, 
   Nagoya Mathematical Journal, 2007, Vol.\ 185, pp.63--91. 
-  \bibitem[GKS12]{GKS12} St\'ephane Guillermou, 
-  Masaki Kashiwara, Pierre Schapira, 
-  \textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
-  Duke. Math. J. 161, No. 2, pp.201--245, 2012.  
-  \bibitem[Hor83]{Hor83} L.~V. H\"ormander, 
+  %\bibitem[GKS12]{GKS12} St\'ephane Guillermou, 
+  %Masaki Kashiwara, Pierre Schapira, 
+  %\textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
+  %Duke. Math. J. 161, No. 2, pp.201--245, 2012.  
+  \bibitem[Hor83]{Hor83} Lars H\"ormander, 
   \textit{The analysis of linear partial differential operators. I}, 
   reprint of the second (1990) edition [Springer, Berlin; MR1065993], 
   Classics in Mathematics, Springer, Berlin, 2003; MR1996773
-  \bibitem[Kas75]{Kas75} M. Kashiwara, 
+  \bibitem[Kas75]{Kas75} Masaki. Kashiwara, 
   \textit{On the maximally overdetermined system of linear differential equations. I}, 
   Publ. Res. Inst. Math. Sci. {\bf 10} (1974/75), 563--579; MR0370665
   \bibitem[Kas03]{Kas03} Masaki Kashiwara, 
     \textit{$D$-modules and microlocal calculus}, 
     translated from the 2000 Japanese original by Mutsumi Saito, 
     Translations of Mathematical Monographs Iwanami Series 
-    in Modern Mathematics, 217 , Amer. Math. Soc., 
+    in Modern Mathematics, 217, Amer. Math. Soc., 
     Providence, RI, 2003; MR1943036
   \bibitem[KMS03a]{KMS03a} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
     \textit{Truncated Microsupport and Holomorphic Solutions 
     of \(D\)-modules}, 
     Ann. Scient. \'Ec. Norm. Sup., s\'erie 4, tome 36, 
-    pp.583--399, 2003.
+    pp.583--599, 2003.
   \bibitem[KMS03b]{KMS03b} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
 		\textit{Involutivity of Truncated microsupports}, 
 		Bull. Soc. math. France, 131 (2), 2003, 
 		pp.259--266.
-  \bibitem[KS82]{KS82} M. Kashiwara and P. Schapira, 
+  \bibitem[KS82]{KS82} Masaki Kashiwara, Pierre Schapira, 
   \textit{Micro-support des faisceaux: 
   application aux modules diff\'erentiels}, 
   C. R. Acad. Sci. Paris S\'er. I Math. {\bf 295} (1982), 
@@ -2340,8 +2377,8 @@ The right-hand side is generally not equal to \(\RG(S; \mres[F]{S})\), because \
   \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
     \textit{Sheaves on Manifolds}, 
     Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
-  \bibitem[Wed16]{Wed16} T.~Wedhorn, \textit{ Manifolds, sheaves, and cohomology}, Springer Studium Mathematik---Master, Springer Spektrum, Wiesbaden, 2016; MR3560225
-  \bibitem[Zer71]{Zer71} M.~Zerner,  
+  \bibitem[Wed16]{Wed16} Torsten Wedhorn, \textit{ Manifolds, sheaves, and cohomology}, Springer Studium Mathematik---Master, Springer Spektrum, Wiesbaden, 2016; MR3560225
+  \bibitem[Zer71]{Zer71} Martin Zerner,  
     \textit{Domaine d’holomorphie des fonctions v\'erifiant 
     une \'equation aux d\'eriv\'ees partielles.} 
     C. R. Acad. Sci. Paris, 272 (1971), 1646--1648.
