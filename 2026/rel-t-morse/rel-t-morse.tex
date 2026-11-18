@@ -19,7 +19,14 @@
 % ------------------------
 % documentclass
 % ------------------------
-\documentclass[leqno, 11pt, dvipdfmx]{article}
+%\documentclass[leqno, 11pt, dvipdfmx]{article}
+\documentclass[a4paper,11pt,leqno]{article}
+
+\usepackage[
+  margin=28mm,
+  includefoot,
+  footskip=10mm
+]{geometry}
 %\documentclass{smfart}
 % ------------------------
 % usepackage
@@ -41,7 +48,7 @@
 \usepackage{listings}
 \usepackage{mathrsfs}
 \usepackage{mathtools}
-\usepackage{otf}
+%\usepackage{otf}
 \usepackage{pifont}
 \usepackage{proof}
 \usepackage{subfigure}
@@ -55,7 +62,8 @@
 
 % ================================
 % パッケージを追加する場合のスペース 
-\usepackage[dvipdfmx]{hyperref}
+%\usepackage[dvipdfmx]{hyperref}
+\usepackage{hyperref}
 %\usepackage{xcolor}
 \definecolor{darkgreen}{rgb}{0,0.45,0}
 \definecolor{darkred}{rgb}{0.75,0,0}
@@ -69,7 +77,7 @@
     %linkcolor=black,
     %urlcolor=black,
 }
-\usepackage{pxjahyper}
+%\usepackage{pxjahyper}
 
 %\usepackage[mathscr]{euscript} % mathscr のフォントを変更
 
@@ -628,7 +636,7 @@ In this section,
 we recall some definitions and results of 
 homological algebra and sheaf theory including 
 the theory of derived categories from \cite{KS90}, 
-using the notations of \cite{KS90} with slight modifications. 
+using the notation of \cite{KS90} with slight modifications. 
 
 Let \(X\) be a topological space. 
 Let us denote by \(\Dompb(\kk_X)\) the bounded 
@@ -784,7 +792,7 @@ the natural morphism.
   \begin{enumerate}[(a)]
     \item for each \(k\in \zz\), 
     the map \(\varPhi_k\) is surjective,
-    \item if moreover, 
+    \item if, moreover, 
     the system \(\left(H^{i-1}(E_{n}^{\bullet})\right)_{n}\) 
     satisfies the ML condition for a given \(i\), 
     then \(\varPhi_i\) is bijective.
@@ -845,12 +853,12 @@ in the proof of Theorem \ref{prp:t-nonchar}.
 \section{Truncated Microsupport}\label{sec:t-ss}
 
 In this section, we review 
-the definition of a truncated microsupport 
+the definition of truncated microsupport 
 and 
 its functorial property under direct images of 
 proper morphisms. 
 First, we review the original definition 
-of a microsupport. 
+of microsupport. 
 \begin{Definition+}[{\cite[Definition 5.1.2]{KS90}}]\label{dfn:ss}
   Let \(X\) be a real manifold of class \(C^{\infty}\).
   Let \(F\in\Dompb(\kk_X)\). 
@@ -906,17 +914,17 @@ the following functorial property under proper direct images.
     \muS[k](\Rder{f_{\ast}}F)\subset
     \mpb[f]\mdiff[f]^{-1}(\muS[k](F)).
   \end{equation}
-  Moreover if \(f\) is a closed embedding, 
+  Moreover, if \(f\) is a closed embedding, 
   the inclusion above is an equality.
 \end{Proposition+}
 
 For other functorial properties, see \cite{KMS03a,FM07}. 
 
 
-\section{Truncated Noncharacteristic Deformation Lemma}\label{sec:t-nonchar}
+\section{Truncated Non-characteristic Deformation Lemma}\label{sec:t-nonchar}
 
 In this section, we prove a truncated version of 
-the noncharacteristic deformation lemma. 
+the non-characteristic deformation lemma. 
 First we state the result. 
 After giving several examples, 
 we prove Theorem \ref{prp:t-nonchar}. 
@@ -927,7 +935,7 @@ we prove Theorem \ref{prp:t-nonchar}.
 
 
 Before we state the truncated version, let us review the original 
-version of the noncharacteristic deformation lemma.   
+version of the non-characteristic deformation lemma.   
 %This lemma is originally stated as follows.
 \begin{Proposition+}[{\cite[Proposition 2.7.2]{KS90}}]\label{prp:nonchar}
   Let \(X\) be a Hausdorff space. 
@@ -960,7 +968,7 @@ version of the noncharacteristic deformation lemma.
 
 Our result is as follows. 
 
-\begin{Theorem+}[Truncated Noncharacteristic Deformation Lemma]\label{prp:t-nonchar}
+\begin{Theorem+}[Truncated Non-characteristic Deformation Lemma]\label{prp:t-nonchar}
   Let \(X\) be a Hausdorff space. 
   Let \(F\in\Dompl(\kk_X)\), and let
   \(\left(U_{t}\right)_{t\in\rr}\) be a family of 
@@ -1006,7 +1014,7 @@ let us give several examples of deformation families.
   The condition \eqref{item:t-nonchar4} of 
   Theorem~\ref{prp:t-nonchar} is a new addition to
   the original version (Proposition~\ref{prp:nonchar}). 
-  Therefore let us give an example of \(\left(U_{t}\right)_{t\in\rr}\) 
+  Therefore, let us give an example of \(\left(U_{t}\right)_{t\in\rr}\) 
   that does not satisfy the condition \eqref{item:t-nonchar4}. 
   \begin{enumerate}[(i)]
     \item \label{item:not-gentle} 
@@ -1441,7 +1449,7 @@ let us give several examples of deformation families.
       H^{j}(Z_{s}\cup U_{s};\mres[F]{Z_{s}\cup U_{s}}).
     \]
   \end{Lemma+}
-    \begin{proof}[Proof of Lemma \ref{clm:ind-nonchar}]
+    \begin{proof}[Proof of Lemma \ref{clm:ind-nonchar}.]
     First we prove that 
     for \(F\in \Mod(\kk_X)\), 
     the natural morphism
@@ -1493,52 +1501,48 @@ let us give several examples of deformation families.
     Let us assume that 
     \(U_{t}-(U\cup U_{s})\ne \varnothing\) 
     for any \(t>s\). 
-    Then define the family of subsets \(
+    Then fix \(t>s\) and define the family of subsets \(
       \left(A_{r}\right)_{s<r<t}
     \) of \(\overline{U_{t}- U_{s}}\) by \(
       A_{r}\coloneqq U_{r}- (U\cup U_{s})
     \). 
-    This \(\left(A_{r}\right)_{s<r<t}\) satisfies 
+    Then \(\left(\overline{A_{r}}\right)\) has 
     the finite intersection property. 
-    Indeed, for any finite sequence of 
+    Indeed,
+    for any finite sequence of 
     real numbers \(s<r_{0}<\dots<r_{m}<t\), 
     it follows from 
     the assumption for contradiction
     that
     \begin{align*}
-      A_{r_{0}}\cap \dots \cap A_{r_{m}}
+      \overline{A_{r_{0}}}\cap \dots \cap \overline{A_{r_{m}}}
+      &\supset A_{r_{0}}\cap \dots \cap A_{r_{m}}\\
       &= A_{r_{0}}\\
       &= U_{r_{0}}- (U\cup U_{s})\\
       &\ne \varnothing.
     \end{align*}
-    Therefore, since \(\overline{U_{t}- U_{s}}\) is 
-    compact, we have \(\bigcap_{s<r<t}\overline{A_{r}}\ne\varnothing\). 
-    However, 
-    %for any \(r\), 
-    we have from the hypothesis \(Z_{s}\subset U\) that 
-    %\begin{align*}
-    %  \overline{A_{r}}
-    %  &=\overline{U_{r}-(U\cup U_{s})}\\
-    %  &=\overline{U_{r}}\cap 
-    %  \overline{X -(U\cup U_{s})}\\
-    %  &=\overline{U_{r}}\cap (X -(U\cup U_{s}))
-    %\end{align*}
-    %and 
-    \begin{align*}
+    Then, since
+    \(\overline{U_{t}- U_{s}}\) is 
+    compact, 
+    we have \(\bigcap_{s<r<t}\overline{A_{r}}\ne\varnothing\).
+    On the other hand, 
+    we have \(
+      \overline{A_{r}}
+      \subset 
+      \overline{U_{r}- U_{s}}\cap (X-U)
+    \) for any \(r\). 
+    Hence, 
+    it follows from the hypothesis \(Z_{s}\subset U\) that 
+    \[
       \varnothing 
       \ne
       \bigcap_{s<r<t}\overline{A_{r}}
-      &=\bigcap_{s<r<t}\overline{U_{r}-(U\cup U_{s})}\\
-      &=\bigcap_{s<r<t}(\overline{U_{r}- U_{s}}\cap \overline{U_{r} - U})\\
-      &=\bigcap_{s<r<t}\overline{U_{r}- U_{s}}\cap \bigcap_{s<r<t}\overline{U_{r} - U}\\
-      &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r} - U}\\
-      &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r}}\cap \overline{X- U}\\
-      &=Z_{s}\cap \bigcap_{s<r<t}\overline{U_{r}}\cap (X- U)\\
-      &=Z_{s}\cap (X- U)\cap \bigcap_{s<r<t}\overline{U_{r}}\\
-      &=\varnothing. 
-    \end{align*}
+      \subset 
+      Z_{s}\cap (X- U)
+      =\varnothing. 
+    \]
     This is a contradiction, 
-    and it follows that \(\tilde{\phi}\) is an isomorphism. 
+    and \(\tilde{\phi}\) is an isomorphism. 
 
     Since \(\tilde{\phi}\) is an isomorphism, 
     it is enough to show that
@@ -1565,7 +1569,7 @@ let us give several examples of deformation families.
     \] 
     The injectivity of \(\phi\) follows from 
     the definition of a sheaf 
-    and the injectivities of both \(\psi\) and \(\psi'\). 
+    and the injectivity of both \(\psi\) and \(\psi'\). 
 
     Let us prove that \(\phi\) is surjective. 
     Let \(
@@ -1588,7 +1592,7 @@ let us give several examples of deformation families.
     By the definition of a section 
     on the closed subset \(Z_{s}\) of 
     \((Z_{s}\cup U_{s})\cap U\), 
-    we can find an open subset \(W\) of 
+    we can find an open neighborhood \(W\) of \(Z_{s}\) in 
     \((Z_{s}\cup U_{s})\cap U\) 
     such that 
     \begin{equation*}
@@ -1614,7 +1618,7 @@ let us give several examples of deformation families.
     the pair \(
       \left(U_{s}, \widetilde{W}\right)
     \) is an open covering of \(\widetilde{W}\cup U_{s}\). 
-    Thus by \eqref{eq:clm-glue}, we can 
+    Thus, by \eqref{eq:clm-glue}, we can 
     glue \(\mres[\sigma]{U_{s}}\) 
     and \(\mres[\tau]{\widetilde{W}}\) together 
     and get a section \(\widetilde{\sigma}\) such that \[
@@ -1712,7 +1716,7 @@ let us give several examples of deformation families.
 
 In this section, we show a truncated version of 
 the relative microlocal Morse lemma as an application of the 
-truncated noncharacteristic deformation lemma. 
+truncated non-characteristic deformation lemma. 
 We then specialize to the absolute version to 
 obtain a truncated version of the microlocal Morse lemma 
 in a more familiar form. 
@@ -1727,9 +1731,9 @@ For a real number \(t\in \rr\), we set
   Y_t
   &\coloneqq \left\{y\in Y\smid \varphi(y)< t\right\} 
   = \varphi^{-1}(\lopen-\infty,t\ropen),\\
-  %\widetilde{Y_t}
-  %&\coloneqq \left\{y\in Y\smid \varphi(y)\leqq t\right\} 
-  %= \varphi^{-1}(\lopen-\infty,t\rclosed).
+  \widetilde{Y_t}
+  &\coloneqq \left\{y\in Y\smid \varphi(y)\leqq t\right\} 
+  = \varphi^{-1}(\lopen-\infty,t\rclosed).
 \end{align*}
 Let us denote by \(j_{t}\colon Y_{t}\hookrightarrow Y\) the 
 natural embedding, 
@@ -1755,7 +1759,7 @@ These morphisms can be illustrated by the following diagram:
 \begin{Proposition+}\label{prop:rel-t-morse}
   Let \(G\in\Dompb(\kk_Y)\), and assume that 
   for all \(t\in\rr\), the morphism 
-  \(f_{t}\) is proper on \(\supp(G)\cap \overline{Y_t}\). 
+  \(f\) is proper on \(\supp(G)\cap \overline{Y_t}\). 
   Let \(k\) be an integer and \(t_\circ\) a real number.
   %\begin{enumerate}[(i)]
     %\item 
@@ -1857,13 +1861,14 @@ These morphisms can be illustrated by the following diagram:
   defined on \(X\times \rr\) respectively. 
   Then \(\tilde{f}\) is proper on \(\supp(G)\) and 
   \(f=q\circ \tilde{f}\). 
-  Let \(i_t\) be the open embedding \(
+  For \(t\in\rr\), 
+  let \(i_t\) be the open embedding \(
     X\times\lopen -\infty, t\ropen\hookrightarrow X\times \rr
   \) and \(\tilde{i}_t\) the closed embedding \(
     X\times\lopen -\infty, t\rclosed\hookrightarrow X\times \rr
   \). Set \(q_t=q\circ i_t\) and \(\tilde{q}_t=q\circ\tilde{i}_t\). 
   These morphisms can be visualized 
-  by the following diagrams, in both of which the left squares are cartesian.
+  by the following diagram where the left square is cartesian.
   \[\xymatrix@C=30pt@R=30pt{
     Y
       \ar[r]^-{\tilde{f}}
@@ -1940,7 +1945,7 @@ These morphisms can be illustrated by the following diagram:
   \end{equation}
   Indeed, by hypothesis, 
   for any \((y;\eta)\in\muS[k](G)\) 
-  and \((f(y);\xi)\in Y\tpb[X]\cotb[X]\) with \(\varphi>t_{\circ}\), 
+  and \((y;\xi)\in Y\tpb[X]\cotb[X]\) with \(\varphi(y)>t_{\circ}\), 
   we have 
   \begin{equation}\label{eq:pb-conic}
     d\varphi(y)\neq \eta + f^{\ast}\xi.
@@ -1965,6 +1970,7 @@ These morphisms can be illustrated by the following diagram:
   \] and this contradicts \eqref{eq:pb-conic} 
   because \(\muS[k](G)\) is conic. 
 
+  Now fix \(t>t_{\circ}\).
   We shall show that, for all \(x\in X\), the morphism
   \[
     \left(\Rder[j]{q_{\ast}}\widetilde{G}\right)_{x}\to
@@ -1981,7 +1987,7 @@ These morphisms can be illustrated by the following diagram:
   \]
   Let \(U\) be an open neighborhood 
   of \(x\) in \(X\) contained in a local chart, 
-  and diffeomorphic to the unit open ball, centered at \(0\). 
+  and diffeomorphic to the unit open ball centered at \(0\). 
   Such open sets form a fundamental system 
   of neighborhoods of \(x\). 
   Thus we show the result for the morphism
@@ -1995,7 +2001,7 @@ These morphisms can be illustrated by the following diagram:
   We shall construct a deformation family \((U_s)_{s\in\rr}\) 
   and apply Theorem~\ref{prp:t-nonchar} to it. 
   %===================================
-  For simplicity, we assume \(t=0\) for a while.
+  %For simplicity, we assume \(t=0\) for a while.
   First, define a \(C^{\infty}\) function \(
     \rho\colon \lclosed0,\infty\ropen\to \rr
   \) satisfying
@@ -2007,8 +2013,13 @@ These morphisms can be illustrated by the following diagram:
   Then define an open set \(U_{s}\) of \(U\times \rr\) by
   \[
     U_{s}\coloneqq\begin{cases}
-      \left\{(x,x')\in U\times \rr\smid x'<(s-1)\rho\left(\dfrac{s+1}{s}\left|x\right|\right)\right\},&s\geqq1,\\
-      \left\{(x,x')\in U\times \rr\smid x'<0\right\},&s<1. 
+      \left\{
+        (x,x')\in U\times \rr\smid 
+        x'<t+ (s-1)\rho\left(
+          \dfrac{s+1}{s}\left|x\right|
+        \right)
+      \right\},&s\geqq1,\\
+      \left\{(x,x')\in U\times \rr\smid x'<t\right\},&s<1. 
     \end{cases}
   \]
   %==================================
@@ -2064,15 +2075,56 @@ These morphisms can be illustrated by the following diagram:
   because of \eqref{eq:tilde-estimate}. 
   Therefore \((U_{s})\) satisfies the condition \eqref{item:t-nonchar3}. 
 \end{comment}
-  Then the family \((U_{s})_{s\in\rr}\) satisfies 
+  Then one can show that 
+  the family \((U_{s})_{s\in\rr}\) satisfies 
   the conditions~\eqref{item:t-nonchar1}--\eqref{item:t-nonchar4} of 
-  Theorem~\ref{prp:t-nonchar}.
+  Theorem~\ref{prp:t-nonchar} as follows.
   
+  \eqref{item:t-nonchar1}: 
+  Let \(1\leqq s<r\). 
+  Assume that \((x,x')\in U_s\). Then
+  \[
+    x'
+    < t+ (s-1)\rho\left(\frac{s+1}{s}\left|x\right|\right)
+    \leqq t+ (r-1)\rho\left(\frac{r+1}{r}\left|x\right|\right).
+  \]
+  Thus \((x,x')\in U_{r}\) holds. The case \(s<1\) is clear.
+  In addition, 
+  the function defined by \(t+(s-1)\rho((s+1)|x|/s)\) for \(s\geqq 1\) 
+  and \(t\) for \(s<1\) 
+  is continuous with respect to \(s\), 
+  so \(U_{r}=\bigcup_{s<r}U_{s}\).
 
+  \eqref{item:t-nonchar2}: 
+  Take \(s<r\). If \(r>1\), we have 
+  \[
+    \overline{U_{r}\smi U_{s}}
+    \subset
+    \left\{x\in U\smid |x|\leqq \frac{r}{r+1}\right\}\times [t,t+r-1]. 
+  \]
+  Therefore, \(\overline{U_{r}\smi U_{s}}\) is compact. 
+  If \(r\leqq1\), then \(\overline{U_{r}\smi U_{s}}=\varnothing\) is compact.
 
+  \eqref{item:t-nonchar3}: 
+  The conditions on \(\rho\) imply that 
+  every outer conormal of \(\partial U_{s}\) has a positive component 
+  in the \(\rr\)-direction. 
+  Hence the estimate \eqref{eq:tilde-estimate} implies 
+  that the conormals do not belong to 
+  \(\muS[k](\widetilde{G})\), and the desired result follows. 
 
-
-
+  \eqref{item:t-nonchar4}: 
+  If \(s<1\), 
+  then we have \(Z_{s}=\varnothing \subset U_{r}\) for any \(r>s\). 
+  If \(s\geqq1\), we have \[
+    Z_{s}\subset \left\{\left(x,t+(s-1)\rho\left(\frac{s+1}{s}|x|\right)\right)\smid |x|\leqq \frac{s}{s+1}\right\}.
+  \]
+  Take \(1\leqq s<r\), and assume \(|x|\leqq s/(s+1)\). 
+  Then we have \((r+1)|x|/r<1\)
+  and it follows that \(\rho((r+1)|x|/r)>0\).
+  Hence, by the monotonicity of \(\rho\), 
+  we have \((s-1)\rho((s+1)|x|/s)<(r-1)\rho((r+1)|x|/r)\) and 
+  it follows that \(Z_{s} \subset U_r\).
 
 
 
@@ -2085,7 +2137,7 @@ These morphisms can be illustrated by the following diagram:
     =
     H^{j}\left(\bigcup_{s\in\rr}U_{s};\widetilde{G}\right)
     \to
-    H^{j}\left(U_{t};\widetilde{G}\right)
+    H^{j}\left(U_{1};\widetilde{G}\right)
     =
     H^{j}\left(U\times \lopen-\infty,t\ropen ;\widetilde{G}\right),
   \]
@@ -2174,7 +2226,7 @@ one has the absolute version of the microlocal Morse lemma.
   By \(\cM\coloneqq \cD_{X}/\cD_{X}P\), we denote 
   the coherent \(\cD_{X}\)-module associated with \(P\). 
   For the theory of \(\cD_X\)-modules, one can consult \cite{Kas03}.
-  Set \(F\coloneqq \RHOM_{\cD_{M}}(\cM,\cB_{M})\). 
+  Set \(F\coloneqq \RHOM_{\cD_{M}}(\cM,\cB_{M})\), where \(\cD_{M}\) is the restriction of \(\cD_{X}\) to \(M\). 
   Let \(\psi\) be as in Theorem~\ref{thm:t-morse}.
   By Holmgren's uniqueness theorem 
   (cf. \cite[Theorem~8.6.5]{Hor83}), 
@@ -2342,11 +2394,11 @@ However, in a special case, the following lemma holds.
   Invent. Math. {\bf 17} (1972), 95--105; MR0338541
   \bibitem[FM07]{FM07} Teresa Monteiro Fernandes, Ana Rita Martins. 
   \textit{Truncated Microsupport and Hyperbolic Inequalities}, 
-  Nagoya Mathematical Journal, 2007, Vol.\ 185, pp.63--91. 
+  Nagoya Mathematical Journal, 2007, Vol.\ 185, pp.~63--91. 
   %\bibitem[GKS12]{GKS12} St\'ephane Guillermou, 
   %Masaki Kashiwara, Pierre Schapira, 
   %\textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
-  %Duke. Math. J. 161, No. 2, pp.201--245, 2012.  
+  %Duke. Math. J. 161, No. 2, pp.~201--245, 2012.  
   \bibitem[Hor83]{Hor83} Lars H\"ormander, 
   \textit{The analysis of linear partial differential operators. I}, 
   reprint of the second (1990) edition [Springer, Berlin; MR1065993], 
@@ -2364,11 +2416,11 @@ However, in a special case, the following lemma holds.
     \textit{Truncated Microsupport and Holomorphic Solutions 
     of \(D\)-modules}, 
     Ann. Scient. \'Ec. Norm. Sup., s\'erie 4, tome 36, 
-    pp.583--599, 2003.
+    pp.~583--599, 2003.
   \bibitem[KMS03b]{KMS03b} Masaki Kashiwara, Teresa Monteiro Fernandes, Pierre Schapira, 
-		\textit{Involutivity of Truncated microsupports}, 
+		\textit{Involutivity of Truncated Microsupports}, 
 		Bull. Soc. math. France, 131 (2), 2003, 
-		pp.259--266.
+		pp.~259--266.
   \bibitem[KS82]{KS82} Masaki Kashiwara, Pierre Schapira, 
   \textit{Micro-support des faisceaux: 
   application aux modules diff\'erentiels}, 
@@ -2379,7 +2431,7 @@ However, in a special case, the following lemma holds.
     Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
   \bibitem[Wed16]{Wed16} Torsten Wedhorn, \textit{ Manifolds, sheaves, and cohomology}, Springer Studium Mathematik---Master, Springer Spektrum, Wiesbaden, 2016; MR3560225
   \bibitem[Zer71]{Zer71} Martin Zerner,  
-    \textit{Domaine d’holomorphie des fonctions v\'erifiant 
+    \textit{Domaine d'holomorphie des fonctions v\'erifiant 
     une \'equation aux d\'eriv\'ees partielles.} 
     C. R. Acad. Sci. Paris, 272 (1971), 1646--1648.
 \end{thebibliography}
