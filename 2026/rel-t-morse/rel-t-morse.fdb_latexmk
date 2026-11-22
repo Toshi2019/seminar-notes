@@ -1,5 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1794986529.71951 "rel-t-morse.tex" "rel-t-morse.pdf" "rel-t-morse" 1794986532.36123 0
+["pdflatex"] 1795355764.84511 "/Users/giuseppe/seminar-notes/2026/rel-t-morse/rel-t-morse.tex" "rel-t-morse.pdf" "rel-t-morse" 1795355768.88379 0
+  "/Users/giuseppe/seminar-notes/2026/rel-t-morse/rel-t-morse.tex" 1795355764.19947 79264 9704b781ab81255e593e281185907458 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -267,10 +268,10 @@
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1728536886 8221431 40e8cdd7fdd089d4c1e14cf7980adf48 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "intro-a.tex" 1794985147.409 9180 761b0df452dde39568cd2ce9ce7e372c ""
-  "rel-t-morse.aux" 1794986531.95316 7098 40b19b52b6bc35adc54c9907ba9f78ae "pdflatex"
-  "rel-t-morse.out" 1794986531.95594 2462 655f66d45fbb92e934cdeb5a1fb525c3 "pdflatex"
-  "rel-t-morse.tex" 1794986041.32664 79015 1708b4fa47e162db5a38dc44000341fb ""
-  "rel-t-morse.toc" 1794986531.95664 1163 1f5057e66cb7a0277c4e5db2e75a0621 "pdflatex"
+  "rel-t-morse.aux" 1795355768.5821 7075 cb354bf009047b8db8ebae706a0b6aa5 "pdflatex"
+  "rel-t-morse.out" 1795355768.58357 2462 655f66d45fbb92e934cdeb5a1fb525c3 "pdflatex"
+  "rel-t-morse.tex" 1795355764.19947 79264 9704b781ab81255e593e281185907458 ""
+  "rel-t-morse.toc" 1795355768.58414 1163 1f5057e66cb7a0277c4e5db2e75a0621 "pdflatex"
   (generated)
   "rel-t-morse.aux"
   "rel-t-morse.log"
