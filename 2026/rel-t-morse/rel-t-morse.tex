@@ -631,7 +631,7 @@
   the microlocal Morse lemma. These results are closely related 
   to the notion of 
   truncated microsupport, 
-  due to Kashiwara, Monteiro-Fernandes, and Schapira. 
+  studied by Kashiwara, Monteiro-Fernandes, and Schapira. 
 \end{abstract}
 
 \tableofcontents
@@ -671,7 +671,7 @@ we will write \(\kk_Z\) rather than \(\kk_{X,Z}\).
 \begin{comment}
 \subsubsection{Proper Morphisms}
 We use the following proposition 
-in the proof of Proposition~\ref{prop:rel-t-morse}.
+in the proof of Theorem~\ref{prop:rel-t-morse}.
 \begin{Proposition+}[see {\cite[Proposition 1.32]{Wed16}}]\label{prop:surj-proper}
   Let \(X\), \(Y\), and \(Z\) be
   locally compact (Hausdorff, by definition) spaces, 
@@ -736,6 +736,8 @@ the natural projections, \(f'\) is defined by
 and \(\mdiff[f]\) is induced by the transpose of \(f'\). 
 
 \subsection{Approximation by Inductive Limits}
+
+We use the following statement in the proof of Lemma~\ref{clm:ind-nonchar}.
 
 \begin{Proposition+}[{\cite[Proposition 2.5.1]{KS90}}]\label{prop:ks2.5.1}
   Let \(X\) be a topological space, 
@@ -888,9 +890,12 @@ of microsupport.
 \end{Definition+}
 
 Kashiwara, Monteiro-Fernandes, 
-and Schapira modified
-this definition and introduced 
-the notion of truncated microsupport.
+and Schapira 
+%modified
+%this definition and introduced 
+%the notion of truncated microsupport.
+studied the following degree-dependent refinement 
+of microsupport.
 
 \begin{Definition+}[{\cite[Definition 3.4]{KMS03a}}]\label{dfn:t-ss}
   Let \(X\) be a real manifold of class \(C^{\infty}\).
@@ -912,8 +917,9 @@ the notion of truncated microsupport.
   \end{equation}
 \end{Definition+}
 
-For other equivalent conditions of 
-the definition, see \cite{KMS03a}. 
+For equivalent formulations of this definition,
+%For other equivalent conditions of the definition, 
+see \cite{KMS03a}. 
 Truncated microsupports satisfy 
 the following functorial property under proper direct images.
 
@@ -929,7 +935,8 @@ the following functorial property under proper direct images.
   the inclusion above is an equality.
 \end{Proposition+}
 
-For other functorial properties, see \cite{KMS03a,FM07}. 
+For other properties of truncated microsupport, 
+see \cite{KMS03a,KMS03b,FM07}. 
 
 
 \section{Truncated Non-characteristic Deformation Lemma}\label{sec:t-nonchar}
@@ -1005,17 +1012,13 @@ Our result is as follows.
     \item \label{item:t-nonchar4} 
     For all pairs \((s,t)\) with \(s< t\), we have \(Z_s\subset U_{t}\).
   \end{enumerate}
-  Then, for all \(t\in\rr\), we have the isomorphisms\[
+  Then, for all \(t\in\rr\), the natural morphism\[
     H^{j}\left(\bigcup_{s\in\rr}U_{s};F\right)
-    \simar 
-    H^{j}\left(U_{t};F\right)
-    \quad \text{for all \(j< k\),} 
+    \to 
+    H^{j}\left(U_{t};F\right) 
   \]
-  and the monomorphisms \[
-    H^{k}\left(\bigcup_{s\in\rr}U_{s};F\right)
-    \hookrightarrow 
-    H^{k}\left(U_{t};F\right).
-  \] 
+  is an isomorphism for \(j<k\), 
+  and a monomorphism for \(j=k\).
 \end{Theorem+}
 
 Before we prove Theorem \ref{prp:t-nonchar}, 
@@ -1027,9 +1030,10 @@ let us give several examples of deformation families.
   the original version (Proposition~\ref{prp:nonchar}). 
   Therefore, let us give an example of \(\left(U_{t}\right)_{t\in\rr}\) 
   that does not satisfy the condition \eqref{item:t-nonchar4}. 
+  In all the examples below, \(X\) is \(\rr^{2}\).
   \begin{enumerate}[(i)]
     \item \label{item:not-gentle} 
-    Let \(X=\rr^2\), and for a real number \(t\) define the 
+    For a real number \(t\), define the 
     function\[
       \varphi_{t}(x)\coloneqq\begin{cases}
         \max\left(0,t(2-\left|x\right|)\right)&(\left|x\right| < 2),\\
@@ -1079,8 +1083,11 @@ let us give several examples of deformation families.
     not \eqref{item:t-nonchar4}, 
     for which 
     the conclusion of Theorem~\ref{prp:t-nonchar} fails. 
-    Hence the condition \eqref{item:t-nonchar4} is 
-    necessary. 
+    Hence 
+    we cannot ommit condition \eqref{item:t-nonchar4} %is 
+    %necessary. 
+    %cannot be omitted 
+    in general.
     \begin{figure}[htb]
       \centering
       \begin{tikzpicture}[scale=0.40]
@@ -1194,8 +1201,7 @@ let us give several examples of deformation families.
   \end{enumerate}
   Let us, in turn, give two examples 
   of \(\left(U_{t}\right)_{t\in\rr}\) 
-  satisfying the condition \eqref{item:t-nonchar4}. 
-  In all the examples below, \(X\) is \(\rr^{2}\). 
+  satisfying the condition \eqref{item:t-nonchar4}.  
   \begin{enumerate}[(i)]
     \setcounter{enumi}{1}
     \item \label{item:gentle1}
@@ -1689,8 +1695,11 @@ let us give several examples of deformation families.
     \simar 
     \prolim[n]H^{j_{0}}\left(U_{s-\frac{1}{n}};F\right). 
   \]
-  Since \((s-1/n)_{n}\) is a cofinal family of \((t)_{s>t}\), 
-  we have \((b)_{s}^{j_{0}}\). 
+  Since the sequence \((s-1/n)_{n\geq 1}\)
+  is cofinal in \(\{r\in\rr\mid r<s\}\),
+  we obtain \((b)_s^{j_0}\).
+  %Since \((s-1/n)_{n}\) is a cofinal family of \((t)_{s>t}\), 
+  %we have \((b)_{s}^{j_{0}}\). 
   Then by induction on \(j\), 
   we have \((b)_{s}^{j}\) for \(j<k\) and \(s\in\rr\). 
   Again by applying Proposition \ref{prop:ks2.7.1} to the 
@@ -1767,7 +1776,7 @@ These morphisms can be illustrated by the following diagram:
 %}
 \]
 
-\begin{Proposition+}\label{prop:rel-t-morse}
+\begin{Theorem+}\label{prop:rel-t-morse}
   Let \(G\in\Dompb(\kk_Y)\), and assume that 
   for all \(t\in\rr\), the morphism 
   \(f\) is proper on \(\supp(G)\cap \overline{Y_t}\). 
@@ -1788,7 +1797,7 @@ These morphisms can be illustrated by the following diagram:
         \[
           \Rder[j]{f_{\ast}}G \to \Rder[j]{{f_{t}}_{\ast}}j^{-1}_{t}G
         \]
-        is an isomorphism for \(j<k\) 
+        is an isomorphism for \(j<k\), 
         and a monomorphism for \(j=k\).    
     %the following statements hold.
     \begin{comment}
@@ -1862,7 +1871,7 @@ These morphisms can be illustrated by the following diagram:
   \end{enumerate}
   \end{comment}
   %\end{comment}
-\end{Proposition+}
+\end{Theorem+}
 
 \begin{proof}
   Following \cite{KS90}, let \(\tilde{f}\) be the morphism \(
@@ -2013,7 +2022,7 @@ These morphisms can be illustrated by the following diagram:
   and apply Theorem~\ref{prp:t-nonchar} to it. 
   %===================================
   %For simplicity, we assume \(t=0\) for a while.
-  First, define a \(C^{\infty}\) function \(
+  First, choose a \(C^{\infty}\) function \(
     \rho\colon \lclosed0,\infty\ropen\to \rr
   \) satisfying
   \begin{align*}
@@ -2118,7 +2127,7 @@ These morphisms can be illustrated by the following diagram:
 
   \eqref{item:t-nonchar3}: 
   The conditions on \(\rho\) imply that 
-  every outer conormal of \(\partial U_{s}\) has a positive component 
+  every nonzero outer conormal of \(\partial U_{s}\) has a positive component 
   in the \(\rr\)-direction. 
   Hence the estimate \eqref{eq:tilde-estimate} implies 
   that the conormals do not belong to 
@@ -2211,7 +2220,7 @@ These morphisms can be illustrated by the following diagram:
 Considering the case \(X=\{\pt\}\), 
 one has the absolute version of the microlocal Morse lemma.
 
-\begin{Theorem+}\label{thm:t-morse}
+\begin{Corollary+}\label{thm:t-morse}
   Let \(F\) \(\in\) \(\Dompb(\kk_M)\), and 
   \(\psi\colon M\to \rr\) be a real-valued function of 
   class \(C^1\), 
@@ -2227,7 +2236,7 @@ one has the absolute version of the microlocal Morse lemma.
   \]
   is an isomorphism for each \(j< k\) and 
   a monomorphism for \(j=k\).
-\end{Theorem+}
+\end{Corollary+}
 
 \begin{Example+}\label{eg:Holmgren}
   Let \(M\) be a real analytic manifold 
@@ -2238,7 +2247,7 @@ one has the absolute version of the microlocal Morse lemma.
   the coherent \(\cD_{X}\)-module associated with \(P\). 
   For the theory of \(\cD_X\)-modules, one can consult \cite{Kas03}.
   Set \(F\coloneqq \RHOM_{\cD_{M}}(\cM,\cB_{M})\), where \(\cD_{M}\) is the restriction of \(\cD_{X}\) to \(M\). 
-  Let \(\psi\) be as in Theorem~\ref{thm:t-morse}.
+  Let \(\psi\) be as in Corollary~\ref{thm:t-morse}.
   By Holmgren's uniqueness theorem 
   (cf. \cite[Theorem~8.6.5]{Hor83}), 
   one can show the following 
@@ -2246,7 +2255,7 @@ one has the absolute version of the microlocal Morse lemma.
   \[
     \muS[0](F)\subset\Char(\cM)\cap \cotb[M].
   \]
-  By Theorem~\ref{thm:t-morse}, 
+  By Corollary~\ref{thm:t-morse}, 
   it follows that the restriction morphism
   \[
     H^{0}(M_{b};F)\to H^{0}(M_{a};F)
@@ -2288,18 +2297,25 @@ Note that in this case, \(\RG(S; \blk)\) can be computed by a flabby resolution.
 \[
   \RG(S; F) \simeq \Gamma(S; \mres[I]{S}).
 \]
-The right-hand side is generally not equal 
-to \(\RG(S; \mres[F]{S})\), 
+The right-hand side need not be isomorphic to
+%The right-hand side is generally not equal to 
+\(\RG(S; \mres[F]{S})\), 
 because \(\mres[I]{S}\) is not necessarily 
-a complex consisting of flabby sheaves on the space \(S\). 
+a complex %consisting 
+of flabby sheaves on the space \(S\). 
 However, in a special case, the following lemma holds.
 
 \begin{Lemma+}\label{lmm:special-isom}
-  Let \(X\) be a Hausdorff topological space, \(Z \subset X\) a compact set, and \(U \subset X\) an open set, and assume \(U \cap Z = \varnothing\). For \(F \in \Dompl(\kk_X)\),
+  Let \(X\) be a Hausdorff topological space, 
+  \(Z \subset X\) a compact set, 
+  and \(U \subset X\) an open set%, 
+  %and assume \(U \cap Z = \varnothing\)
+  . 
+  For \(F \in \Dompl(\kk_X)\), we have an isomorphism 
   \[
     \RG(U \cup Z; F) \simar \RG(U \cup Z; \mres[F]{U \cup Z}).
   \]
-  In particular,
+  In particular, we obtain
   \[
     H^k(U \cup Z; F) \simeq \indlim[Z \subset W] H^k(U \cup W; F),
   \]
@@ -2402,11 +2418,8 @@ However, in a special case, the following lemma holds.
 \begin{thebibliography}{20} 
   \bibitem[BS72]{BS72} Jean-Michel Bony and Pierre Schapira, 
   \textit{Existence et prolongement des solutions holomorphes des \'equations aux d\'eriv\'ees partielles}, 
-  Invent. Math. {\bf 17} (1972), 95--105; MR0338541
+  Invent. Math. {\bf 17} (1972), 95--105; MR0338541.
   
-  \bibitem[FM07]{FM07} Teresa Monteiro Fernandes, Ana Rita Martins. 
-  \textit{Truncated Microsupport and Hyperbolic Inequalities}, 
-  Nagoya Mathematical Journal, 2007, Vol.\ 185, pp.~63--91. 
   %\bibitem[GKS12]{GKS12} St\'ephane Guillermou, 
   %Masaki Kashiwara, Pierre Schapira, 
   %\textit{Sheaf Quantization of Hamiltonian Isotopies and Applications to Nondisplaceability Problems}, 
@@ -2415,11 +2428,11 @@ However, in a special case, the following lemma holds.
   \bibitem[Hor83]{Hor83} Lars H\"ormander, 
   \textit{The analysis of linear partial differential operators. I}, 
   reprint of the second (1990) edition [Springer, Berlin; MR1065993], 
-  Classics in Mathematics, Springer, Berlin, 2003; MR1996773
+  Classics in Mathematics, Springer, Berlin, 2003; MR1996773.
   
   \bibitem[Kas75]{Kas75} Masaki Kashiwara, 
   \textit{On the maximally overdetermined system of linear differential equations. I}, 
-  Publ. Res. Inst. Math. Sci. {\bf 10} (1974/75), 563--579; MR0370665
+  Publ. Res. Inst. Math. Sci. {\bf 10} (1974/75), 563--579; MR0370665.
   
   \bibitem[Kas03]{Kas03} Masaki Kashiwara,
   \textit{\(D\)-modules and microlocal calculus},
@@ -2442,11 +2455,17 @@ However, in a special case, the following lemma holds.
   \textit{Micro-support des faisceaux: 
   application aux modules diff\'erentiels}, 
   C. R. Acad. Sci. Paris S\'er. I Math. {\bf 295} (1982), 
-  no.~8, 487--490; MR0684086
+  no.~8, 487--490; MR0684086.
   
   \bibitem[KS90]{KS90} Masaki Kashiwara, Pierre Schapira, 
   \textit{Sheaves on Manifolds}, 
   Grundlehren der Mathematischen Wissenschaften, 292, Springer, 1990.
+
+  \bibitem[MM07]{FM07} 
+  Ana Rita Martins,
+  Teresa Monteiro Fernandes. 
+  \textit{Truncated Microsupport and Hyperbolic Inequalities}, 
+  Nagoya Mathematical Journal, 2007, Vol.\ 185, pp.~63--91. 
   
   %\bibitem[Wed16]{Wed16} Torsten Wedhorn, \textit{ Manifolds, sheaves, and cohomology}, Springer Studium Mathematik---Master, Springer Spektrum, Wiesbaden, 2016; MR3560225
   

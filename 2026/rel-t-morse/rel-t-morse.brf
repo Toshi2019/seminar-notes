@@ -7,8 +7,8 @@
 \backcite {Kas75}{{2}{1}{section*.2}}
 \backcite {KS90}{{2}{1}{section*.3}}
 \backcite {KMS03a}{{2}{1}{section*.3}}
-\backcite {KS90}{{2}{2}{section.2}}
-\backcite {KS90}{{2}{2}{section.2}}
+\backcite {KS90}{{3}{2}{section.2}}
+\backcite {KS90}{{3}{2}{section.2}}
 \backcite {KS90}{{3}{2.1}{Axiom+.2.1}}
 \backcite {KS90}{{4}{2.2}{Axiom+.2.2}}
 \backcite {KS90}{{4}{2.3}{Axiom+.2.3}}
@@ -17,8 +17,8 @@
 \backcite {KMS03a}{{5}{3.2}{Axiom+.3.2}}
 \backcite {KMS03a}{{5}{3}{equation.3.2}}
 \backcite {KMS03a}{{5}{3.3}{Axiom+.3.3}}
-\backcite {KMS03a,FM07}{{5}{3}{equation.3.3}}
-\backcite {KS90}{{5}{4.1}{Axiom+.4.1}}
+\backcite {KMS03a,KMS03b,FM07}{{5}{3}{equation.3.3}}
+\backcite {KS90}{{6}{4.1}{Axiom+.4.1}}
 \backcite {KS90}{{12}{5}{equation.5.1}}
 \backcite {Kas03}{{14}{5.3}{Axiom+.5.3}}
 \backcite {Hor83}{{14}{5.3}{Axiom+.5.3}}

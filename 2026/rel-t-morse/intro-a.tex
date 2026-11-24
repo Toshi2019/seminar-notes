@@ -35,7 +35,7 @@ in which propagation fails.
 
 %In this paper, we prove a truncated version 
 %of the microlocal Morse lemma (cf.\ \cite[Corollary 5.4.19]{KS90}). 
-%if and only if for every degree \(j\), the \(j\)-th cohmology 
+%if and only if for every degree \(j\), the \(j\)-th cohomology 
 %of \(F\) has no singularity along the (co)direction 
 %represented by \(p\). 
 
@@ -62,7 +62,7 @@ is used throughout \cite{KS90}.
 
 In this paper, we prove a truncated version 
 of the non-characteristic deformation lemma
-with slight modifications. 
+with slight modifications (see Theorem~\ref{prp:t-nonchar}). 
 More precisely, 
 we make two modifications 
 to the lemma. 
@@ -81,7 +81,7 @@ to our truncated version.
 Indeed, we give an example 
 showing that 
 the conclusion of the truncated version can fail
-without this additional assumption.
+without this additional assumption (see Example~\ref{eg:t-nonchar}).
 
 To make the last
 assumption acceptable to the reader, 
@@ -92,9 +92,11 @@ with figures.
 As an application, 
 we prove a truncated version of 
 the microlocal Morse lemma for a morphism of manifolds.
-By considering the sheaf of hyperfunction 
-solutions of a \(\mathcal{D}\)-module, 
-one can obtain a global version of 
+Furthermore, as an application to 
+linear partial differential equations, 
+we consider the sheaf of hyperfunction 
+solutions of a \(\mathcal{D}\)-module. 
+Then we can obtain a global version of 
 Holmgren's uniqueness theorem. 
 
 \paragraph{Analytic point of view} 
@@ -102,7 +104,17 @@ Holmgren's uniqueness theorem.
 From the viewpoint of propagation, 
 our results are along the lines of 
 the Cauchy-Kowalevsky theorem. 
-In 1971, Zerner showed a theorem on analytic extension of 
+This theorem asserts the local existence and uniqueness 
+of an analytic solution to 
+a non-characteristic Cauchy problem 
+with analytic coefficients and analytic initial data. 
+A natural question is then 
+whether this local solution can be extended.
+%This theorem states the unique existence of the 
+%local solution of an analytic partial differential equation. 
+%Then the problem is how we extend the solution.
+
+In 1971, Zerner showed a theorem on the analytic extension of 
 solutions of a single differential equation 
 whose coefficients are holomorphic \cite{Zer71}. 
 In 1972, Bony and Schapira generalized the result to 
@@ -118,10 +130,16 @@ the solution complex \(
     \RHOM_{\mathcal{D}_{X}}(\mathcal{M},\mathcal{O}_{X})
 \) is constructible.
 
-Our result in the case of hyperfunction solutions can be seen 
+Our result can be seen 
 as a truncated version of these propagation results.
-
-
+Indeed, what we prove in this paper is that 
+the restriction morphism of the cohomology of 
+a certain degree is injective. 
+In the case of the sheaf of hyperfunction solutions, 
+%this means that if it exists, 
+%the global extension of the solution is unique. 
+this means that 
+any global extension of a solution, if it exists, is unique.
 
 
 
@@ -134,7 +152,7 @@ In Section \ref{sec:review},
 we review notation and results from \cite{KS90}. 
 In Section \ref{sec:t-ss}, 
 we recall the definition of truncated microsupport, 
-introduced in \cite{KMS03a}. 
+explicitly introduced in \cite{KMS03a}. 
 In Section \ref{sec:t-nonchar}, 
 we prove a truncated version of 
 the non-characteristic deformation lemma. 
@@ -230,7 +248,7 @@ to make, in particular, the third
 assumption acceptable to the reader, 
 we give several examples of families of deformation with figures. 
 Then, in turn, we formulate 
-a truncated version (Theorem \ref{thm:t-morse}) of
+a truncated version (Corollary~\ref{thm:t-morse}) of
 the microlocal Morse lemma (\cite[Proposition 5.4.17]{KS90}), 
 under the light of truncated microsupport. 
 Note that we can also study 
