@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1795514341.96826 "/Users/giuseppe/seminar-notes/2026/rel-t-morse/rel-t-morse.tex" "rel-t-morse.pdf" "rel-t-morse" 1795514346.15861 0
-  "/Users/giuseppe/seminar-notes/2026/rel-t-morse/rel-t-morse.tex" 1795514341.63719 79683 77558eb0d3d594322855a00dee139201 ""
+["pdflatex"] 1795515020.76373 "/Users/giuseppe/seminar-notes/2026/rel-t-morse/rel-t-morse.tex" "rel-t-morse.pdf" "rel-t-morse" 1795515023.23252 0
+  "/Users/giuseppe/seminar-notes/2026/rel-t-morse/rel-t-morse.tex" 1795515016.41074 79684 e650dd7c4a8f19079b0c5f623de89aa4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -269,11 +269,11 @@
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1728536886 8221431 40e8cdd7fdd089d4c1e14cf7980adf48 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "intro-a.tex" 1795513751.59291 10051 a3d2c73a04cf76b9bf850996ac56f251 ""
-  "rel-t-morse.aux" 1795514345.83055 8501 82270ebf5d3f2367473d32ef99e2cd62 "pdflatex"
-  "rel-t-morse.brf" 1795514345.83308 982 1c972f7f204b24bb1ea9c4913c2371af "pdflatex"
-  "rel-t-morse.out" 1795514345.83274 2462 655f66d45fbb92e934cdeb5a1fb525c3 "pdflatex"
-  "rel-t-morse.tex" 1795514341.63719 79683 77558eb0d3d594322855a00dee139201 ""
-  "rel-t-morse.toc" 1795514345.83378 1163 1fc8446df10fad7c6fbc52064cda07b5 "pdflatex"
+  "rel-t-morse.aux" 1795515022.96776 8340 cc82d4ed6f6ddeafe0a977406ccd50f1 "pdflatex"
+  "rel-t-morse.brf" 1795515022.97027 982 1c972f7f204b24bb1ea9c4913c2371af "pdflatex"
+  "rel-t-morse.out" 1795515022.96986 2159 333c26262a650bb282ef41de3959f4bb "pdflatex"
+  "rel-t-morse.tex" 1795515016.41074 79684 e650dd7c4a8f19079b0c5f623de89aa4 ""
+  "rel-t-morse.toc" 1795515022.97065 1043 a1a36f60d23f8b26330f061b9464dd79 "pdflatex"
   (generated)
   "rel-t-morse.aux"
   "rel-t-morse.brf"

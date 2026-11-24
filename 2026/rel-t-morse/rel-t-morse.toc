@@ -3,7 +3,6 @@
 \contentsline {paragraph}{Organization}{2}{section*.3}%
 \contentsline {section}{\numberline {2}Notation and Preliminaries}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Geometrical Notions}{3}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}The Fundamental Diagram of Cotangent Bundles}{3}{subsubsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.2}Approximation by Inductive Limits}{3}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Further Results in Homological Algebra}{4}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Mittag-Leffler Procedure for Sheaves}{4}{subsection.2.4}%
